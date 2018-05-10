@@ -157,6 +157,7 @@
 \newcommand{\faces}{\mathcal{F}} % faces of a dissection
 \renewcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
 \newcommandx{\ZC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{zz}}(#1)} % zigzag complex
+\newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
 
 % lattices
 \newcommand{\meet}{\wedge} % meet
@@ -229,7 +230,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Accordion / zigzag / non-kissing / support $\tau$-tilting complexes all coincide}
+\title[Non-kissing and non-crossing complexes for gentle algebras]{Non-kissing and non-crossing complexes \\ for gentle algebras}
 
 \thanks{YP, VP and PGP were partially supported by the French ANR grant SC3A~(15\,CE40\,0004\,01).}
 
@@ -258,11 +259,20 @@
 \begin{document}
 
 \begin{abstract}
+We consider three combinatorial models for the support $\tau$-tilting complex of a gentle bound quiver: the accordion complex, the zigzag complex, and the non-kissing complex. We unify these models in the same picture.
 \end{abstract}
 
 %\vspace*{.3cm}
 
 \maketitle
+
+Possible titles, depending on what we want to insist on:
+\begin{enumerate}
+\item Accordion / zigzag / non-kissing / support $\tau$-tilting complexes all coincide for gentle algebras
+\item Non-kissing and non-crossing complexes for gentle algebras
+\item Combinatorial models for support $\tau$-tilting on gentle algebras: accordion, zigzag and non-kissing complexes
+\end{enumerate}
+
 
 \section{Non-kissing complex}
 
@@ -290,6 +300,7 @@ The vertices of~$Q\blossom_0 \ssm Q_0$ are called \defn{blossom vertices}, and t
 \end{definition}
 
 \vincent{Examples}
+\vincent{Should we introduce Koszul duality here and say what it does on quivers?}
 
 \subsection{Strings and walks}
 
@@ -395,7 +406,7 @@ This operation is illustrated in \fref{fig:flip}.
 	\label{fig:flip}
 \end{figure}
 
-\section{Accordion complex and zigzag complex}
+\section{Accordion complex, zigzag complex, and non-crossing complex}
 
 \subsection{Dual dissections of a surface}
 
@@ -453,7 +464,7 @@ The points of~$B$ are called the \defn{blossom points}.
 \vincent{I am tempted to define here the interior points and blossom points and to only consider arcs passing though these points. Still need to think about it.}
 \end{definition}
 
-\subsection{Accordion complex and zigzag complex}
+\subsection{Accordion complex, zigzag complex, and non-crossing complex}
 
 Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual dissections~$\dissection$ and~$\dissection\dual$.
 Let~$I$ denote the interior points and $B$ the blossom points.
@@ -491,9 +502,13 @@ For two dual dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$
 \end{proposition}
 
 \begin{proof}
-\vincent{Todo}
+\vincent{Todo. I have the impression here that we need cellular embeddings.}
 \end{proof}
 
+\begin{definition}
+\label{def:noncrossingComplex}
+We call \defn{non-crossing complex} of the pair of dual dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC = \AC = \ZC$.
+\end{definition}
 
 \begin{remark}
 To clearly visualize Proposition~\ref{prop:accordionsZigzags}, we follow the convention to draw the $\dissection$-accordions (resp.~$\dissection\dual$-zigzags) so that they intersect the arcs of~$\dissection$ (resp.~of~$\dissection\dual$) only at the intersection points of the arcs of~$\dissection$ with the arcs of~$\dissection\dual$.
@@ -512,11 +527,20 @@ Although its accordion complex (resp.~zigzag complex) could still be defined as 
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
 \end{remark}
 
-\section{All complexes coincide}
+\section{Non-kissing versus non-crossing}
+
+In this section, we show that non-kissing complexes and non-crossing complexes actually coincide.
+Namely, any pair of dual dissections~$(\dissection, \dissection\dual)$ defines a gentle bound quiver~$\bar Q_{\dissection, \dissection\dual}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
+Conversely, any gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$.
+In fact, we show that the accordion, zigzag, and non-kissing complexes can all be pictured in a unique way on the surface.
+Interestingly, via the correspondence between pairs of dual dissections and gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates to the Koszul duality between the gentle algebras of~$\bar Q$ and~$\bar Q\dual$.
 
 \vincent{This section is just sketched at the moment.}
 
 \subsection{The bound quiver of a dissection}
+
+Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual dissections~$\dissection$ and~$\dissection\dual$.
+Let~$I$ denote the interior points and $B$ the blossom points.
 
 \begin{definition}
 \label{def:quiverDualDissections}
@@ -524,8 +548,9 @@ The bound quiver of a dissection~$\dissection$ is defined rotating around each f
 \end{definition}
 
 \begin{proposition}
-\label{prop:dualityKozul1}
-For two dual dissections~$\dissection$ and~$\dissection\dual$ of an oriented surface, the quivers~$\bar Q(\dissection)$ and~$\bar Q(\dissection\dual)$ are Kozul duals.
+\label{prop:dualityKoszul1}
+For two dual dissections~$\dissection$ and~$\dissection\dual$ of an oriented surface, the quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Koszul duals.
+\vincent{Here I mean that the gentle algebras are Koszul duals. We need to define that somewhere and discuss it on gentle quivers.}
 \end{proposition}
 
 
@@ -533,12 +558,12 @@ For two dual dissections~$\dissection$ and~$\dissection\dual$ of an oriented sur
 
 \begin{definition}
 \label{def:surfaceQuiver}
-The surface~$\surface(\bar Q)$ of a gentle bound quiver~$\bar Q = (Q,I)$ is obtained by glueing lozanges around arrows of~$Q$ following the rule given by the relations~$I$. The construction also automatically defines two dual dissections~$\dissection(\bar Q)$ and~$\dissection\dual(\bar Q)$ of the surface~$\surface(\bar Q)$.
+The surface~$\surface(\bar Q)$ of a gentle bound quiver~$\bar Q = (Q,I)$ is obtained by glueing lozanges around arrows of~$Q$ following the rule given by the relations~$I$. The construction also automatically defines two dual dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ of the surface~$\surface_{\bar Q}$.
 \end{definition}
 
 \begin{proposition}
-\label{prop:dualityKozul2}
-For any gentle bound quiver~$\bar Q$ with Kozul dual~$\bar Q\dual$, the surfaces~$\surface(\bar Q)$ and~$\surface(\bar Q\dual)$ coincide, but~$\dissection(\bar Q\dual) = \dissection\dual(\bar Q)$ and~$\dissection\dual(\bar Q\dual) = \dissection(\bar Q)$.
+\label{prop:dualityKoszul2}
+For any gentle bound quiver~$\bar Q$ with Koszul dual~$\bar Q\dual$, the surfaces~$\surface_{\bar Q}$ and~$\surface_{\bar Q\dual}$ coincide, but~$\dissection_{\bar Q\dual} = \dissection\dual_{\bar Q}$ and~$\dissection\dual_{\bar Q\dual} = \dissection_{\bar Q}$.
 \end{proposition}
 
 
@@ -557,8 +582,8 @@ Non-kissing walks = non-crossing arcs.
 \begin{theorem}
 \label{thm:complexesCoincide}
 \begin{itemize}
-\item For any gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the accordion complex~$\AC[\dissection(\bar Q)]$ and to the zigzag complex~$\ZC[\dissection\dual(\bar Q)]$.
-\item For any pair of dual dissections~$\dissection, \dissection\dual$ of an oriented surface, the accordion complex~$\AC$ and the zigzag complex~$\ZC$ are isomorphic to the non-kissing complex~$\NKC[\bar Q(\dissection)]$.
+\item For any gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$, therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the zigzag complex~$\ZC[\dissection\dual_{\bar Q}]$.
+\item For any pair of dual dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
 
