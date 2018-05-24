@@ -31,6 +31,7 @@
 \newtheorem{question}[theorem]{Question}
 \newtheorem{notation}[theorem]{Notation}
 \newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{convention}[theorem]{Convention}
 
 % math special letters
 \newcommand{\R}{\mathbb{R}} % reals
@@ -424,40 +425,51 @@ We denote by~$\faces(\dissection)$ the set of faces of~$\dissection$.
 The dissection~$\dissection$ is \defn{cellular} if all its faces are disks.
 \end{definition}
 
+\begin{convention}
+\textbf{All throughout the paper, all dissections are considered cellular.}
+The case of non-cellular dissections will be discussed in Section~\ref{sec:nonCellularDissections}.
+\end{convention}
+
 \begin{definition}
 Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points so that~$M$ and~$M\dual$ alternate along the boundary of~$\surface$.
-A dissection~$\dissection$ of~$(\surface, M)$ and a dissection~$\dissection\dual$ of~$(\surface, M\dual)$ are \defn{dual dissections} if there are pairs of mutually inverse bijections~$M\dual \leftrightarrow \faces(\dissection)$ and~$M \leftrightarrow \faces(\dissection\dual)$, denoted~$\dual$ in both directions, such that the dissection~$\dissection$ has an edge joining its vertices~$u,v \in M$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an edge joining its vertices~$f\dual, g\dual \in M\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
+A cellular dissection~$\dissection$ of~$(\surface, M)$ and a cellular dissection~$\dissection\dual$ of~$(\surface, M\dual)$ are \defn{dual cellular dissections} if there are pairs of mutually inverse bijections~$M\dual \leftrightarrow \faces(\dissection)$ and~$M \leftrightarrow \faces(\dissection\dual)$, denoted~$\dual$ in both directions, such that~$\dissection$ has an arc joining its vertices~$u,v \in M$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an arc joining its vertices~$f\dual, g\dual \in M\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
 \end{definition}
 
 Note that contrarily to the usual conventions, the dual vertex of a face~$f$ is not always in the interior of the face.
 More precisely, there are two situations:
 \begin{itemize}
-\item if a face~$f$ has no edge on the boundary of~$\surface$, its dual vertex~$f\dual$ lies in the interior~of~$f$,
-\item if a face~$f$ has an edge on the boundary of~$\surface$, then it has exactly one such edge and its dual vertex~$f\dual$ lies on this edge.
+\item if a face~$f$ has no arc on the boundary of~$\surface$, its dual vertex~$f\dual$ lies in the interior~of~$f$,
+\item if a face~$f$ has an arc on the boundary of~$\surface$, then it has exactly one such arc and its dual vertex~$f\dual$ lies on this arc.
 \end{itemize}
-In fact, the second point forces the following characterization of the dissections that admit a dual dissection.
+In fact, the second point forces the following characterization of the cellular dissections that admit a dual cellular dissection.
 
 \begin{proposition}
 \label{prop:conditionsDualDissections}
-For a dissection~$\dissection$ of a marked surface~$(\surface, M)$, there exists a set~$M\dual$ of points of~$\surface$ and a dissection~$\dissection\dual$ of~$(\surface, M\dual)$ such that~$\dissection$ and~$\dissection\dual$ are dual dissections if and only if each face of~$\dissection$ has at most one boundary edge.
-Moreover, the set~$M\dual$ is unique.
+For a cellular dissection~$\dissection$ of a marked surface~$(\surface, M)$, the following assertions are equivalent:
+\begin{enumerate}[(i)]
+\item there exists a set~$M\dual$ of points of~$\surface$ and a cellular dissection~$\dissection\dual$ of~$(\surface, M\dual)$ such that~$\dissection$ and~$\dissection\dual$ are dual cellular dissections,
+\item each face of~$\dissection$ has at most one boundary arc.
+\end{enumerate}
+Moreover, the set~$M\dual$ and the cellular dissection~$\dissection\dual$ are both uniquely determined.
 \end{proposition}
 
 \begin{proof}
-\vincent{Todo}
+Assume first that~$\dissection$ and~$\dissection\dual$ are dual cellular dissections. If a face~$F$ of~$\dissection$ had two boundary arcs~$a, b$, then it would contain two points of~$M\dual$, one on~$a$ and one on~$b$.
+Conversely, if each face of~$\dissection$ has at most one boundary arc, we construct the set of points~$M\dual$ with one point on each boundary arc of~$\surface$ and one point in the interior of each interior face of~$\dissection$. Clearly, $M\dual$ has one point~$f\dual$ in each face~$f$ of~$\dissection$. We then construct half-arcs of~$\dissection\dual$ in each face~$f$ of~$\dissection$ by joining the dual point~$f\dual$ to the middle of each boundary arc of~$f$ that is not a boundary arc of~$\surface$. For each arc~$a$ of~$\dissection$, the half-arcs incident to the middle of~$a$ in the two faces of~$\dissection$ containing~$a$ form the dual arc~$a\dual$ of~$a$. All these dual arcs do not cross (as the half-arcs do not cross in each face of~$\dissection$) and form the dual cellular dissection~$\dissection\dual$ of~$\dissection$.
+More details can be found in~\cite{PlamondonSchroll}.
 \end{proof}
 
-\begin{remark}
-In Proposition~\ref{prop:conditionsDualDissections}, note that although the set~$M\dual$ of dual marked points is unique, the dual dissection~$\dissection\dual$ is not when~$\dissection$ is not cellular.
-\end{remark}
+%\begin{remark}
+%In Proposition~\ref{prop:conditionsDualDissections}, note that although the set~$M\dual$ of dual marked points is unique, the dual dissection~$\dissection\dual$ is not when~$\dissection$ is not cellular.
+%\end{remark}
 
 \begin{example}
-Two examples of dual dissections on a surface are represented in \fref{fig:dissections}.
+Two examples of dual cellular dissections on a surface are represented in \fref{fig:dissections}.
 \end{example}
 
 \begin{definition}
 Interior points, blossom points.
-Half-edges.
+Half-arcs.
 
 We consider a set~$B$ of points on the boundary of the surface~$\surface$ such that~$B$ and~$M \cup M\dual$ alternate along the boundary of~$\surface$.
 The points of~$B$ are called the \defn{blossom points}.
@@ -466,7 +478,7 @@ The points of~$B$ are called the \defn{blossom points}.
 
 \subsection{Accordion complex, zigzag complex, and non-crossing complex}
 
-Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual dissections~$\dissection$ and~$\dissection\dual$.
+Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual cellular dissections~$\dissection$ and~$\dissection\dual$.
 Let~$I$ denote the interior points and $B$ the blossom points.
 
 \begin{definition}
@@ -498,7 +510,7 @@ Similarly, the $\dissection\dual$-zigzags do not depend on~$\dissection$.
 
 \begin{proposition}
 \label{prop:accordionsZigzags}
-For two dual dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$-accordions are precisely the $\dissection\dual$-zigzags and the $\dissection$-accordion complex coincides with the $\dissection\dual$-zigzag complex.
+For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$-accordions are precisely the $\dissection\dual$-zigzags and the $\dissection$-accordion complex coincides with the $\dissection\dual$-zigzag complex.
 \end{proposition}
 
 \begin{proof}
@@ -507,7 +519,7 @@ For two dual dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$
 
 \begin{definition}
 \label{def:noncrossingComplex}
-We call \defn{non-crossing complex} of the pair of dual dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC = \AC = \ZC$.
+We call \defn{non-crossing complex} of the pair of dual cellular dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC = \AC = \ZC$.
 \end{definition}
 
 \begin{remark}
@@ -521,7 +533,7 @@ The $\dissection$-zigzags and the $\dissection\dual$-accordions are defined dual
 
 \begin{remark}
 A quick disclaimer about accordion complexes and zigzag complexes of arbitrary dissections.
-As stated in Proposition~\ref{prop:conditionsDualDissections}, a dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual dissection~$\dissection\dual$.
+As stated in Proposition~\ref{prop:conditionsDualDissections}, a dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
 This prevents to use the definitions given in this section.
 Although its accordion complex (resp.~zigzag complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~zigzag complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
@@ -530,16 +542,16 @@ See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the
 \section{Non-kissing versus non-crossing}
 
 In this section, we show that non-kissing complexes and non-crossing complexes actually coincide.
-Namely, any pair of dual dissections~$(\dissection, \dissection\dual)$ defines a gentle bound quiver~$\bar Q_{\dissection, \dissection\dual}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
-Conversely, any gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$.
+Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a gentle bound quiver~$\bar Q_{\dissection, \dissection\dual}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
+Conversely, any gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$.
 In fact, we show that the accordion, zigzag, and non-kissing complexes can all be pictured in a unique way on the surface.
-Interestingly, via the correspondence between pairs of dual dissections and gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates to the Koszul duality between the gentle algebras of~$\bar Q$ and~$\bar Q\dual$.
+Interestingly, via the correspondence between pairs of dual cellular dissections and gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates to the Koszul duality between the gentle algebras of~$\bar Q$ and~$\bar Q\dual$.
 
 \vincent{This section is just sketched at the moment.}
 
 \subsection{The bound quiver of a dissection}
 
-Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual dissections~$\dissection$ and~$\dissection\dual$.
+Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual cellular dissections~$\dissection$ and~$\dissection\dual$.
 Let~$I$ denote the interior points and $B$ the blossom points.
 
 \begin{definition}
@@ -549,7 +561,7 @@ The bound quiver of a dissection~$\dissection$ is defined rotating around each f
 
 \begin{proposition}
 \label{prop:dualityKoszul1}
-For two dual dissections~$\dissection$ and~$\dissection\dual$ of an oriented surface, the quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Koszul duals.
+For two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of an oriented surface, the quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Koszul duals.
 \vincent{Here I mean that the gentle algebras are Koszul duals. We need to define that somewhere and discuss it on gentle quivers.}
 \end{proposition}
 
@@ -558,7 +570,7 @@ For two dual dissections~$\dissection$ and~$\dissection\dual$ of an oriented sur
 
 \begin{definition}
 \label{def:surfaceQuiver}
-The surface~$\surface(\bar Q)$ of a gentle bound quiver~$\bar Q = (Q,I)$ is obtained by glueing lozanges around arrows of~$Q$ following the rule given by the relations~$I$. The construction also automatically defines two dual dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ of the surface~$\surface_{\bar Q}$.
+The surface~$\surface(\bar Q)$ of a gentle bound quiver~$\bar Q = (Q,I)$ is obtained by glueing lozanges around arrows of~$Q$ following the rule given by the relations~$I$. The construction also automatically defines two dual cellular dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ of the surface~$\surface_{\bar Q}$.
 \end{definition}
 
 \begin{proposition}
@@ -583,7 +595,7 @@ Non-kissing walks = non-crossing arcs.
 \label{thm:complexesCoincide}
 \begin{itemize}
 \item For any gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$, therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the zigzag complex~$\ZC[\dissection\dual_{\bar Q}]$.
-\item For any pair of dual dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
+\item For any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
 
