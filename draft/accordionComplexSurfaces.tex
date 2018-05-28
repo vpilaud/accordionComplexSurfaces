@@ -454,9 +454,10 @@ Moreover, the set~$M\dual$ and the cellular dissection~$\dissection\dual$ are bo
 \end{proposition}
 
 \begin{proof}
+We mimick the proof of~\cite[Proposition 1.12]{OpperPlamondonSchroll}.
 Assume first that~$\dissection$ and~$\dissection\dual$ are dual cellular dissections. If a face~$F$ of~$\dissection$ had two boundary arcs~$a, b$, then it would contain two points of~$M\dual$, one on~$a$ and one on~$b$.
 Conversely, if each face of~$\dissection$ has at most one boundary arc, we construct the set of points~$M\dual$ with one point on each boundary arc of~$\surface$ and one point in the interior of each interior face of~$\dissection$. Clearly, $M\dual$ has one point~$f\dual$ in each face~$f$ of~$\dissection$. We then construct half-arcs of~$\dissection\dual$ in each face~$f$ of~$\dissection$ by joining the dual point~$f\dual$ to the middle of each boundary arc of~$f$ that is not a boundary arc of~$\surface$. For each arc~$a$ of~$\dissection$, the half-arcs incident to the middle of~$a$ in the two faces of~$\dissection$ containing~$a$ form the dual arc~$a\dual$ of~$a$. All these dual arcs do not cross (as the half-arcs do not cross in each face of~$\dissection$) and form the dual cellular dissection~$\dissection\dual$ of~$\dissection$.
-More details can be found in~\cite{PlamondonSchroll}.
+More details can be found in~\cite{OpperPlamondonSchroll}.
 \end{proof}
 
 %\begin{remark}
@@ -486,6 +487,7 @@ Let~$I$ denote the interior points and $B$ the blossom points.
 A \defn{$\dissection$-accordion} is an arc~$\gamma$ of~$(\surface, B)$ such that any two arcs of $\dissection$ crossed consecutively by~$\gamma$
 share a marked point with the property that the region bounded by~$\gamma$ and the two arcs around the marked point is homeomorphic to a disk
 (in particular, it contains no punctures).
+\yann{Il faut probablement ajouter des conditions aux bords}
 \end{definition}
 
 \begin{definition}
@@ -496,7 +498,7 @@ The \defn{$\dissection$-accordion complex}~$\AC$ is the simplicial complex of pa
 
 \begin{definition}
 \label{def:zigzag}
-A \defn{$\dissection\dual$-zigzag} is an arc of~$(\surface, B)$ so that for each face~$f \in \faces(\dissection)$ ...
+A \defn{$\dissection\dual$-zigzag} is an arc~$\alpha$ of~$(\surface, B)$ such that, for each pair of faces~$(f,g) \in \faces(\dissection\dual)$ that~$\alpha$ enters consecutively by crossing~$\beta\in\dissection\dual$,~$\alpha$ cuts the union of the two cells $f$ and $g$ glued along~$\beta$ into two components, one containing the marked point $f\dual$ and the other containing $g\dual$.
 \end{definition}
 
 \begin{definition}
@@ -517,6 +519,29 @@ For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\di
 
 \begin{proof}
 \vincent{Todo. I have the impression here that we need cellular embeddings.}
+Let~$\alpha$ be a~$\dissection$-accordion.
+Let~$\beta$,~$\gamma$,~$\delta$ be three consecutive arcs of~$\dissection$ crossed by~$\gamma$.
+Let~$m\in\dissection$ be the common endpoint of~$\beta$ and $\gamma$ given by Definition~\ref{def:accordion} and let~$n\in\dissection$ be the common endpoint of~$\gamma$ and~$\delta$.
+If $m=n$, then the segment of~$\alpha$ between~$\beta$ and~$\delta$ stays in the same face of~$\dissection\dual$.
+Otherwise, when crossing~$\gamma$, the accordion~$\alpha$ leaves the face~$m\dual$ of $\dissection\dual$ and enters the face~$n\dual$.
+In the surface obtained by glueing the two cells~$m\dual$ and~$n\dual$ along~$\gamma\dual$, the marked points~$m$ and~$n$ are separated by~$\alpha$.
+Conversely, assume that~$\alpha$ is an arc of~$(\surface, B)$ which is not a $\dissection$-accordion.
+We are in one of the following cases.
+
+Case 1: The arc~$\alpha$ consecutively crosses two arcs~$\beta$ and~$\gamma$ of~$\dissection$ that do not share a common endpoint.
+Let~$f$ be the face of~$\dissection$ that contain the segment of~$\alpha$ between~$\beta$ and~$\gamma$.
+Consider the connected component of~$f\setminus\alpha$ that do not contain~$f\dual$.
+The boundaty of this component contains an arc~$\delta\in\dissection\setminus\{\beta\}$ that share a common endpoint with~$\beta$.
+Let~$m,n$ be the endpoints of~$\delta$.
+Then~$\alpha$ cuts the cells $m\dual,n\dual$ glued along~$\delta\dual$ into two connected component, one containing both endpoints of~$\delta$.
+
+Case 2: The arc~$\alpha$ consecutively crosses two arcs~$\beta$ and~$\gamma$ of~$\dissection$ that share a unique common endpoint, but the region delimited by~$\alpha$,~$\beta$ and~$\gamma$ is not a disk.
+Since the dissection~$\dissection$ is cellular, that region has to contain some marked point~$m\in\dissection\dual$.
+One conclude that~$\alpha$ is not a~$\dissection\dual$-zigzag similarly as in the first case, by considering the component of~$m\dual\setminus\alpha$ that do not contain~$m$.
+
+Case 3: The arc~$\alpha$ consecutively crosses two arcs~$\beta$ and~$\gamma$ of~$\dissection$ that share two different endpoints, and none of the two regions delimited by~$\alpha$,~$\beta$ and~$\gamma$ is a disk.
+Since the dissection~$\dissection$ is cellular, both regions have to contain a puncture.
+This contradicts the assumption that the dissections~$\dissection$ and~$\dissection\dual$ are dual to each other.
 \end{proof}
 
 \begin{definition}
