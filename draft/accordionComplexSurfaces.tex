@@ -155,6 +155,8 @@
 \newcommand{\surface}{\mathcal{S}} % an orientable surface
 \newcommand{\dual}{^*} % duality
 \newcommand{\dissection}{\mathrm{D}} % dissection of a marked surface
+\newcommand{\vertices}{\mathcal{V}} % vertices of a dissection
+\newcommand{\edges}{\mathcal{E}} % edges of a dissection
 \newcommand{\faces}{\mathcal{F}} % faces of a dissection
 \renewcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
 \newcommandx{\SC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{sla}}(#1)} % slalom complex
@@ -420,8 +422,9 @@ Two arcs \defn{cross} when they intersect in~their~interior.
 
 \begin{definition}
 A \defn{dissection} of~$\bar\surface$ is a collection~$\dissection$ of pairwise non-crossing arcs on~$\bar\surface$.
-The \defn{faces} of a dissection~$\dissection$ are the connected components of the complement of the union of the arcs of~$\dissection$ in the surface~$\surface$.
-We denote by~$\faces(\dissection)$ the set of faces of~$\dissection$.
+The \defn{edges} of~$\dissection$ are its arcs together with the boundary arcs of~$\bar\surface$.
+The \defn{faces} of~$\dissection$ are the connected components of the complement of the union of the edges of~$\dissection$ in the surface~$\surface$.
+We denote by~$\vertices(\dissection)$, $\edges(\dissection)$ and~$\faces(\dissection)$ the sets of vertices, edges and faces of~$\dissection$ respectively.
 The dissection~$\dissection$ is \defn{cellular} if all its faces are disks.
 For~$V \subseteq M$, a \defn{$V$-dissection} is a dissection with only $V$-arcs.
 \end{definition}
@@ -433,14 +436,14 @@ The case of non-cellular dissections will be discussed in Section~\ref{sec:nonCe
 
 \begin{definition}
 Consider a marked surface~$\bar\surface = (\surface, V \sqcup V\dual)$, where~$V$ and~$V\dual$ are two disjoint sets of marked points so that the points of~$V$ and~$V\dual$ that are on the boundary of~$\surface$ alternate.
-A cellular $V$-dissection~$\dissection$ of~$\bar\surface$ and a cellular $V\dual$-dissection~$\dissection\dual$ of~$\bar\surface$ are \defn{dual cellular dissections} if there are pairs of mutually inverse bijections~$V\dual \leftrightarrow \faces(\dissection)$ and~$V \leftrightarrow \faces(\dissection\dual)$, denoted~$\dual$ in both directions, such that~$\dissection$ has an arc joining its vertices~$u,v \in V$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an arc joining its vertices~$f\dual, g\dual \in V\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
+A cellular $V$-dissection~$\dissection$ of~$\bar\surface$ and a cellular $V\dual$-dissection~$\dissection\dual$ of~$\bar\surface$ are \defn{dual cellular dissections} if there are pairs of mutually inverse bijections~$V\dual \leftrightarrow \faces(\dissection)$ and~$V \leftrightarrow \faces(\dissection\dual)$, denoted~$\dual$ in both directions, such that~$\dissection$ has an edge joining its vertices~$u,v \in V$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an edge joining its vertices~$f\dual, g\dual \in V\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
 \end{definition}
 
 Note that contrarily to the usual conventions, the dual vertex~$f\dual$ of a face~$f$ of~$\dissection$ is not always in the interior of the face~$f$.
 More precisely, there are two situations:
 \begin{itemize}
-\item if a face~$f$ has no arc on the boundary of~$\surface$, its dual vertex~$f\dual$ lies in the interior~of~$f$,
-\item if a face~$f$ has an arc on the boundary of~$\surface$, then it has exactly one such arc and its dual vertex~$f\dual$ lies on this arc.
+\item if a face~$f$ has no edge on the boundary of~$\surface$, its dual vertex~$f\dual$ lies in the interior~of~$f$,
+\item if a face~$f$ has an edge on the boundary of~$\surface$, then it has exactly one such edge and its dual vertex~$f\dual$ lies on this edge.
 \end{itemize}
 In fact, the second point forces the following characterization of the cellular dissections that admit a dual cellular dissection.
 
@@ -461,9 +464,9 @@ We mimick the proof of~\cite[Prop.~1.12]{OpperPlamondonSchroll}.
 %More details can be found in~\cite{OpperPlamondonSchroll}.
 The direct implication is immediate by definition.
 Assume conversely that each face~$f$ of~$\dissection$ contains exactly one point~$f\dual$ of~$V\dual$.
-We construct half-arcs of~$\dissection\dual$ in each face~$f$ of~$\dissection$ by joining the dual point~$f\dual$ to the middle of each boundary arc of~$f$ that is not a boundary arc of~$\surface$.
-For each arc~$a$ of~$\dissection$, the half-arcs incident to the middle of~$a$ in the two faces of~$\dissection$ containing~$a$ form the dual arc~$a\dual$ of~$a$.
-All these dual arcs do not cross (as the half-arcs do not cross in each face of~$\dissection$) and form the dual cellular dissection~$\dissection\dual$~of~$\dissection$.
+We construct half-edges of~$\dissection\dual$ in each face~$f$ of~$\dissection$ by joining the dual point~$f\dual$ to the middle of each boundary edge of~$f$ that is not a boundary edge of~$\surface$.
+For each edge~$a$ of~$\dissection$, the half-edges incident to the middle of~$a$ in the two faces of~$\dissection$ containing~$a$ form the dual edge~$a\dual$ of~$a$.
+All these dual edges do not cross (as the half-edges do not cross in each face of~$\dissection$) and form the dual cellular dissection~$\dissection\dual$~of~$\dissection$.
 \end{proof}
 
 %\begin{remark}
@@ -484,17 +487,17 @@ The points of~$B$ are called the \defn{blossom points}.
 \end{definition}
 
 \subsection{Accordion complex, slalom complex, and non-crossing complex}
-Let~$\surface$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, let~$B$ be the corresponding blossoming points, and consider the marked surface~$\bar\surface = (\surface, V \sqcup V\dual \sqcup B)$.
-Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$\bar\surface = (\surface, V \sqcup V\dual)$.
+Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points.
+Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$\bar\surface$.
 %Let~$I$ denote the interior points and $B$ the blossom points.
 
 \begin{definition}
 \label{def:accordion}
-A \defn{$\dissection$-accordion} is a $B$-arc~$\gamma$ of~$\bar\surface$ such that whenever~$\gamma$ crosses a face~$f$ of~$\dissection$, it crosses two edges of~$f$ that share a marked point of~$v \in M$ in such a way that~$v$ and~$f\dual$ lie on opposite sides of~$\gamma$.
-
-
-% the two edges of~$f$ crossed by~$\gamma$ share a marked point~$v \in M$, and~$v$ and~$f\dual$ are on opposite sides of~$\gamma$ in~$f$.
-% any two arcs of $\dissection$ crossed consecutively by~$\gamma$ share a marked point with the property that the region bounded by~$\gamma$ and the two arcs around the marked point does not contain.
+A \defn{$\dissection$-accordion} is a $B$-arc~$\alpha$ of~$\bar\surface$ such that whenever~$\alpha$ crosses a face~$f$ of~$\dissection$,
+\begin{itemize}
+\item the two edges of~$f$ crossed by~$\alpha$ share a marked point~$v \in M$,
+\item the marked points~$v$ and~$f\dual$ lie on opposite sides of~$\alpha$ in~$f$
+\end{itemize}
 \end{definition}
 
 \begin{definition}
@@ -505,7 +508,7 @@ The \defn{$\dissection$-accordion complex}~$\AC$ is the simplicial complex of pa
 
 \begin{definition}
 \label{def:slalom}
-A \defn{$\dissection\dual$-slalom} is a $B$-arc~$\alpha$ of~$\bar\surface$ such that, for each pair of faces~$(f,g) \in \faces(\dissection\dual)$ that~$\alpha$ enters consecutively by crossing~$\beta\in\dissection\dual$,~$\alpha$ cuts the union of the two cells $f$ and $g$ glued along~$\beta$ into two components, one containing the marked point $f\dual$ and the other containing $g\dual$.
+A \defn{$\dissection\dual$-slalom} is a $B$-arc~$\alpha$ of~$\bar\surface$ such that, whenever~$\alpha$ crosses an edge~$a$ of~$\dissection$ contained in two faces~$f,g$ of~$\dissection$, the marked points~$f\dual$ and~$g\dual$ lie on opposite sides of~$\alpha$ in the union of~$f$ and~$g$ glued along~$a$.
 \end{definition}
 
 \begin{definition}
