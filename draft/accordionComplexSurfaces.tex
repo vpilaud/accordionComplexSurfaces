@@ -1,11 +1,11 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, overpic, pdflscape, multirow, hvfloat, minibox, accents, array, xifthen, ae, aecompl, blkarray, pifont, mathtools, a4wide}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, overpic, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide}
 \usepackage{marginnote}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
-\usepackage[bottom]{footmisc}
+%\usepackage[bottom]{footmisc}
 \usepackage{tikz}
 \usepackage{tkz-graph}
 \usetikzlibrary{trees, decorations, decorations.markings, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
@@ -413,9 +413,9 @@ This operation is illustrated in \fref{fig:flip}.
 
 \begin{definition}
 A \defn{marked surface}~$\bar\surface \eqdef (\surface, M)$ is an orientable surface~$\surface$ with boundaries, together with a set~$M$ of marked points which can be on the boundary of~$\surface$ or not.
-An \defn{arc} on~$\bar\surface$ is a curve on~$\surface$ connecting two marked points of~$M$ and whose interior is disjoint from~$M$ and the boundary of~$\surface$ (note that arcs homotopic to boundary arcs are allowed here).
-As usual, arcs are considered up to homotopy relative to their endpoints in~$\surface \ssm M$.
-Two arcs \defn{cross} when they intersect in their interior.
+For~$V \subset \surface$, a \defn{$V$-arc} on~$\bar\surface$ is a curve on~$\surface$ connecting two points of~$V$ and whose interior is disjoint from~$M$ and the boundary of~$\surface$.
+As usual, arcs are considered up to homotopy relative to their endpoints in~$\surface \ssm M$, and curves homotopic to a boundary are not allowed.
+Two arcs \defn{cross} when they intersect in~their~interior.
 \end{definition}
 
 \begin{definition}
@@ -423,6 +423,7 @@ A \defn{dissection} of~$\bar\surface$ is a collection~$\dissection$ of pairwise 
 The \defn{faces} of a dissection~$\dissection$ are the connected components of the complement of the union of the arcs of~$\dissection$ in the surface~$\surface$.
 We denote by~$\faces(\dissection)$ the set of faces of~$\dissection$.
 The dissection~$\dissection$ is \defn{cellular} if all its faces are disks.
+For~$V \subseteq M$, a \defn{$V$-dissection} is a dissection with only $V$-arcs.
 \end{definition}
 
 \begin{convention}
@@ -431,11 +432,11 @@ The case of non-cellular dissections will be discussed in Section~\ref{sec:nonCe
 \end{convention}
 
 \begin{definition}
-Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points so that~$M$ and~$M\dual$ alternate along the boundary of~$\surface$.
-A cellular dissection~$\dissection$ of~$(\surface, M)$ and a cellular dissection~$\dissection\dual$ of~$(\surface, M\dual)$ are \defn{dual cellular dissections} if there are pairs of mutually inverse bijections~$M\dual \leftrightarrow \faces(\dissection)$ and~$M \leftrightarrow \faces(\dissection\dual)$, denoted~$\dual$ in both directions, such that~$\dissection$ has an arc joining its vertices~$u,v \in M$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an arc joining its vertices~$f\dual, g\dual \in M\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
+Consider a marked surface~$\bar\surface = (\surface, V \sqcup V\dual)$, where~$V$ and~$V\dual$ are two disjoint sets of marked points so that the points of~$V$ and~$V\dual$ that are on the boundary of~$\surface$ alternate.
+A cellular $V$-dissection~$\dissection$ of~$\bar\surface$ and a cellular $V\dual$-dissection~$\dissection\dual$ of~$\bar\surface$ are \defn{dual cellular dissections} if there are pairs of mutually inverse bijections~$V\dual \leftrightarrow \faces(\dissection)$ and~$V \leftrightarrow \faces(\dissection\dual)$, denoted~$\dual$ in both directions, such that~$\dissection$ has an arc joining its vertices~$u,v \in V$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an arc joining its vertices~$f\dual, g\dual \in V\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
 \end{definition}
 
-Note that contrarily to the usual conventions, the dual vertex of a face~$f$ is not always in the interior of the face.
+Note that contrarily to the usual conventions, the dual vertex~$f\dual$ of a face~$f$ of~$\dissection$ is not always in the interior of the face~$f$.
 More precisely, there are two situations:
 \begin{itemize}
 \item if a face~$f$ has no arc on the boundary of~$\surface$, its dual vertex~$f\dual$ lies in the interior~of~$f$,
@@ -445,19 +446,24 @@ In fact, the second point forces the following characterization of the cellular 
 
 \begin{proposition}
 \label{prop:conditionsDualDissections}
-For a cellular dissection~$\dissection$ of a marked surface~$(\surface, M)$, the following assertions are equivalent:
+For a cellular $V$-dissection~$\dissection$ of a marked surface~$\bar\surface = (\surface, V \sqcup V\dual)$, the following assertions are equivalent:
 \begin{enumerate}[(i)]
-\item there exists a set~$M\dual$ of points of~$\surface$ and a cellular dissection~$\dissection\dual$ of~$(\surface, M\dual)$ such that~$\dissection$ and~$\dissection\dual$ are dual cellular dissections,
-\item each face of~$\dissection$ has at most one boundary arc.
+\item there exists a cellular $V\dual$-dissection~$\dissection\dual$ of~$\bar\surface$ such that~$\dissection$ and~$\dissection\dual$ are dual cellular dissections,
+\item each face of~$\dissection$ contains exactly one point of~$V\dual$.
 \end{enumerate}
-Moreover, the set~$M\dual$ and the cellular dissection~$\dissection\dual$ are both uniquely determined.
+Moreover, the cellular dissection~$\dissection\dual$ is uniquely determined.
 \end{proposition}
 
 \begin{proof}
-We mimick the proof of~\cite[Proposition 1.12]{OpperPlamondonSchroll}.
-Assume first that~$\dissection$ and~$\dissection\dual$ are dual cellular dissections. If a face~$F$ of~$\dissection$ had two boundary arcs~$a, b$, then it would contain two points of~$M\dual$, one on~$a$ and one on~$b$.
-Conversely, if each face of~$\dissection$ has at most one boundary arc, we construct the set of points~$M\dual$ with one point on each boundary arc of~$\surface$ and one point in the interior of each interior face of~$\dissection$. Clearly, $M\dual$ has one point~$f\dual$ in each face~$f$ of~$\dissection$. We then construct half-arcs of~$\dissection\dual$ in each face~$f$ of~$\dissection$ by joining the dual point~$f\dual$ to the middle of each boundary arc of~$f$ that is not a boundary arc of~$\surface$. For each arc~$a$ of~$\dissection$, the half-arcs incident to the middle of~$a$ in the two faces of~$\dissection$ containing~$a$ form the dual arc~$a\dual$ of~$a$. All these dual arcs do not cross (as the half-arcs do not cross in each face of~$\dissection$) and form the dual cellular dissection~$\dissection\dual$ of~$\dissection$.
-More details can be found in~\cite{OpperPlamondonSchroll}.
+We mimick the proof of~\cite[Prop.~1.12]{OpperPlamondonSchroll}.
+%Assume first that~$\dissection$ and~$\dissection\dual$ are dual cellular dissections. If a face~$f$ of~$\dissection$ had two boundary arcs~$a, b$, then it would contain two points of~$M\dual$, one on~$a$ and one on~$b$.
+%Conversely, if each face of~$\dissection$ has at most one boundary arc, we construct the set of points~$M\dual$ with one point on each boundary arc of~$\surface$ and one point in the interior of each interior face of~$\dissection$. Clearly, $M\dual$ has one point~$f\dual$ in each face~$f$ of~$\dissection$. We then construct half-arcs of~$\dissection\dual$ in each face~$f$ of~$\dissection$ by joining the dual point~$f\dual$ to the middle of each boundary arc of~$f$ that is not a boundary arc of~$\surface$. For each arc~$a$ of~$\dissection$, the half-arcs incident to the middle of~$a$ in the two faces of~$\dissection$ containing~$a$ form the dual arc~$a\dual$ of~$a$. All these dual arcs do not cross (as the half-arcs do not cross in each face of~$\dissection$) and form the dual cellular dissection~$\dissection\dual$ of~$\dissection$.
+%More details can be found in~\cite{OpperPlamondonSchroll}.
+The direct implication is immediate by definition.
+Assume conversely that each face~$f$ of~$\dissection$ contains exactly one point~$f\dual$ of~$V\dual$.
+We construct half-arcs of~$\dissection\dual$ in each face~$f$ of~$\dissection$ by joining the dual point~$f\dual$ to the middle of each boundary arc of~$f$ that is not a boundary arc of~$\surface$.
+For each arc~$a$ of~$\dissection$, the half-arcs incident to the middle of~$a$ in the two faces of~$\dissection$ containing~$a$ form the dual arc~$a\dual$ of~$a$.
+All these dual arcs do not cross (as the half-arcs do not cross in each face of~$\dissection$) and form the dual cellular dissection~$\dissection\dual$~of~$\dissection$.
 \end{proof}
 
 %\begin{remark}
@@ -478,13 +484,13 @@ The points of~$B$ are called the \defn{blossom points}.
 \end{definition}
 
 \subsection{Accordion complex, slalom complex, and non-crossing complex}
-
-Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual cellular dissections~$\dissection$ and~$\dissection\dual$.
-Let~$I$ denote the interior points and $B$ the blossom points.
+Let~$\surface$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, let~$B$ be the corresponding blossoming points, and consider the marked surface~$\bar\surface = (\surface, V \sqcup V\dual \sqcup B)$.
+Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$\bar\surface = (\surface, V \sqcup V\dual)$.
+%Let~$I$ denote the interior points and $B$ the blossom points.
 
 \begin{definition}
 \label{def:accordion}
-A \defn{$\dissection$-accordion} is an arc~$\gamma$ of~$(\surface, B)$ such that whenever~$\gamma$ crosses a face~$f$ of~$\dissection$, it crosses two edges of~$f$ that share a marked point of~$v \in M$ in such a way that~$v$ and~$f\dual$ lie on opposite sides of~$\gamma$.
+A \defn{$\dissection$-accordion} is a $B$-arc~$\gamma$ of~$\bar\surface$ such that whenever~$\gamma$ crosses a face~$f$ of~$\dissection$, it crosses two edges of~$f$ that share a marked point of~$v \in M$ in such a way that~$v$ and~$f\dual$ lie on opposite sides of~$\gamma$.
 
 
 % the two edges of~$f$ crossed by~$\gamma$ share a marked point~$v \in M$, and~$v$ and~$f\dual$ are on opposite sides of~$\gamma$ in~$f$.
@@ -499,7 +505,7 @@ The \defn{$\dissection$-accordion complex}~$\AC$ is the simplicial complex of pa
 
 \begin{definition}
 \label{def:slalom}
-A \defn{$\dissection\dual$-slalom} is an arc~$\alpha$ of~$(\surface, B)$ such that, for each pair of faces~$(f,g) \in \faces(\dissection\dual)$ that~$\alpha$ enters consecutively by crossing~$\beta\in\dissection\dual$,~$\alpha$ cuts the union of the two cells $f$ and $g$ glued along~$\beta$ into two components, one containing the marked point $f\dual$ and the other containing $g\dual$.
+A \defn{$\dissection\dual$-slalom} is a $B$-arc~$\alpha$ of~$\bar\surface$ such that, for each pair of faces~$(f,g) \in \faces(\dissection\dual)$ that~$\alpha$ enters consecutively by crossing~$\beta\in\dissection\dual$,~$\alpha$ cuts the union of the two cells $f$ and $g$ glued along~$\beta$ into two components, one containing the marked point $f\dual$ and the other containing $g\dual$.
 \end{definition}
 
 \begin{definition}
