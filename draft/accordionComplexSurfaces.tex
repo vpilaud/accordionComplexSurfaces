@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap,  shuffle, xargs, multicol, overpic, pdflscape, multirow, hvfloat, minibox, accents, array, xifthen, ae, aecompl, blkarray, pifont, mathtools, a4wide}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, overpic, pdflscape, multirow, hvfloat, minibox, accents, array, xifthen, ae, aecompl, blkarray, pifont, mathtools, a4wide}
 \usepackage{marginnote}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
@@ -151,13 +151,13 @@
 \renewcommand{\top}{\mathrm{top}} % top
 \newcommand{\bottom}{\mathrm{bot}} % bottom
 
-% accordion and zigzag complexes
+% accordion and slalom complexes
 \newcommand{\surface}{\mathcal{S}} % an orientable surface
 \newcommand{\dual}{^*} % duality
 \newcommand{\dissection}{\mathrm{D}} % dissection of a marked surface
 \newcommand{\faces}{\mathcal{F}} % faces of a dissection
 \renewcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
-\newcommandx{\ZC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{zz}}(#1)} % zigzag complex
+\newcommandx{\SC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{sla}}(#1)} % slalom complex
 \newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
 
 % lattices
@@ -260,7 +260,7 @@
 \begin{document}
 
 \begin{abstract}
-We consider three combinatorial models for the support $\tau$-tilting complex of a gentle bound quiver: the accordion complex, the zigzag complex, and the non-kissing complex. We unify these models in the same picture.
+We consider three combinatorial models for the support $\tau$-tilting complex of a gentle bound quiver: the accordion complex, the slalom complex, and the non-kissing complex. We unify these models in the same picture.
 \end{abstract}
 
 %\vspace*{.3cm}
@@ -269,9 +269,9 @@ We consider three combinatorial models for the support $\tau$-tilting complex of
 
 Possible titles, depending on what we want to insist on:
 \begin{enumerate}
-\item Accordion / zigzag / non-kissing / support $\tau$-tilting complexes all coincide for gentle algebras
+\item Accordion / slalom / non-kissing / support $\tau$-tilting complexes all coincide for gentle algebras
 \item Non-kissing and non-crossing complexes for gentle algebras
-\item Combinatorial models for support $\tau$-tilting on gentle algebras: accordion, zigzag and non-kissing complexes
+\item Combinatorial models for support $\tau$-tilting on gentle algebras: accordion, slalom and non-kissing complexes
 \end{enumerate}
 
 
@@ -407,12 +407,12 @@ This operation is illustrated in \fref{fig:flip}.
 	\label{fig:flip}
 \end{figure}
 
-\section{Accordion complex, zigzag complex, and non-crossing complex}
+\section{Accordion complex, slalom complex, and non-crossing complex}
 
 \subsection{Dual dissections of a surface}
 
 \begin{definition}
-A \defn{marked surface}~$\bar\surface \eqdef (\surface,M)$ is an orientable surface~$\surface$ with boundaries, together with a set~$M$ of marked points which can be on the boundary of~$\surface$ or not.
+A \defn{marked surface}~$\bar\surface \eqdef (\surface, M)$ is an orientable surface~$\surface$ with boundaries, together with a set~$M$ of marked points which can be on the boundary of~$\surface$ or not.
 An \defn{arc} on~$\bar\surface$ is a curve on~$\surface$ connecting two marked points of~$M$ and whose interior is disjoint from~$M$ and the boundary of~$\surface$ (note that arcs homotopic to boundary arcs are allowed here).
 As usual, arcs are considered up to homotopy relative to their endpoints in~$\surface \ssm M$.
 Two arcs \defn{cross} when they intersect in their interior.
@@ -477,17 +477,18 @@ The points of~$B$ are called the \defn{blossom points}.
 \vincent{I am tempted to define here the interior points and blossom points and to only consider arcs passing though these points. Still need to think about it.}
 \end{definition}
 
-\subsection{Accordion complex, zigzag complex, and non-crossing complex}
+\subsection{Accordion complex, slalom complex, and non-crossing complex}
 
 Let~$\surface$ be a surface with two sets~$M$ and~$M\dual$ of marked points and two dual cellular dissections~$\dissection$ and~$\dissection\dual$.
 Let~$I$ denote the interior points and $B$ the blossom points.
 
 \begin{definition}
 \label{def:accordion}
-A \defn{$\dissection$-accordion} is an arc~$\gamma$ of~$(\surface, B)$ such that any two arcs of $\dissection$ crossed consecutively by~$\gamma$
-share a marked point with the property that the region bounded by~$\gamma$ and the two arcs around the marked point is homeomorphic to a disk
-(in particular, it contains no punctures).
-\yann{Il faut probablement ajouter des conditions aux bords}
+A \defn{$\dissection$-accordion} is an arc~$\gamma$ of~$(\surface, B)$ such that whenever~$\gamma$ crosses a face~$f$ of~$\dissection$, it crosses two edges of~$f$ that share a marked point of~$v \in M$ in such a way that~$v$ and~$f\dual$ lie on opposite sides of~$\gamma$.
+
+
+% the two edges of~$f$ crossed by~$\gamma$ share a marked point~$v \in M$, and~$v$ and~$f\dual$ are on opposite sides of~$\gamma$ in~$f$.
+% any two arcs of $\dissection$ crossed consecutively by~$\gamma$ share a marked point with the property that the region bounded by~$\gamma$ and the two arcs around the marked point does not contain.
 \end{definition}
 
 \begin{definition}
@@ -497,24 +498,24 @@ The \defn{$\dissection$-accordion complex}~$\AC$ is the simplicial complex of pa
 \end{definition}
 
 \begin{definition}
-\label{def:zigzag}
-A \defn{$\dissection\dual$-zigzag} is an arc~$\alpha$ of~$(\surface, B)$ such that, for each pair of faces~$(f,g) \in \faces(\dissection\dual)$ that~$\alpha$ enters consecutively by crossing~$\beta\in\dissection\dual$,~$\alpha$ cuts the union of the two cells $f$ and $g$ glued along~$\beta$ into two components, one containing the marked point $f\dual$ and the other containing $g\dual$.
+\label{def:slalom}
+A \defn{$\dissection\dual$-slalom} is an arc~$\alpha$ of~$(\surface, B)$ such that, for each pair of faces~$(f,g) \in \faces(\dissection\dual)$ that~$\alpha$ enters consecutively by crossing~$\beta\in\dissection\dual$,~$\alpha$ cuts the union of the two cells $f$ and $g$ glued along~$\beta$ into two components, one containing the marked point $f\dual$ and the other containing $g\dual$.
 \end{definition}
 
 \begin{definition}
-\label{def:zigzagComplex}
-The \defn{$\dissection\dual$-zigzag complex}~$\ZC$ is the simplicial complex of pairwise non-crossing $\dissection$-zigzags.
-\vincent{Reduced zigzag complex.}
+\label{def:slalomComplex}
+The \defn{$\dissection\dual$-slalom complex}~$\SC$ is the simplicial complex of pairwise non-crossing $\dissection$-slaloms.
+\vincent{Reduced slalom complex.}
 \end{definition}
 
-\begin{remark}
-Note that the $\dissection$-accordions do not depend on~$\dissection\dual$, only on~$\dissection$ (and~$M\dual$ which is determined by~$\dissection$ by Proposition~\ref{prop:conditionsDualDissections}).
-Similarly, the $\dissection\dual$-zigzags do not depend on~$\dissection$.
-\end{remark}
+%\begin{remark}
+%Note that the $\dissection$-accordions do not depend on~$\dissection\dual$, only on~$\dissection$ (and~$M\dual$ which is determined by~$\dissection$ by Proposition~\ref{prop:conditionsDualDissections}).
+%Similarly, the $\dissection\dual$-slaloms do not depend on~$\dissection$.
+%\end{remark}
 
 \begin{proposition}
-\label{prop:accordionsZigzags}
-For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$-accordions are precisely the $\dissection\dual$-zigzags and the $\dissection$-accordion complex coincides with the $\dissection\dual$-zigzag complex.
+\label{prop:accordionsSlaloms}
+For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$-accordions are precisely the $\dissection\dual$-slaloms and the $\dissection$-accordion complex coincides with the $\dissection\dual$-slalom complex.
 \end{proposition}
 
 \begin{proof}
@@ -537,7 +538,7 @@ Then~$\alpha$ cuts the cells $m\dual,n\dual$ glued along~$\delta\dual$ into two 
 
 Case 2: The arc~$\alpha$ consecutively crosses two arcs~$\beta$ and~$\gamma$ of~$\dissection$ that share a unique common endpoint, but the region delimited by~$\alpha$,~$\beta$ and~$\gamma$ is not a disk.
 Since the dissection~$\dissection$ is cellular, that region has to contain some marked point~$m\in\dissection\dual$.
-One conclude that~$\alpha$ is not a~$\dissection\dual$-zigzag similarly as in the first case, by considering the component of~$m\dual\setminus\alpha$ that do not contain~$m$.
+One conclude that~$\alpha$ is not a~$\dissection\dual$-slalom similarly as in the first case, by considering the component of~$m\dual\setminus\alpha$ that do not contain~$m$.
 
 Case 3: The arc~$\alpha$ consecutively crosses two arcs~$\beta$ and~$\gamma$ of~$\dissection$ that share two different endpoints, and none of the two regions delimited by~$\alpha$,~$\beta$ and~$\gamma$ is a disk.
 Since the dissection~$\dissection$ is cellular, both regions have to contain a puncture.
@@ -546,23 +547,23 @@ This contradicts the assumption that the dissections~$\dissection$ and~$\dissect
 
 \begin{definition}
 \label{def:noncrossingComplex}
-We call \defn{non-crossing complex} of the pair of dual cellular dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC = \AC = \ZC$.
+We call \defn{non-crossing complex} of the pair of dual cellular dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC = \AC = \SC$.
 \end{definition}
 
 \begin{remark}
-To clearly visualize Proposition~\ref{prop:accordionsZigzags}, we follow the convention to draw the $\dissection$-accordions (resp.~$\dissection\dual$-zigzags) so that they intersect the arcs of~$\dissection$ (resp.~of~$\dissection\dual$) only at the intersection points of the arcs of~$\dissection$ with the arcs of~$\dissection\dual$.
+To clearly visualize Proposition~\ref{prop:accordionsSlaloms}, we follow the convention to draw the $\dissection$-accordions (resp.~$\dissection\dual$-slaloms) so that they intersect the arcs of~$\dissection$ (resp.~of~$\dissection\dual$) only at the intersection points of the arcs of~$\dissection$ with the arcs of~$\dissection\dual$.
 \vincent{That is interior points}
 \end{remark}
 
 \begin{remark}
-The $\dissection$-zigzags and the $\dissection\dual$-accordions are defined dually and also coincide.
+The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dually and also coincide.
 \end{remark}
 
 \begin{remark}
-A quick disclaimer about accordion complexes and zigzag complexes of arbitrary dissections.
+A quick disclaimer about accordion complexes and slalom complexes of arbitrary dissections, non-necessarily cellular.
 As stated in Proposition~\ref{prop:conditionsDualDissections}, a dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
 This prevents to use the definitions given in this section.
-Although its accordion complex (resp.~zigzag complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~zigzag complexes) defined in this paper.
+Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
 \end{remark}
 
@@ -571,7 +572,7 @@ See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the
 In this section, we show that non-kissing complexes and non-crossing complexes actually coincide.
 Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a gentle bound quiver~$\bar Q_{\dissection, \dissection\dual}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 Conversely, any gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$.
-In fact, we show that the accordion, zigzag, and non-kissing complexes can all be pictured in a unique way on the surface.
+In fact, we show that the accordion, slalom, and non-kissing complexes can all be pictured in a unique way on the surface.
 Interestingly, via the correspondence between pairs of dual cellular dissections and gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates to the Koszul duality between the gentle algebras of~$\bar Q$ and~$\bar Q\dual$.
 
 \vincent{This section is just sketched at the moment.}
@@ -606,7 +607,7 @@ For any gentle bound quiver~$\bar Q$ with Koszul dual~$\bar Q\dual$, the surface
 \end{proposition}
 
 
-\subsection{Accordion, zigzag and non-kissing complexe coincide}
+\subsection{Accordion, slalom and non-kissing complexe coincide}
 
 \begin{lemma}
 \label{lem:walks=arcs}
@@ -621,7 +622,7 @@ Non-kissing walks = non-crossing arcs.
 \begin{theorem}
 \label{thm:complexesCoincide}
 \begin{itemize}
-\item For any gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$, therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the zigzag complex~$\ZC[\dissection\dual_{\bar Q}]$.
+\item For any gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, \dissection\dual_{\bar Q}]$, therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the slalom complex~$\SC[\dissection\dual_{\bar Q}]$.
 \item For any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
