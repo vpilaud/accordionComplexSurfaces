@@ -159,8 +159,11 @@
 \newcommand{\edges}{\mathcal{E}} % edges of a dissection
 \newcommand{\faces}{\mathcal{F}} % faces of a dissection
 \renewcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
+\newcommandx{\RAC}[1][1=\dissection]{\mathcal{C}_{\mathrm{acc}}(#1)} % reduced accordion complex
 \newcommandx{\SC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{sla}}(#1)} % slalom complex
+\newcommandx{\RSC}[1][1=\dissection\dual]{\mathcal{C}_{\mathrm{sla}}(#1)} % reduced slalom complex
 \newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
+\newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
 
 % lattices
 \newcommand{\meet}{\wedge} % meet
@@ -483,13 +486,14 @@ Half-arcs.
 
 We consider a set~$B$ of points on the boundary of the surface~$\surface$ such that~$B$ and~$M \cup M\dual$ alternate along the boundary of~$\surface$.
 The points of~$B$ are called the \defn{blossom points}.
-\vincent{I am tempted to define here the interior points and blossom points and to only consider arcs passing though these points. Still need to think about it.}
 \end{definition}
 
 \subsection{Accordion complex, slalom complex, and non-crossing complex}
 Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points.
 Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$\bar\surface$.
 %Let~$I$ denote the interior points and $B$ the blossom points.
+We say that a $B$-arc is \defn{external} if it is homotopic to a boundary arc of~$\surface \ssm B$, and \defn{internal} otherwise.
+Note that no $B$-arc can cross an external $B$-arc.
 
 \begin{definition}
 \label{def:accordion}
@@ -503,7 +507,7 @@ A \defn{$\dissection$-accordion} is a $B$-arc~$\alpha$ of~$\bar\surface$ such th
 \begin{definition}
 \label{def:accordionComplex}
 The \defn{$\dissection$-accordion complex}~$\AC$ is the simplicial complex of pairwise non-crossing $\dissection$-accordions.
-\vincent{Reduced accordion complex.}
+The \defn{reduced $\dissection$-accordion complex}~$\RAC$ is the simplicial complex of pairwise non-crossing internal $\dissection$-accordions.
 \end{definition}
 
 \begin{definition}
@@ -514,7 +518,7 @@ A \defn{$\dissection\dual$-slalom} is a $B$-arc~$\alpha$ of~$\bar\surface$ such 
 \begin{definition}
 \label{def:slalomComplex}
 The \defn{$\dissection\dual$-slalom complex}~$\SC$ is the simplicial complex of pairwise non-crossing $\dissection$-slaloms.
-\vincent{Reduced slalom complex.}
+The \defn{reduced $\dissection\dual$-slalom complex}~$\RAC$ is the simplicial complex of pairwise non-crossing internal $\dissection\dual$-slaloms.
 \end{definition}
 
 %\begin{remark}
@@ -524,7 +528,7 @@ The \defn{$\dissection\dual$-slalom complex}~$\SC$ is the simplicial complex of 
 
 \begin{proposition}
 \label{prop:accordionsSlaloms}
-For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$-accordions are precisely the $\dissection\dual$-slaloms and the $\dissection$-accordion complex coincides with the $\dissection\dual$-slalom complex.
+For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\dissection$-accordions are precisely the $\dissection\dual$-slaloms and the (reduced) $\dissection$-accordion complex coincides with the (reduced) $\dissection\dual$-slalom complex.
 \end{proposition}
 
 \begin{proof}
@@ -557,6 +561,7 @@ This contradicts the assumption that the dissections~$\dissection$ and~$\dissect
 \begin{definition}
 \label{def:noncrossingComplex}
 We call \defn{non-crossing complex} of the pair of dual cellular dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC = \AC = \SC$.
+Similarly, the \defn{reduced non-crossing complex} of~$(\dissection, \dissection\dual)$ is~$\RNCC = \RAC = \RAC$.
 \end{definition}
 
 \begin{remark}
@@ -569,11 +574,12 @@ The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dual
 \end{remark}
 
 \begin{remark}
-A quick disclaimer about accordion complexes and slalom complexes of arbitrary dissections, non-necessarily cellular.
+A quick disclaimer about accordion complexes and slalom complexes of arbitrary dissections.
 As stated in Proposition~\ref{prop:conditionsDualDissections}, a dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
 This prevents to use the definitions given in this section.
 Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
+\vincent{A retravailler}
 \end{remark}
 
 \section{Non-kissing versus non-crossing}
