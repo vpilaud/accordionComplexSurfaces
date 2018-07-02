@@ -491,10 +491,16 @@ The points of~$B$ are called the \defn{blossom points}.
 
 \subsection{Accordion complex, slalom complex, and non-crossing complex}
 Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points.
-Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$\bar\surface$.
+
+\begin{definition}
+A \defn{$B$-curve} is a curve on~$\surface$ which at each end either reaches a point of~$B$ or infinitely circles around and finally reaches a puncture of~$V \sqcup V\dual$.
+Curves are considered up to homotopy relative to their endpoints in~$\surface \ssm (B \sqcup V \sqcup V\dual)$, and curves homotopic to a boundary are not allowed.
+\end{definition}
+
 %Let~$I$ denote the interior points and $B$ the blossom points.
 We say that a $B$-arc is \defn{external} if it is homotopic to a boundary arc of~$\surface \ssm B$, and \defn{internal} otherwise.
 Note that no $B$-arc can cross an external $B$-arc.
+Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$\bar\surface$.
 
 We will always assume that collections of arcs on a surface are in minimal position, in the sense that they cross each other transversaly, and the number of crossings is minimal.
 This is always possible up to homotopy. \pierreguy{Reference?}
@@ -506,9 +512,17 @@ Note that the edges of~$f$ may be on the boundary of the surface.
 A \defn{$\dissection$-accordion} is a $B$-arc~$\alpha$ of~$\bar\surface$ such that whenever~$\alpha$ crosses a face~$f$ of~$\dissection$,
 \begin{itemize}
 \item the two edges~$e_1$ and~$e_2$ of~$f$ crossed by~$\alpha$ are adjacent on the boundary of~$f$,
-\item there exists a marked points~$v$ shared by~$e_1$ and~$e_2$ such that~$v$ and~$f\dual$ lie on opposite sides of~$\alpha$ in~$f$.
+\item $\alpha$, $e_1$ and~$e_2$ bound a disk inside~$f$ that does not contain~$f\dual{}$.
 \end{itemize}
 \end{definition}
+
+\begin{remark}
+In Definition~\ref{def:accordion}, observe that
+\begin{itemize}
+\item the edges of~$e_1$ and~$e_2$ of~$f$ crossed by~$\alpha$ might coincide, see ...
+\item the second condition is automatically satisfied if~$f\dual$ is not a puncture.
+\end{itemize}
+\end{remark}
 
 \begin{definition}
 \label{def:accordionComplex}
