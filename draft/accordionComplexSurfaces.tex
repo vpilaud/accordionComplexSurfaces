@@ -419,9 +419,18 @@ This operation is illustrated in \fref{fig:flip}.
 
 \begin{definition}
 A \defn{marked surface}~$\bar\surface \eqdef (\surface, M)$ is an orientable surface~$\surface$ with boundaries, together with a set~$M$ of marked points which can be on the boundary of~$\surface$ or not.
-For~$V \subset \surface$, a \defn{$V$-arc} on~$\bar\surface$ is a curve on~$\surface$ connecting two points of~$V$ and whose interior is disjoint from~$M$ and the boundary of~$\surface$.
-As usual, arcs are considered up to homotopy relative to their endpoints in~$\surface \ssm M$, and curves homotopic to a boundary are not allowed.
-Two arcs \defn{cross} when they intersect in~their~interior.
+For~$V \subset \surface$,
+\begin{itemize}
+\item a \defn{$V$-arc} on~$\bar\surface$ is a curve on~$\surface$ connecting two points of~$V$ and whose interior is disjoint from~$M$ and the boundary of~$\surface$.
+\item a \defn{$V$-curve} on~$\bar\surface$ is a curve on~$\surface$ which at each end either reaches a point of~$V$ or infinitely circles around and finally reaches a puncture of~$M$.
+\end{itemize}
+As usual, curves and arcs are considered up to homotopy relative to their endpoints in~$\surface \ssm M$, and curves homotopic to a boundary are not allowed.
+\end{definition}
+
+\begin{definition}
+Two curves or arcs \defn{cross} when they intersect in~their~interior.
+We will always assume that collections of arcs on a surface are in minimal position, in the sense that they cross each other transversaly, and the number of crossings is minimal.
+This is always possible up to homotopy. \pierreguy{Reference?}
 \end{definition}
 
 \begin{definition}
@@ -491,26 +500,25 @@ The points of~$B$ are called the \defn{blossom points}.
 
 \subsection{Accordion complex, slalom complex, and non-crossing complex}
 Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points.
-
-\begin{definition}
-A \defn{$B$-curve} is a curve on~$\surface$ which at each end either reaches a point of~$B$ or infinitely circles around and finally reaches a puncture of~$V \sqcup V\dual$.
-Curves are considered up to homotopy relative to their endpoints in~$\surface \ssm (B \sqcup V \sqcup V\dual)$, and curves homotopic to a boundary are not allowed.
-\end{definition}
-
+%
+%\begin{definition}
+%A \defn{$B$-curve} is a curve on~$\surface$ which at each end either reaches a point of~$B$ or infinitely circles around and finally reaches a puncture of~$V \sqcup V\dual$.
+%Curves are considered up to homotopy relative to their endpoints in~$\surface \ssm (B \sqcup V \sqcup V\dual)$, and curves homotopic to a boundary are not allowed.
+%\end{definition}
+%
 %Let~$I$ denote the interior points and $B$ the blossom points.
-We say that a $B$-arc is \defn{external} if it is homotopic to a boundary arc of~$\surface \ssm B$, and \defn{internal} otherwise.
-Note that no $B$-arc can cross an external $B$-arc.
+We say that a $B$-curve is \defn{external} if it is homotopic to a boundary arc of~$\surface \ssm B$, and \defn{internal} otherwise.
+Note that no $B$-curve can cross an external $B$-arc.
 Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$\bar\surface$.
 
-We will always assume that collections of arcs on a surface are in minimal position, in the sense that they cross each other transversaly, and the number of crossings is minimal.
-This is always possible up to homotopy. \pierreguy{Reference?}
-With this assumption, each segment of a~$B$-arc that lies in a face~$f$ of the dissection~$\dissection$ has two intersection points (called crossings) with the edges of~$f$.
-Note that the edges of~$f$ may be on the boundary of the surface.
+%With this assumption, each segment of a~$B$-arc that lies in a face~$f$ of the dissection~$\dissection$ has two intersection points (called crossings) with the edges of~$f$.
+%Note that the edges of~$f$ may be on the boundary of the surface.
 
 \begin{definition}
 \label{def:accordion}
-A \defn{$\dissection$-accordion} is a $B$-arc~$\alpha$ of~$\bar\surface$ such that whenever~$\alpha$ crosses a face~$f$ of~$\dissection$,
+A \defn{$\dissection$-accordion} is a $B$-curve~$\alpha$ of~$\bar\surface$ such that whenever~$\alpha$ meets a face~$f$~of~$\dissection$,
 \begin{itemize}
+\item it enters crossing an edge~$e_1$ and leaves crossing an edge~$e_2$ (in other words, $\alpha$ is not allowed to circle around~$f\dual$ when~$f\dual$ is a puncture),
 \item the two edges~$e_1$ and~$e_2$ of~$f$ crossed by~$\alpha$ are adjacent on the boundary of~$f$,
 \item $\alpha$, $e_1$ and~$e_2$ bound a disk inside~$f$ that does not contain~$f\dual{}$.
 \end{itemize}
