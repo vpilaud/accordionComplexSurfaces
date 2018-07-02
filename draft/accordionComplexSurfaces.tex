@@ -595,7 +595,8 @@ Case 3: The arc~$\alpha$ consecutively crosses two arcs~$\beta$ and~$\gamma$ of~
 Since the dissection~$\dissection$ is cellular, both regions have to contain a puncture.
 This contradicts the assumption that the dissections~$\dissection$ and~$\dissection\dual$ are dual to each other.
 
-Case 4: If $\alpha$ stays inside a blue cell, then it rolls around a $\dissection\dual$ puncture. There is a $\dissection\dual$-arc $\beta$ ending in that puncture. When $\alpha$ crosses $\beta$, the puncture stays on the same side of $\alpha$, hence $\alpha$ is not a $\dissection\dual$-slalom.
+Case 4: If~$\alpha$ stays inside a blue cell, then it rolls around a~$\dissection\dual$ puncture.
+There is a~$\dissection\dual$-arc~$\beta$ ending in that puncture. When~$\alpha$ crosses~$\beta$, the puncture stays on the same side of~$\alpha$, hence~$\alpha$ is not a~$\dissection\dual$-slalom.
 \end{proof}
 
 \begin{definition}
@@ -674,6 +675,12 @@ Let~$\dissection$ and~$\dissection\dual$ be two dual cellular dissections of a m
 The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Koszul dual to each other.
 \end{proposition}
 
+\begin{proof}
+ The duality gives a bijection~$v\in (Q_\dissection)_0\mapsto v\dual\in (Q_{\dissection\dual})_0$, and induces a bijection~$\alpha\in (Q_\dissection)_1\mapsto \alpha\dual\in (Q_{\dissection\dual})_1$ with~$s(\alpha\dual)=s(\alpha)\dual$ and~$t(\alpha\dual)=t(\alpha)\dual$.
+ Moreover, for any two composable arrows~$\alpha,\beta\in(Q_\dissection)_0$, we have~$\alpha\beta\in I_\dissection$ if and only if~$s(\alpha),t(\alpha),t(\beta)$ are three consecutive edges of a~$\dissection$-cell~$f$, if and only if~$s(\alpha)\dual,t(\alpha)\dual,t(\beta)\dual$ are three consecutive arcs in~$\dissection\dual$ ending in~$f\dual$, if and only if~$\beta\dual\alpha\dual\notin I_{\dissection\dual}$.
+\end{proof}
+
+
 \subsection{The surface of a quiver}
 
 We now associate a surface to a locally gentle bound quiver.
@@ -706,12 +713,12 @@ For any gentle bound quiver~$\bar Q$ with Koszul dual~$\bar Q\koszul$, the surfa
 
 \begin{lemma}
 \label{lem:walks=arcs}
-Walks of $\bar Q$ are precisely arcs between blossom points.
+Walks of~$\bar Q$ are precisely~$\dissection$ accordions.
 \end{lemma}
 
 \begin{lemma}
 \label{lem:nonKissing=nonCrossing}
-Non-kissing walks = non-crossing $\dissection$-accordion curves = non-crossing $\dissection\dual$-slalom curves.
+Non-kissing walks = non-crossing $\dissection$-accordion curves.
 \end{lemma}
 
 \begin{theorem}
@@ -721,6 +728,12 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves = non-crossing $
 \item For any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
+
+\section{Representation-theoretic interpretation}
+
+\subsection{$\dissection$-accordions and string modules}
+
+\subsection{$\dissection\dual$-slaloms and minimal projective presentations}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
