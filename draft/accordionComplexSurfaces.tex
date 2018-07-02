@@ -687,17 +687,22 @@ We now associate a surface to a locally gentle bound quiver.
 
 \begin{definition}
 \label{def:surfaceQuiver}
-The surface~$\surface(\bar Q)$ of a locally gentle bound quiver~$\bar Q = (Q,I)$ is the orientable surface obtained from the blossoming quiver~$\bar Q\blossom$ as follows:
-\begin{itemize}
-\item for each arrow~$\alpha \in Q_1\blossom$, consider a lozange~$L(\alpha)$ with four (oriented) sides~$\Enrs{\alpha} = [s(\alpha), v]$, $\Enrt{\alpha} = [v, t(\alpha)]$ (colored green) and~$\Ers{\alpha} = [s(\alpha), v\dual]$ and~$\Ert{\alpha} = [v\dual, t(\alpha)]$ (colored red) as follows:
+The surface~$\surface(\bar Q)$ of a locally gentle bound quiver~$\bar Q = (Q,I)$ is the surface obtained from the blossoming quiver~$\bar Q\blossom$ as follows:
+\begin{enumerate}[(i)]
+\item for each arrow~$\alpha \in Q_1\blossom$, consider a lozange~$L(\alpha)$ with four (oriented) sides~$\Enrs{\alpha} = [s(\alpha), v(\alpha)]$, $\Enrt{\alpha} = [v(\alpha), t(\alpha)]$ (colored green) and~$\Ers{\alpha} = [s(\alpha), v\dual(\alpha)]$ and~$\Ert{\alpha} = [v\dual(\alpha), t(\alpha)]$ (colored red) as follows:
 \vincent{Figure}
 \item for any~$\alpha, \beta \in Q_1\blossom$ with~$t(\alpha) = s(\alpha)$, proceed to the following identifications:
     \begin{itemize}
     \item if~$\alpha\beta \in I$, then glue~$\Ert{\alpha}$ with~$\Ers{\beta}$,
     \item if~$\alpha\beta \notin I$, then glue~$\Enrt{\alpha}$ with~$\Enrs{\beta}$.
     \end{itemize}
+\end{enumerate}
+This defines an orientable surface~$\surface(\bar Q)$ with boundaries, endowed with two disjoint sets~$V_{\bar Q}$ and~$V\dual_{\bar Q}$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ defined as follows:
+\begin{itemize}
+\item $V_{\bar Q}$ is the set of points~$v(\alpha)$ for~$\alpha \in Q_1\blossom$ after the identifications given by~(ii),
+\item $\dissection_{\bar Q}$ is the $V_{\bar Q}$-dissection with one arc for each vertex~$p \in Q_0$ obtained by concataining the sides~$\Ert{\alpha} = \Ers{\beta}$ and~$\Ert{\alpha'} = \Ers{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \in I$ and~$\alpha'\beta' \in I$.
+\item $V\dual_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ are defined dually.
 \end{itemize}
-The construction also automatically defines two dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection_{\bar Q}}\dual$ of the surface~$\surface_{\bar Q}$.
 \end{definition}
 
 \begin{example}
