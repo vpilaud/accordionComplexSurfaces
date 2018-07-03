@@ -822,12 +822,48 @@ Otherwise, if~$\omega$ contains several occurrences of~$\alpha^\pm$, only one oc
 \end{definition}
 
 \begin{definition}
-Consider an arrow~$\alpha \in Q\blossom_1$ and any two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at an occurrence of~$\alpha^\pm$.
-Let~$\sigma$ denote their maximal common substring containing that occurrence of~$\alpha$.
-Since~$\mu_\star \ne \nu_\star$, their common substring~$\sigma$ is strict, so that~$\mu_\star$ and~$\nu_\star$ split at least at one endpoint of~$\sigma$.
-We define the \defn{countercurrent order at~$\alpha$} by~$\mu_\star \prec_\alpha \nu_\star$ when~$\mu_\star$ enters and/or exits~$\sigma$ in the direction pointed by~$\alpha$, while~$\nu_\star$ enters and/or exits~$\sigma$ in the direction opposite to~$\alpha$.
+For any arrow~$\alpha \in Q\blossom_1$ and any two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at an occurrence of~$\alpha^\pm$,
+let~$\sigma$ denote their maximal common substring containing that occurrence of~$\alpha$.
+Since~$\mu_\star \ne \nu_\star$, this common substring~$\sigma$ is strict, so~$\mu_\star$ and~$\nu_\star$ split at one endpoint of~$\sigma$.
+The \defn{countercurrent order at~$\alpha$} is defined by~$\mu_\star \prec_\alpha \nu_\star$ when~$\mu_\star$ enters and/or exits~$\sigma$ in the direction pointed by~$\alpha$, while~$\nu_\star$ enters and/or exits~$\sigma$ in the direction opposite to~$\alpha$.
 \end{definition}
-\pierreguy{I need to modify these two definitions.}
+\pierreguy{Add a picture here?}
+
+\begin{remark}
+\label{rema:countercurrentOrderOnSurface}
+Using Theorem \ref{thm:complexesCoincide}, we can translate the definition of the countercurrent order~$\prec_\alpha$ to the language of~$\dissection$-accordions.
+An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point $v$ between two arcs of~$\dissection$.
+Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions~$\gamma$ and~$\delta$ passing in front of this angle.
+Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$ does.
+\pierreguy{Should we prove this?}
+\pierreguy{Add picture.}
+\end{remark}
+
+
+For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, we denote by~$F_\alpha$ the set of walks of~$F$ marked at an occurence of~$\alpha^\pm$.
+
+\begin{lemma}
+\label{lemm:countercurrentOrderIsTotal}
+For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercurrent order~$\prec_\alpha$ defines a total order on~$F_{\alpha}$.
+\end{lemma}
+\begin{proof}
+ The proof of \cite[Lemma 2.21]{PaluPilaudPlamondon} applies here.
+\end{proof}
+
+\begin{lemma}
+\label{lemm:facesHaveMaximalElement}
+For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
+\end{lemma}
+\begin{proof}
+ We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
+ 
+ {\it Combinatorial proof.}
+ \pierreguy{Yann has the combinatorial proof.}
+ 
+ {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+\end{proof}
+
+
 
 \subsection{Purity of the non-crossing and non-kissing complexes}
 
