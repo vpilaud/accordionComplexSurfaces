@@ -2189,21 +2189,24 @@ Observe that this straight walk is always the minimal marked walk of~$F_\alpha$ 
 On the other hand, \textcolor{red}{ the proposition below shows that} we can consider the maximal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$.
 Intuitively, it is the most countercurrent walk passing through~$\alpha$ with respect to the direction of~$\alpha$.
 \begin{proposition}\label{prop: nk facets are finite}
-\textcolor{red}{The facets of the non-kissing complex have finite cardinality.}
+\textcolor{red}{The faces of the non-kissing complex have finite cardinality.}
 \end{proposition}
 
 \begin{proof}\textcolor{red}{
-Let~$F$ be a non-kissing facet.
+Let~$F$ be a non-kissing face.
 Since the quiver~$Q$ has a finite number of arrows, it is enough to prove that each~$F_\alpha$ is finite.
 Assume, by means of contradiction, that there is some~$\alpha\in Q_1$ with~$F_\alpha$ infinite.
 Call ``junction'' a marked occurrence of an arrow~$\beta$ in some~$\omega_\star, \omega'_\star\in F_\alpha$, such that~$\omega$ and~$\omega'$ coincide from their marked occurrence of~$\alpha$ up to~$\beta$ and differ after~$\beta$.
 Since~$F_\alpha$ is infinite, there is an infinite number of junctions.
 Since~$Q_1$ is finite, there are two junctions with the same underlying arrow~$\beta$ and such that either~$\alpha$ points towards both junctions or~$\alpha$ points to the direction opposite to both junctions.
 This shows that there exist three marked walks~$\nu_\star\prec_\alpha \mu_\star\prec_\alpha \lambda_\star\in F_\alpha$ such that~$\lambda, \mu$ and $\nu$ coincide from their marked occurrence of~$\alpha$ up to some marked occurrence~$\beta_1$ of~$\beta$, after which~$\lambda$ differs from~$\mu$ and~$\nu$ but~$\mu$ and~$\nu$ coincide up to some other occurrence~$\beta_2$ of~$\beta$, and then differ (see Figure~\ref{fig: nk facets are finite}).
-Let~$\sigma$ be the longest common substring of~$\lambda$ and~$\nu$ containing~$\beta_1$ and~$\beta_2$ respectively.
+Let~$\sigma_1$ and~$\sigma_2$ be the longest common substrings of~$\lambda$ and~$\nu$ containing~$\beta_1$ and~$\beta_2$ respectively.
+Note that, since~$\nu$ is finite,~$\sigma_2$ cannot contain~$\beta_1$; in particular,~$\sigma_2$ is contained in~$\mu$.
 If~$\sigma$ is on top of~$\nu$, then it is at the bottom of~$\lambda$, and~$\lambda$ kisses~$\nu$, which is absurd.
-Otherwise, the subword~$\sigma$ of~$\mu$ containing~$\beta_2$ is at the bottom of~$\mu$ while the subword~$\sigma$ of~$\mu$ containing~$\beta_1$ is at the top of~$\mu$.
-Hence,~$\mu$ kisses itself, which is absurd.}
+Otherwise, the subword~$\sigma$ of~$\mu$ containing~$\beta_2$ is at the bottom of~$\mu$ and $\lambda$ constains a substring of the form~$\gamma^{-1}\sigma_1$, where~$\gamma$ is an arrow of~$Q$.
+If~$\mu$ entirely contains~$\gamma^{-1}\sigma_1$, then~$\sigma_1$ is at the top of~$\mu$.
+Hence,~$\mu$ kisses itself, which is absurd.
+Therefore,~$\gamma^{-1}\sigma_1$ is not entirely contained in~$\mu$.}
 \end{proof}
 
 \begin{definition}
