@@ -790,6 +790,63 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 \end{itemize}
 \end{theorem}
 
+
+\section{Properties of the non-crossing and non-kissing complexes}
+
+\subsection{The countercurrent order}
+The countercurrent order was introduced in \cite{PaluPilaudPlamondon} for gentle algebras.  We now adapt it to locally gentle algebras.
+
+\begin{definition}
+A \defn{marked walk}~$\omega_\star$ is a walk~$\omega$ together with a marked occurence of an arrow~$\alpha^{\pm}$ in~$\omega$.
+In the case where~$\omega$ is an infinite straight walk (so~$\omega$ is a cycle which repeats infinitely on both sides), we consider that all marked occurences of an arrow~$\alpha^\pm$ are equal.
+Otherwise, if~$\omega$ contains several occurrences of~$\alpha^\pm$, only one occurrence is marked.
+\end{definition}
+
+\begin{definition}
+Consider an arrow~$\alpha \in Q\blossom_1$ and any two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at an occurrence of~$\alpha^\pm$.
+Let~$\sigma$ denote their maximal common substring containing that occurrence of~$\alpha$.
+Since~$\mu_\star \ne \nu_\star$, their common substring~$\sigma$ is strict, so that~$\mu_\star$ and~$\nu_\star$ split at least at one endpoint of~$\sigma$.
+We define the \defn{countercurrent order at~$\alpha$} by~$\mu_\star \prec_\alpha \nu_\star$ when~$\mu_\star$ enters and/or exits~$\sigma$ in the direction pointed by~$\alpha$, while~$\nu_\star$ enters and/or exits~$\sigma$ in the direction opposite to~$\alpha$.
+\end{definition}
+\pierreguy{I need to modify these two definitions.}
+
+\subsection{Purity of the non-crossing and non-kissing complexes}
+
+A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
+
+\begin{proposition}
+\label{prop:purity}
+ The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$|Q_0| + \Delta$, where~$\Delta$ is the number of blossoming vertices of~$Q\blossom$ divided by two.
+\end{proposition}
+
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
+
+\begin{lemma}
+\label{lemm:facetsAreFinite}
+Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ is contained in a finite maximal face.
+\end{lemma}
+\begin{proof}
+ We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ 
+ {\it Combinatorial proof.}
+ \pierreguy{Yann has the combinatorial proof.}
+ 
+ {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface(\bar Q)$.
+ Thus~$F$ can be viewed as a partial tagged triangulation of~$\surface(\bar Q)$, by letting the~$\dissection$-accordions circling a puncture in (say) clockwise order be seen as ``notched'' arcs to said puncture, and the ones circling it in counter-clockwise orientation be ``un-notched'' arcs.
+ It is known (see, for instance, \cite{FominShapiroThurston}) that any such partial tagged triangulation can be embedded into a full triangulation, and that triangulations contain a finite number of arcs.
+ Thus~$F$ is finite, and is contained in a finite maximal face.
+\end{proof}
+
+
+ 
+
+
+\subsection{Thinness of the non-crossing and non-kissing complexes, mutation}
+
+
+
 \section{Representation-theoretic interpretation}
 
 \subsection{$\dissection$-accordions and string modules}
