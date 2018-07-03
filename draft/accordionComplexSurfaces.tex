@@ -355,7 +355,7 @@ We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and
 
 \begin{definition}
 \label{def:walk}
-A \defn{walk} of a locally gentle quiver~$\bar Q$ is a maximal string of its blossoming quiver~$\bar Q \blossom$, meaning that at each end it either reaches a blossom vertex of~$\bar Q \blossom$ or enters an infinite cycle.
+A \defn{walk} of a locally gentle quiver~$\bar Q$ is a maximal string of its blossoming quiver~$\bar Q \blossom$, meaning that at each end it either reaches a blossom vertex of~$\bar Q \blossom$ or enters an infinite oriented cycle.
 We denote by~$\walks(\bar Q)$ the set of all walks on~$\bar Q$.
 As for strings, we implicitly identify the two inverse walks~$\omega$ and~$\omega^{-1}$, and we let~$\walks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \walks(\bar Q)}$ denote the set of \defn{undirected walks} of~$\bar Q$.
 \end{definition}
@@ -747,6 +747,12 @@ This construction is illustrated on \fref{fig:examplesSurfaces}.
 	\caption{The surface~$\surface_{\bar Q}$ for the first four quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded (the second surface has no boundary, it is just a sphere).}
 	\label{fig:examplesSurfaces}
 \end{figure}
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{examplesSurfaces2}}
+	\caption{The surface~$\surface_{\bar Q}$ for the last two quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded. The first surface is a cylinder, the second one is a torus with a hole.}
+	\label{fig:examplesSurfaces2}
+\end{figure}
 %
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
 Note that we could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
@@ -819,12 +825,52 @@ Otherwise, if~$\omega$ contains several occurrences of~$\alpha^\pm$, only one oc
 \end{definition}
 
 \begin{definition}
-Consider an arrow~$\alpha \in Q\blossom_1$ and any two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at an occurrence of~$\alpha^\pm$.
-Let~$\sigma$ denote their maximal common substring containing that occurrence of~$\alpha$.
-Since~$\mu_\star \ne \nu_\star$, their common substring~$\sigma$ is strict, so that~$\mu_\star$ and~$\nu_\star$ split at least at one endpoint of~$\sigma$.
-We define the \defn{countercurrent order at~$\alpha$} by~$\mu_\star \prec_\alpha \nu_\star$ when~$\mu_\star$ enters and/or exits~$\sigma$ in the direction pointed by~$\alpha$, while~$\nu_\star$ enters and/or exits~$\sigma$ in the direction opposite to~$\alpha$.
+For any arrow~$\alpha \in Q\blossom_1$ and any two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at an occurrence of~$\alpha^\pm$,
+let~$\sigma$ denote their maximal common substring containing that occurrence of~$\alpha$.
+Since~$\mu_\star \ne \nu_\star$, this common substring~$\sigma$ is strict, so~$\mu_\star$ and~$\nu_\star$ split at one endpoint of~$\sigma$.
+The \defn{countercurrent order at~$\alpha$} is defined by~$\mu_\star \prec_\alpha \nu_\star$ when~$\mu_\star$ enters and/or exits~$\sigma$ in the direction pointed by~$\alpha$, while~$\nu_\star$ enters and/or exits~$\sigma$ in the direction opposite to~$\alpha$.
 \end{definition}
-\pierreguy{I need to modify these two definitions.}
+\pierreguy{Add a picture here?}
+
+\begin{remark}
+\label{rema:countercurrentOrderOnSurface}
+Using Theorem \ref{thm:complexesCoincide}, we can translate the definition of the countercurrent order~$\prec_\alpha$ to the language of~$\dissection$-accordions.
+An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point $v$ between two arcs of~$\dissection$.
+Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions~$\gamma$ and~$\delta$ passing in front of this angle.
+Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$ does.
+\pierreguy{Should we prove this?}
+\pierreguy{Add picture.}
+\end{remark}
+
+
+For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, we denote by~$F_\alpha$ the set of walks of~$F$ marked at an occurence of~$\alpha^\pm$.
+
+\begin{lemma}
+\label{lemm:countercurrentOrderIsTotal}
+For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercurrent order~$\prec_\alpha$ defines a total order on~$F_{\alpha}$.
+\end{lemma}
+\begin{proof}
+ The proof of \cite[Lemma 2.21]{PaluPilaudPlamondon} applies here.
+\end{proof}
+
+\begin{lemma}
+\label{lemm:facesHaveMaximalElement}
+For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
+\end{lemma}
+\begin{proof}
+ We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
+ 
+ {\it Combinatorial proof.}
+ \pierreguy{Yann has the combinatorial proof.}
+ 
+ {\it Geometric proof.} View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ The arrow~$\alpha$ then corresponds to an angle in~$\dissection$.  
+ 
+ The result is trivial if the set~$F_\alpha$ is finite; assume, therefore, that it is infinite.
+ 
+\end{proof}
+
+
 
 \subsection{Purity of the non-crossing and non-kissing complexes}
 
