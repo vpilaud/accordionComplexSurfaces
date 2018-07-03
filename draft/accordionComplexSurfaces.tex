@@ -710,18 +710,23 @@ The surface~$\surface(\bar Q)$ of a locally gentle bound quiver~$\bar Q = (Q,I)$
 placed as follows:
 
 \centerline{
-\begin{tikzpicture}[scale=2, thick]
-	\node (s) at (-1,0) {$s(\alpha)$};
-	\node (t) at (1,0) {$t(\alpha)$};
-	\node (v) at (0,1) {$\green v(\alpha)$};
-	\node (vd) at (0,-1) {$\red v\dual(\alpha)$};
-	\draw[color=black, ->] (s) -> (t) node[midway, above] {$\alpha$};
+\begin{tikzpicture}[
+	scale=2,
+	thick,
+	decoration={markings, mark=at position 0.5 with {\arrow{>}}},
+	roundNode/.style={circle, fill=black, inner sep=2pt, outer sep=2pt}
+	]
+	\node[roundNode, label=left:{$s(\alpha)$}] (s) at (-1,0) {};
+	\node[roundNode, label=right:{$t(\alpha)$}] (t) at (1,0) {};
+	\node[roundNode, fill=green, label=above:{$\green v(\alpha)$}] (v) at (0,1) {};
+	\node[roundNode, fill=red, label=below:{$\red v\dual(\alpha)$}] (vd) at (0,-1) {};
+	\draw[color=black, postaction={decorate}] (s) -> (t) node[midway, above] {$\alpha$};
 	\pic [draw, angle radius=.7cm] {angle = s--t--vd};
 	\pic [draw, angle radius=.7cm] {angle = vd--s--t};
-	\draw[color=green, ->] (v) -> (s) node[midway, above left] {$\green \Enrs{\alpha}$};
-	\draw[color=green, ->] (v) -> (t) node[midway, above right] {$\green \Enrt{\alpha}$};
-	\draw[color=red, ->] (vd) -> (s) node[midway, below left] {$\red \Ers{\alpha}$};
-	\draw[color=red, ->] (vd) -> (t) node[midway, below right] {$\red \Ert{\alpha}$};
+	\draw[color=green, postaction={decorate}] (v) -> (s) node[midway, above left] {$\green \Enrs{\alpha}$};
+	\draw[color=green, postaction={decorate}] (v) -> (t) node[midway, above right] {$\green \Enrt{\alpha}$};
+	\draw[color=red, postaction={decorate}] (vd) -> (s) node[midway, below left] {$\red \Ers{\alpha}$};
+	\draw[color=red, postaction={decorate}] (vd) -> (t) node[midway, below right] {$\red \Ert{\alpha}$};
 \end{tikzpicture}
 }
 
@@ -731,19 +736,26 @@ placed as follows:
     \item if~$\alpha\beta \notin I$, then glue~$\Enrt{\alpha}$ with~$\Enrs{\beta}$.
     \end{itemize}
 \end{enumerate}
+The orientations on the edges are only use to perform the identifications and can be immediately forgotten.
 \end{definition}
 
 This construction is illustrated on \fref{fig:examplesSurfaces}.
-
+%
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{examplesSurfaces}}
 	\caption{The surface~$\surface_{\bar Q}$ for two quivers~$\bar Q$ of \fref{fig:quivers}.}
 	\label{fig:examplesSurfaces}
 \end{figure}
-
+%
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
-This surface is actually endowed with two disjoint sets~$V_{\bar Q}$ and~${V_{\bar Q}}\dual$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~${\dissection_{\bar Q}}\dual$ defined as follows.
+Note that we could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
+\begin{itemize}
+\item 
+\item
+\end{itemize}
+\vincent{TODO}
+The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows with two disjoint sets~$V_{\bar Q}$ and~${V_{\bar Q}}\dual$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~${\dissection_{\bar Q}}\dual$ defined as follows.
 
 \begin{definition}
 \label{def:dissectionQuiver}
@@ -758,10 +770,13 @@ The set~${V_{\bar Q}}\dual$ and the ${V_{\bar Q}}\dual$-dissection~${\dissection
 \begin{remark}
 Observe that
 \begin{itemize}
-\item $V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$,
+\item $V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$.
 \item $\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
+\item 
 \end{itemize}
+\vincent{TODO}
 A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
+Finally, observe that we could also have constructed the surface
 \end{remark}
 
 \begin{example}
