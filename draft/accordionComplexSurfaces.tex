@@ -355,7 +355,7 @@ We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and
 
 \begin{definition}
 \label{def:walk}
-A \defn{walk} of a locally gentle quiver~$\bar Q$ is a maximal string of its blossoming quiver~$\bar Q \blossom$, meaning that at each end it either reaches a blossom vertex of~$\bar Q \blossom$ or enters an infinite cycle.
+A \defn{walk} of a locally gentle quiver~$\bar Q$ is a maximal string of its blossoming quiver~$\bar Q \blossom$, meaning that at each end it either reaches a blossom vertex of~$\bar Q \blossom$ or enters an infinite oriented cycle.
 We denote by~$\walks(\bar Q)$ the set of all walks on~$\bar Q$.
 As for strings, we implicitly identify the two inverse walks~$\omega$ and~$\omega^{-1}$, and we let~$\walks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \walks(\bar Q)}$ denote the set of \defn{undirected walks} of~$\bar Q$.
 \end{definition}
@@ -863,7 +863,11 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\al
  {\it Combinatorial proof.}
  \pierreguy{Yann has the combinatorial proof.}
  
- {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ {\it Geometric proof.} View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ The arrow~$\alpha$ then corresponds to an angle in~$\dissection$.  
+ 
+ The result is trivial if the set~$F_\alpha$ is finite; assume, therefore, that it is infinite.
+ 
 \end{proof}
 
 
