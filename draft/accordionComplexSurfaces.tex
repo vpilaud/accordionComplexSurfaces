@@ -92,6 +92,8 @@
 \definecolor{darkblue}{rgb}{0,0,0.7} % darkblue color
 \definecolor{green}{RGB}{57,181,74} % green color
 \definecolor{violet}{RGB}{147,39,143} % violet color
+\newcommand{\red}{\color{red}} % red command
+\newcommand{\green}{\color{green}} % green command
 \newcommand{\darkblue}{\color{darkblue}} % darkblue command
 \newcommand{\defn}[1]{\textsl{\darkblue #1}} % emphasis of a definition
 \newcommand{\para}[1]{\medskip\noindent\textbf{#1.}} % paragraph
@@ -260,11 +262,6 @@
 \email{pierre-guy.plamondon@math.u-psud.fr}
 \urladdr{\url{https://www.math.u-psud.fr/~plamondon/}}
 
-\author{Sibylle Schroll}
-\address[Sibylle Schroll]{}
-\email{schroll@leicester.ac.uk}
-\urladdr{\url{}}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -313,7 +310,15 @@ The \defn{blossoming quiver} of a locally gentle bound quiver~$\bar Q$ is the co
 The vertices of~$Q\blossom_0 \ssm Q_0$ are called \defn{blossom vertices}, and the arrows~$Q\blossom_1 \ssm Q_1$ are called \defn{blossom arrows}.
 \end{definition}
 
-\vincent{Examples}
+Examples are represented on \fref{fig:quivers}.
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.4]{quivers}}
+	\caption{Some locally gentle quivers and their blossoming quivers. Initial vertices are solid and labeled while blossom vertices are hollow, and initial arcs are bold while blossom arcs are thin.}
+	\label{fig:quivers}
+\end{figure}
+
 \vincent{Should we introduce Koszul duality here and say what it does on quivers?}
 
 \subsection{Strings and walks}
@@ -667,7 +672,16 @@ The \defn{Koszul dual} of a locally gentle bound quiver~$\bar Q = (Q,I)$ is the 
 \end{itemize}
 \end{definition}
 \pierreguy{Justify this definition.}
-Note that~$\bar Q\koszul$ is gentle, and that~$(\bar Q\koszul)\koszul = \bar Q$.
+Note that~$\bar Q\koszul$ is gentle, and that koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
+Examples are represented on \fref{fig:koszulQuivers}.
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.4]{koszulQuivers}}
+	\caption{The Koszul duals of the (blossoming) quivers of \fref{fig:quivers}.}
+	\label{fig:koszulQuivers}
+\end{figure}
+
 
 \begin{proposition}
 \label{prop:dualityKoszul1}
@@ -689,24 +703,66 @@ We now associate a surface to a locally gentle bound quiver.
 \label{def:surfaceQuiver}
 The surface~$\surface(\bar Q)$ of a locally gentle bound quiver~$\bar Q = (Q,I)$ is the surface obtained from the blossoming quiver~$\bar Q\blossom$ as follows:
 \begin{enumerate}[(i)]
-\item for each arrow~$\alpha \in Q_1\blossom$, consider a lozange~$L(\alpha)$ with four (oriented) sides~$\Enrs{\alpha} = [s(\alpha), v(\alpha)]$, $\Enrt{\alpha} = [v(\alpha), t(\alpha)]$ (colored green) and~$\Ers{\alpha} = [s(\alpha), v\dual(\alpha)]$ and~$\Ert{\alpha} = [v\dual(\alpha), t(\alpha)]$ (colored red) as follows:
-\vincent{Figure}
-\item for any~$\alpha, \beta \in Q_1\blossom$ with~$t(\alpha) = s(\alpha)$, proceed to the following identifications:
+\item for each arrow~$\alpha \in Q_1\blossom$, consider a lozange~$L(\alpha)$ with four (oriented) sides
+\begin{alignat*}{2}
+& \Enrs{\alpha} = [v(\alpha), s(\alpha)] \qquad & \Enrt{\alpha} = [v(\alpha), t(\alpha)] \qquad & \text{(colored green)} \\
+\text{and} \qquad & \Ers{\alpha} = [v\dual(\alpha), s(\alpha)] \qquad & \Ert{\alpha} = [v\dual(\alpha), t(\alpha)] \qquad & \text{(colored red)}
+\end{alignat*}
+placed as follows:
+
+\centerline{
+\begin{tikzpicture}[scale=2, thick]
+	\node (s) at (-1,0) {$s(\alpha)$};
+	\node (t) at (1,0) {$t(\alpha)$};
+	\node (v) at (0,1) {$\green v(\alpha)$};
+	\node (vd) at (0,-1) {$\red v\dual(\alpha)$};
+	\draw[color=black, ->] (s) -> (t) node[midway, above] {$\alpha$};
+	\pic [draw, angle radius=.7cm] {angle = s--t--vd};
+	\pic [draw, angle radius=.7cm] {angle = vd--s--t};
+	\draw[color=green, ->] (v) -> (s) node[midway, above left] {$\green \Enrs{\alpha}$};
+	\draw[color=green, ->] (v) -> (t) node[midway, above right] {$\green \Enrt{\alpha}$};
+	\draw[color=red, ->] (vd) -> (s) node[midway, below left] {$\red \Ers{\alpha}$};
+	\draw[color=red, ->] (vd) -> (t) node[midway, below right] {$\red \Ert{\alpha}$};
+\end{tikzpicture}
+}
+
+\item for any~$\alpha, \beta \in Q_1\blossom$ with~$t(\alpha) = s(\beta)$, proceed to the following identifications:
     \begin{itemize}
     \item if~$\alpha\beta \in I$, then glue~$\Ert{\alpha}$ with~$\Ers{\beta}$,
     \item if~$\alpha\beta \notin I$, then glue~$\Enrt{\alpha}$ with~$\Enrs{\beta}$.
     \end{itemize}
 \end{enumerate}
-This defines an orientable surface~$\surface(\bar Q)$ with boundaries, endowed with two disjoint sets~$V_{\bar Q}$ and~$V\dual_{\bar Q}$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ defined as follows:
-\begin{itemize}
-\item $V_{\bar Q}$ is the set of points~$v(\alpha)$ for~$\alpha \in Q_1\blossom$ after the identifications given by~(ii),
-\item $\dissection_{\bar Q}$ is the $V_{\bar Q}$-dissection with one arc for each vertex~$p \in Q_0$ obtained by concataining the sides~$\Ert{\alpha} = \Ers{\beta}$ and~$\Ert{\alpha'} = \Ers{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \in I$ and~$\alpha'\beta' \in I$.
-\item $V\dual_{\bar Q}$ and~$\dissection\dual_{\bar Q}$ are defined dually.
-\end{itemize}
 \end{definition}
 
 \begin{example}
 \vincent{TODO.}
+\end{example}
+
+Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
+This surface is actually endowed with two disjoint sets~$V_{\bar Q}$ and~${V_{\bar Q}}\dual$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~${\dissection_{\bar Q}}\dual$ defined as follows.
+
+\begin{definition}
+\label{def:dissectionQuiver}
+The surface~$\surface(\bar Q)$ is endowed with
+\begin{itemize}
+\item the set~$V_{\bar Q}$ of points~$v(\alpha)$ for~$\alpha \in Q_1\blossom$ after the identifications given by~(ii),
+\item the $V_{\bar Q}$-dissection~$\dissection_{\bar Q}$ given by all sides~$\Enrs{\alpha}$ and~$\Enrt{\alpha}$ for~$\alpha \in Q_1\blossom$ after the identifications given by~(ii).
+\end{itemize}
+The set~${V_{\bar Q}}\dual$ and the ${V_{\bar Q}}\dual$-dissection~${\dissection_{\bar Q}}\dual$ are defined dually.
+\end{definition}
+
+\begin{remark}
+Observe that
+\begin{itemize}
+\item $V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$,
+\item $\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
+\end{itemize}
+A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
+\end{remark}
+
+\begin{example}
+Consider the following family of locally gentle quivers:
+\vincent{TODO}
 \end{example}
 
 \begin{proposition}
