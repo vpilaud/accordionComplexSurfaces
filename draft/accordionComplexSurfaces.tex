@@ -744,17 +744,16 @@ This construction is illustrated on \fref{fig:examplesSurfaces}.
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{examplesSurfaces}}
-	\caption{The surface~$\surface_{\bar Q}$ for two quivers~$\bar Q$ of \fref{fig:quivers}.}
+	\caption{The surface~$\surface_{\bar Q}$ for the first four quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded (the second surface has no boundary, it is just a sphere).}
 	\label{fig:examplesSurfaces}
 \end{figure}
 %
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
 Note that we could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
 \begin{itemize}
-\item 
-\item
+\item consider one $(\ell+1)$-gon~$P_\omega$ for each straight walk~$\omega$ of length~$\ell$ in~$\bar Q$ or in~$\bar Q\koszul$ (just closing~$\omega$ with an additional edge connecting~$t(\omega)$ to~$s(\omega)$),
+\item for each arrow~$\alpha \in Q_1\blossom$, consider the only straight walks~$\omega$ of~$\bar Q$ and~$\omega\koszul$ of~$\bar Q\koszul$ containing~$\alpha$, and glue the polygons~$P_\omega$ and~$P_{\omega\koszul}$ along their edges corresponding to~$\alpha$.
 \end{itemize}
-\vincent{TODO}
 The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows with two disjoint sets~$V_{\bar Q}$ and~${V_{\bar Q}}\dual$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~${\dissection_{\bar Q}}\dual$ defined as follows.
 
 \begin{definition}
@@ -772,11 +771,9 @@ Observe that
 \begin{itemize}
 \item $V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$.
 \item $\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
-\item 
+\item $\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
 \end{itemize}
-\vincent{TODO}
 A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
-Finally, observe that we could also have constructed the surface
 \end{remark}
 
 \begin{example}

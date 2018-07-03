@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap,  shuffle, xargs, multicol, overpic, pdflscape, multirow, hvfloat, minibox, accents, array, xifthen, ae, aecompl, blkarray, pifont, mathtools, a4wide}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, overpic, pdflscape, multirow, hvfloat, minibox, accents, array, xifthen, ae, aecompl, blkarray, pifont, mathtools, a4wide}
 \usepackage{marginnote}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
@@ -2186,8 +2186,25 @@ Consider now an arrow~$\alpha \in Q\blossom_1$ and a non-kissing face~$F \in \NK
 Let~$F_\alpha$ be the set of walks of~$F$ containing~$\alpha$, marked at an occurrence of~$\alpha$.
 Note that~$F_\alpha \ne \varnothing$ since it contains at least the straight walk passing through~$\alpha$, marked at~$\alpha$.
 Observe that this straight walk is always the minimal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$, since it always agrees with the direction of~$\alpha$.
-On the other hand, we can consider the maximal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$.
+On the other hand, \textcolor{red}{ the proposition below shows that} we can consider the maximal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$.
 Intuitively, it is the most countercurrent walk passing through~$\alpha$ with respect to the direction of~$\alpha$.
+\begin{proposition}\label{prop: nk facets are finite}
+\textcolor{red}{The facets of the non-kissing complex have finite cardinality.}
+\end{proposition}
+
+\begin{proof}\textcolor{red}{
+Let~$F$ be a non-kissing facet.
+Since the quiver~$Q$ has a finite number of arrows, it is enough to prove that each~$F_\alpha$ is finite.
+Assume, by means of contradiction, that there is some~$\alpha\in Q_1$ with~$F_\alpha$ infinite.
+Call ``junction'' a marked occurrence of an arrow~$\beta$ in some~$\omega_\star, \omega'_\star\in F_\alpha$, such that~$\omega$ and~$\omega'$ coincide from their marked occurrence of~$\alpha$ up to~$\beta$ and differ after~$\beta$.
+Since~$F_\alpha$ is infinite, there is an infinite number of junctions.
+Since~$Q_1$ is finite, there are two junctions with the same underlying arrow~$\beta$ and such that either~$\alpha$ points towards both junctions or~$\alpha$ points to the direction opposite to both junctions.
+This shows that there exist three marked walks~$\nu_\star\prec_\alpha \mu_\star\prec_\alpha \lambda_\star\in F_\alpha$ such that~$\lambda, \mu$ and $\nu$ coincide from their marked occurrence of~$\alpha$ up to some marked occurrence~$\beta_1$ of~$\beta$, after which~$\lambda$ differs from~$\mu$ and~$\nu$ but~$\mu$ and~$\nu$ coincide up to some other occurrence~$\beta_2$ of~$\beta$, and then differ (see Figure~\ref{fig: nk facets are finite}).
+Let~$\sigma$ be the longest common substring of~$\lambda$ and~$\nu$ containing~$\beta_1$ and~$\beta_2$ respectively.
+If~$\sigma$ is on top of~$\nu$, then it is at the bottom of~$\lambda$, and~$\lambda$ kisses~$\nu$, which is absurd.
+Otherwise, the subword~$\sigma$ of~$\mu$ containing~$\beta_2$ is at the bottom of~$\mu$ while the subword~$\sigma$ of~$\mu$ containing~$\beta_1$ is at the top of~$\mu$.
+Hence,~$\mu$ kisses itself, which is absurd.}
+\end{proof}
 
 \begin{definition}
 For an arrow~$\alpha \in Q\blossom_1$ and a non-kissing face~$F \in \NKC$ containing the straight walk passing through~$\alpha$, consider the marked walk~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ and let~$\omega$ be the walk obtained by forgetting the mark in~$\omega_\star$. We say that~$\omega$ is the \defn{distinguished walk} of~$F$ at~$\alpha$ and that~$\alpha$ is a \defn{distinguished arrow} on~$\omega \in F$.
