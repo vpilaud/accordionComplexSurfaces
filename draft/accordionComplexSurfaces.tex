@@ -951,8 +951,12 @@ The maps~$\curveof(-)$ and~$\walk(-)$ induce mutually inverse bijections between
 
 \begin{lemma}
 \label{lem:nonKissing=nonCrossing}
-Non-kissing walks = non-crossing $\dissection$-accordion curves.
+Let~$\omega_1$ and~$\omega_2$ be walks on~$\bar Q$.  Then~$\omega_1$ and~$\omega_2$ are non-kissing if and only if the~$\dissection_{\bar Q}$-accordions~$\curveof(\omega_1)$ and~$\curveof(\omega_2)$ are non-crossing on~$\surface(\bar Q)$.
 \end{lemma}
+\begin{proof}
+ \pierreguy{Picture No.4}
+\end{proof}
+
 
 \begin{theorem}
 \label{thm:complexesCoincide}
@@ -961,6 +965,11 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 \item For any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
+\begin{proof}
+ The first point is a consequence of Proposition \ref{prop:walks=arcs}, Lemma \ref{lem:nonKissing=nonCrossing} and Proposition \ref{prop:accordionsSlaloms}.
+ The second point is a consequence of Theorem \ref{thm:bijectionLocallyGentleAndSurfaces} and of the first point.
+\end{proof}
+
 
 \section{Properties of the non-crossing and non-kissing complexes}
 
@@ -1069,8 +1078,24 @@ Since~$\mu_1$ does not kiss with~$\mu_0$, and~$\omega\prec_\beta\mu_1$,~$\mu_1$ 
 Let~$\sigma_1$ be the maximal common substring of~$\omega$ and~$\mu_1$ containing~$\beta$.
 As remarked above,~$\sigma_1$ contains~$\sigma_0$.
 Since~$\omega$ is not maximal at~$\beta$, the walks~$\omega$ and~$\mu_1$ split at some endpoint of~$\sigma_1$.
-By Lemma\ref{lem:nkCycles}, Iterating this procedure eventually stops ($\mu_j=\omega$ for some $j$) unless~$\omega$ is an infinite straight walk.
+By Lemma~\ref{lem:nkCycles}, iterating this procedure eventually stops ($\mu_j=\omega$ for some $j$) unless~$\omega$ is an infinite straight walk.
 \end{proof}
+
+
+
+\subsection{Purity of the non-crossing and non-kissing complexes}
+
+A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
+The aim of this section is to prove the following purity result.
+
+\begin{proposition}
+\label{prop:purity}
+ The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
+\end{proposition}
+
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
+
 
 \begin{lemma}
 \label{lemm:facesAreBounded}
@@ -1100,22 +1125,6 @@ Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$
  If~$\NKC$ admits an infinite face, then all subsets of this face are also faces, so~$\NKC$ admits faces of arbitrary finite cardinality.
  This contradicts Lemma \ref{lemm:facesAreBounded}.
 \end{proof}
-
-
-
-\subsection{Purity of the non-crossing and non-kissing complexes}
-
-A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
-The aim of this section is to prove the following purity result.
-
-\begin{proposition}
-\label{prop:purity}
- The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
-\end{proposition}
-
-Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
-Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
-
 
 
 The following definition from \cite[Definition 2.23]{PaluPilaudPlamondon} extends to the setting locally gentle algebras.
