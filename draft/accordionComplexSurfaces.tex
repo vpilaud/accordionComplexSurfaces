@@ -105,7 +105,7 @@
 
 % marginal comments
 \usepackage{todonotes}
-\newcommand{\yann}[1]{\textbf{#1 --- Y.}} % {\todo[color=red!30]{#1 \\ \hfill --- Y.}}
+\newcommand{\yann}[1]{\todo[color=red!30]{#1 --- Y.}}
 \newcommand{\vincent}[1]{\todo[color=blue!30]{#1 \\ \hfill --- V.}}
 \newcommand{\pierreguy}[1]{\todo[color=green!30]{#1 \\ \hfill --- PG.}}
 
@@ -671,16 +671,11 @@ The bound quiver of the dissection~$\dissection$ is the bound quiver $\bar Q_{\d
 The bound quiver of the dissection~$\dissection\dual$ is the bound quiver $\bar Q_{\dissection\dual} = (Q_{\dissection\dual}, I_{\dissection\dual})$ defined by replacing~$\dissection$ by~$\dissection\dual$ in the above.
 \end{definition}
 
-\begin{lemma}
-\label{lemm:quiverOfDissectionIsLocallyGentle}
-The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver
-\end{lemma}
-\begin{proof}
-Each arc~$a$ has two endpoints, and at each endpoint there is at most one arc coming immediately after~$a$ in the clockwise order, and at most one coming immediately before.
-Thus, in~$Q_{\dissection}$, there are at most two arrows leaving~$a$ and at most two arriving in~$a$.
-Among these arrows, those arising from the same endpoint of~$a$ will be composable, and those arising from different endpoints will yield relations.
-Thus $\bar Q_{\dissection}$ is locally gentle.
-\end{proof}
+%Moreover, the vertices corresponding to boundary edges of~$\dissection$ are blossoming vertices.
+%\pierreguy{Be more precise on the ``are blossiming vertices'' part of this sentence.}
+\vincent{Explain also that we can get the blossoming quiver using the blossom points.}
+
+\fref{fig:quiversDissections} illustrates this construction for the dissections of \fref{fig:dissections}.
 
 \begin{figure}[t]
 	\capstart
@@ -691,9 +686,16 @@ Thus $\bar Q_{\dissection}$ is locally gentle.
 	\label{fig:quiversDissections}
 \end{figure}
 
-%Moreover, the vertices corresponding to boundary edges of~$\dissection$ are blossoming vertices.
-%\pierreguy{Be more precise on the ``are blossiming vertices'' part of this sentence.}
-\vincent{Explain also that we can get the blossoming quiver using the blossom points.}
+\begin{lemma}
+\label{lemm:quiverOfDissectionIsLocallyGentle}
+The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver
+\end{lemma}
+\begin{proof}
+Each arc~$a$ has two endpoints, and at each endpoint there is at most one arc coming immediately after~$a$ in the clockwise order, and at most one coming immediately before.
+Thus, in~$Q_{\dissection}$, there are at most two arrows leaving~$a$ and at most two arriving in~$a$.
+Among these arrows, those arising from the same endpoint of~$a$ will be composable, and those arising from different endpoints will yield relations.
+Thus $\bar Q_{\dissection}$ is locally gentle.
+\end{proof}
 
 \begin{definition}
 \label{defi:koszulDual}
@@ -771,16 +773,15 @@ placed as follows:
 The orientations on the edges are only use to perform the identifications and can be immediately forgotten.
 \end{definition}
 
-This construction is illustrated on \fref{fig:surfaces}.
-%
+Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
+\fref{fig:surfaces} illustrates this construction for the quivers of \fref{fig:quivers}.
+
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{surfaces}}
 	\caption{The surface~$\surface_{\bar Q}$ for the quivers~$\bar Q$ of \fref{fig:quivers}.}
 	\label{fig:surfaces}
 \end{figure}
-
-Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
 
 \begin{remark}
 We could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
