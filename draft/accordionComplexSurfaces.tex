@@ -774,11 +774,27 @@ The set~${V_{\bar Q}}\dual$ and the ${V_{\bar Q}}\dual$-dissection~${\dissection
 \end{definition}
 
 \begin{remark}
-Observe that
+The following observations are useful for the computation of examples.
 \begin{itemize}
-\item $V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$.
-\item $\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
-\item $\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
+\item The set~$V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$ (equivalently, for each maximal path in~$\bar Q$).
+      Finite straight walks yield vertices on the boundary, while infinite cyclic straight walks yield punctures.
+\item The dissection~$\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
+\item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
+\item The number of boundray components of~$\surface(\bar Q)$ can be computed as follows.
+      There are two natural perfect matchings whose vertices are the blossoming vertices of~$\bar Q$: one is obtained by putting an edge between two vertices~$v_1$ and~$v_2$ whenever there is a straight walk of~$\bar Q$ relating them, and the other is obtained by doing the same for~$\bar Q \koszul$.
+      Let~$G$ be the superposition of these two perfect matchings.
+      Then the number of boundary components of~$\surface(\bar Q)$ is the number of connected components of~$G$.
+\item The genus of the surface~$\surface(\bar Q)$ is
+      \[
+       g = \frac{|Q_1| - |Q_0| - b + 2}{2},
+      \]
+      where~$b$ is the number of boundary components (see above for a way to compute~$b$).
+      Indeed, ~$g=\frac{2-\chi(\surface(\bar Q))}{2}$, where~$\chi(\surface(\bar Q))$ is the Euler characteristic of~$\surface(\bar Q)$.
+      The dissection~$\dissection$ provides a cellular decomposition of~$\surface(\bar Q)$ on which we fill the boundary components with disks.  
+      The number of faces of this cellular decomposition is~$b$, its number of edges is~$|Q_0|$ and its number of vertices is the number of finite straight walks in~$\bar Q$, which is equal to~$2|Q_0| - |Q_1|$.
+      The above formula for~$g$ follows.
+
+      
 \end{itemize}
 A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
 \end{remark}
@@ -890,7 +906,7 @@ A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces ha
 
 \begin{proposition}
 \label{prop:purity}
- The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$|Q_0| + \Delta$, where~$\Delta$ is the number of blossoming vertices of~$Q\blossom$ divided by two.
+ The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
 \end{proposition}
 
 Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
