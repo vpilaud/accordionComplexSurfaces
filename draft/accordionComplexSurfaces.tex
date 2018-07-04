@@ -707,7 +707,7 @@ The surface~$\surface(\bar Q)$ of a locally gentle bound quiver~$\bar Q = (Q,I)$
 & \Enrs{\alpha} = [v(\alpha), s(\alpha)] \qquad & \Enrt{\alpha} = [v(\alpha), t(\alpha)] \qquad & \text{(colored green)} \\
 \text{and} \qquad & \Ers{\alpha} = [v\dual(\alpha), s(\alpha)] \qquad & \Ert{\alpha} = [v\dual(\alpha), t(\alpha)] \qquad & \text{(colored red)}
 \end{alignat*}
-placed as foll:qows:
+placed as follows:
 
 \centerline{
 \begin{tikzpicture}[
@@ -903,9 +903,15 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
  \pierreguy{Yann has the combinatorial proof.}
  
  {\it Geometric proof.} View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
- The arrow~$\alpha$ then corresponds to an angle in~$\dissection$.  
+ The arrow~$\alpha$ then corresponds to an angle in~$\dissection$ at a vertex~$v$.  
  
- The result is trivial if the set~$F_\alpha$ is finite; assume, therefore, that it is infinite.
+ For any curve~$\gamma$ in~$F$, even though~$\gamma$ may pass through the above angle infinitely many times, there is one instance that is furthest from the angle:
+ indeed, if ~$\gamma$ passes infinitely many times through~$\alpha$, then~$v$ is a puncture and~$\gamma$ circles infinitely towards it.
+ But then~$\gamma$ passes through~$\alpha$ only finitely many times before it starts circling~$v$ (in either direction), and one of these times is the furthest from~$v$.
+  
+ Therefore, for every curve~$\gamma\in F$, there is a maximal occurence of~$\alpha$ in~$\gamma$.
+ Since~$F$ is finite, the set of these maximal occurences is finite, so it admits a maximal element.  
+ This element is the maximal element of~$F_\alpha$.
  
 \end{proof}
 
@@ -913,6 +919,19 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
 \label{lemm:facesAreBounded}
 There is a bound on the number of elements of a finite face of~$\NKC$.
 \end{lemma}
+\begin{proof}
+ We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ 
+ {\it Combinatorial proof.}
+ \pierreguy{Yann has the combinatorial proof.}
+ 
+ {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface(\bar Q)$.
+ Thus~$F$ can be viewed as a partial tagged triangulation of~$\surface(\bar Q)$, by letting the~$\dissection$-accordions circling a puncture in (say) clockwise order be seen as ``notched'' arcs to said puncture, and the ones circling it in counter-clockwise orientation be ``un-notched'' arcs.
+ It is known (see, for instance, \cite{FominShapiroThurston}) that any such partial tagged triangulation can be embedded into a full triangulation, and that triangulations contain a finite number of arcs.
+ Thus~$F$ is finite, and is contained in a finite maximal face.
+\end{proof}
+
 
 
 
@@ -921,16 +940,8 @@ There is a bound on the number of elements of a finite face of~$\NKC$.
 Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ is contained in a finite maximal face.
 \end{lemma}
 \begin{proof}
- We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
- 
- {\it Combinatorial proof.}
- This is an immediate consequence of Lemma \ref{lemm:facesAreBounded}.
- 
- {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
- Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface(\bar Q)$.
- Thus~$F$ can be viewed as a partial tagged triangulation of~$\surface(\bar Q)$, by letting the~$\dissection$-accordions circling a puncture in (say) clockwise order be seen as ``notched'' arcs to said puncture, and the ones circling it in counter-clockwise orientation be ``un-notched'' arcs.
- It is known (see, for instance, \cite{FominShapiroThurston}) that any such partial tagged triangulation can be embedded into a full triangulation, and that triangulations contain a finite number of arcs.
- Thus~$F$ is finite, and is contained in a finite maximal face.
+ If~$\NKC$ admits an infinite face, then all subsets of this face are also faces, so~$\NKC$ admits faces of arbitrary finite cardinality.
+ This contradicts Lemma \ref{lemm:facesAreBounded}.
 \end{proof}
 
 
