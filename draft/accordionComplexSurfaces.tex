@@ -887,7 +887,7 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercur
 
 \begin{lemma}
 \label{lemm:facesHaveMaximalElement}
-For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
+For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
 \end{lemma}
 \begin{proof}
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
@@ -902,19 +902,12 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\al
  
 \end{proof}
 
+\begin{lemma}
+\label{lemm:facesAreBounded}
+There is a bound on the number of elements of a finite face of~$\NKC$.
+\end{lemma}
 
 
-\subsection{Purity of the non-crossing and non-kissing complexes}
-
-A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
-
-\begin{proposition}
-\label{prop:purity}
- The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
-\end{proposition}
-
-Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
-Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
 
 \begin{lemma}
 \label{lemm:facetsAreFinite}
@@ -924,7 +917,7 @@ Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  
  {\it Combinatorial proof.}
- \pierreguy{Yann has the combinatorial proof.}
+ This is an immediate consequence of Lemma \ref{lemm:facesAreBounded}.
  
  {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface(\bar Q)$.
@@ -934,11 +927,79 @@ Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$
 \end{proof}
 
 
- 
 
+\subsection{Purity of the non-crossing and non-kissing complexes}
+
+A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
+The aim of this section is to prove the following purity result.
+
+\begin{proposition}
+\label{prop:purity}
+ The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
+\end{proposition}
+
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
+
+
+
+The following definition from \cite[Definition 2.23]{PaluPilaudPlamondon} extends to the setting locally gentle algebras.
+
+\begin{definition}
+\label{defi:distinguishedWalksAndArrows}
+Let~$\alpha \in Q\blossom_1$ be an arrow and let~$F$ be a face of~$\NKC$ containing the straight walk passing through~$\alpha$.
+Consider the marked walk~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ (which exists by Lemma \ref{lemm:facesHaveMaximalElement}),
+and let~$\omega$ be the walk obtained by forgetting the marked arrow in~$\omega_\star$. 
+We say that~$\omega$ is the \defn{distinguished walk} of~$F$ at~$\alpha$ and that~$\alpha$ is a \defn{distinguished arrow} on~$\omega \in F$.
+We will use the notation
+\[
+\distinguishedWalk{\alpha}{F} \eqdef \max\nolimits_{\prec_\alpha} F_\alpha
+\qquad\text{and}\qquad
+\distinguishedArrows{\omega}{F} \eqdef \set{\alpha \in \omega}{\distinguishedWalk{\alpha}{F} = \omega}.
+\]
+\end{definition}
+
+The following result extends \cite[Proposition 2.26]{PaluPilaudPlamondon} to the case of locally gentle algebras.
+
+\begin{proposition}
+\label{prop:numberOfDistinguishedArrows}
+Let~$F$ be a facet of~$\NKC$.
+\begin{itemize}
+ \item Each bending walk of~$F$ has exactly two distinguished arrows.
+ \item Each finite straight walk of~$F$ has exactly one distinguished arrows.
+ \item Each infinite straight walk of~$F$ has exactly zero distinguished arrows.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+ \pierreguy{Vincent has the proof of this proposition.}
+\end{proof}
+ 
+We can now prove the purity result.
+
+{\it Proof of Proposition \ref{prop:purity}.}
+\pierreguy{TO DO}
 
 \subsection{Thinness of the non-crossing and non-kissing complexes, mutation}
 
+A simplicial complex is \defn{thin} if each of its codimension~$1$ faces is contained in exaclty two facets.
+We state the following results, which generalize \cite[Proposition 2.31 and Corollary 2.33]{PaluPilaudPlamondon}, whose proofs apply withouth change.
+
+\begin{proposition}
+\label{prop:flip}
+Let~$F$ be a non-kissing facet in~$\NKC$ and let~$\omega \in F$ be a bending walk.
+Let~$\alpha$ and~$\beta$ be the distinguished arrows of~$\omega$ (see Proposition \ref{prop:numberOfDistinguishedArrows}), and~$\sigma$ be the distinguished substring of~$\omega$, which splits~$\omega$ into~$\omega = \rho \sigma \tau$.
+Let~$\alpha'$ and~$\beta'$ be the other two arrows of~$Q_1\blossom$ incident to the endpoints of~$\sigma$ and such that~$\alpha'\alpha \in I$ or~$\alpha\alpha' \in I$, and $\beta'\beta \in I$ or~$\beta\beta' \in I$.
+Let~$\mu \eqdef \distinguishedWalk{\alpha'}{F \ssm \{\omega\}}$ and~$\nu \eqdef \distinguishedWalk{\beta'}{F \ssm \{\omega\}}$ be the distinguished walks of~$F \ssm \{\omega\}$ at~$\alpha'$ and~$\beta'$ respectively.
+Then
+\begin{enumerate}[(i)]
+\item The walk~$\mu$ splits into~$\mu = \rho' \sigma \tau$ and the walk~$\nu$ splits into~$\nu = \rho \sigma \tau'$.
+\item The walk~$\omega' \eqdef \rho' \sigma \tau'$ is kissing~$\omega$ but no other~walk~of~$F$. Moreover, $\omega'$ is the only other (undirected) walk besides~$\omega$ which is not kissing any other walk of~$F \ssm \{\omega\}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+The non-kissing complex~$\RNKC$ is thin and is a pseudomanifold without boundary.
+\end{corollary}
 
 
 \section{Representation-theoretic interpretation}
