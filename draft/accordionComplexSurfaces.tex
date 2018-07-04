@@ -1080,6 +1080,22 @@ Since~$\omega$ is not maximal at~$\beta$, the walks~$\omega$ and~$\mu_1$ split a
 By Lemma~\ref{lem:nkCycles}, iterating this procedure eventually stops ($\mu_j=\omega$ for some $j$) unless~$\omega$ is an infinite straight walk.
 \end{proof}
 
+
+
+\subsection{Purity of the non-crossing and non-kissing complexes}
+
+A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
+The aim of this section is to prove the following purity result.
+
+\begin{proposition}
+\label{prop:purity}
+ The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
+\end{proposition}
+
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
+
+
 \begin{lemma}
 \label{lemm:facesAreBounded}
 There is a bound on the number of elements of a finite face of~$\NKC$.
@@ -1108,22 +1124,6 @@ Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$
  If~$\NKC$ admits an infinite face, then all subsets of this face are also faces, so~$\NKC$ admits faces of arbitrary finite cardinality.
  This contradicts Lemma \ref{lemm:facesAreBounded}.
 \end{proof}
-
-
-
-\subsection{Purity of the non-crossing and non-kissing complexes}
-
-A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
-The aim of this section is to prove the following purity result.
-
-\begin{proposition}
-\label{prop:purity}
- The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
-\end{proposition}
-
-Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
-Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
-
 
 
 The following definition from \cite[Definition 2.23]{PaluPilaudPlamondon} extends to the setting locally gentle algebras.
