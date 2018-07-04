@@ -777,7 +777,20 @@ Let~$\bar Q$ be a locally gentle bound quiver.
 Then the dissections~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are cellular and dual to each other.
 \end{proposition}
 \begin{proof}
- 
+In the construction of~$\surface(\bar Q)$, if two arrows~$\alpha$ and~$\beta$ of~$\bar Q \blossom$ are such that~$t(\alpha) = s(\beta)$ and~$\alpha\beta\in I\blossom$, then the vertices~$v(\alpha)$ and~$v(\beta)$ are identified on the surface.
+Thus, any two arrows of a given path contribute the same vertex of~$V_{\bar Q}$, so~$V_{\bar Q}$ is in bijection with the set of maximal paths in~$\bar Q\blossom$.
+
+Let~$v\in V_{\bar Q}$.  If~$v$ corresponds to a finite maximal path of~$\bar Q\blossom$, then the situation around~$v$ is as follows:
+\pierreguy{Picture No. 1 here.}
+
+If~$v$ corresponds to an infinite maximal path, then the situation around~$v$ is as follows:
+\pierreguy{Picture No. 2 here.}
+
+In both cases, we see that~$v$ is enclosed in a polygon of~$\dissection_{\bar Q}\dual$.  This shows that~$\dissection_{\bar Q}\dual$ is a cellular dissection of~$\surface(\bar Q)$.
+Dually, one shows that~$\dissection_{\bar Q}$ is also a cellular dissection.
+
+Moreover, by construction, each edge of~$\dissection_{\bar Q}$ which is not on the boundary of~$\surface(\bar Q)$ crosses exactly one edge of~$\dissection_{\bar Q}\dual$, and vice versa.
+This shows that~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ aare dual to each other.
 \end{proof}
 
 
@@ -786,6 +799,7 @@ Then the dissections~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are 
  Up to isomorphism, the constructions of Definitions \ref{def:quiverDualDissections} and \ref{def:surfaceQuiver} are inverse to each other.
  They induce a bijection between the set of isomorphism classes of locally gentle algebras and the set of homeomorphism classes of marked surfaces with a pair of dual cellular dissections.
 \end{theorem}
+\pierreguy{How much detail for a proof? Or is it clear?}
 
 
 
@@ -874,7 +888,6 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 \end{itemize}
 \end{theorem}
 
-
 \section{Properties of the non-crossing and non-kissing complexes}
 
 \subsection{The countercurrent order}
@@ -902,7 +915,7 @@ An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point $v$ bet
 Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions~$\gamma$ and~$\delta$ passing in front of this angle.
 Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$ does.
 \pierreguy{Should we prove this?}
-\pierreguy{Add picture.}
+\pierreguy{Add picture No.3.}
 \end{remark}
 
 
