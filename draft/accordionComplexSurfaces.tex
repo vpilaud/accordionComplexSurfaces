@@ -848,7 +848,8 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 \section{Properties of the non-crossing and non-kissing complexes}
 
 \subsection{The countercurrent order}
-The countercurrent order was introduced in \cite{PaluPilaudPlamondon} for gentle algebras.  We now adapt it to locally gentle algebras.
+The countercurrent order was introduced in~\cite{McConville} for grids and defined in \cite{PaluPilaudPlamondon} for gentle algebras.
+We now adapt it to locally gentle algebras.
 
 \begin{definition}
 A \defn{marked walk}~$\omega_\star$ is a walk~$\omega$ together with a marked occurence of an arrow~$\alpha^{\pm}$ in~$\omega$.
@@ -887,13 +888,18 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercur
 
 \begin{lemma}
 \label{lemm:facesHaveMaximalElement}
-For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
+For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ is either empty or admits a maximal element for the countercurrent order~$\prec_\alpha$.
 \end{lemma}
 \begin{proof}
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
  
  {\it Combinatorial proof.}
- \pierreguy{Yann has the combinatorial proof.}
+ Note that even though~$F$ is finite, the set of marked walks~$F_\alpha$ might be infinite if~$\alpha$ belongs to an oriented cycle of~$Q$.
+ Assume that~$F_\alpha$ is non-empty, and infinite.
+ Any walk that contains an infinite number of copies of~$\alpha$ can be written in the form~$\omega=\sigma c^\infty$ where~$\sigma$ is a (possibly infinite) substring and~$c$ is an oriented cycle containing~$\alpha$.
+ Then~$\omega$ marked at the first occurrence of~$\alpha$ in~$c^\infty$ is greater than~$\omega$ marked at any other occurrence of~$\alpha$ in~$c^\infty$.
+ We can thus safely remove all copies of~$\omega$ marked at an occurrence of~$\alpha$ in~$c^\infty$ but the first one.
+ After applying this procedure a finite number of times,~$F_\alpha$ becomes finite, and the claim follows.
  
  {\it Geometric proof.} View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  The arrow~$\alpha$ then corresponds to an angle in~$\dissection$ at a vertex~$v$.  
