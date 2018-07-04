@@ -829,7 +829,6 @@ Moreover, by construction, each edge of~$\dissection_{\bar Q}$ which is not on t
 This shows that~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are dual to each other.
 \end{proof}
 
-
 \begin{theorem}
 \label{thm:bijectionLocallyGentleAndSurfaces}
  Up to isomorphism, the constructions of Definitions \ref{def:quiverDualDissections} and \ref{def:surfaceQuiver} are inverse to each other.
@@ -837,19 +836,19 @@ This shows that~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are dual 
 \end{theorem}
 \pierreguy{How much detail for a proof? Or is it clear?}
 
-
-
 \begin{remark}
+\label{rem:propertiesSurface}
 The following observations are useful for the computation of examples.
 \begin{itemize}
 \item The set~$V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$ (equivalently, for each maximal path in~$\bar Q$).
       Finite straight walks yield vertices on the boundary, while infinite cyclic straight walks yield punctures.
 \item The dissection~$\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
 \item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
+\item A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
 \item The number of boundary components of~$\surface(\bar Q)$ can be computed as follows.
-      There are two natural perfect matchings whose vertices are the blossoming vertices of~$\bar Q$: one is obtained by putting an edge between two vertices~$v_1$ and~$v_2$ whenever there is a straight walk of~$\bar Q$ relating them, and the other is obtained by doing the same for~$\bar Q \koszul$.
+      There are two natural perfect matchings whose vertices are the blossoming vertices of~$\bar Q$: one is obtained by joining the endpoints of each finite straight walk of~$\bar Q$, and the other is obtained similarly from~$\bar Q \koszul$.
       Let~$G$ be the superposition of these two perfect matchings.
-      Then the number of boundary components of~$\surface(\bar Q)$ is the number of connected components of~$G$.
+      Then the number~$b$ of boundary components of~$\surface(\bar Q)$ is the number of connected components of~$G$.
 \item The genus of the surface~$\surface(\bar Q)$ is
       \[
        g = \frac{|Q_1| - |Q_0| - b + 2}{2},
@@ -860,7 +859,6 @@ The following observations are useful for the computation of examples.
       The number of faces of this cellular decomposition is~$b$, its number of edges is~$|Q_0|$ and its number of vertices is the number of finite straight walks in~$\bar Q$, which is equal to~$2|Q_0| - |Q_1|$.
       The above formula for~$g$ follows.
 \end{itemize}
-A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
 \end{remark}
 
 \begin{proposition}
@@ -880,14 +878,17 @@ Consider the following family of locally gentle quivers:
 
 \begin{example}[Double paths]
 \label{exm:doublePath}
-Consider the family ``double paths'' quivers indicated in \fref{fig:doublePathsQuivers}.
+Consider the family of ``double paths quivers'' indicated in \fref{fig:doublePathsQuivers}.
 
 \begin{figure}[h]
 	\capstart
-	\centerline{\includegraphics[scale=.4]{doublePathsQuivers}}
+	\centerline{\includegraphics[scale=.45]{doublePathsQuivers}}
 	\caption{The double paths quivers with~$1, 2, 3, 4$ vertices.}
 	\label{fig:doublePathsQuivers}
 \end{figure}
+
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
+Therefore, the corresponding surfaces have $1$ boundary component and genus~$(|Q_0|-1)/2$ when~$|Q_0|$ is odd, and $2$ boundary components and genus~$|Q_0|/2$ when~$|Q_0|$ is even.
 
 \begin{figure}[h]
 	\capstart
