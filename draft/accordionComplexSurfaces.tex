@@ -673,9 +673,22 @@ The bound quiver of the dissection~$\dissection$ is the bound quiver $\bar Q_{\d
 The bound quiver of the dissection~$\dissection\dual$ is the bound quiver $\bar Q_{\dissection\dual} = (Q_{\dissection\dual}, I_{\dissection\dual})$ defined by replacing~$\dissection$ by~$\dissection\dual$ in the above.
 \end{definition}
 
-It is not hard to see that~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver,
-and that the vertices corresponding to boundary edges of~$\dissection$ are blossoming vertices.
-\pierreguy{Be more precise on the ``are blossiming vertices'' part of this sentence.}
+\begin{lemma}
+\label{lemm:quiverOfDissectionIsLocallyGentle}
+The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver
+\end{lemma}
+\begin{proof}
+Each arc~$a$ has two endpoints, and at each endpoint there is at most one arc coming immediately after~$a$ in the clockwise order, and at most one coming immediately before.
+Thus, in~$Q_{\dissection}$, there are at most two arrows leaving~$a$ and at most two arriving in~$a$.
+Among these arrows, those arising from the same endpoint of~$a$ will be composable, and those arising from different endpoints will yield relations.
+Thus $\bar Q_{\dissection}$ is locally gentle.
+\end{proof}
+
+
+
+
+%Moreover, the vertices corresponding to boundary edges of~$\dissection$ are blossoming vertices.
+%\pierreguy{Be more precise on the ``are blossiming vertices'' part of this sentence.}
 \vincent{Explain also that we can get the blossoming quiver using the blossom points.}
 
 \begin{example}
@@ -713,7 +726,7 @@ The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Kos
 \end{proof}
 
 
-\subsection{The surface of a quiver}
+\subsection{The surface of a locally gentle bound quiver}
 
 We now associate a surface to a locally gentle bound quiver.
 
