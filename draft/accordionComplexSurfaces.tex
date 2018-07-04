@@ -500,14 +500,9 @@ All these dual edges do not cross (as the half-edges do not cross in each face o
 %In Proposition~\ref{prop:conditionsDualDissections}, note that although the set~$M\dual$ of dual marked points is unique, the dual dissection~$\dissection\dual$ is not when~$\dissection$ is not cellular.
 %\end{remark}
 
-Some examples of dual cellular dissections on different surfaces are represented in \fref{fig:dissections}.
-
-\begin{figure}[t]
-	\capstart
-	\centerline{\includegraphics[scale=.7]{dissections}}
-	\caption{Some pairs of dual dissections on different surfaces.}
-	\label{fig:dissections}
-\end{figure}
+\begin{example}
+Two examples of dual cellular dissections on a surface are represented in \fref{fig:dissections}.
+\end{example}
 
 \begin{definition}
 Interior points, blossom points.
@@ -686,20 +681,16 @@ Among these arrows, those arising from the same endpoint of~$a$ will be composab
 Thus $\bar Q_{\dissection}$ is locally gentle.
 \end{proof}
 
-\begin{figure}[t]
-	\capstart
-	\centerline{\includegraphics[scale=.7]{quiversDissections1}}
-	\centerline{\includegraphics[scale=.7]{quiversDissections2}}
-	\caption{The quivers associated to the dissections of \fref{fig:dissections}. As stated in Proposition~\ref{prop:dualityKoszul1}, dual dissections give rise to koszul dual quivers.}
-	\label{fig:quiversDissections}
-\end{figure}
-
 
 
 
 %Moreover, the vertices corresponding to boundary edges of~$\dissection$ are blossoming vertices.
 %\pierreguy{Be more precise on the ``are blossiming vertices'' part of this sentence.}
 \vincent{Explain also that we can get the blossoming quiver using the blossom points.}
+
+\begin{example}
+ An example on the annulus...
+\end{example}
 
 \begin{definition}
 \label{defi:koszulDual}
@@ -909,18 +900,46 @@ Consider the following family of locally gentle quivers:
 \subsection{Non-crossing and non-kissing complexes coincide}
 
 Let~$\bar Q$ be a locally gentle bound quiver.
+For each arc of the dissection~$\dissection_{\bar Q}$ on~$\surface(\bar Q)$, we fix a point on the interior of this arc, which we call its ``middle point''.
+To each walk on~$\bar Q$, we will now associate a~$\dissection_{\bar Q}$-accordion.
 
 \begin{definition}
-\label{def:curveOfAWalk}
-Let~$\omega$ be a (possibly infinite) walk on~$\bar Q$. 
-Define a curve~$\curveof(\omega)$
+\label{def:curveOfAnArrow}
+For any arrow~$\alpha$ on $\bar Q\blossom$, let~$\curveof(\alpha)$ be the curve on~$\surface(\bar Q)$ which goes from the middle point of the arc corresponding to $s(\alpha)$ to the middle point of the arc corresponding to $t(\alpha)$ by following the angle corresponding to~$\alpha$.
+Define~$\curveof(\alpha^{-1})$ to be~$\curveof(\alpha)^{-1}$.
 \end{definition}
 
 
+\begin{definition}
+\label{def:curveOfAWalk}
+Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}}$ be a (possibly infinite) walk on~$\bar Q$. 
+Define the curve~$\curveof(\omega)$ to be the concatenation of the curves~$\curveof(\alpha_i{\varepsilon_{i}})$ of Definition \ref{def:curveOfAnArrow}.
+\end{definition}
+
+In practice, we will represent~$\curveof(\omega)$ by a curve which intersects itself only transversaly, and such that if it circles infinitely around a puncture, then it spirals towards it.
+
 \begin{lemma}
-\label{lem:walks=arcs}
-Walks of~$\bar Q$ are precisely~$\dissection$-accordions.
+\label{lemm:curveOfAWalkIsAccordion}
+Let~$\omega$ be a walk on~$\bar Q$.  Then~$\curveof(\omega)$ is a~$\dissection_{\bar Q}$-accordion.
 \end{lemma}
+\begin{proof}
+ This is because~$\curveof(\omega)$ follows angles in~$\dissection_{\bar Q}$ by definition.
+\end{proof}
+
+\begin{lemma}
+\label{lemm:accordionsAreCurvesOfWalks}
+Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undirected walk~$\walk(\gamma)$ such that we have~$\curveof(\walk(\gamma)) = \gamma$.
+\end{lemma}
+\begin{proof}
+ \pierreguy{TO DO}
+\end{proof}
+
+The above implies the following.
+
+\begin{proposition}
+\label{lem:walks=arcs}
+The maps~$\curveof(-)$ and~$\walk(-)$ induce mutually inverse bijections between the set of undirected walks on~$\bar Q$ and the set of~$\dissection_{\bar Q}$-accordions on~$\surface(\bar Q)$.
+\end{proposition}
 
 \begin{lemma}
 \label{lem:nonKissing=nonCrossing}
