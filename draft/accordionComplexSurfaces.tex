@@ -390,7 +390,7 @@ A \defn{peak walk} (resp.~\defn{deep walk}) is a walk with a unique corner (in o
 \label{def:kiss}
 Let~$\omega,\omega' \in \walks^\pm(\bar Q)$ be two undirected walks on~$\bar Q$.
 We say that~$\omega$ \defn{kisses}~$\omega'$ if~$\Sigma_\top(\omega) \cap \Sigma_\bottom(\omega') \ne \varnothing$.
-See \fref{fig:kissingCrossing}.
+See \fref{fig:kissing}.
 % \ie if there exist a common substring~$\sigma \in \strings^\pm(\bar Q)$ of~$\omega$ and~$\omega'$ such that the arrows of~$\omega$ incident to~$\sigma$ are both outgoing while the arrows of~$\omega'$ incident to~$\sigma$ are both incoming.
 We say that~$\omega$ and~$\omega'$ are \defn{kissing} if~$\omega$ kisses~$\omega'$ or~$\omega'$ kisses~$\omega$ (or both).
 Note that we authorize the situation where~$\sigma$ is reduced to a vertex~$v$, meaning that~$v$ is a peak of~$\omega$ and a deep of~$\omega'$.
@@ -400,9 +400,9 @@ We denote by~$\NKWalks(\bar Q)$ the walks on~$\bar Q$ which are not self-kissing
 
 \begin{figure}
 	\capstart
-	\centerline{\includegraphics[scale=1]{kissingCrossing}}
-	\caption{A schematic representation of two kissing walks (left) and two crossing walks~(right): $\omega$~kisses~$\omega'$ (left) while~$\mu$~crosses~$\nu$ (right). For the crossing walks, we have~$\mu \prec_\gamma \nu$ while~$\nu \prec_\delta \mu$.}
-	\label{fig:kissingCrossing}
+	\centerline{\includegraphics[scale=1]{kissing}}
+	\caption{A schematic representation of two kissing walks: $\omega$~kisses~$\omega'$.}
+	\label{fig:kissing}
 \end{figure}
 
 \begin{definition}
@@ -639,12 +639,11 @@ The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dual
 \end{remark}
 
 \begin{remark}
-A quick disclaimer about accordion complexes and slalom complexes of arbitrary dissections.
+A quick disclaimer about accordion complexes and slalom complexes of arbitrary cellular dissections.
 As stated in Proposition~\ref{prop:conditionsDualDissections}, a dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
 This prevents to use the definitions given in this section.
 Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
-\vincent{A retravailler}
 \end{remark}
 
 \section{Non-kissing versus non-crossing}
@@ -1016,12 +1015,18 @@ Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$
 %
 \begin{figure}[h]
 	\capstart
-	\centerline{\includegraphics[scale=.7]{orderCurves}}
-	\caption{The order~$\prec_\alpha$ is given by the order in which the curves cross the angle corresponding to~$\alpha$.}
+	\centerline{\includegraphics[scale=1]{orderCurves}}
+	\caption{The order~$\prec_\alpha$ on marked walks is the order in which the corresponding curves cross the angle corresponding to~$\alpha$.}
 	\label{fig:orderCurves}
 \end{figure}
 \end{remark}
 
+%\begin{figure}
+%	\capstart
+%	\centerline{\includegraphics[scale=1]{kissing}}
+%	\caption{A schematic representation of two kissing walks (left) and two crossing walks~(right): $\omega$~kisses~$\omega'$ (left) while~$\mu$~crosses~$\nu$ (right). For the crossing walks, we have~$\mu \prec_\gamma \nu$ while~$\nu \prec_\delta \mu$.}
+%	\label{fig:kissing}
+%\end{figure}
 
 For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, we denote by~$F_\alpha$ the set of walks of~$F$ marked at an occurence of~$\alpha^\pm$.
 
