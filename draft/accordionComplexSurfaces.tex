@@ -595,7 +595,7 @@ For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\di
 \end{proposition}
 
 \begin{proof}
-\vincent{Todo. I have the impression here that we need cellular embeddings.}
+\yann{I have to merge two cases}
 Let~$\alpha$ be a~$\dissection$-accordion.
 Let~$\beta$,~$\gamma$,~$\delta$ be three consecutive arcs of~$\dissection$ crossed by~$\gamma$.
 Let~$m\in\dissection$ be the common endpoint of~$\beta$ and $\gamma$ given by Definition~\ref{def:accordion} and let~$n\in\dissection$ be the common endpoint of~$\gamma$ and~$\delta$.
@@ -918,7 +918,7 @@ Define~$\curveof(\alpha^{-1})$ to be~$\curveof(\alpha)^{-1}$.
 
 \begin{definition}
 \label{def:curveOfAWalk}
-Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}}$ be a (possibly infinite) walk on~$\bar Q$. 
+Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}} \ldots$ be a (possibly infinite) walk on~$\bar Q$. 
 Define the curve~$\curveof(\omega)$ to be the concatenation of the curves~$\curveof(\alpha_i{\varepsilon_{i}})$ of Definition \ref{def:curveOfAnArrow}.
 \end{definition}
 
@@ -943,7 +943,7 @@ Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undir
 The above implies the following.
 
 \begin{proposition}
-\label{lem:walks=arcs}
+\label{prop:walks=arcs}
 The maps~$\curveof(-)$ and~$\walk(-)$ induce mutually inverse bijections between the set of undirected walks on~$\bar Q$ and the set of~$\dissection_{\bar Q}$-accordions on~$\surface(\bar Q)$.
 \end{proposition}
 
@@ -964,7 +964,7 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 
 \subsection{Some technical properties of non-kissing walks}
 
-\begin{lemma}
+\begin{lemma}\label{lem:nkCycles}
  Let~$\omega$ be a non-kissing walk that contains an oriented cycle~$c$.
  Then~$\omega$ is of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$.
 \end{lemma}
@@ -1049,14 +1049,36 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
  This element is the maximal element of~$F_\alpha$.
 \end{proof}
 
+\begin{lemma}\label{lem:ExistenceOfDistinguishedArrows}
+Let~$F$ be a finite face of~$\NKC$, let~$\omega$ be a walk in~$F$, and let~$\alpha$ be an arrow on~$\omega$.
+Assume that~$\omega$ is not an infinite straight walk.
+Then, there is an arrow~$\beta$ oriented in the same direction as~$\alpha$ in~$\omega$ such that~$\omega$ (marked at~$\beta$) is maximal in~$F$ for~$\prec_\beta$.
+\end{lemma}
+
+\begin{proof}
+Let~$\omega$ be a walk in some non-kissing facet~$F$, marked at an arrow~$\alpha$.
+If~$\omega$ is not maximal at~$\alpha$, there is a walk~$\mu_0\in F$ such that~$\omega\prec_\alpha \mu_0$.
+Let~$\sigma_0$ be the maximal common substring of~$\omega$ and~$\mu_0$ containing~$\alpha$.
+Since~$\omega$ and $\mu_0$ are different, they split at some endpoint of~$\sigma_0$.
+At this endpoint, the arrow~$\beta$ of~$\omega$ not in~$\sigma_0$ points in the same direction as~$\alpha$ since~$\omega \prec_\alpha \mu_0$.
+If~$\omega$ is maximal at~$\beta$ in~$F$, we are done.
+Otherwise, let~$\mu_1$ be maximal in~$F$ for~$\prec_\beta$.
+Since~$\mu_1$ does not kiss with~$\mu_0$, and~$\omega\prec_\beta\mu_1$,~$\mu_1$ contains~$\sigma_0$.
+Let~$\sigma_1$ be the maximal common substring of~$\omega$ and~$\mu_1$ containing~$\beta$.
+As remarked above,~$\sigma_1$ contains~$\sigma_0$.
+Since~$\omega$ is not maximal at~$\beta$, the walks~$\omega$ and~$\mu_1$ split at some endpoint of~$\sigma_1$.
+By Lemma\ref{lem:nkCycles}, Iterating this procedure eventually stops ($\mu_j=\omega$ for some $j$) unless~$\omega$ is an infinite straight walk.
+\end{proof}
+
 \begin{lemma}
 \label{lemm:facesAreBounded}
 There is a bound on the number of elements of a finite face of~$\NKC$.
 \end{lemma}
 \begin{proof}
- We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ We provide two proofs of the lemma.
+ One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  
- {\it Combinatorial proof.}
+ {\it Combinatorial proof.} By Lemma~\ref{lem:ExistenceOfDistinguishedArrows}, the number of walks in a finite face of~$\NKC$ is bounded by~$|Q_1\blossom|+s_\infty$, where~$s_\infty$ is the number of infinite straight walks (i.e. the number of oriented cycles in~$Q$).
 
  {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface(\bar Q)$.
@@ -1156,7 +1178,7 @@ Then
 \end{figure}
 
 \begin{corollary}
-The non-kissing complex~$\RNKC$ is thin and is a pseudomanifold without boundary.
+The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is thin and is a pseudomanifold without boundary.
 \end{corollary}
 
 \vincent{Orient the flip graph. Connection to the lattice of torsion classes?}
