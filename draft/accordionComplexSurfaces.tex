@@ -283,8 +283,34 @@ Possible titles, depending on what we want to insist on:
 \item Combinatorial models for support $\tau$-tilting on gentle algebras: accordion, slalom and non-kissing complexes
 \end{enumerate}
 
+\section{Introduction}
 
-\section{Non-kissing complex}
+BLAH BLAH BLAH 
+
+The two main objects of our study will be locally gentle algebras and dissections of surfaces.
+Our first main result is that these two classes of objects are essentially the same.
+
+\begin{theorem*}[\ref{thm:bijectionLocallyGentleAndSurfaces}]
+ There is an explicit bijection between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of oriented marked surfaces with boundary and a pair of dual cellular dissections.
+\end{theorem*}
+
+On the algebraic side, we extend the study of walks from the gentle to the locally gentle case, and define a notion of compatibility called non-kissing (see Section \ref{sec:nonKissingComplex}).
+On the geometric side, we extend the study of dissections, accordions and slaloms from the case of the disk to the case of an arbitrary surface, and define a notion of compatibility called non-crossing (see Section \ref{sec:accordionSlalomNonCrossingComplexes}).
+The combinatorial information contained in these notions is encoded in simplicial complexes: the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC$.
+
+\begin{theorem*}[\ref{thm:complexesCoincide}]
+ The complexes~$\NKC$ and~$\NCC$ are isomorphic.
+\end{theorem*}
+
+Finally, we show that these complexes have very nice combinatorial properties.
+
+\begin{theorem*}[\ref{prop:purity} and \ref{coro:thin}]
+ The complexes~$\NKC$ and~$\NCC$ are pure and thin.  Their dimension is computed, and mutation is explicitly described.
+\end{theorem*}
+
+Consequences on the representation theory of locally gentle algebras will be investigated in a future project.
+
+\section{Non-kissing complex}\label{sec:nonKissingComplex}
 
 \subsection{Locally gentle bound quivers and their blossoming quivers}
 
@@ -420,7 +446,7 @@ We thus consider the \defn{reduced non-kissing complex}~$\RNKC$ to be the deleti
 %This result follows from the existence of flips in non-kissing facets.
 %This operation is illustrated in \fref{fig:flip}.
 
-\section{Accordion complex, slalom complex, and non-crossing complex}
+\section{Accordion complex, slalom complex, and non-crossing complex}\label{sec:accordionSlalomNonCrossingComplexes}
 
 \subsection{Dual dissections of a surface}
 
@@ -1222,6 +1248,7 @@ Then
 \vincent{Add a description and a schematic representation of the flip in the accordion complex and in the slalom complex.}
 
 \begin{corollary}
+\label{coro:thin}
 The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is thin and is a pseudomanifold without boundary.
 \end{corollary}
 
