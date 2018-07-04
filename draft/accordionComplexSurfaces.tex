@@ -949,8 +949,12 @@ The maps~$\curveof(-)$ and~$\walk(-)$ induce mutually inverse bijections between
 
 \begin{lemma}
 \label{lem:nonKissing=nonCrossing}
-Non-kissing walks = non-crossing $\dissection$-accordion curves.
+Let~$\omega_1$ and~$\omega_2$ be walks on~$\bar Q$.  Then~$\omega_1$ and~$\omega_2$ are non-kissing if and only if the~$\dissection_{\bar Q}$-accordions~$\curveof(\omega_1)$ and~$\curveof(\omega_2)$ are non-crossing on~$\surface(\bar Q)$.
 \end{lemma}
+\begin{proof}
+ \pierreguy{Picture No.4}
+\end{proof}
+
 
 \begin{theorem}
 \label{thm:complexesCoincide}
@@ -959,6 +963,11 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 \item For any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
+\begin{proof}
+ The first point is a consequence of Proposition \ref{prop:walks=arcs}, Lemma \ref{lem:nonKissing=nonCrossing} and Proposition \ref{prop:accordionsSlaloms}.
+ The second point is a consequence of Theorem \ref{thm:bijectionLocallyGentleAndSurfaces} and of the first point.
+\end{proof}
+
 
 \section{Properties of the non-crossing and non-kissing complexes}
 
