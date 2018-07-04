@@ -537,6 +537,13 @@ A \defn{$\dissection$-accordion} is a $B$-curve~$\alpha$ of~$\bar\surface$ such 
 By convention, we also consider that the punctures of~$V\dual$ are $\dissection$-accordions.
 \end{definition}
 
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{accordions}}
+	\caption{Some accordions.}
+	\label{fig:accordions}
+\end{figure}
+
 \begin{remark}
 In Definition~\ref{def:accordion}, observe that
 \begin{itemize}
@@ -557,6 +564,13 @@ A \defn{$\dissection\dual$-slalom} is a $B$-curve~$\alpha$ of~$\bar\surface$ suc
 Here, we consider that~$f\dual$ lies on the right (resp.~left) of~$\alpha$ when~$\alpha$ circles clockwise (resp.~counterclockwise) around~$f\dual$.
 By convention, we also consider that the punctures of~$V$ are $\dissection\dual$-slaloms.
 \end{definition}
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{slaloms}}
+	\caption{Some slaloms.}
+	\label{fig:slaloms}
+\end{figure}
 
 \begin{definition}
 \label{def:slalomComplex}
@@ -739,13 +753,13 @@ placed as follows:
 The orientations on the edges are only use to perform the identifications and can be immediately forgotten.
 \end{definition}
 
-This construction is illustrated on \fref{fig:examplesSurfaces}.
+This construction is illustrated on \fref{fig:surfaces}.
 %
 \begin{figure}[t]
 	\capstart
-	\centerline{\includegraphics[scale=.7]{examplesSurfaces}}
+	\centerline{\includegraphics[scale=.7]{surfaces}}
 	\caption{The surface~$\surface_{\bar Q}$ for the quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded, and the glue symbols indicate how to identify some edges to get the desired surfaces. The first two surfaces are disks, the third is a sphere, the fourth is a cylinder, and the fifth is a punctured torus.}
-	\label{fig:examplesSurfaces}
+	\label{fig:surfaces}
 \end{figure}
 
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
@@ -790,6 +804,11 @@ The following observations are useful for the computation of examples.
 A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
 \end{remark}
 
+\begin{proposition}
+\label{prop:dualityKoszul2}
+For any gentle bound quiver~$\bar Q$ with Koszul dual~$\bar Q\koszul$, the surfaces~$\surface_{\bar Q}$ and~$\surface_{\bar Q\koszul}$ coincide, but~$\dissection_{\bar Q\koszul} = {\dissection_{\bar Q}}\dual$ and~${\dissection_{\bar Q\koszul}}\dual = \dissection_{\bar Q}$.
+\end{proposition}
+
 \begin{example}[Cambrian paths]
 \label{exm:CambrianPath}
 \end{example}
@@ -825,11 +844,6 @@ Consider the family ``double paths'' quivers indicated in \fref{fig:doublePathsQ
 Consider the following family of locally gentle quivers:
 \vincent{TODO double cycle}
 \end{example}
-
-\begin{proposition}
-\label{prop:dualityKoszul2}
-For any gentle bound quiver~$\bar Q$ with Koszul dual~$\bar Q\koszul$, the surfaces~$\surface_{\bar Q}$ and~$\surface_{\bar Q\koszul}$ coincide, but~$\dissection_{\bar Q\koszul} = {\dissection_{\bar Q}}\dual$ and~${\dissection_{\bar Q\koszul}}\dual = \dissection_{\bar Q}$.
-\end{proposition}
 
 \subsection{Non-crossing and non-kissing complexe coincide}
 
