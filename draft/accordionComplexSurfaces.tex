@@ -854,6 +854,21 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 
 \section{Properties of the non-crossing and non-kissing complexes}
 
+\subsection{Some technical properties of non-kissing walks}
+
+\begin{lemma}
+ Let~$\omega$ be a non-kissing walk that contains an oriented cycle~$c$.
+ Then~$\omega$ is of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$.
+\end{lemma}
+
+\begin{proof}
+ Let~$c=\alpha_1\cdots\alpha_r$ be an oriented cycle in some walk~$\omega$.
+ Assume that~$\omega$ is not of form~$\sigma c^\infty$ or~$c^\infty\sigma$.
+ Then, up to cyclic reordering of the arrows in~$c$, it contains a substring of the form~$\beta^\pm c^l \alpha_1\cdots\alpha_j\gamma^\pm$, for some arrows~$\beta,\gamma$ not in~$c$, some~$l\geq 1$, and some~$j<r$.
+ Since~$\bar Q$ is locally gentle, this substring is~$\beta^{-1} c^l \alpha_1\cdots\alpha_j\gamma^{-1}$.
+ Hence, the walk~$\omega$ contains the two substrings~$\beta^{-1}\alpha_1\cdots\alpha_j\alpha_{j+1}$ and~$\alpha_r\alpha_1\cdots\alpha_j\gamma^{-1}$, and thus self-kisses.
+\end{proof}
+
 \subsection{The countercurrent order}
 The countercurrent order was introduced in~\cite{McConville} for grids and defined in \cite{PaluPilaudPlamondon} for gentle algebras.
 We now adapt it to locally gentle algebras.
@@ -918,7 +933,6 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
  Therefore, for every curve~$\gamma\in F$, there is a maximal occurence of~$\alpha$ in~$\gamma$.
  Since~$F$ is finite, the set of these maximal occurences is finite, so it admits a maximal element.  
  This element is the maximal element of~$F_\alpha$.
- 
 \end{proof}
 
 \begin{lemma}
@@ -929,8 +943,7 @@ There is a bound on the number of elements of a finite face of~$\NKC$.
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  
  {\it Combinatorial proof.}
- \pierreguy{Yann has the combinatorial proof.}
- 
+
  {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface(\bar Q)$.
  Thus~$F$ can be viewed as a partial tagged triangulation of~$\surface(\bar Q)$, by letting the~$\dissection$-accordions circling a puncture in (say) clockwise order be seen as ``notched'' arcs to said puncture, and the ones circling it in counter-clockwise orientation be ``un-notched'' arcs.
