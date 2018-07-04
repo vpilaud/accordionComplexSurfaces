@@ -156,6 +156,7 @@
 \newcommand{\reversed}[1]{#1^{\mathrm{rev}}} % reverse all arrows
 \renewcommand{\top}{\mathrm{top}} % top
 \newcommand{\bottom}{\mathrm{bot}} % bottom
+\newcommand{\walk}{\operatorname{\omega}} % walk (of a curve)
 
 % accordion and slalom complexes
 \newcommand{\surface}{\mathcal{S}} % an orientable surface
@@ -170,6 +171,7 @@
 \newcommandx{\RSC}[1][1=\dissection\dual]{\mathcal{C}_{\mathrm{sla}}(#1)} % reduced slalom complex
 \newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
 \newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
+\newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
 
 % lattices
 \newcommand{\meet}{\wedge} % meet
@@ -498,14 +500,9 @@ All these dual edges do not cross (as the half-edges do not cross in each face o
 %In Proposition~\ref{prop:conditionsDualDissections}, note that although the set~$M\dual$ of dual marked points is unique, the dual dissection~$\dissection\dual$ is not when~$\dissection$ is not cellular.
 %\end{remark}
 
-Some examples of dual cellular dissections on different surfaces are represented in \fref{fig:dissections}.
-
-\begin{figure}[t]
-	\capstart
-	\centerline{\includegraphics[scale=.7]{dissections}}
-	\caption{Some pairs of dual dissections on different surfaces.}
-	\label{fig:dissections}
-\end{figure}
+\begin{example}
+Two examples of dual cellular dissections on a surface are represented in \fref{fig:dissections}.
+\end{example}
 
 \begin{definition}
 Interior points, blossom points.
@@ -684,9 +681,11 @@ Among these arrows, those arising from the same endpoint of~$a$ will be composab
 Thus $\bar Q_{\dissection}$ is locally gentle.
 \end{proof}
 
+
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{quiversDissections1}}
+	\medskip
 	\centerline{\includegraphics[scale=.7]{quiversDissections2}}
 	\caption{The quivers associated to the dissections of \fref{fig:dissections}. As stated in Proposition~\ref{prop:dualityKoszul1}, dual dissections give rise to koszul dual quivers.}
 	\label{fig:quiversDissections}
@@ -695,9 +694,14 @@ Thus $\bar Q_{\dissection}$ is locally gentle.
 
 
 
+
 %Moreover, the vertices corresponding to boundary edges of~$\dissection$ are blossoming vertices.
 %\pierreguy{Be more precise on the ``are blossiming vertices'' part of this sentence.}
 \vincent{Explain also that we can get the blossoming quiver using the blossom points.}
+
+\begin{example}
+ An example on the annulus...
+\end{example}
 
 \begin{definition}
 \label{defi:koszulDual}
@@ -816,17 +820,20 @@ Then the dissections~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are 
 In the construction of~$\surface(\bar Q)$, if two arrows~$\alpha$ and~$\beta$ of~$\bar Q \blossom$ are such that~$t(\alpha) = s(\beta)$ and~$\alpha\beta\in I\blossom$, then the vertices~$v(\alpha)$ and~$v(\beta)$ are identified on the surface.
 Thus, any two arrows of a given path contribute the same vertex of~$V_{\bar Q}$, so~$V_{\bar Q}$ is in bijection with the set of maximal paths in~$\bar Q\blossom$.
 
-Let~$v\in V_{\bar Q}$.  If~$v$ corresponds to a finite maximal path of~$\bar Q\blossom$, then the situation around~$v$ is as follows:
-\pierreguy{Picture No. 1 here.}
+Let~$v\in V_{\bar Q}$. The situation around~$v$ is as follows, depending on whether~$v$ corresponds to a finite or infinite maximal path of~$\bar Q\blossom$,:
 
-If~$v$ corresponds to an infinite maximal path, then the situation around~$v$ is as follows:
-\pierreguy{Picture No. 2 here.}
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{halfStar} \qquad \includegraphics[scale=.7]{star}}
+	\caption{The situation around~$v$ (green vertex). On the left,~$v$ corresponds to a finite maximal path of~$\bar Q$, while on the right,~$v$ corresponds to an infinite one.}
+	\label{fig:stars}
+\end{figure}
 
 In both cases, we see that~$v$ is enclosed in a polygon of~$\dissection_{\bar Q}\dual$.  This shows that~$\dissection_{\bar Q}\dual$ is a cellular dissection of~$\surface(\bar Q)$.
 Dually, one shows that~$\dissection_{\bar Q}$ is also a cellular dissection.
 
 Moreover, by construction, each edge of~$\dissection_{\bar Q}$ which is not on the boundary of~$\surface(\bar Q)$ crosses exactly one edge of~$\dissection_{\bar Q}\dual$, and vice versa.
-This shows that~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ aare dual to each other.
+This shows that~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are dual to each other.
 \end{proof}
 
 
@@ -904,12 +911,49 @@ Consider the following family of locally gentle quivers:
 \vincent{TODO double cycle}
 \end{example}
 
-\subsection{Non-crossing and non-kissing complexe coincide}
+\subsection{Non-crossing and non-kissing complexes coincide}
+
+Let~$\bar Q$ be a locally gentle bound quiver.
+For each arc of the dissection~$\dissection_{\bar Q}$ on~$\surface(\bar Q)$, we fix a point on the interior of this arc, which we call its ``middle point''.
+To each walk on~$\bar Q$, we will now associate a~$\dissection_{\bar Q}$-accordion.
+
+\begin{definition}
+\label{def:curveOfAnArrow}
+For any arrow~$\alpha$ on $\bar Q\blossom$, let~$\curveof(\alpha)$ be the curve on~$\surface(\bar Q)$ which goes from the middle point of the arc corresponding to $s(\alpha)$ to the middle point of the arc corresponding to $t(\alpha)$ by following the angle corresponding to~$\alpha$.
+Define~$\curveof(\alpha^{-1})$ to be~$\curveof(\alpha)^{-1}$.
+\end{definition}
+
+
+\begin{definition}
+\label{def:curveOfAWalk}
+Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}}$ be a (possibly infinite) walk on~$\bar Q$. 
+Define the curve~$\curveof(\omega)$ to be the concatenation of the curves~$\curveof(\alpha_i{\varepsilon_{i}})$ of Definition \ref{def:curveOfAnArrow}.
+\end{definition}
+
+In practice, we will represent~$\curveof(\omega)$ by a curve which intersects itself only transversaly, and such that if it circles infinitely around a puncture, then it spirals towards it.
 
 \begin{lemma}
-\label{lem:walks=arcs}
-Walks of~$\bar Q$ are precisely~$\dissection$-accordions.
+\label{lemm:curveOfAWalkIsAccordion}
+Let~$\omega$ be a walk on~$\bar Q$.  Then~$\curveof(\omega)$ is a~$\dissection_{\bar Q}$-accordion.
 \end{lemma}
+\begin{proof}
+ This is because~$\curveof(\omega)$ follows angles in~$\dissection_{\bar Q}$ by definition.
+\end{proof}
+
+\begin{lemma}
+\label{lemm:accordionsAreCurvesOfWalks}
+Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undirected walk~$\walk(\gamma)$ such that we have~$\curveof(\walk(\gamma)) = \gamma$.
+\end{lemma}
+\begin{proof}
+ \pierreguy{TO DO}
+\end{proof}
+
+The above implies the following.
+
+\begin{proposition}
+\label{lem:walks=arcs}
+The maps~$\curveof(-)$ and~$\walk(-)$ induce mutually inverse bijections between the set of undirected walks on~$\bar Q$ and the set of~$\dissection_{\bar Q}$-accordions on~$\surface(\bar Q)$.
+\end{proposition}
 
 \begin{lemma}
 \label{lem:nonKissing=nonCrossing}
@@ -966,7 +1010,13 @@ An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point $v$ bet
 Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions~$\gamma$ and~$\delta$ passing in front of this angle.
 Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$ does.
 \pierreguy{Should we prove this?}
-\pierreguy{Add picture No.3.}
+%
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{orderCurves}}
+	\caption{The order~$\prec_\alpha$ is given by the order in which the curves cross the angle corresponding to~$\alpha$.}
+	\label{fig:orderCurves}
+\end{figure}
 \end{remark}
 
 
