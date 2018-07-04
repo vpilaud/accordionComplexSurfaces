@@ -276,12 +276,7 @@ We consider three combinatorial models for the support $\tau$-tilting complex of
 
 \maketitle
 
-Possible titles, depending on what we want to insist on:
-\begin{enumerate}
-\item Accordion / slalom / non-kissing / support $\tau$-tilting complexes all coincide for gentle algebras
-\item Non-kissing and non-crossing complexes for gentle algebras
-\item Combinatorial models for support $\tau$-tilting on gentle algebras: accordion, slalom and non-kissing complexes
-\end{enumerate}
+\yann{Abstract to do.}
 
 \section{Introduction}
 The aim of this paper is to prove that two combinatorial objects, called the \emph{non-kissing complex} and the \emph{non-crossing complex}, are isomorphic.
@@ -321,11 +316,14 @@ Gentle algebras were...
 Dissections algebras were... 
 
 Algebras and dissections have lived together before... (mention clusters)
+\pierreguy{Finish introduction.}
 
 \section*{Acknowledgements}
 We thank Sibylle Schroll for discussions on geometric models for gentle algebras.
 
 \section{Non-kissing complex}\label{sec:nonKissingComplex}
+
+\vincent{Connection.}
 
 \subsection{Locally gentle bound quivers and their blossoming quivers}
 
@@ -362,9 +360,9 @@ Examples are represented on \fref{fig:quivers}.
 	\label{fig:quivers}
 \end{figure}
 
-
-
 \subsection{Strings and walks}
+
+\vincent{Connection.}
 
 \begin{definition}
 \label{def:string}
@@ -427,6 +425,8 @@ A \defn{peak walk} (resp.~\defn{deep walk}) is a walk with a unique corner (in o
 
 \subsection{Non-kissing complex}
 
+\vincent{Connection.}
+
 \begin{definition}
 \label{def:kiss}
 Let~$\omega,\omega' \in \walks^\pm(\bar Q)$ be two undirected walks on~$\bar Q$.
@@ -463,7 +463,11 @@ We thus consider the \defn{reduced non-kissing complex}~$\RNKC$ to be the deleti
 
 \section{Accordion complex, slalom complex, and non-crossing complex}\label{sec:accordionSlalomNonCrossingComplexes}
 
+\vincent{Connection.}
+
 \subsection{Dual dissections of a surface}
+
+\vincent{Connection.}
 
 \begin{definition}
 A \defn{marked surface}~$\bar\surface \eqdef (\surface, M)$ is an orientable surface~$\surface$ with boundaries, together with a set~$M$ of marked points which can be on the boundary of~$\surface$ or not.
@@ -635,7 +639,7 @@ For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\di
 \end{proposition}
 
 \begin{proof}
-\yann{I have to merge two cases}
+\vincent{Careful: arcs / curves.}
 Let~$\alpha$ be a~$\dissection$-accordion.
 Let~$\beta$,~$\gamma$,~$\delta$ be three consecutive arcs of~$\dissection$ crossed by~$\gamma$.
 Let~$m\in\dissection$ be the common endpoint of~$\beta$ and $\gamma$ given by Definition~\ref{def:accordion} and let~$n\in\dissection$ be the common endpoint of~$\gamma$ and~$\delta$.
@@ -660,7 +664,7 @@ Case 3: The arc~$\alpha$ consecutively crosses two arcs~$\beta$ and~$\gamma$ of~
 Since the dissection~$\dissection$ is cellular, both regions have to contain a puncture.
 This contradicts the assumption that the dissections~$\dissection$ and~$\dissection\dual$ are dual to each other.
 
-Case 4: If~$\alpha$ stays inside a blue cell, then it rolls around a~$\dissection\dual$ puncture.
+Case 4: If~$\alpha$ stays inside a $\dissection$-cell, then it rolls around a~$\dissection\dual$ puncture.
 There is a~$\dissection\dual$-arc~$\beta$ ending in that puncture. When~$\alpha$ crosses~$\beta$, the puncture stays on the same side of~$\alpha$, hence~$\alpha$ is not a~$\dissection\dual$-slalom.
 \end{proof}
 
@@ -748,6 +752,8 @@ It is seen in \cite{BessenrodtHolm} that the (ungraded version of the) Koszul du
 Note that~$\bar Q\koszul$ is gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
 Examples are represented on \fref{fig:koszulQuivers}.
 
+\pierreguy{reference OPS}
+
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.6]{koszulQuivers}}
@@ -770,6 +776,7 @@ The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Kos
 \subsection{The surface of a locally gentle bound quiver}
 
 We now associate a surface to a locally gentle bound quiver.
+\pierreguy{reference OPS}
 
 \begin{definition}
 \label{def:surfaceQuiver}
@@ -868,12 +875,13 @@ Moreover, by construction, each edge of~$\dissection_{\bar Q}$ which is not on t
 This shows that~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are dual to each other.
 \end{proof}
 
+\vincent{Connection.}
+
 \begin{theorem}
 \label{thm:bijectionLocallyGentleAndSurfaces}
  Up to isomorphism, the constructions of Definitions \ref{def:quiverDualDissections} and \ref{def:surfaceQuiver} are inverse to each other.
  They induce a bijection between the set of isomorphism classes of locally gentle algebras and the set of homeomorphism classes of marked surfaces with a pair of dual cellular dissections.
 \end{theorem}
-\pierreguy{How much detail for a proof? Or is it clear?}
 
 \begin{remark}
 \label{rem:propertiesSurface}
@@ -976,7 +984,10 @@ Consider the family of \defn{double cycle quivers} indicated in \fref{fig:double
 	\label{fig:doubleCyclesQuivers}
 \end{figure}
 
+\vincent{TODO: surfaces double cycles.}
 \end{example}
+
+\pierreguy{Remark on the comparison with the surface of OPS}
 
 \subsection{Non-crossing and non-kissing complexes coincide}
 
@@ -990,7 +1001,6 @@ For any arrow~$\alpha$ on $\bar Q\blossom$, let~$\curveof(\alpha)$ be the curve 
 Define~$\curveof(\alpha^{-1})$ to be~$\curveof(\alpha)^{-1}$.
 \end{definition}
 
-
 \begin{definition}
 \label{def:curveOfAWalk}
 Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}} \ldots$ be a (possibly infinite) walk on~$\bar Q$. 
@@ -1003,8 +1013,9 @@ In practice, we will represent~$\curveof(\omega)$ by a curve which intersects it
 \label{lemm:curveOfAWalkIsAccordion}
 Let~$\omega$ be a walk on~$\bar Q$.  Then~$\curveof(\omega)$ is a~$\dissection_{\bar Q}$-accordion.
 \end{lemma}
+
 \begin{proof}
- This is because~$\curveof(\omega)$ follows angles in~$\dissection_{\bar Q}$ by definition.
+This is because~$\curveof(\omega)$ follows angles in~$\dissection_{\bar Q}$ by definition.
 \end{proof}
 
 \begin{lemma}
@@ -1013,6 +1024,7 @@ Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undir
 \end{lemma}
 \begin{proof}
  \pierreguy{TO DO}
+ \vincent{figure}
 \end{proof}
 
 The above implies the following.
@@ -1026,10 +1038,11 @@ The maps~$\curveof(-)$ and~$\walk(-)$ induce mutually inverse bijections between
 \label{lem:nonKissing=nonCrossing}
 Let~$\omega_1$ and~$\omega_2$ be walks on~$\bar Q$.  Then~$\omega_1$ and~$\omega_2$ are non-kissing if and only if the~$\dissection_{\bar Q}$-accordions~$\curveof(\omega_1)$ and~$\curveof(\omega_2)$ are non-crossing on~$\surface(\bar Q)$.
 \end{lemma}
+
 \begin{proof}
  \pierreguy{Picture No.4}
+ \vincent{figure}
 \end{proof}
-
 
 \begin{theorem}
 \label{thm:complexesCoincide}
@@ -1038,11 +1051,11 @@ Let~$\omega_1$ and~$\omega_2$ be walks on~$\bar Q$.  Then~$\omega_1$ and~$\omega
 \item For any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
+
 \begin{proof}
  The first point is a consequence of Proposition \ref{prop:walks=arcs}, Lemma \ref{lem:nonKissing=nonCrossing} and Proposition \ref{prop:accordionsSlaloms}.
  The second point is a consequence of Theorem \ref{thm:bijectionLocallyGentleAndSurfaces} and of the first point.
 \end{proof}
-
 
 \section{Properties of the non-crossing and non-kissing complexes}\label{sec:propertiesOfComplexes}
 
@@ -1071,13 +1084,14 @@ In the case where~$\omega$ is an infinite straight walk (so~$\omega$ is a cycle 
 Otherwise, if~$\omega$ contains several occurrences of~$\alpha^\pm$, only one occurrence is marked.
 \end{definition}
 
+The following definition is illustrated in \fref{fig:orderCurves}.
+
 \begin{definition}
 For any arrow~$\alpha \in Q\blossom_1$ and any two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at an occurrence of~$\alpha^\pm$,
 let~$\sigma$ denote their maximal common substring containing that occurrence of~$\alpha$.
 Since~$\mu_\star \ne \nu_\star$, this common substring~$\sigma$ is strict, so~$\mu_\star$ and~$\nu_\star$ split at one endpoint of~$\sigma$.
 The \defn{countercurrent order at~$\alpha$} is defined by~$\mu_\star \prec_\alpha \nu_\star$ when~$\mu_\star$ enters and/or exits~$\sigma$ in the direction pointed by~$\alpha$, while~$\nu_\star$ enters and/or exits~$\sigma$ in the direction opposite to~$\alpha$.
 \end{definition}
-\pierreguy{Add a picture here?}
 
 \begin{remark}
 \label{rema:countercurrentOrderOnSurface}
@@ -1085,12 +1099,11 @@ Using Theorem \ref{thm:complexesCoincide}, we can translate the definition of th
 An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point $v$ between two arcs of~$\dissection$.
 Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions~$\gamma$ and~$\delta$ passing in front of this angle.
 Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$ does.
-\pierreguy{Should we prove this?}
 %
 \begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=1]{orderCurves}}
-	\caption{The order~$\prec_\alpha$ on marked walks is the order in which the corresponding curves cross the angle corresponding to~$\alpha$.}
+	\caption{The order~$\mu \prec_\alpha \nu$ on marked walks is the order in which the corresponding curves~$\curveof(\mu)$ and~$\curveof(\nu)$ cross the angle corresponding to~$\alpha$.}
 	\label{fig:orderCurves}
 \end{figure}
 \end{remark}
@@ -1206,7 +1219,7 @@ Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$
 \end{proof}
 
 
-The following definition from \cite[Definition 2.23]{PaluPilaudPlamondon} extends to the setting locally gentle algebras.
+The following definition from \cite[Definition 2.23]{PaluPilaudPlamondon} extends to the setting of locally gentle algebras.
 
 \begin{definition}
 \label{defi:distinguishedWalksAndArrows}
@@ -1234,14 +1247,15 @@ Let~$F$ be a facet of~$\NKC$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
- \pierreguy{Vincent has the proof of this proposition.}
+ \vincent{Vincent has the proof of this proposition.}
  The first two dots in this proposition are proven in Lemma~\ref{lem:ExistenceOfDistinguishedArrows}.
 \end{proof}
  
 We can now prove the purity result.
 
-{\it Proof of Proposition \ref{prop:purity}.}
-\pierreguy{TO DO}
+\begin{proof}[Proof of Proposition \ref{prop:purity}.]
+\vincent{TO DO}
+\end{proof}
 
 \subsection{Thinness of the non-crossing and non-kissing complexes, mutation}
 
@@ -1277,7 +1291,9 @@ The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is t
 
 \vincent{Orient the flip graph. Connection to the lattice of torsion classes?}
 
+\section{$\b{g}$-, $\b{c}$- and $\b{d}$-vectors}
 
+\vincent{To do on the walks, on the accordions and on the slaloms.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
