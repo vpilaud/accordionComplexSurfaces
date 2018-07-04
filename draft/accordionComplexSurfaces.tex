@@ -314,7 +314,7 @@ Examples are represented on \fref{fig:quivers}.
 
 \begin{figure}[t]
 	\capstart
-	\centerline{\includegraphics[scale=.4]{quivers}}
+	\centerline{\includegraphics[scale=.6]{quivers}}
 	\caption{Some locally gentle quivers and their blossoming quivers. Initial vertices are solid and labeled while blossom vertices are hollow, and initial arcs are bold while blossom arcs are thin.}
 	\label{fig:quivers}
 \end{figure}
@@ -677,7 +677,7 @@ Examples are represented on \fref{fig:koszulQuivers}.
 
 \begin{figure}[t]
 	\capstart
-	\centerline{\includegraphics[scale=.4]{koszulQuivers}}
+	\centerline{\includegraphics[scale=.6]{koszulQuivers}}
 	\caption{The Koszul duals of the (blossoming) quivers of \fref{fig:quivers}.}
 	\label{fig:koszulQuivers}
 \end{figure}
@@ -711,22 +711,22 @@ placed as foll:qows:
 
 \centerline{
 \begin{tikzpicture}[
-	scale=2,
+	scale=1.5,
 	thick,
 	decoration={markings, mark=at position 0.5 with {\arrow{>}}},
-	roundNode/.style={circle, fill=black, inner sep=2pt, outer sep=2pt}
+	roundNode/.style={circle, fill=black, inner sep=2pt, outer sep=1.5pt}
 	]
-	\node[roundNode, label=left:{$s(\alpha)$}] (s) at (-1,0) {};
-	\node[roundNode, label=right:{$t(\alpha)$}] (t) at (1,0) {};
-	\node[roundNode, fill=green, label=above:{$\green v(\alpha)$}] (v) at (0,1) {};
-	\node[roundNode, fill=red, label=below:{$\red v\dual(\alpha)$}] (vd) at (0,-1) {};
+	\node[roundNode, label={[label distance=-3pt]left:{$s(\alpha)$}}] (s) at (-1,0) {};
+	\node[roundNode, label={[label distance=-3pt]right:{$t(\alpha)$}}] (t) at (1,0) {};
+	\node[roundNode, fill=green, label={[label distance=-3pt]above:{$\green v(\alpha)$}}] (v) at (0,1) {};
+	\node[roundNode, fill=red, label={[label distance=-3pt]below:{$\red v\dual(\alpha)$}}] (vd) at (0,-1) {};
 	\draw[color=black, postaction={decorate}] (s) -> (t) node[midway, above] {$\alpha$};
 	\pic [draw, angle radius=.7cm] {angle = s--t--vd};
 	\pic [draw, angle radius=.7cm] {angle = vd--s--t};
-	\draw[color=green, postaction={decorate}] (v) -> (s) node[midway, above left] {$\green \Enrs{\alpha}$};
-	\draw[color=green, postaction={decorate}] (v) -> (t) node[midway, above right] {$\green \Enrt{\alpha}$};
-	\draw[color=red, postaction={decorate}] (vd) -> (s) node[midway, below left] {$\red \Ers{\alpha}$};
-	\draw[color=red, postaction={decorate}] (vd) -> (t) node[midway, below right] {$\red \Ert{\alpha}$};
+	\draw[color=green, postaction={decorate}] (v) -> (s) node[midway, above left, outer sep=-3pt] {$\green \Enrs{\alpha}$};
+	\draw[color=green, postaction={decorate}] (v) -> (t) node[midway, above right, outer sep=-3pt] {$\green \Enrt{\alpha}$};
+	\draw[color=red, postaction={decorate}] (vd) -> (s) node[midway, below left, outer sep=-3pt] {$\red \Ers{\alpha}$};
+	\draw[color=red, postaction={decorate}] (vd) -> (t) node[midway, below right, outer sep=-3pt] {$\red \Ert{\alpha}$};
 \end{tikzpicture}
 }
 
@@ -744,15 +744,16 @@ This construction is illustrated on \fref{fig:examplesSurfaces}.
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{examplesSurfaces}}
-	\caption{The surface~$\surface_{\bar Q}$ for the first four quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded (the second surface has no boundary, it is just a sphere).}
+	\caption{The surface~$\surface_{\bar Q}$ for the quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded, and the glue symbols indicate how to identify some edges to get the desired surfaces. The first two surfaces are disks, the third is a sphere, the fourth is a cylinder, and the fifth is a punctured torus.}
 	\label{fig:examplesSurfaces}
 \end{figure}
-\begin{figure}[t]
-	\capstart
-	\centerline{\includegraphics[scale=.7]{examplesSurfaces2}}
-	\caption{The surface~$\surface_{\bar Q}$ for the last two quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded. The first surface is a cylinder, the second one is a torus with a hole.}
-	\label{fig:examplesSurfaces2}
-\end{figure}
+
+%\begin{figure}[t]
+%	\capstart
+%	\centerline{\includegraphics[scale=.7]{examplesSurfaces2}}
+%	\caption{The surface~$\surface_{\bar Q}$ for the last two quivers~$\bar Q$ of \fref{fig:quivers}. The boundaries of the surfaces are shaded. The first surface is a cylinder, the second one is a torus with a hole.}
+%	\label{fig:examplesSurfaces2}
+%\end{figure}
 %
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
 Note that we could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
@@ -773,18 +774,49 @@ The set~${V_{\bar Q}}\dual$ and the ${V_{\bar Q}}\dual$-dissection~${\dissection
 \end{definition}
 
 \begin{remark}
-Observe that
+The following observations are useful for the computation of examples.
 \begin{itemize}
-\item $V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$.
-\item $\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
-\item $\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
+\item The set~$V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$ (equivalently, for each maximal path in~$\bar Q$).
+      Finite straight walks yield vertices on the boundary, while infinite cyclic straight walks yield punctures.
+\item The dissection~$\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
+\item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
+\item The number of boundary components of~$\surface(\bar Q)$ can be computed as follows.
+      There are two natural perfect matchings whose vertices are the blossoming vertices of~$\bar Q$: one is obtained by putting an edge between two vertices~$v_1$ and~$v_2$ whenever there is a straight walk of~$\bar Q$ relating them, and the other is obtained by doing the same for~$\bar Q \koszul$.
+      Let~$G$ be the superposition of these two perfect matchings.
+      Then the number of boundary components of~$\surface(\bar Q)$ is the number of connected components of~$G$.
+\item The genus of the surface~$\surface(\bar Q)$ is
+      \[
+       g = \frac{|Q_1| - |Q_0| - b + 2}{2},
+      \]
+      where~$b$ is the number of boundary components (see above for a way to compute~$b$).
+      Indeed, ~$g=\frac{2-\chi(\surface(\bar Q))}{2}$, where~$\chi(\surface(\bar Q))$ is the Euler characteristic of~$\surface(\bar Q)$.
+      The dissection~$\dissection$ provides a cellular decomposition of~$\surface(\bar Q)$ on which we fill the boundary components with disks.  
+      The number of faces of this cellular decomposition is~$b$, its number of edges is~$|Q_0|$ and its number of vertices is the number of finite straight walks in~$\bar Q$, which is equal to~$2|Q_0| - |Q_1|$.
+      The above formula for~$g$ follows.
 \end{itemize}
 A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
 \end{remark}
 
-\begin{example}
+\begin{example}[Cambrian paths]
+\label{exm:CambrianPath}
+\end{example}
+
+\begin{example}[Reversed paths]
+\label{exm:doublePath}
 Consider the following family of locally gentle quivers:
-\vincent{TODO}
+\vincent{TODO double path}
+\end{example}
+
+\begin{example}[Double paths]
+\label{exm:doublePath}
+Consider the following family of locally gentle quivers:
+\vincent{TODO double path}
+\end{example}
+
+\begin{example}[Double cycles]
+\label{exm:doubleCycle}
+Consider the following family of locally gentle quivers:
+\vincent{TODO double cycle}
 \end{example}
 
 \begin{proposition}
@@ -855,7 +887,7 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercur
 
 \begin{lemma}
 \label{lemm:facesHaveMaximalElement}
-For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
+For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
 \end{lemma}
 \begin{proof}
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
@@ -864,29 +896,21 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\al
  \pierreguy{Yann has the combinatorial proof.}
  
  {\it Geometric proof.} View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
- The arrow~$\alpha$ then corresponds to an angle in~$\dissection$.  
+ The arrow~$\alpha$ then corresponds to an angle in~$\dissection$ at a vertex~$v$.  
  
- The result is trivial if the set~$F_\alpha$ is finite; assume, therefore, that it is infinite.
+ For any curve~$\gamma$ in~$F$, even though~$\gamma$ may pass through the above angle infinitely many times, there is one instance that is furthest from the angle:
+ indeed, if ~$\gamma$ passes infinitely many times through~$\alpha$, then~$v$ is a puncture and~$\gamma$ circles infinitely towards it.
+ But then~$\gamma$ passes through~$\alpha$ only finitely many times before it starts circling~$v$ (in either direction), and one of these times is the furthest from~$v$.
+  
+ Therefore, for every curve~$\gamma\in F$, there is a maximal occurence of~$\alpha$ in~$\gamma$.
+ Since~$F$ is finite, the set of these maximal occurences is finite, so it admits a maximal element.  
+ This element is the maximal element of~$F_\alpha$.
  
 \end{proof}
 
-
-
-\subsection{Purity of the non-crossing and non-kissing complexes}
-
-A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
-
-\begin{proposition}
-\label{prop:purity}
- The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$|Q_0| + \Delta$, where~$\Delta$ is the number of blossoming vertices of~$Q\blossom$ divided by two.
-\end{proposition}
-
-Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
-Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
-
 \begin{lemma}
-\label{lemm:facetsAreFinite}
-Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ is contained in a finite maximal face.
+\label{lemm:facesAreBounded}
+There is a bound on the number of elements of a finite face of~$\NKC$.
 \end{lemma}
 \begin{proof}
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
@@ -902,11 +926,91 @@ Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$
 \end{proof}
 
 
- 
 
+
+\begin{lemma}
+\label{lemm:facetsAreFinite}
+Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ is contained in a finite maximal face.
+\end{lemma}
+\begin{proof}
+ If~$\NKC$ admits an infinite face, then all subsets of this face are also faces, so~$\NKC$ admits faces of arbitrary finite cardinality.
+ This contradicts Lemma \ref{lemm:facesAreBounded}.
+\end{proof}
+
+
+
+\subsection{Purity of the non-crossing and non-kissing complexes}
+
+A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
+The aim of this section is to prove the following purity result.
+
+\begin{proposition}
+\label{prop:purity}
+ The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
+\end{proposition}
+
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
+
+
+
+The following definition from \cite[Definition 2.23]{PaluPilaudPlamondon} extends to the setting locally gentle algebras.
+
+\begin{definition}
+\label{defi:distinguishedWalksAndArrows}
+Let~$\alpha \in Q\blossom_1$ be an arrow and let~$F$ be a face of~$\NKC$ containing the straight walk passing through~$\alpha$.
+Consider the marked walk~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ (which exists by Lemma \ref{lemm:facesHaveMaximalElement}),
+and let~$\omega$ be the walk obtained by forgetting the marked arrow in~$\omega_\star$. 
+We say that~$\omega$ is the \defn{distinguished walk} of~$F$ at~$\alpha$ and that~$\alpha$ is a \defn{distinguished arrow} on~$\omega \in F$.
+We will use the notation
+\[
+\distinguishedWalk{\alpha}{F} \eqdef \max\nolimits_{\prec_\alpha} F_\alpha
+\qquad\text{and}\qquad
+\distinguishedArrows{\omega}{F} \eqdef \set{\alpha \in \omega}{\distinguishedWalk{\alpha}{F} = \omega}.
+\]
+\end{definition}
+
+The following result extends \cite[Proposition 2.26]{PaluPilaudPlamondon} to the case of locally gentle algebras.
+
+\begin{proposition}
+\label{prop:numberOfDistinguishedArrows}
+Let~$F$ be a facet of~$\NKC$.
+\begin{itemize}
+ \item Each bending walk of~$F$ has exactly two distinguished arrows.
+ \item Each finite straight walk of~$F$ has exactly one distinguished arrows.
+ \item Each infinite straight walk of~$F$ has exactly zero distinguished arrows.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+ \pierreguy{Vincent has the proof of this proposition.}
+\end{proof}
+ 
+We can now prove the purity result.
+
+{\it Proof of Proposition \ref{prop:purity}.}
+\pierreguy{TO DO}
 
 \subsection{Thinness of the non-crossing and non-kissing complexes, mutation}
 
+A simplicial complex is \defn{thin} if each of its codimension~$1$ faces is contained in exaclty two facets.
+We state the following results, which generalize \cite[Proposition 2.31 and Corollary 2.33]{PaluPilaudPlamondon}, whose proofs apply withouth change.
+
+\begin{proposition}
+\label{prop:flip}
+Let~$F$ be a non-kissing facet in~$\NKC$ and let~$\omega \in F$ be a bending walk.
+Let~$\alpha$ and~$\beta$ be the distinguished arrows of~$\omega$ (see Proposition \ref{prop:numberOfDistinguishedArrows}), and~$\sigma$ be the distinguished substring of~$\omega$, which splits~$\omega$ into~$\omega = \rho \sigma \tau$.
+Let~$\alpha'$ and~$\beta'$ be the other two arrows of~$Q_1\blossom$ incident to the endpoints of~$\sigma$ and such that~$\alpha'\alpha \in I$ or~$\alpha\alpha' \in I$, and $\beta'\beta \in I$ or~$\beta\beta' \in I$.
+Let~$\mu \eqdef \distinguishedWalk{\alpha'}{F \ssm \{\omega\}}$ and~$\nu \eqdef \distinguishedWalk{\beta'}{F \ssm \{\omega\}}$ be the distinguished walks of~$F \ssm \{\omega\}$ at~$\alpha'$ and~$\beta'$ respectively.
+Then
+\begin{enumerate}[(i)]
+\item The walk~$\mu$ splits into~$\mu = \rho' \sigma \tau$ and the walk~$\nu$ splits into~$\nu = \rho \sigma \tau'$.
+\item The walk~$\omega' \eqdef \rho' \sigma \tau'$ is kissing~$\omega$ but no other~walk~of~$F$. Moreover, $\omega'$ is the only other (undirected) walk besides~$\omega$ which is not kissing any other walk of~$F \ssm \{\omega\}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+The non-kissing complex~$\RNKC$ is thin and is a pseudomanifold without boundary.
+\end{corollary}
 
 
 \section{Representation-theoretic interpretation}
