@@ -156,6 +156,7 @@
 \newcommand{\reversed}[1]{#1^{\mathrm{rev}}} % reverse all arrows
 \renewcommand{\top}{\mathrm{top}} % top
 \newcommand{\bottom}{\mathrm{bot}} % bottom
+\newcommand{\walk}{\operatorname{\omega}} % walk (of a curve)
 
 % accordion and slalom complexes
 \newcommand{\surface}{\mathcal{S}} % an orientable surface
@@ -170,6 +171,7 @@
 \newcommandx{\RSC}[1][1=\dissection\dual]{\mathcal{C}_{\mathrm{sla}}(#1)} % reduced slalom complex
 \newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
 \newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
+\newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
 
 % lattices
 \newcommand{\meet}{\wedge} % meet
@@ -895,7 +897,16 @@ Consider the following family of locally gentle quivers:
 \vincent{TODO double cycle}
 \end{example}
 
-\subsection{Non-crossing and non-kissing complexe coincide}
+\subsection{Non-crossing and non-kissing complexes coincide}
+
+Let~$\bar Q$ be a locally gentle bound quiver.
+
+\begin{definition}
+\label{def:curveOfAWalk}
+Let~$\omega$ be a (possibly infinite) walk on~$\bar Q$. 
+Define a curve~$\curveof(\omega)$
+\end{definition}
+
 
 \begin{lemma}
 \label{lem:walks=arcs}
