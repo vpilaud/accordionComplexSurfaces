@@ -763,11 +763,16 @@ This construction is illustrated on \fref{fig:surfaces}.
 \end{figure}
 
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
-Note that we could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
+
+\begin{remark}
+We could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
 \begin{itemize}
 \item consider one $(\ell+1)$-gon~$P_\omega$ for each straight walk~$\omega$ of length~$\ell$ in~$\bar Q$ or in~$\bar Q\koszul$ (just closing~$\omega$ with an additional edge connecting~$t(\omega)$ to~$s(\omega)$),
 \item for each arrow~$\alpha \in Q_1\blossom$, consider the only straight walks~$\omega$ of~$\bar Q$ and~$\omega\koszul$ of~$\bar Q\koszul$ containing~$\alpha$, and glue the polygons~$P_\omega$ and~$P_{\omega\koszul}$ along their edges corresponding to~$\alpha$.
 \end{itemize}
+\end{remark}
+
+
 The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows with two disjoint sets~$V_{\bar Q}$ and~${V_{\bar Q}}\dual$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~${\dissection_{\bar Q}}\dual$ defined as follows.
 
 \begin{definition}
@@ -779,6 +784,38 @@ The surface~$\surface(\bar Q)$ is endowed with
 \end{itemize}
 The set~${V_{\bar Q}}\dual$ and the ${V_{\bar Q}}\dual$-dissection~${\dissection_{\bar Q}}\dual$ are defined dually.
 \end{definition}
+
+\begin{proposition}
+\label{prop:dissectionsAreCellular}
+Let~$\bar Q$ be a locally gentle bound quiver.
+Then the dissections~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are cellular and dual to each other.
+\end{proposition}
+\begin{proof}
+In the construction of~$\surface(\bar Q)$, if two arrows~$\alpha$ and~$\beta$ of~$\bar Q \blossom$ are such that~$t(\alpha) = s(\beta)$ and~$\alpha\beta\in I\blossom$, then the vertices~$v(\alpha)$ and~$v(\beta)$ are identified on the surface.
+Thus, any two arrows of a given path contribute the same vertex of~$V_{\bar Q}$, so~$V_{\bar Q}$ is in bijection with the set of maximal paths in~$\bar Q\blossom$.
+
+Let~$v\in V_{\bar Q}$.  If~$v$ corresponds to a finite maximal path of~$\bar Q\blossom$, then the situation around~$v$ is as follows:
+\pierreguy{Picture No. 1 here.}
+
+If~$v$ corresponds to an infinite maximal path, then the situation around~$v$ is as follows:
+\pierreguy{Picture No. 2 here.}
+
+In both cases, we see that~$v$ is enclosed in a polygon of~$\dissection_{\bar Q}\dual$.  This shows that~$\dissection_{\bar Q}\dual$ is a cellular dissection of~$\surface(\bar Q)$.
+Dually, one shows that~$\dissection_{\bar Q}$ is also a cellular dissection.
+
+Moreover, by construction, each edge of~$\dissection_{\bar Q}$ which is not on the boundary of~$\surface(\bar Q)$ crosses exactly one edge of~$\dissection_{\bar Q}\dual$, and vice versa.
+This shows that~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ aare dual to each other.
+\end{proof}
+
+
+\begin{theorem}
+\label{thm:bijectionLocallyGentleAndSurfaces}
+ Up to isomorphism, the constructions of Definitions \ref{def:quiverDualDissections} and \ref{def:surfaceQuiver} are inverse to each other.
+ They induce a bijection between the set of isomorphism classes of locally gentle algebras and the set of homeomorphism classes of marked surfaces with a pair of dual cellular dissections.
+\end{theorem}
+\pierreguy{How much detail for a proof? Or is it clear?}
+
+
 
 \begin{remark}
 The following observations are useful for the computation of examples.
@@ -865,11 +902,11 @@ Non-kissing walks = non-crossing $\dissection$-accordion curves.
 \end{itemize}
 \end{theorem}
 
-
 \section{Properties of the non-crossing and non-kissing complexes}
 
 \subsection{The countercurrent order}
-The countercurrent order was introduced in \cite{PaluPilaudPlamondon} for gentle algebras.  We now adapt it to locally gentle algebras.
+The countercurrent order was introduced in~\cite{McConville} for grids and defined in \cite{PaluPilaudPlamondon} for gentle algebras.
+We now adapt it to locally gentle algebras.
 
 \begin{definition}
 A \defn{marked walk}~$\omega_\star$ is a walk~$\omega$ together with a marked occurence of an arrow~$\alpha^{\pm}$ in~$\omega$.
@@ -892,7 +929,7 @@ An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point $v$ bet
 Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions~$\gamma$ and~$\delta$ passing in front of this angle.
 Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$ does.
 \pierreguy{Should we prove this?}
-\pierreguy{Add picture.}
+\pierreguy{Add picture No.3.}
 \end{remark}
 
 
@@ -908,13 +945,18 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercur
 
 \begin{lemma}
 \label{lemm:facesHaveMaximalElement}
-For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ admits a maximal element for the countercurrent order~$\prec_\alpha$.
+For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ is either empty or admits a maximal element for the countercurrent order~$\prec_\alpha$.
 \end{lemma}
 \begin{proof}
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
  
  {\it Combinatorial proof.}
- \pierreguy{Yann has the combinatorial proof.}
+ Note that even though~$F$ is finite, the set of marked walks~$F_\alpha$ might be infinite if~$\alpha$ belongs to an oriented cycle of~$Q$.
+ Assume that~$F_\alpha$ is non-empty, and infinite.
+ Any walk that contains an infinite number of copies of~$\alpha$ can be written in the form~$\omega=\sigma c^\infty$ where~$\sigma$ is a (possibly infinite) substring and~$c$ is an oriented cycle containing~$\alpha$.
+ Then~$\omega$ marked at the first occurrence of~$\alpha$ in~$c^\infty$ is greater than~$\omega$ marked at any other occurrence of~$\alpha$ in~$c^\infty$.
+ We can thus safely remove all copies of~$\omega$ marked at an occurrence of~$\alpha$ in~$c^\infty$ but the first one.
+ After applying this procedure a finite number of times,~$F_\alpha$ becomes finite, and the claim follows.
  
  {\it Geometric proof.} View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  The arrow~$\alpha$ then corresponds to an angle in~$\dissection$ at a vertex~$v$.  
