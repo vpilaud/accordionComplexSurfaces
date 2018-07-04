@@ -17,7 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % theorems
-\newtheorem{theorem}{Theorem}[]
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -500,9 +500,14 @@ All these dual edges do not cross (as the half-edges do not cross in each face o
 %In Proposition~\ref{prop:conditionsDualDissections}, note that although the set~$M\dual$ of dual marked points is unique, the dual dissection~$\dissection\dual$ is not when~$\dissection$ is not cellular.
 %\end{remark}
 
-\begin{example}
-Two examples of dual cellular dissections on a surface are represented in \fref{fig:dissections}.
-\end{example}
+Some examples of dual cellular dissections on different surfaces are represented in \fref{fig:dissections}.
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{dissections}}
+	\caption{Some pairs of dual dissections on different surfaces.}
+	\label{fig:dissections}
+\end{figure}
 
 \begin{definition}
 Interior points, blossom points.
@@ -681,7 +686,6 @@ Among these arrows, those arising from the same endpoint of~$a$ will be composab
 Thus $\bar Q_{\dissection}$ is locally gentle.
 \end{proof}
 
-
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{quiversDissections1}}
@@ -691,17 +695,9 @@ Thus $\bar Q_{\dissection}$ is locally gentle.
 	\label{fig:quiversDissections}
 \end{figure}
 
-
-
-
-
 %Moreover, the vertices corresponding to boundary edges of~$\dissection$ are blossoming vertices.
 %\pierreguy{Be more precise on the ``are blossiming vertices'' part of this sentence.}
 \vincent{Explain also that we can get the blossoming quiver using the blossom points.}
-
-\begin{example}
- An example on the annulus...
-\end{example}
 
 \begin{definition}
 \label{defi:koszulDual}
@@ -926,7 +922,7 @@ Define~$\curveof(\alpha^{-1})$ to be~$\curveof(\alpha)^{-1}$.
 
 \begin{definition}
 \label{def:curveOfAWalk}
-Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}}$ be a (possibly infinite) walk on~$\bar Q$. 
+Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}} \ldots$ be a (possibly infinite) walk on~$\bar Q$. 
 Define the curve~$\curveof(\omega)$ to be the concatenation of the curves~$\curveof(\alpha_i{\varepsilon_{i}})$ of Definition \ref{def:curveOfAnArrow}.
 \end{definition}
 
@@ -951,7 +947,7 @@ Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undir
 The above implies the following.
 
 \begin{proposition}
-\label{lem:walks=arcs}
+\label{prop:walks=arcs}
 The maps~$\curveof(-)$ and~$\walk(-)$ induce mutually inverse bijections between the set of undirected walks on~$\bar Q$ and the set of~$\dissection_{\bar Q}$-accordions on~$\surface(\bar Q)$.
 \end{proposition}
 
@@ -1179,9 +1175,10 @@ Then
 \end{proposition}
 
 \begin{corollary}
-The non-kissing complex~$\RNKC$ is thin and is a pseudomanifold without boundary.
+The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is thin and is a pseudomanifold without boundary.
 \end{corollary}
 
+\vincent{Orient the flip graph. Connection to the lattice of torsion classes?}
 
 \section{Representation-theoretic interpretation}
 
