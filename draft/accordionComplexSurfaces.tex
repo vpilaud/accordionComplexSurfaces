@@ -756,11 +756,16 @@ This construction is illustrated on \fref{fig:examplesSurfaces}.
 %\end{figure}
 %
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface(\bar Q)$ with boundaries.
-Note that we could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
+
+\begin{remark}
+We could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
 \begin{itemize}
 \item consider one $(\ell+1)$-gon~$P_\omega$ for each straight walk~$\omega$ of length~$\ell$ in~$\bar Q$ or in~$\bar Q\koszul$ (just closing~$\omega$ with an additional edge connecting~$t(\omega)$ to~$s(\omega)$),
 \item for each arrow~$\alpha \in Q_1\blossom$, consider the only straight walks~$\omega$ of~$\bar Q$ and~$\omega\koszul$ of~$\bar Q\koszul$ containing~$\alpha$, and glue the polygons~$P_\omega$ and~$P_{\omega\koszul}$ along their edges corresponding to~$\alpha$.
 \end{itemize}
+\end{remark}
+
+
 The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows with two disjoint sets~$V_{\bar Q}$ and~${V_{\bar Q}}\dual$ of marked points and two dual dissections~$\dissection_{\bar Q}$ and~${\dissection_{\bar Q}}\dual$ defined as follows.
 
 \begin{definition}
@@ -772,6 +777,24 @@ The surface~$\surface(\bar Q)$ is endowed with
 \end{itemize}
 The set~${V_{\bar Q}}\dual$ and the ${V_{\bar Q}}\dual$-dissection~${\dissection_{\bar Q}}\dual$ are defined dually.
 \end{definition}
+
+\begin{proposition}
+\label{prop:dissectionsAreCellular}
+Let~$\bar Q$ be a locally gentle bound quiver.
+Then the dissections~$\dissection_{\bar Q}$ and~$\dissection_{\bar Q}\dual$ are cellular and dual to each other.
+\end{proposition}
+\begin{proof}
+ 
+\end{proof}
+
+
+\begin{theorem}
+\label{thm:bijectionLocallyGentleAndSurfaces}
+ Up to isomorphism, the constructions of Definitions \ref{def:quiverDualDissections} and \ref{def:surfaceQuiver} are inverse to each other.
+ They induce a bijection between the set of isomorphism classes of locally gentle algebras and the set of homeomorphism classes of marked surfaces with a pair of dual cellular dissections.
+\end{theorem}
+
+
 
 \begin{remark}
 The following observations are useful for the computation of examples.
