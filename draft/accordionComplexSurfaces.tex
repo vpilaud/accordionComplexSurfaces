@@ -283,8 +283,34 @@ Possible titles, depending on what we want to insist on:
 \item Combinatorial models for support $\tau$-tilting on gentle algebras: accordion, slalom and non-kissing complexes
 \end{enumerate}
 
+\section{Introduction}
 
-\section{Non-kissing complex}
+BLAH BLAH BLAH 
+
+The two main objects of our study will be locally gentle algebras and dissections of surfaces.
+Our first main result is that these two classes of objects are essentially the same.
+
+\begin{theorem*}[\ref{thm:bijectionLocallyGentleAndSurfaces}]
+ There is an explicit bijection between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of oriented marked surfaces with boundary and a pair of dual cellular dissections.
+\end{theorem*}
+
+On the algebraic side, we extend the study of walks from the gentle to the locally gentle case, and define a notion of compatibility called non-kissing (see Section \ref{sec:nonKissingComplex}).
+On the geometric side, we extend the study of dissections, accordions and slaloms from the case of the disk to the case of an arbitrary surface, and define a notion of compatibility called non-crossing (see Section \ref{sec:accordionSlalomNonCrossingComplexes}).
+The combinatorial information contained in these notions is encoded in simplicial complexes: the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC$.
+
+\begin{theorem*}[\ref{thm:complexesCoincide}]
+ The complexes~$\NKC$ and~$\NCC$ are isomorphic.
+\end{theorem*}
+
+Finally, we show that these complexes have very nice combinatorial properties.
+
+\begin{theorem*}[\ref{prop:purity} and \ref{coro:thin}]
+ The complexes~$\NKC$ and~$\NCC$ are pure and thin.  Their dimension is computed, and mutation is explicitly described.
+\end{theorem*}
+
+Consequences on the representation theory of locally gentle algebras will be investigated in a future project.
+
+\section{Non-kissing complex}\label{sec:nonKissingComplex}
 
 \subsection{Locally gentle bound quivers and their blossoming quivers}
 
@@ -390,7 +416,7 @@ A \defn{peak walk} (resp.~\defn{deep walk}) is a walk with a unique corner (in o
 \label{def:kiss}
 Let~$\omega,\omega' \in \walks^\pm(\bar Q)$ be two undirected walks on~$\bar Q$.
 We say that~$\omega$ \defn{kisses}~$\omega'$ if~$\Sigma_\top(\omega) \cap \Sigma_\bottom(\omega') \ne \varnothing$.
-See \fref{fig:kissingCrossing}.
+See \fref{fig:kissing}.
 % \ie if there exist a common substring~$\sigma \in \strings^\pm(\bar Q)$ of~$\omega$ and~$\omega'$ such that the arrows of~$\omega$ incident to~$\sigma$ are both outgoing while the arrows of~$\omega'$ incident to~$\sigma$ are both incoming.
 We say that~$\omega$ and~$\omega'$ are \defn{kissing} if~$\omega$ kisses~$\omega'$ or~$\omega'$ kisses~$\omega$ (or both).
 Note that we authorize the situation where~$\sigma$ is reduced to a vertex~$v$, meaning that~$v$ is a peak of~$\omega$ and a deep of~$\omega'$.
@@ -400,9 +426,9 @@ We denote by~$\NKWalks(\bar Q)$ the walks on~$\bar Q$ which are not self-kissing
 
 \begin{figure}
 	\capstart
-	\centerline{\includegraphics[scale=1]{kissingCrossing}}
-	\caption{A schematic representation of two kissing walks (left) and two crossing walks~(right): $\omega$~kisses~$\omega'$ (left) while~$\mu$~crosses~$\nu$ (right). For the crossing walks, we have~$\mu \prec_\gamma \nu$ while~$\nu \prec_\delta \mu$.}
-	\label{fig:kissingCrossing}
+	\centerline{\includegraphics[scale=1]{kissing}}
+	\caption{A schematic representation of two kissing walks: $\omega$~kisses~$\omega'$.}
+	\label{fig:kissing}
 \end{figure}
 
 \begin{definition}
@@ -420,7 +446,7 @@ We thus consider the \defn{reduced non-kissing complex}~$\RNKC$ to be the deleti
 %This result follows from the existence of flips in non-kissing facets.
 %This operation is illustrated in \fref{fig:flip}.
 
-\section{Accordion complex, slalom complex, and non-crossing complex}
+\section{Accordion complex, slalom complex, and non-crossing complex}\label{sec:accordionSlalomNonCrossingComplexes}
 
 \subsection{Dual dissections of a surface}
 
@@ -638,12 +664,11 @@ The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dual
 \end{remark}
 
 \begin{remark}
-A quick disclaimer about accordion complexes and slalom complexes of arbitrary dissections.
+A quick disclaimer about accordion complexes and slalom complexes of arbitrary cellular dissections.
 As stated in Proposition~\ref{prop:conditionsDualDissections}, a dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
 This prevents to use the definitions given in this section.
 Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
-\vincent{A retravailler}
 \end{remark}
 
 \section{Non-kissing versus non-crossing}
@@ -844,17 +869,18 @@ The following observations are useful for the computation of examples.
 \item The dissection~$\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
 \item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
 \item A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
-\item The number of boundary components of~$\surface(\bar Q)$ can be computed as follows.
+\item The number~$p$ of punctures of~$\surface(\bar Q)$ is the number of infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$.
+\item The number~$b$ of boundary components of~$\surface(\bar Q)$ can be computed as follows.
       There are two natural perfect matchings whose vertices are the blossoming vertices of~$\bar Q$: one is obtained by joining the endpoints of each finite straight walk of~$\bar Q$, and the other is obtained similarly from~$\bar Q \koszul$.
       Let~$G$ be the superposition of these two perfect matchings.
       Then the number~$b$ of boundary components of~$\surface(\bar Q)$ is the number of connected components of~$G$.
 \item The genus of the surface~$\surface(\bar Q)$ is
       \[
-       g = \frac{|Q_1| - |Q_0| - b + 2}{2},
+       g = \frac{|Q_1| - |Q_0| - b - p + 2}{2},
       \]
-      where~$b$ is the number of boundary components (see above for a way to compute~$b$).
-      Indeed, ~$g=\frac{2-\chi(\surface(\bar Q))}{2}$, where~$\chi(\surface(\bar Q))$ is the Euler characteristic of~$\surface(\bar Q)$.
-      The dissection~$\dissection$ provides a cellular decomposition of~$\surface(\bar Q)$ on which we fill the boundary components with disks.  
+      where~$b$ is the number of boundary components (see above for a way to compute~$b$) and~$p$ the number of punctures (\ie infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$).
+      Indeed, $2g = 2-\chi(\surface(\bar Q))$, where~$\chi(\surface(\bar Q))$ is the Euler characteristic of~$\surface(\bar Q)$.
+      The dissection~$\dissection$ provides a cellular decomposition of~$\surface(\bar Q)$ on which we fill the boundary components and the punctures with disks.  
       The number of faces of this cellular decomposition is~$b$, its number of edges is~$|Q_0|$ and its number of vertices is the number of finite straight walks in~$\bar Q$, which is equal to~$2|Q_0| - |Q_1|$.
       The above formula for~$g$ follows.
 \end{itemize}
@@ -869,13 +895,32 @@ For any gentle bound quiver~$\bar Q$ with Koszul dual~$\bar Q\koszul$, the surfa
 \label{exm:CambrianPath}
 \end{example}
 
-\begin{example}[Reversed paths]
+\begin{example}
 \label{exm:reversedPath}
-Consider the following family of locally gentle quivers:
-\vincent{TODO double path}
+Consider the family of ``reversed paths quivers'' indicated in \fref{fig:reversedPathsQuivers}.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{reversedPathsQuivers}}
+	\caption{The reversed paths quivers with~$1, 2, 3, 4$ vertices.}
+	\label{fig:reversedPathsQuivers}
+\end{figure}
+
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{reversedPathsPM}}.
+Moreover, $\bar Q$ has no infinite straight walk, while~$\bar Q\koszul$ has~$|Q_0|-1$ infinite straight walks.
+Therefore, the corresponding surfaces have $1$ boundary component and genus~$0$.
+The first few corresponding surfaces are represented in \fref{fig:reversedPathsSurfaces}.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.4]{reversedPathsSurfaces}}
+	\caption{The surface~$\surface_{\bar Q}$ for the reversed paths with~$1, 2, 3, 4$ vertices.}
+	\label{fig:reversedPathsSurfaces}
+\end{figure}
+
 \end{example}
 
-\begin{example}[Double paths]
+\begin{example}
 \label{exm:doublePath}
 Consider the family of ``double paths quivers'' indicated in \fref{fig:doublePathsQuivers}.
 
@@ -887,7 +932,13 @@ Consider the family of ``double paths quivers'' indicated in \fref{fig:doublePat
 \end{figure}
 
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
-Therefore, the corresponding surfaces have $1$ boundary component and genus~$(|Q_0|-1)/2$ when~$|Q_0|$ is odd, and $2$ boundary components and genus~$|Q_0|/2$ when~$|Q_0|$ is even.
+Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
+Therefore, the corresponding surfaces have no punctures and
+\begin{itemize}
+\item $1$ boundary component and genus~$(|Q_0|-1)/2$ when~$|Q_0|$ is odd, and 
+\item $2$ boundary components and genus~$|Q_0|/2$ when~$|Q_0|$ is even.
+\end{itemize}
+The first few corresponding surfaces are represented in \fref{fig:doublePathsSurfaces}.
 
 \begin{figure}[h]
 	\capstart
@@ -1015,12 +1066,18 @@ Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$
 %
 \begin{figure}[h]
 	\capstart
-	\centerline{\includegraphics[scale=.7]{orderCurves}}
-	\caption{The order~$\prec_\alpha$ is given by the order in which the curves cross the angle corresponding to~$\alpha$.}
+	\centerline{\includegraphics[scale=1]{orderCurves}}
+	\caption{The order~$\prec_\alpha$ on marked walks is the order in which the corresponding curves cross the angle corresponding to~$\alpha$.}
 	\label{fig:orderCurves}
 \end{figure}
 \end{remark}
 
+%\begin{figure}
+%	\capstart
+%	\centerline{\includegraphics[scale=1]{kissing}}
+%	\caption{A schematic representation of two kissing walks (left) and two crossing walks~(right): $\omega$~kisses~$\omega'$ (left) while~$\mu$~crosses~$\nu$ (right). For the crossing walks, we have~$\mu \prec_\gamma \nu$ while~$\nu \prec_\delta \mu$.}
+%	\label{fig:kissing}
+%\end{figure}
 
 For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, we denote by~$F_\alpha$ the set of walks of~$F$ marked at an occurence of~$\alpha^\pm$.
 
@@ -1188,7 +1245,10 @@ Then
 	\label{fig:flip}
 \end{figure}
 
+\vincent{Add a description and a schematic representation of the flip in the accordion complex and in the slalom complex.}
+
 \begin{corollary}
+\label{coro:thin}
 The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is thin and is a pseudomanifold without boundary.
 \end{corollary}
 
