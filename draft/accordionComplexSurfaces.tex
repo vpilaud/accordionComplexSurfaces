@@ -96,7 +96,7 @@
 \newcommand{\green}{\color{green}} % green command
 \newcommand{\darkblue}{\color{darkblue}} % darkblue command
 \newcommand{\defn}[1]{\textsl{\darkblue #1}} % emphasis of a definition
-\newcommand{\para}[1]{\medskip\noindent\textbf{#1.}} % paragraph
+\newcommand{\para}[1]{\medskip\noindent\textit{#1.}} % paragraph
 \renewcommand{\topfraction}{1} % possibility to have one page of pictures
 \renewcommand{\bottomfraction}{1} % possibility to have one page of pictures
 %\renewcommand\labelitemi{$\diamond$} % redefine itemize default symbol
@@ -323,6 +323,7 @@ Algebras and dissections have lived together before... (mention clusters)
 
 \section*{Acknowledgements}
 We thank Sibylle Schroll for discussions on geometric models for gentle algebras.
+We are also grateful to Salvatore Stella for discussions on accordion complexes of dissections of surfaces.
 
 \section{Non-kissing complex}\label{sec:nonKissingComplex}
 
@@ -362,6 +363,12 @@ Examples are represented on \fref{fig:quivers}.
 	\caption{Some locally gentle quivers (top) and their blossoming quivers (bottom). Initial vertices are solid and labeled while blossom vertices are hollow, and initial arcs are bold while blossom arcs are thin.}
 	\label{fig:quivers}
 \end{figure}
+
+\begin{remark}
+\label{rem:sizeBlossomingQuiver}
+Note that the blossoming quiver has~$2|Q_0|-|Q_1|$ incoming blossoms and~$2|Q_0|-|Q_1|$ outgoing blossoms.
+Therefore, it has $|Q_0\blossom| = |Q_0| + 2(2|Q_0|-|Q_1|) = 5|Q_0|-2|Q_1|$ vertices and~$|Q_1\blossom| = |Q_1| + 2(2|Q_0|-|Q_1|) = 4|Q_0|-|Q_1|$ arrows.
+\end{remark}
 
 \subsection{Strings and walks}
 
@@ -696,7 +703,7 @@ The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dual
 
 \begin{remark}
 A quick disclaimer about accordion complexes and slalom complexes of arbitrary cellular dissections.
-As stated in Proposition~\ref{prop:conditionsDualDissections}, a dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
+As stated in Proposition~\ref{prop:conditionsDualDissections}, a cellular dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
 This prevents to use the definitions given in this section.
 Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
@@ -1100,20 +1107,50 @@ $\phantom{x}$
 
 \section{Properties of the non-crossing and non-kissing complexes}\label{sec:propertiesOfComplexes}
 
+This section explores combinatorial properties of the non-crossing and non-kissing complexes, showing in particular that these complexes are pure and thin.
+The proof follows ideas of~\cite{McConville, GarverMcConville} already reinterpreted for non-kissing complexes of gentle algebras in~\cite{PaluPilaudPlamondon}.
+However, the setting of locally gentle algebras studied in this paper requires a little more care.
+
 \subsection{Some technical properties of non-kissing walks}
 
-\begin{lemma}\label{lem:nkCycles}
- Let~$\omega$ be a non-kissing walk that contains an oriented cycle~$c$.
- Then~$\omega$ is of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$.
+We first gather two technical lemmas on properties of oriented cycles of the quiver~$\bar Q$.
+Note that oriented cycles were forbidden in the setting of gentle algebras studied in~\cite{PaluPilaudPlamondon}.
+
+\begin{lemma}
+\label{lem:nkCycles}
+Let~$\omega$ be a non-kissing walk that contains an oriented cycle~$c$.
+Then~$\omega$ is of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$.
 \end{lemma}
 
 \begin{proof}
- Let~$c=\alpha_1\cdots\alpha_r$ be an oriented cycle in some walk~$\omega$.
- Assume that~$\omega$ is not of form~$\sigma c^\infty$ or~$c^\infty\sigma$.
- Then, up to cyclic reordering of the arrows in~$c$, it contains a substring of the form~$\beta^\pm c^l \alpha_1\cdots\alpha_j\gamma^\pm$, for some arrows~$\beta,\gamma$ not in~$c$, some~$l\geq 1$, and some~$j<r$.
- Since~$\bar Q$ is locally gentle, this substring is~$\beta^{-1} c^l \alpha_1\cdots\alpha_j\gamma^{-1}$.
- Hence, the walk~$\omega$ contains the two substrings~$\beta^{-1}\alpha_1\cdots\alpha_j\alpha_{j+1}$ and~$\alpha_r\alpha_1\cdots\alpha_j\gamma^{-1}$, and thus self-kisses.
+Let~$c=\alpha_1\cdots\alpha_r$ be an oriented cycle in some walk~$\omega$.
+Assume that~$\omega$ is not of form~$\sigma c^\infty$ or~$c^\infty\sigma$.
+Then, up to cyclic reordering of the arrows in~$c$, it contains a substring of the form~$\beta^\pm c^l \alpha_1\cdots\alpha_j\gamma^\pm$, for some arrows~$\beta,\gamma$ not in~$c$, some~$l\geq 1$, and some~$j<r$.
+Since~$\bar Q$ is locally gentle, this substring is~$\beta^{-1} c^l \alpha_1\cdots\alpha_j\gamma^{-1}$.
+Hence, the walk~$\omega$ contains the two substrings~$\beta^{-1}\alpha_1\cdots\alpha_j\alpha_{j+1}$ and~$\alpha_r\alpha_1\cdots\alpha_j\gamma^{-1}$, and thus self-kisses.
+\vincent{Should we also give here a geometric argument?}
 \end{proof}
+
+\begin{lemma}
+\label{lem:walksThroughcycles}
+For any oriented cycle~$c$ in~$\bar Q$, any maximal non-kissing face contains a walk of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$ distinct from~$c^\infty$.
+\end{lemma}
+
+\begin{proof}
+We provide two proofs of the lemma.
+One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ 
+\para{Combinatorial proof}
+Consider a maximal non-kissing face~$F \in \NKC$.
+We first argue that $F$ contains a walk distinct from~$c^\infty$ containing at least one arrow of~$c$.
+\vincent{TODO}
+
+\para{Geometric proof}
+
+\end{proof}
+
+
+\vincent{Should we also give here a geometric argument? Pierre-Guy, could you add that?}
 
 \subsection{The countercurrent order}
 
@@ -1164,7 +1201,7 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, we denote by~$
 For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercurrent order~$\prec_\alpha$ defines a total order on~$F_{\alpha}$.
 \end{lemma}
 \begin{proof}
- The proof of \cite[Lemma 2.21]{PaluPilaudPlamondon} applies here.
+ The proof of \cite[Lem.~2.21]{PaluPilaudPlamondon} applies here.
 \end{proof}
 
 \begin{lemma}
@@ -1174,7 +1211,7 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
 \begin{proof}
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
  
- {\it Combinatorial proof.}
+ \para{Combinatorial proof}
  Note that even though~$F$ is finite, the set of marked walks~$F_\alpha$ might be infinite if~$\alpha$ belongs to an oriented cycle of~$Q$.
  Assume that~$F_\alpha$ is non-empty, and infinite.
  Any walk that contains an infinite number of copies of~$\alpha$ can be written in the form~$\omega=\sigma c^\infty$ where~$\sigma$ is a (possibly infinite) substring and~$c$ is an oriented cycle containing~$\alpha$.
@@ -1182,7 +1219,8 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
  We can thus safely remove all copies of~$\omega$ marked at an occurrence of~$\alpha$ in~$c^\infty$ but the first one.
  After applying this procedure a finite number of times,~$F_\alpha$ becomes finite, and the claim follows.
  
- {\it Geometric proof.} View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ \para{Geometric proof}
+ View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  The arrow~$\alpha$ then corresponds to an angle in~$\dissection$ at a vertex~$v$.  
  
  For any curve~$\gamma$ in~$F$, even though~$\gamma$ may pass through the above angle infinitely many times, there is one instance that is furthest from the angle:
@@ -1195,7 +1233,7 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
 \end{proof}
 
 \begin{lemma}\label{lem:ExistenceOfDistinguishedArrows}
-Let~$F$ be a finite face of~$\NKC$, let~$\omega$ be a walk in~$F$, and let~$\alpha$ be an arrow on~$\omega$.
+Let~$F$ be a finite non-kissing face of~$\NKC$, let~$\omega$ be a walk in~$F$, and let~$\alpha$ be an arrow on~$\omega$.
 Assume that~$\omega$ is not an infinite straight walk.
 Then, there is an arrow~$\beta$ oriented in the same direction as~$\alpha$ in~$\omega$ such that~$\omega$ (marked at~$\beta$) is maximal in~$F$ for~$\prec_\beta$.
 \end{lemma}
@@ -1222,12 +1260,18 @@ The aim of this section is to prove the following purity result.
 
 \begin{proposition}
 \label{prop:purity}
- The the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
+The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
+\vincent{This is wrong. We need to count the infinite straight walks. I propose the next statement instead.}
 \end{proposition}
 
-Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Corollary 2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
-Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
+\begin{proposition}
+\label{prop:purity}
+The reduced non-kissing complex~$\RNKC$ and the reduced non-crossing complex~$\RNCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$|Q_0|$.
+The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1| + p$ where~$p$ is the number of oriented cycles in~$\bar Q$ or equivalently the number of punctures in~$\surface_{\bar Q}$.
+\end{proposition}
 
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Cor.~2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
 
 \begin{lemma}
 \label{lemm:facesAreBounded}
@@ -1237,9 +1281,11 @@ There is a bound on the number of elements of a finite face of~$\NKC$.
  We provide two proofs of the lemma.
  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  
- {\it Combinatorial proof.} By Lemma~\ref{lem:ExistenceOfDistinguishedArrows}, the number of walks in a finite face of~$\NKC$ is bounded by~$|Q_1\blossom|+s_\infty$, where~$s_\infty$ is the number of infinite straight walks (i.e. the number of oriented cycles in~$Q$).
+ \para{Combinatorial proof}
+ By Lemma~\ref{lem:ExistenceOfDistinguishedArrows}, the number of walks in a finite face of~$\NKC$ is bounded by~$|Q_1\blossom|+s_\infty$, where~$s_\infty$ is the number of infinite straight walks (i.e. the number of oriented cycles in~$Q$).
 
- {\it Geometric proof.} Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ \para{Geometric proof}
+ Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface(\bar Q)$.
  Thus~$F$ can be viewed as a partial tagged triangulation of~$\surface(\bar Q)$, by letting the~$\dissection$-accordions circling a puncture in (say) clockwise order be seen as ``notched'' arcs to said puncture, and the ones circling it in counter-clockwise orientation be ``un-notched'' arcs.
  It is known (see, for instance, \cite{FominShapiroThurston}) that any such partial tagged triangulation can be embedded into a full triangulation, and that triangulations contain a finite number of arcs.
@@ -1259,7 +1305,7 @@ Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$
 \end{proof}
 
 
-The following definition from \cite[Definition 2.23]{PaluPilaudPlamondon} extends to the setting of locally gentle algebras.
+The following definition from \cite[Def.~2.23]{PaluPilaudPlamondon} extends to the setting of locally gentle algebras.
 
 \begin{definition}
 \label{defi:distinguishedWalksAndArrows}
@@ -1275,32 +1321,42 @@ We will use the notation
 \]
 \end{definition}
 
-The following result extends \cite[Proposition 2.26]{PaluPilaudPlamondon} to the case of locally gentle algebras.
+The following result extends \cite[Prop.~2.26]{PaluPilaudPlamondon} to the case of locally gentle algebras.
 
 \begin{proposition}
 \label{prop:numberOfDistinguishedArrows}
-Let~$F$ be a facet of~$\NKC$.
+In a non-kissing facet~$F$ of~$\NKC$,
 \begin{itemize}
- \item Each bending walk of~$F$ has exactly two distinguished arrows.
- \item Each finite straight walk of~$F$ has exactly one distinguished arrows.
- \item Each infinite straight walk of~$F$ has exactly zero distinguished arrows.
+ \item each bending walk of~$F$ has exactly two distinguished arrows,
+ \item each finite straight walk of~$F$ has exactly one distinguished arrow,
+ \item each infinite straight walk of~$F$ has no distinguished arrows.
 \end{itemize}
 \end{proposition}
+
 \begin{proof}
- \vincent{Vincent has the proof of this proposition.}
- The first two dots in this proposition are proven in Lemma~\ref{lem:ExistenceOfDistinguishedArrows}.
+The proof of \cite[Prop.~2.26]{PaluPilaudPlamondon} applies here to show that each walk in the non-kissing facet~$F$ has at most one distinguished arrow in each direction.
+Lemma~\ref{lem:ExistenceOfDistinguishedArrows} therefore shows the first two points.
+Finally, Lemma~\ref{lem:walksThroughcycles} shows the last point.
 \end{proof}
  
 We can now prove the purity result.
 
 \begin{proof}[Proof of Proposition \ref{prop:purity}.]
-\vincent{TO DO}
+The proof follows that of~\cite[Cor.~2.27]{PaluPilaudPlamondon}.
+Let~$b$ denote the number of bending walks, $s$ the number of finite straight walks, and $p$ the number of infinite straight walks in a non-kissing facet~$F$ of~$\NKC$.
+Since each finite straight walk uses two blossom arrows, we have~$s = 2|Q_0|-|Q_1|$ (see Remark~\ref{rem:sizeBlossomingQuiver}).
+Moreover, the infinite straight walks are just the oriented cycles in~$\bar Q$.
+Using Proposition~\ref{prop:numberOfDistinguishedArrows}, we obtain by double-counting that
+\[
+2 * b + 1 * s + 0 * c= |Q_1\blossom| = 4|Q_0|-|Q_1|
+\]
+from which we derive that~$b = |Q_0|$ and~$b+s+c = 3|Q_0|-|Q_1|+p$.
 \end{proof}
 
 \subsection{Thinness of the non-crossing and non-kissing complexes, mutation}
 
 A simplicial complex is \defn{thin} if each of its codimension~$1$ faces is contained in exaclty two facets.
-We state the following results, which generalize \cite[Proposition 2.31 and Corollary 2.33]{PaluPilaudPlamondon}, whose proofs apply withouth change.
+We state the following results, which generalize \cite[Prop.~2.31 \& Cor.~2.33]{PaluPilaudPlamondon}, whose proofs apply withouth change.
 
 \begin{proposition}
 \label{prop:flip}
