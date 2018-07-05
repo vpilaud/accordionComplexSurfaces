@@ -280,8 +280,8 @@ We also construct inverse bijections between the set of isomorphism classes of l
 
 \maketitle
 
-
 \section{Introduction}
+
 The aim of this paper is to prove that two combinatorial objects, called the \emph{non-kissing complex} and the \emph{non-crossing complex}, are isomorphic.
 Both complexes appeared in different works in specific cases: the non-kissing complex of a grid appeared in \cite{McConville}, while the non-crossing complex of a disk appeared in \cite{GarverMcConville}.
 It was shown in \cite{PaluPilaudPlamondon} that these complexes are special cases of a more general simplicial complex, defined for any gentle algebra (see also \cite{BrustleDouvilleMousavandThomasYildirim}).
@@ -784,7 +784,6 @@ The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Kos
  Moreover, for any two composable arrows~$\alpha,\beta\in(Q_\dissection)_0$, we have~$\alpha\beta\in I_\dissection$ if and only if~$s(\alpha),t(\alpha),t(\beta)$ are three consecutive edges of a~$\dissection$-cell~$f$, if and only if~$s(\alpha)\dual,t(\alpha)\dual,t(\beta)\dual$ are three consecutive arcs in~$\dissection\dual$ ending in~$f\dual$, if and only if~$\beta\dual\alpha\dual\notin I_{\dissection\dual}$.
 \end{proof}
 
-
 \subsection{The surface of a locally gentle bound quiver}
 
 We now associate a surface to a locally gentle bound quiver.
@@ -1036,7 +1035,6 @@ Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undir
 \end{lemma}
 \begin{proof}
  \pierreguy{TO DO}
- \vincent{figure}
 \end{proof}
 
 The above implies the following.
@@ -1052,8 +1050,23 @@ Let~$\omega_1$ and~$\omega_2$ be walks on~$\bar Q$.  Then~$\omega_1$ and~$\omega
 \end{lemma}
 
 \begin{proof}
- \pierreguy{Picture No.4}
- \vincent{figure}
+See \fref{fig:kissings} and \fref{fig:kissingVSCrossing}.
+\pierreguy{Complete this proof using the pictures.}
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=1]{kissings}}
+	\caption{Two representations of a pair of kissing walks.}
+	\label{fig:kissings}
+\end{figure}
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=1]{kissingVSCrossing}}
+	\caption{Kissing walks on the quiver~$\bar Q$ correspond to crossing curves on the surface~$\surface_{\bar Q}$.}
+	\label{fig:kissingVSCrossing}
+\end{figure}
+
 \end{proof}
 
 \begin{theorem}
@@ -1088,6 +1101,7 @@ $\phantom{x}$
 \end{proof}
 
 \subsection{The countercurrent order}
+
 The countercurrent order was introduced in~\cite{McConville} for grids and defined in \cite{PaluPilaudPlamondon} for gentle algebras.
 We now adapt it to locally gentle algebras.
 
@@ -1185,8 +1199,6 @@ As remarked above,~$\sigma_1$ contains~$\sigma_0$.
 Since~$\omega$ is not maximal at~$\beta$, the walks~$\omega$ and~$\mu_1$ split at some endpoint of~$\sigma_1$.
 By Lemma~\ref{lem:nkCycles}, iterating this procedure eventually stops ($\mu_j=\omega$ for some $j$) unless~$\omega$ is an infinite straight walk.
 \end{proof}
-
-
 
 \subsection{Purity of the non-crossing and non-kissing complexes}
 
