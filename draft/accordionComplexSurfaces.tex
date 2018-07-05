@@ -1111,47 +1111,6 @@ This section explores combinatorial properties of the non-crossing and non-kissi
 The proof follows ideas of~\cite{McConville, GarverMcConville} already reinterpreted for non-kissing complexes of gentle algebras in~\cite{PaluPilaudPlamondon}.
 However, the setting of locally gentle algebras studied in this paper requires a little more care.
 
-\subsection{Some technical properties of non-kissing walks}
-
-We first gather two technical lemmas on properties of oriented cycles of the quiver~$\bar Q$.
-Note that oriented cycles were forbidden in the setting of gentle algebras studied in~\cite{PaluPilaudPlamondon}.
-
-\begin{lemma}
-\label{lem:nkCycles}
-Let~$\omega$ be a non-kissing walk that contains an oriented cycle~$c$.
-Then~$\omega$ is of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$.
-\end{lemma}
-
-\begin{proof}
-Let~$c=\alpha_1\cdots\alpha_r$ be an oriented cycle in some walk~$\omega$.
-Assume that~$\omega$ is not of form~$\sigma c^\infty$ or~$c^\infty\sigma$.
-Then, up to cyclic reordering of the arrows in~$c$, it contains a substring of the form~$\beta^\pm c^l \alpha_1\cdots\alpha_j\gamma^\pm$, for some arrows~$\beta,\gamma$ not in~$c$, some~$l\geq 1$, and some~$j<r$.
-Since~$\bar Q$ is locally gentle, this substring is~$\beta^{-1} c^l \alpha_1\cdots\alpha_j\gamma^{-1}$.
-Hence, the walk~$\omega$ contains the two substrings~$\beta^{-1}\alpha_1\cdots\alpha_j\alpha_{j+1}$ and~$\alpha_r\alpha_1\cdots\alpha_j\gamma^{-1}$, and thus self-kisses.
-\vincent{Should we also give here a geometric argument?}
-\end{proof}
-
-\begin{lemma}
-\label{lem:walksThroughcycles}
-For any oriented cycle~$c$ in~$\bar Q$, any maximal non-kissing face contains a walk of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$ distinct from~$c^\infty$.
-\end{lemma}
-
-\begin{proof}
-We provide two proofs of the lemma.
-One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
- 
-\para{Combinatorial proof}
-Consider a maximal non-kissing face~$F \in \NKC$.
-We first argue that $F$ contains a walk distinct from~$c^\infty$ containing at least one arrow of~$c$.
-\vincent{TODO}
-
-\para{Geometric proof}
-
-\end{proof}
-
-
-\vincent{Should we also give here a geometric argument? Pierre-Guy, could you add that?}
-
 \subsection{The countercurrent order}
 
 The countercurrent order was introduced in~\cite{McConville} for grids and defined in \cite{PaluPilaudPlamondon} for gentle algebras.
@@ -1206,7 +1165,7 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercur
 
 \begin{lemma}
 \label{lemm:facesHaveMaximalElement}
-For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ is either empty or admits a maximal element for the countercurrent order~$\prec_\alpha$.
+For any finite non-kissing face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ is either empty or admits a maximal element for the countercurrent order~$\prec_\alpha$.
 \end{lemma}
 \begin{proof}
  We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
@@ -1232,6 +1191,33 @@ For any finite face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set
  This element is the maximal element of~$F_\alpha$.
 \end{proof}
 
+\subsection{The non-crossing and non-kissing complexes have no infinite faces}
+
+We now pause to prove the following statement.
+
+\begin{lemma}
+\label{lem:facetsAreFinite}
+Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ is finite, thus contained in a finite maximal face.
+\end{lemma}
+
+Since Theorem \ref{thm:complexesCoincide} ensures that~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, we only prove the statement for the non-kissing complex.
+The proof requires the following intermediate results.
+
+\begin{lemma}
+\label{lem:nkCycles}
+Let~$\omega$ be a non-kissing walk that contains an oriented cycle~$c$.
+Then~$\omega$ is of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$.
+\end{lemma}
+
+\begin{proof}
+Let~$c=\alpha_1\cdots\alpha_r$ be an oriented cycle in some walk~$\omega$.
+Assume that~$\omega$ is not of form~$\sigma c^\infty$ or~$c^\infty\sigma$.
+Then, up to cyclic reordering of the arrows in~$c$, it contains a substring of the form~$\beta^\pm c^l \alpha_1\cdots\alpha_j\gamma^\pm$, for some arrows~$\beta,\gamma$ not in~$c$, some~$l\geq 1$, and some~$j<r$.
+Since~$\bar Q$ is locally gentle, this substring is~$\beta^{-1} c^l \alpha_1\cdots\alpha_j\gamma^{-1}$.
+Hence, the walk~$\omega$ contains the two substrings~$\beta^{-1}\alpha_1\cdots\alpha_j\alpha_{j+1}$ and~$\alpha_r\alpha_1\cdots\alpha_j\gamma^{-1}$, and thus self-kisses.
+\vincent{Should we also give here a geometric argument?}
+\end{proof}
+
 \begin{lemma}\label{lem:ExistenceOfDistinguishedArrows}
 Let~$F$ be a finite non-kissing face of~$\NKC$, let~$\omega$ be a walk in~$F$, and let~$\alpha$ be an arrow on~$\omega$.
 Assume that~$\omega$ is not an infinite straight walk.
@@ -1253,26 +1239,6 @@ Since~$\omega$ is not maximal at~$\beta$, the walks~$\omega$ and~$\mu_1$ split a
 By Lemma~\ref{lem:nkCycles}, iterating this procedure eventually stops ($\mu_j=\omega$ for some $j$) unless~$\omega$ is an infinite straight walk.
 \end{proof}
 
-\subsection{Purity of the non-crossing and non-kissing complexes}
-
-A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
-The aim of this section is to prove the following purity result.
-
-\begin{proposition}
-\label{prop:purity}
-The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
-\vincent{This is wrong. We need to count the infinite straight walks. I propose the next statement instead.}
-\end{proposition}
-
-\begin{proposition}
-\label{prop:purity}
-The reduced non-kissing complex~$\RNKC$ and the reduced non-crossing complex~$\RNCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$|Q_0|$.
-The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1| + p$ where~$p$ is the number of oriented cycles in~$\bar Q$ or equivalently the number of punctures in~$\surface_{\bar Q}$.
-\end{proposition}
-
-Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Cor.~2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
-Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
-
 \begin{lemma}
 \label{lemm:facesAreBounded}
 There is a bound on the number of elements of a finite face of~$\NKC$.
@@ -1292,25 +1258,36 @@ There is a bound on the number of elements of a finite face of~$\NKC$.
  Thus~$F$ is finite, and is contained in a finite maximal face.
 \end{proof}
 
-
-
-
-\begin{lemma}
-\label{lemm:facetsAreFinite}
-Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ is contained in a finite maximal face.
-\end{lemma}
-\begin{proof}
+\begin{proof}[Proof of Lemma~\ref{lem:facetsAreFinite}]
  If~$\NKC$ admits an infinite face, then all subsets of this face are also faces, so~$\NKC$ admits faces of arbitrary finite cardinality.
  This contradicts Lemma \ref{lemm:facesAreBounded}.
 \end{proof}
 
+\subsection{Purity of the non-crossing and non-kissing complexes}
 
+A simplicial complex is \defn{pure of dimension~$d$} if all its maximal faces have dimension~$d$.
+The aim of this section is to prove the following purity result.
+
+\begin{proposition}
+\label{prop:purity}
+The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
+\vincent{This is wrong. We need to count the infinite straight walks. I propose the next statement instead.}
+\end{proposition}
+
+\begin{proposition}
+\label{prop:purity}
+The reduced non-kissing complex~$\RNKC$ and the reduced non-crossing complex~$\RNCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$|Q_0|$.
+The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1| + p$ where~$p$ is the number of oriented cycles in~$\bar Q$ or equivalently the number of punctures in~$\surface_{\bar Q}$.
+\end{proposition}
+
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Cor.~2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
 The following definition from \cite[Def.~2.23]{PaluPilaudPlamondon} extends to the setting of locally gentle algebras.
 
 \begin{definition}
 \label{defi:distinguishedWalksAndArrows}
 Let~$\alpha \in Q\blossom_1$ be an arrow and let~$F$ be a face of~$\NKC$ containing the straight walk passing through~$\alpha$.
-Consider the marked walk~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ (which exists by Lemma \ref{lemm:facesHaveMaximalElement}),
+Consider the marked walk~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ (which exists by Lemmas \ref{lemm:facesHaveMaximalElement} and~\ref{lem:facetsAreFinite}),
 and let~$\omega$ be the walk obtained by forgetting the marked arrow in~$\omega_\star$. 
 We say that~$\omega$ is the \defn{distinguished walk} of~$F$ at~$\alpha$ and that~$\alpha$ is a \defn{distinguished arrow} on~$\omega \in F$.
 We will use the notation
@@ -1320,6 +1297,27 @@ We will use the notation
 \distinguishedArrows{\omega}{F} \eqdef \set{\alpha \in \omega}{\distinguishedWalk{\alpha}{F} = \omega}.
 \]
 \end{definition}
+
+We use this definition to prove the following statement.
+
+\begin{lemma}
+\label{lem:walksThroughcycles}
+For any oriented cycle~$c$ in~$\bar Q$, any maximal non-kissing face contains a walk of the form~$\sigma c^\infty$ or~$c^\infty\sigma$, for some substring~$\sigma$ distinct from~$c^\infty$.
+\end{lemma}
+
+\begin{proof}
+We provide two proofs of the lemma.
+One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ 
+\para{Combinatorial proof}
+Consider a maximal non-kissing face~$F \in \NKC$.
+We first argue that $F$ contains a walk distinct from~$c^\infty$ containing at least one arrow of~$c$.
+\vincent{TODO}
+
+\para{Geometric proof}
+\vincent{Should we also give here a geometric argument? Pierre-Guy, could you add that?}
+
+\end{proof}
 
 The following result extends \cite[Prop.~2.26]{PaluPilaudPlamondon} to the case of locally gentle algebras.
 
