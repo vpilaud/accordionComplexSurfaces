@@ -1310,9 +1310,26 @@ We provide two proofs of the lemma.
 One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  
 \para{Combinatorial proof}
-Consider a maximal non-kissing face~$F \in \NKC$.
-We first argue that $F$ contains a walk distinct from~$c^\infty$ containing at least one arrow of~$c$.
-\vincent{TODO}
+Consider a maximal non-kissing face~$F \in \NKC$ and an arrow~$\alpha$ in~$c$.
+Let~$\beta, \gamma \in Q_1\blossom$ be such that~$t(\alpha) = s(\beta) = s(\gamma)$ and~$\alpha\beta \notin I$ while~$\alpha\gamma \in I$ (in other words, $\beta$ is the next arrow along~$c$ after~$\alpha$ and~$\gamma$ is the other outgoing arrow at~$t(\alpha)$).
+Consider the walk~$\mu \eqdef \distinguishedWalk{\gamma}{F}$ and decompose it as~$\mu = \mu_1 \gamma \mu_2$ according to this occurence of~$\gamma$ on~$\mu$.
+Consider the walk~$\nu \eqdef \mu_2^{-1} \gamma^{-1} c^\infty$.
+If~$\nu$ is contained in~$F$, then we have found a walk of the desired form (remember that walks are considered as undirected).
+Otherwise, there exists a walk~$\lambda$ of~$F$ preventing~$\nu$ to belong to~$F$.
+Let~$\sigma$ be a common substring of~$\nu$ and~$\lambda$ where they kiss.
+Since~$\lambda$ must be compatible with~$\mu$ and with the straight walk~$c^\infty$, the substring~$\sigma$ must contain~$t(\alpha) = s(\beta)$.
+If~$\lambda$ contains neither~$\alpha$ nor~$\beta$, then it contains~$\gamma$ and enters $\nu$ at~$s(\gamma)$.
+Since $\lambda$ kisses~$\nu$, it also enters~$\mu_2$, contradicting the maximality of~$\mu$ for~$\prec_\gamma$.
+Therefore, $\lambda$ contains either~$\alpha$ or~$\beta$.
+We have thus found a bended walk~$\lambda \in F$ containing an arrow~$\alpha$ or~$\beta$ of~$c$, say~$\alpha$.
+We can now moreover assume that~$\lambda = \distinguishedWalk{\alpha}{F}$.
+If~$\lambda$ starts or ends by~$c^\infty$, then we have found a walk of the desired form.
+Otherwise, decompose this walk as~$\lambda = \lambda_1 \alpha \lambda_2$ and consider the walk~$\omega = \lambda_1 c^\infty$.
+We claim that~$\omega$ belongs to~$F$.
+Otherwise, there exists a walk~$\rho$ preventing~$\omega$ to belong to~$F$.
+Let~$\tau$ be a common substring of~$\omega$ and~$\rho$ where they kiss.
+Since~$\omega$ must be compatible with~$\lambda$ and with the straight walk~$c^\infty$, the substring~$\tau$ must strictly contain the substring of~$\lambda$ along the cycle~$c$.
+It follows that $\rho$ leaves~$\omega$ when it is on the cycle~$c$, thus with an incoming arrow, contradicting the maximality of~$\lambda$ for~$\prec_\alpha$.
 
 \para{Geometric proof}
 \vincent{Should we also give here a geometric argument? Pierre-Guy, could you add that?}
