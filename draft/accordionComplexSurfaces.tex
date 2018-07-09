@@ -1066,7 +1066,14 @@ This is because~$\curveof(\omega)$ follows angles in~$\dissection_{\bar Q}$ by d
 Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undirected walk~$\walk(\gamma)$ such that we have~$\curveof(\walk(\gamma)) = \gamma$.
 \end{lemma}
 \begin{proof}
- \pierreguy{TO DO}
+We can assume that~$\gamma$ intersects itself and the arcs of~$\dissection_{\bar Q}$ transversaly and minimally, in the sense that~$\gamma$ does not cross an arc twice in succession in opposite directions.
+Then~$\gamma$ is completely determined by its sequence of intersection points with the arcs of~$\dissection_{\bar Q}$, since the dissection is cellular.
+Two successive intersection points in this sequence define an angle between two arcs of~$\dissection_{\bar Q}$, which correspoinds to an arrow in~$\bar Q$.
+Thus the sequence of intersection points defines a walk~$\walk(\gamma)$ on~$\bar Q$.
+By construction, we have that~$\curveof(\walk(\gamma)) = \gamma$.
+
+Is also follows from construction above and from Definition~\ref{def:curveOfAWalk} that~$\walk(\curveof(\omega)) = \omega$ for any walk~$\omega$.
+This finishes the proof.
 \end{proof}
 
 The above implies the following.
@@ -1082,8 +1089,7 @@ Let~$\omega_1$ and~$\omega_2$ be walks on~$\bar Q$.  Then~$\omega_1$ and~$\omega
 \end{lemma}
 
 \begin{proof}
-See \fref{fig:kissings} and \fref{fig:kissingVSCrossing}.
-\pierreguy{Complete this proof using the pictures.}
+A kiss between two walks~$\omega$ and~$\omega'$ is depicted on \fref{fig:kissings}.
 
 \begin{figure}[h]
 	\capstart
@@ -1091,6 +1097,8 @@ See \fref{fig:kissings} and \fref{fig:kissingVSCrossing}.
 	\caption{Two representations of a pair of kissing walks.}
 	\label{fig:kissings}
 \end{figure}
+The left hand side of the picture is as in \fref{fig:kissing}, and the right hand side is simply a different representation of it.
+On the surface~$\surface(\bar Q)$, the dual dissections~$\dissection$ and~$\dissection\dual$ are as on \fref{fig:kissingVSCrossing} (on the right hand side).
 
 \begin{figure}[h]
 	\capstart
@@ -1098,6 +1106,9 @@ See \fref{fig:kissings} and \fref{fig:kissingVSCrossing}.
 	\caption{Kissing walks on the quiver~$\bar Q$ correspond to crossing curves on the surface~$\surface_{\bar Q}$.}
 	\label{fig:kissingVSCrossing}
 \end{figure}
+
+The curves~$\curveof(\omega)$ and~$\curveof(\omega')$ on the surface follow~$\omega$ and~$\omega'$ on the picture.
+It is then clear that~$\omega$ and~$\omega'$ kiss if and only if~$\curveof(\omega)$ and~$\curveof(\omega')$ cross. 
 
 \end{proof}
 
@@ -1282,6 +1293,7 @@ The aim of this section is to prove the following purity result.
 \label{prop:purity}
 The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
 \vincent{This is wrong. We need to count the infinite straight walks. I propose the next statement instead.}
+\pierreguy{I agree.}
 \end{proposition}
 
 \begin{proposition}
