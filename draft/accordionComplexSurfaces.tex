@@ -771,14 +771,14 @@ It is seen in \cite{BessenrodtHolm} that the (ungraded version of the) Koszul du
 Note that~$\bar Q\koszul$ is gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
 Examples are represented on \fref{fig:koszulQuivers}.
 
-\pierreguy{reference OPS}
-
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.6]{koszulQuivers}}
 	\caption{The Koszul duals of the (blossoming) quivers of \fref{fig:quivers}.}
 	\label{fig:koszulQuivers}
 \end{figure}
+
+The following proposition appears in \cite[Proposition 1.25]{OpperPlamondonSchroll}.  
 
 \begin{proposition}
 \label{prop:dualityKoszul1}
@@ -794,7 +794,8 @@ The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Kos
 \subsection{The surface of a locally gentle bound quiver}
 
 We now associate a surface to a locally gentle bound quiver.
-\pierreguy{reference OPS}
+This construction is directly inspired by the one found in \cite{OpperPlamondonSchroll} (see Remark \ref{rem:comparisonWithOPS} for a comparison of the two constructions).
+
 
 \begin{definition}
 \label{def:surfaceQuiver}
@@ -1020,7 +1021,16 @@ The first few corresponding surfaces are represented in \fref{fig:doubleCyclesSu
 
 \end{example}
 
-\pierreguy{Remark on the comparison with the surface of OPS}
+\begin{remark}
+\label{rem:comparisonWithOPS}
+The construction of the surface given in Definition \ref{def:surfaceQuiver} yields the same surface as the one constructed in \cite{OpperPlamondonSchroll}.
+A notable difference is that in \cite{OpperPlamondonSchroll}, only~$\dissection_{\bar Q}$ is given, and~$\dissection_{\bar Q}\dual$ is deduced (it is called the dual lamination).
+Another minor difference is that the construction in \cite{OpperPlamondonSchroll} is written only for gentle algebras, while here it is generalized to locally gentle algebras.
+
+The major difference with \cite{OpperPlamondonSchroll} is the application of the surface of a (locally) gentle algebra: 
+there, it is used as a model for the derived category of the gentle algebra (graded arcs correspond to indecomposable objects in that category),
+while here, it will be used as a model for walks in~$\bar Q$ ($\dissection_{\bar Q}$-accordions will correspond to walks in~$\bar{Q}$, see Proposition \ref{prop:walks=arcs}).
+\end{remark}
 
 \subsection{Non-crossing and non-kissing complexes coincide}
 
