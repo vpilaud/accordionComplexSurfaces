@@ -771,14 +771,14 @@ It is seen in \cite{BessenrodtHolm} that the (ungraded version of the) Koszul du
 Note that~$\bar Q\koszul$ is gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
 Examples are represented on \fref{fig:koszulQuivers}.
 
-\pierreguy{reference OPS}
-
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.6]{koszulQuivers}}
 	\caption{The Koszul duals of the (blossoming) quivers of \fref{fig:quivers}.}
 	\label{fig:koszulQuivers}
 \end{figure}
+
+The following proposition appears in \cite[Proposition 1.25]{OpperPlamondonSchroll}.  
 
 \begin{proposition}
 \label{prop:dualityKoszul1}
@@ -794,7 +794,8 @@ The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Kos
 \subsection{The surface of a locally gentle bound quiver}
 
 We now associate a surface to a locally gentle bound quiver.
-\pierreguy{reference OPS}
+This construction is directly inspired by the one found in \cite{OpperPlamondonSchroll} (see Remark \ref{rem:comparisonWithOPS} for a comparison of the two constructions).
+
 
 \begin{definition}
 \label{def:surfaceQuiver}
@@ -1020,7 +1021,16 @@ The first few corresponding surfaces are represented in \fref{fig:doubleCyclesSu
 
 \end{example}
 
-\pierreguy{Remark on the comparison with the surface of OPS}
+\begin{remark}
+\label{rem:comparisonWithOPS}
+The construction of the surface given in Definition \ref{def:surfaceQuiver} yields the same surface as the one constructed in \cite{OpperPlamondonSchroll}.
+A notable difference is that in \cite{OpperPlamondonSchroll}, only~$\dissection_{\bar Q}$ is given, and~$\dissection_{\bar Q}\dual$ is deduced (it is called the dual lamination).
+Another minor difference is that the construction in \cite{OpperPlamondonSchroll} is written only for gentle algebras, while here it is generalized to locally gentle algebras.
+
+The major difference with \cite{OpperPlamondonSchroll} is the application of the surface of a (locally) gentle algebra: 
+there, it is used as a model for the derived category of the gentle algebra (graded arcs correspond to indecomposable objects in that category),
+while here, it will be used as a model for walks in~$\bar Q$ ($\dissection_{\bar Q}$-accordions will correspond to walks in~$\bar{Q}$, see Proposition \ref{prop:walks=arcs}).
+\end{remark}
 
 \subsection{Non-crossing and non-kissing complexes coincide}
 
@@ -1056,7 +1066,14 @@ This is because~$\curveof(\omega)$ follows angles in~$\dissection_{\bar Q}$ by d
 Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undirected walk~$\walk(\gamma)$ such that we have~$\curveof(\walk(\gamma)) = \gamma$.
 \end{lemma}
 \begin{proof}
- \pierreguy{TO DO}
+We can assume that~$\gamma$ intersects itself and the arcs of~$\dissection_{\bar Q}$ transversaly and minimally, in the sense that~$\gamma$ does not cross an arc twice in succession in opposite directions.
+Then~$\gamma$ is completely determined by its sequence of intersection points with the arcs of~$\dissection_{\bar Q}$, since the dissection is cellular.
+Two successive intersection points in this sequence define an angle between two arcs of~$\dissection_{\bar Q}$, which correspoinds to an arrow in~$\bar Q$.
+Thus the sequence of intersection points defines a walk~$\walk(\gamma)$ on~$\bar Q$.
+By construction, we have that~$\curveof(\walk(\gamma)) = \gamma$.
+
+Is also follows from construction above and from Definition~\ref{def:curveOfAWalk} that~$\walk(\curveof(\omega)) = \omega$ for any walk~$\omega$.
+This finishes the proof.
 \end{proof}
 
 The above implies the following.
@@ -1072,8 +1089,7 @@ Let~$\omega_1$ and~$\omega_2$ be walks on~$\bar Q$.  Then~$\omega_1$ and~$\omega
 \end{lemma}
 
 \begin{proof}
-See \fref{fig:kissings} and \fref{fig:kissingVSCrossing}.
-\pierreguy{Complete this proof using the pictures.}
+A kiss between two walks~$\omega$ and~$\omega'$ is depicted on \fref{fig:kissings}.
 
 \begin{figure}[h]
 	\capstart
@@ -1081,6 +1097,8 @@ See \fref{fig:kissings} and \fref{fig:kissingVSCrossing}.
 	\caption{Two representations of a pair of kissing walks.}
 	\label{fig:kissings}
 \end{figure}
+The left hand side of the picture is as in \fref{fig:kissing}, and the right hand side is simply a different representation of it.
+On the surface~$\surface(\bar Q)$, the dual dissections~$\dissection$ and~$\dissection\dual$ are as on \fref{fig:kissingVSCrossing} (on the right hand side).
 
 \begin{figure}[h]
 	\capstart
@@ -1088,6 +1106,9 @@ See \fref{fig:kissings} and \fref{fig:kissingVSCrossing}.
 	\caption{Kissing walks on the quiver~$\bar Q$ correspond to crossing curves on the surface~$\surface_{\bar Q}$.}
 	\label{fig:kissingVSCrossing}
 \end{figure}
+
+The curves~$\curveof(\omega)$ and~$\curveof(\omega')$ on the surface follow~$\omega$ and~$\omega'$ on the picture.
+It is then clear that~$\omega$ and~$\omega'$ kiss if and only if~$\curveof(\omega)$ and~$\curveof(\omega')$ cross. 
 
 \end{proof}
 
@@ -1272,6 +1293,7 @@ The aim of this section is to prove the following purity result.
 \label{prop:purity}
 The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1|$.
 \vincent{This is wrong. We need to count the infinite straight walks. I propose the next statement instead.}
+\pierreguy{I agree.}
 \end{proposition}
 
 \begin{proposition}
@@ -1332,7 +1354,24 @@ Since~$\omega$ must be compatible with~$\lambda$ and with the straight walk~$c^\
 It follows that $\rho$ leaves~$\omega$ when it is on the cycle~$c$, thus with an incoming arrow, contradicting the maximality of~$\lambda$ for~$\prec_\alpha$.
 
 \para{Geometric proof}
+The statement of the lemma translates on~$\surface(\bar Q)$ as follows: for any facet~$F$ of the non-crossing complex~$\NCC$ and any puncture of the dissection~$\dissection_{\bar Q}$, there exists a curve in~$F$ which goes to the puncture.
+Assume that there is a puncture with no curves of~$F$ going to it.
+Construct a curve~$\gamma$ as follows:~$\gamma$ first unwinds from the puncture, then~$\gamma$ leaves the local picture around the puncture by turning aroune another marked point (marked~$X$ on the picture below).
+
+\includegraphics{pgFigNo7.pdf}
+\pierreguy{Pic No 7 here.}
+Two situations occur.
+
+Firstly, if there are no curves of~$F$ closer to~$X$ than~$\gamma$, then~$\gamma$ can circle around~$X$ until it reaches the boundary (if~$X$ is on the boundary) or infinitely (if~$X$ is a puncture).
+Then~$\gamma$ is a~$\dissection_{\bar Q}$-accordion which crosses none of those in~$F$, contradicting the maximality of~$F$.
+
+Secondly, if there is a curve of~$F$ closer to~$X$ than~$\gamma$, then let~$\delta$ be the one furthest from~$X$ ($\delta$ exists by Lemma \ref{lemm:facesHaveMaximalElement}).
+From there, let~$\gamma$ follow~$\delta$ on the surface until it either reaches the boundary or circles infinitely around a puncture.  
+Then~$\gamma$ is compatible with all curves in~$F$, a contradiction.
+
+Thus~$F$ contains a curve going to the puncture.
 \vincent{Should we also give here a geometric argument? Pierre-Guy, could you add that?}
+\pierreguy{Done; I will need a picture, please, Vincent.}
 
 \end{proof}
 
