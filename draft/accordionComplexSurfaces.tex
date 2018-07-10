@@ -452,13 +452,16 @@ A \defn{substring} of a walk~$\omega = \prod_{i < \ell < j} \alpha_\ell^{\vareps
 \item the position of~$\sigma$ as a factor of~$\omega$ matters (the same string at a different position is considered a different substring).
 \end{itemize}
 Note that the string~$\varepsilon_v$ is a substring of~$\omega$ for each occurence of~$v$ as a vertex of~$\omega$.
+We denote by~$\Sigma(\omega)$ the set of substrings of~$\omega$.
+We use the same notation for undirected walks (of course, substrings of an undirected walk are undirected).
 \end{definition}
 
 \begin{definition}
 \label{def:topBottom}
-The substring~$\sigma = \alpha_i^{\varepsilon_i} \dots \alpha_j^{\varepsilon_j}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \cdots \alpha_1^{\varepsilon_1} \dots \alpha_\ell^{\varepsilon_\ell} \cdots $ if~$i=-\infty$ or~$\varepsilon_{i-1} = 1$ and~$j=+\infty$ or~$\varepsilon_{j+1} = -1$ (resp.~if~$i=-\infty$ or~$\varepsilon_{i-1} = -1$ and~$j=\infty$ or~$\varepsilon_{j+1} = 1$), that is, the (at most) two arrows of~$\omega$ incident to the endpoints of~$\sigma$ point towards~$\sigma$ (resp.~outwards from~$\sigma$).
-We let~$\Sigma(\omega)$ be the set of substrings of~$\omega$ and~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ be the sets of bottom and top substrings of~$\omega$ respectively.
-We use the same notations for undirected walks (of course, substrings of an undirected walk are undirected).
+The substring~$\sigma = \prod_{i' < \ell < j'} \alpha_\ell^{\varepsilon_\ell}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \prod_{i < \ell < j} \alpha_\ell^{\varepsilon_\ell}$ if~$i'=-\infty$ or~$\varepsilon_{i'-1} = 1$ and~$j'=+\infty$ or~$\varepsilon_{j'+1} = -1$ (resp.~if~$i'=-\infty$ or~$\varepsilon_{i'-1} = -1$ and~$j'=\infty$ or~$\varepsilon_{j'+1} = 1$).
+In other words the (at most) two arrows of~$\omega$ incident to the endpoints of~$\sigma$ point towards~$\sigma$ (resp.~outwards from~$\sigma$).
+We denote by~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ the sets of bottom and top substrings of~$\omega$ respectively.
+We use the same notations for undirected walks.
 \end{definition}
 
 \begin{definition}
