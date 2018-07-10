@@ -1273,10 +1273,14 @@ Hence, the walk~$\omega$ contains the two substrings~$\beta^{-1}\alpha_1\cdots\a
 
 \para{Geometric proof}
 An oriented cycle~$c$ corresponds to a puncture in~$\dissection_{\bar Q}$.
-Let~$\gamma = \curveof(\omega)$.  The fact that~$\omega$ contains~$c$ translates to the fact that~$\gamma$ makes a full circle around the correponding puncture.
-\pierreguy{Pic No 8 here.}
+Let~$\gamma = \curveof(\omega)$.  The fact that~$\omega$ contains~$c$ translates to the fact that~$\gamma$ makes one full circle around the correponding puncture.
 
-\includegraphics{infiniteCurve2.pdf}
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=1]{infiniteCurve2.pdf}}
+	\caption{The arc~$\gamma$ makes at least one full circle around the puncture.}
+	\label{fig:aroundPuncture1}
+\end{figure}
 
 
 Once this cycle is completed, since~$\gamma$ cannot cross itself, it has to continue cycling infinitely around the puncture.  This proves the claim.
@@ -1393,12 +1397,16 @@ It follows that $\rho$ leaves~$\omega$ when it is on the cycle~$c$, thus with an
 \para{Geometric proof}
 The statement of the lemma translates on~$\surface(\bar Q)$ as follows: for any facet~$F$ of the non-crossing complex~$\NCC$ and any puncture of the dissection~$\dissection_{\bar Q}$, there exists a curve in~$F$ which goes to the puncture.
 Assume that there is a puncture with no curves of~$F$ going to it.
-Construct a curve~$\gamma$ as follows:~$\gamma$ first unwinds from the puncture, then~$\gamma$ leaves the local picture around the puncture by turning aroune another marked point (marked~$X$ on the picture below).
+Construct a curve~$\gamma$ as follows:~$\gamma$ first unwinds from the puncture, then~$\gamma$ leaves the local picture around the puncture by turning around another marked point (marked~$X$ on the picture below).
 
-\includegraphics{infiniteCurve1.pdf}
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=1]{infiniteCurve1.pdf}}
+	\caption{The arc~$\gamma$ leaving the puncture.}
+	\label{fig:aroundPuncture2}
+\end{figure}
 
-\pierreguy{Pic No 7 here.}
-Two situations occur.
+Two situations can occur.
 
 Firstly, if there are no curves of~$F$ closer to~$X$ than~$\gamma$, then~$\gamma$ can circle around~$X$ until it reaches the boundary (if~$X$ is on the boundary) or infinitely (if~$X$ is a puncture).
 Then~$\gamma$ is a~$\dissection_{\bar Q}$-accordion which crosses none of those in~$F$, contradicting the maximality of~$F$.
