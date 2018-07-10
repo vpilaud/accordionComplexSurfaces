@@ -433,6 +433,9 @@ We denote by~$\strings(\bar Q)$ the set of strings on~$\bar Q$.
 We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and we let~$\strings^\pm(\bar Q) \eqdef \set{\{\rho, \rho^{-1}\}}{\rho \in \strings(\bar Q)}$ denote the collection of all \defn{undirected strings} of~$\bar Q$.
 \end{definition}
 
+\begin{notation}
+To avoid distinguishing between finite, infinite and bi-infinite words, we denote strings as products~$\rho = \prod_{i < \ell < j} \alpha_\ell$ where~$i < j \in \Z \cup \{\pm \infty\}$ and~$\alpha_\ell \in Q_0$.
+\end{notation}
 
 \begin{definition}
 \label{def:walk}
@@ -443,13 +446,17 @@ As for strings, we implicitly identify the two inverse walks~$\omega$ and~$\omeg
 
 \begin{definition}
 \label{def:substrings}
-A \defn{substring} of a walk~$\omega =\cdots \alpha_{-r}^{\varepsilon_{-r}}\cdots\alpha_0^{\varepsilon_0} \alpha_1^{\varepsilon_1} \cdots \alpha_\ell^{\varepsilon_\ell}\cdots \in \walks(\bar Q)$ is a string~$\sigma = \alpha_i^{\varepsilon_i} \dots \alpha_j^{\varepsilon_j}$ of~$\strings(\bar Q)$ for some~$i \le j \in \mathbb{Z}\cup\{\pm\infty\}$, where moreover
+A \defn{substring} of a walk~$\omega = \prod_{i < \ell < j} \alpha_\ell^{\varepsilon_\ell} \in \walks(\bar Q)$ is a string~$\sigma = \prod_{i' < \ell < j'} \alpha_\ell^{\varepsilon_\ell}$ of~$\strings(\bar Q)$ for some~$i \le i' < j' \le j$, where the inequality~$i \le i'$ (resp.~$j' \le j$) is strict when~$i \ne -\infty$ (resp.~$j \ne \infty$). In other words, $\sigma$ is a factor of~$\omega$ such that
 \begin{itemize}
 \item the endpoints of~$\sigma$ are not allowed to be the possible blossom endpoints of~$\omega$,
 \item the position of~$\sigma$ as a factor of~$\omega$ matters (the same string at a different position is considered a different substring).
 \end{itemize}
 Note that the string~$\varepsilon_v$ is a substring of~$\omega$ for each occurence of~$v$ as a vertex of~$\omega$.
-The substring~$\sigma = \alpha_i^{\varepsilon_i} \dots \alpha_j^{\varepsilon_j}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \alpha_1^{\varepsilon_1} \dots \alpha_\ell^{\varepsilon_\ell}$ if~$i=-\infty$ or~$\varepsilon_{i-1} = 1$ and~$j=+\infty$ or~$\varepsilon_{j+1} = -1$ (resp.~if~$i=-\infty$ or~$\varepsilon_{i-1} = -1$ and~$i=-\infty$ or~$\varepsilon_{j+1} = 1$), that is, the (at most) two arrows of~$\omega$ incident to the endpoints of~$\sigma$ point towards~$\sigma$ (resp.~outwards from~$\sigma$).
+\end{definition}
+
+\begin{definition}
+\label{def:topBottom}
+The substring~$\sigma = \alpha_i^{\varepsilon_i} \dots \alpha_j^{\varepsilon_j}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \cdots \alpha_1^{\varepsilon_1} \dots \alpha_\ell^{\varepsilon_\ell} \cdots $ if~$i=-\infty$ or~$\varepsilon_{i-1} = 1$ and~$j=+\infty$ or~$\varepsilon_{j+1} = -1$ (resp.~if~$i=-\infty$ or~$\varepsilon_{i-1} = -1$ and~$j=\infty$ or~$\varepsilon_{j+1} = 1$), that is, the (at most) two arrows of~$\omega$ incident to the endpoints of~$\sigma$ point towards~$\sigma$ (resp.~outwards from~$\sigma$).
 We let~$\Sigma(\omega)$ be the set of substrings of~$\omega$ and~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ be the sets of bottom and top substrings of~$\omega$ respectively.
 We use the same notations for undirected walks (of course, substrings of an undirected walk are undirected).
 \end{definition}
