@@ -1484,6 +1484,42 @@ The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is t
 
 \vincent{To do on the walks, on the accordions and on the slaloms.}
 
+In this section, we recall some results from Section 4.2 of~\cite{PaluPilaudPlamondon} that immediately generalise to the case of locally gentle algebras.
+We show that our geometric model using accordions is well-adapted to computing~$\b{c}$-vectors, while slaloms can naturally be interpreted as~$\b{g}$- vectors.
+The duality between~$\b{g}$-vectors and~$\b{c}$-vectors then follows from the duality between the two dissections~$\dissection_Q$ and~$\dissection\dual_Q$.
+\yann{check the lattest assertion}
+
+\subsection{$\b{g}$-vectors and $\b{c}$-vectors}
+\label{subsec:gcvectors}
+
+Let~$\bar Q = (Q,I)$ be a locally gentle bound quiver, and let~$(\b{e}_v)_{v \in Q_0}$ be the standard basis of~$\R^{Q_0}$.
+
+\begin{definition}
+For a multiset~$V \eqdef \{v_1, \dots, v_m\}$ of vertices of~$Q_0$, we denote by~$\multiplicityVector_V \in \R^{Q_0}$ the \defn{multiplicity vector} of~$V$ defined~by
+\[
+\multiplicityVector_V \eqdef \sum_{i \in [m]} \b{e}_{v_i} = \sum_{v \in Q_0} |\set{i \in [m]}{v_i = v}| \, \b{e}_v.
+\]
+For a string~$\sigma \in \strings^\pm(\bar Q)$, we define~$\multiplicityVector_\sigma \eqdef \multiplicityVector_{V(\sigma)}$ where~$V(\sigma)$ is the multiset of vertices of~$\sigma$. 
+\end{definition}
+
+We now recall two definitions from~\cite{PaluPilaudPlamondon}, that still make sense for locally gentle algebras.
+
+\begin{definition}\label{def: g-vectors for walks}
+For a walk~$\omega \in \NKWalks^\pm(\bar Q)$, we denote by~$\peaks{\omega}$ (resp.~by~$\deeps{\omega}$) the multiset of vertices of~$Q_0$ corresponding to the peaks (resp.~deeps) of~$\omega$.
+The \defn{$\b{g}$-vector} of a walk~$\omega$ is the vector~${\gvector{\omega} \in \R^{Q_0}}$ defined by
+\[
+\gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}.
+\]
+For a set~$\Omega$ of walks, we let~$\gvectors{\Omega} \eqdef \set{\gvector{\omega}}{\omega \in \Omega}$.
+Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, since for any walk~$\omega$, the strings $\omega$ and $\omega^{-1}$ are eventually direct or inverse, the coordinates of~$\gvector{\omega}$ are finite.
+\end{definition}
+
+\begin{remark}
+Let~$\omega$ be a walk in~$\NKWalks^\pm(\bar Q)$, and let$\sigma$ be the string obtained from~$\omega$ by deleting a left and a right co-hook when possible.
+The the~$\b{g}$-vector of the walk~$\omega$ coincide with the~$\b{g}$-vector of the (finitely generated) string module associated with the string~$\sigma$.
+\end{remark}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bibliographystyle{alpha}
