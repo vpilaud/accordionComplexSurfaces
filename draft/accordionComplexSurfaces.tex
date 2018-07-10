@@ -172,6 +172,10 @@
 \newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
 \newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
 \newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
+\newcommand{\arcof}{\operatorname{\alpha}} % arc of a vertex
+\newcommand{\dualarcof}{\operatorname{\alpha}\dual} % dual arc of a vertex
+\newcommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S
+\newcommand{\ZZZ}{\mathsf{Z}} % Z
 
 % lattices
 \newcommand{\meet}{\wedge} % meet
@@ -192,6 +196,10 @@
 \newcommand{\mi}{\mathsf{mi}} % meet irreducible
 
 % GEOMETRY
+% d-vectors
+\newcommand{\dvector}[1]{\mathbf{d}(#1)} % d-vector of the path #1
+\newcommand{\dvectors}[1]{\mathbf{d}(#1)} % d-vectors of the paths #1
+\newcommandx{\dvectorFan}[1][1=\bar Q]{\mathcal{F}^\mathbf{d}(#1)} % d-vector fan
 % g-vectors
 \newcommand{\gvector}[1]{\mathbf{g}(#1)} % g-vector of the path #1
 \newcommand{\gvectors}[1]{\mathbf{g}(#1)} % g-vectors of the paths #1
@@ -965,14 +973,16 @@ The following statement immediately follows from the definitions and was probabl
 \begin{remark}
 \label{rem:propertiesSurface}
 The following observations are useful for the computation of examples.
-\begin{itemize}
+\begin{enumerate}[(i)]
 \item The set~$V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$ (equivalently, for each maximal path in~$\bar Q$).
       Finite straight walks yield vertices on the boundary, while infinite cyclic straight walks in~$\bar Q$ and in~$\bar Q\koszul$ yield punctures.
-\item The dissection~$\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
+\item \label{item:arcs}
+      The dissection~$\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
 \item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
 \item A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
 \item The number~$p$ of punctures of~$\surface(\bar Q)$ is the number of infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$.
-\item The number~$b$ of boundary components of~$\surface(\bar Q)$ can be computed as follows.
+\item \label{item:boundary}
+      The number~$b$ of boundary components of~$\surface(\bar Q)$ can be computed as follows.
       There are two natural perfect matchings whose vertices are the blossoming vertices of~$\bar Q$: one is obtained by joining the endpoints of each finite straight walk of~$\bar Q$, and the other is obtained similarly from~$\bar Q \koszul$.
       Let~$G$ be the superposition of these two perfect matchings.
       Then the number~$b$ of boundary components of~$\surface(\bar Q)$ is the number of connected components of~$G$.
@@ -985,7 +995,7 @@ The following observations are useful for the computation of examples.
       The dissection~$\dissection$ provides a cellular decomposition of~$\surface(\bar Q)$ on which we fill the boundary components and the punctures with disks.  
       The number of faces of this cellular decomposition is~$b$, its number of edges is~$|Q_0|$ and its number of vertices is the number of finite straight walks in~$\bar Q$, which is equal to~$2|Q_0| - |Q_1|$.
       The above formula for~$g$ follows.
-\end{itemize}
+\end{enumerate}
 \end{remark}
 
 \begin{proposition}
@@ -1006,9 +1016,10 @@ Note that we can choose to position the blossom vertices in such a way that for 
 	\label{fig:CambrianPathsQuivers}
 \end{figure}
 
-The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) form a cycle with green and red arrows alternating.
+We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) form a cycle with green and red arrows alternating.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
-Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces have $1$ boundary component and genus~$0$.
+Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces have $1$ boundary component, no puncture and genus~$0$.
 Two examples are represented in \fref{fig:reversedPathsSurfaces}.
 Note that the dissection~$\dissection_{\bar Q}$ is a triangulation with no internal triangles, and the orientation of~$\bar Q$ indicates how to glue these triangles.
 For instance, the Cambrian quiver completely oriented in one direction yields a fan triangulation, were all internal arcs are incident to the same vertex, as in \fref{fig:reversedPathsSurfaces}\,(left).
@@ -1032,7 +1043,8 @@ Consider the family of \defn{reversed path quivers} indicated in \fref{fig:rever
 	\label{fig:reversedPathsQuivers}
 \end{figure}
 
-The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{reversedPathsPM}}.
+We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{reversedPathsPM}}.
 Moreover, $\bar Q$ has no infinite straight walk, while~$\bar Q\koszul$ has~$|Q_0|-1$ infinite straight walks.
 Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have $1$ boundary component and genus~$0$.
 The first few corresponding surfaces are represented in \fref{fig:reversedPathsSurfaces}.
@@ -1056,7 +1068,8 @@ Consider the family of \defn{double path quivers} indicated in \fref{fig:doubleP
 	\label{fig:doublePathsQuivers}
 \end{figure}
 
-The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
+We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
 Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have no punctures and
 \begin{itemize}
@@ -1084,7 +1097,8 @@ Consider the family of \defn{double cycle quivers} indicated in \fref{fig:double
 	\label{fig:doubleCyclesQuivers}
 \end{figure}
 
-The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) are empty since there is no blossom vertices.
+We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) are empty since there is no blossom vertices.
 Moreover, $\bar Q$ has~$1$ infinite straight walk when~$|Q_0|$ is odd and~$2$ when~$|Q_0|$ is even, and~$\bar Q\koszul$ always has~$2$ infinite straight walks.
 Since~$|Q_1| = 2|Q_0|$, the corresponding surfaces have no boundary component and
 \begin{itemize}
@@ -1126,8 +1140,8 @@ Define~$\curveof(\alpha^{-1})$ to be~$\curveof(\alpha)^{-1}$.
 
 \begin{definition}
 \label{def:curveOfAWalk}
-Let~$\omega = \ldots \alpha_{i-1}^{\varepsilon_{i-1}}\alpha_{i}^{\varepsilon_i}\alpha_{i+1}^{\varepsilon_{i+1}} \ldots$ be a (possibly infinite) walk on~$\bar Q$. 
-Define the curve~$\curveof(\omega)$ to be the concatenation of the curves~$\curveof(\alpha_i^{\varepsilon_{i}})$ of Definition \ref{def:curveOfAnArrow}.
+Let~$\omega = \prod_{i < \ell < j} \alpha_\ell^{\varepsilon_\ell}$ be a (possibly infinite) walk on~$\bar Q$. 
+Define the curve~$\curveof(\omega)$ to be the concatenation of the curves~$\curveof(\alpha_\ell^{\varepsilon_\ell})$ of Definition \ref{def:curveOfAnArrow}.
 \end{definition}
 
 In practice, we will represent~$\curveof(\omega)$ by a curve which intersects itself only transversaly, and such that if it circles infinitely around a puncture, then it spirals towards it.
@@ -1205,6 +1219,12 @@ $\phantom{x}$
  The second point is a consequence of Theorem \ref{thm:bijectionLocallyGentleAndSurfaces} and of the first point.
 \end{proof}
 
+\begin{example}
+\label{exm:peakDeepFacets}
+\vincent{TODO: Describe here the peak and deep facets in terms of the surface.}
+\end{example}
+
+
 \section{Properties of the non-crossing and non-kissing complexes}\label{sec:propertiesOfComplexes}
 
 This section explores combinatorial properties of the non-crossing and non-kissing complexes, showing in particular that these complexes are pure and thin.
@@ -1232,16 +1252,16 @@ The \defn{countercurrent order at~$\alpha$} is defined by~$\mu_\star \prec_\alph
 \end{definition}
 
 \begin{remark}
-\label{rema:countercurrentOrderOnSurface}
-Using Theorem \ref{thm:complexesCoincide}, we can translate the definition of the countercurrent order~$\prec_\alpha$ to the language of~$\dissection$-accordions.
-An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point $v$ between two arcs of~$\dissection$.
-Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions~$\gamma$ and~$\delta$ passing in front of this angle.
-Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ than~$\delta$ does.
+\label{rem:countercurrentOrderOnSurface}
+Using Theorem \ref{thm:complexesCoincide}, we can translate the definition of the countercurrent order~$\prec_\alpha$ to the language of~$\dissection$-accordions (resp.~of~$\dissection\dual$-slaloms).
+An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point~$v$ between two arcs of~$\dissection$ (resp.~at a point~$v\dual$ between two arcs of~$\dissection\dual$).
+Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions (resp.~$\dissection\dual$-slaloms)~$\gamma$ and~$\delta$ passing in front of this angle.
+Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer (resp.~farther) to~$v$ than~$\delta$ does.
 %
 \begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=1]{orderCurves}}
-	\caption{The order~$\mu \prec_\alpha \nu$ on marked walks is the order in which the corresponding curves~$\curveof(\mu)$ and~$\curveof(\nu)$ cross the angle corresponding to~$\alpha$.}
+	\caption{The order~$\mu \prec_\alpha \nu$ on marked walks is the order in which the corresponding curves~$\curveof(\mu)$ and~$\curveof(\nu)$ cross the angles of~$\dissection$ and~$\dissection\dual$ corresponding to~$\alpha$.}
 	\label{fig:orderCurves}
 \end{figure}
 \end{remark}
@@ -1268,7 +1288,7 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercur
 For any finite non-kissing face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ is either empty or admits a maximal element for the countercurrent order~$\prec_\alpha$.
 \end{lemma}
 \begin{proof}
- We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rema:countercurrentOrderOnSurface}.
+ We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rem:countercurrentOrderOnSurface}.
  
  \para{Combinatorial proof}
  Note that even though~$F$ is finite, the set of marked walks~$F_\alpha$ might be infinite if~$\alpha$ belongs to an oriented cycle of~$Q$.
@@ -1326,7 +1346,7 @@ Let~$\gamma = \curveof(\omega)$.  The fact that~$\omega$ contains~$c$ translates
 
 \begin{figure}[h]
 	\capstart
-	\centerline{\includegraphics[scale=1]{infiniteCurve2.pdf}}
+	\centerline{\includegraphics[scale=.7]{infiniteCurve2.pdf}}
 	\caption{The arc~$\gamma$ makes at least one full circle around the puncture.}
 	\label{fig:aroundPuncture1}
 \end{figure}
@@ -1448,7 +1468,7 @@ Construct a curve~$\gamma$ as follows:~$\gamma$ first unwinds from the puncture,
 
 \begin{figure}[h]
 	\capstart
-	\centerline{\includegraphics[scale=1]{infiniteCurve1.pdf}}
+	\centerline{\includegraphics[scale=.7]{infiniteCurve1.pdf}}
 	\caption{The arc~$\gamma$ leaving the puncture.}
 	\label{fig:aroundPuncture2}
 \end{figure}
@@ -1534,12 +1554,11 @@ The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is t
 
 \section{$\b{g}$-vectors, $\b{c}$-vectors, and $\b{d}$-vectors}
 
-\vincent{To do on the walks, on the accordions and on the slaloms.}
-
-In this section, we define of three relevant families of vectors associated to walks in the non-kissing complex of a locally gentle quiver~$\bar Q$.
-The $\b{g}$- and $\b{c}$-vectors were already considered for gentle algebras in~\cite[Sect.~4.2]{PaluPilaudPlamondon}, and their definition immediately generalizes to the case of locally gentle algebras.
+In this section, we define three relevant families of vectors associated to walks in the non-kissing complex of a locally gentle quiver~$\bar Q$.
+In contrast to the $\b{d}$-vectors, the $\b{g}$- and $\b{c}$-vectors were already considered in the non-kissing complex of a gentle quiver~\cite[Sect.~4.2]{PaluPilaudPlamondon}, and their definition immediately generalizes to the case of locally gentle algebras.
+All these vectors have algebraic motivations that we prefer to omit in the present paper to remain focus on the two-sided combinatorics of the non-kissing and non-crossing models.
 Our objective is just to provide interpretations of these vectors in terms of the surface~$\surface_{\bar Q}$.
-We show that our geometric model using accordions is well-adapted to computing~$\b{c}$-vectors, while slaloms can naturally be interpreted as~$\b{g}$-vectors.
+% We show that our geometric model using accordions is well-adapted to computing~$\b{c}$-vectors, while slaloms can naturally be interpreted as~$\b{g}$-vectors.
 
 \subsection{$\b{g}$-vectors, $\b{c}$-vectors, and $\b{d}$-vectors for walks}
 \label{subsec:gcdVectorsWalks}
@@ -1591,9 +1610,33 @@ The \defn{$\b{c}$-vector} of a walk~$\omega$ of~$F$ is the vector~${\cvector{\om
 We let~$\cvectors{F} \eqdef \set{\cvector{\omega}{F}}{\omega \in F}$ be the set of $\b{c}$-vectors of a non-kissing facet~$F \in \RNKC$, and~$\allcvectors \eqdef \bigcup_F \cvectors{F}$ be the set of all $\b{c}$-vectors of all non-kissing facets~${F \in \RNKC}$.
 \end{definition}
 
+We now introduce yet another algebraically motivated family of vectors that was omitted in~\cite{PaluPilaudPlamondon}.
+We first need to introduce the kissing number.
+
+\begin{definition}
+\label{def:kissingNumber}
+For two walks~$\omega, \omega' \in \NKWalks^\pm(\bar Q)$, denote by~$\kn(\omega,\omega')$ the number of kisses of~$\omega$ to~$\omega'$.
+Note that kisses are counted with multiplicities if~$\omega$ or~$\omega'$ pass twice through the same substring.
+Observe also that~$\kn(\omega,\omega')$ is finite since any infinite walk is eventually cyclic.
+The \defn{kissing number} of~$\omega$ and~$\omega'$ is~$\KN(\omega,\omega') \eqdef \kn(\omega,\omega') + \kn(\omega',\omega)$.
+%Since~$\RNKC$ is finite, we can define the \defn{kissing number} of a walk~$\omega$ on~$\bar Q$ as
+%\[
+%\KN(\omega) \eqdef \sum_{\omega'} \KN(\omega,\omega'),
+%\]
+%where the sum runs over all walks~$\omega'$ of~$\NKWalks^\pm(\bar Q)$.
+\end{definition}
+
 \begin{definition}
 \label{def:dVectorsWalks}
-\vincent{TOTO: d-vectors}
+The \defn{$\b{d}$-vector} of a walk~$\omega$ is the vector~$\dvector{\omega} \in \R^{Q_0}$ defined by
+\[
+\dvector{\omega} \eqdef 
+\begin{cases}
+- \b{e}_v & \text{if $\omega$ is the deep walk~$v_\deep$ with a unique deep at~$v$,} \\
+\displaystyle \sum_{v \in Q_0} \kn(v_\deep, \omega) \, \b{e}_v & \text{otherwise.}
+\end{cases}
+\]
+For a set~$\Omega$ of walks, we let~$\dvectors{\Omega} \eqdef \set{\dvector{\omega}}{\omega \in \Omega}$.
 \end{definition}
 
 \begin{example}
@@ -1605,51 +1648,77 @@ We let~$\cvectors{F} \eqdef \set{\cvector{\omega}{F}}{\omega \in F}$ be the set 
 \subsection{$\b{g}$-vectors, $\b{c}$-vectors, and~$\b{d}$-vectors on the surface}
 \label{subsec:gcdVectorsSurface}
 
-Recall that there is a fixed bijection between the vertices of~$Q$, the arc in the dissection~$\dissection_{\bar Q}$ and the arcs in the dual dissection~$\dissection\dual_{\bar Q}$.
+Our objective is now to interpret the three families of vectors of Section~\ref{subsec:gcdVectorsWalks} in terms of accordions and slaloms on the surface.
+According to Remark~\ref{rem:propertiesSurface}\,(\ref{item:arcs}), each vertex~$p$ of~$Q$ corresponds to an arc~$\arcof(p)$ in the dissection~$\dissection_{\bar Q}$ and  to an arc~$\dualarcof(p) = \arcof(p)\dual$ in the dual dissection~${\dissection_{\bar Q}}\dual$.
+Recall moreover from Lemma~\ref{lemm:curveOfAWalkIsAccordion} and Proposition~\ref{prop:accordionsSlaloms} that each non-kissing walk~$\omega$ in~$\bar Q$ corresponds to a curve~$\curveof(\omega)$ that is both a $\dissection$-accordion and a $\dissection\dual$-slalom.
+The following three statements translate the definitions of $\b{g}$-, $\b{c}$- and $\b{d}$-vectors on the surface.
+The proofs are left to the reader.
+We note that these interpretations were already used in~\cite{MannevillePilaud-accordion, GarverMcConville} when the surface is a disk.
 
-\begin{definition}\label{def: c-vectors for accordions}
-Let~$\alpha$ be a~$\dissection_{\bar Q}$-accordion in a non-crossing facet~$F$ of~$\RNCC$.
-The distinguished curve of~$\alpha$ in~$F$ is the part of~$\alpha$ which lies strictly between the two angles of~$\dissection_{\bar Q}$ where~$\alpha$ is maximal (see Remark~\ref{rema:countercurrentOrderOnSurface}).
-The~$\b{c}$-vector of~$\alpha$ in~$F$ is the vector in~$\R^{Q_0}$ counting the number of crossings between the dinstinguished curve of~$\alpha$ in~$F$ and the arcs of the dissection~$\dissection_{\bar Q}$.
-\end{definition}
-
-\begin{definition}\label{def: g-vectors for slaloms}
-Let~$\alpha$ be a~$\dissection\dual_{\bar Q}$-slalom.
-The~$\b{g}$-vector of~$\alpha$ is the vector in~$\R^{Q_0}$ counting the number of times that~$\alpha$ positively crosses each arc of~$\dissection\dual_{\bar Q}$ minus the number of times it crosses each arc negatively.
-Here, a crossing is positive when~$\alpha$ leaves a face~$u\dual$ to enter a face~$v\dual$ with the vertex~$u$ being to its right (and thus with~$v$ being to its left).
-Otherwise, the crossing is negative.
-\end{definition}
-
-\yann{Ajouter une phrase pour mettre en avant cette proposition}
-
-\begin{proposition}\label{prop: geometric interpretation of g- and c-vectors}
- Let~$\omega$ be a non-kissing walk in~$\bar Q$, and let~$\alpha$ be the corresponding curve on~$\surface(\bar Q)$, as in Definition~\ref{def:curveOfAWalk}.
- Recall from Lemma~\ref{lemm:curveOfAWalkIsAccordion} and Proposition~\ref{prop:accordionsSlaloms} that~$\alpha$ is both a~$\dissection_{\bar Q}$-accordion and a~$\dissection\dual_{\bar Q}$-slalom.
- Let~$F$ be a non-kissing facet to which~$\omega$ belong.
- We also write~$F$ for the corresponding non-crossing facet in the slalom complex.
- Then:
- \begin{enumerate}
-  \item The~$\b{g}$-vectors of the walk~$\omega$ and the accordion~$\alpha$ coincide.
-  \item The~$\b{c}$-vectors of the walk~$\omega$ in~$F$ and the slalom~$\alpha$ in~$F$ concide.
- \end{enumerate}
+\begin{proposition}
+\label{prop:gVectorsSurface}
+For a walk~$\omega \in \NKWalks^\pm(\bar Q)$ and a vertex~$p \in Q_0$, the $p$th entry of the $\b{g}$-vector~$\gvector{\omega}$ is given~by
+\begin{enumerate}[(i)]
+\item The number of times that the $\dissection$-accordion~$\curveof(\omega)$ positively crosses the arc~$\arcof(p)$ of~$\dissection$ minus the number of times it negatively crosses the arc~$\arcof(p)$ of~$\dissection$. Here, the crossing is positive (resp.~negative) if the two angles of~$\dissection$ crossed by~$\curveof(\alpha)$ just before and after~$\arcof(p)$ form a~$\SSS$ (resp.~as a~$\ZZZ$).
+\item The number of times that the $\dissection\dual$-slalom~$\curveof(\omega)$ positively crosses the arc~$\dualarcof(p)$ of~$\dissection\dual$ minus the number of times it negatively crosses the arc~$\dualarcof(p)$ of~$\dissection\dual$. Here, the crossing is positive when~$\curveof(\omega)$ leaves a face~$u\dual$ to enter a face~$v\dual$ with the vertex~$u$ being to its right (and thus with~$v$ being to its left), and the crossing is negative otherwise.
+\end{enumerate}
 \end{proposition}
 
-\begin{proof}
-Definitions~\ref{def: c-vectors for accordions} and~\ref{def: g-vectors for slaloms} are immediate translations in terms of curves on the surface~$\surface(\bar Q)$ of Definitions~\ref{def:cVectorsWalks} and~\ref{def:gVectorsWalks} respectively.
-\end{proof}
+\begin{proposition}
+\label{prop:cVectorsSurface}
+Consider a walk~$\omega \in \NKWalks^\pm(\bar Q)$ in a non-kissing facet~$F \in \RNKC$
+Call \defn{distinguished subcurve} of~$\curveof(\omega)$ in~$\curveof(F)$ the part of~$\curveof(\omega)$ which lies strictly between the two angles of~$\dissection$ (or of~$\dissection\dual$) where~$\curveof(\omega)$ is maximal (see Remark~\ref{rem:countercurrentOrderOnSurface}).
+For a vertex~$p \in Q_0$, the $p$th entry of the $\b{c}$-vector~$\cvector{\omega}{F}$ is given by
+\begin{enumerate}[(i)]
+\item the number of crossings between the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ and the arc~$\arcof(v)$ of the dissection~$\dissection$,
+\item the number of times the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ follows the arc~$\dualarcof(v)$ of the dual dissection~$\dissection\dual$. Here, we say that a curve~$\delta$ follows~$\dualarcof(v)$ if~$\dualarcof(v)$ lies on the boundary opposite to~$u$ of a face~$u\dual$ of~$\dissection\dual$ crossed by~$\delta$.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+Observe that although we gave interpretations for the $\b{g}$- and~$\b{c}$-vectors both in terms of accordions and slaloms, we consider that the slaloms naturally correspond to~$\b{g}$-vectors, while the accordions are more suited for~$\b{c}$-vectors.
+\end{remark}
+
+\begin{proposition}
+\label{prop:dVectorsSurface}
+Denote by~$X_\deep$ the deep facet of the non-crossing complex as described in Example~\ref{exm:peakDeepFacets}.
+For a walk~$\omega \in \NKWalks^\pm(\bar Q)$ and a vertex~$p \in Q_0$, the $p$th entry of the $\b{d}$-vector~$\dvector{\omega}$ is the number of crossings of the curve~$\gamma(\omega)$ with the arc of~$X_\deep$ corresponding to~$p$.
+\end{proposition}
+
+%\begin{proposition}
+%\label{prop:gcdVectorsSurface}
+%For any walk~$\omega$ in any non-kissing facet~$F \in \NKC$,
+%\begin{itemize}
+%\item the~$\b{d}$-vectors of the walk~$\omega$, of the $\dissection$-accordion~$\curveof(\omega)$, and of the $\dissection\dual$-slalom~$\curveof(\omega)$ coincide,
+%\item the~$\b{g}$-vectors of the walk~$\omega$, of the $\dissection$-accordion~$\curveof(\omega)$, and of the $\dissection\dual$-slalom~$\curveof(\omega)$ coincide,
+%\item the~$\b{c}$-vectors of the walk~$\omega$ in~$F$, of the $\dissection$-accordion~$\curveof(\omega)$ in~$\curveof(F)$ and of the $\dissection\dual$-slalom~$\curveof(\omega)$ in~$\curveof(F)$ concide.
+%\end{itemize}
+%\end{proposition}
+%
+%\begin{proof}
+%Definitions~\ref{def:cVectorsAccordions} and~\ref{def:gVectorsSlaloms} are immediate translations in terms of curves on the surface~$\surface(\bar Q)$ of Definitions~\ref{def:cVectorsWalks} and~\ref{def:gVectorsWalks} respectively.
+%\end{proof}
 
 \subsection{Geometric properties of these vectors}
 \label{subsec:geometricProperties}
 
-\begin{remark}
+We now gather some statements about $\b{g}$-, $\b{c}$-, and~$\b{d}$-vectors, essentially borrowed from~\cite[Part.~4]{PaluPilaudPlamondon}.
+
+\begin{proposition}
 \label{rem:signCoherence}
-The definitions of $\b{g}$- and $\b{c}$-vectors immediately imply the \defn{sign-coherence property}: for any non-kissing facet~$F \in \RNKC$,
+The $\b{g}$-, $\b{c}$-, and~$\b{d}$-vectors have the \defn{sign-coherence property}: for any non-kissing facet~$F \in \RNKC$,
 \begin{itemize}
+\item for~$v \in Q_0$, the~$v$th coordinates of all $\b{g}$-vectors~$\gvector{\omega}$ for~$\omega \in F$ have the same sign,
 \item for any~$\omega \in F$, all coordinates of the $\b{c}$-vector~$\cvector{\omega}{F}$ have the same sign,
-\item for~$v \in Q_0$, the~$v$th coordinates of all $\b{g}$-vectors~$\gvector{\omega}$ for~$\omega \in F$ have the same sign (otherwise, the corresponding walks would kiss at~$v$).
+\item for any~$\omega \in F$, all coordinates of the $\b{d}$-vector~$\dvector{\omega}$ have the same sign.
 \end{itemize}
-In particular, a $\b{c}$-vector is called \defn{positive} when all its coordinates are non-negative and \defn{negative} when all its coordinates are non-positive.
-\end{remark}
+%In particular, a $\b{c}$-vector is called \defn{positive} when all its coordinates are non-negative and \defn{negative} when all its coordinates are non-positive.
+\end{proposition}
+
+\begin{proof}
+For the $\b{g}$-vectors, observe that two walks~$\omega$ and~$\omega'$ whose $\b{g}$-vectors~$\gvector{\omega}$ and~$\gvector{\omega}$ have opposite signs on their~$v$th coordinate automatically kiss at~$v$.
+For $\b{c}$- and $\b{d}$-vectors, the statement is immediate from the definition.
+\end{proof}
 
 \begin{proposition}
 \label{prop:gvectorscvectorsDualBases}
@@ -1660,26 +1729,26 @@ For any non-kissing facet~$F \in \RNKC$, the set of $\b{g}$-vectors~$\gvectors{F
 Noting that the distinguished string of a walk in a given non-kissing facet is always a finite substring, the proof of~\cite[Proposition 4.16]{PaluPilaudPlamondon} applies \emph{verbatim}.
 \end{proof}
 
-\begin{definition}
-\vincent{Mettre la def dans les thm}
-The \defn{$\b{g}$-vector fan} of~$\bar Q$ is the collection of cones
+Finally, we borrow the following geometric statement from~\cite{PaluPilaudPlamondon}.
+We refer to \cite{Ziegler-polytopes} for basic notions on polyhedral geometry (polytopes and normal fans).
+
+\begin{theorem}
+Let~$\bar Q$ be a locally gentle bound quiver such that~$\NKC$ is finite. The collection of cones
 \[
 \gvectorFan \eqdef \bigset{\R_{\ge0} \gvectors{F}}{F \text{ non-kissing face of } \RNKC}.
 \]
-\end{definition}
-
-\yann{Th 4.17 and Th 4.27 of [PPP1] seem to apply as such here. Vincent?}
-Theorem 4.17 and Theorem 4.27 of~\cite{PaluPilaudPlamondon} hold for locally gentle algebras, with the same proofs:
-
-\begin{theorem}
-Let~$\bar Q$ be a locally gentle bound quiver. Then: 
-\begin{enumerate}
- \item the~$\b{g}$-vector fan of~$\bar Q$ is a complete simplicial fan;
- \item If moreover~$\NKC$ is finite, then $\gvectorFan$ is the normal fan of the~$\bar Q$-associahedron.
-\end{enumerate}
+is a complete simplicial fan, called the \defn{$\b{g}$-vector fan} of~$\bar Q$.
+Moreover, $\gvectorFan$ is the normal fan of the \defn{$\bar Q$-associahedron} defined equivalently as
+\begin{itemize}
+\item the convex hull of the points~$\point{F} \eqdef \sum_{\omega \in F} \KN(\omega) \, \cvector{\omega}{F}$ for all facets~${F \in \RNKC}$,~or
+\item the intersection of the halfspaces~$\HS{\omega} \eqdef \bigset{\b{x} \in \R^{Q_0}}{\dotprod{\gvector{\omega}}{\b{x}} \le \KN(\omega)}$ for all walks~$\omega$ on~$\bar Q$,
+\end{itemize}
+where $\KN(\omega) \eqdef \sum_{\omega'} \KN(\omega,\omega')$ is the (finite) sum of the kissing numbers of Definition~\ref{def:kissingNumber}.
 \end{theorem}
 
-
+\begin{proof}
+The proof is identical to that of Theorem 4.17 and Theorem 4.27 of~\cite{PaluPilaudPlamondon}.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
