@@ -974,7 +974,30 @@ For any gentle bound quiver~$\bar Q$ with Koszul dual~$\bar Q\koszul$, the surfa
 
 \begin{example}[Cambrian paths]
 \label{exm:CambrianPath}
-\vincent{TODO: Cambrian paths}
+Consider a \defn{Cambrian quiver}, that is any orientation of a line with no relations (\aka type~$A$ quiver).
+Two such quivers are represented in \fref{fig:CambrianPathsQuivers}.
+Note that we can choose to position the blossom vertices in such a way that for any arrow~$\beta$, the arrows~$\alpha$ and~$\gamma$ such that~$\alpha\beta \in I$ and~$\beta\gamma \in I$ are on the right of~$\beta$.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{CambrianPathsQuivers}}
+	\caption{Two Cambrian quivers on~$5$ vertices.}
+	\label{fig:CambrianPathsQuivers}
+\end{figure}
+
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) form a cycle with green and red arrows alternating.
+Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
+Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces have $1$ boundary component and genus~$0$.
+Two examples are represented in \fref{fig:reversedPathsSurfaces}.
+Note that the dissection~$\dissection_{\bar Q}$ is a triangulation with no internal triangles, and the orientation of~$\bar Q$ indicates how to glue these triangles.
+For instance, the Cambrian quiver completely oriented in one direction yields a fan triangulation, were all internal arcs are incident to the same vertex, as in \fref{fig:reversedPathsSurfaces}\,(left).
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{CambrianPathsSurfaces}}
+	\caption{The surface~$\surface_{\bar Q}$ for two Cambrian paths on~$5$ vertices.}
+	\label{fig:CambrianPathsSurfaces}
+\end{figure}
 \end{example}
 
 \begin{example}
@@ -990,7 +1013,7 @@ Consider the family of \defn{reversed path quivers} indicated in \fref{fig:rever
 
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{reversedPathsPM}}.
 Moreover, $\bar Q$ has no infinite straight walk, while~$\bar Q\koszul$ has~$|Q_0|-1$ infinite straight walks.
-Therefore, the corresponding surfaces have $1$ boundary component and genus~$0$.
+Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have $1$ boundary component and genus~$0$.
 The first few corresponding surfaces are represented in \fref{fig:reversedPathsSurfaces}.
 
 \begin{figure}[h]
@@ -999,7 +1022,6 @@ The first few corresponding surfaces are represented in \fref{fig:reversedPathsS
 	\caption{The surface~$\surface_{\bar Q}$ for the reversed path quivers with~$1, 2, 3$ vertices.}
 	\label{fig:reversedPathsSurfaces}
 \end{figure}
-
 \end{example}
 
 \begin{example}
@@ -1015,10 +1037,10 @@ Consider the family of \defn{double path quivers} indicated in \fref{fig:doubleP
 
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
-Therefore, the corresponding surfaces have no punctures and
+Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have no punctures and
 \begin{itemize}
 \item $1$ boundary component and genus~$(|Q_0|-1)/2$ when~$|Q_0|$ is odd, and 
-\item $2$ boundary components and genus~$|Q_0|/2$ when~$|Q_0|$ is even.
+\item $2$ boundary components and genus~$(|Q_0|-2)/2$ when~$|Q_0|$ is even.
 \end{itemize}
 The first few corresponding surfaces are represented in \fref{fig:doublePathsSurfaces}.
 
@@ -1028,7 +1050,6 @@ The first few corresponding surfaces are represented in \fref{fig:doublePathsSur
 	\caption{The surface~$\surface_{\bar Q}$ for the double path quivers with~$1, 2, 3, 4$ vertices.}
 	\label{fig:doublePathsSurfaces}
 \end{figure}
-
 \end{example}
 
 \begin{example}
@@ -1044,7 +1065,7 @@ Consider the family of \defn{double cycle quivers} indicated in \fref{fig:double
 
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}) are empty since there is no blossom vertices.
 Moreover, $\bar Q$ has~$1$ infinite straight walk when~$|Q_0|$ is odd and~$2$ when~$|Q_0|$ is even, and~$\bar Q\koszul$ always has~$2$ infinite straight walks.
-Therefore, the corresponding surfaces have no boundary component and
+Since~$|Q_1| = 2|Q_0|$, the corresponding surfaces have no boundary component and
 \begin{itemize}
 \item $3$ punctures and genus~$(|Q_0|-1)/2$ when~$|Q_0|$ is odd, and 
 \item $4$ punctures and genus~$(|Q_0|-2)/2$ when~$|Q_0|$ is even.
@@ -1057,7 +1078,6 @@ The first few corresponding surfaces are represented in \fref{fig:doubleCyclesSu
 	\caption{The surface~$\surface_{\bar Q}$ for the double cycle quivers with~$3, 4, 5$ vertices.}
 	\label{fig:doubleCyclesSurfaces}
 \end{figure}
-
 \end{example}
 
 \begin{remark}
@@ -1269,6 +1289,10 @@ Then~$\omega$ is of the form~$\sigma c^{\pm\infty}$, for some (possibly infinite
 \end{lemma}
 
 \begin{proof}
+We provide two proofs of the lemma.
+One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ 
+\para{Combinatorial proof}
 Let~$c=\alpha_1\cdots\alpha_r$ be a non-trivial oriented cycle in some walk~$\omega$, with~$c, c^2\notin I$.
 Assume that~$\omega$ is not of form~$\sigma c^{\pm\infty}$.
 Then, up to cyclic reordering of the arrows in~$c$, it contains a substring of the form~$\beta^\pm c^l \alpha_1\cdots\alpha_j\gamma^\pm$, for some arrows~$\beta,\gamma$ not in~$c$, some~$l\geq 1$, and some~$j<r$.
@@ -1286,9 +1310,7 @@ Let~$\gamma = \curveof(\omega)$.  The fact that~$\omega$ contains~$c$ translates
 	\label{fig:aroundPuncture1}
 \end{figure}
 
-
 Once this cycle is completed, since~$\gamma$ cannot cross itself, it has to continue cycling infinitely around the puncture.  This proves the claim.
-\vincent{Should we also give here a geometric argument?}
 \end{proof}
 
 \begin{lemma}\label{lem:ExistenceOfDistinguishedArrows}
@@ -1420,9 +1442,6 @@ From there, let~$\gamma$ follow~$\delta$ on the surface until it either reaches 
 Then~$\gamma$ is compatible with all curves in~$F$, a contradiction.
 
 Thus~$F$ contains a curve going to the puncture.
-\vincent{Should we also give here a geometric argument? Pierre-Guy, could you add that?}
-\pierreguy{Done; I will need a picture, please, Vincent.}
-
 \end{proof}
 
 The following result extends \cite[Prop.~2.26]{PaluPilaudPlamondon} to the case of locally gentle algebras.
@@ -1602,6 +1621,7 @@ Definitions~\ref{def: c-vectors for accordions} and~\ref{def: g-vectors for slal
 \end{proof}
 
 \begin{definition}
+\vincent{Mettre la def dans les thm}
 The \defn{$\b{g}$-vector fan} of~$\bar Q$ is the collection of cones
 \[
 \gvectorFan \eqdef \bigset{\R_{\ge0} \gvectors{F}}{F \text{ non-kissing face of } \RNKC}.
