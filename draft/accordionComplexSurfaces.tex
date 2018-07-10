@@ -1527,15 +1527,17 @@ The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is t
 
 \vincent{Orient the flip graph. Connection to the lattice of torsion classes?}
 
-\section{$\b{g}$-, $\b{c}$- and $\b{d}$-vectors}
+\section{$\b{g}$-vectors, $\b{c}$-vectors, and $\b{d}$-vectors}
 
 \vincent{To do on the walks, on the accordions and on the slaloms.}
 
-In this section, we recall some results from Section 4.2 of~\cite{PaluPilaudPlamondon} that immediately generalise to the case of locally gentle algebras.
-We show that our geometric model using accordions is well-adapted to computing~$\b{c}$-vectors, while slaloms can naturally be interpreted as~$\b{g}$- vectors.
+In this section, we define of three relevant families of vectors associated to walks in the non-kissing complex of a locally gentle quiver~$\bar Q$.
+The $\b{g}$- and $\b{c}$-vectors were already considered for gentle algebras in~\cite[Sect.~4.2]{PaluPilaudPlamondon}, and their definition immediately generalizes to the case of locally gentle algebras.
+Our objective is just to provide interpretations of these vectors in terms of the surface~$\surface_{\bar Q}$.
+We show that our geometric model using accordions is well-adapted to computing~$\b{c}$-vectors, while slaloms can naturally be interpreted as~$\b{g}$-vectors.
 
-\subsection{$\b{g}$-vectors and $\b{c}$-vectors}
-\label{subsec:gcvectors}
+\subsection{$\b{g}$-vectors, $\b{c}$-vectors, and $\b{d}$-vectors for walks}
+\label{subsec:gcdVectorsWalks}
 
 Let~$\bar Q = (Q,I)$ be a locally gentle bound quiver, and let~$(\b{e}_v)_{v \in Q_0}$ be the standard basis of~$\R^{Q_0}$.
 
@@ -1549,23 +1551,25 @@ For a string~$\sigma \in \strings^\pm(\bar Q)$, we define~$\multiplicityVector_\
 
 We now recall two definitions from~\cite{PaluPilaudPlamondon}, that still make sense for locally gentle algebras.
 
-\begin{definition}\label{def: g-vectors for walks}
+\begin{definition}
+\label{def:gVectorsWalks}
 For a walk~$\omega \in \NKWalks^\pm(\bar Q)$, we denote by~$\peaks{\omega}$ (resp.~by~$\deeps{\omega}$) the multiset of vertices of~$Q_0$ corresponding to the peaks (resp.~deeps) of~$\omega$.
 The \defn{$\b{g}$-vector} of a walk~$\omega$ is the vector~${\gvector{\omega} \in \R^{Q_0}}$ defined by
 \[
 \gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}.
 \]
 For a set~$\Omega$ of walks, we let~$\gvectors{\Omega} \eqdef \set{\gvector{\omega}}{\omega \in \Omega}$.
-Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, since for any walk~$\omega$, the strings $\omega$ and $\omega^{-1}$ are eventually direct or inverse, the coordinates of~$\gvector{\omega}$ are finite.
+Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, since for any infinite walk~$\omega$ is eventually cyclic, the coordinates of~$\gvector{\omega}$ are finite.
 \end{definition}
 
-\begin{remark}
-Let~$\omega$ be a walk in~$\NKWalks^\pm(\bar Q)$, and let $\sigma$ be the string obtained from~$\omega$ by deleting a left and a right co-hook when possible.
-Then the~$\b{g}$-vector of the walk~$\omega$ coincide with the~$\b{g}$-vector of the (finitely generated) string module associated with the string~$\sigma$.
-\end{remark}
+%\begin{remark}
+%\vincent{I vote for deleting this remark. This goes to the next paper. The present paper should have no algebra}
+%Let~$\omega$ be a walk in~$\NKWalks^\pm(\bar Q)$, and let $\sigma$ be the string obtained from~$\omega$ by deleting a left and a right co-hook when possible.
+%Then the~$\b{g}$-vector of the walk~$\omega$ coincide with the~$\b{g}$-vector of the (finitely generated) string module associated with the string~$\sigma$.
+%\end{remark}
 
-
-\begin{definition}\label{def: c-vectors for walks}
+\begin{definition}
+\label{def:cVectorsWalks}
 Let~$\omega$ be a walk in a non-kissing facet~$F \in \RNKC$.
 Define
 \[
@@ -1582,26 +1586,19 @@ The \defn{$\b{c}$-vector} of a walk~$\omega$ of~$F$ is the vector~${\cvector{\om
 We let~$\cvectors{F} \eqdef \set{\cvector{\omega}{F}}{\omega \in F}$ be the set of $\b{c}$-vectors of a non-kissing facet~$F \in \RNKC$, and~$\allcvectors \eqdef \bigcup_F \cvectors{F}$ be the set of all $\b{c}$-vectors of all non-kissing facets~${F \in \RNKC}$.
 \end{definition}
 
+\begin{definition}
+\label{def:dVectorsWalks}
+\vincent{TOTO: d-vectors}
+\end{definition}
 
-\begin{remark}
-\label{rem:signCoherence}
-The definitions of $\b{g}$- and $\b{c}$-vectors immediately imply the \defn{sign-coherence property}: for any non-kissing facet~$F \in \RNKC$,
-\begin{itemize}
-\item for any~$\omega \in F$, all coordinates of the $\b{c}$-vector~$\cvector{\omega}{F}$ have the same sign,
-\item for~$v \in Q_0$, the~$v$th coordinates of all $\b{g}$-vectors~$\gvector{\omega}$ for~$\omega \in F$ have the same sign (otherwise, the corresponding walks would kiss at~$v$).
-\end{itemize}
-In particular, a $\b{c}$-vector is called \defn{positive} when all its coordinates are non-negative and \defn{negative} when all its coordinates are non-positive.
-\end{remark}
+\begin{example}
+\label{exm:gcdVectorsWalks}
+\vincent{TODO: exm g- c- and d-vectors}
+\end{example}
 
 
-\begin{proposition}
-\label{prop:gvectorscvectorsDualBases}
-For any non-kissing facet~$F \in \RNKC$, the set of $\b{g}$-vectors~$\gvectors{F}$ and the set of $\b{c}$-vectors~$\cvectors{F}$ form dual bases. 
-\end{proposition}
-
-\begin{proof}
-Noting that the distinguished string of a walk in a given non-kissing facet is always a finite substring, the proof of~\cite[Proposition 4.16]{PaluPilaudPlamondon} applies \emph{verbatim}.
-\end{proof}
+\subsection{$\b{g}$-vectors, $\b{c}$-vectors, and~$\b{d}$-vectors on the surface}
+\label{subsec:gcdVectorsSurface}
 
 Recall that there is a fixed bijection between the vertices of~$Q$, the arc in the dissection~$\dissection_{\bar Q}$ and the arcs in the dual dissection~$\dissection\dual_{\bar Q}$.
 
@@ -1633,7 +1630,29 @@ Otherwise, the crossing is negative.
 \end{proposition}
 
 \begin{proof}
-Definitions~\ref{def: c-vectors for accordions} and~\ref{def: g-vectors for slaloms} are immediate translations in terms of curves on the surface~$\surface(\bar Q)$ of Definitions~\ref{def: c-vectors for walks} and~\ref{def: g-vectors for walks} respectively.
+Definitions~\ref{def: c-vectors for accordions} and~\ref{def: g-vectors for slaloms} are immediate translations in terms of curves on the surface~$\surface(\bar Q)$ of Definitions~\ref{def:cVectorsWalks} and~\ref{def:gVectorsWalks} respectively.
+\end{proof}
+
+\subsection{Geometric properties of these vectors}
+\label{subsec:geometricProperties}
+
+\begin{remark}
+\label{rem:signCoherence}
+The definitions of $\b{g}$- and $\b{c}$-vectors immediately imply the \defn{sign-coherence property}: for any non-kissing facet~$F \in \RNKC$,
+\begin{itemize}
+\item for any~$\omega \in F$, all coordinates of the $\b{c}$-vector~$\cvector{\omega}{F}$ have the same sign,
+\item for~$v \in Q_0$, the~$v$th coordinates of all $\b{g}$-vectors~$\gvector{\omega}$ for~$\omega \in F$ have the same sign (otherwise, the corresponding walks would kiss at~$v$).
+\end{itemize}
+In particular, a $\b{c}$-vector is called \defn{positive} when all its coordinates are non-negative and \defn{negative} when all its coordinates are non-positive.
+\end{remark}
+
+\begin{proposition}
+\label{prop:gvectorscvectorsDualBases}
+For any non-kissing facet~$F \in \RNKC$, the set of $\b{g}$-vectors~$\gvectors{F}$ and the set of $\b{c}$-vectors~$\cvectors{F}$ form dual bases. 
+\end{proposition}
+
+\begin{proof}
+Noting that the distinguished string of a walk in a given non-kissing facet is always a finite substring, the proof of~\cite[Proposition 4.16]{PaluPilaudPlamondon} applies \emph{verbatim}.
 \end{proof}
 
 \begin{definition}
