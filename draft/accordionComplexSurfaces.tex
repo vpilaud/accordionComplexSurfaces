@@ -414,23 +414,24 @@ We note that there is only one string of length
 \begin{notation}
 If~$c$ is an oriented cycle in~$Q$ such that~$c$ and~$c^2$ do not belong to the ideal of relations~$I$, we write:
 \begin{itemize}
- \item $^\infty c$ for the infinite word:~$\cdots c c c$;
- \item $c^\infty$ for the word:~$c c c\cdots$;
- \item $^{-\infty} c$ for the infinite word:~$\cdots c^{-1} c^{-1} c^{-1}$;
- \item $c^{-\infty}$ for the word:~$c^{-1} c^{-1} c^{-1}\cdots$ and
- \item $^\infty c^\infty$ for the word:~$^\infty c c^\infty$.
+ \item ${}^\infty c$ for the infinite word~$\cdots c c c$,
+ \item $c^\infty$ for the infinite word~$c c c\cdots$,
+% \item $^{-\infty} c$ for the infinite word~$\cdots c^{-1} c^{-1} c^{-1}$,
+% \item $c^{-\infty}$ for the infinite word~$c^{-1} c^{-1} c^{-1}\cdots$, and
+ \item $^\infty c^\infty$ for the bi-infinite word~$^\infty c c^\infty$.
 \end{itemize}
+We also define~${}^{-\infty}c \eqdef (c^\infty)^{-1}$ and similarly~$c^{-\infty} \eqdef (^\infty c)^{-1}$.
 \end{notation}
 
-We note that~$(c^\infty)^{-1} =\,^{-\infty}c$ and similarly~$(^\infty c)^{-1} = c^{-\infty}$.
 
 \begin{definition}
 An \defn{eventually cyclic string} for~$\bar Q$ is a word~$\rho$ of the form~$^{\pm\infty}c_1\sigma c_2^{\pm\infty}$, where $c_1,c_2$ are oriented cycles in~$\bar Q$ (possibly of length zero), $c_1, c_1^2, c_2, c_2^2\notin I$, and~$\sigma$ is a finite string.
+\vincent{We also want $c_1\sigma \notin I$ or $c_1^{-1} \notin I$ depending on what we have...}
 In case~$\rho=\,^{\pm\infty}c_1\sigma c_2^{\infty}$, it is called \defn{eventually direct}, and \defn{eventually inverse} if~$\rho=\,^{\pm\infty}c_1\sigma c_2^{-\infty}$.
 \end{definition}
 
 \begin{remark}
- The terminology in the previous definition is borrowed from~\ref{Crawley-Boevey}.
+ The terminology in the previous definition is borrowed from~\cite{Crawley-Boevey}.
  Note however that our choice of convention differs from \emph{loc. cit.}, resulting in exchanging ``inverse'' and ``direct''.
 \end{remark}
 
