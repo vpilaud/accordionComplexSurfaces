@@ -1486,7 +1486,7 @@ The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is t
 
 In this section, we recall some results from Section 4.2 of~\cite{PaluPilaudPlamondon} that immediately generalise to the case of locally gentle algebras.
 We show that our geometric model using accordions is well-adapted to computing~$\b{c}$-vectors, while slaloms can naturally be interpreted as~$\b{g}$- vectors.
-The duality between~$\b{g}$-vectors and~$\b{c}$-vectors then follows from the duality between the two dissections~$\dissection_Q$ and~$\dissection\dual_Q$.
+The duality between~$\b{g}$-vectors and~$\b{c}$-vectors then follows from the duality between the two dissections~$\dissection_{\bar Q}$ and~$\dissection\dual_{\bar Q}$.
 \yann{check the lattest assertion}
 
 \subsection{$\b{g}$-vectors and $\b{c}$-vectors}
@@ -1515,9 +1515,105 @@ Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, sinc
 \end{definition}
 
 \begin{remark}
-Let~$\omega$ be a walk in~$\NKWalks^\pm(\bar Q)$, and let$\sigma$ be the string obtained from~$\omega$ by deleting a left and a right co-hook when possible.
-The the~$\b{g}$-vector of the walk~$\omega$ coincide with the~$\b{g}$-vector of the (finitely generated) string module associated with the string~$\sigma$.
+Let~$\omega$ be a walk in~$\NKWalks^\pm(\bar Q)$, and let $\sigma$ be the string obtained from~$\omega$ by deleting a left and a right co-hook when possible.
+Then the~$\b{g}$-vector of the walk~$\omega$ coincide with the~$\b{g}$-vector of the (finitely generated) string module associated with the string~$\sigma$.
 \end{remark}
+
+
+\begin{definition}\label{def: c-vectors for walks}
+Let~$\omega$ be a walk in a non-kissing facet~$F \in \RNKC$.
+Define
+\[
+\distinguishedSign{\omega}{F} \eqdef 
+\begin{cases}
+\phantom{-}1 & \text{if~$\distinguishedString{\omega}{F}$ is a top substring of~$\omega$ (\ie the arrows~$\distinguishedArrows{\omega}{F}$ point outside),} \\
+-1 & \text{if~$\distinguishedString{\omega}{F}$ is a bottom substring of~$\omega$ (\ie if the arrows~$\distinguishedArrows{\omega}{F}$ point inside).}
+\end{cases}
+\]
+The \defn{$\b{c}$-vector} of a walk~$\omega$ of~$F$ is the vector~${\cvector{\omega}{F} \in \R^{Q_0}}$ defined by
+\[
+\cvector{\omega}{F} \eqdef \distinguishedSign{\omega}{F} \, \multiplicityVector_{\distinguishedString{\omega}{F}}.
+\]
+We let~$\cvectors{F} \eqdef \set{\cvector{\omega}{F}}{\omega \in F}$ be the set of $\b{c}$-vectors of a non-kissing facet~$F \in \RNKC$, and~$\allcvectors \eqdef \bigcup_F \cvectors{F}$ be the set of all $\b{c}$-vectors of all non-kissing facets~${F \in \RNKC}$.
+\end{definition}
+
+
+\begin{remark}
+\label{rem:signCoherence}
+The definitions of $\b{g}$- and $\b{c}$-vectors immediately imply the \defn{sign-coherence property}: for any non-kissing facet~$F \in \RNKC$,
+\begin{itemize}
+\item for any~$\omega \in F$, all coordinates of the $\b{c}$-vector~$\cvector{\omega}{F}$ have the same sign,
+\item for~$v \in Q_0$, the~$v$th coordinates of all $\b{g}$-vectors~$\gvector{\omega}$ for~$\omega \in F$ have the same sign (otherwise, the corresponding walks would kiss at~$v$).
+\end{itemize}
+In particular, a $\b{c}$-vector is called \defn{positive} when all its coordinates are non-negative and \defn{negative} when all its coordinates are non-positive.
+\end{remark}
+
+
+\begin{proposition}
+\label{prop:gvectorscvectorsDualBases}
+For any non-kissing facet~$F \in \RNKC$, the set of $\b{g}$-vectors~$\gvectors{F}$ and the set of $\b{c}$-vectors~$\cvectors{F}$ form dual bases. 
+\end{proposition}
+
+\begin{proof}
+Noting that the distinguished string of a walk in a given non-kissing facet is always a finite substring, the proof of~\cite[Proposition 4.16]{PaluPilaudPlamondon} applies \emph{verbatim}.
+\end{proof}
+
+Recall that there is a fixed bijection between the vertices of~$Q$, the arc in the dissection~$\dissection_{\bar Q}$ and the arcs in the dual dissection~$\dissection^\dual_{\bar Q}$.
+
+\begin{definition}\label{def: c-vectors for accordions}
+Let~$\alpha$ be a~$\dissection_{\bar Q}$-accordion in a non-crossing facet~$F$ of~$\RNCC$.
+The distinguished curve of~$\alpha$ in~$F$ is the part of~$\alpha$ which lies strictly between the two angles of~$\dissection_{\bar Q}$ where~$\alpha$ is maximal (see Remark~\ref{rema:countercurrentOrderOnSurface}).
+The~$\b{c}$-vector of~$\alpha$ in~$F$ is the vector in~$\R^{Q_0}$ counting the number of crossings between the dinstinguished curve of~$\alpha$ in~$F$ and the arcs of the dissection~$\dissection_{\bar Q}$.
+\end{definition}
+
+\begin{definition}\label{def: g-vectors for slaloms}
+Let~$\alpha$ be a~$\dissection\dual_{\bar Q}$-slalom.
+The~$\b{g}$-vector of~$\alpha$ is the vector in~$\R^{Q_0}$ counting the number of times that~$\alpha$ positively crosses each arc of~$\dissection\dual_{\bar Q}$ minus the number of times it crosses each arc negatively.
+Here, a crossing is positive when~$\alpha$ leaves a face~$f^\dual$ to enter a face~$g^\dual$ with the vertex~$f$ being to its right (and thus with~$g$ being to its left).
+Otherwise, the crossing is negative.
+\end{definition}
+
+\yann{Ajouter une phrase pour mettre en avant cette proposition}
+
+\begin{proposition}\label{prop: geometric interpretation of g- and c-vectors}
+ Let~$\omega$ be a non-kissing walk in~$\bar Q$, and let~$\alpha$ be the corresponding curve on~$\surface(\bar Q)$, as in Definition~\ref{def:curveOfAWalk}.
+ Recall from Lemma~\ref{lemm:curveOfAWalkIsAccordion} and Proposition~\ref{prop:accordionsSlaloms} that~$\alpha$ is both a~$\dissection_{\bar Q}$-accordion and a~$\dissection^\dual_{\bar Q}$-slalom.
+ Let~$F$ be a non-kissing facet to which~$\omega$ belong.
+ We also write~$F$ for the corresponding non-crossing facet in the slalom complex.
+ Then:
+ \begin{enumerate}
+  \item The~$\b{g}$-vectors of the walk~$\omega$ and the accordion~$\alpha$ coincide.
+  \item The~$\b{c}$-vectors of the walk~$\omega$ in~$F$ and the slalom~$\alpha$ in~$F$ concide.
+ \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Definitions~\ref{def: c-vectors for accordions} and~\ref{def: g-vectors for slaloms} are immediate translations in terms of curves on the surface~$\surface(\bar Q)$ of Definitions~\ref{def: c-vectors for walks} and~\ref{def: g-vectors for walks} respectively.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop: geometric interpretation of g- and c-vectors} gives a new proof of Proposition~\ref{prop:gvectorscvectorsDualBases}: \yann{To Do}
+\end{remark}
+
+\begin{definition}
+The \defn{$\b{g}$-vector fan} of~$\bar Q$ is the collection of cones
+\[
+\gvectorFan \eqdef \bigset{\R_{\ge0} \gvectors{F}}{F \text{ non-kissing face of } \RNKC}.
+\]
+\end{definition}
+
+
+\yann{Th 4.17 and Th 4.27 of [PPP1] seem to apply as such here. Vincent?}
+Theorem 4.17 and Theorem 4.27 of~\cite{PaluPilaudPlamondon} hold for locally gentle algebras, with the same proofs:
+
+\begin{theorem}
+Let~$\bar Q$ be a locally gentle bound quiver. Then: 
+\begin{enumerate}
+ \item the~$\b{g}$-vector fan of~$\bar Q$ is a complete simplicial fan;
+ \item If moreover~$\NKC$ is finite, then $\gvectorFan$ is the normal fan of the~$\bar Q$-associahedron.
+\end{enumerate}
+\end{theorem}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
