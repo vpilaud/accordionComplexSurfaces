@@ -375,6 +375,7 @@ Therefore, it has $|Q_0\blossom| = |Q_0| + 2(2|Q_0|-|Q_1|) = 5|Q_0|-2|Q_1|$ vert
 \subsection{Strings and walks}
 
 The non-kissing complex is constructed using the combinatorics of strings and walks in the quiver~$\bar Q$, whose definitions are now briefly recalled.
+The terminology in the following definitions is borrowed from~\cite{ButlerRingel, Crawley-Boevey}.
 
 \begin{definition}
 \label{def:string}
@@ -393,11 +394,8 @@ where
 The integer~$\ell$ is called the \defn{length} of the string~$\rho$.
 We let~$s(\rho) \eqdef s(\alpha_1^{\varepsilon_1})$ and~$t(\rho) \eqdef t(\alpha_\ell^{\varepsilon_\ell})$ denote the source and target of~$\rho$.
 For each vertex~$v \in Q_0$, there is also a \defn{string of length zero}, denoted by~$\varepsilon_v$, that starts and ends at~$v$.
-We note that there is only one string of length 
 %We denote by~$\strings(\bar Q)$ the set of strings on~$\bar Q$.
 %We usually denote strings by~$\rho, \sigma, \tau$.
-
-
 %We call \defn{negative simple string} a formal word of length zero of the form $-v$, where $v$ is any vertex of $Q_0$. We denote by
 %\(
 %\strings^\pm_{\ge -1}(\bar Q) \eqdef \strings^\pm(\bar Q) \sqcup \set{-v}{v \in Q_0}
@@ -420,24 +418,19 @@ If~$c$ is an oriented cycle in~$Q$ such that~$c$ and~$c^2$ do not belong to the 
 % \item $c^{-\infty}$ for the infinite word~$c^{-1} c^{-1} c^{-1}\cdots$, and
  \item $^\infty c^\infty$ for the bi-infinite word~$^\infty c c^\infty$.
 \end{itemize}
-We also define~${}^{-\infty}c \eqdef (c^\infty)^{-1}$ and similarly~$c^{-\infty} \eqdef (^\infty c)^{-1}$.
+We also define~${}^{-\infty}c \eqdef {}^{\infty}(c^{-1}) = (c^\infty)^{-1}$ and similarly~$c^{-\infty} \eqdef (c^{-1})^\infty = (^\infty c)^{-1}$.
 \end{notation}
 
 
 \begin{definition}
-An \defn{eventually cyclic string} for~$\bar Q$ is a word~$\rho$ of the form~$^{\pm\infty}c_1\sigma c_2^{\pm\infty}$, where $c_1,c_2$ are oriented cycles in~$\bar Q$ (possibly of length zero), $c_1, c_1^2, c_2, c_2^2\notin I$, and~$\sigma$ is a finite string.
-\vincent{We also want $c_1\sigma \notin I$ or $c_1^{-1} \notin I$ depending on what we have...}
-In case~$\rho=\,^{\pm\infty}c_1\sigma c_2^{\infty}$, it is called \defn{eventually direct}, and \defn{eventually inverse} if~$\rho=\,^{\pm\infty}c_1\sigma c_2^{-\infty}$.
+An \defn{eventually cyclic string} for~$\bar Q$ is a word~$\rho$ of the form~${}^\infty(c_1^{\varepsilon_1})\sigma (c_2^{\varepsilon_2})^\infty$, where $c_1, c_2$ are oriented cycles in~$\bar Q$ (possibly of length zero) and $\varepsilon_1, \varepsilon_2$ are signs in~$\{\pm 1\}$ such that $c_1^{2\varepsilon_1} \sigma c_2^{2\varepsilon_2}$ is a finite chord.
+%In case~$\rho=\,^{\pm\infty}c_1\sigma c_2^{\infty}$, it is called \defn{eventually direct}, and \defn{eventually inverse} if~$\rho=\,^{\pm\infty}c_1\sigma c_2^{-\infty}$.
 \end{definition}
 
-\begin{remark}
- The terminology in the previous definition is borrowed from~\cite{Crawley-Boevey}.
- Note however that our choice of convention differs from \emph{loc. cit.}, resulting in exchanging ``inverse'' and ``direct''.
-\end{remark}
-
 \begin{definition}
- A \defn{string} for~$\bar Q$ is a word which is either a finite string or an eventually cyclic infinite string.
- We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and we let~$\strings^\pm(\bar Q) \eqdef \set{\{\rho, \rho^{-1}\}}{\rho \in \strings(\bar Q)}$ denote the collection of all \defn{undirected strings} of~$\bar Q$.
+A \defn{string} for~$\bar Q$ is a word which is either a finite string or an eventually cyclic infinite string.
+We denote by~$\strings(\bar Q)$ the set of strings on~$\bar Q$.
+We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and we let~$\strings^\pm(\bar Q) \eqdef \set{\{\rho, \rho^{-1}\}}{\rho \in \strings(\bar Q)}$ denote the collection of all \defn{undirected strings} of~$\bar Q$.
 \end{definition}
 
 
