@@ -1030,7 +1030,7 @@ there, it is used as a model for the derived category of the gentle algebra (gra
 while here, it will be used as a model for walks in~$\bar Q$ ($\dissection_{\bar Q}$-accordions will correspond to walks in~$\bar{Q}$, see Proposition \ref{prop:walks=arcs}).
 \end{remark}
 
-We conclude this section with four families of examples that illustrate the computation of~$\surface_{\bar Q}$.
+We conclude this section with five families of examples that illustrate the computation of~$\surface_{\bar Q}$.
 
 \begin{example}[Cambrian paths]
 \label{exm:CambrianPath}
@@ -1048,7 +1048,7 @@ Note that we can choose to position the blossom vertices in such a way that for 
 We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) form a cycle with green and red arrows alternating.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
-Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces have $1$ boundary component, no puncture and genus~$0$.
+Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces are disks ($1$ boundary component, no puncture and genus~$0$).
 Two examples are represented in \fref{fig:reversedPathsSurfaces}.
 Note that the dissection~$\dissection_{\bar Q}$ is a triangulation with no internal triangles, and the orientation of~$\bar Q$ indicates how to glue these triangles.
 For instance, the Cambrian quiver completely oriented in one direction yields a fan triangulation, were all internal arcs are incident to the same vertex, as in \fref{fig:reversedPathsSurfaces}\,(left).
@@ -1113,6 +1113,31 @@ The first few corresponding surfaces are represented in \fref{fig:doublePathsSur
 	\centerline{\includegraphics[scale=.7]{doublePathsSurfaces}}
 	\caption{The surface~$\surface_{\bar Q}$ for the double path quivers with~$1, 2, 3, 4$ vertices.}
 	\label{fig:doublePathsSurfaces}
+\end{figure}
+\end{example}
+
+\begin{example}
+\label{exm:cycle}
+Consider the family of \defn{cycle quivers} indicated in \fref{fig:doubleCyclesQuivers}.
+
+\begin{figure}[H]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{cyclesQuivers}}
+	\caption{The cycle quivers with~$1, 2, 3, 4, 5$ vertices.}
+	\label{fig:cyclesQuivers}
+\end{figure}
+
+We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) form a cycle with green and red arrows alternating.
+Moreover, $\bar Q$ has~$1$ infinite straight walk, while~$\bar Q\koszul$ has none.
+Since~$|Q_1| = |Q_0|$, the corresponding surfaces are punctured disks ($1$ boundary component, $1$ puncture and genus~$0$).
+The first few corresponding surfaces are represented in \fref{fig:doubleCyclesSurfaces} (see Figures~\ref{fig:surfaces} and~\ref{fig:reversedPathsSurfaces} for the cycles with $1$ or~$2$ vertices).
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{cyclesSurfacesBis}}
+	\caption{The surface~$\surface_{\bar Q}$ for the cycle quivers with~$3, 4, 5$ vertices.}
+	\label{fig:doubleCyclesSurfaces}
 \end{figure}
 \end{example}
 
