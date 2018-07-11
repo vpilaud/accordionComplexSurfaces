@@ -1582,6 +1582,7 @@ Then
 \end{enumerate}
 \end{proposition}
 The walk~$\omega'$ of Proposition \ref{prop:flip} is the \defn{flip} of \defn{mutation} of~$F$ at~$\omega$.
+The flip is \defn{positive} if~$\sigma$ is on top of~$\omega$, and \defn{negative} otherwise.
 
 \begin{figure}[t]
 	\capstart
@@ -1601,13 +1602,24 @@ The mutation of non-kissing facets translates on~$\surface(\bar Q)$ as follows.
 
 \begin{proposition}
 \label{prop:mutationAccordions}
-Let~$F$ be a facet of the non-crossing complex~$\NCC$, and let~$\gamma \in F$.
-Then~$F$ forms a~$B$-dissection of the surface, and~$\gamma$ lies in at least one of the two configutations~$\ZZZ$ and~$\SSS$ with the other curves of the dissection (where the endpoints may be punctures). 
+Let~$F$ be a facet of the non-crossing complex~$\NCC$, and let~$\gamma \in F$.  We represent all curves on the universal cover of~$\surface(\bar Q)$.
+Then~$F$ forms a~$B$-dissection of the surface, and~$\gamma$ lies in at least one of two configutations~$\ZZZ$ and~$\SSS$ with the other curves of the dissection (where the endpoints may go to infinity if punctures are involved). 
 \begin{itemize}
- \item 
+ \item Exactly one of the curves obtained by changing the~$\SSS$ to a~$\ZZZ$ and conversely by moving the endpoints of~$\gamma$ along the top and bottom curves is a~$\dissection$-accordion.
+ \item This~$\dissection$-accordion yields the flip or mutation of~$F$ at~$\gamma$.
+ \item If the flip is positive, then the~$\SSS$ is turned into a~$\ZZZ$.  If the flip is negative, then the~$\ZZZ$ is turned in to an~$\SSS$.
 \end{itemize}
-
 \end{proposition}
+\begin{proof}
+ Let~$\omega = \walk(\gamma)$.  Using the notation of Proposition \ref{prop:flip}, the local configuration around~$\omega$ (as in Figure \ref{fig:flip}) translates on the (universal cover of the) surface~$\surface(\bar Q)$ as follows.
+ \pierreguy{1 picture here.}
+ 
+ We see that the only two~$\dissection$-accordions found between~$\mu$ and~$\curveof(\omega)$ are~$\mu$ and~$\curveof(\omega)$ themselves.  The same holds by replacing~$\mu$ with~$\nu$.
+ Thus~$\mu, \nu$ and~$\curveof(\omega)$ lie in an~$\SSS$ or a~$\ZZZ$.
+ 
+ We see that~$\curveof(\omega')$ is then obtained as claimed.  Positivity or negativity of the flip translates from the picture in a similar way. 
+\end{proof}
+
 
 
 \vincent{Orient the flip graph. Connection to the lattice of torsion classes?}
