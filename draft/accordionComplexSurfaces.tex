@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
 \usepackage{marginnote}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
@@ -102,6 +102,7 @@
 %\renewcommand\labelitemi{$\diamond$} % redefine itemize default symbol
 \newcommand{\ex}{_{\textrm{exm}}} % examples
 \newcommand{\pa}{_{\textrm{pa}}} % path
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, scale=.7] (char) {#1};}}
 
 % marginal comments
 \usepackage{todonotes}
@@ -1687,7 +1688,43 @@ For a set~$\Omega$ of walks, we let~$\dvectors{\Omega} \eqdef \set{\dvector{\ome
 
 \begin{example}
 \label{exm:gcdVectorsWalks}
-\vincent{TODO: exm g- c- and d-vectors}
+For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustrated in \fref{} are given by
+\[
+\gvectors{F} = 
+\begin{blockarray}{ccc}
+	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
+	\begin{block}{[cc]c}
+	1 & 0 & \!\!\!\circled{1} \\
+	-1\!\! & \!\!-1 & \!\!\!\circled{2} \\
+	\end{block}
+\end{blockarray}
+\qquad\qquad
+\cvectors{F} = 
+\begin{blockarray}{ccc}
+	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
+	\begin{block}{[cc]c}
+	1 & \!\!-1 & \!\!\!\circled{1} \\
+	0 & \!\!-1 & \!\!\!\circled{2} \\
+	\end{block}
+\end{blockarray}
+\qquad\qquad
+\dvectors{F} = 
+\begin{blockarray}{ccc}
+	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
+	\begin{block}{[cc]c}
+	0 & 1 & \!\!\!\circled{1} \\
+	1 & 1 & \!\!\!\circled{2} \\
+	\end{block}
+\end{blockarray}
+\]
+(\ie columns are the $\b{g}$-, $\b{c}$-, $\b{d}$-vectors of the elements of the facet).
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{gcdVectors}}
+	\caption{A non-kissing facet (left), an accordion facet (middle) and a slalom facet (right) that correspond via the bijections of Theorem~\ref{thm:complexesCoincide} and Proposition~\ref{prop:accordionsSlaloms}. Their~$\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of this facet are given in Example~\ref{exm:gcdVectorsWalks}.}
+	\label{fig:gcdVectors}
+\end{figure}
 \end{example}
 
 
@@ -1775,6 +1812,10 @@ For any non-kissing facet~$F \in \RNKC$, the set of $\b{g}$-vectors~$\gvectors{F
 Noting that the distinguished string of a walk in a given non-kissing facet is always a finite substring, the proof of~\cite[Proposition 4.16]{PaluPilaudPlamondon} applies \emph{verbatim}.
 \end{proof}
 
+\begin{example}
+For instance, one can check that~$\gvectors{F} \cdot \transpose{\cvectors{F}} = 1$ in Example~\ref{exm:gcdVectorsWalks}.
+\end{example}
+
 Finally, we borrow the following geometric statement from~\cite{PaluPilaudPlamondon}.
 We refer to \cite{Ziegler-polytopes} for basic notions on polyhedral geometry (polytopes and normal fans).
 
@@ -1795,6 +1836,8 @@ where $\KN(\omega) \eqdef \sum_{\omega'} \KN(\omega,\omega')$ is the (finite) su
 \begin{proof}
 The proof is identical to that of Theorem 4.17 and Theorem 4.27 of~\cite{PaluPilaudPlamondon}.
 \end{proof}
+
+\vincent{Should we add an example? One of the pictures of~\cite{PaluPilaudPlamondon}?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
