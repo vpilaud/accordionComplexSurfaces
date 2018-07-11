@@ -283,9 +283,9 @@
 Starting from a locally gentle bound quiver, we define on the one hand a simplicial complex, called the non-kissing complex.
 On the other hand, we construct a punctured, marked, oriented surface with boundary, endowed with a pair of dual dissections.
 From those geometric data, we define two simplicial complexes: the accordion complex, and the slalom complex, generalising work of A. Garver and T. McConville in the case of a disk.
-We show that all three simplicial complexes are isomorphic; that they are pure and thin.
+We show that all three simplicial complexes are isomorphic, and that they are pure and thin.
 In particular, there is a notion of mutation on their facets, akin to $\tau$-tilting mutation.
-We also construct inverse bijections between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of punctured, marked, oriented surfaces with boundary, endowed with a pair of dual dissections.
+Along the way, we also construct inverse bijections between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of punctured, marked, oriented surfaces with boundary, endowed with a pair of dual dissections.
 \end{abstract}
 
 %\vspace*{.3cm}
@@ -1030,7 +1030,7 @@ there, it is used as a model for the derived category of the gentle algebra (gra
 while here, it will be used as a model for walks in~$\bar Q$ ($\dissection_{\bar Q}$-accordions will correspond to walks in~$\bar{Q}$, see Proposition \ref{prop:walks=arcs}).
 \end{remark}
 
-We conclude this section with four families of examples.
+We conclude this section with four families of examples that illustrate the computation of~$\surface_{\bar Q}$.
 
 \begin{example}[Cambrian paths]
 \label{exm:CambrianPath}
@@ -1211,7 +1211,7 @@ A kiss between two walks~$\omega$ and~$\omega'$ is depicted on \fref{fig:kissing
 	\label{fig:kissings}
 \end{figure}
 The left hand side of the picture is as in \fref{fig:kissing}, and the right hand side is simply a different representation of it.
-On the surface~$\surface_{\bar Q}$, the dual dissections~$\dissection$ and~$\dissection\dual$ are as on \fref{fig:kissingVSCrossing} (on the right hand side).
+On the surface~$\surface_{\bar Q}$, the dual dissections~$\dissection$ and~$\dissection\dual$ are as on \fref{fig:kissingVSCrossing} (right).
 
 \begin{figure}[h]
 	\capstart
@@ -1251,7 +1251,7 @@ We have seen in Definition~\ref{def:straightBending} that each vertex~$p$ of~$Q$
 The set of all such walks forms the \defn{peak facet}~$\set{p_\peak}{p \in Q_0}$ (resp.~the \defn{deep facet}~$\set{p_\deep}{p \in Q_0}$) of the non-kissing complex~$\NKC$.
 As an example of Theorem~\ref{thm:complexesCoincide}, let us now describe the corresponding non-crossing facets of~$\NCC[\surface_{\bar Q}]$.
 
-For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious{v}$ (resp.~$\vnext{v}$) the blossom vertex previous (resp.~next) to~$v$ on the clockwise order around the boundary of~$\surface$.
+For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious{v}$ (resp.~$\vnext{v}$) the blossom vertex previous (resp.~next) to~$v$ on the counterclockwise order around the boundary of~$\surface$.
 For an edge~$a$ of~$\dissection$, we denote by~$\vprevious{a}$ (resp.~$\vnext{a}$) the curve obtained by moving each endpoint~$v$ of~$a$ as follows:
 \begin{itemize}
 \item if~$v$ is on the boundary of~$\surface$, then move (continuously) $v$ along the boundary of~$\surface$ until it reaches~$\vprevious{v}$ (resp.~$\vnext{v}$),
@@ -1702,7 +1702,7 @@ For a set~$\Omega$ of walks, we let~$\dvectors{\Omega} \eqdef \set{\dvector{\ome
 
 \begin{example}
 \label{exm:gcdVectorsWalks}
-For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustrated in \fref{} are given by
+For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustrated in \fref{fig:gcdVectors} are given by
 \[
 \gvectors{F} = 
 \begin{blockarray}{ccc}
@@ -1726,8 +1726,8 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \begin{blockarray}{ccc}
 	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
 	\begin{block}{[cc]c}
-	0 & 1 & \!\!\!\circled{1} \\
-	1 & 1 & \!\!\!\circled{2} \\
+	1 & 0 & \!\!\!\circled{1} \\
+	0 & 0 & \!\!\!\circled{2} \\
 	\end{block}
 \end{blockarray}
 \]
@@ -1736,11 +1736,10 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{gcdVectors}}
-	\caption{A non-kissing facet (left), an accordion facet (middle) and a slalom facet (right) that correspond via the bijections of Theorem~\ref{thm:complexesCoincide} and Proposition~\ref{prop:accordionsSlaloms}. Their~$\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of this facet are given in Example~\ref{exm:gcdVectorsWalks}.}
+	\caption{A non-kissing facet (left), an accordion facet (middle) and a slalom facet (right) that correspond via the bijections of Theorem~\ref{thm:complexesCoincide} and Proposition~\ref{prop:accordionsSlaloms}. The~$\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of this facet are given in Example~\ref{exm:gcdVectorsWalks}.}
 	\label{fig:gcdVectors}
 \end{figure}
 \end{example}
-
 
 \subsection{$\b{g}$-vectors, $\b{c}$-vectors, and~$\b{d}$-vectors on the surface}
 \label{subsec:gcdVectorsSurface}
@@ -1834,6 +1833,7 @@ Finally, we borrow the following geometric statement from~\cite{PaluPilaudPlamon
 We refer to \cite{Ziegler-polytopes} for basic notions on polyhedral geometry (polytopes and normal fans).
 
 \begin{theorem}
+\label{thm:fanAssociahedron}
 Let~$\bar Q$ be a locally gentle bound quiver such that~$\NKC$ is finite. The collection of cones
 \[
 \gvectorFan \eqdef \bigset{\R_{\ge0} \gvectors{F}}{F \text{ non-kissing face of } \RNKC}.
@@ -1851,7 +1851,15 @@ where $\KN(\omega) \eqdef \sum_{\omega'} \KN(\omega,\omega')$ is the (finite) su
 The proof is identical to that of Theorem 4.17 and Theorem 4.27 of~\cite{PaluPilaudPlamondon}.
 \end{proof}
 
-\vincent{Should we add an example? One of the pictures of~\cite{PaluPilaudPlamondon}?}
+We have borrowed \fref{fig:fanAssociahedron} from~\cite{PaluPilaudPlamondon} to illustrate Theorem~\ref{thm:fanAssociahedron}.
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.5]{fanAssociahedron1}}
+	\centerline{\includegraphics[scale=.5]{fanAssociahedron2}}
+	\caption{The $\b{g}$-vector fan~$\gvectorFan$ (left) and the $\bar Q$-associahedron~$\Asso$ (right) of two gentle quivers. Illustration borrowed from~\cite{PaluPilaudPlamondon}.}
+	\label{fig:fanAssociahedron}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
