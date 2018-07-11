@@ -540,7 +540,7 @@ The \defn{reduced non-kissing complex}~$\RNKC$ is the simplicial complex whose f
 %\end{theorem}
 %
 %This result follows from the existence of flips in non-kissing facets.
-%This operation is illustrated in \fref{fig:flip}.
+%This operation is illustrated in \fref{fig:flip1}.
 
 \section{Accordion complex, slalom complex, and non-crossing complex}\label{sec:accordionSlalomNonCrossingComplexes}
 
@@ -1248,14 +1248,14 @@ We conclude with an important example of facets of the non-kissing and non-cross
 \begin{example}
 \label{exm:peakDeepFacets}
 We have seen in Definition~\ref{def:straightBending} that each vertex~$p$ of~$Q$ gives rise to a \defn{peak walk}~$p_\peak$ (resp.~\defn{deep walk}~$p_\deep$) with a single peak (resp.~deep) at~$v$ and no other corner.
-The set of all such walks forms the \defn{peak facet}~$\set{p_\peak}{p \in Q_0}$ (resp.~the \defn{deep facet}~$\set{p_\deep}{p \in Q_0}$) of the non-kissing complex~$\NKC$.
-As an example of Theorem~\ref{thm:complexesCoincide}, let us now describe the corresponding non-crossing facets of~$\NCC[\surface_{\bar Q}]$.
+The set of all such walks forms the \defn{peak facet}~$\set{p_\peak}{p \in Q_0}$ (resp.~the \defn{deep facet}~$\set{p_\deep}{p \in Q_0}$) of the non-kissing complex~$\RNKC$.
+As an example of Theorem~\ref{thm:complexesCoincide}, let us now describe the corresponding non-crossing facets of~$\RNCC[\surface_{\bar Q}]$.
 
-For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious{v}$ (resp.~$\vnext{v}$) the blossom vertex previous (resp.~next) to~$v$ on the counterclockwise order around the boundary of~$\surface$.
+For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious{v}$ (resp.~$\vnext{v}$) the blossom vertex previous (resp.~next) to~$v$ when walking along  the boundary of~$\surface$ while keeping it on the right.
 For an edge~$a$ of~$\dissection$, we denote by~$\vprevious{a}$ (resp.~$\vnext{a}$) the curve obtained by moving each endpoint~$v$ of~$a$ as follows:
 \begin{itemize}
 \item if~$v$ is on the boundary of~$\surface$, then move (continuously) $v$ along the boundary of~$\surface$ until it reaches~$\vprevious{v}$ (resp.~$\vnext{v}$),
-\item if~$v$ is a puncture, then rotate around~$v$ in counterclockwise direction (resp.~clockwise direction).
+\item if~$v$ is a puncture, then rotate around~$v$ in counterclockwise (resp.~clockwise) direction.
 \end{itemize}
 Examples are illustrated in \fref{fig:peakDeep}.
 %
@@ -1586,9 +1586,9 @@ The flip is \defn{positive} if~$\sigma$ is on top of~$\omega$, and \defn{negativ
 
 \begin{figure}[t]
 	\capstart
-	\centerline{\includegraphics[scale=1]{flip}}
+	\centerline{\includegraphics[scale=1]{flip1}}
 	\caption{A schematic representation of flips in the non-kissing complex. The flip exchanges the walk~$\omega = \rho \sigma \tau$ in the facet~$F$ (left) with the walk~$\omega' = \rho' \sigma \tau'$ in the facet~$F'$ (middle), using the walks~$\mu = \rho' \sigma \tau$ and~$\nu = \rho \sigma \tau'$. The walk~$\omega'$ kisses~$\omega$ but no other walk of~$F$ (right).}
-	\label{fig:flip}
+	\label{fig:flip1}
 \end{figure}
 
 \begin{corollary}
@@ -1603,19 +1603,26 @@ The mutation of non-kissing facets translates on~$\surface(\bar Q)$ as follows.
 Let~$F$ be a facet of the non-crossing complex~$\NCC$, and let~$\gamma \in F$.  We represent all curves on the universal cover of~$\surface(\bar Q)$.
 Then~$F$ forms a~$B$-dissection of the surface, and~$\gamma$ lies in at least one of two configutations~$\ZZZ$ and~$\SSS$ with the other curves of the dissection (where the endpoints may go to infinity if punctures are involved). 
 \begin{itemize}
- \item Exactly one of the curves obtained by changing the~$\SSS$ to a~$\ZZZ$ and conversely by moving the endpoints of~$\gamma$ along the top and bottom curves is a~$\dissection$-accordion.
- \item This~$\dissection$-accordion yields the flip or mutation of~$F$ at~$\gamma$.
- \item If the flip is positive, then the~$\SSS$ is turned into a~$\ZZZ$.  If the flip is negative, then the~$\ZZZ$ is turned in to an~$\SSS$.
+\item Exactly one of the curves obtained by changing the~$\SSS$ to a~$\ZZZ$ and conversely by moving the endpoints of~$\gamma$ along the top and bottom curves is a~$\dissection$-accordion.
+\item This~$\dissection$-accordion yields the flip or mutation of~$F$ at~$\gamma$.
+\item If the flip is positive, then the~$\SSS$ is turned into a~$\ZZZ$.  If the flip is negative, then the~$\ZZZ$ is turned in to an~$\SSS$.
 \end{itemize}
 \end{proposition}
+
 \begin{proof}
- Let~$\omega = \walk(\gamma)$.  Using the notation of Proposition \ref{prop:flip}, the local configuration around~$\omega$ (as in Figure \ref{fig:flip}) translates on the (universal cover of the) surface~$\surface(\bar Q)$ as follows.
- \pierreguy{1 picture here.}
+Let~$\omega = \walk(\gamma)$.  Using the notation of Proposition \ref{prop:flip}, the local configuration around~$\omega$ (as in Figure \ref{fig:flip1}) translates on the (universal cover of the) surface~$\surface(\bar Q)$ as follows.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=1]{flip2}}
+	\caption{A schematic representation of flips in the non-crossing complex. The flip exchanges the curve~$\omega$ in the facet~$F$ (left) with the curve~$\omega'$ in the facet~$F'$ (middle), using the curves~$\mu$ and~$\nu$. The curve~$\omega'$ crosses~$\omega$ but no other curve of~$F$ (right).}
+	\label{fig:flip2}
+\end{figure}
  
- We see that the only two~$\dissection$-accordions found between~$\mu$ and~$\curveof(\omega)$ are~$\mu$ and~$\curveof(\omega)$ themselves.  The same holds by replacing~$\mu$ with~$\nu$.
- Thus~$\mu, \nu$ and~$\curveof(\omega)$ lie in an~$\SSS$ or a~$\ZZZ$.
+We see that the only two~$\dissection$-accordions found between~$\mu$ and~$\curveof(\omega)$ are~$\mu$ and~$\curveof(\omega)$ themselves.  The same holds by replacing~$\mu$ with~$\nu$.
+Thus~$\mu, \nu$ and~$\curveof(\omega)$ lie in an~$\SSS$ or a~$\ZZZ$.
  
- We see that~$\curveof(\omega')$ is then obtained as claimed.  Positivity or negativity of the flip translates from the picture in a similar way. 
+We see that~$\curveof(\omega')$ is then obtained as claimed.  Positivity or negativity of the flip translates from the picture in a similar way. 
 \end{proof}
 
 
@@ -1736,7 +1743,7 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
 	\begin{block}{[cc]c}
 	1 & 0 & \!\!\!\circled{1} \\
-	0 & 0 & \!\!\!\circled{2} \\
+	0 & -1 & \!\!\!\circled{2} \\
 	\end{block}
 \end{blockarray}
 \]
@@ -1745,7 +1752,7 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{gcdVectors}}
-	\caption{A non-kissing facet (left), an accordion facet (middle) and a slalom facet (right) that correspond via the bijections of Theorem~\ref{thm:complexesCoincide} and Proposition~\ref{prop:accordionsSlaloms}. The~$\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of this facet are given in Example~\ref{exm:gcdVectorsWalks}.}
+	\caption{A non-kissing facet of~$\RNKC$ (left), an accordion facet~$\RAC$ (middle) and a slalom facet~$\RSC$ (right) that correspond via the bijections of Theorem~\ref{thm:complexesCoincide} and Proposition~\ref{prop:accordionsSlaloms}. The~$\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of this facet are given in Example~\ref{exm:gcdVectorsWalks}.}
 	\label{fig:gcdVectors}
 \end{figure}
 \end{example}
