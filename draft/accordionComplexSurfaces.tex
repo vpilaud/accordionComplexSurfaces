@@ -175,8 +175,8 @@
 \newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
 \newcommand{\edgeof}{\operatorname{\varepsilon}} % arc of a vertex
 \newcommand{\dualedgeof}{\operatorname{\varepsilon}\dual} % dual arc of a vertex
-\newcommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S deZ or Sed?
-\newcommand{\ZZZ}{\mathsf{Z}} % Z Zed
+\DeclareRobustCommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S
+\DeclareRobustCommand{\ZZZ}{\mathsf{Z}} % Z
 \newcommand{\vnext}[1]{#1_{\operatorname{next}}} % next point on the boundary of the surface
 \newcommand{\vprevious}[1]{#1_{\operatorname{prev}}} % previous point on the boundary of the surface
 
@@ -1607,7 +1607,7 @@ Then
 \end{enumerate}
 \end{proposition}
 The walk~$\omega'$ of Proposition \ref{prop:flip} is the \defn{flip} or \defn{mutation} of~$F$ at~$\omega$.
-The flip is \defn{positive} if~$\sigma$ is on top of~$\omega$, and \defn{negative} otherwise.
+The flip is \defn{increasing} if~$\sigma$ is on top of~$\omega$, and \defn{decreasing} otherwise.
 
 \begin{figure}[t]
 	\capstart
@@ -1626,12 +1626,19 @@ The mutation of non-kissing facets translates on~$\surface(\bar Q)$ as follows.
 \begin{proposition}
 \label{prop:mutationAccordions}
 Let~$F$ be a facet of the non-crossing complex~$\NCC$, and let~$\gamma \in F$.  We represent all curves on the universal cover of~$\surface(\bar Q)$.
-Then~$F$ forms a~$B$-dissection of the surface, and~$\gamma$ lies in at least one of two configutations~$\ZZZ$ and~$\SSS$ with the other curves of the dissection (where the endpoints may go to infinity if punctures are involved). 
+Then~$F$ forms a~$B$-dissection of the surface, and~$\gamma$ lies in at least one of two configutations~$\ZZZ$ and~$\SSS$ with the other curves of the dissection (where the endpoints may go to infinity if punctures are involved).  See \fref{fig:flip3}.
 \begin{itemize}
 \item Exactly one of the curves obtained by changing the~$\SSS$ to a~$\ZZZ$ and conversely by moving the endpoints of~$\gamma$ along the top and bottom curves is a~$\dissection$-accordion.
 \item This~$\dissection$-accordion yields the flip or mutation of~$F$ at~$\gamma$.
-\item If the flip is positive, then the~$\SSS$ is turned into a~$\ZZZ$.  If the flip is negative, then the~$\ZZZ$ is turned in to an~$\SSS$.
+\item If the flip is increasing, then the~$\SSS$ is turned into a~$\ZZZ$.  If the flip is decreasing, then the~$\ZZZ$ is turned in to an~$\SSS$.
 \end{itemize}
+%
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=1]{flip3}}
+	\caption{A flip turns a~$\ZZZ$ (formed by~$\mu$, $\omega$ and~$\nu$) to a~$\SSS$ (formed by~$\mu$, $\omega'$ and~$\nu$). The two curves~$\omega$ and~$\omega'$ are crossing.}
+	\label{fig:flip3}
+\end{figure}
 \end{proposition}
 
 \begin{proof}
