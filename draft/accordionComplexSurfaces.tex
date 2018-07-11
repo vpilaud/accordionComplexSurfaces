@@ -290,8 +290,6 @@ We also construct inverse bijections between the set of isomorphism classes of l
 \maketitle
 
 \section{Introduction}
-\pierreguy{Should we talk of g,c,d-vectors in the abstract?}
-\vincent{No. I would say that this does not need to be emphasized.}
 The aim of this paper is to prove that two combinatorial objects, called the \emph{non-kissing complex} and the \emph{non-crossing complex}, are isomorphic.
 Both complexes appeared in different works in specific cases: the non-kissing complex of a grid appeared in \cite{McConville}, while the non-crossing complex of a disk appeared in \cite{GarverMcConville, MannevillePilaud-accordion}.
 It was shown in \cite{PaluPilaudPlamondon} that these complexes are special cases of a more general simplicial complex, defined for any gentle algebra (see also~\cite{BrustleDouvilleMousavandThomasYildirim}).
@@ -320,10 +318,12 @@ Finally, we show in Section \ref{sec:propertiesOfComplexes} that these complexes
 \begin{theorem*}[\ref{prop:purity} and \ref{coro:thin}]
  The complexes~$\NKC$ and~$\NCC$ are pure and thin.  Their dimension is computed, and mutation is explicitly described.
 \end{theorem*}
+We end in Section \ref{sec:vectors} with a discussion of~$\b{g}$-vectors,~$\b{c}$-vectors and~$\b{d}$-vectors associated to walks and curves.
 
 Consequences on the representation theory of locally gentle algebras will be investigated in a future project.
 
-\vincent{Maybe a sentence here to say that we now review historical / motivation / bibliographic facts.}
+Let us review the algebraic and geometric objects which appear in this paper.
+
 Gentle algebras are a class of finite-dimensional associative algebras over a field defined by generators and relations.
 Their representation theory was first systematically investigated in \cite{ButlerRingel}, and they have been thouroughly studied since.
 Locally gentle algebras are obtained by dropping the requirement that gentle algebras be finite-dimensional.
@@ -338,13 +338,14 @@ This was first done for triangulations of polygons in \cite{CalderoChapotonSchif
 The algebra of a dissection as we shall use it in this paper has appeared in \cite{DavidRoeslerSchiffler}.
 In most of the above cases, the algebras obtained are gentle algebras.
 It has also been shown in \cite{BaurSimoes} that any gentle algebra is obtained from a dissection of a surface, and that the module category of the algebra can be interpreted by using curves on the surface.
-In the case where the surface is a polygon, the $\tau$-tilting theory of the algebra of a dissection has been studied in \cite{PilaudPlamondonStella}.
+In the case where the surface is a polygon, the $\tau$-tilting theory of the algebra of a dissection has been studied in \cite{PaluPilaudPlamondon, PilaudPlamondonStella}.
 \vincent{Should we also mention cluster algebras from surfaces in this paragraph?}
+\pierreguy{Not sure.}
 
 Conversely, the construction of a surface associated to a gentle algebra has appeared in \cite{OpperPlamondonSchroll}.
 We give a different construction of the same surface in this paper, which is obtained by ``glueing'' quadrilaterals to the arrows of the blossoming quiver (as defined in \cite{PaluPilaudPlamondon}, and called ``framed quiver'' in \cite{BrustleDouvilleMousavandThomasYildirim}).
 Our construction has the advantage that it easily yields the two dual dissections of the surface at the same time (the dissection and dual lamination of \cite{OpperPlamondonSchroll}).
-We note that this surface is usually different than the one found in \cite{BaurSimoes}.
+We note that our dissections are always cellularr, while those found in \cite{BaurSimoes} can be arbitrary.
 Remarkably, gentle algebras and surfaces were linked recently in \cite{HaidenKatzarkovKontsevich}, where the Fukaya category of the surface is shown to be equivalent to the bounded derived category of the associated gentle algebra.
 
 \section*{Acknowledgements}
@@ -1566,6 +1567,7 @@ The non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.  Moreover, it is t
 \vincent{Orient the flip graph. Connection to the lattice of torsion classes?}
 
 \section{$\b{g}$-vectors, $\b{c}$-vectors, and $\b{d}$-vectors}
+\label{sec:vectors}
 
 In this section, we define three relevant families of vectors associated to walks in the non-kissing complex of a locally gentle quiver~$\bar Q$.
 In contrast to the $\b{d}$-vectors, the $\b{g}$- and $\b{c}$-vectors were already considered in the non-kissing complex of a gentle quiver~\cite[Sect.~4.2]{PaluPilaudPlamondon}, and their definition immediately generalizes to the case of locally gentle algebras.
