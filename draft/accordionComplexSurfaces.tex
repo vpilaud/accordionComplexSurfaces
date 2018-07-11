@@ -1030,7 +1030,7 @@ there, it is used as a model for the derived category of the gentle algebra (gra
 while here, it will be used as a model for walks in~$\bar Q$ ($\dissection_{\bar Q}$-accordions will correspond to walks in~$\bar{Q}$, see Proposition \ref{prop:walks=arcs}).
 \end{remark}
 
-We conclude this section with four families of examples.
+We conclude this section with four families of examples that illustrate the computation of~$\surface_{\bar Q}$.
 
 \begin{example}[Cambrian paths]
 \label{exm:CambrianPath}
@@ -1727,7 +1727,6 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \end{figure}
 \end{example}
 
-
 \subsection{$\b{g}$-vectors, $\b{c}$-vectors, and~$\b{d}$-vectors on the surface}
 \label{subsec:gcdVectorsSurface}
 
@@ -1820,6 +1819,7 @@ Finally, we borrow the following geometric statement from~\cite{PaluPilaudPlamon
 We refer to \cite{Ziegler-polytopes} for basic notions on polyhedral geometry (polytopes and normal fans).
 
 \begin{theorem}
+\label{thm:fanAssociahedron}
 Let~$\bar Q$ be a locally gentle bound quiver such that~$\NKC$ is finite. The collection of cones
 \[
 \gvectorFan \eqdef \bigset{\R_{\ge0} \gvectors{F}}{F \text{ non-kissing face of } \RNKC}.
@@ -1837,7 +1837,15 @@ where $\KN(\omega) \eqdef \sum_{\omega'} \KN(\omega,\omega')$ is the (finite) su
 The proof is identical to that of Theorem 4.17 and Theorem 4.27 of~\cite{PaluPilaudPlamondon}.
 \end{proof}
 
-\vincent{Should we add an example? One of the pictures of~\cite{PaluPilaudPlamondon}?}
+We have borrowed \fref{fig:fanAssociahedron} from~\cite{PaluPilaudPlamondon} to illustrate Theorem~\ref{thm:fanAssociahedron}.
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.5]{fanAssociahedron1}}
+	\centerline{\includegraphics[scale=.5]{fanAssociahedron2}}
+	\caption{The $\b{g}$-vector fan~$\gvectorFan$ (left) and the $\bar Q$-associahedron~$\Asso$ (right) of two gentle quivers. Illustration borrowed from~\cite{PaluPilaudPlamondon}.}
+	\label{fig:fanAssociahedron}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
