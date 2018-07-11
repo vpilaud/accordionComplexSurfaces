@@ -724,10 +724,6 @@ The \defn{reduced $\dissection\dual$-slalom complex}~$\RSC$ is the simplicial co
 %Similarly, the $\dissection\dual$-slaloms do not depend on~$\dissection$.
 %\end{remark}
 
-\begin{example}
-\vincent{Example with the disk}
-\end{example}
-
 \subsection{Accordions versus slaloms and the non-crossing complex}
 \label{subsec:accordionsVSSlaloms}
 
@@ -739,33 +735,32 @@ For two dual cellular dissections~$\dissection$ and~$\dissection\dual$, the $\di
 \end{proposition}
 
 \begin{proof}
-\vincent{Careful: arcs / curves.}
 Let~$\alpha$ be a~$\dissection$-accordion.
 Let~$a$,~$b$,~$c$ be three consecutive edges of~$\dissection$ crossed by~$\alpha$.
 Let~$u \in \dissection$ be the common endpoint of~$a$ and $b$ given by Definition~\ref{def:accordion} and let~$v \in \dissection$ be the common endpoint of~$b$ and~$c$.
 If $u = v$, then the segment of~$\alpha$ between~$a$ and~$c$ stays in the same face of~$\dissection\dual$.
 Otherwise, when crossing~$b$, the accordion~$\alpha$ leaves the face~$u\dual$ of $\dissection\dual$ and enters the face~$v\dual$.
 In the surface obtained by glueing the two cells~$u\dual$ and~$v\dual$ along~$b\dual$, the marked points~$u$ and~$v$ are separated by~$\alpha$.
-Conversely, assume that~$\alpha$ is an arc of~$(\surface, B)$ which is not a $\dissection$-accordion.
+Conversely, assume that~$\alpha$ is an curve of~$(\surface, B)$ which is not a $\dissection$-accordion.
 We are in one of the following cases.
 
-Case 1: The arc~$\alpha$ consecutively crosses two arcs~$a$ and~$b$ of~$\dissection$ that do not share a common endpoint.
+Case 1: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that do not share a common endpoint.
 Let~$f$ be the face of~$\dissection$ that contains the segment of~$\alpha$ between~$a$ and~$b$.
 Consider the connected component of~$f\setminus\alpha$ that do not contain~$f\dual$.
-The boundary of this component contains an arc~$c \in \dissection \setminus \{a\}$ that share a common endpoint with~$a$.
+The boundary of this component contains an edge~$c \in \dissection \setminus \{a\}$ that share a common endpoint with~$a$.
 Let~$u,v$ be the endpoints of~$c$.
 Then~$\alpha$ cuts the cells $u\dual,v\dual$ glued along~$c\dual$ into two connected component, one containing both endpoints of~$\delta$.
 
-Case 2: The arc~$\alpha$ consecutively crosses two arcs~$a$ and~$b$ of~$\dissection$ that share a unique common endpoint, but the region delimited by~$\alpha$,~$a$ and~$b$ is not a disk.
+Case 2: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that share a unique common endpoint, but the region delimited by~$\alpha$,~$a$ and~$b$ is not a disk.
 Since the dissection~$\dissection$ is cellular, that region has to contain some marked point~$u \in \dissection\dual$.
 One conclude that~$\alpha$ is not a~$\dissection\dual$-slalom similarly as in the first case, by considering the component of~$u\dual \setminus \alpha$ that do not contain~$u$.
 
-Case 3: The arc~$\alpha$ consecutively crosses two arcs~$a$ and~$b$ of~$\dissection$ that share two different endpoints, and none of the two regions delimited by~$\alpha$,~$a$ and~$b$ is a disk.
+Case 3: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that share two different endpoints, and none of the two regions delimited by~$\alpha$,~$a$ and~$b$ is a disk.
 Since the dissection~$\dissection$ is cellular, both regions have to contain a puncture.
 This contradicts the assumption that the dissections~$\dissection$ and~$\dissection\dual$ are dual to each other.
 
 Case 4: If~$\alpha$ stays inside a $\dissection$-cell, then it rolls around a~$\dissection\dual$ puncture.
-There is a~$\dissection\dual$-arc~$a$ ending in that puncture. When~$\alpha$ crosses~$a$, the puncture stays on the same side of~$\alpha$, hence~$\alpha$ is not a~$\dissection\dual$-slalom.
+There is a~$\dissection\dual$-edge~$a$ ending in that puncture. When~$\alpha$ crosses~$a$, the puncture stays on the same side of~$\alpha$, hence~$\alpha$ is not a~$\dissection\dual$-slalom.
 \end{proof}
 
 \begin{definition}
@@ -781,6 +776,12 @@ Similarly, the \defn{reduced non-crossing complex} of~$(\dissection, \dissection
 \begin{remark}
 The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dually and also coincide.
 \end{remark}
+
+\begin{example}
+When the dissection~$\dissection$ is a classical dissection of a polygon (with no puncture) where each cell has at most one boundary edge, the dual dissection~$\dissection\dual$ is a tree.
+The non-kissing complex in his situation was treated in detail in~\cite{GarverMcConville, MannevillePilaud-accordion}.
+Note that even when the surface~$\surface$ is a disk, we authorize here both~$\dissection$ and~$\dissection\dual$ to have interior faces and punctures.
+\end{example}
 
 \begin{remark}
 A quick disclaimer about accordion complexes and slalom complexes of arbitrary cellular dissections.
