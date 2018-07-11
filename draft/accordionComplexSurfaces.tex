@@ -381,7 +381,7 @@ A \defn{gentle bound quiver} is a locally gentle bound quiver~$\bar Q$ such that
 A locally gentle bound quiver~$\bar Q$ is \defn{complete} if any vertex~$v \in Q_0$ is incident to either one ($v$ is a leaf) or four arrows ($v$ is an internal vertex).
 The \defn{pruned subquiver} of a quiver $\bar Q$ is the locally gentle quiver obtained by deleting all leaves of~$\bar Q$ (degree one vertices) and their incident arrows.
 The \defn{blossoming quiver} of a locally gentle bound quiver~$\bar Q$ is the complete locally gentle bound quiver~$\bar Q\blossom$ whose pruned subquiver is~$\bar Q$.
-The vertices of~$Q\blossom_0 \ssm Q_0$ are called \defn{blossom vertices}, and the arrows~$Q\blossom_1 \ssm Q_1$ are called \defn{blossom arrows}.
+The vertices of~$Q\blossom_0 \ssm Q_0$ are called \defn{blossom vertices}, and the arrows in~$Q\blossom_1 \ssm Q_1$ are called \defn{blossom arrows}.
 \end{definition}
 
 Examples are represented on \fref{fig:quivers}.
@@ -395,7 +395,7 @@ Examples are represented on \fref{fig:quivers}.
 
 \begin{remark}
 \label{rem:sizeBlossomingQuiver}
-Note that the blossoming quiver has~$2|Q_0|-|Q_1|$ incoming blossoms and~$2|Q_0|-|Q_1|$ outgoing blossoms.
+Note that~$\bar Q\blossom$ has~$2|Q_0|-|Q_1|$ incoming blossom arrows and~$2|Q_0|-|Q_1|$ outgoing blossom arrows.
 Therefore, it has $|Q_0\blossom| = |Q_0| + 2(2|Q_0|-|Q_1|) = 5|Q_0|-2|Q_1|$ vertices and~$|Q_1\blossom| = |Q_1| + 2(2|Q_0|-|Q_1|) = 4|Q_0|-|Q_1|$ arrows.
 \end{remark}
 
@@ -487,7 +487,7 @@ We use the same notation for undirected walks (of course, substrings of an undir
 
 \begin{definition}
 \label{def:topBottom}
-We say that the substring~$\sigma = \prod_{i' < \ell < j'} \alpha_\ell^{\varepsilon_\ell}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \prod_{i < \ell < j} \alpha_\ell^{\varepsilon_\ell}$ if~$i'=-\infty$ or~$\varepsilon_{i'-1} = 1$ and~$j'=+\infty$ or~$\varepsilon_{j'+1} = -1$ (resp.~if~$i'=-\infty$ or~$\varepsilon_{i'-1} = -1$ and~$j'=\infty$ or~$\varepsilon_{j'+1} = 1$).
+We say that the substring~$\sigma = \prod_{i' < \ell < j'} \alpha_\ell^{\varepsilon_\ell}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \prod_{i < \ell < j} \alpha_\ell^{\varepsilon_\ell}$ if~$i'=-\infty$ or~$\varepsilon_{i'} = 1$ and~$j'=+\infty$ or~$\varepsilon_{j'} = -1$ (resp.~if~$i'=-\infty$ or~$\varepsilon_{i'} = -1$ and~$j'=\infty$ or~$\varepsilon_{j'} = 1$).
 In other words the (at most) two arrows of~$\omega$ incident to the endpoints of~$\sigma$ point towards~$\sigma$ (resp.~outwards from~$\sigma$).
 We denote by~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ the sets of bottom and top substrings of~$\omega$ respectively.
 We use the same notations for undirected~walks.
@@ -504,7 +504,7 @@ A \defn{peak walk} (resp.~\defn{deep walk}) is a walk with a unique corner (in o
 
 \subsection{Non-kissing complex}
 
-We can now define the non-kissing complex of a locally gentle bound quiver following~\cite{McConville, PaluPilaudPlamondon}.
+We can now define the non-kissing complex of a locally gentle bound quiver following~\cite{McConville, PaluPilaudPlamondon} (see also~\cite{BrustleDouvilleMousavandThomasYildirim}).
 We start with the kissing relation for walks.
 
 \begin{definition}%[\cite{McConville, PaluPilaudPlamondon}]
