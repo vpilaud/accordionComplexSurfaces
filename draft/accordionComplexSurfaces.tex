@@ -293,8 +293,8 @@ We also construct inverse bijections between the set of isomorphism classes of l
 \pierreguy{Should we talk of g,c,d-vectors in the abstract?}
 \vincent{No. I would say that this does not need to be emphasized.}
 The aim of this paper is to prove that two combinatorial objects, called the \emph{non-kissing complex} and the \emph{non-crossing complex}, are isomorphic.
-Both complexes appeared in different works in specific cases: the non-kissing complex of a grid appeared in \cite{McConville}, while the non-crossing complex of a disk appeared in \cite{GarverMcConville}.
-It was shown in \cite{PaluPilaudPlamondon} that these complexes are special cases of a more general simplicial complex, defined for any gentle algebra (see also \cite{BrustleDouvilleMousavandThomasYildirim}).
+Both complexes appeared in different works in specific cases: the non-kissing complex of a grid appeared in \cite{McConville}, while the non-crossing complex of a disk appeared in \cite{GarverMcConville, MannevillePilaud-accordion}.
+It was shown in \cite{PaluPilaudPlamondon} that these complexes are special cases of a more general simplicial complex, defined for any gentle algebra (see also~\cite{BrustleDouvilleMousavandThomasYildirim}).
 
 In order to unify these two objects, we are lead to introduce two generalizations.
 On the algebraic side, the non-kissing complex is extended from the class of gentle algebras to that of locally gentle algebras (which are an infinite-dimensional version of gentle algebras).
@@ -304,11 +304,11 @@ The two main objects of our study will thus be locally gentle algebras and disse
 Our first main result is that these two classes of objects are essentially the same.
 
 \begin{theorem*}[\ref{thm:bijectionLocallyGentleAndSurfaces}]
- There is an explicit bijection between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of oriented punctured marked surfaces with boundary and a pair of dual cellular dissections.
+ There is an explicit bijection between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of oriented punctured marked surfaces with boundary endowed with a pair of dual cellular dissections.
 \end{theorem*}
 
-On the algebraic side, we extend the study of walks from the gentle to the locally gentle case, and define a notion of compatibility called non-kissing (see Section \ref{sec:nonKissingComplex}).
-On the geometric side, we extend the study of dissections, accordions and slaloms from the case of the disk to the case of an arbitrary surface, and define a notion of compatibility called non-crossing (see Section \ref{sec:accordionSlalomNonCrossingComplexes}).
+On the algebraic side, we extend the study of walks from the gentle case~\cite{McConville, PaluPilaudPlamondon} to the locally gentle case, and define a notion of compatibility called non-kissing (see Section \ref{sec:nonKissingComplex}).
+On the geometric side, we extend the study of dissections, accordions and slaloms from the case of the disk~\cite{GarverMcConville, MannevillePilaud-accordion} to the case of an arbitrary surface, and define a notion of compatibility called non-crossing (see Section \ref{sec:accordionSlalomNonCrossingComplexes}).
 The combinatorial information contained in these notions is encoded in simplicial complexes: the non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC$.
 
 \begin{theorem*}[\ref{thm:complexesCoincide}]
@@ -323,7 +323,7 @@ Finally, we show in Section \ref{sec:propertiesOfComplexes} that these complexes
 
 Consequences on the representation theory of locally gentle algebras will be investigated in a future project.
 
-
+\vincent{Maybe a sentence here to say that we now review historical / motivation / bibliographic facts.}
 Gentle algebras are a class of finite-dimensional associative algebras over a field defined by generators and relations.
 Their representation theory was first systematically investigated in \cite{ButlerRingel}, and they have been thouroughly studied since.
 Locally gentle algebras are obtained by dropping the requirement that gentle algebras be finite-dimensional.
@@ -331,7 +331,7 @@ It turns out that their representations theory is also well-behaved \cite{Crawle
 Recently, the $\tau$-tilting theory \cite{AdachiIyamaReiten} of gentle algebra has been studied in \cite{PaluPilaudPlamondon, BrustleDouvilleMousavandThomasYildirim}.
 
 Dissections of surfaces, on the other hand, are certain collections of pairwise non-intersecting curves on an orientable surface.
-They have been defined in studied in \cite{Baryshnikov, Chapoton-quadrangulations, GarverMcConville, MannevillePilaud-accordion} in the case where the surface is an unpunctured disk.
+They have been defined and studied in \cite{Baryshnikov, Chapoton-quadrangulations, GarverMcConville, MannevillePilaud-accordion} in the case where the surface is an unpunctured disk.
 
 The idea of associating a finite-dimensional algebra to a dissection (or a triangulation) of a surface seems to take its roots in the theory of cluster algebras and cluster categories.
 This was first done for triangulations of polygons in \cite{CalderoChapotonSchiffler}, and then for any orientable surface with boundary in \cite{ABCP, Labardini}.  
@@ -339,6 +339,7 @@ The algebra of a dissection as we shall use it in this paper has appeared in \ci
 In most of the above cases, the algebras obtained are gentle algebras.
 It has also been shown in \cite{BaurSimoes} that any gentle algebra is obtained from a dissection of a surface, and that the module category of the algebra can be interpreted by using curves on the surface.
 In the case where the surface is a polygon, the $\tau$-tilting theory of the algebra of a dissection has been studied in \cite{PilaudPlamondonStella}.
+\vincent{Should we also mention cluster algebras from surfaces in this paragraph?}
 
 Conversely, the construction of a surface associated to a gentle algebra has appeared in \cite{OpperPlamondonSchroll}.
 We give a different construction of the same surface in this paper, which is obtained by ``glueing'' quadrilaterals to the arrows of the blossoming quiver (as defined in \cite{PaluPilaudPlamondon}, and called ``framed quiver'' in \cite{BrustleDouvilleMousavandThomasYildirim}).
@@ -347,13 +348,12 @@ We note that this surface is usually different than the one found in \cite{BaurS
 Remarkably, gentle algebras and surfaces were linked recently in \cite{HaidenKatzarkovKontsevich}, where the Fukaya category of the surface is shown to be equivalent to the bounded derived category of the associated gentle algebra.
 
 \section*{Acknowledgements}
-We thank Sibylle Schroll for discussions on geometric models for gentle algebras.
-We are also grateful to Salvatore Stella for discussions on accordion complexes of dissections of surfaces, and to William Crawley-Boevey and Henning Krause for discussions on the representation theory of infinite dimensional algebras. 
+We thank Sibylle Schroll for discussions on geometric models for gentle algebras, Salvatore Stella for discussions on accordion complexes of dissections of surfaces, and William Crawley-Boevey and Henning Krause for discussions on the representation theory of infinite dimensional algebras. 
 
 
 \section{Non-kissing complex}\label{sec:nonKissingComplex}
 
-We first quickly review the definition of the non-kissing complex of a gentle bound quiver following the presentation of~\cite{PaluPilaudPlamondon} and slightly extend it to locally gentle bound quivers.
+We first quickly review the definition of the non-kissing complex of a gentle bound quiver following the presentation of~\cite{PaluPilaudPlamondon} and extend it to locally gentle bound quivers.
 
 \subsection{Locally gentle bound quivers and their blossoming quivers}
 
