@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float}
 \usepackage{marginnote}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
@@ -114,9 +114,9 @@
 % COMBINATORICS
 % quiver
 \newcommand{\blossom}{^\text{\ding{96}}} % blossom
-\newcommand{\blinkers}[1]{_{\LEFTCIRCLE \!\! #1 \!\! \RIGHTCIRCLE}} % blossom
-\newcommand{\indeg}{\mathrm{indeg}} % in-degree
-\newcommand{\outdeg}{\mathrm{outdeg}} % out-degree
+%\newcommand{\blinkers}[1]{_{\LEFTCIRCLE \!\! #1 \!\! \RIGHTCIRCLE}} % blossom
+%\newcommand{\indeg}{\mathrm{indeg}} % in-degree
+%\newcommand{\outdeg}{\mathrm{outdeg}} % out-degree
 %\newcommand{\tai}{\mathsf{tai}} % target incompatible
 %\newcommand{\tac}{\mathsf{tac}} % target compatible
 %\newcommand{\soi}{\mathsf{soi}} % source incompatible
@@ -130,8 +130,8 @@
 
 % walks
 %\newcommand{\strings}{\mathcal{S}} % strings
-\newcommand{\distinguishableStrings}{\mathcal{S}_\mathrm{dist}} % distinguishable strings
-\newcommand{\lfStrings}{\underline{\mathcal{S}}} % loop-free strings
+%\newcommand{\distinguishableStrings}{\mathcal{S}_\mathrm{dist}} % distinguishable strings
+%\newcommand{\lfStrings}{\underline{\mathcal{S}}} % loop-free strings
 %\newcommand{\walks}{\mathcal{W}} % walks
 %\newcommand{\straightWalks}{\mathcal{W}_\mathrm{str}} % straight walks
 %\newcommand{\bendingWalks}{\mathcal{W}_\mathrm{bend}} % bending walks
@@ -172,10 +172,12 @@
 \newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
 \newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
 \newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
-\newcommand{\arcof}{\operatorname{\varepsilon}} % arc of a vertex
-\newcommand{\dualarcof}{\operatorname{\varepsilon}\dual} % dual arc of a vertex
+\newcommand{\edgeof}{\operatorname{\varepsilon}} % arc of a vertex
+\newcommand{\dualedgeof}{\operatorname{\varepsilon}\dual} % dual arc of a vertex
 \newcommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S
 \newcommand{\ZZZ}{\mathsf{Z}} % Z
+\newcommand{\vnext}{n} % next point on the boundary of the surface
+\newcommand{\vprevious}{p} % previous point on the boundary of the surface
 
 % lattices
 \newcommand{\meet}{\wedge} % meet
@@ -491,7 +493,7 @@ We use the same notations for undirected~walks.
 \end{definition}
 
 \begin{definition}
-\label{def:straightBended}
+\label{def:straightBending}
 A \defn{peak} (resp.~\defn{deep}) of a walk~$\omega$ is a substring of~$\omega$ of length zero which is on top (resp.~at the bottom of~$\omega$).
 A \defn{corner} is either a peak or a deep (in other words, it is a vertex of~$\omega$ where the arrows change direction).
 A walk~$\omega$ is \defn{straight} if it has no corner (\ie if~$\omega$ or~$\omega^{-1}$ is a path in~$\bar Q\blossom$), and \defn{bending} otherwise.
@@ -990,7 +992,7 @@ The following observations are useful for the computation of examples.
 \item The set~$V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$ (equivalently, for each maximal path in~$\bar Q$).
       Finite straight walks yield vertices on the boundary, while infinite cyclic straight walks in~$\bar Q$ and in~$\bar Q\koszul$ yield punctures.
 \item \label{item:arcs}
-      The dissection~$\dissection_{\bar Q}$ has one arc for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$.
+      The dissection~$\dissection_{\bar Q}$ has one edge for each vertex~$p \in \bar Q_0$, obtained by concataining the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$p = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$. We denote by~$\edgeof(p)$ the edge of~$\dissection_{\bar Q}$ corresponding to~$p$.
 \item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
 \item A similar remark holds dually for~${V_{\bar Q}}\dual$ and~${\dissection_{\bar Q}}\dual$.
 \item The number~$p$ of punctures of~$\surface_{\bar Q}$ is the number of infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$.
@@ -1042,7 +1044,7 @@ Note that we can choose to position the blossom vertices in such a way that for 
 	\label{fig:CambrianPathsQuivers}
 \end{figure}
 
-We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) form a cycle with green and red arrows alternating.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
 Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces have $1$ boundary component, no puncture and genus~$0$.
@@ -1069,7 +1071,7 @@ Consider the family of \defn{reversed path quivers} indicated in \fref{fig:rever
 	\label{fig:reversedPathsQuivers}
 \end{figure}
 
-We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{reversedPathsPM}}.
 Moreover, $\bar Q$ has no infinite straight walk, while~$\bar Q\koszul$ has~$|Q_0|-1$ infinite straight walks.
 Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have $1$ boundary component and genus~$0$.
@@ -1094,7 +1096,8 @@ Consider the family of \defn{double path quivers} indicated in \fref{fig:doubleP
 	\label{fig:doublePathsQuivers}
 \end{figure}
 
-We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+\enlargethispage{.2cm}
+We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
 Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have no punctures and
@@ -1104,7 +1107,7 @@ Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have no punctures and
 \end{itemize}
 The first few corresponding surfaces are represented in \fref{fig:doublePathsSurfaces}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{doublePathsSurfaces}}
 	\caption{The surface~$\surface_{\bar Q}$ for the double path quivers with~$1, 2, 3, 4$ vertices.}
@@ -1116,14 +1119,14 @@ The first few corresponding surfaces are represented in \fref{fig:doublePathsSur
 \label{exm:doubleCycle}
 Consider the family of \defn{double cycle quivers} indicated in \fref{fig:doubleCyclesQuivers}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\capstart
 	\centerline{\includegraphics[scale=.45]{doubleCyclesQuivers}}
 	\caption{The double cycle quivers with~$1, 2, 3, 4, 5$ vertices.}
 	\label{fig:doubleCyclesQuivers}
 \end{figure}
 
-We now apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,(\ref{item:boundary})) are empty since there is no blossom vertices.
 Moreover, $\bar Q$ has~$1$ infinite straight walk when~$|Q_0|$ is odd and~$2$ when~$|Q_0|$ is even, and~$\bar Q\koszul$ always has~$2$ infinite straight walks.
 Since~$|Q_1| = 2|Q_0|$, the corresponding surfaces have no boundary component and
@@ -1243,9 +1246,27 @@ We conclude with an important example of facets of the non-kissing and non-cross
 
 \begin{example}
 \label{exm:peakDeepFacets}
+We have seen in Definition~\ref{def:straightBending} that each vertex~$p$ of~$Q$ gives rise to a \defn{peak walk}~$p_\peak$ (resp.~\defn{deep walk}~$p_\deep$) with a single peak (resp.~deep) at~$v$ and no other corner.
+The set of all such walks forms the \defn{peak facet}~$\set{p_\peak}{p \in Q_0}$ (resp.~the \defn{deep facet}~$\set{p_\deep}{p \in Q_0}$) of the non-kissing complex~$\NKC$.
+As an example of Theorem~\ref{thm:complexesCoincide}, let us now describe the corresponding non-crossing facets of~$\NCC[\surface_{\bar Q}]$.
 
+For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious(v)$ (resp.~$\vnext(v)$) the blossom vertex previous (resp.~next) to~$v$ on the clockwise order around the boundary of~$\surface$.
+For an edge~$a$ of~$\dissection$, we denote by~$\vprevious(a)$ (resp.~$\vnext(a)$) the curve obtained by moving each endpoint~$v$ of~$a$ as follows:
+\begin{itemize}
+\item if~$v$ is on the boundary of~$\surface$, then move (continuously) $v$ along the boundary of~$\surface$ until it reaches~$\vprevious(v)$ (resp.~$\vnext(v)$),
+\item if~$v$ is a puncture, then rotate around~$v$ in counterclockwise direction (resp.~clockwise direction).
+\end{itemize}
+Examples are illustrated in \fref{fig:peakDeep}.
+%
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.7]{peakDeep}}
+	\caption{The curves~$\vprevious(a)$ (left) and $\vnext(a)$ (right) associated to an edge~$a$ of~$\dissection$ for three different dissections.}
+	\label{fig:peakDeep}
+\end{figure}
 
-\vincent{TODO: Describe here the peak and deep facets in terms of the surface.}
+We invite the reader to check that~$\curveof(p_\peak) = \vprevious(\edgeof(p))$ (resp.~$\curveof(p_\deep) = \vnext(\edgeof(p))$), where~$\edgeof(p)$ denotes the edge of~$\dissection$ corresponding to~$p \in Q_0$ (see Remark~\ref{rem:propertiesSurface}).
+Therefore, the peak facet (resp.~the deep facet) can be thought of as the dissection~$\dissection$ slightly rotated clockwise (resp.~counterclockwise) on the surface~$\surface$.
 \end{example}
 
 
@@ -1674,7 +1695,7 @@ For a set~$\Omega$ of walks, we let~$\dvectors{\Omega} \eqdef \set{\dvector{\ome
 \label{subsec:gcdVectorsSurface}
 
 Our objective is now to interpret the three families of vectors of Section~\ref{subsec:gcdVectorsWalks} in terms of accordions and slaloms on the surface.
-According to Remark~\ref{rem:propertiesSurface}\,(\ref{item:arcs}), each vertex~$p$ of~$Q$ corresponds to an edge~$\arcof(p)$ in the dissection~$\dissection_{\bar Q}$ and  to an edge~$\dualarcof(p) = \arcof(p)\dual$ in the dual dissection~${\dissection_{\bar Q}}\dual$.
+According to Remark~\ref{rem:propertiesSurface}\,(\ref{item:arcs}), each vertex~$p$ of~$Q$ corresponds to an edge~$\edgeof(p)$ in the dissection~$\dissection_{\bar Q}$ and  to an edge~$\dualedgeof(p) = \edgeof(p)\dual$ in the dual dissection~${\dissection_{\bar Q}}\dual$.
 Recall moreover from Lemma~\ref{lemm:curveOfAWalkIsAccordion} and Proposition~\ref{prop:accordionsSlaloms} that each non-kissing walk~$\omega$ in~$\bar Q$ corresponds to a curve~$\curveof(\omega)$ that is both a $\dissection$-accordion and a $\dissection\dual$-slalom.
 The following three statements translate the definitions of $\b{g}$-, $\b{c}$- and $\b{d}$-vectors on the surface.
 The proofs are left to the reader.
@@ -1684,8 +1705,8 @@ We note that these interpretations were already used in~\cite{MannevillePilaud-a
 \label{prop:gVectorsSurface}
 For a walk~$\omega$ of~$\bar Q$ and a vertex~$p \in Q_0$, the $p$th entry of the $\b{g}$-vector~$\gvector{\omega}$ is given~by
 \begin{enumerate}[(i)]
-\item The number of times that the $\dissection$-accordion~$\curveof(\omega)$ positively crosses the edge~$\arcof(p)$ of~$\dissection$ minus the number of times it negatively crosses the edge~$\arcof(p)$ of~$\dissection$. Here, the crossing is positive (resp.~negative) if the two angles of~$\dissection$ crossed by~$\curveof(\alpha)$ just before and after~$\arcof(p)$ form a~$\SSS$ (resp.~as a~$\ZZZ$).
-\item The number of times that the $\dissection\dual$-slalom~$\curveof(\omega)$ positively crosses the edge~$\dualarcof(p)$ of~$\dissection\dual$ minus the number of times it negatively crosses the edge~$\dualarcof(p)$ of~$\dissection\dual$. Here, the crossing is positive when~$\curveof(\omega)$ leaves a face~$u\dual$ to enter a face~$v\dual$ with the vertex~$u$ being to its right (and thus with~$v$ being to its left), and the crossing is negative otherwise.
+\item The number of times that the $\dissection$-accordion~$\curveof(\omega)$ positively crosses the edge~$\edgeof(p)$ of~$\dissection$ minus the number of times it negatively crosses the edge~$\edgeof(p)$ of~$\dissection$. Here, the crossing is positive (resp.~negative) if the two angles of~$\dissection$ crossed by~$\curveof(\alpha)$ just before and after~$\edgeof(p)$ form a~$\SSS$ (resp.~as a~$\ZZZ$).
+\item The number of times that the $\dissection\dual$-slalom~$\curveof(\omega)$ positively crosses the edge~$\dualedgeof(p)$ of~$\dissection\dual$ minus the number of times it negatively crosses the edge~$\dualedgeof(p)$ of~$\dissection\dual$. Here, the crossing is positive when~$\curveof(\omega)$ leaves a face~$u\dual$ to enter a face~$v\dual$ with the vertex~$u$ being to its right (and thus with~$v$ being to its left), and the crossing is negative otherwise.
 \end{enumerate}
 \end{proposition}
 
@@ -1695,8 +1716,8 @@ Consider a walk~$\omega$ of~$\bar Q$ in a non-kissing facet~$F \in \RNKC$
 Call \defn{distinguished subcurve} of~$\curveof(\omega)$ in~$\curveof(F)$ the part of~$\curveof(\omega)$ which lies strictly between the two angles of~$\dissection$ (or of~$\dissection\dual$) where~$\curveof(\omega)$ is maximal (see Remark~\ref{rem:countercurrentOrderOnSurface}).
 For a vertex~$p \in Q_0$, the $p$th entry of the $\b{c}$-vector~$\cvector{\omega}{F}$ is given by
 \begin{enumerate}[(i)]
-\item the number of crossings between the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ and the edge~$\arcof(v)$ of the dissection~$\dissection$,
-\item the number of times the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ follows the edge~$\dualarcof(v)$ of the dual dissection~$\dissection\dual$. Here, we say that a curve~$\delta$ follows~$\dualarcof(v)$ if~$\dualarcof(v)$ lies on the boundary opposite to~$u$ of a face~$u\dual$ of~$\dissection\dual$ crossed by~$\delta$.
+\item the number of crossings between the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ and the edge~$\edgeof(v)$ of the dissection~$\dissection$,
+\item the number of times the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ follows the edge~$\dualedgeof(v)$ of the dual dissection~$\dissection\dual$. Here, we say that a curve~$\delta$ follows~$\dualedgeof(v)$ if~$\dualedgeof(v)$ lies on the boundary opposite to~$u$ of a face~$u\dual$ of~$\dissection\dual$ crossed by~$\delta$.
 \end{enumerate}
 \end{proposition}
 
