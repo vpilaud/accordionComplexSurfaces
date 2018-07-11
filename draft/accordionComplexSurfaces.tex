@@ -176,8 +176,8 @@
 \newcommand{\dualedgeof}{\operatorname{\varepsilon}\dual} % dual arc of a vertex
 \newcommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S
 \newcommand{\ZZZ}{\mathsf{Z}} % Z
-\newcommand{\vnext}{n} % next point on the boundary of the surface
-\newcommand{\vprevious}{p} % previous point on the boundary of the surface
+\newcommand{\vnext}[1]{#1_{\operatorname{next}}} % next point on the boundary of the surface
+\newcommand{\vprevious}[1]{#1_{\operatorname{prev}}} % previous point on the boundary of the surface
 
 % lattices
 \newcommand{\meet}{\wedge} % meet
@@ -1250,10 +1250,10 @@ We have seen in Definition~\ref{def:straightBending} that each vertex~$p$ of~$Q$
 The set of all such walks forms the \defn{peak facet}~$\set{p_\peak}{p \in Q_0}$ (resp.~the \defn{deep facet}~$\set{p_\deep}{p \in Q_0}$) of the non-kissing complex~$\NKC$.
 As an example of Theorem~\ref{thm:complexesCoincide}, let us now describe the corresponding non-crossing facets of~$\NCC[\surface_{\bar Q}]$.
 
-For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious(v)$ (resp.~$\vnext(v)$) the blossom vertex previous (resp.~next) to~$v$ on the clockwise order around the boundary of~$\surface$.
-For an edge~$a$ of~$\dissection$, we denote by~$\vprevious(a)$ (resp.~$\vnext(a)$) the curve obtained by moving each endpoint~$v$ of~$a$ as follows:
+For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious{v}$ (resp.~$\vnext{v}$) the blossom vertex previous (resp.~next) to~$v$ on the clockwise order around the boundary of~$\surface$.
+For an edge~$a$ of~$\dissection$, we denote by~$\vprevious{a}$ (resp.~$\vnext{a}$) the curve obtained by moving each endpoint~$v$ of~$a$ as follows:
 \begin{itemize}
-\item if~$v$ is on the boundary of~$\surface$, then move (continuously) $v$ along the boundary of~$\surface$ until it reaches~$\vprevious(v)$ (resp.~$\vnext(v)$),
+\item if~$v$ is on the boundary of~$\surface$, then move (continuously) $v$ along the boundary of~$\surface$ until it reaches~$\vprevious{v}$ (resp.~$\vnext{v}$),
 \item if~$v$ is a puncture, then rotate around~$v$ in counterclockwise direction (resp.~clockwise direction).
 \end{itemize}
 Examples are illustrated in \fref{fig:peakDeep}.
@@ -1261,11 +1261,11 @@ Examples are illustrated in \fref{fig:peakDeep}.
 \begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{peakDeep}}
-	\caption{The curves~$\vprevious(a)$ (left) and $\vnext(a)$ (right) associated to an edge~$a$ of~$\dissection$ for three different dissections.}
+	\caption{The curves~$\vprevious{a}$ (left) and $\vnext{a}$ (right) associated to an edge~$a$ of~$\dissection$ for three different dissections.}
 	\label{fig:peakDeep}
 \end{figure}
 
-We invite the reader to check that~$\curveof(p_\peak) = \vprevious(\edgeof(p))$ (resp.~$\curveof(p_\deep) = \vnext(\edgeof(p))$), where~$\edgeof(p)$ denotes the edge of~$\dissection$ corresponding to~$p \in Q_0$ (see Remark~\ref{rem:propertiesSurface}).
+We invite the reader to check that~$\curveof(p_\peak) = \vprevious{\edgeof(p)}$ (resp.~$\curveof(p_\deep) = \vnext{\edgeof(p)}$), where~$\edgeof(p)$ denotes the edge of~$\dissection$ corresponding to~$p \in Q_0$ (see Remark~\ref{rem:propertiesSurface}).
 Therefore, the peak facet (resp.~the deep facet) can be thought of as the dissection~$\dissection$ slightly rotated clockwise (resp.~counterclockwise) on the surface~$\surface$.
 \end{example}
 
