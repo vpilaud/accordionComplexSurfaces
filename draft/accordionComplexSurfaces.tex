@@ -455,6 +455,7 @@ An \defn{eventually cyclic string} for~$\bar Q$ is a word~$\rho$ of the form~${}
 A \defn{string} for~$\bar Q$ is a word which is either a finite string or an eventually cyclic infinite string.
 We denote by~$\strings(\bar Q)$ the set of strings on~$\bar Q$.
 We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and we let~$\strings^\pm(\bar Q) \eqdef \set{\{\rho, \rho^{-1}\}}{\rho \in \strings(\bar Q)}$ denote the collection of all \defn{undirected strings} of~$\bar Q$.
+\vincent{Can we delete this notation.}
 \end{definition}
 
 \begin{notation}
@@ -466,6 +467,7 @@ To avoid distinguishing between finite, infinite and bi-infinite words, we denot
 A \defn{walk} of a locally gentle quiver~$\bar Q$ is a maximal string of its blossoming quiver~$\bar Q \blossom$ (meaning that at each end it either reaches a blossom vertex of~$\bar Q \blossom$ or enters an infinite oriented cycle).
 We denote by~$\walks(\bar Q)$ the set of all walks on~$\bar Q$.
 As for strings, we implicitly identify the two inverse walks~$\omega$ and~$\omega^{-1}$, and we let~$\walks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \walks(\bar Q)}$ denote the set of \defn{undirected walks} of~$\bar Q$.
+\vincent{Can we delete this notation.}
 \end{definition}
 
 \begin{definition}
@@ -492,7 +494,8 @@ We use the same notations for undirected walks.
 \label{def:straightBended}
 A \defn{peak} (resp.~\defn{deep}) of a walk~$\omega$ is a substring of~$\omega$ of length zero which is on top (resp.~at the bottom of~$\omega$).
 A \defn{corner} is either a peak or a deep (in other words, it is a vertex of~$\omega$ where the arrows change direction).
-A walk~$\omega$ is \defn{straight} if it has no corner (\ie if~$\omega$ or~$\omega^{-1}$ is a path in~$\bar Q\blossom$), and \defn{bending} otherwise. Let $\straightWalks(\bar Q)$ and~$\bendingWalks(\bar Q)$ denote the sets of straight and bending walks of~$\bar Q$ and let~$\straightWalks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \straightWalks(\bar Q)}$ and~$\bendingWalks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \bendingWalks(\bar Q)}$.
+A walk~$\omega$ is \defn{straight} if it has no corner (\ie if~$\omega$ or~$\omega^{-1}$ is a path in~$\bar Q\blossom$), and \defn{bending} otherwise.
+%Let $\straightWalks(\bar Q)$ and~$\bendingWalks(\bar Q)$ denote the sets of straight and bending walks of~$\bar Q$ and let~$\straightWalks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \straightWalks(\bar Q)}$ and~$\bendingWalks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \bendingWalks(\bar Q)}$.
 A \defn{peak walk} (resp.~\defn{deep walk}) is a walk with a unique corner (in other words, it switches orientation only once), which is a peak (resp.~deep). For~$v \in Q_0$, we denote by~$v_\peak$ the peak walk with peak at~$v$ and by~$v_\deep$ the deep walk with deep~at~$v$.
 \end{definition}
 
@@ -511,6 +514,7 @@ We say that~$\omega$ and~$\omega'$ are \defn{kissing} if~$\omega$ kisses~$\omega
 Note that we authorize the situation where the commmon finite substring is reduced to a vertex~$v$, meaning that~$v$ is a peak of~$\omega$ and a deep of~$\omega'$.
 Observe also that~$\omega$ can kiss~$\omega'$ several times, that~$\omega$ and~$\omega'$ can mutually kiss, and that~$\omega$ can kiss itself.
 We denote by~$\NKWalks(\bar Q)$ the walks on~$\bar Q$ which are not self-kissing and by~$\NKWalks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \NKWalks(\bar Q)}$ their undirected version.
+\vincent{Can we delete this notation.}
 %
 \begin{figure}
 	\capstart
@@ -526,7 +530,7 @@ We denote by~$\NKWalks(\bar Q)$ the walks on~$\bar Q$ which are not self-kissing
 The \defn{non-kissing complex} of~$\bar Q$ is the simplicial complex~$\NKC$ whose faces are the collections of pairwise non-kissing walks of~$\NKWalks^\pm(\bar Q)$.
 Note that self-kissing walks never appear in~$\NKC$ by definition.
 In contrast, no straight walk can kiss another walk by definition, so that they appear in all facets of~$\NKC$.
-We thus consider the \defn{reduced non-kissing complex}~$\RNKC$ to be the deletion of all straight walks from~$\NKC$.
+The \defn{reduced non-kissing complex}~$\RNKC$ is the simplicial complex whose faces are the collections of pairwise non-crossing bended walks of~$\bar Q$.
 \end{definition}
 
 %\begin{theorem}[{\cite[Cor.~2.27 \& Cor.~2.33]{PaluPilaudPlamondon}}]
@@ -682,8 +686,10 @@ In Definition~\ref{def:accordion}, observe that
 
 \begin{definition}
 \label{def:accordionComplex}
-The \defn{$\dissection$-accordion complex}~$\AC$ is the simplicial complex of pairwise non-crossing $\dissection$-accordions.
-The \defn{reduced $\dissection$-accordion complex}~$\RAC$ is the simplicial complex of pairwise non-crossing internal $\dissection$-accordions.
+The \defn{$\dissection$-accordion complex}~$\AC$ is the simplicial complex whose faces are the collections of pairwise non-crossing $\dissection$-accordions.
+Note that self-crossing accordions never appear in~$\AC$ by definition.
+In contrast, no external accordion can cross another accordion, so that they appear in all facets of~$\AC$. 
+The \defn{reduced $\dissection$-accordion complex}~$\RAC$ is the simplicial complex whose faces are the collections of pairwise non-crossing internal $\dissection$-accordions.
 \end{definition}
 
 The following definition generalizes the one from~\cite{GarverMcConville} for the case where~$\bar\surface$ is a disk.
@@ -706,8 +712,10 @@ By convention, we also consider that the punctures of~$V$ are $\dissection\dual$
 
 \begin{definition}
 \label{def:slalomComplex}
-The \defn{$\dissection\dual$-slalom complex}~$\SC$ is the simplicial complex of pairwise non-crossing $\dissection$-slaloms.
-The \defn{reduced $\dissection\dual$-slalom complex}~$\RAC$ is the simplicial complex of pairwise non-crossing internal $\dissection\dual$-slaloms.
+The \defn{$\dissection\dual$-slalom complex}~$\SC$ is the simplicial complex whose faces are the collections of pairwise non-crossing $\dissection\dual$-slaloms.
+Note that self-crossing slalom never appear in~$\SC$ by definition.
+In contrast, no external slalom can cross another slalom, so that they appear in all facets of~$\SC$. 
+The \defn{reduced $\dissection\dual$-slalom complex}~$\RSC$ is the simplicial complex whose faces are the collections of pairwise non-crossing internal $\dissection\dual$-slaloms.
 \end{definition}
 
 %\begin{remark}
