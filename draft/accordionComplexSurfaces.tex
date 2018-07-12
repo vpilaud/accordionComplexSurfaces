@@ -1671,8 +1671,8 @@ We see that~$\curveof(\omega')$ is then obtained as claimed. The direction of th
 
 In this section, we define three relevant families of vectors associated to walks in the non-kissing complex of a locally gentle quiver~$\bar Q$.
 In contrast to the $\b{d}$-vectors, the $\b{g}$- and $\b{c}$-vectors were already considered in the non-kissing complex of a gentle quiver~\cite[Sect.~4.2]{PaluPilaudPlamondon}, and their definition immediately generalizes to the case of locally gentle algebras.
-All these vectors have algebraic motivations that we prefer to omit in the present paper to remain focus on the two-sided combinatorics of the non-kissing and non-crossing models.
-Our objective is just to provide interpretations of these vectors in terms of the surface~$\surface_{\bar Q}$.
+All these vectors have algebraic motivations that we prefer to omit in the present paper to remain focused on the two-sided combinatorics of the non-kissing and non-crossing models.
+Our objective is to provide interpretations of these vectors in terms of the surface~$\surface_{\bar Q}$.
 % We show that our geometric model using accordions is well-adapted to computing~$\b{c}$-vectors, while slaloms can naturally be interpreted as~$\b{g}$-vectors.
 
 \subsection{$\b{g}$-vectors, $\b{c}$-vectors, and $\b{d}$-vectors for walks}
@@ -1681,7 +1681,7 @@ Our objective is just to provide interpretations of these vectors in terms of th
 Let~$\bar Q = (Q,I)$ be a locally gentle bound quiver, and let~$(\b{e}_v)_{v \in Q_0}$ be the standard basis of~$\R^{Q_0}$.
 
 \begin{definition}
-For a multiset~$V \eqdef \{v_1, \dots, v_m\}$ of vertices of~$Q_0$, we denote by~$\multiplicityVector_V \in \R^{Q_0}$ the \defn{multiplicity vector} of~$V$ defined~by
+Let~$V \eqdef \{v_1, \dots, v_m\}$ be a multiset of vertices of~$Q_0$. We denote by~$\multiplicityVector_V \in \R^{Q_0}$ the \defn{multiplicity vector} of~$V$, defined~by:
 \[
 \multiplicityVector_V \eqdef \sum_{i \in [m]} \b{e}_{v_i} = \sum_{v \in Q_0} |\set{i \in [m]}{v_i = v}| \, \b{e}_v.
 \]
@@ -1692,13 +1692,13 @@ We now recall two definitions from~\cite{PaluPilaudPlamondon} that still make se
 
 \begin{definition}
 \label{def:gVectorsWalks}
-For a walk~$\omega$ of~$\bar Q$, we denote by~$\peaks{\omega}$ (resp.~by~$\deeps{\omega}$) the multiset of vertices of~$Q_0$ corresponding to the peaks (resp.~deeps) of~$\omega$.
-The \defn{$\b{g}$-vector} of a walk~$\omega$ is the vector~${\gvector{\omega} \in \R^{Q_0}}$ defined by
+For any walk~$\omega$ of~$\bar Q$, we let~$\peaks{\omega}$ (resp.~by~$\deeps{\omega}$) be the multiset of vertices of~$Q_0$ corresponding to the peaks (resp.~deeps) of~$\omega$.
+The \defn{$\b{g}$-vector} of the walk~$\omega$ is the vector~${\gvector{\omega} \in \R^{Q_0}}$ defined as follows:
 \[
 \gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}.
 \]
 For a set~$\Omega$ of walks, we let~$\gvectors{\Omega} \eqdef \set{\gvector{\omega}}{\omega \in \Omega}$.
-Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, since any infinite walk~$\omega$ is eventually cyclic, the coordinates of~$\gvector{\omega}$ are finite.
+Observe that, if~$\omega$ is a straight walk, then~$\gvector{\omega} = 0$, and that, since any infinite walk~$\omega$ is eventually cyclic, the coordinates of~$\gvector{\omega}$ are finite.
 \end{definition}
 
 %\begin{remark}
@@ -1709,13 +1709,13 @@ Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, sinc
 
 \begin{definition}
 \label{def:cVectorsWalks}
-Let~$\omega$ be a walk in a non-kissing facet~$F \in \RNKC$.
+Let~$F \in \RNKC$ be a non-kissing facet and $\omega$ be a walk in~$F$.
 Define
 \[
 \distinguishedSign{\omega}{F} \eqdef 
 \begin{cases}
-\phantom{-}1 & \text{if~$\distinguishedString{\omega}{F}$ is a top substring of~$\omega$ (\ie the arrows~$\distinguishedArrows{\omega}{F}$ point outside),} \\
--1 & \text{if~$\distinguishedString{\omega}{F}$ is a bottom substring of~$\omega$ (\ie if the arrows~$\distinguishedArrows{\omega}{F}$ point inside).}
+\phantom{-}1 & \text{if~$\distinguishedString{\omega}{F}$ is a top substring of~$\omega$ (\ie if the distinguished arrows point outside),} \\
+-1 & \text{if~$\distinguishedString{\omega}{F}$ is a bottom substring of~$\omega$ (\ie if the distinguished arrows point inside).}
 \end{cases}
 \]
 The \defn{$\b{c}$-vector} of a walk~$\omega$ of~$F$ is the vector~${\cvector{\omega}{F} \in \R^{Q_0}}$ defined by
@@ -1748,7 +1748,7 @@ The \defn{$\b{d}$-vector} of a walk~$\omega$ is the vector~$\dvector{\omega} \in
 \dvector{\omega} \eqdef 
 \begin{cases}
 - \b{e}_v & \text{if $\omega$ is the deep walk~$v_\deep$ with a unique deep at~$v$,} \\
-\displaystyle \sum_{v \in Q_0} \kn(v_\deep, \omega) \, \b{e}_v & \text{otherwise.}
+\displaystyle \sum_{v \in Q_0} \kn(\omega, v_\deep) \, \b{e}_v & \text{otherwise.}
 \end{cases}
 \]
 For a set~$\Omega$ of walks, we let~$\dvectors{\Omega} \eqdef \set{\dvector{\omega}}{\omega \in \Omega}$.
