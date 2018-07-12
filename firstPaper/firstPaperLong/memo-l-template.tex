@@ -1,0 +1,102 @@
+%-----------------------------------------------------------------------
+% Beginning of memo-l-template.tex
+%-----------------------------------------------------------------------
+%
+% This is a template file for AMS Memoirs for use with AMS-LaTeX 2.0.
+% Separate chapters should be included at the appropriate position.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{memo-l}
+
+%    For use when working on individual chapters
+%\includeonly{}
+
+%    Include referenced packages here.
+\usepackage{}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
+
+%    For a single index; for multiple indexes, see the manual
+%    "AMS Author Handbook, Memoirs Class", included in the
+%    author package).
+\makeindex
+
+\begin{document}
+
+\frontmatter
+
+\title{}
+
+%    Remove any unused author tags.
+
+%    author one information
+\author{}
+\address{}
+\curraddr{}
+\email{}
+\thanks{}
+
+%    author two information
+\author{}
+\address{}
+\curraddr{}
+\email{}
+\thanks{}
+
+%    \date is required; it is the date received by the editor.
+\date{}
+
+\subjclass[2010]{Primary }
+%    Recognition of the 2010 edition of the Mathematics Subject
+%    Classification requires a version of amsbook.cls from July 2009
+%    or later.  If "2010" is not recognized, please upgrade.
+
+\keywords{}
+
+\dedicatory{Dedication text (use \\[2pt] for line break if necessary)}
+
+\begin{abstract}
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+
+%    Include unnumbered chapters (preface, acknowledgments, etc.) here.
+\include{}
+
+\mainmatter
+%    Include main chapters here.
+\include{}
+
+\appendix
+%    Include appendix "chapters" here.
+\include{}
+
+\backmatter
+%    Bibliography styles amsplain or author-year (using natbib) are
+%    also acceptable.
+\bibliographystyle{amsalpha}
+\bibliography{}
+%    See note above about multiple indexes.
+\printindex
+
+\end{document}
+
+%-----------------------------------------------------------------------
+% End of memo-l-template.tex
+%-----------------------------------------------------------------------
