@@ -1,0 +1,174 @@
+We thank the referee for their helpful comments.  We have tried to implement them
+all.  Below are our replies to each comment.  We have also made a few additional
+changes, which we first list.
+
+(a) In Notation 1.50, the equalities were wrong and have been corrected.
+
+
+* In the introduction, and in the introductory paragraphs of several sections
+  the authors are sometimes quite abrupt and discuss notions that have not been
+  introduced yet. For example examples this happens in
+  - page 1, line 2: non-kissing paths
+  - page 43: $\mathcal{L}_{nk}(\overline{Q})$
+  Could this notions be introduces, at least vaguely, before using them?
+
+  Reply:
+
+
+* page 1 paragraph 1: ``The interest in'' rather then ``The interest for''
+
+  Reply:
+
+
+* page 2 par 3: ``description of flips''
+
+  Reply:
+
+
+* par: 3 ``remarquable'' is French
+
+  Reply:
+
+
+* page 3: the footnotes refer to the table on next page; they are quite
+  confusing here.
+
+  Reply:
+
+
+* page 6, last line: while the meaning of $I^{rev}$ is clear this has not been
+  introduced formally.
+
+  Reply:
+
+
+* Figure 1: all other figures in the paper are not separated into sub figures by
+  lines as this one is
+
+  Reply:
+
+
+* Def 1.12: say ``The algebra ... associated to a gentle bound quiver is called''
+  or something similar.
+
+  Reply:
+
+
+* page 15 above 1.1.7: all of a sudden there is a shorthand for band modules
+  that was not introduced 
+
+  Reply:
+
+
+* page 15 bottom: this formula looks quite ugly, can you remove the text from
+  it by defining the two sets first? Even better can you replace the formula 
+  with a sentence? 
+
+  Reply:
+
+
+* page 17: the name ``dance'' suggests a symmetric notion but it is not. If
+  there in no better name available it should at least be stated clearly that
+  this is not a symmetric notion.
+
+  Reply:
+
+
+* page 24 intro: ``the operation of flip''
+
+  Reply:
+
+
+* Example 2.2 and many more occurrences: Through the paper there is a recurring
+  example and the authors decided to name it by $Q_{exm}$ et similia.
+  This makes it look like it is some sort of notation when it is not. I would
+  suggest to remove this convention and to just refer to it as the recurring
+  example or the example in figure 15.
+
+  Reply:
+
+
+* Just below: ``See Figure 15'' is not needed here
+
+  Reply:
+
+
+* bottom of page 24 what is a non-kissing cycle? Do you mean not self-kissing?
+
+  Reply:
+
+
+* Figure 17: $Q_{pa}$ as above why is an example given a notation-like name?
+
+  Reply:
+
+
+* Figure 18: crossing walks have not been introduced
+
+  Reply:
+
+
+* remark 2.20: the first bullet point ``should'' should the ``then'' you are
+  stating a fact not an hope
+
+  Reply:
+
+
+* proof of 2.21: ``follow'' is not really clear here
+
+  Reply:
+
+
+* def 2.36: is any flip either increasing or decreasing?
+
+  Reply:
+
+
+* def 3.4: do you mean ``any strict subset''?
+
+  Reply:
+
+
+* def 3.16 and others: $\mathcal{S}$ and $S$ are not easily distinguishable 
+
+  Reply:
+
+
+* Proof of theorem 3.20: the numberings do not correspond to each other
+
+  Reply:
+
+
+* page 49 previous to last paragraph: ``ordered by:'' should be ``ordered by''
+
+  Reply:
+
+
+* Example 3.36: Figure 34 does not illustrate $\omega$
+
+  Reply:
+
+
+* Example 3.44: It appears to me that the map, which is not explicit, is on the
+  quotient of $Bic$
+
+  Reply:
+
+
+* pages 59,60,64,65,68,73 and probably more: the text goes outside the margin
+
+  Reply:
+
+
+* remark 3.72: do you mean ``Figure 36 (bottom)''?
+
+  Reply:
+
+
+A note about notation. This article uses a quite creative notation set. For
+example the blossoming quiver has a little flower as exponent and the operation
+of blinding is represented by two half circle to suggest blinkers. I am not sure
+I am happy about these choices but I do not have better suggestions to offer.
+
+  Reply:
+
