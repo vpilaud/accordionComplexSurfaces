@@ -1253,7 +1253,7 @@ It is then clear that~$\omega$ and~$\omega'$ kiss if and only if~$\curveof(\omeg
 \label{thm:complexesCoincide}
 The non-kissing and non-crossing complexes are isomorphic:
 \begin{itemize}
-\item for any locally gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$,% therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the slalom complex~$\SC[{\dissection_{\bar Q}}\dual]$.
+\item for any locally gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$,% therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the slalom complex~$\SC[{\dissection\dual_{\bar Q}}]$.
 \item for any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
 \end{itemize}
 \end{theorem}
@@ -1315,12 +1315,17 @@ Otherwise, if~$\omega$ contains several occurrences of~$\alpha^\pm$, only one oc
 
 The following definition is illustrated in \fref{fig:orderCurves}.
 
-\begin{definition}
+\begin{definition}\label{def:orderForWalks}
 For any arrow~$\alpha \in Q\blossom_1$ and any two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at an occurrence of~$\alpha^\pm$,
 let~$\sigma$ denote their maximal common substring containing that occurrence of~$\alpha$.
 Since~$\mu_\star \ne \nu_\star$, this common substring~$\sigma$ is strict, so~$\mu_\star$ and~$\nu_\star$ split at one endpoint of~$\sigma$.
 The \defn{countercurrent order at~$\alpha$} is defined by~$\mu_\star \prec_\alpha \nu_\star$ when~$\mu_\star$ enters and/or exits~$\sigma$ in the direction pointed by~$\alpha$, while~$\nu_\star$ enters and/or exits~$\sigma$ in the direction opposite to~$\alpha$.
 \end{definition}
+
+\begin{remark}
+ We note that, since the walks~$\mu$ and~$\nu$ are non-kissing, if~$\mu_\star$ leaves~$\sigma$ on both sides, then is enters and exits~$\sigma$ in the same direction, so that Definition~\ref{def:orderForWalks} is coherent.
+\end{remark}
+
 
 \begin{remark}
 \label{rem:countercurrentOrderOnSurface}
@@ -1345,7 +1350,10 @@ These interpretations of~$\prec_\alpha$ on the surface where already considered 
 %	\label{fig:kissing}
 %\end{figure}
 
-For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, we denote by~$F_\alpha$ the set of walks of~$F$ marked at an occurence of~$\alpha^\pm$.
+\begin{notation}
+\label{notation:Falpha}
+ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, we denote by~$F_\alpha$ the set of walks of~$F$ marked at an occurence of~$\alpha^\pm$.
+\end{notation}
 
 \begin{lemma}
 \label{lemm:countercurrentOrderIsTotal}
@@ -1360,7 +1368,7 @@ For any face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the countercur
 For any finite non-kissing face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\blossom$, the set~$F_\alpha$ is either empty or admits a maximal element for the countercurrent order~$\prec_\alpha$.
 \end{lemma}
 \begin{proof}
- We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rem:countercurrentOrderOnSurface}.
+ We provide two proofs of the lemma.  One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$, using the isomorphism of Theorem \ref{thm:complexesCoincide} and Remark \ref{rem:countercurrentOrderOnSurface}.
  
  \para{Combinatorial proof}
  Note that even though~$F$ is finite, the set of marked walks~$F_\alpha$ might be infinite if~$\alpha$ belongs to an oriented cycle of~$Q$.
@@ -1371,7 +1379,7 @@ For any finite non-kissing face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\bloss
  After applying this procedure a finite number of times,~$F_\alpha$ becomes finite, and the claim follows.
  
  \para{Geometric proof}
- View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ View~$F$ as a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
  The arrow~$\alpha$ then corresponds to an angle in~$\dissection$ at a vertex~$v$.  
  
  For any curve~$\gamma$ in~$F$, even though~$\gamma$ may pass through the above angle infinitely many times, there is one instance that is furthest from the angle:
@@ -1387,12 +1395,13 @@ For any finite non-kissing face~$F$ of~$\NKC$ and any arrow~$\alpha\in Q_1\bloss
 
 We now pause to prove the following statement.
 
-\begin{lemma}
-\label{lem:facetsAreFinite}
-Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ is finite, thus contained in a finite maximal face.
-\end{lemma}
+\begin{proposition}
+\label{prop:facetsAreFinite}
+Any face of~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$ is finite, thus contained in a finite maximal face.
+\end{proposition}
 
-Since Theorem \ref{thm:complexesCoincide} ensures that~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, we only prove the statement for the non-kissing complex.
+Even though Theorem \ref{thm:complexesCoincide} ensures that~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$ coincide, we provide two proofs.
+One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
 The proof requires the following intermediate results.
 
 \begin{lemma}
@@ -1402,12 +1411,10 @@ Then~$\omega$ is of the form~$\sigma c^{\pm\infty}$, for some (possibly infinite
 \end{lemma}
 
 \begin{proof}
-We provide two proofs of the lemma.
-One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  
 \para{Combinatorial proof}
 Let~$c=\alpha_1\cdots\alpha_r$ be a non-trivial oriented cycle in some walk~$\omega$, with~$c, c^2\notin I$.
-Assume that~$\omega$ is not of form~$\sigma c^{\pm\infty}$.
+Assume that~$\omega$ is not of the form~$\sigma c^{\pm\infty}$.
 Then, up to cyclic reordering of the arrows in~$c$, it contains a substring of the form~$\beta^\pm c^l \alpha_1\cdots\alpha_j\gamma^\pm$, for some arrows~$\beta,\gamma$ not in~$c$, some~$l\geq 1$, and some~$j<r$.
 Since~$\bar Q$ is locally gentle, this substring is~$\beta^{-1} c^l \alpha_1\cdots\alpha_j\gamma^{-1}$.
 Hence, the walk~$\omega$ contains the two substrings~$\beta^{-1}\alpha_1\cdots\alpha_j\alpha_{j+1}$ and~$\alpha_r\alpha_1\cdots\alpha_j\gamma^{-1}$, and thus self-kisses.
@@ -1452,22 +1459,20 @@ By Lemma~\ref{lem:nkCycles}, iterating this procedure eventually stops ($\mu_j=\
 There is a bound on the number of elements of a finite face of~$\NKC$.
 \end{lemma}
 \begin{proof}
- We provide two proofs of the lemma.
- One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
  
  \para{Combinatorial proof}
  By Lemma~\ref{lem:ExistenceOfDistinguishedArrows}, the number of walks in a finite face of~$\NKC$ is bounded by~$|Q_1\blossom|+s_\infty$, where~$s_\infty$ is the number of infinite straight walks (i.e. the number of primitive oriented cycles in~$Q$).
 
  \para{Geometric proof}
- Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+ Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
  Its elements are pairwise compatible~$\dissection$-accordions on the surface~$\surface_{\bar Q}$.
  Thus~$F$ can be viewed as a partial tagged triangulation of~$\surface_{\bar Q}$, by letting the~$\dissection$-accordions circling a puncture in (say) clockwise order be seen as ``notched'' arcs to said puncture, and the ones circling it in counter-clockwise orientation be ``un-notched'' arcs.
  It is known (see, for instance, \cite{FominShapiroThurston}) that any such partial tagged triangulation can be embedded into a full triangulation, and that triangulations contain a finite number of arcs.
  Thus~$F$ is finite, and is contained in a finite maximal face.
 \end{proof}
 
-\begin{proof}[Proof of Lemma~\ref{lem:facetsAreFinite}]
- If~$\NKC$ admits an infinite face, then all subsets of this face are also faces, so~$\NKC$ admits faces of arbitrary finite cardinality.
+\begin{proof}[Proof of Lemma~\ref{prop:facetsAreFinite}]
+ If~$\NKC$, respectively~$\NCC$, admits an infinite face, then all subsets of this face are also faces, so~$\NKC$, respectively~$\NCC$, admits faces of arbitrary finite cardinality.
  This contradicts Lemma \ref{lemm:facesAreBounded}.
 \end{proof}
 
@@ -1478,18 +1483,18 @@ The aim of this section is to prove the following purity result.
 
 \begin{proposition}
 \label{prop:purity}
-The reduced non-kissing complex~$\RNKC$ and the reduced non-crossing complex~$\RNCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$|Q_0|$.
-The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ are pure of dimension~$3|Q_0| - |Q_1| + p$ where~$p$ is the number of primitive oriented cycles in~$\bar Q$ or equivalently the number of punctures in~$V_Q$ in~$\surface_{\bar Q}$.
+The reduced non-kissing complex~$\RNKC$ and the reduced non-crossing complex~$\RNCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$ are pure of dimension~$|Q_0|$.
+The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$ are pure of dimension~$3|Q_0| - |Q_1| + s_\infty$ where~$s_\infty$ is the number of primitive oriented cycles in~$\bar Q$ or equivalently the number of punctures in~$V_Q$ in~$\surface_{\bar Q}$.
 \end{proposition}
 
 Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Cor.~2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
-Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$ coincide, so it suffices to prove the Proposition for one of them.
+Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$ coincide, so it suffices to prove the Proposition for one of them.
 The following definition from \cite[Def.~2.23]{PaluPilaudPlamondon} extends to the setting of locally gentle algebras.
 
 \begin{definition}
 \label{defi:distinguishedWalksAndArrows}
 Let~$\alpha \in Q\blossom_1$ be an arrow and let~$F$ be a face of~$\NKC$ containing the straight walk passing through~$\alpha$.
-Consider the marked walk~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ (which exists by Lemmas \ref{lemm:facesHaveMaximalElement} and~\ref{lem:facetsAreFinite}),
+Consider the marked walk~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ (which exists by Lemmas \ref{lemm:facesHaveMaximalElement} and~\ref{prop:facetsAreFinite}),
 and let~$\omega$ be the walk obtained by forgetting the marked arrow in~$\omega_\star$. 
 We say that~$\omega$ is the \defn{distinguished walk} of~$F$ at~$\alpha$ and that~$\alpha$ is a \defn{distinguished arrow} on~$\omega \in F$.
 We will use the notation
@@ -1504,12 +1509,12 @@ We use this definition to prove the following statement.
 
 \begin{lemma}
 \label{lem:walksThroughcycles}
-For any oriented cycle~$c$ in~$Q$ with~$c, c^2\notin I$, any maximal non-kissing face contains a walk of the form~$\sigma c^{\varepsilon\infty}$, for some~$\varepsilon\in\{\pm1\}$ and some substring~$\sigma$ distinct from~$^{\varepsilon\infty}c$.
+For any oriented cycle~$c$ in~$Q$ with~$c, c^2\notin I$, any maximal non-kissing face contains a walk of the form~$\sigma c^{\varepsilon\infty}$, for some~$\varepsilon\in\{\pm1\}$ and some substring~$\sigma$ distinct from~$^{\varepsilon\infty}c$ (i.e. the walk is not an infinite straight walk).
 \end{lemma}
 
 \begin{proof}
 We provide two proofs of the lemma.
-One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection_{\bar Q}}\dual]$.
+One is combinatorial and applies to~$\NKC$, and the other is geometric and applies to~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
  
 \para{Combinatorial proof}
 Consider a maximal non-kissing face~$F \in \NKC$ and an arrow~$\alpha$ in~$c$.
@@ -1517,7 +1522,7 @@ Let~$\beta, \gamma \in Q_1\blossom$ be such that~$t(\alpha) = s(\beta) = s(\gamm
 Consider the walk~$\mu \eqdef \distinguishedWalk{\gamma}{F}$ and decompose it as~$\mu = \mu_1 \gamma \mu_2$ according to this occurence of~$\gamma$ on~$\mu$.
 Consider the walk~$\nu \eqdef \mu_2^{-1} \gamma^{-1} c^\infty$.
 If~$\nu$ is contained in~$F$, then we have found a walk of the desired form (remember that walks are considered as undirected).
-Otherwise, there exists a walk~$\lambda$ of~$F$ preventing~$\nu$ to belong to~$F$.
+Otherwise, there exists a walk~$\lambda$ of~$F$ preventing~$\nu$ from belonging to~$F$.
 Let~$\sigma$ be a common substring of~$\nu$ and~$\lambda$ where they kiss.
 Since~$\lambda$ must be compatible with~$\mu$ and with the straight walk~$c^\infty$, the substring~$\sigma$ must contain~$t(\alpha) = s(\beta)$.
 If~$\lambda$ contains neither~$\alpha$ nor~$\beta$, then it contains~$\gamma$ and enters $\nu$ at~$s(\gamma)$.
@@ -1528,7 +1533,7 @@ We can now moreover assume that~$\lambda = \distinguishedWalk{\alpha}{F}$.
 If~$\lambda$ starts by~$^\infty c$, or ends by~$c^\infty$, then we have found a walk of the desired form.
 Otherwise, decompose this walk as~$\lambda = \lambda_1 \alpha \lambda_2$ and consider the walk~$\omega = \lambda_1 c^\infty$.
 We claim that~$\omega$ belongs to~$F$.
-Otherwise, there exists a walk~$\rho$ preventing~$\omega$ to belong to~$F$.
+Otherwise, there exists a walk~$\rho$ preventing~$\omega$ from belonging to~$F$.
 Let~$\tau$ be a common substring of~$\omega$ and~$\rho$ where they kiss.
 Since~$\omega$ must be compatible with~$\lambda$ and with the straight walk~$c^\infty$, the substring~$\tau$ must strictly contain the substring of~$\lambda$ along the cycle~$c$.
 It follows that $\rho$ leaves~$\omega$ when it is on the cycle~$c$, thus with an incoming arrow, contradicting the maximality of~$\lambda$ for~$\prec_\alpha$.
@@ -1578,21 +1583,21 @@ We can now prove the purity result.
 
 \begin{proof}[Proof of Proposition \ref{prop:purity}.]
 The proof follows that of~\cite[Cor.~2.27]{PaluPilaudPlamondon}.
-Let~$b$ denote the number of bending walks, $s$ the number of finite straight walks, and $p$ the number of infinite straight walks in a non-kissing facet~$F$ of~$\NKC$.
+Let~$b$ denote the number of bending walks, $s$ the number of finite straight walks, and $s_\infty$ the number of infinite straight walks in a non-kissing facet~$F$ of~$\NKC$.
 Since each finite straight walk uses two blossom arrows, we have~$s = 2|Q_0|-|Q_1|$ (see Remark~\ref{rem:sizeBlossomingQuiver}).
 Moreover, the infinite straight walks are just the primitive oriented cycles in~$\bar Q$.
 
 Using Proposition~\ref{prop:numberOfDistinguishedArrows}, we obtain by double-counting that
 \[
-2 * b + 1 * s + 0 * c= |Q_1\blossom| = 4|Q_0|-|Q_1|
+2 * b + 1 * s + 0 * s_\infty= |Q_1\blossom| = 4|Q_0|-|Q_1|
 \]
-from which we derive that~$b = |Q_0|$ and~$b+s+c = 3|Q_0|-|Q_1|+p$.
+from which we derive that~$b = |Q_0|$ and~$b+s+c = 3|Q_0|-|Q_1|+s_\infty$.
 \end{proof}
 
 \subsection{Thinness of the non-crossing and non-kissing complexes, mutation}
 
 A simplicial complex is \defn{thin} if each of its codimension~$1$ faces is contained in exaclty two facets.
-We state the following results, which generalize \cite[Prop.~2.31 \& Cor.~2.33]{PaluPilaudPlamondon}, whose proofs apply withouth change.
+We state the following results, which generalize \cite[Prop.~2.31 \& Cor.~2.33]{PaluPilaudPlamondon}, whose proofs apply without change.
 
 \begin{proposition}
 \label{prop:flip}
@@ -1628,9 +1633,9 @@ The mutation of non-kissing facets translates on~$\surface(\bar Q)$ as follows.
 Let~$F$ be a facet of the non-crossing complex~$\NCC$, and let~$\gamma \in F$.  We represent all curves on the universal cover of~$\surface(\bar Q)$.
 Then~$F$ forms a~$B$-dissection of the surface, and~$\gamma$ lies in at least one of two configutations~$\ZZZ$ and~$\SSS$ with the other curves of the dissection (where the endpoints may go to infinity if punctures are involved).  See \fref{fig:flip3}.
 \begin{itemize}
-\item Exactly one of the curves obtained by changing the~$\SSS$ to a~$\ZZZ$ and conversely by moving the endpoints of~$\gamma$ along the top and bottom curves is a~$\dissection$-accordion.
+\item Exactly one of the curves obtained by changing the~$\SSS$ to a~$\ZZZ$ (and conversely) by moving the endpoints of~$\gamma$ along the top and bottom curves is a~$\dissection$-accordion.
 \item This~$\dissection$-accordion yields the flip or mutation of~$F$ at~$\gamma$.
-\item If the flip is increasing, then the~$\SSS$ is turned into a~$\ZZZ$.  If the flip is decreasing, then the~$\ZZZ$ is turned in to an~$\SSS$.
+\item If the flip is increasing, then the~$\ZZZ$ is turned into a~$\SSS$.  If the flip is decreasing, then the~$\SSS$ is turned in to a~$\ZZZ$.
 \end{itemize}
 %
 \begin{figure}[h]
@@ -1652,9 +1657,9 @@ Let~$\omega = \walk(\gamma)$.  Using the notation of Proposition \ref{prop:flip}
 \end{figure}
  
 We see that the only two~$\dissection$-accordions found between~$\mu$ and~$\curveof(\omega)$ are~$\mu$ and~$\curveof(\omega)$ themselves.  The same holds by replacing~$\mu$ with~$\nu$.
-Thus~$\mu, \nu$ and~$\curveof(\omega)$ lie in an~$\SSS$ or a~$\ZZZ$.
+Thus~$\mu, \nu$ and~$\curveof(\omega)$ lie in a~$\SSS$ or a~$\ZZZ$.
  
-We see that~$\curveof(\omega')$ is then obtained as claimed.  Positivity or negativity of the flip translates from the picture in a similar way. 
+We see that~$\curveof(\omega')$ is then obtained as claimed. The direction of the flip translates from the picture in a similar way.
 \end{proof}
 
 
@@ -1793,7 +1798,7 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \label{subsec:gcdVectorsSurface}
 
 Our objective is now to interpret the three families of vectors of Section~\ref{subsec:gcdVectorsWalks} in terms of accordions and slaloms on the surface.
-According to Remark~\ref{rem:propertiesSurface}\,(\ref{item:arcs}), each vertex~$p$ of~$Q$ corresponds to an edge~$\edgeof(p)$ in the dissection~$\dissection_{\bar Q}$ and  to an edge~$\dualedgeof(p) = \edgeof(p)\dual$ in the dual dissection~${\dissection_{\bar Q}}\dual$.
+According to Remark~\ref{rem:propertiesSurface}\,(\ref{item:arcs}), each vertex~$p$ of~$Q$ corresponds to an edge~$\edgeof(p)$ in the dissection~$\dissection_{\bar Q}$ and  to an edge~$\dualedgeof(p) = \edgeof(p)\dual$ in the dual dissection~${\dissection\dual_{\bar Q}}$.
 Recall moreover from Lemma~\ref{lemm:curveOfAWalkIsAccordion} and Proposition~\ref{prop:accordionsSlaloms} that each non-kissing walk~$\omega$ in~$\bar Q$ corresponds to a curve~$\curveof(\omega)$ that is both a $\dissection$-accordion and a $\dissection\dual$-slalom.
 The following three statements translate the definitions of $\b{g}$-, $\b{c}$- and $\b{d}$-vectors on the surface.
 The proofs are left to the reader.
