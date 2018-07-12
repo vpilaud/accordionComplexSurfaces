@@ -19,17 +19,17 @@ changes, which we first list.
 
 * page 1 paragraph 1: ``The interest in'' rather then ``The interest for''
 
-  Reply:
+  Reply: Done.
 
 
 * page 2 par 3: ``description of flips''
 
-  Reply:
+  Reply: Done.
 
 
 * par: 3 ``remarquable'' is French
 
-  Reply:
+  Reply: Done.
 
 
 * page 3: the footnotes refer to the table on next page; they are quite
@@ -53,13 +53,13 @@ changes, which we first list.
 * Def 1.12: say ``The algebra ... associated to a gentle bound quiver is called''
   or something similar.
 
-  Reply:
+  Reply: Done.
 
 
 * page 15 above 1.1.7: all of a sudden there is a shorthand for band modules
   that was not introduced 
 
-  Reply:
+  Reply: Corrected.
 
 
 * page 15 bottom: this formula looks quite ugly, can you remove the text from
