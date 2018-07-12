@@ -4,6 +4,8 @@ changes, which we first list.
 
 (a) In Notation 1.50, the equalities were wrong and have been corrected.
 
+(b) We have added some details (in a new Proposition 2.24) explaining why the non-kissing facets are finite. In doing so, we had to slightly reorganise Subsection 2.2.2 (new Lemma 2.23 was previously part of the proof of Proposition (renumbered) 2.28)
+
 
 * In the introduction, and in the introductory paragraphs of several sections
   the authors are sometimes quite abrupt and discuss notions that have not been
