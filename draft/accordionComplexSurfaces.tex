@@ -565,9 +565,10 @@ As usual, curves and arcs are considered up to homotopy relative to their endpoi
 \end{definition}
 
 \begin{definition}
+\label{def:crossingCurves}
 Two curves or arcs \defn{cross} when they intersect in~their~interior.
 We will always assume that collections of arcs on a surface are in minimal position, in the sense that they cross each other transversaly, and the number of crossings is minimal.
-It is pointed out in \cite{Thurston} that the results in \cite{FreedmanHassScott} and \cite{Neumann-Coto} imply that this assumption can always be satisfied (up to homotopy).
+It is pointed out in \cite{Thurston} that the results in~\cite{FreedmanHassScott} and~\cite{Neumann-Coto} imply that this assumption can always be satisfied (up to homotopy).
 \end{definition}
 
 \begin{definition}
@@ -1176,7 +1177,7 @@ The first few corresponding surfaces are represented in \fref{fig:doubleCyclesSu
 \subsection{Non-crossing and non-kissing complexes coincide}
 
 Let~$\bar Q$ be a locally gentle bound quiver.
-For each arc of the dissection~$\dissection_{\bar Q}$ on~$\surface_{\bar Q}$, we fix a point on the interior of this arc, which we call its ``middle point''.
+For each arc of the dissection~$\dissection_{\bar Q}$ on~$\surface_{\bar Q}$, we fix a point on the interior of this arc, which we call its ``middle point'' (this is the black vertex on the pictures).
 To each walk on~$\bar Q$, we will now associate a~$\dissection_{\bar Q}$-accordion.
 
 \begin{definition}
@@ -1206,14 +1207,14 @@ This is because~$\curveof(\omega)$ follows angles in~$\dissection_{\bar Q}$ by d
 \label{lemm:accordionsAreCurvesOfWalks}
 Let~$\gamma$ be a~$\dissection_{\bar Q}$-accordion.  There exists a unique undirected walk~$\walk(\gamma)$ such that we have~$\curveof(\walk(\gamma)) = \gamma$.
 \end{lemma}
+
 \begin{proof}
-We can assume that~$\gamma$ intersects itself and the arcs of~$\dissection_{\bar Q}$ transversaly and minimally, in the sense that~$\gamma$ does not cross an arc twice in succession in opposite directions.
+We can assume that~$\gamma$ intersects itself and the arcs of~$\dissection_{\bar Q}$ transversaly and minimally, in the sense that~$\gamma$ does not cross an arc twice in succession in opposite directions (see Definition~\ref{def:crossingCurves}).
 Then~$\gamma$ is completely determined by its sequence of intersection points with the arcs of~$\dissection_{\bar Q}$, since the dissection is cellular.
 Two successive intersection points in this sequence define an angle between two arcs of~$\dissection_{\bar Q}$, which corresponds to an arrow in~$\bar Q$.
 Thus the sequence of intersection points defines a walk~$\walk(\gamma)$ on~$\bar Q$.
 By construction, we have that~$\curveof(\walk(\gamma)) = \gamma$.
-
-Is also follows from construction above and from Definition~\ref{def:curveOfAWalk} that~$\walk(\curveof(\omega)) = \omega$ for any walk~$\omega$.
+Is also follows from the construction above and from Definition~\ref{def:curveOfAWalk} that~$\walk(\curveof(\omega)) = \omega$ for any walk~$\omega$.
 This finishes the proof.
 \end{proof}
 
@@ -1299,6 +1300,10 @@ We invite the reader to check that~$\curveof(v_\peak) = \vprevious{\edgeof(v)}$ 
 Therefore, the peak facet (resp.~the deep facet) can be thought of as the dissection~$\dissection$ slightly rotated clockwise (resp.~counterclockwise) on the surface~$\surface$.
 \end{example}
 
+\begin{remark}
+According to Proposition~\ref{prop:dualityKoszul2} and Theorem~\ref{thm:complexesCoincide}, the simplicial complexes~$\NKC[\bar Q\koszul]$ and~$\NCC[{\dissection\dual\!\!_{\bar Q}}, \dissection_{\bar Q}]$ are isomorphic.
+It would be interesting to find the precise link between~$\NKC[\bar Q\koszul]$ and~$\NKC[\bar Q\koszul]$.
+\end{remark}
 
 \section{Properties of the non-crossing and non-kissing complexes}\label{sec:propertiesOfComplexes}
 
