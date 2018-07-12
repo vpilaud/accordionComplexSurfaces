@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray, chemmacros}
 \usepackage{marginnote}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
@@ -433,7 +433,7 @@ For each vertex~$v \in Q_0$, there is also a \defn{string of length zero}, denot
 \end{definition}
 
 \begin{definition}
- An oriented cycle~$c$ in~$Q$ such that~$c$ and~$c^2$ do not belong to the ideal of relations~$I$ is called \defn{primitive} if it cannot be written as an $n$th power ($n>1$) of a cycle.
+ An oriented cycle~$c$ in~$Q$ such that~$c$ and~$c^2$ do not belong to the ideal of relations~$I$ is called \defn{primitive} if it cannot be written as an $n$-th power ($n>1$) of a cycle.
 \end{definition}
 
 \begin{notation}
@@ -795,7 +795,7 @@ See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the
 
 In this section, we show that non-kissing and non-crossing complexes actually coincide.
 Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection}]$.
-Conversely, any locally gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual_{\bar Q}}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
+Conversely, any locally gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual}\!\!_{\bar Q}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
 In fact, we show that the accordion, slalom, and non-kissing complexes can all be pictured in a unique way on the surface.
 Interestingly, via the correspondence between pairs of dual cellular dissections and locally gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates into the Koszul duality between the locally gentle algebras of~$\bar Q$ and~$\bar Q\koszul$.
 
@@ -1820,7 +1820,7 @@ We note that, in this case, each crossing is either positive or negative.
 \label{prop:cVectorsSurface}
 Consider a walk~$\omega$ of~$\bar Q$ in a non-kissing facet~$F \in \RNKC$.
 Call \defn{distinguished subcurve} of~$\curveof(\omega)$ in~$\curveof(F)$ the part of~$\curveof(\omega)$ which lies strictly between the two angles of~$\dissection$ (or of~$\dissection\dual$) where~$\curveof(\omega)$ is maximal (see Remark~\ref{rem:countercurrentOrderOnSurface}).
-For a vertex~$v \in Q_0$, the $v$-th entry of the $\b{c}$-vector~$\cvector{\omega}{F}$ is given by
+For a vertex~$v \in Q_0$, the $v$-th entry of the $\b{c}$-vector~$\cvector{\omega}{F}$ is given by:
 \begin{enumerate}[(i)]
 \item the number of crossings between the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ and the edge~$\edgeof(v)$ of the dissection~$\dissection$,
 \item the number of times the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ follows the edge~$\dualedgeof(v)$ of the dual dissection~$\dissection\dual$. Here, we say that a curve~$\delta$ follows~$\dualedgeof(v)$ if~$\dualedgeof(v)$ lies on the boundary opposite to~$u$ of a face~$u\dual$ of~$\dissection\dual$ crossed by~$\delta$.
@@ -1860,7 +1860,7 @@ We now gather some statements about $\b{g}$-, $\b{c}$-, and~$\b{d}$-vectors, ess
 \label{rem:signCoherence}
 The $\b{g}$-, $\b{c}$-, and~$\b{d}$-vectors have the \defn{sign-coherence property}: for any non-kissing facet~$F \in \RNKC$,
 \begin{itemize}
-\item for~$v \in Q_0$, the~$v$th coordinates of all $\b{g}$-vectors~$\gvector{\omega}$ for~$\omega \in F$ have the same sign,
+\item for~$v \in Q_0$, the~$v$-th coordinates of all $\b{g}$-vectors~$\gvector{\omega}$ for~$\omega \in F$ have the same sign,
 \item for any~$\omega \in F$, all coordinates of the $\b{c}$-vector~$\cvector{\omega}{F}$ have the same sign,
 \item for any~$\omega \in F$, all coordinates of the $\b{d}$-vector~$\dvector{\omega}$ have the same sign.
 \end{itemize}
