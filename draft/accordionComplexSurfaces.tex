@@ -328,7 +328,7 @@ Consequences on the representation theory of locally gentle algebras will be inv
 Finally, let us briefly review the algebraic and geometric objects which appear in this paper.
 
 Gentle algebras are a class of finite-dimensional associative algebras over a field defined by generators and relations.
-Their representation theory was first systematically investigated in \cite{ButlerRingel}, and they have been thouroughly studied since.
+Their representation theory was first systematically investigated in~\cite{ButlerRingel}, and they have been thouroughly studied since.
 Locally gentle algebras are obtained by dropping the requirement that gentle algebras be finite-dimensional.
 It turns out that their representations theory is also well-behaved \cite{Crawley-Boevey} and that these algebras are Koszul \cite{BessenrodtHolm}.
 Recently, the $\tau$-tilting theory \cite{AdachiIyamaReiten} of gentle algebra has been studied in \cite{PaluPilaudPlamondon, BrustleDouvilleMousavandThomasYildirim}.
@@ -641,7 +641,7 @@ See \eg Figures~\ref{fig:accordions} and~\ref{fig:slaloms} where the blossom poi
 
 \subsection{Accordion complex and slalom complex}
 
-Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points.
+Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points on the boundary of~$\surface$.
 %
 %\begin{definition}
 %A \defn{$B$-curve} is a curve on~$\surface$ which at each end either reaches a point of~$B$ or infinitely circles around and finally reaches a puncture of~$V \sqcup V\dual$.
@@ -656,18 +656,18 @@ Consider two dual cellular dissections~$\dissection$ and~$\dissection\dual$ of~$
 %With this assumption, each segment of a~$B$-arc that lies in a face~$f$ of the dissection~$\dissection$ has two intersection points (called crossings) with the edges of~$f$.
 %Note that the edges of~$f$ may be on the boundary of the surface.
 
-The following definition generalises the one from \cite{MannevillePilaud-accordion} for the case where~$\bar \surface$ is a disk.  A very similar definition appears in \cite{BaurSimoes} in a slightly different context under the name ``permissible arc''.
+The following definition generalises the one from \cite{MannevillePilaud-accordion} for the case where~$\bar \surface$ is a disk.  A very similar definition appears in \cite{BaurSimoes} in a slightly different context under the name ``permissible~arc''.
 
 \begin{definition}
 \label{def:accordion}
 A \defn{$\dissection$-accordion} is a $B$-curve~$\alpha$ of~$\bar\surface$ such that whenever~$\alpha$ meets a face~$f$~of~$\dissection$,
-\begin{itemize}
+\begin{enumerate}[(i)]
 \item it enters crossing an edge~$a$ of~$f$ and leaves crossing an edge~$b$ of~$f$ (in other words, $\alpha$ is not allowed to circle around~$f\dual$ when~$f\dual$ is a puncture),
 \item the two edges~$a$ and~$b$ of~$f$ crossed by~$\alpha$ are consecutive along the boundary of~$f$,
 \item $\alpha$, $a$ and~$b$ bound a disk inside~$f$ that does not contain~$f\dual{}$.
-\end{itemize}
-By convention, we also consider that the punctures of~$V\dual$ are $\dissection$-accordions; 
-if we were working on the universal cover of the surface, the~$\dissection$-accordion associated to a puncture would be the infinite line crossing all (infinitely many) arcs attached to the puncture.
+\end{enumerate}
+By convention, we also consider that the punctures of~$V$ are $\dissection$-accordions that are considered external.
+If we were working on the universal cover of the surface, the~$\dissection$-accordion associated to a puncture would be the infinite line crossing all (infinitely many) arcs attached to the puncture.
 \end{definition}
 
 \fref{fig:accordions} illustrates some $\dissection$-accordions for the dissections~$\dissection$ of \fref{fig:dissections}.
@@ -701,7 +701,8 @@ The following definition generalizes the one from~\cite{GarverMcConville} for th
 \label{def:slalom}
 A \defn{$\dissection\dual$-slalom} is a $B$-curve~$\alpha$ of~$\bar\surface$ such that, whenever~$\alpha$ crosses an edge~$a$ of~$\dissection$ contained in two faces~$f,g$ of~$\dissection$, the marked points~$f\dual$ and~$g\dual$ lie on opposite sides of~$\alpha$ in the union of~$f$ and~$g$ glued along~$a$.
 Here, we consider that~$f\dual$ lies on the right (resp.~left) of~$\alpha$ when~$\alpha$ circles clockwise (resp.~counterclockwise) around~$f\dual$.
-By convention, we also consider that the punctures of~$V$ are $\dissection\dual$-slaloms that are considered as external slaloms.
+By convention, we also consider that the punctures of~$V$ are $\dissection\dual$-slaloms that are considered external.
+If we were working on the universal cover of the surface, the~$\dissection$-accordion associated to a puncture would be the infinite line crossing all (infinitely many) arcs attached to the puncture.
 \end{definition}
 
 \fref{fig:slaloms} illustrates some $\dissection\dual$-slaloms for the dual dissections~$\dissection\dual$ of \fref{fig:dissections}.
@@ -767,8 +768,8 @@ There is a~$\dissection\dual$-edge~$a$ ending in that puncture. When~$\alpha$ cr
 
 \begin{definition}
 \label{def:noncrossingComplex}
-We call \defn{non-crossing complex} of the pair of dual cellular dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC = \AC = \SC$.
-Similarly, the \defn{reduced non-crossing complex} of~$(\dissection, \dissection\dual)$ is~$\RNCC = \RAC = \RSC$.
+We call \defn{non-crossing complex} of the pair of dual cellular dissections~$(\dissection, \dissection\dual)$ the simplicial complex~$\NCC \eqdef \AC = \SC$.
+Similarly, the \defn{reduced non-crossing complex} of~$(\dissection, \dissection\dual)$ is~$\RNCC \eqdef \RAC = \RSC$.
 \end{definition}
 
 %\begin{remark}
@@ -781,8 +782,8 @@ The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dual
 
 \begin{example}
 When the dissection~$\dissection$ is a classical dissection of a polygon (with no punctures) where each cell has at most one boundary edge, the dual dissection~$\dissection\dual$ is a tree.
-The non-kissing complex in this situation was treated in detail in~\cite{GarverMcConville, MannevillePilaud-accordion}.
-Note that even when the surface~$\surface$ is a disk, we authorize here both~$\dissection$ and~$\dissection\dual$ to have interior faces and punctures.
+The non-crossing complex in this situation was treated in detail in~\cite{GarverMcConville, MannevillePilaud-accordion}.
+Note that even when the surface~$\surface$ is a disk, we authorize in the present paper both~$\dissection$ and~$\dissection\dual$ to have interior faces and punctures.
 \end{example}
 
 \begin{remark}
@@ -796,12 +797,14 @@ See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the
 \section{Non-kissing versus non-crossing}
 
 In this section, we show that non-kissing and non-crossing complexes actually coincide.
-Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection}]$.
-Conversely, any locally gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~${{\dissection\dual}\!\!_{\bar Q}}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual\!\!_{\bar Q}}]$.
+Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection}$ (see Section~\ref{subsec:D2Q}) such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection}]$.
+Conversely, any locally gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~${{\dissection\dual}\!\!_{\bar Q}}$ (see Section~\ref{subsec:Q2D}) such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual\!\!_{\bar Q}}]$.
 In fact, we show that the accordion, slalom, and non-kissing complexes can all be pictured in a unique way on the surface.
 Interestingly, via the correspondence between pairs of dual cellular dissections and locally gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates into the Koszul duality between the locally gentle algebras of~$\bar Q$ and~$\bar Q\koszul$.
+Many examples are treated in Section~\ref{subsec:Q2D}.
 
 \subsection{The bound quiver of a dissection}
+\label{subsec:D2Q}
 
 Let~$\dissection$ and~$\dissection\dual$ be two dual cellular dissections of a marked surface~$(\surface, V\sqcup V\dual)$.
 Let $B$ be the set of blossom points.
@@ -809,11 +812,11 @@ Let $B$ be the set of blossom points.
 \begin{definition}
 \label{def:quiverDualDissections}
 The bound quiver of the dissection~$\dissection$ is the bound quiver $\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ defined as follows:
-\begin{itemize}
+\begin{enumerate}[(i)]
  \item the set of vertices of~$Q_{\dissection}$ is the set of edges of $\dissection$;
  \item there is an arrow from~$a$ to~$b$ for each common endpoint~$v$ of~$a$ and~$b$ such that~$b$ comes immediately after~$a$ in the counterclockwise order around~$v$;
  \item the ideal~$I_{\dissection}$ is generated by the paths of length two in~$Q_{\dissection}$ obtained by composing arrows which correspond to triples of consecutive edges in a face of~$\dissection$.
-\end{itemize}
+\end{enumerate}
 The bound quiver of the dissection~$\dissection\dual$ is the bound quiver $\bar Q_{\dissection\dual} = (Q_{\dissection\dual}, I_{\dissection\dual})$ defined by replacing~$\dissection$ by~$\dissection\dual$ in the above.
 \end{definition}
 
@@ -837,7 +840,7 @@ The blossoming quiver~$\bar Q_\dissection\blossom$ of the quiver~$\bar Q_\dissec
 The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver.
 \end{lemma}
 \begin{proof}
-Each arc~$a$ has two endpoints, and at each endpoint there is at most one arc coming immediately after~$a$ in the clockwise order, and at most one coming immediately before~$a$.
+Each edge~$a$ of~$\dissection$ has two endpoints, and at each endpoint there is at most one edge of~$\dissection$ coming immediately after~$a$ in the clockwise order, and at most one edge of~$\dissection$ coming immediately before~$a$.
 Thus, in~$Q_{\dissection}$, there are at most two arrows leaving~$a$ and at most two arriving in~$a$.
 Among these arrows, those arising from the same endpoint of~$a$ will be composable, and those arising from different endpoints will yield relations.
 Thus $\bar Q_{\dissection}$ is locally gentle.
@@ -846,15 +849,14 @@ Thus $\bar Q_{\dissection}$ is locally gentle.
 \begin{definition}
 \label{defi:koszulDual}
 The \defn{Koszul dual} of a locally gentle bound quiver~$\bar Q = (Q,I)$ is the bound quiver~$\bar Q\koszul = (Q\koszul, I\koszul)$ defined as follows:
-\begin{itemize}
+\begin{enumerate}[(i)]
  \item the quiver~$Q\koszul$ is equal to the opposite quiver of~$Q$, that is, the quiver obtained from~$Q$ by reversing all arrows;
  \item the ideal~$I\koszul$ is generated by the opposites of the paths of length two in~$Q$ that do not appear in~$I$.
-\end{itemize}
+\end{enumerate}
 \end{definition}
 It is seen in \cite{BessenrodtHolm} that the (ungraded version of the) Koszul dual of a locally gentle algebra~$kQ/I$ is isomorphic to~$kQ\koszul/I\koszul$.
 Note that~$\bar Q\koszul$ is locally gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
 Examples are represented on \fref{fig:koszulQuivers}.
-
 
 \begin{figure}[t]
 	\capstart
@@ -863,10 +865,7 @@ Examples are represented on \fref{fig:koszulQuivers}.
 	\label{fig:koszulQuivers}
 \end{figure}
 
-
-
 The following proposition appears in \cite[Proposition 1.25]{OpperPlamondonSchroll}.  
-
 
 \begin{proposition}
 \label{prop:dualityKoszul1}
@@ -875,11 +874,12 @@ The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Kos
 \end{proposition}
 
 \begin{proof}
-The duality provides a bijection~$v\in (Q_\dissection)_0\mapsto v\dual\in (Q_{\dissection\dual})_0$, and thus induces a bijection~${\alpha \in (Q_\dissection)_1 \mapsto \alpha\dual \in (Q_{\dissection\dual})_1}$ with~$s(\alpha\dual)=s(\alpha)\dual$ and~$t(\alpha\dual)=t(\alpha)\dual$.
+The duality provides a bijection~$v\in (Q_\dissection)_0\mapsto v\dual\in (Q_{\dissection\dual})_0$, and also induces a bijection~${\alpha \in (Q_\dissection)_1 \mapsto \alpha\dual \in (Q_{\dissection\dual})_1}$ with~$s(\alpha\dual) = t(\alpha)\dual$ and~$t(\alpha\dual) = s(\alpha)\dual$.
  Moreover, for any two composable arrows~$\alpha,\beta\in(Q_\dissection)_0$, we have~$\alpha\beta\in I_\dissection$ if and only if~$s(\alpha),t(\alpha),t(\beta)$ are three consecutive edges of a~$\dissection$-cell~$f$, if and only if~$s(\alpha)\dual,t(\alpha)\dual,t(\beta)\dual$ are three consecutive arcs in~$\dissection\dual$ ending in~$f\dual$, if and only if~$\beta\dual\alpha\dual\notin I_{\dissection\dual}$.
 \end{proof}
 
 \subsection{The surface of a locally gentle bound quiver}
+\label{subsec:Q2D}
 
 We now associate a surface to a locally gentle bound quiver.
 This construction yields the same surface as the one constructed in \cite{OpperPlamondonSchroll} (see Remark \ref{rem:comparisonWithOPS} for a comparison of the two constructions).
@@ -922,7 +922,7 @@ placed as follows:
     \item if~$\alpha\beta \notin I$, then glue~$\Enrt{\alpha}$ with~$\Enrs{\beta}$.
     \end{itemize}
 \end{enumerate}
-The orientations on the edges are only use to perform the identifications and can be immediately forgotten.
+The orientations on the edges are only used to perform the identifications and can be immediately forgotten.
 \end{definition}
 
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface_{\bar Q}$ with boundaries.
@@ -943,7 +943,7 @@ We could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
 \end{itemize}
 \end{remark}
 
-The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows~$\surface_{\bar Q}$ with two disjoint sets~$V_{\bar Q}$ and~${V\dual_{\bar Q}}$ of marked points and two dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual\!\!_{\bar Q}}$ defined as follows.
+The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows~$\surface_{\bar Q}$ with two disjoint sets~$V_{\bar Q}$ and~${{V\dual}\!\!_{\bar Q}}$ of marked points and two dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual\!\!_{\bar Q}}$ defined as follows.
 
 \begin{definition}
 \label{def:dissectionQuiver}
@@ -952,7 +952,7 @@ The surface~$\surface_{\bar Q}$ is endowed with
 \item the set~$V_{\bar Q}$ of points~$v(\alpha)$ for~$\alpha \in Q_1\blossom$ after the identifications given by~(ii),
 \item the $V_{\bar Q}$-dissection~$\dissection_{\bar Q}$ given by all sides~$\Enrs{\alpha}$ and~$\Enrt{\alpha}$ for~$\alpha \in Q_1\blossom$ after the identifications given by~(ii).
 \end{itemize}
-The set~${V\dual_{\bar Q}}$ and the ${V\dual_{\bar Q}}$-dissection~${\dissection\dual\!\!_{\bar Q}}$ are defined dually.
+The set~${{V\dual}\!\!_{\bar Q}}$ and the ${{V\dual}\!\!_{\bar Q}}$-dissection~${\dissection\dual\!\!_{\bar Q}}$ are defined dually.
 \end{definition}
 
 \begin{proposition}
@@ -964,7 +964,7 @@ Then the dissections~$\dissection_{\bar Q}$ and~$\dissection\dual\!\!_{\bar Q}$ 
 In the construction of~$\surface_{\bar Q}$, if two arrows~$\alpha$ and~$\beta$ of~$\bar Q \blossom$ are such that~${t(\alpha) = s(\beta)}$ and~${\alpha\beta \in I\blossom}$, then the vertices~$v(\alpha)$ and~$v(\beta)$ are identified on the surface.
 Thus, any two arrows of a given path contribute the same vertex of~$V_{\bar Q}$, so~$V_{\bar Q}$ is in bijection with the set of maximal paths in~$\bar Q\blossom$.
 
-Let~$v\in V_{\bar Q}$. The situation around~$v$ is as follows, depending on whether~$v$ corresponds to a finite or infinite maximal path of~$\bar Q\blossom$,:
+Let~$v\in V_{\bar Q}$. The situation around~$v$ is as follows, depending on whether~$v$ corresponds to a finite or infinite maximal path of~$\bar Q\blossom$:
 
 \begin{figure}[h]
 	\capstart
@@ -984,8 +984,8 @@ The following statement immediately follows from the definitions and was probabl
 
 \begin{theorem}
 \label{thm:bijectionLocallyGentleAndSurfaces}
- Up to isomorphism, the constructions of Definitions \ref{def:quiverDualDissections} and \ref{def:surfaceQuiver} are inverse to each other.
- They induce a bijection between the set of isomorphism classes of locally gentle algebras and the set of homeomorphism classes of marked surfaces with a pair of dual cellular dissections.
+Up to isomorphism, the constructions of Definitions \ref{def:quiverDualDissections} and \ref{def:surfaceQuiver} are inverse~to~each other.
+They induce a bijection between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of marked surfaces with a pair of dual cellular dissections.
 \end{theorem}
 
 \begin{remark}
@@ -993,12 +993,13 @@ The following statement immediately follows from the definitions and was probabl
 The following observations are useful for the computation of examples.
 \begin{enumerate}[(i)]
 \item The set~$V_{\bar Q}$ has one vertex for each straight walk in~$\bar Q$ (equivalently, for each maximal path in~$\bar Q$).
-      Finite straight walks yield vertices on the boundary, while infinite cyclic straight walks in~$\bar Q$ and in~$\bar Q\koszul$ yield punctures.
+      Finite straight walks yield vertices on the boundary of~$\surface_{\bar Q}$, while infinite cyclic straight walks in~$\bar Q$ yield punctures~$\surface_{\bar Q}$ in~$V_{\bar Q}$.
+      We denote by~$p$ the number of infinite cyclic straight walks in~$\bar Q$.
 \item \label{item:arcs}
       The dissection~$\dissection_{\bar Q}$ has one edge for each vertex~$v \in \bar Q_0$, obtained by concatenation of the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$v = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$. We denote by~$\edgeof(v)$ the edge of~$\dissection_{\bar Q}$ corresponding to~$v$.
 \item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
-\item A similar remark holds dually for~${V\dual_{\bar Q}}$ and~${\dissection\dual\!\!_{\bar Q}}$.
-\item The number~$p$ of punctures of~$\surface_{\bar Q}$ is the number of infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$.
+\item Similar statements hold dually for~${{V\dual}\!\!_{\bar Q}}$ and~${\dissection\dual\!\!_{\bar Q}}$.
+\item The number of punctures of~$\surface_{\bar Q}$ is the number~$p + p\dual$ of infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$.
 \item \label{item:boundary}
       The number~$b$ of boundary components of~$\surface_{\bar Q}$ can be computed as follows.
       There are two natural perfect matchings whose vertices are the blossom vertices of~$\bar Q$: one is obtained by joining the endpoints of each finite straight walk of~$\bar Q$, and the other is obtained similarly from~$\bar Q \koszul$.
@@ -1006,7 +1007,7 @@ The following observations are useful for the computation of examples.
       Then the number~$b$ of boundary components of~$\surface_{\bar Q}$ is the number of connected components of~$G$.
 \item The genus of the surface~$\surface_{\bar Q}$ is
       \[
-       g = \frac{|Q_1| - |Q_0| - b - p + 2}{2},
+       g = \frac{|Q_1| - |Q_0| - b - p - p\dual + 2}{2},
       \]
       where~$b$ is the number of boundary components (see above for a way to compute~$b$) and~$p$ the number of punctures (\ie infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$).
       Indeed, $2g = 2-\chi(\surface_{\bar Q})$, where~$\chi(\surface_{\bar Q})$ is the Euler characteristic of~$\surface_{\bar Q}$.
