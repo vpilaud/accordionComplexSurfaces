@@ -680,8 +680,8 @@ By convention, we also consider that the punctures of~$V\dual$ are $\dissection$
 \begin{remark}
 In Definition~\ref{def:accordion}, observe that
 \begin{itemize}
-\item the edges of~$a$ and~$b$ of~$f$ crossed by~$\alpha$ might coincide, see ...
-\item the second condition is automatically satisfied if~$f\dual$ is not a puncture, \ie when it lies on the boundary of~$\surface$.
+\item the edges of~$a$ and~$b$ of~$f$ crossed by~$\alpha$ might coincide, see the second example in Figure~\ref{fig:accordions}.
+\item the first condition is automatically satisfied if~$f\dual$ is not a puncture, \ie when it lies on the boundary of~$\surface$.
 \end{itemize}
 \end{remark}
 
@@ -714,7 +714,7 @@ By convention, we also consider that the punctures of~$V$ are $\dissection\dual$
 \begin{definition}
 \label{def:slalomComplex}
 The \defn{$\dissection\dual$-slalom complex}~$\SC$ is the simplicial complex whose faces are the collections of pairwise non-crossing $\dissection\dual$-slaloms.
-Note that self-crossing slalom never appear in~$\SC$ by definition.
+Note that self-crossing slaloms never appear in~$\SC$ by definition.
 In contrast, no external slalom can cross another slalom, so that they appear in all facets of~$\SC$. 
 The \defn{reduced $\dissection\dual$-slalom complex}~$\RSC$ is the simplicial complex whose faces are the collections of pairwise non-crossing internal $\dissection\dual$-slaloms.
 \end{definition}
@@ -746,14 +746,14 @@ We are in one of the following cases.
 
 Case 1: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that do not share a common endpoint.
 Let~$f$ be the face of~$\dissection$ that contains the segment of~$\alpha$ between~$a$ and~$b$.
-Consider the connected component of~$f\setminus\alpha$ that do not contain~$f\dual$.
+Consider the connected component of~$f\setminus\alpha$ that does not contain~$f\dual$.
 The boundary of this component contains an edge~$c \in \dissection \setminus \{a\}$ that share a common endpoint with~$a$.
 Let~$u,v$ be the endpoints of~$c$.
-Then~$\alpha$ cuts the cells $u\dual,v\dual$ glued along~$c\dual$ into two connected component, one containing both endpoints of~$\delta$.
+Then~$\alpha$ cuts the cells $u\dual,v\dual$ glued along~$c\dual$ into two connected components, one containing both endpoints of~$\delta$.
 
 Case 2: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that share a unique common endpoint, but the region delimited by~$\alpha$,~$a$ and~$b$ is not a disk.
 Since the dissection~$\dissection$ is cellular, that region has to contain some marked point~$u \in \dissection\dual$.
-One conclude that~$\alpha$ is not a~$\dissection\dual$-slalom similarly as in the first case, by considering the component of~$u\dual \setminus \alpha$ that do not contain~$u$.
+One conclude that~$\alpha$ is not a~$\dissection\dual$-slalom similarly as in the first case, by considering the component of~$u\dual \setminus \alpha$ that does not contain~$u$.
 
 Case 3: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that share two different endpoints, and none of the two regions delimited by~$\alpha$,~$a$ and~$b$ is a disk.
 Since the dissection~$\dissection$ is cellular, both regions have to contain a puncture.
@@ -778,7 +778,7 @@ The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dual
 \end{remark}
 
 \begin{example}
-When the dissection~$\dissection$ is a classical dissection of a polygon (with no puncture) where each cell has at most one boundary edge, the dual dissection~$\dissection\dual$ is a tree.
+When the dissection~$\dissection$ is a classical dissection of a polygon (with no punctures) where each cell has at most one boundary edge, the dual dissection~$\dissection\dual$ is a tree.
 The non-kissing complex in his situation was treated in detail in~\cite{GarverMcConville, MannevillePilaud-accordion}.
 Note that even when the surface~$\surface$ is a disk, we authorize here both~$\dissection$ and~$\dissection\dual$ to have interior faces and punctures.
 \end{example}
@@ -787,7 +787,7 @@ Note that even when the surface~$\surface$ is a disk, we authorize here both~$\d
 A quick disclaimer about accordion complexes and slalom complexes of arbitrary cellular dissections.
 As stated in Proposition~\ref{prop:conditionsDualDissections}, a cellular dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
 This prevents to use the definitions given in this section.
-Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be join of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
+Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be joins of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
 \end{remark}
 
