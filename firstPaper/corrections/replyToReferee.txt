@@ -73,7 +73,7 @@ changes, which we first list.
   there in no better name available it should at least be stated clearly that
   this is not a symmetric notion.
 
-  Reply:
+  Reply: We have replaced "dances with" with "reaches for".
 
 
 * page 24 intro: ``the operation of flip''

@@ -1216,7 +1216,7 @@ Let~$\rho$ and~$\rho'$ be two strings of~$\bar Q$. The string~$\rho$ is said to
 	\item $\alpha^{-1}\rho'$ is a string of~$\bar Q$ and
 	\item $\rho$ ends in~$u$ or contains an arrow starting at~$u$ (see Figure~\ref{fig:def-attracts});
 	\end{enumerate}
-\item[(ii)] \defn{dance} with~$\rho'$ (or~$(\rho')^{-1}$) if there is some common substring~$\xi$ on top of~$\rho$ and at the bottom of~$\rho'$ satisfying the swinging arms condition explained thereafter. In this definition only, we call \defn{left and right arms} of~$\rho$ (resp.~$\rho'$) the (at most) two arrows in the string~$\rho$ (resp.~$\rho'$) incident with~$\xi$. The \defn{swinging arms condition} (as illustrated in Figure~\ref{fig: swinging arms}) is the following: 
+\item[(ii)] \defn{reach} for~$\rho'$ (or~$(\rho')^{-1}$) if there is some common substring~$\xi$ on top of~$\rho$ and at the bottom of~$\rho'$ satisfying the swinging arms condition explained thereafter. In this definition only, we call \defn{left and right arms} of~$\rho$ (resp.~$\rho'$) the (at most) two arrows in the string~$\rho$ (resp.~$\rho'$) incident with~$\xi$. The \defn{swinging arms condition} (as illustrated in Figure~\ref{fig: swinging arms}) is the following: 
 \begin{itemize}
 \item if~$\rho'$ has no left arm, then~$\rho$ has a left arm~$\alpha$ and~$\alpha^{-1}\rho'$ is a string of~$\bar Q$,
 \item if~$\rho'$ has no right arm, then~$\rho$ has a right arm~$\beta$ and~$\rho'\beta$ is a string of~$\bar Q$,
@@ -1306,7 +1306,7 @@ Let~$\rho$ and~$\rho'$ be two strings of~$\bar Q$. The string~$\rho$ is said to
 %
 \endxy
 \]
-	\caption{The string~$\rho$ dances with~$\rho'$, as in Definition~\ref{definition: dance and attract} (ii).}
+	\caption{The string~$\rho$ reaches for~$\rho'$, as in Definition~\ref{definition: dance and attract} (ii).}
 	\label{fig:def-dances}
 \end{figure}
 
@@ -1367,8 +1367,8 @@ We extend the relation of dancing or attracting to the set~$\strings^\pm_{\ge -1
 \begin{definition}
 \label{def:negativeSimpleDance}
 Let $\sigma$ be a string in $\strings^\pm(\bar Q)$ and let~$v$ be a vertex of~$\bar Q$.
-We say that the negative simple string $-v$ dances with the string $\sigma$ if~$v$ is a vertex of~$\sigma$.
-On the other hand, no almost positive string dances with the negative simple string~$-v$.
+We say that the negative simple string $-v$ reaches for the string $\sigma$ if~$v$ is a vertex of~$\sigma$.
+On the other hand, no almost positive string reaches for the negative simple string~$-v$.
 \end{definition}
 
 \begin{notation}
@@ -1394,7 +1394,7 @@ Since our notation and statement differ from those of~\cite{EiseleJanssensRaedsc
 \begin{proposition}
 \label{proposition: attract or dance and tau compatibility}
 Let~$\rho$ and~$\rho'$ be two almost positive strings for the string algebra~$A$ and let~$M(\rho)$ and~$M(\rho')$ be the associated string modules.
-Then~$\Hom{A} \big( M(\rho), \tau M(\rho') \big) \ne 0$ if and only if~$\rho$ attracts~$\rho'$ or dances with~$\rho'$.
+Then~$\Hom{A} \big( M(\rho), \tau M(\rho') \big) \ne 0$ if and only if~$\rho$ attracts~$\rho'$ or reaches for~$\rho'$.
 \end{proposition}
 
 \begin{proof}
@@ -1449,7 +1449,7 @@ By Proposition~\ref{prop:morphismsStringModules}, this implies the existence of 
     \label{fig:rho attracts rho'}
 \end{figure}
 
-Assume now that~$\rho$ dances with~$\rho'$, and let~$\xi$ be as in Definition~\ref{definition: dance and attract}.
+Assume now that~$\rho$ reaches for~$\rho'$, and let~$\xi$ be as in Definition~\ref{definition: dance and attract}.
 We distinguish four cases:
 
 \begin{enumerate}[(a)]
@@ -1482,7 +1482,7 @@ We distinguish four cases:
 %
 \endxy
 \]
-    \caption{The string~$\rho''$, when~$\rho$ dances with~$\rho'$ and~$\rho'=\xi$ as in case (a).}
+    \caption{The string~$\rho''$, when~$\rho$ reaches for~$\rho'$ and~$\rho'=\xi$ as in case (a).}
     \vspace{-.5cm}
     \label{fig:dance case a}
 \end{figure}
@@ -1512,7 +1512,7 @@ We distinguish four cases:
 %
 \endxy
 \]
-    \caption{When~$\rho$ dances with~$\rho'$ and~$\rho'$ contains a substring~$\alpha\xi\beta^{-1}$ as in case (b).}
+    \caption{When~$\rho$ reaches for~$\rho'$ and~$\rho'$ contains a substring~$\alpha\xi\beta^{-1}$ as in case (b).}
     \vspace{-.5cm}
     \label{fig:dance case b}
 \end{figure}
@@ -1563,14 +1563,14 @@ We distinguish four cases:
 %
 \endxy
 \]
-    \caption{When~$\rho$ dances with~$\rho'$ and~$\rho'=\xi\beta^{-1}\sigma$ as in case (c).}
+    \caption{When~$\rho$ reaches for~$\rho'$ and~$\rho'=\xi\beta^{-1}\sigma$ as in case (c).}
     \vspace{-.5cm}
     \label{fig:dance case c}
 \end{figure}
 
 \item If~$\rho'$ is of the form~$\sigma\alpha\xi$, then~$(\rho')^{-1}$ is as in case (c), so that~$\Hom{A} \big( M(\rho), \tau M(\rho') \big) \ne 0$.
 \end{enumerate}
-This concludes the proof that~$\Hom{A} \big( M(\rho), \tau M(\rho') \big) \ne 0$ when~$\rho$ attracts~$\rho'$ or dances with~$\rho'$.
+This concludes the proof that~$\Hom{A} \big( M(\rho), \tau M(\rho') \big) \ne 0$ when~$\rho$ attracts~$\rho'$ or reaches for~$\rho'$.
 
 \bigskip
 Conversely, assume that~$\Hom{A} \big( M(\rho), \tau M(\rho') \big) \ne 0$.
@@ -1639,7 +1639,7 @@ Since~$\rho'$ starts at~$v$ and~$\nu$ is on top of~$\rho$, we deduce that~$\rho$
     \label{fig:not tau compatible case a}
 \end{figure}
 
-\item If~$\xi=\nu$. By Lemma~\ref{lemma: xi equals nu} below and the fact that~$\xi$ is on top of~$\rho$, we have that~$\rho$ dances with~$\rho'$. 
+\item If~$\xi=\nu$. By Lemma~\ref{lemma: xi equals nu} below and the fact that~$\xi$ is on top of~$\rho$, we have that~$\rho$ reaches for~$\rho'$. 
 
 \item Assume now that~$\xi$ is a non-empty strict substring of~$\nu$. Since~$\xi$ is not all of~$\nu$, at least one cohook was added to~$\rho'$ when forming~$\rho''$. We distinguish two cases:
 
@@ -1650,7 +1650,7 @@ In that case,~$\rho'$ does not start in a deep and~$\rho''$ is of the form~$\rho
 Moreover, there is some~$0\leq i\leq r$ such that~$\nu=\alpha_i\cdots\alpha_1\alpha^{-1}\xi$.
 The proof of Lemma~\ref{lemma: xi equals nu} shows that~$\rho'$ is of the form~$\xi\beta^{-1}\sigma'$.
 Since~$\nu$ is on top of~$\rho$, we have~$\rho=\rho_1\alpha^{-1}\xi(\beta\rho_2)$ for some substrings~$\rho_1,\rho_2$ and some arrow~$\beta$.
-This shows that~$\rho$ dances with~$\rho'$ (we note that the swinging arms condition is satisfied).
+This shows that~$\rho$ reaches for~$\rho'$ (we note that the swinging arms condition is satisfied).
 
 \begin{figure}[h]
  	\capstart
@@ -1716,7 +1716,7 @@ This shows that~$\rho$ dances with~$\rho'$ (we note that the swinging arms condi
 In that case,~$\rho''$ is of the form~$\rho''=\alpha_r\cdots\alpha_1\alpha^{-1}\xi\beta\beta_1^{-1}\cdots\beta_s^{-1}$ where~$\alpha_r\cdots\alpha_1\alpha^{-1}$ and~$\beta\beta_1^{-1}\cdots\beta_s^{-1}$ are cohooks for~$\xi$.
 Then~$\rho'=\xi$ does not start nor end in a deep.
 Moreover,~$\nu$ is at the bottom of~$\rho''$ so that it contains~$\alpha^{-1}\xi\beta$.
-The string~$\rho$ also contains~$\alpha^{-1}\xi\beta$ and therefore dances with~$\xi=\rho'$.
+The string~$\rho$ also contains~$\alpha^{-1}\xi\beta$ and therefore reaches for~$\xi=\rho'$.
 
 \begin{figure}[h]
  	\capstart
@@ -1835,7 +1835,7 @@ Then~$\rho'$ has a substring of the form~$\alpha\xi\beta^{-1}$, for some arrows~
 
 \begin{corollary}
 \label{coro: stautilt complex from strings}
-The support $\tau$-tilting complex of~$\bar Q$ is isomorphic to the clique complex of the graph whose vertices are the unoriented strings of~$\bar Q$ and whose edges link two strings which do not attract nor dance with each other.
+The support $\tau$-tilting complex of~$\bar Q$ is isomorphic to the clique complex of the graph whose vertices are the unoriented strings of~$\bar Q$ and whose edges link two strings which do not attract nor reach for each other.
 \end{corollary}
 
 \begin{remark}
@@ -2616,7 +2616,7 @@ More precisely, for any string~$\sigma \in \strings^\pm(\bar Q)$ and any vertex~
 
 \begin{lemma}\label{lem: attract or dance vs kiss}
 Let~$\sigma$ and~$\sigma'$ be two strings for the gentle bound quiver~$\bar Q$.
-Then~$\sigma$ attracts~$\sigma'$ or dances with~$\sigma'$ if and only if~$\omega(\sigma)$ kisses~$\omega(\sigma')$.
+Then~$\sigma$ attracts~$\sigma'$ or reaches for~$\sigma'$ if and only if~$\omega(\sigma)$ kisses~$\omega(\sigma')$.
 \end{lemma}
 
 \begin{proof}
@@ -2683,7 +2683,7 @@ Moreover,~$\alpha_i\cdots\alpha_1$ is at the bottom of~$\omega(\sigma')$, so tha
     \label{fig: sigma attracts sigma'}
 \end{figure}
 
-Assume that~$\sigma$ dances with~$\sigma'$, and let~$\xi$ be the substring on top of~$\sigma$ and at the bottom of~$\sigma'$, as in Definition~\ref{definition: dance and attract}\,(ii).
+Assume that~$\sigma$ reaches for~$\sigma'$, and let~$\xi$ be the substring on top of~$\sigma$ and at the bottom of~$\sigma'$, as in Definition~\ref{definition: dance and attract}\,(ii).
 We distinguish three cases:
 
 \begin{enumerate}[(a)]
@@ -2703,7 +2703,7 @@ It follows that~$\omega(\sigma)$ kisses~$\omega(\sigma')$ along some substring~$
 We now assume that $\omega(\sigma)$ kisses $\omega(\sigma')$.
 Let $\xi$ be a substring which is strictly on top of $\omega(\sigma)$ and strictly at the bottom of $\omega(\sigma')$.
 Note that this implies that $\xi$ is also on top of $\sigma$ (but not necessarily strictly on top).
-It is possible to show that $\sigma$ attracts or dances with $\sigma'$ by using the same method as in the proof of Proposition~\ref{proposition: attract or dance and tau compatibility}.
+It is possible to show that $\sigma$ attracts or reaches for $\sigma'$ by using the same method as in the proof of Proposition~\ref{proposition: attract or dance and tau compatibility}.
 However, we choose an alternative proof, showing instead that $\Hom{A} \big( M(\sigma), \tau M(\sigma') \big) \ne 0$, which implies the result by Proposition~\ref{proposition: attract or dance and tau compatibility}. 
 Write $\omega(\sigma')=\alpha_r \cdots \alpha_1 \alpha^{-1} \sigma' \beta \beta_1^{-1} \cdots \beta_s^{-1}$ where $r,s\geq 0$, and where if $r\geq 1$, $\alpha_r$ is a blossoming arrow and $\alpha_1,\cdots,\alpha_{r-1},\alpha\in Q_1$ while if $r=0$ $\alpha$ is a blossoming arrow; and similarly for $\beta\beta_1^{-1}\cdots\beta_s^{-1}$.
 
@@ -2810,7 +2810,7 @@ It is thus at the bottom of $_{h^{-1}}(\sigma')_{h^{-1}}$ and this gives a non-z
 %
 \endxy
 \]
-    \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ dances with~$\sigma'$: case (a).}
+    \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ reaches for~$\sigma'$: case (a).}
     \vspace{1cm}
     \label{fig: dance case a}
 \end{figure}
@@ -2872,7 +2872,7 @@ It is thus at the bottom of $_{h^{-1}}(\sigma')_{h^{-1}}$ and this gives a non-z
 %
 \endxy
 \]
-    \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ dances with~$\sigma'$: case (b).}
+    \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ reaches for~$\sigma'$: case (b).}
     \vspace{1cm}
     \label{fig: dance case b}
 \end{figure}
@@ -2935,7 +2935,7 @@ It is thus at the bottom of $_{h^{-1}}(\sigma')_{h^{-1}}$ and this gives a non-z
 %
 \endxy
 \]
-    \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ dances with~$\sigma'$: case (c).}
+    \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ reaches for~$\sigma'$: case (c).}
     \label{fig: dance case c}
 \end{figure}
 
