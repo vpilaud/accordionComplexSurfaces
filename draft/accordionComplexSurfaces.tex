@@ -998,7 +998,7 @@ The following observations are useful for the computation of examples.
 \item \label{item:arcs}
       The dissection~$\dissection_{\bar Q}$ has one edge for each vertex~$v \in \bar Q_0$, obtained by concatenation of the sides~$\Enrt{\alpha} = \Enrs{\beta}$ and~$\Enrt{\alpha'} = \Enrs{\beta'}$ where~$v = t(\alpha) = s(\beta) = t(\alpha') = s(\beta')$, $\alpha\beta \notin I$ and~$\alpha'\beta' \notin I$. We denote by~$\edgeof(v)$ the edge of~$\dissection_{\bar Q}$ corresponding to~$v$.
 \item The dissection~$\dissection_{\bar Q}$ has one $\ell$-cell for each straight walk of length~$\ell$ in~$\bar Q\koszul$.
-\item Similar statements hold dually for~${{V\dual}\!\!_{\bar Q}}$ and~${\dissection\dual\!\!_{\bar Q}}$.
+\item Similar statements hold dually for~${{V\dual}\!\!_{\bar Q}}$ and~${\dissection\dual\!\!_{\bar Q}}$, and the notations~$p\dual$ and~$\dualedgeof(v)$ are defined similarly.
 \item The number of punctures of~$\surface_{\bar Q}$ is the number~$p + p\dual$ of infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$.
 \item \label{item:boundary}
       The number~$b$ of boundary components of~$\surface_{\bar Q}$ can be computed as follows.
@@ -1010,9 +1010,9 @@ The following observations are useful for the computation of examples.
        g = \frac{|Q_1| - |Q_0| - b - p - p\dual + 2}{2},
       \]
       where~$b$ is the number of boundary components (see above for a way to compute~$b$) and~$p$ the number of punctures (\ie infinite straight walks in~$\bar Q$ and in~$\bar Q\koszul$).
-      Indeed, $2g = 2-\chi(\surface_{\bar Q})$, where~$\chi(\surface_{\bar Q})$ is the Euler characteristic of~$\surface_{\bar Q}$.
-      The dissection~$\dissection$ provides a cellular decomposition of~$\surface_{\bar Q}$ on which we fill the boundary components and the punctures with disks.  
-      The number of faces of this cellular decomposition is~$b+p$, its number of edges is~$|Q_0|$ and its number of vertices is the number of finite straight walks in~$\bar Q$, which is equal to~$2|Q_0| - |Q_1|$.
+      Indeed, ${2g = 2-\chi(\surface_{\bar Q})}$, where~$\chi(\surface_{\bar Q})$ is the Euler characteristic of~$\surface_{\bar Q}$.
+      The dissection~$\dissection$ provides a cellular decomposition of~$\surface_{\bar Q}$ on which we fill the boundary components with disks.  
+      The number of faces of this cellular decomposition is~$b + p\dual$, its number of edges is~$|Q_0|$ and its number of vertices is the number of straight walks in~$\bar Q$, which is equal to~$2|Q_0| - |Q_1| + p$.
       The above formula for~$g$ follows.
 \end{enumerate}
 \end{remark}
@@ -1035,7 +1035,7 @@ while here, it will be used as a model for walks in~$\bar Q$ ($\dissection_{\bar
 
 We conclude this section with five families of examples that illustrate the computation of~$\surface_{\bar Q}$.
 
-\begin{example}[Cambrian paths]
+\begin{example}
 \label{exm:CambrianPath}
 Consider a \defn{Cambrian quiver}, that is any orientation of a line with no relations (\aka type~$A$ quiver).
 Two such quivers are represented in \fref{fig:CambrianPathsQuivers}.
