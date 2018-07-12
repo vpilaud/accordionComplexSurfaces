@@ -794,7 +794,7 @@ See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the
 \section{Non-kissing versus non-crossing}
 
 In this section, we show that non-kissing and non-crossing complexes actually coincide.
-Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection, \dissection\dual}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
+Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection}]$.
 Conversely, any locally gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual_{\bar Q}}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
 In fact, we show that the accordion, slalom, and non-kissing complexes can all be pictured in a unique way on the surface.
 Interestingly, via the correspondence between pairs of dual cellular dissections and locally gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates into the Koszul duality between the locally gentle algebras of~$\bar Q$ and~$\bar Q\koszul$.
@@ -832,7 +832,7 @@ The blossoming quiver~$\bar Q_\dissection\blossom$ of the quiver~$\bar Q_\dissec
 
 \begin{lemma}
 \label{lemm:quiverOfDissectionIsLocallyGentle}
-The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver
+The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver.
 \end{lemma}
 \begin{proof}
 Each arc~$a$ has two endpoints, and at each endpoint there is at most one arc coming immediately after~$a$ in the clockwise order, and at most one coming immediately before~$a$.
@@ -850,7 +850,7 @@ The \defn{Koszul dual} of a locally gentle bound quiver~$\bar Q = (Q,I)$ is the 
 \end{itemize}
 \end{definition}
 It is seen in \cite{BessenrodtHolm} that the (ungraded version of the) Koszul dual of a locally gentle algebra~$kQ/I$ is isomorphic to~$kQ\koszul/I\koszul$.
-Note that~$\bar Q\koszul$ is gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
+Note that~$\bar Q\koszul$ is locally gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
 Examples are represented on \fref{fig:koszulQuivers}.
 
 
@@ -1254,7 +1254,7 @@ It is then clear that~$\omega$ and~$\omega'$ kiss if and only if~$\curveof(\omeg
 The non-kissing and non-crossing complexes are isomorphic:
 \begin{itemize}
 \item for any locally gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$,% therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the slalom complex~$\SC[{\dissection_{\bar Q}}\dual]$.
-\item for any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
+\item for any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection}]$.
 \end{itemize}
 \end{theorem}
 
