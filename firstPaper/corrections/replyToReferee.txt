@@ -1,5 +1,8 @@
 We thank the referee for their helpful comments.  We have tried to implement them
-all.  Below are our replies to each comment.
+all.  Below are our replies to each comment.  We have also made a few additional
+changes, which we first list.
+
+(a) In Notation 1.50, the equalities were wrong and have been corrected.
 
 
 * In the introduction, and in the introductory paragraphs of several sections
