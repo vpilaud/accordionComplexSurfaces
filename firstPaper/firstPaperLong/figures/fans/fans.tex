@@ -1,0 +1,108 @@
+\documentclass{amsart}
+
+\usepackage{tikz}\usetikzlibrary{trees,snakes,shapes,arrows,matrix,calc,fixedpointarithmetic}
+\usepackage{pgfplots}
+\usepgfplotslibrary{polar}
+\usepackage{xifthen, fp}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0pt}
+
+\begin{document}
+
+\pgfmathdeclarefunction{thetaxy}{2}{\pgfmathparse{120+acos(#1/sqrt((#1)^2+(#2)^2))*(-1)^(#2 < 0)}}
+\pgfmathdeclarefunction{thetaz}{3}{\pgfmathparse{acos(#3/sqrt((#1)^2+(#2)^2+(#3)^2))}}
+\pgfmathdeclarefunction{argumentStereographicProjection}{3}{\pgfmathparse{sin(thetaz(#1,#2,#3))/(1-cos(thetaz(#1,#2,#3)))}}
+
+\newcommand{\stereographicArc}[6]{
+	% coordinates and angles on u
+	\pgfmathsetmacro{\xu}{(-#1+#2)/sqrt(2)}
+	\pgfmathsetmacro{\yu}{(-#1-#2+2*#3)/sqrt(6)}
+	\pgfmathsetmacro{\zu}{(-#1-#2-#3)/sqrt(3)}
+	% coordinates and angles on v
+	\pgfmathsetmacro{\xv}{(-#4+#5)/sqrt(2)}
+	\pgfmathsetmacro{\yv}{(-#4-#5+2*#6)/sqrt(6)}
+	\pgfmathsetmacro{\zv}{(-#4-#5-#6)/sqrt(3)}
+	% take care central point
+	\pgfmathsetmacro{\problemCenteru}{and(\xu==0,\yu==0)}
+	\pgfmathsetmacro{\xub}{ifthenelse(\problemCenteru==1,\xv,\xu)}
+	\pgfmathsetmacro{\yub}{ifthenelse(\problemCenteru==1,\yv,\yu)}
+	\pgfmathsetmacro{\problemCenterv}{and(\xv==0,\yv==0)}
+	\pgfmathsetmacro{\xvb}{ifthenelse(\problemCenterv==1,\xu,\xv)}
+	\pgfmathsetmacro{\yvb}{ifthenelse(\problemCenterv==1,\yu,\yv)}
+	% plot arc
+	\addplot+[black, thick, solid, no markers, samples=33, domain=0:1] ({thetaxy((1-x)*\xub+x*\xvb, (1-x)*\yub+x*\yvb)}, {argumentStereographicProjection((1-x)*\xu+x*\xv, (1-x)*\yu+x*\yv, (1-x)*\zu+x*\zv)}) ;
+}
+
+\newcommand{\stereographicFan}[1]{
+	\begin{tikzpicture}[fixed point arithmetic, scale = .7]
+		\begin{polaraxis}[fixed point arithmetic, axis lines=none]
+			\foreach \xa/\ya/\za/\xb/\yb/\zb in {#1} {
+				\stereographicArc{\xa}{\ya}{\za}{\xb}{\yb}{\zb}
+			}
+		\end{polaraxis}
+	\end{tikzpicture}
+}
+
+\newcommand{\rectilinearArc}[6]{
+	% coordinates and angles on u
+	\pgfmathsetmacro{\xu}{(-#1+#2)/sqrt(2)}
+	\pgfmathsetmacro{\yu}{(-#1-#2+2*#3)/sqrt(6)}
+	\pgfmathsetmacro{\zu}{(-#1-#2-#3)/sqrt(3)}
+	% coordinates and angles on v
+	\pgfmathsetmacro{\xv}{(-#4+#5)/sqrt(2)}
+	\pgfmathsetmacro{\yv}{(-#4-#5+2*#6)/sqrt(6)}
+	\pgfmathsetmacro{\zv}{(-#4-#5-#6)/sqrt(3)}
+	% plot arc
+	\addplot+[black, thick, solid, no markers] coordinates {(-{cos(thetaxy(\xu,\yu)) * argumentStereographicProjection(\xu,\yu,\zu)}, -{sin(thetaxy(\xu,\yu)) * argumentStereographicProjection(\xu,\yu,\zu)}) (-{cos(thetaxy(\xv,\yv)) * argumentStereographicProjection(\xv,\yv,\zv)}, -{sin(thetaxy(\xv,\yv)) * argumentStereographicProjection(\xv,\yv,\zv)})} ;
+}
+
+\newcommand{\rectilinearFan}[1]{
+	\begin{tikzpicture}[fixed point arithmetic, scale=.6]
+		\begin{axis}[fixed point arithmetic, axis lines=none]
+			\foreach \xa/\ya/\za/\xb/\yb/\zb in {#1} {
+				\rectilinearArc{\xa}{\ya}{\za}{\xb}{\yb}{\zb}
+			}
+		\end{axis}
+	\end{tikzpicture}
+}
+
+\newcommand{\bothFans}[1]{
+	\stereographicFan{#1}
+	\rectilinearFan{#1}
+}
+
+\setlength{\parindent}{0pt}
+
+% g-vector fans
+
+%% fan triangulation
+\stereographicFan{-1/0/0/0/-1/0, -1/0/0/0/0/-1, 0/-1/0/0/0/-1, -1/0/0/0/0/1, -1/0/0/0/1/0, -1/0/0/0/1/-1, 0/-1/0/0/0/1, 0/-1/0/1/-1/0, 0/0/-1/0/1/-1, 0/0/-1/1/0/-1, 0/0/-1/1/-1/0, 0/0/1/0/1/0, 0/0/1/1/-1/0, 0/0/1/1/0/0, 0/1/-1/0/1/0, 0/1/-1/1/0/-1, 0/1/-1/1/0/0, 1/-1/0/1/0/-1, 1/-1/0/1/0/0, 0/1/0/1/0/0, 1/0/-1/1/0/0}
+%% snake triangulation
+\stereographicFan{-1/0/0/0/-1/0, -1/0/0/0/0/-1, 0/-1/0/0/0/-1, -1/0/0/0/0/1, -1/0/0/0/1/0, -1/0/0/0/-1/1, 0/-1/0/0/-1/1, 0/-1/0/1/-1/0, 0/0/-1/0/1/0, 0/0/-1/1/0/0, 0/0/-1/1/-1/0, 1/0/0/0/1/0, 1/0/0/0/0/1, 0/1/0/0/0/1, 1/0/0/1/-1/0, 1/0/0/1/-1/1, 0/0/1/0/-1/1, 0/0/1/1/-1/1, 1/-1/0/0/-1/1, 1/-1/0/1/-1/1, 0/-1/1/1/-1/1}
+%% cyclic triangulation
+\stereographicFan{-1/0/0/0/-1/0, -1/0/0/0/0/-1, 0/-1/0/0/0/-1, 1/0/0/0/1/0, 1/0/0/0/0/1, 0/1/0/0/0/1, -1/0/0/0/1/0, 0/0/-1/1/0/0, 0/-1/0/0/0/1, -1/0/0/0/1/-1, -1/0/0/-1/0/1, 0/-1/0/1/-1/0, 0/-1/0/-1/0/1, 0/0/-1/1/-1/0, 0/0/-1/0/1/-1, 1/0/0/1/-1/0, 1/0/0/0/1/-1, 0/1/0/0/1/-1, 0/1/0/-1/0/1, 0/0/1/1/-1/0, 0/0/1/-1/0/1}
+%% dissection
+\stereographicFan{-1/0/0/0/-1/0, -1/0/0/0/0/-1, 0/-1/0/0/0/-1, -1/0/0/0/1/0, -1/0/0/0/0/1, -1/0/0/0/1/-1, 0/-1/0/0/0/1, 0/-1/0/1/-1/0, 0/0/-1/1/0/0, 0/0/-1/0/1/-1, 0/0/-1/1/-1/0, 1/0/0/1/-1/0, 1/0/0/0/1/-1, 1/0/0/0/1/0, 1/0/0/0/0/1, 0/1/0/0/0/1, 0/1/0/0/1/-1, 0/0/1/1/-1/0}
+%% toto
+\stereographicFan{0/-1/0/1/-1/0, 0/0/-1/1/0/-1, 0/1/0/0/0/-1, -1/0/0/0/-1/1, 1/-1/0/1/-1/1, 0/1/0/-1/0/0, 1/-1/0/1/-1/-1, 0/-1/0/0/-1/1, 1/0/0/1/-1/0, 1/0/0/1/-1/1, 0/-1/0/1/-1/-1, 0/0/-1/1/-1/-1, 0/0/1/0/-1/1, 1/0/0/1/0/-1, 0/0/1/1/-1/1, 1/0/-1/1/-1/-1, 0/-1/1/1/-1/0, -1/0/0/0/0/-1, -1/0/0/0/-1/0, 0/0/1/-1/0/0, 1/0/0/0/0/1, 0/1/0/1/0/-1, 0/1/0/0/0/1, 1/0/-1/1/-1/0, 0/-1/0/0/0/-1, 0/-1/1/1/-1/1, 1/0/0/0/1/0}
+%% tata
+\stereographicFan{0/0/-1/-1/1/0, -1/0/0/-1/1/0, 0/1/0/0/1/-1, 0/0/-1/1/0/-1, 1/0/0/0/-1/0, 0/0/1/-1/0/1, 1/0/-1/0/1/-1, 1/0/0/0/-1/1, -1/0/1/0/-1/1, -1/0/0/-1/0/1, 0/-1/0/0/-1/1, 0/-1/0/1/0/-1, 0/0/1/-1/1/0, 1/0/0/1/0/-1, -1/1/0/-1/0/1, -1/0/0/0/-1/1, -1/0/0/0/0/-1, -1/0/0/0/-1/0, 0/0/-1/0/1/-1, 1/0/0/0/0/1, 0/1/0/1/0/-1, 0/0/1/0/-1/1, 0/1/0/0/0/1, 0/1/0/-1/1/0, 1/0/0/0/1/0, -1/1/0/0/1/-1, 0/-1/0/0/0/-1}
+%% titi
+\stereographicFan{0/0/-1/-1/1/0, -1/0/0/-1/1/0, 0/-1/0/0/-1/1, 0/1/0/0/0/1, 0/1/0/0/0/-1, 0/0/1/-1/0/1, -1/0/1/0/-1/1, 0/1/0/-1/1/0, -1/0/0/-1/0/1, 1/0/0/0/-1/1, 0/0/1/-1/1/0, 1/0/0/1/0/-1, 0/0/1/0/-1/1, -1/0/0/0/-1/0, -1/0/0/0/0/-1, -1/0/0/0/-1/1, -1/1/0/-1/0/1, 1/0/0/0/0/1, 0/1/0/1/0/-1, 0/0/-1/1/0/-1, 0/-1/0/1/0/-1, 0/-1/0/0/0/-1, 1/0/0/0/-1/0, 1/0/0/0/1/0}
+%% tutu
+% the infinite one??
+
+%% d-vector fans
+%
+%%% fan triangulation
+%\stereographicFan{1/1/1/0/1/1, 1/1/1/1/1/0, 1/1/1/1/0/0, 1/1/1/0/1/0, 1/1/1/0/0/1, 0/0/-1/1/1/0, 0/0/-1/0/-1/0, 0/0/-1/-1/0/0, 0/0/-1/1/0/0, 0/0/-1/0/1/0, 0/1/1/-1/0/0, 0/1/1/0/1/0, 0/1/1/0/0/1, 1/1/0/1/0/0, 1/1/0/0/1/0, 0/-1/0/-1/0/0, 0/-1/0/1/0/0, 0/-1/0/0/0/1, -1/0/0/0/1/0, -1/0/0/0/0/1, 1/0/0/0/0/1}
+%%% snake triangulation
+%\stereographicFan{0/1/1/1/1/1, 0/1/1/0/1/0, 0/1/1/-1/0/0, 0/1/1/1/1/0, 0/1/1/0/0/1, 0/0/-1/0/1/0, 0/0/-1/0/-1/0, 0/0/-1/1/0/0, 0/0/-1/-1/0/0, 0/0/-1/1/1/0, 1/1/1/1/0/0, 1/1/1/1/1/0, 1/1/1/0/0/1, 0/1/0/-1/0/0, 0/1/0/1/1/0, 0/-1/0/1/0/0, 0/-1/0/-1/0/0, 0/-1/0/0/0/1, 1/0/0/1/1/0, 1/0/0/0/0/1, -1/0/0/0/0/1}
+%%% cyclic triangulation
+%\stereographicFan{1/0/1/0/0/1, 1/0/1/1/0/0, 1/0/1/1/1/0, 1/0/1/0/-1/0, 1/0/1/0/1/1, 0/0/-1/1/0/0, 0/0/-1/0/1/0, 0/0/-1/-1/0/0, 0/0/-1/1/1/0, 0/0/-1/0/-1/0, 0/0/1/-1/0/0, 0/0/1/0/-1/0, 0/0/1/0/1/1, 1/0/0/1/1/0, 1/0/0/0/-1/0, 0/1/0/-1/0/0, 0/1/0/1/1/0, 0/1/0/0/1/1, -1/0/0/0/-1/0, -1/0/0/0/1/1, 1/1/0/0/1/1}
+%%% dissection
+%\stereographicFan{-1/0/0/0/-1/0, -1/0/0/0/0/-1, 0/-1/0/0/0/-1, -1/0/0/0/1/0, -1/0/0/0/0/1, -1/0/0/0/1/1, 0/-1/0/1/0/0, 0/-1/0/0/0/1, 0/0/-1/1/0/0, 0/0/-1/0/1/0, 0/0/-1/1/1/0, 1/0/0/0/0/1, 1/0/0/1/1/0, 0/1/0/1/1/0, 0/1/0/0/1/1, 0/0/1/1/1/0, 0/0/1/0/1/1, 1/1/0/0/1/1}
+%
+
+\end{document}
