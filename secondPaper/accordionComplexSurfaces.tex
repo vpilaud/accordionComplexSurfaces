@@ -355,6 +355,7 @@ We thank Sibylle Schroll for discussions on geometric models for gentle algebras
 
 \section{Non-kissing complex}\label{sec:nonKissingComplex}
 
+\enlargethispage{.2cm}
 We first quickly review the definition of the non-kissing complex of a gentle bound quiver following the presentation of~\cite{PaluPilaudPlamondon} and extend it to locally gentle bound quivers.
 
 \subsection{Locally gentle bound quivers and their blossoming quivers}
@@ -547,6 +548,7 @@ The \defn{reduced non-kissing complex}~$\RNKC$ is the simplicial complex whose f
 
 \section{Accordion complex, slalom complex, and non-crossing complex}\label{sec:accordionSlalomNonCrossingComplexes}
 
+\enlargethispage{.1cm}
 We now temporarily switch topic and present the accordion complex and the slalom complex of a pair of dual dissections of an orientable surface.
 The latter is directly inspired from the case of a disk treated in~\cite{GarverMcConville}, while the former is obtained by duality as was already observed in the case of a disk in~\cite{MannevillePilaud-accordion}.
 In the general case of arbitrary orientable surfaces, the correspondence between accordions and slaloms requires a little more attention and is treated in Section~\ref{subsec:accordionsVSSlaloms}.
@@ -644,6 +646,7 @@ See \eg Figures~\ref{fig:accordions} and~\ref{fig:slaloms} where the blossom poi
 
 \subsection{Accordion complex and slalom complex}
 
+\enlargethispage{.1cm}
 Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points on the boundary of~$\surface$.
 %
 %\begin{definition}
@@ -698,6 +701,7 @@ In contrast, no external accordion can cross another accordion, so that they app
 The \defn{reduced $\dissection$-accordion complex}~$\RAC$ is the simplicial complex whose faces are the collections of pairwise non-crossing internal $\dissection$-accordions.
 \end{definition}
 
+\enlargethispage{.3cm}
 The following definition generalizes the one from~\cite{GarverMcConville} for the case where~$\bar\surface$ is a disk.
 
 \begin{definition}
@@ -753,9 +757,9 @@ We are in one of the following cases.
 Case 1: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that do not share a common endpoint.
 Let~$f$ be the face of~$\dissection$ that contains the segment of~$\alpha$ between~$a$ and~$b$.
 Consider the connected component of~$f\setminus\alpha$ that does not contain~$f\dual$.
-The boundary of this component contains an edge~$c \in \dissection \setminus \{a\}$ that share a common endpoint with~$a$.
-Let~$u,v$ be the endpoints of~$c$.
-Then~$\alpha$ cuts the cells $u\dual,v\dual$ glued along~$c\dual$ into two connected components, one containing both endpoints of~$\delta$.
+The boundary of this component contains an edge~$c \in \dissection \setminus \{a\}$ that shares a common endpoint with~$a$.
+Let~$u,v$ be the endpoints~of~$c$.
+Then~$\alpha$ cuts the cells $u\dual,v\dual$ glued along~$c\dual$ into two connected components, one containing both~endpoints~of~$\delta$.
 
 Case 2: The curve~$\alpha$ consecutively crosses two edges~$a$ and~$b$ of~$\dissection$ that share a unique common endpoint, but the region delimited by~$\alpha$,~$a$ and~$b$ is not a disk.
 Since the dissection~$\dissection$ is cellular, that region has to contain some marked point~$u \in \dissection\dual$.
@@ -878,7 +882,7 @@ The bound quivers~$\bar Q_{\dissection}$ and~$\bar Q_{\dissection\dual}$ are Kos
 
 \begin{proof}
 The duality provides a bijection~$a\in (Q_\dissection)_0\mapsto a\dual\in (Q_{\dissection\dual})_0$, and also induces a bijection~${\alpha \in (Q_\dissection)_1 \mapsto \alpha\dual \in (Q_{\dissection\dual})_1}$ with~$s(\alpha\dual) = t(\alpha)\dual$ and~$t(\alpha\dual) = s(\alpha)\dual$.
- Moreover, for any two composable arrows~$\alpha,\beta\in(Q_\dissection)_0$, we have~$\alpha\beta\in I_\dissection$ if and only if~$s(\alpha),t(\alpha),t(\beta)$ are three consecutive edges of a~$\dissection$-cell~$f$, if and only if~$s(\alpha)\dual,t(\alpha)\dual,t(\beta)\dual$ are three consecutive arcs in~$\dissection\dual$ ending in~$f\dual$, if and only if~$\beta\dual\alpha\dual\notin I_{\dissection\dual}$.
+Moreover, for any two composable arrows~$\alpha,\beta\in(Q_\dissection)_0$, we have~$\alpha\beta\in I_\dissection$ if and only if~$s(\alpha),t(\alpha),t(\beta)$ are three consecutive edges of a~$\dissection$-cell~$f$, if and only if~$s(\alpha)\dual,t(\alpha)\dual,t(\beta)\dual$ are three consecutive edges in~$\dissection\dual$ ending in~$f\dual$, if and only if~$\beta\dual\alpha\dual\notin I_{\dissection\dual}$.
 \end{proof}
 
 \subsection{The surface of a locally gentle bound quiver}
@@ -946,6 +950,7 @@ We could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
 \end{itemize}
 \end{remark}
 
+\enlargethispage{-.4cm}
 The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows~$\surface_{\bar Q}$ with two disjoint sets~$V_{\bar Q}$ and~${{V\dual}\!\!_{\bar Q}}$ of marked points and two dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual\!\!_{\bar Q}}$ defined as follows.
 
 \begin{definition}
@@ -1101,7 +1106,6 @@ Consider the family of \defn{double path quivers} indicated in \fref{fig:doubleP
 	\label{fig:doublePathsQuivers}
 \end{figure}
 
-\enlargethispage{.2cm}
 We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
@@ -1281,11 +1285,10 @@ We have seen in Definition~\ref{def:straightBending} that each vertex~$a$ of~$Q$
 The set of all such walks forms the \defn{peak facet}~$\set{a_\peak}{a \in Q_0}$ (resp.~the \defn{deep facet}~$\set{a_\deep}{a \in Q_0}$) of the non-kissing complex~$\RNKC$.
 As an example of Theorem~\ref{thm:complexesCoincide}, let us now describe the corresponding non-crossing facets of~$\RNCC[\dissection_{\bar Q}, {{\dissection\dual}\!\!_{\bar Q}}]$.
 
-
-For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious{v}$ (resp.~$\vnext{v}$) the blossom vertex previous (resp.~next) to~$v$ when walking along  the boundary of~$\surface$ while keeping it on the right.
+%For a vertex~$v \in V$ on the boundary of~$\surface$, we denote by~$\vprevious{v}$ (resp.~$\vnext{v}$) the blossom vertex previous (resp.~next) to~$v$ when walking along  the boundary of~$\surface$ while keeping it on the right.
 For an edge~$a$ of~$\dissection$, we denote by~$\vprevious{a}$ (resp.~$\vnext{a}$) the curve obtained by moving each endpoint~$v$ of~$a$ as follows:
 \begin{itemize}
-\item if~$v$ is on the boundary of~$\surface$, then move (continuously) $v$ along the boundary of~$\surface$ until it reaches~$\vprevious{v}$ (resp.~$\vnext{v}$),
+\item if~$v$ is on the boundary of~$\surface$, then move (continuously) $v$ until it reaches the following blossom vertex along the boundary of~$\surface$ while keeping the boundary of~$\surface$ on the right,
 \item if~$v$ is a puncture, then rotate around~$v$ in counterclockwise (resp.~clockwise) direction.
 \end{itemize}
 Examples are illustrated in \fref{fig:peakDeep}.
@@ -1334,14 +1337,14 @@ The \defn{countercurrent order at~$\alpha$} is defined by~$\mu_\star \prec_\alph
 \end{definition}
 
 \begin{remark}
- We note that, since the walks~$\mu$ and~$\nu$ are non-kissing, if~$\mu_\star$ leaves~$\sigma$ on both sides, then is enters and exits~$\sigma$ in the same direction, so that Definition~\ref{def:orderForWalks} is coherent.
+Since the walks~$\mu$ and~$\nu$ are non-kissing, if~$\mu_\star$ leaves~$\sigma$ on both sides, then is enters and exits~$\sigma$ in the same direction, so that Definition~\ref{def:orderForWalks} is coherent.
 \end{remark}
 
 
 \begin{remark}
 \label{rem:countercurrentOrderOnSurface}
 Using Theorem \ref{thm:complexesCoincide}, we can translate the definition of the countercurrent order~$\prec_\alpha$ to the language of~$\dissection$-accordions (resp.~of~$\dissection\dual$-slaloms).
-An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point~$v$ between two arcs of~$\dissection$ (resp.~at a point~$f\dual$,~$v\in f$, between two edges of~$\dissection\dual$).
+An arrow~$\alpha$ in~$\bar Q\blossom$ corresponds to an angle at a point~$v$ between two edges of~$\dissection$ (resp.~at a point~$f\dual$ between two edges of~$\dissection\dual$).
 Two distinct non-kissing walks~$\mu_\star, \nu_\star$ marked at~$\alpha$ in~$\bar Q$ correspond to two distinct non-crossing~$\dissection$-accordions (resp.~$\dissection\dual$-slaloms)~$\gamma$ and~$\delta$ passing in front of this angle.
 Then~$\gamma \prec_\alpha \delta$ if~$\gamma$ passes closer to~$v$ (resp.~further to~$f\dual$) than~$\delta$ does.
 These interpretations of~$\prec_\alpha$ on the surface where already considered in the case of the disk in~\cite{GarverMcConville, MannevillePilaud-accordion}.
@@ -1468,7 +1471,7 @@ There is a bound on the number of elements of a finite face of~$\NKC$.
 \end{lemma}
 
 \begin{proof}[Combinatorial proof]
-By Lemma~\ref{lem:ExistenceOfDistinguishedArrows}, the number of walks in a finite face of~$\NKC$ is bounded by~$|Q_1\blossom|+p$, where~$p$ is the number of infinite straight walks (i.e. the number of primitive oriented cycles in~$Q$).
+By Lemma~\ref{lem:ExistenceOfDistinguishedArrows}, the number of walks in a finite face of~$\NKC$ is bounded by~$|Q_1\blossom|+p$, where~$p$ is the number of infinite straight walks (\ie the number of primitive oriented cycles in~$Q$).
 
 \para{Geometric proof}
 Let~$F$ be a face of the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual\!\!_{\bar Q}}]$.
@@ -1494,9 +1497,9 @@ The reduced non-kissing complex~$\RNKC$ and the reduced non-crossing complex~$\R
 The non-kissing complex~$\NKC$ and the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual\!\!_{\bar Q}}]$ are pure of dimension~$3|Q_0| - |Q_1| + p$ where~$p$ is the number of primitive oriented cycles in~$\bar Q$ or equivalently the number of punctures in~$V_{\bar Q}$.
 \end{proposition}
 
-Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Cor.~2.27]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
+Note that Proposition \ref{prop:purity} was proved for~$\NKC$ in \cite[Cor.~2.29]{PaluPilaudPlamondon} in the case where~$kQ/I$ is finite-dimensional.
 Note also that, by Theorem \ref{thm:complexesCoincide} above,~$\NKC$ and~$\NCC[\dissection_{\bar Q}, {\dissection\dual\!\!_{\bar Q}}]$ coincide, so it suffices to prove the statement for one of them.
-The following definition from \cite[Def.~2.23]{PaluPilaudPlamondon} extends to the setting of locally gentle algebras.
+The following definition from \cite[Def.~2.25]{PaluPilaudPlamondon} extends to the setting of locally gentle algebras.
 
 \begin{definition}
 \label{def:distinguishedWalksAndArrows}
@@ -1516,7 +1519,7 @@ We use this definition to prove the following statement.
 
 \begin{lemma}
 \label{lem:walksThroughcycles}
-For any oriented cycle~$c$ in~$Q$ with~$c, c^2\notin I$, any maximal non-kissing face contains a walk of the form~$\sigma c^{\varepsilon\infty}$, for some~$\varepsilon\in\{\pm1\}$ and some substring~$\sigma$ distinct from~$^{\varepsilon\infty}c$ (i.e. the walk is not an infinite straight walk).
+For any oriented cycle~$c$ in~$Q$ with~$c, c^2\notin I$, any maximal non-kissing face contains a walk of the form~$\sigma c^{\varepsilon\infty}$, for some~$\varepsilon\in\{\pm1\}$ and some substring~$\sigma$ distinct from~$^{\varepsilon\infty}c$ (\ie the walk is not an infinite straight walk).
 \end{lemma}
 
 \begin{proof}[Combinatorial proof]
@@ -1564,7 +1567,7 @@ Then~$\gamma$ is compatible with all curves in~$F$, a contradiction.
 Thus~$F$ contains a curve going to the puncture.
 \end{proof}
 
-The following result extends \cite[Prop.~2.26]{PaluPilaudPlamondon} to the case of locally gentle algebras.
+The following result extends \cite[Prop.~2.28]{PaluPilaudPlamondon} to the case of locally gentle algebras.
 
 \begin{proposition}
 \label{prop:numberOfDistinguishedArrows}
@@ -1577,7 +1580,7 @@ In a non-kissing facet~$F$ of~$\NKC$,
 \end{proposition}
 
 \begin{proof}
-The proof of \cite[Prop.~2.26]{PaluPilaudPlamondon} applies here to show that each walk in the non-kissing facet~$F$ has at most one distinguished arrow in each direction.
+The proof of \cite[Prop.~2.28]{PaluPilaudPlamondon} applies here to show that each walk in the non-kissing facet~$F$ has at most one distinguished arrow in each direction.
 Lemma~\ref{lem:ExistenceOfDistinguishedArrows} therefore shows the first two points.
 Finally, Lemma~\ref{lem:walksThroughcycles} shows the last point.
 \end{proof}
@@ -1585,7 +1588,7 @@ Finally, Lemma~\ref{lem:walksThroughcycles} shows the last point.
 We can now prove the purity result.
 
 \begin{proof}[Proof of Proposition \ref{prop:purity}.]
-The proof follows that of~\cite[Cor.~2.27]{PaluPilaudPlamondon}.
+The proof follows that of~\cite[Cor.~2.29]{PaluPilaudPlamondon}.
 Let~$b$ denote the number of bending walks, $s$ the number of finite straight walks, and $p$ the number of infinite straight walks in a non-kissing facet~$F$ of~$\NKC$.
 Since each finite straight walk uses two blossom arrows, we have~$s = 2|Q_0|-|Q_1|$ (see Remark~\ref{rem:sizeBlossomingQuiver}).
 Moreover, the infinite straight walks are just the primitive oriented cycles in~$\bar Q$.
@@ -1600,7 +1603,7 @@ from which we derive that~$b = |Q_0|$ and~$b+s+p = 3|Q_0|-|Q_1|+p$.
 \subsection{Thinness of the non-crossing and non-kissing complexes, mutation}
 
 A simplicial complex is \defn{thin} if each of its codimension~$1$ faces is contained in exaclty two facets.
-We state the following results, which generalize \cite[Prop.~2.31 \& Cor.~2.33]{PaluPilaudPlamondon}, whose proofs apply without change.
+We state the following results, which generalize \cite[Prop.~2.33 \& Cor.~2.35]{PaluPilaudPlamondon}, whose proofs apply without change.
 
 \begin{proposition}
 \label{prop:flip}
@@ -1684,7 +1687,7 @@ Our objective is to provide interpretations of these vectors in terms of the sur
 Let~$\bar Q = (Q,I)$ be a locally gentle bound quiver, and let~$(\b{e}_a)_{a \in Q_0}$ denote the standard basis of~$\R^{Q_0}$.
 
 \begin{definition}
-Let~$V \eqdef \{a_1, \dots, a_m\}$ be a multiset of vertices of~$Q_0$. We denote by~$\multiplicityVector_V \in \R^{Q_0}$ the \defn{multiplicity vector} of~$V$, defined~by:
+For a multiset~$V \eqdef \{a_1, \dots, a_m\}$ of vertices of~$Q_0$, we denote by~$\multiplicityVector_V \in \R^{Q_0}$ the \defn{multiplicity vector} of~$V$, defined by
 \[
 \multiplicityVector_V \eqdef \sum_{i \in [m]} \b{e}_{a_i} = \sum_{a \in Q_0} |\set{i \in [m]}{a_i = a}| \, \b{e}_a.
 \]
@@ -1814,7 +1817,7 @@ When~$\dissection$ is a triangulation of~$\surface$, these interpretations coinc
 \label{prop:gVectorsSurface}
 For a walk~$\omega$ of~$\bar Q$ and a vertex~$a \in Q_0$, the $a$-th entry of the $\b{g}$-vector~$\gvector{\omega}$ is given~by:
 \begin{enumerate}[(i)]
-\item The number of times that the $\dissection$-accordion~$\curveof(\omega)$ positively crosses the edge~$\edgeof(a)$ of~$\dissection$ minus the number of times it negatively crosses the edge~$\edgeof(a)$ of~$\dissection$. Here, the crossing is positive (resp.~negative) if the two angles of~$\dissection$ crossed by~$\curveof(\alpha)$ just before and after~$\edgeof(a)$ form a~$\SSS$ (resp.~as a~$\ZZZ$).
+\item The number of times that the $\dissection$-accordion~$\curveof(\omega)$ positively crosses the edge~$\edgeof(a)$ of~$\dissection$ minus the number of times it negatively crosses the edge~$\edgeof(a)$ of~$\dissection$. Here, the crossing is positive (resp.~negative) if the two angles of~$\dissection$ crossed by~$\curveof(\alpha)$ just before and after~$\edgeof(a)$ form a~$\SSS$ (resp.~a~$\ZZZ$).
 We note that some crossings are neither positive nor negative.
 \item The number of times that the $\dissection\dual$-slalom~$\curveof(\omega)$ positively crosses the edge~$\dualedgeof(a)$ of~$\dissection\dual$ minus the number of times it negatively crosses the edge~$\dualedgeof(a)$ of~$\dissection\dual$. Here, the crossing is positive when~$\curveof(\omega)$ leaves a face~$u\dual$ to enter a face~$v\dual$ with the vertex~$u$ being to its right (and thus with~$v$ being to its left), and the crossing is negative otherwise.
 We note that, in this case, each crossing is either positive or negative.
@@ -1873,7 +1876,7 @@ The $\b{g}$-, $\b{c}$-, and~$\b{d}$-vectors have the \defn{sign-coherence proper
 \end{proposition}
 
 \begin{proof}
-For the $\b{g}$-vectors, observe that two walks~$\omega$ and~$\omega'$ whose $\b{g}$-vectors~$\gvector{\omega}$ and~$\gvector{\omega}$ have opposite signs on their~$a$-th coordinate automatically kiss at~$a$.
+For the $\b{g}$-vectors, observe that two walks~$\omega$ and~$\omega'$ whose $\b{g}$-vectors~$\gvector{\omega}$ and~$\gvector{\omega'}$ have opposite signs on their~$a$-th coordinate automatically kiss at~$a$.
 For $\b{c}$- and $\b{d}$-vectors, the statement is immediate from the definition.
 \end{proof}
 
