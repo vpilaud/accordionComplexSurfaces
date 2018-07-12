@@ -1730,7 +1730,7 @@ We first need to introduce the kissing number.
 
 \begin{definition}
 \label{def:kissingNumber}
-For two walks~$\omega$ and~$\omega'$ of~$\bar Q$, denote by~$\kn(\omega,\omega')$ the number of kisses of~$\omega$ to~$\omega'$.
+For two walks~$\omega$ and~$\omega'$ of~$\bar Q$, denote by~$\kn(\omega,\omega')$ the number of times that~$\omega$ kisses $\omega'$.
 Note that kisses are counted with multiplicities if~$\omega$ or~$\omega'$ pass twice through the same substring.
 Observe also that~$\kn(\omega,\omega')$ is finite since any infinite walk is eventually cyclic.
 The \defn{kissing number} of~$\omega$ and~$\omega'$ is~$\KN(\omega,\omega') \eqdef \kn(\omega,\omega') + \kn(\omega',\omega)$.
@@ -1760,7 +1760,7 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \[
 \gvectors{F} = 
 \begin{blockarray}{ccc}
-	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
+	{\color{blue} \bullet} & {\color{violet} \bullet} & \\[-.1cm]
 	\begin{block}{[cc]c}
 	1 & 0 & \!\!\!\circled{1} \\
 	-1\!\! & \!\!-1 & \!\!\!\circled{2} \\
@@ -1769,7 +1769,7 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \qquad\qquad
 \cvectors{F} = 
 \begin{blockarray}{ccc}
-	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
+	{\color{blue} \bullet} & {\color{violet} \bullet} & \\[-.1cm]
 	\begin{block}{[cc]c}
 	1 & \!\!-1 & \!\!\!\circled{1} \\
 	0 & \!\!-1 & \!\!\!\circled{2} \\
@@ -1778,7 +1778,7 @@ For instance, the $\b{g}$-, $\b{c}$-, and $\b{d}$-matrices of the facet illustra
 \qquad\qquad
 \dvectors{F} = 
 \begin{blockarray}{ccc}
-	{\color{blue} \bullet} & {\color{purple} \bullet} & \\[-.1cm]
+	{\color{blue} \bullet} & {\color{violet} \bullet} & \\[-.1cm]
 	\begin{block}{[cc]c}
 	1 & 0 & \!\!\!\circled{1} \\
 	0 & -1 & \!\!\!\circled{2} \\
@@ -1807,10 +1807,12 @@ We note that these interpretations were already used in~\cite{MannevillePilaud-a
 
 \begin{proposition}
 \label{prop:gVectorsSurface}
-For a walk~$\omega$ of~$\bar Q$ and a vertex~$p \in Q_0$, the $p$th entry of the $\b{g}$-vector~$\gvector{\omega}$ is given~by
+For a walk~$\omega$ of~$\bar Q$ and a vertex~$p \in Q_0$, the $p$-th entry of the $\b{g}$-vector~$\gvector{\omega}$ is given~by:
 \begin{enumerate}[(i)]
 \item The number of times that the $\dissection$-accordion~$\curveof(\omega)$ positively crosses the edge~$\edgeof(p)$ of~$\dissection$ minus the number of times it negatively crosses the edge~$\edgeof(p)$ of~$\dissection$. Here, the crossing is positive (resp.~negative) if the two angles of~$\dissection$ crossed by~$\curveof(\alpha)$ just before and after~$\edgeof(p)$ form a~$\SSS$ (resp.~as a~$\ZZZ$).
+We note that some crossings are neither positive nor negative.
 \item The number of times that the $\dissection\dual$-slalom~$\curveof(\omega)$ positively crosses the edge~$\dualedgeof(p)$ of~$\dissection\dual$ minus the number of times it negatively crosses the edge~$\dualedgeof(p)$ of~$\dissection\dual$. Here, the crossing is positive when~$\curveof(\omega)$ leaves a face~$u\dual$ to enter a face~$v\dual$ with the vertex~$u$ being to its right (and thus with~$v$ being to its left), and the crossing is negative otherwise.
+We note that, in this case, each crossing is either positive or negative.
 \end{enumerate}
 \end{proposition}
 
@@ -1818,7 +1820,7 @@ For a walk~$\omega$ of~$\bar Q$ and a vertex~$p \in Q_0$, the $p$th entry of the
 \label{prop:cVectorsSurface}
 Consider a walk~$\omega$ of~$\bar Q$ in a non-kissing facet~$F \in \RNKC$.
 Call \defn{distinguished subcurve} of~$\curveof(\omega)$ in~$\curveof(F)$ the part of~$\curveof(\omega)$ which lies strictly between the two angles of~$\dissection$ (or of~$\dissection\dual$) where~$\curveof(\omega)$ is maximal (see Remark~\ref{rem:countercurrentOrderOnSurface}).
-For a vertex~$p \in Q_0$, the $p$th entry of the $\b{c}$-vector~$\cvector{\omega}{F}$ is given by
+For a vertex~$v \in Q_0$, the $v$-th entry of the $\b{c}$-vector~$\cvector{\omega}{F}$ is given by
 \begin{enumerate}[(i)]
 \item the number of crossings between the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ and the edge~$\edgeof(v)$ of the dissection~$\dissection$,
 \item the number of times the distinguished subcurve of~$\curveof(\omega)$ in~$\curveof(F)$ follows the edge~$\dualedgeof(v)$ of the dual dissection~$\dissection\dual$. Here, we say that a curve~$\delta$ follows~$\dualedgeof(v)$ if~$\dualedgeof(v)$ lies on the boundary opposite to~$u$ of a face~$u\dual$ of~$\dissection\dual$ crossed by~$\delta$.
@@ -1832,7 +1834,7 @@ Observe that although we gave interpretations for the $\b{g}$- and~$\b{c}$-vecto
 \begin{proposition}
 \label{prop:dVectorsSurface}
 Denote by~$X_\deep$ the deep facet of the non-crossing complex as described in Example~\ref{exm:peakDeepFacets}.
-For a walk~$\omega$ of~$\bar Q$ and a vertex~$p \in Q_0$, the $p$th entry of the $\b{d}$-vector~$\dvector{\omega}$ is the number of crossings of the curve~$\gamma(\omega)$ with the edge of~$X_\deep$ corresponding to~$p$.
+For a walk~$\omega$ of~$\bar Q$ and a vertex~$v \in Q_0$, the $v$-th entry of the $\b{d}$-vector~$\dvector{\omega}$ is the number of crossings of the curve~$\gamma(\omega)$ with the edge of~$X_\deep$ corresponding to~$v$.
 \end{proposition}
 
 %\begin{proposition}
@@ -1866,7 +1868,7 @@ The $\b{g}$-, $\b{c}$-, and~$\b{d}$-vectors have the \defn{sign-coherence proper
 \end{proposition}
 
 \begin{proof}
-For the $\b{g}$-vectors, observe that two walks~$\omega$ and~$\omega'$ whose $\b{g}$-vectors~$\gvector{\omega}$ and~$\gvector{\omega}$ have opposite signs on their~$v$th coordinate automatically kiss at~$v$.
+For the $\b{g}$-vectors, observe that two walks~$\omega$ and~$\omega'$ whose $\b{g}$-vectors~$\gvector{\omega}$ and~$\gvector{\omega}$ have opposite signs on their~$v$-th coordinate automatically kiss at~$v$.
 For $\b{c}$- and $\b{d}$-vectors, the statement is immediate from the definition.
 \end{proof}
 
