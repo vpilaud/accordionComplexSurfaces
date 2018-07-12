@@ -592,7 +592,7 @@ Some examples of dual cellular dissections on different surfaces are represented
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{dissections}}
-	\caption{Some pairs~$(\dissection, \dissection\dual)$ of dual cellular dissections on different surfaces. The boundaries of the surfaces are shaded, and the glue symbols indicate how to identify some edges to get the desired surfaces. The first two surfaces are disks, the third is a sphere, the fourth is a cylinder, and the fifth is a punctured torus. The dissection~$\dissection$ is in green while its dual dissection~$\dissection\dual$ is~in~red.}
+	\caption{Some pairs~$(\dissection, \dissection\dual)$ of dual cellular dissections on different surfaces. The boundaries of the surfaces are shaded, and the glue symbols indicate how to identify some edges to get the desired surfaces. The first two surfaces are disks, the third is a sphere without boundary, the fourth is a cylinder, and the fifth is a punctured torus. The dissection~$\dissection$ is in green while its dual dissection~$\dissection\dual$ is~in~red.}
 	\label{fig:dissections}
 \end{figure}
 %
@@ -779,22 +779,22 @@ The $\dissection$-slaloms and the $\dissection\dual$-accordions are defined dual
 
 \begin{example}
 When the dissection~$\dissection$ is a classical dissection of a polygon (with no punctures) where each cell has at most one boundary edge, the dual dissection~$\dissection\dual$ is a tree.
-The non-kissing complex in his situation was treated in detail in~\cite{GarverMcConville, MannevillePilaud-accordion}.
+The non-kissing complex in this situation was treated in detail in~\cite{GarverMcConville, MannevillePilaud-accordion}.
 Note that even when the surface~$\surface$ is a disk, we authorize here both~$\dissection$ and~$\dissection\dual$ to have interior faces and punctures.
 \end{example}
 
 \begin{remark}
 A quick disclaimer about accordion complexes and slalom complexes of arbitrary cellular dissections.
 As stated in Proposition~\ref{prop:conditionsDualDissections}, a cellular dissection~$\dissection$ with a face containing more than one boundary edge does not admit a dual cellular dissection~$\dissection\dual$.
-This prevents to use the definitions given in this section.
-Although its accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be joins of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
+This prevents the use of the definitions given in this section.
+Although the accordion complex (resp.~slalom complex) could still be defined as in~\cite{MannevillePilaud-accordion} (resp.~\cite{GarverMcConville}) for the disk, the resulting complexes would be joins of smaller accordion complexes (resp.~slalom complexes) defined in this paper.
 See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the case of the disk.
 \end{remark}
 
 \section{Non-kissing versus non-crossing}
 
 In this section, we show that non-kissing and non-crossing complexes actually coincide.
-Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection, \dissection\dual}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
+Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection}$ such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection}]$.
 Conversely, any locally gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual_{\bar Q}}$ such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$.
 In fact, we show that the accordion, slalom, and non-kissing complexes can all be pictured in a unique way on the surface.
 Interestingly, via the correspondence between pairs of dual cellular dissections and locally gentle bound quivers, the duality between the dissections~$\dissection$ and~$\dissection\dual$ translates into the Koszul duality between the locally gentle algebras of~$\bar Q$ and~$\bar Q\koszul$.
@@ -832,7 +832,7 @@ The blossoming quiver~$\bar Q_\dissection\blossom$ of the quiver~$\bar Q_\dissec
 
 \begin{lemma}
 \label{lemm:quiverOfDissectionIsLocallyGentle}
-The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver
+The bound quiver~$\bar Q_{\dissection} = (Q_{\dissection}, I_{\dissection})$ is a locally gentle bound quiver.
 \end{lemma}
 \begin{proof}
 Each arc~$a$ has two endpoints, and at each endpoint there is at most one arc coming immediately after~$a$ in the clockwise order, and at most one coming immediately before~$a$.
@@ -850,7 +850,7 @@ The \defn{Koszul dual} of a locally gentle bound quiver~$\bar Q = (Q,I)$ is the 
 \end{itemize}
 \end{definition}
 It is seen in \cite{BessenrodtHolm} that the (ungraded version of the) Koszul dual of a locally gentle algebra~$kQ/I$ is isomorphic to~$kQ\koszul/I\koszul$.
-Note that~$\bar Q\koszul$ is gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
+Note that~$\bar Q\koszul$ is locally gentle, and that Koszul duality is an involution and commutes with blossoming:~$(\bar Q\koszul)\koszul = \bar Q$ and~$(\bar Q\koszul)\blossom = (\bar Q\blossom)\koszul$.
 Examples are represented on \fref{fig:koszulQuivers}.
 
 
@@ -1255,6 +1255,7 @@ The non-kissing and non-crossing complexes are isomorphic:
 \begin{itemize}
 \item for any locally gentle bound quiver~$\bar Q$, the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual_{\bar Q}}]$,% therefore to the accordion complex~$\AC[\dissection_{\bar Q}]$ and to the slalom complex~$\SC[{\dissection\dual_{\bar Q}}]$.
 \item for any pair of dual cellular dissections~$\dissection, \dissection\dual$ of an oriented surface, the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection, \dissection\dual}]$.
+
 \end{itemize}
 \end{theorem}
 
@@ -1687,7 +1688,7 @@ For a multiset~$V \eqdef \{v_1, \dots, v_m\}$ of vertices of~$Q_0$, we denote by
 For a string~$\sigma$ of~$\bar Q$, we define~$\multiplicityVector_\sigma \eqdef \multiplicityVector_{V(\sigma)}$ where~$V(\sigma)$ is the multiset of vertices of~$\sigma$. 
 \end{definition}
 
-We now recall two definitions from~\cite{PaluPilaudPlamondon}, that still make sense for locally gentle algebras.
+We now recall two definitions from~\cite{PaluPilaudPlamondon} that still make sense for locally gentle algebras.
 
 \begin{definition}
 \label{def:gVectorsWalks}
@@ -1697,7 +1698,7 @@ The \defn{$\b{g}$-vector} of a walk~$\omega$ is the vector~${\gvector{\omega} \i
 \gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}.
 \]
 For a set~$\Omega$ of walks, we let~$\gvectors{\Omega} \eqdef \set{\gvector{\omega}}{\omega \in \Omega}$.
-Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, since for any infinite walk~$\omega$ is eventually cyclic, the coordinates of~$\gvector{\omega}$ are finite.
+Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$, and that, since any infinite walk~$\omega$ is eventually cyclic, the coordinates of~$\gvector{\omega}$ are finite.
 \end{definition}
 
 %\begin{remark}
@@ -1724,7 +1725,7 @@ The \defn{$\b{c}$-vector} of a walk~$\omega$ of~$F$ is the vector~${\cvector{\om
 We let~$\cvectors{F} \eqdef \set{\cvector{\omega}{F}}{\omega \in F}$ be the set of $\b{c}$-vectors of a non-kissing facet~$F \in \RNKC$, and~$\allcvectors \eqdef \bigcup_F \cvectors{F}$ be the set of all $\b{c}$-vectors of all non-kissing facets~${F \in \RNKC}$.
 \end{definition}
 
-We now introduce yet another algebraically motivated family of vectors that was omitted in~\cite{PaluPilaudPlamondon}.
+We now introduce another algebraically motivated family of vectors that was omitted in~\cite{PaluPilaudPlamondon}.
 We first need to introduce the kissing number.
 
 \begin{definition}
@@ -1815,7 +1816,7 @@ For a walk~$\omega$ of~$\bar Q$ and a vertex~$p \in Q_0$, the $p$th entry of the
 
 \begin{proposition}
 \label{prop:cVectorsSurface}
-Consider a walk~$\omega$ of~$\bar Q$ in a non-kissing facet~$F \in \RNKC$
+Consider a walk~$\omega$ of~$\bar Q$ in a non-kissing facet~$F \in \RNKC$.
 Call \defn{distinguished subcurve} of~$\curveof(\omega)$ in~$\curveof(F)$ the part of~$\curveof(\omega)$ which lies strictly between the two angles of~$\dissection$ (or of~$\dissection\dual$) where~$\curveof(\omega)$ is maximal (see Remark~\ref{rem:countercurrentOrderOnSurface}).
 For a vertex~$p \in Q_0$, the $p$th entry of the $\b{c}$-vector~$\cvector{\omega}{F}$ is given by
 \begin{enumerate}[(i)]
