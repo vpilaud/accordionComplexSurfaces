@@ -164,7 +164,7 @@ changes, which we first list.
 * Example 3.44: It appears to me that the map, which is not explicit, is on the
   quotient of $Bic$
 
-  Reply: We have made the sentence of Example 3.44 more precise.
+  Reply: We have made the sentence of Example 3.44 (now 3.43) more precise.
 
 
 * pages 59,60,64,65,68,73 and probably more: the text goes outside the margin
