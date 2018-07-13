@@ -44,7 +44,7 @@
 \newcommand{\fS}{\mathfrak{S}} % symmetric group
 \newcommand{\cA}{\mathcal{A}} % algebra
 \newcommand{\cC}{\mathcal{C}} % collection
-\newcommand{\cS}{\mathcal{S}} % ground set
+\newcommand{\cS}{\mathbb{S}} % ground set
 \newcommand{\uR}{\underline{R}} % underline set
 \newcommand{\uS}{\underline{S}} % underline set
 \newcommand{\uT}{\underline{T}} % underline set
@@ -97,7 +97,6 @@
 \renewcommand{\topfraction}{1} % possibility to have one page of pictures
 \renewcommand{\bottomfraction}{1} % possibility to have one page of pictures
 %\renewcommand\labelitemi{$\diamond$} % redefine itemize default symbol
-\DeclareRobustCommand{\exmAn}{\overrightarrow{A_n}} % path
 
 % marginal comments
 \usepackage{todonotes}
@@ -279,6 +278,7 @@ We benefited form various discussions and several useful comments on a prelimina
 We are particularly grateful to F.~Chapoton for initially pointing us in the direction of this paper, to A.~Garver and T.~McConville for important inputs on Part~\ref{part:lattice} (including pointing out to us the need of Theorem~\ref{thm:characterizationCongruenceUniform2}), to T.~Manneville and S.~Stella for their help on Part~\ref{part:geometry}, to L.~Demonet for the observation of Remarks~\ref{rem:linDep} and~\ref{rem:polytope}, and to S.~Schroll for her valuable comments on Part~\ref{part:algebra}.
 We also thank T.~Br\"ustle, O.~Iyama, N.~Reading, H.~Thomas for discussions on their ongoing projects mentioned in the introduction.
 This work was carried out while the first author was visiting Paris 7. He would like to thank his colleagues there, and especially \mbox{P.~Le Meur}, for a stimulating atmosphere.
+Finally, we thank an anonymous referee for useful suggestions on the presentation of this work.
 
 The three authors were partially supported by the French ANR grant SC3A: Surfaces, Categorification and Combinatorics of Cluster Algebras~(15\,CE40\,0004\,01).
 
@@ -2162,7 +2162,7 @@ Some quivers are simultaneously dissection and grid bound quivers. This is in pa
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=1.5]{exmBijectionAssociahedron}}
-	\caption{An oriented path~$\exmAn$ is simultaneously a triangulation and a grid bound quiver (top). A facet of the reduced non-kissing complex~$\RNKC[\exmAn]$ can be seen as a triangulation or as a collection of non-kissing south-east paths (bottom).}
+	\caption{An oriented path~$\bar Q$ is simultaneously a triangulation and a grid bound quiver (top). A facet of the reduced non-kissing complex~$\RNKC$ can be seen as a triangulation or as a collection of non-kissing south-east paths (bottom).}
 	\label{fig:exmBijectionAssociahedron}
 \end{figure}
 
@@ -2681,7 +2681,7 @@ In all pictures, graphs are oriented bottom-up.
 
 \begin{example}
 Oriented flip graphs were studied carefully in~\cite{GarverMcConville, MannevillePilaud-accordion, McConville} for the dissection and grid bound quivers introduced in Section~\ref{subsec:dissectionGridQuivers}.
-Note that when the quiver is an oriented path~$\exmAn$, a flip in a facet of the non-kissing complex~$\NKC[\exmAn]$ corresponds to the classical flip of a diagonal in the corresponding triangulation (see \fref{fig:exmBijectionAssociahedron}).
+Note that when the quiver is an oriented path~$\bar Q$, a flip in a facet of the non-kissing complex~$\NKC$ corresponds to the classical flip of a diagonal in the corresponding triangulation (see \fref{fig:exmBijectionAssociahedron}).
 Moreover, the flip is increasing if and only if the slope of the diagonal increases along the flip.
 \end{example}
 
