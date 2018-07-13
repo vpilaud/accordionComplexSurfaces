@@ -38,7 +38,7 @@ changes, which we first list.
 * page 3: the footnotes refer to the table on next page; they are quite
   confusing here.
 
-  Reply:
+  Reply: Done.
 
 
 * page 6, last line: while the meaning of $I^{rev}$ is clear this has not been
@@ -50,7 +50,7 @@ changes, which we first list.
 * Figure 1: all other figures in the paper are not separated into sub figures by
   lines as this one is
 
-  Reply:
+  Reply: Done.
 
 
 * Def 1.12: say ``The algebra ... associated to a gentle bound quiver is called''
