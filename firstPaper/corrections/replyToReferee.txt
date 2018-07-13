@@ -4,7 +4,10 @@ changes, which we first list.
 
 (a) In Notation 1.50, the equalities were wrong and have been corrected.
 
-(b) We have added some details (in a new Proposition 2.24) explaining why the non-kissing facets are finite. In doing so, we had to slightly reorganise Subsection 2.2.2 (new Lemma 2.23 was previously part of the proof of Proposition (renumbered) 2.28)
+(b) We have added some details (in a new Proposition 2.24) explaining why the 
+    non-kissing facets are finite. In doing so, we had to slightly reorganise 
+    Subsection 2.2.2 (new Lemma 2.23 was previously part of the proof of 
+    Proposition (renumbered) 2.28).
 
 
 * In the introduction, and in the introductory paragraphs of several sections
@@ -35,7 +38,7 @@ changes, which we first list.
 * page 3: the footnotes refer to the table on next page; they are quite
   confusing here.
 
-  Reply:
+  Reply: Done.
 
 
 * page 6, last line: while the meaning of $I^{rev}$ is clear this has not been
@@ -47,7 +50,7 @@ changes, which we first list.
 * Figure 1: all other figures in the paper are not separated into sub figures by
   lines as this one is
 
-  Reply:
+  Reply: Done.
 
 
 * Def 1.12: say ``The algebra ... associated to a gentle bound quiver is called''
@@ -66,7 +69,7 @@ changes, which we first list.
   it by defining the two sets first? Even better can you replace the formula 
   with a sentence? 
 
-  Reply:
+  Reply: The formula has been replaced by a sentence.
 
 
 * page 17: the name ``dance'' suggests a symmetric notion but it is not. If
@@ -92,7 +95,7 @@ changes, which we first list.
 
 * Just below: ``See Figure 15'' is not needed here
 
-  Reply:
+  Reply: Removed.
 
 
 * bottom of page 24 what is a non-kissing cycle? Do you mean not self-kissing?
@@ -107,18 +110,19 @@ changes, which we first list.
 
 * Figure 18: crossing walks have not been introduced
 
-  Reply:
+  Reply: We have replaced "crossing" by "non-kissing and having a common substring".  
+         The term "crossing walks" appeared nowhere else in the paper.
 
 
 * remark 2.20: the first bullet point ``should'' should the ``then'' you are
   stating a fact not an hope
 
-  Reply:
+  Reply: Fixed.
 
 
 * proof of 2.21: ``follow'' is not really clear here
 
-  Reply:
+  Reply: Clarified.
 
 
 * def 2.36: is any flip either increasing or decreasing?
@@ -128,7 +132,7 @@ changes, which we first list.
 
 * def 3.4: do you mean ``any strict subset''?
 
-  Reply:
+  Reply: Yes, fixed.
 
 
 * def 3.16 and others: $\mathcal{S}$ and $S$ are not easily distinguishable 
@@ -159,7 +163,7 @@ changes, which we first list.
 
 * pages 59,60,64,65,68,73 and probably more: the text goes outside the margin
 
-  Reply:
+  Reply: Fixed.
 
 
 * remark 3.72: do you mean ``Figure 36 (bottom)''?
@@ -172,5 +176,7 @@ example the blossoming quiver has a little flower as exponent and the operation
 of blinding is represented by two half circle to suggest blinkers. I am not sure
 I am happy about these choices but I do not have better suggestions to offer.
 
-  Reply:
+  Reply: While we agree that the notation set is non-conventional, we believe
+         that it fits well with our chosen terminology.  We thus respectfully 
+         propose to keep the notation as it is.
 

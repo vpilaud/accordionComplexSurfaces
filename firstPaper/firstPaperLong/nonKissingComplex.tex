@@ -336,6 +336,10 @@ Table~\ref{table:dictionary} provides a dictionary to translate between the alge
 \hvFloat[floatPos=p, capWidth=h, capPos=r, capAngle=90, objectAngle=90, capVPos=c, objectPos=c]{table}
 {
 	\hspace{1cm}
+	\begin{minipage}{18cm}
+	\vspace*{-1cm}
+	\noindent
+	\renewcommand{\arraystretch}{1.2}
 	\begin{tabular}{|c|c|c|}
     \hline
     String modules on~$\bar Q$ &
@@ -407,11 +411,20 @@ Table~\ref{table:dictionary} provides a dictionary to translate between the alge
     Rem.~\ref{rem:KNvsTau}
     \\ \hline
     \end{tabular}
+	\renewcommand{\arraystretch}{1}
+	\\[.2cm]
+	\footnotemark[1]\footnotesize{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.} \\
+	\footnotemark[2]\footnotesize{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
+	\vspace*{.5cm}
+	\end{minipage}
 	\hspace{1cm}
 }
-{Dictionary between algebraic notions on the support $\tau$-tilting complex and combinatorial notions on the non-kissing complex.}
+{Dictionary between algebraic notions on the support $\tau$-tilting complex and combinatorial notions on the non-kissing complex.
+}
 {table:dictionary}
+
 \captionsetup{width=\textwidth}
+
 
 %\begin{table}
 %	\capstart{}
@@ -527,8 +540,8 @@ Moreover, this fan is the normal fan of a polytope, called the non-kissing assoc
 The non-kissing complex provides an instrumental combinatorial model to understand the linear dependences among $\b{g}$-vectors of adjacent $\b{g}$-vector cones, which leads to simple polytopal realizations.
 In fact, this understanding even extends to arbitrary $\tau$-tilting finite algebras.
 
-\footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
-\footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
+% \footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
+% \footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
 
 \subsection*{Grid and dissection bound quivers}
 
@@ -758,11 +771,11 @@ Throughout the paper, we draw \raisebox{-.04cm}{\includegraphics[scale=.3]{relat
 \begin{figure}[h]
 	\capstart
 	\centerline{
-		\begin{tabular}{c@{\qquad}|@{\qquad}c}
+		\begin{tabular}{c@{\qquad}@{\qquad}c}
 			$Q = \vcenter{\hbox{\includegraphics[scale=.5]{exmQuiver1}}}$ &
 			$Q = \vcenter{\hbox{\includegraphics[scale=.5]{exmQuiver2}}}$ \\[1.1cm]
 			$I = (\alpha\beta, \gamma\delta)$ & 
-			$I = (\alpha\beta, \gamma\delta, \alpha\delta)$ \\ \\ \hline \\
+			$I = (\alpha\beta, \gamma\delta, \alpha\delta)$ \\ \\
 			$Q = \vcenter{\hbox{\includegraphics[scale=.5]{exmQuiver3}}}$ &
 			$Q = \vcenter{\hbox{\includegraphics[scale=.5]{exmQuiver4}}}$ \\[.5cm]
 			$I = (\alpha\beta, \beta\gamma, \beta^5)$ & 
@@ -1195,10 +1208,11 @@ Morphisms between string modules can be read directly from the combinatorics of 
 \begin{proposition}
 \label{prop:morphismsStringModules}
 Let~$\rho$ and~$\rho'$ be two strings for a string algebra~$A$.
-Then the dimension of the $k$-vector space~$\Hom{A} \big( M(\rho), M(\rho') \big)$ is equal to
-\[
-\sum\limits_{\xi \text{ string}} \begin{array}{l} (\#\textrm{ of substrings equal to~$\xi$ on top of~$\rho$}) \; \cdot \\ \hspace{2cm}(\#\textrm{ of substrings equal to~$\xi$ or~$\xi^{-1}$ at the bottom of~$\rho'$}).\end{array}
-\]
+Then the dimension of the $k$-vector space~$\Hom{A} \big( M(\rho), M(\rho') \big)$ is equal to the number of pairs~$(\sigma, \sigma')$, where~$\sigma$ and~$\sigma'$ are substrings of~$\rho$ and~$\rho'$, respectively, such that there is an equality of strings~$\sigma' = \sigma^{\pm 1}$.
+
+% \[
+% \sum\limits_{\xi \text{ string}} \begin{array}{l} (\#\textrm{ of substrings equal to~$\xi$ on top of~$\rho$}) \; \cdot \\ \hspace{2cm}(\#\textrm{ of substrings equal to~$\xi$ or~$\xi^{-1}$ at the bottom of~$\rho'$}).\end{array}
+% \]
 \end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2009,7 +2023,7 @@ A gentle bound quiver~$\bar Q$ and its blossoming gentle bound quiver~$\bar Q\bl
 \end{example}
 
 The following lemma is immediate and left to the reader.
-See \fref{fig:exmBlossomingQuiver}.
+% See \fref{fig:exmBlossomingQuiver}.
 
 \begin{lemma}
 The number of vertices and arrows of the blossoming quiver~$Q\blossom$ are given by
@@ -2174,7 +2188,7 @@ We let~$\NKWalks(\bar Q)$ be the set of walks on~$\bar Q$ which are not self-kis
 \begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=1]{kissingCrossing}}
-	\caption{A schematic representation of two kissing walks (left) and two crossing walks~(right): $\omega$~kisses~$\omega'$ (left) while~$\mu$~crosses~$\nu$ (right). For the crossing walks, we have~$\mu \prec_\gamma \nu$ while~$\nu \prec_\delta \mu$.}
+	\caption{A schematic representation of two kissing walks (left) and two non-kissing walks~(right) having a common substring: $\omega$~kisses~$\omega'$ (left) while~$\mu$~does not kiss~$\nu$ (right). On the right, we have~$\mu \prec_\gamma \nu$ and~$\nu \prec_\delta \mu$.}
 	\label{fig:kissingCrossing}
 \end{figure}
 
@@ -2265,7 +2279,7 @@ On the schematic illustration of \fref{fig:kissingCrossing}\,(right), the walks~
 \begin{remark}
 Note that the countercurrent order~$\prec_\alpha$
 \begin{itemize}
-\item is well-defined: if both endpoints of~$\sigma$ are in~$Q_0$, $\mu_\star$ (resp.~$\nu_\star$) should enter and exit~$\sigma$ in the same direction since~$\mu_\star$ and~$\nu_\star$ are non-kissing;
+\item is well-defined: if both endpoints of~$\sigma$ are in~$Q_0$, then $\mu_\star$ (resp.~$\nu_\star$) enters and exits~$\sigma$ in the same direction since~$\mu_\star$ and~$\nu_\star$ are non-kissing;
 \item is independent of the orientation of~$\mu_\star$ and~$\nu_\star$:~$\mu_\star \prec_\alpha \nu_\star$ iff $(\mu_\star)^{-1} \prec_\alpha \nu_\star$ iff $\mu_\star \prec_\alpha (\nu_\star)^{-1}$; we thus also consider~$\prec_\alpha$ as a relation on undirected marked walks;
 \item depends on which occurrence of~$\alpha$ is marked on~$\mu$ and~$\nu$.
 \end{itemize}
@@ -2282,7 +2296,7 @@ We prove that~$\prec_\alpha$ is transitive.
 Let~$\lambda_\star$, $\mu_\star$, $\nu_\star$ be three pairwise non-kissing walks marked at an occurrence of~$\alpha$ such that~${\lambda_\star \prec_\alpha \mu_\star \prec_\alpha \nu_\star}$. Let~$v$ be a vertex where~$\lambda_\star$ and~$\mu_\star$ split. Then
 %Let~$\sigma$ (resp.~$\tau$, resp.~$\rho$) denote the common substring of~$\lambda_\star$ and~$\mu_\star$ (resp.~of~$\mu_\star$ and~$\nu_\star$, resp.~of~$\lambda_\star$ and~$\nu_\star$) containing that occurrence of~$\alpha$. We distinguish two situations:
 \begin{itemize}
-\item either~$\nu_\star$ contains~$v$, then it must follow~$\mu_\star$ (otherwise~$\nu_\star \prec_\alpha \mu_\star$), so that~$\lambda_\star \prec_\alpha \nu_\star$.
+\item either~$\nu_\star$ contains~$v$, then it must leave~$v$ via the same arrow as~$\mu_\star$ (otherwise~$\nu_\star \prec_\alpha \mu_\star$), so that~$\lambda_\star \prec_\alpha \nu_\star$.
 \item or~$\nu_\star$ does not contain~$v$, then~$\nu_\star$ and~$\mu_\star$ split at a vertex~$w$ between~$\alpha$ and~$v$. Since~${\mu_\star \prec_\alpha \nu_\star}$, $\mu$ (and thus~$\lambda$) leaves~$w$ with an arrow in the same direction as~$\alpha$, while~$\nu$ leaves~$w$ with an arrow opposite to the direction of~$\alpha$, so that~$\lambda_\star \prec_\alpha \nu_\star$.
 \end{itemize}
 Moreover, $\prec_\alpha$ is antisymmetric by definition.
@@ -3207,7 +3221,7 @@ Join- and meet-irreducible elements are building blocks for join- and meet-repre
 
 \begin{definition}
 A \defn{join-representation} of~$x \in L$ is a subset~$J \subseteq L$ such that~${x = \bigJoin J}$.
-Such a representation is \defn{irredundant} if~$x \ne \bigJoin J'$ for a strict subset~$J' \subsetneq J$.
+Such a representation is \defn{irredundant} if~$x \ne \bigJoin J'$ for any strict subset~$J' \subsetneq J$.
 The irredundant join-representations of an element~$x \in L$ are ordered by containement of the lower ideals of their elements, \ie~$J \le J'$ if and only if for any~$y \in J$ there exists~$y' \in J'$ such that~$y \le y'$ in~$L$.
 The \defn{canonical join-representation} of~$x$ is the minimal irredundant join-representation of~$x$ for this order when it exists.
 The \defn{canonical meet-representation} is defined dually.
@@ -4146,7 +4160,7 @@ Throughout the proof, we denote~$S \eqdef \zeta(F') \ssm \{\sigma\}$ and~$S' \eq
 Consider an increasing flip~$F \to F'$ with~$F \ssm \{\omega\} = F' \ssm \{\omega'\}$ and supported by~$\sigma = \distinguishedString{w}{F} = \distinguishedString{w'}{F'}$.
 We prove that~$S$ is biclosed:
 \begin{description}
-\item[closed] Otherwise, there exist bottom substrings~$\sigma_1, \dots, \sigma_\ell$ of walks~$\omega_1, \dots, \omega_\ell$ of~$F'$, arrows~$\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~$\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell$.
+\item[closed] Otherwise, there exist bottom substrings~$\sigma_1, \dots, \sigma_\ell$ of respective walks~$\omega_1, \dots, \omega_\ell$ of~$F'$, arrows~$\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~$\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell$.
 Assume that there is~$k \in [\ell-1]$ such that~${\varepsilon_k = 1}$ and choose~$k$ minimal with that property.
 Then~$\omega_k \ne \omega'$ and~$\omega$ has two outgoing arrows while~$\omega_k$ has two incoming arrows at the endpoints of~$\sigma_k$, so that~$\sigma_k \in \Sigma_\top(\omega) \cap \Sigma_\bottom(\omega_k)$, contradicting the non-kissingness of~$F$.
 We obtain a similar contradiction assuming that there is~$k \in [\ell-1]$ such that~$\varepsilon_k = -1$ and choosing~$k$ maximal with that property.
@@ -4202,7 +4216,7 @@ This concludes our proof of Theorem~\ref{thm:lattice}, which we can restate more
 
 \begin{corollary}
 \label{coro:finalLatticeQuotient}
-If~$\bar Q$ is a gentle bound quiver whose non-kissing complex~$\RNKC$ is finite, then the non-kissing oriented flip graph~$\NKG$ is the Hasse diagram of the lattice quotient~$\Bicl{\bar Q}/{\equiv}$ of the congruence-uniform lattice of biclosed sets of strings by the lattice congruence~$\equiv$.
+If~$\bar Q$ is a gentle bound quiver such that the non-kissing complex~$\RNKC$ is finite, then the non-kissing oriented flip graph~$\NKG$ is the Hasse diagram of the lattice quotient~$\Bicl{\bar Q}/{\equiv}$ of the congruence-uniform lattice of biclosed sets of strings by the lattice congruence~$\equiv$.
 \end{corollary}
 
 \begin{proof}
@@ -4386,7 +4400,7 @@ We gather the constructions of Lemmas~\ref{lem:bijectionDistinguishableStringsWa
 \label{def:bijectionWalksDistinguishableStrings}
 For a distinguishable string~$\sigma \in \distinguishableStrings^\pm(\bar Q)$, we denote by $\omega_\bottom(\sigma) \in \NKWalks^\pm(\bar Q)$ the undirected walk constructed in Lemma~\ref{lem:bijectionDistinguishableStringsWalks}, meaning that ${\omega_\bottom(\sigma) = \{\omega(\alpha',S), \omega(\beta',S)\}}$ where~$S = \closure{\Sigma_\bottom(\sigma)}$ and~$\alpha', \beta' \in Q\blossom_1$ are such that ${\alpha'\sigma\beta'^{-1} \in \strings(\bar Q\blossom)}$.
 
-Conversely, for a non-self-kissing walk~$\omega \in \NKWalks^\pm(\bar Q)$ not in the peak facet, we denote by~$\sigma_\bottom(\omega)$ the inclusion minimal string in~$\set{\sigma \in \Sigma_\bottom(\omega)}{\closure{\Sigma_\bottom(\omega)} = \closure{\Sigma_\bottom(\sigma)}}$.
+Conversely, for a non-self-kissing walk~$\omega \in \NKWalks^\pm(\bar Q)$ not in the peak facet, the inclusion minimal string in the set~$\set{\sigma \in \Sigma_\bottom(\omega)}{\closure{\Sigma_\bottom(\omega)} = \closure{\Sigma_\bottom(\sigma)}}$ is denoted by~$\sigma_\bottom(\omega)$.
 \end{definition}
 
 \begin{proposition}
@@ -4442,11 +4456,11 @@ As illustrated in \fref{fig:exmBijectionStringsWalks2}\,(right), the bijections 
 \subsection{Join-irreducibles in~$\NKL$}
 
 In order to describe the canonical join-representations in the next section, we now completely describe the join-irreducible elements in~$\NKL$.
-We first consider the following join-irreducible elements of~$\Bicl{\bar Q}$.
+Let us first consider the following join-irreducible elements of~$\Bicl{\bar Q}$.
 
 \begin{lemma}
 \label{lem:exmBiclosedJI}
-For any distinguishable string~$\sigma \in \strings^\pm(\bar Q)$, the biclosed set~$\closure{\Sigma_\bottom(\sigma)}$ is join-irreducible in~$\Bicl{\bar Q}$.
+Let~$\sigma \in \strings^\pm(\bar Q)$ be a distinguishable string. Then the biclosed set~$\closure{\Sigma_\bottom(\sigma)}$ is join-irreducible in~$\Bicl{\bar Q}$.
 \end{lemma}
 
 \begin{proof}
@@ -4618,7 +4632,7 @@ The bijection is illustrated in \fref{fig:exmNCP}.
 The following assertions are equivalent for a subset~$\Sigma$ of~$\distinguishableStrings^\pm(\bar Q)$:
 \begin{enumerate}[(i)]
 \item $\Sigma$ is pairwise non-friendly.
-\item $\ji(\Sigma) \eqdef \set{\ji(\sigma)}{\sigma \in \Sigma}$ is the canonical join-representation of an element in~$\NKL$.
+\item the set~$\ji(\Sigma) \eqdef \set{\ji(\sigma)}{\sigma \in \Sigma}$ is the canonical join-representation of an element in~$\NKL$.
 \item $\Sigma$ is the descent set of a non-kissing facet~$F \in \NKC$.
 \end{enumerate}
 Thus, the canonical join complex of~$\NKL$ is isomorphic to the non-friendly complex~$\NFC$.
@@ -4874,7 +4888,7 @@ The $\b{g}$- and $\b{c}$-vectors have been designed so that the following statem
 
 \begin{proposition}
 \label{prop:gvectorscvectorsDualBases}
-For a non-kissing facet~$F \in \RNKC$, the set of $\b{g}$-vectors~$\gvectors{F}$ and the set of $\b{c}$-vectors~$\cvectors{F}$ form dual bases. 
+For a non-kissing facet~$F \in \RNKC$, the set~$\gvectors{F}$ of~$\b{g}$-vectors and the set~$\cvectors{F}$ of~$\b{c}$-vectors form dual bases. 
 \end{proposition}
 
 \begin{proof}

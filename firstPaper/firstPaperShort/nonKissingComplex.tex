@@ -406,7 +406,8 @@ Our main lattice-theoretic result is the following extension of a remarkable res
 For any gentle bound quiver~$\bar Q$ whose non-kissing complex is finite, the non-kissing lattice is congruence-uniform.
 In fact, the non-kissing lattice is both a lattice quotient and a sublattice of a lattice of biclosed sets on strings in~$\bar Q$.
 \end{theorem*}
-
+\footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
+\footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
 \noindent
 It is then natural to study the canonical join complex of the non-kissing lattice, which we call the non-friendly complex following~\cite{GarverMcConville-grid}.
 This complex corresponds to the classical non-crossing partitions in Catalan combinatorics.
@@ -425,8 +426,8 @@ Moreover, this fan is the normal fan of a polytope, called the non-kissing assoc
 The non-kissing complex provides an instrumental combinatorial model to understand the linear dependences among $\b{g}$-vectors of adjacent $\b{g}$-vector cones, which leads to simple polytopal realizations.
 In fact, this understanding even extends to arbitrary $\tau$-tilting finite algebras.
 
-\footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
-\footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
+% \footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
+% \footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
 
 \subsection*{Grid and dissection bound quivers}
 
@@ -655,7 +656,7 @@ Throughout the paper, we draw \raisebox{-.04cm}{\includegraphics[scale=.3]{relat
 \begin{figure}[b]
 	\capstart
 	\centerline{
-		\begin{tabular}{c@{\quad}|@{\quad}c@{\quad}|@{\quad}c@{\quad}|@{\quad}c}
+		\begin{tabular}{c@{\quad}@{\quad}c@{\quad}@{\quad}c@{\quad}@{\quad}c}
 			$Q = \vcenter{\hbox{\includegraphics[scale=.5]{exmQuiver1}}}$ &
 			$Q = \vcenter{\hbox{\includegraphics[scale=.5]{exmQuiver2}}}$ &
 			$Q = \vcenter{\hbox{\includegraphics[scale=.5]{exmQuiver3}}}$ &
@@ -1092,14 +1093,14 @@ Morphisms between string modules can be read directly from the combinatorics of 
 \begin{proposition}
 \label{prop:morphismsStringModules}
 Let~$\rho$ and~$\rho'$ be two strings for a string algebra~$A$.
-Then the dimension of the $k$-vector space~$\Hom{A} \big( M(\rho), M(\rho') \big)$ is equal to
+Then the dimension of the $k$-vector space~$\Hom{A} \big( M(\rho), M(\rho') \big)$ is equal to the number of pairs~$(\sigma, \sigma')$, where~$\sigma$ and~$\sigma'$ are substrings of~$\rho$ and~$\rho'$, respectively, such that there is an equality of strings~$\sigma' = \sigma^{\pm 1}$.
 
-\smallskip
-\centerline{
-\(
-\sum\limits_{\xi \text{ string}}  (\#\textrm{ of substrings equal to~$\xi$ on top of~$\rho$}) \cdot  (\#\textrm{ of substrings equal to~$\xi$ or~$\xi^{-1}$ at the bottom of~$\rho'$}).
-\)
-}
+% \smallskip
+% \centerline{
+% \(
+% \sum\limits_{\xi \text{ string}}  (\#\textrm{ of substrings equal to~$\xi$ on top of~$\rho$}) \cdot  (\#\textrm{ of substrings equal to~$\xi$ or~$\xi^{-1}$ at the bottom of~$\rho'$}).
+% \)
+% }
 \end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1901,7 +1902,7 @@ A gentle bound quiver~$\bar Q$ and its blossoming gentle bound quiver~$\bar Q\bl
 \end{example}
 
 The following lemma is immediate and left to the reader.
-See \fref{fig:exmBlossomingQuiver} for an example.
+% See \fref{fig:exmBlossomingQuiver} for an example.
 
 \begin{lemma}
 The number of vertices and arrows of the blossoming quiver~$Q\blossom$ are given by
@@ -2061,7 +2062,7 @@ We denote by~$\NKWalks(\bar Q)$ the walks on~$\bar Q$ which are not self-kissing
 \begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=1]{kissingCrossing}}
-	\caption{A schematic representation of two kissing walks (left) and two crossing walks~(right): $\omega$~kisses~$\omega'$ (left) while~$\mu$~crosses~$\nu$ (right). For the crossing walks, we have~$\mu \prec_\gamma \nu$ while~$\nu \prec_\delta \mu$.}
+	\caption{A schematic representation of two kissing walks (left) and two non-kissing walks~(right) having a common substring: $\omega$~kisses~$\omega'$ (left) while~$\mu$~does not kiss~$\nu$ (right). On the right, we have~$\mu \prec_\gamma \nu$ and~$\nu \prec_\delta \mu$.}
 	\label{fig:kissingCrossing}
 \end{figure}
 
@@ -2152,7 +2153,7 @@ On the schematic illustration of \fref{fig:kissingCrossing}\,(right), the walks~
 \begin{remark}
 Note that the countercurrent order~$\prec_\alpha$
 \begin{itemize}
-\item is well-defined: if both endpoints of~$\sigma$ are in~$Q_0$, $\mu_\star$ (resp.~$\nu_\star$) should enter and exit~$\sigma$ in the same direction since~$\mu_\star$ and~$\nu_\star$ are non-kissing;
+\item is well-defined: if both endpoints of~$\sigma$ are in~$Q_0$, then $\mu_\star$ (resp.~$\nu_\star$) enters and exits~$\sigma$ in the same direction since~$\mu_\star$ and~$\nu_\star$ are non-kissing;
 \item is independent of the orientation of~$\mu_\star$ and~$\nu_\star$:~${\mu_\star \prec_\alpha \nu_\star \!\iff\! (\mu_\star)^{-1} \prec_\alpha \nu_\star \!\iff\! \mu_\star \prec_\alpha (\nu_\star)^{-1}}$; we thus also consider~$\prec_\alpha$ as a relation on undirected marked walks;
 \item depends on which occurrence of~$\alpha$ is marked on~$\mu$ and~$\nu$.
 \end{itemize}
@@ -2169,7 +2170,7 @@ We prove that~$\prec_\alpha$ is transitive.
 Let~$\lambda_\star$, $\mu_\star$, $\nu_\star$ be three pairwise non-kissing walks marked at an occurrence of~$\alpha$ such that~${\lambda_\star \prec_\alpha \mu_\star \prec_\alpha \nu_\star}$. Let~$v$ be a vertex where~$\lambda_\star$ and~$\mu_\star$ split. Then
 %Let~$\sigma$ (resp.~$\tau$, resp.~$\rho$) denote the common substring of~$\lambda_\star$ and~$\mu_\star$ (resp.~of~$\mu_\star$ and~$\nu_\star$, resp.~of~$\lambda_\star$ and~$\nu_\star$) containing that occurrence of~$\alpha$. We distinguish two situations:
 \begin{itemize}
-\item either~$\nu_\star$ contains~$v$, then it must follow~$\mu_\star$ (otherwise~$\nu_\star \prec_\alpha \mu_\star$), so that~$\lambda_\star \prec_\alpha \nu_\star$.
+\item either~$\nu_\star$ contains~$v$, then it must leave~$v$ via the same arrow as~$\mu_\star$ (otherwise~$\nu_\star \prec_\alpha \mu_\star$), so that~$\lambda_\star \prec_\alpha \nu_\star$.
 \item or~$\nu_\star$ does not contain~$v$, then~$\nu_\star$ and~$\mu_\star$ split at a vertex~$w$ between~$\alpha$ and~$v$. Since~${\mu_\star \prec_\alpha \nu_\star}$, $\mu$ (and thus~$\lambda$) leaves~$w$ with an arrow in the same direction as~$\alpha$, while~$\nu$ leaves~$w$ with an arrow opposite to the direction of~$\alpha$, so that~$\lambda_\star \prec_\alpha \nu_\star$.
 \end{itemize}
 Moreover, $\prec_\alpha$ is antisymmetric by definition.
@@ -3092,7 +3093,7 @@ Join- and meet-irreducible elements are building blocks for join- and meet-repre
 
 \begin{definition}
 A \defn{join-representation} of~$x \in L$ is a subset~$J \subseteq L$ such that~$x = \bigJoin J$.
-Such a representation is \defn{irredundant} if~$x \ne \bigJoin J'$ for a strict subset~$J' \subsetneq J$.
+Such a representation is \defn{irredundant} if~$x \ne \bigJoin J'$ for any strict subset~$J' \subsetneq J$.
 The irredundant join-representations of an element~$x \in L$ are ordered by containement of the lower ideals of their elements, \ie~$J \le J'$ if and only if for any~$y \in J$ there exists~$y' \in J'$ such that~$y \le y'$ in~$L$.
 The \defn{canonical join-representation} of~$x$ is the minimal irredundant join-representation of~$x$ for this order when it exists.
 The \defn{canonical meet-representation} is defined dually.
