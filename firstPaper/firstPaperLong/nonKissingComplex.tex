@@ -1348,12 +1348,12 @@ On the other hand, no almost positive string reaches for the negative simple str
 In the proposition below, we will make use of the following convention.
 If~$P[1]$ is a shifted projective, then 
 \begin{itemize}
-\item $\Hom{A} (M, \tau P[1]) = 0$ for any representation or shifted projective~$M$,
-\item $\Hom{A} (P[1], \tau M) = \Hom{A} (P,M)$ for any representation~$M$.
+\item $\Hom{A} (M, \tau P[1]) = \Hom{A} (P,M)$ for any representation or shifted projective~$M$,
+\item $\Hom{A} (P[1], \tau M) = 0$ for any representation~$M$.
 \end{itemize}
 These choices are motivated by the isomorphism
 \[
-\Hom{A} (M, \tau N) \cong \Hom{K^b(\operatorname{proj} A)}(P_M, P_N[1]),
+\Hom{A} (M, \tau N) \cong \Hom{K^b(\operatorname{proj} A)}(P_N, P_M[1]),
 \]
 where~$P_M$ and~$P_N$ are the minimal projective presentations of the representations~$M$ and~$N$.
 \end{notation}
@@ -2300,8 +2300,46 @@ Consider now an arrow~$\alpha \in Q\blossom_1$ and a non-kissing face~$F \in \NK
 Let~$F_\alpha$ be the set of walks of~$F$ containing~$\alpha$, marked at an occurrence of~$\alpha$.
 Note that~$F_\alpha \ne \varnothing$ since it contains at least the straight walk passing through~$\alpha$, marked at~$\alpha$.
 Observe that this straight walk is always the minimal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$, since it always agrees with the direction of~$\alpha$.
-On the other hand, we can consider the maximal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$.
+On the other hand, Proposition~\ref{prop: nk facets are finite}, below, shows that we can consider the maximal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$.
 Intuitively, it is the most countercurrent walk passing through~$\alpha$ with respect to the direction of~$\alpha$.
+\begin{lemma}\label{lemma: distinguished arrows exists}
+Let~$F$ be a finite face of~$\NKC$, let~$\omega$ be a walk in~$F$, and let~$\alpha$ be an arrow on~$\omega$.
+Then, there is an arrow~$\beta$ oriented in the same direction as~$\alpha$ in~$\omega$ such that~$\omega$ (marked at~$\beta$) is maximal in~$F$ for~$\prec_\beta$.
+\end{lemma}
+
+\begin{proof}
+If~$\omega$ is not maximal in~$F$ for~$\prec_\alpha$, consider~${\mu \eqdef \min_{\prec_\alpha} \set{\nu \in F_\alpha}{\omega \prec_\alpha \nu}}$.
+Let~$\sigma$ denote the maximal common substring of~$\omega$ and~$\mu$ containing~$\alpha$.
+Since~$\omega$ and~$\mu$ are distinct, they split at an endpoint of~$\sigma$.
+At this endpoint, the arrow~$\beta$ of~$\omega$ not in~$\sigma$ points in the same direction as~$\alpha$ since~$\omega \prec_\alpha \mu$.
+Let~$\lambda$ be maximal in~$F$ for~$\prec_\beta$.
+If~$\lambda \ne \omega$, then~$\lambda$ either kisses~$\mu$ or contradicts the minimality of~$\mu$ among the walks~$\set{\nu \in F_\alpha}{\omega \prec_\alpha \nu}$.
+See \fref{fig:pure}\,(right) for an illustration.
+We conclude that~$\lambda = \omega$ has a distinguished arrow~$\beta$ in the direction of~$\alpha$.
+\end{proof}
+
+\begin{proposition}\label{prop: nk facets are finite}
+The faces of the non-kissing complex have finite cardinality.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lemma: distinguished arrows exists}, the cardinality of any finite non-kissing face is bounded by~$|Q_1\blossom|$.
+Thus, any collection of~$|Q_1\blossom|+1$ walks contains a kiss and all non-kissing faces are finite.
+% Let~$F$ be a non-kissing face.
+% Since the quiver~$Q$ has a finite number of arrows, it is enough to prove that each~$F_\alpha$ is finite.
+% Assume, by means of contradiction, that there is some~$\alpha\in Q_1$ with~$F_\alpha$ infinite.
+% Call ``junction'' a marked occurrence of an arrow~$\beta$ in some~$\omega_\star, \omega'_\star\in F_\alpha$, such that~$\omega$ and~$\omega'$ coincide from their marked occurrence of~$\alpha$ up to~$\beta$ and differ after~$\beta$.
+% Since~$F_\alpha$ is infinite, there is an infinite number of junctions.
+% Since~$Q_1$ is finite, there are two junctions with the same underlying arrow~$\beta$ and such that either~$\alpha$ points towards both junctions or~$\alpha$ points to the direction opposite to both junctions.
+% This shows that there exist three marked walks~$\nu_\star\prec_\alpha \mu_\star\prec_\alpha \lambda_\star\in F_\alpha$ such that~$\lambda, \mu$ and $\nu$ coincide from their marked occurrence of~$\alpha$ up to some marked occurrence~$\beta_1$ of~$\beta$, after which~$\lambda$ differs from~$\mu$ and~$\nu$ but~$\mu$ and~$\nu$ coincide up to some other occurrence~$\beta_2$ of~$\beta$, and then differ (see Figure~\ref{fig: nk facets are finite}).
+% Let~$\sigma_1$ and~$\sigma_2$ be the longest common substrings of~$\lambda$ and~$\nu$ containing~$\beta_1$ and~$\beta_2$ respectively.
+% Note that, since~$\nu$ is finite,~$\sigma_2$ cannot contain~$\beta_1$; in particular,~$\sigma_2$ is contained in~$\mu$.
+% If~$\sigma$ is on top of~$\nu$, then it is at the bottom of~$\lambda$, and~$\lambda$ kisses~$\nu$, which is absurd.
+% Otherwise, the subword~$\sigma$ of~$\mu$ containing~$\beta_2$ is at the bottom of~$\mu$ and $\lambda$ constains a substring of the form~$\gamma^{-1}\sigma_1$, where~$\gamma$ is an arrow of~$Q$.
+% If~$\mu$ entirely contains~$\gamma^{-1}\sigma_1$, then~$\sigma_1$ is at the top of~$\mu$.
+% Hence,~$\mu$ kisses itself, which is absurd.
+% Therefore,~$\gamma^{-1}\sigma_1$ is not entirely contained in~$\mu$.
+\end{proof}
 
 \begin{definition}
 For an arrow~$\alpha \in Q\blossom_1$ and a non-kissing face~$F \in \NKC$ containing the straight walk passing through~$\alpha$, let~$\omega_\star \eqdef \max_{\prec_\alpha} F_\alpha$ and let~$\omega$ be the walk obtained by forgetting the mark in~$\omega_\star$. We say that~$\omega$ is the \defn{distinguished walk} of~$F$ at~$\alpha$ and that~$\alpha$ is a \defn{distinguished arrow} on~$\omega \in F$.
@@ -2329,7 +2367,7 @@ For any non-kissing facet~$F \in \NKC$, each bending (resp. straight) walk of~$F
 \end{proposition}
 
 \begin{proof}
-We first prove that each walk of~$F$ contains at most one distinguished arrow in each direction.
+In view of Lemma~\ref{lemma: distinguished arrows exists}, it remains to prove that each walk of~$F$ contains at most one distinguished arrow in each direction.
 Assume that a walk~$\omega$ has two distinguished arrows~$\alpha, \beta$ pointing in the same direction.
 Orient~$\omega$ in this same direction and assume without loss of generality that~$\alpha$ appears before~$\beta$ along~$\omega$.
 %Note that we also allow a priori~$\alpha, \beta$ to be different occurrences along~$\omega$ of the same arrow of~$Q\blossom_1$.
@@ -2361,17 +2399,6 @@ We obtained a contradiction in all cases, which shows that~$\mu$ is non-kissing 
 	\caption{A schematic illustration of the proof of Proposition~\ref{prop:distinguishedArrows}:~$\omega$ cannot have two distinguished arrows~$\alpha, \beta$ in the same direction (left), and for each arrow~$\alpha$ on~$\omega$, there is a distinguished arrow on~$\omega$ in the direction of~$\alpha$ (right). See the proof of Proposition~\ref{prop:distinguishedArrows} for a detailed description.}
 	\label{fig:pure}
 \end{figure}
-
-\smallskip
-We now prove that for any arrow~$\alpha$ on a walk~$\omega$ in a face~$F$ of~$\NKC$, there is a distinguished arrow on~$\omega \in F$ in the direction of~$\alpha$.
-If~$\omega$ is not the distinguished walk of~$F$ at~$\alpha$, consider~${\mu \eqdef \min_{\prec_\alpha} \set{\nu \in F_\alpha}{\omega \prec_\alpha \nu}}$.
-Let~$\sigma$ denote the maximal common substring of~$\omega$ and~$\mu$ containing~$\alpha$.
-Since~$\omega$ and~$\mu$ are distinct, they split at an endpoint of~$\sigma$.
-At this endpoint, the arrow~$\beta$ of~$\omega$ not in~$\sigma$ points in the same direction as~$\alpha$ since~$\omega \prec_\alpha \mu$.
-Let~$\lambda$ be the distinguished walk of~$F$ at~$\beta$.
-If~$\lambda \ne \omega$, then~$\lambda$ either kisses~$\mu$ or contradicts the minimality of~$\mu$ among the walks~$\set{\nu \in F_\alpha}{\omega \prec_\alpha \nu}$.
-See \fref{fig:pure}\,(right) for an illustration.
-We conclude that~$\lambda = \omega$ has a distinguished arrow~$\beta$ in the direction of~$\alpha$.
 \end{proof}
 
 \begin{corollary}
