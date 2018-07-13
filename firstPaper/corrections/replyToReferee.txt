@@ -139,7 +139,7 @@ page 43: We have added a reference to the definition.
 
 * def 3.16 and others: $\mathcal{S}$ and $S$ are not easily distinguishable 
 
-  Reply:
+  Reply: We changed it with $\mathbb{S}$ which seems more different.
 
 
 * Proof of theorem 3.20: the numberings do not correspond to each other
@@ -154,7 +154,7 @@ page 43: We have added a reference to the definition.
 
 * Example 3.36: Figure 34 does not illustrate $\omega$
 
-  Reply:
+  Reply: We have deleted this example.
 
 
 * Example 3.44: It appears to me that the map, which is not explicit, is on the
