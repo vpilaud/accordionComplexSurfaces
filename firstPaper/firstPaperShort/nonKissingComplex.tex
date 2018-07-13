@@ -314,6 +314,7 @@ Table~\ref{table:dictionary} provides a dictionary to translate between the alge
 \begin{table}
 	\capstart{}
     \centerline{
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{|c|c|c|}
     \hline
     String modules on~$\bar Q$ &
@@ -385,6 +386,7 @@ Table~\ref{table:dictionary} provides a dictionary to translate between the alge
     Rem.~\ref{rem:KNvsTau}
     \\ \hline
     \end{tabular}
+	\renewcommand{\arraystretch}{1}
     }
     \caption{Dictionary between algebraic notions on the support $\tau$-tilting complex and combinatorial notions on the non-kissing complex.}
     \label{table:dictionary}    
@@ -1841,7 +1843,7 @@ The support $\tau$-tilting complex of~$\bar Q$ is isomorphic to the clique compl
 
 \begin{remark}
 The criterion of Proposition \ref{proposition: attract or dance and tau compatibility} for $\tau$-compatibility between string modules can be compared with a similar criterion obtained recently in \cite{CanakciPauksztelloSchroll} for the existence of extensions between two string modules.
-The similarity between the two criteria is explained by the Auslander--Reiten formula asserting that $\Ext{}^1(N,M)$ is a quotient of the space $\Hom{}(M,\tau N)$ (see \cite[Theorem IV.2.13]{AssemSimsonSkowronski}).
+The similarity between the two criteria is explained by the Auslander--Reiten formula asserting that $\Ext{}^1(N,M)$ is a quotient of the space $\Hom{}(M,\tau N)$ (see \cite[Thm.~IV.2.13]{AssemSimsonSkowronski}).
 \end{remark}
 
 
@@ -2533,6 +2535,7 @@ The (non-kissing) \defn{flip graph} of~$\bar Q$ is the dual graph~$\NKG$ of~$\RN
 If the common substring~$\sigma$ of~$\omega$ and~$\omega'$ is on top of~$\omega$ and at the bottom of~$\omega'$, then we say that the flip~$F \to F'$ is \defn{increasing} and that the common substring~$\sigma$ is an \defn{ascent} of~$F$ and a \defn{descent} of~$F'$.
 We denote by~$\ascents(F) \subseteq \strings^\pm(\bar Q)$ and $\descents(F) \subseteq \strings^\pm(\bar Q)$ the sets of ascents and descents of~$F$ respectively.
 %In the opposite situation, the flip is \defn{decreasing} and~$\sigma$ is a descent of~$F$ and an ascent of~$F'$.
+Otherwise,~$\sigma$ is a descent of~$F$ and an ascent of~$F'$ and the flip is called \defn{decreasing}.
 \end{definition}
 
 This provides a natural orientation of the non-kissing flip graph~$\NKG$.
