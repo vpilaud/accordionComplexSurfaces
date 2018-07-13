@@ -408,11 +408,16 @@ Table~\ref{table:dictionary} provides a dictionary to translate between the alge
     Rem.~\ref{rem:KNvsTau}
     \\ \hline
     \end{tabular}
-	\hspace{1cm}
+	\hspace{1cm}	
 }
-{Dictionary between algebraic notions on the support $\tau$-tilting complex and combinatorial notions on the non-kissing complex.}
+{Dictionary between algebraic notions on the support $\tau$-tilting complex and combinatorial notions on the non-kissing complex.
+ \footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
+ \footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
+}
 {table:dictionary}
+
 \captionsetup{width=\textwidth}
+
 
 %\begin{table}
 %	\capstart{}
@@ -528,8 +533,8 @@ Moreover, this fan is the normal fan of a polytope, called the non-kissing assoc
 The non-kissing complex provides an instrumental combinatorial model to understand the linear dependences among $\b{g}$-vectors of adjacent $\b{g}$-vector cones, which leads to simple polytopal realizations.
 In fact, this understanding even extends to arbitrary $\tau$-tilting finite algebras.
 
-\footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
-\footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
+% \footnotetext[1]{The straight walks should morally correspond to some projective-injective objects in an exact category. We plan to further investigate the situation depicted in Figure~\ref{fig:exmAuslanderReitenQuiver}.}
+% \footnotetext[2]{We do not know of an algebraic interpretation of the countercurrent order yet. We nonetheless included it in the table above since we think it might be of interest to find one.}
 
 \subsection*{Grid and dissection bound quivers}
 
@@ -2176,7 +2181,7 @@ We let~$\NKWalks(\bar Q)$ be the set of walks on~$\bar Q$ which are not self-kis
 \begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=1]{kissingCrossing}}
-	\caption{A schematic representation of two kissing walks (left) and two crossing walks~(right): $\omega$~kisses~$\omega'$ (left) while~$\mu$~crosses~$\nu$ (right). For the crossing walks, we have~$\mu \prec_\gamma \nu$ while~$\nu \prec_\delta \mu$.}
+	\caption{A schematic representation of two kissing walks (left) and two non-kissing walks~(right) having a common substring: $\omega$~kisses~$\omega'$ (left) while~$\mu$~does not kiss~$\nu$ (right). On the right, we have~$\mu \prec_\gamma \nu$ and~$\nu \prec_\delta \mu$.}
 	\label{fig:kissingCrossing}
 \end{figure}
 
@@ -4148,7 +4153,7 @@ Throughout the proof, we denote~$S \eqdef \zeta(F') \ssm \{\sigma\}$ and~$S' \eq
 Consider an increasing flip~$F \to F'$ with~$F \ssm \{\omega\} = F' \ssm \{\omega'\}$ and supported by~$\sigma = \distinguishedString{w}{F} = \distinguishedString{w'}{F'}$.
 We prove that~$S$ is biclosed:
 \begin{description}
-\item[closed] Otherwise, there exist bottom substrings~$\sigma_1, \dots, \sigma_\ell$ of walks~$\omega_1, \dots, \omega_\ell$ of~$F'$, arrows~$\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~$\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell$.
+\item[closed] Otherwise, there exist bottom substrings~$\sigma_1, \dots, \sigma_\ell$ of respective walks~$\omega_1, \dots, \omega_\ell$ of~$F'$, arrows~$\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~$\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell$.
 Assume that there is~$k \in [\ell-1]$ such that~${\varepsilon_k = 1}$ and choose~$k$ minimal with that property.
 Then~$\omega_k \ne \omega'$ and~$\omega$ has two outgoing arrows while~$\omega_k$ has two incoming arrows at the endpoints of~$\sigma_k$, so that~$\sigma_k \in \Sigma_\top(\omega) \cap \Sigma_\bottom(\omega_k)$, contradicting the non-kissingness of~$F$.
 We obtain a similar contradiction assuming that there is~$k \in [\ell-1]$ such that~$\varepsilon_k = -1$ and choosing~$k$ maximal with that property.
@@ -4204,7 +4209,7 @@ This concludes our proof of Theorem~\ref{thm:lattice}, which we can restate more
 
 \begin{corollary}
 \label{coro:finalLatticeQuotient}
-If~$\bar Q$ is a gentle bound quiver whose non-kissing complex~$\RNKC$ is finite, then the non-kissing oriented flip graph~$\NKG$ is the Hasse diagram of the lattice quotient~$\Bicl{\bar Q}/{\equiv}$ of the congruence-uniform lattice of biclosed sets of strings by the lattice congruence~$\equiv$.
+If~$\bar Q$ is a gentle bound quiver such that the non-kissing complex~$\RNKC$ is finite, then the non-kissing oriented flip graph~$\NKG$ is the Hasse diagram of the lattice quotient~$\Bicl{\bar Q}/{\equiv}$ of the congruence-uniform lattice of biclosed sets of strings by the lattice congruence~$\equiv$.
 \end{corollary}
 
 \begin{proof}
@@ -4388,7 +4393,7 @@ We gather the constructions of Lemmas~\ref{lem:bijectionDistinguishableStringsWa
 \label{def:bijectionWalksDistinguishableStrings}
 For a distinguishable string~$\sigma \in \distinguishableStrings^\pm(\bar Q)$, we denote by $\omega_\bottom(\sigma) \in \NKWalks^\pm(\bar Q)$ the undirected walk constructed in Lemma~\ref{lem:bijectionDistinguishableStringsWalks}, meaning that ${\omega_\bottom(\sigma) = \{\omega(\alpha',S), \omega(\beta',S)\}}$ where~$S = \closure{\Sigma_\bottom(\sigma)}$ and~$\alpha', \beta' \in Q\blossom_1$ are such that ${\alpha'\sigma\beta'^{-1} \in \strings(\bar Q\blossom)}$.
 
-Conversely, for a non-self-kissing walk~$\omega \in \NKWalks^\pm(\bar Q)$ not in the peak facet, we denote by~$\sigma_\bottom(\omega)$ the inclusion minimal string in~$\set{\sigma \in \Sigma_\bottom(\omega)}{\closure{\Sigma_\bottom(\omega)} = \closure{\Sigma_\bottom(\sigma)}}$.
+Conversely, for a non-self-kissing walk~$\omega \in \NKWalks^\pm(\bar Q)$ not in the peak facet, the inclusion minimal string in the set~$\set{\sigma \in \Sigma_\bottom(\omega)}{\closure{\Sigma_\bottom(\omega)} = \closure{\Sigma_\bottom(\sigma)}}$ is denoted by~$\sigma_\bottom(\omega)$.
 \end{definition}
 
 \begin{proposition}
@@ -4444,11 +4449,11 @@ As illustrated in \fref{fig:exmBijectionStringsWalks2}\,(right), the bijections 
 \subsection{Join-irreducibles in~$\NKL$}
 
 In order to describe the canonical join-representations in the next section, we now completely describe the join-irreducible elements in~$\NKL$.
-We first consider the following join-irreducible elements of~$\Bicl{\bar Q}$.
+Let us first consider the following join-irreducible elements of~$\Bicl{\bar Q}$.
 
 \begin{lemma}
 \label{lem:exmBiclosedJI}
-For any distinguishable string~$\sigma \in \strings^\pm(\bar Q)$, the biclosed set~$\closure{\Sigma_\bottom(\sigma)}$ is join-irreducible in~$\Bicl{\bar Q}$.
+Let~$\sigma \in \strings^\pm(\bar Q)$ be a distinguishable string. Then the biclosed set~$\closure{\Sigma_\bottom(\sigma)}$ is join-irreducible in~$\Bicl{\bar Q}$.
 \end{lemma}
 
 \begin{proof}
@@ -4620,7 +4625,7 @@ The bijection is illustrated in \fref{fig:exmNCP}.
 The following assertions are equivalent for a subset~$\Sigma$ of~$\distinguishableStrings^\pm(\bar Q)$:
 \begin{enumerate}[(i)]
 \item $\Sigma$ is pairwise non-friendly.
-\item $\ji(\Sigma) \eqdef \set{\ji(\sigma)}{\sigma \in \Sigma}$ is the canonical join-representation of an element in~$\NKL$.
+\item the set~$\ji(\Sigma) \eqdef \set{\ji(\sigma)}{\sigma \in \Sigma}$ is the canonical join-representation of an element in~$\NKL$.
 \item $\Sigma$ is the descent set of a non-kissing facet~$F \in \NKC$.
 \end{enumerate}
 Thus, the canonical join complex of~$\NKL$ is isomorphic to the non-friendly complex~$\NFC$.
@@ -4876,7 +4881,7 @@ The $\b{g}$- and $\b{c}$-vectors have been designed so that the following statem
 
 \begin{proposition}
 \label{prop:gvectorscvectorsDualBases}
-For a non-kissing facet~$F \in \RNKC$, the set of $\b{g}$-vectors~$\gvectors{F}$ and the set of $\b{c}$-vectors~$\cvectors{F}$ form dual bases. 
+For a non-kissing facet~$F \in \RNKC$, the set~$\gvectors{F}$ of~$\b{g}$-vectors and the set~$\cvectors{F}$ of~$\b{c}$-vectors form dual bases. 
 \end{proposition}
 
 \begin{proof}
