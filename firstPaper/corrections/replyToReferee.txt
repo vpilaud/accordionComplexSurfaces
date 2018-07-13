@@ -129,7 +129,7 @@ page 43: We have added a reference to the definition.
 
 * def 2.36: is any flip either increasing or decreasing?
 
-  Reply: Yes. This has now been made axplicit and we have added the definition of decreasing.
+  Reply: Yes. This has now been made explicit and we have added the definition of decreasing.
 
 
 * def 3.4: do you mean ``any strict subset''?
@@ -149,7 +149,7 @@ page 43: We have added a reference to the definition.
 
 * page 49 previous to last paragraph: ``ordered by:'' should be ``ordered by''
 
-  Reply:
+  Reply: Done.
 
 
 * Example 3.36: Figure 34 does not illustrate $\omega$
@@ -165,12 +165,12 @@ page 43: We have added a reference to the definition.
 
 * pages 59,60,64,65,68,73 and probably more: the text goes outside the margin
 
-  Reply: Fixed.
+  Reply: Fixed. We have checked that there are no text in the margin besides pictures and tables.
 
 
 * remark 3.72: do you mean ``Figure 36 (bottom)''?
 
-  Reply:
+  Reply: Indeed.
 
 
 A note about notation. This article uses a quite creative notation set. For
