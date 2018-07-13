@@ -17,7 +17,9 @@ changes, which we first list.
   - page 43: $\mathcal{L}_{nk}(\overline{Q})$
   Could this notions be introduces, at least vaguely, before using them?
 
-  Reply: page 43: We have added a reference to the definition.
+  Reply: 
+page 1: Modified to: The non-kissing complex is the simplicial complex of a compatibility relation, called non-kissing, on paths in a fixed shape of a grid.
+page 43: We have added a reference to the definition.
 
 
 * page 1 paragraph 1: ``The interest in'' rather then ``The interest for''
@@ -44,7 +46,7 @@ changes, which we first list.
 * page 6, last line: while the meaning of $I^{rev}$ is clear this has not been
   introduced formally.
 
-  Reply: 
+  Reply: We have added a definition.
 
 
 * Figure 1: all other figures in the paper are not separated into sub figures by
