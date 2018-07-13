@@ -66,7 +66,7 @@ changes, which we first list.
   it by defining the two sets first? Even better can you replace the formula 
   with a sentence? 
 
-  Reply:
+  Reply: The formula has been replaced by a sentence.
 
 
 * page 17: the name ``dance'' suggests a symmetric notion but it is not. If
@@ -92,7 +92,7 @@ changes, which we first list.
 
 * Just below: ``See Figure 15'' is not needed here
 
-  Reply:
+  Reply: Removed.
 
 
 * bottom of page 24 what is a non-kissing cycle? Do you mean not self-kissing?
@@ -113,12 +113,12 @@ changes, which we first list.
 * remark 2.20: the first bullet point ``should'' should the ``then'' you are
   stating a fact not an hope
 
-  Reply:
+  Reply: Fixed.
 
 
 * proof of 2.21: ``follow'' is not really clear here
 
-  Reply:
+  Reply: Clarified.
 
 
 * def 2.36: is any flip either increasing or decreasing?
@@ -128,7 +128,7 @@ changes, which we first list.
 
 * def 3.4: do you mean ``any strict subset''?
 
-  Reply:
+  Reply: Yes, fixed.
 
 
 * def 3.16 and others: $\mathcal{S}$ and $S$ are not easily distinguishable 
@@ -172,5 +172,7 @@ example the blossoming quiver has a little flower as exponent and the operation
 of blinding is represented by two half circle to suggest blinkers. I am not sure
 I am happy about these choices but I do not have better suggestions to offer.
 
-  Reply:
+  Reply: While we agree that the notation set is non-conventional, we believe
+         that it fits well with our chosen terminology.  We thus respectfully 
+         propose to keep the notation as it is.
 
