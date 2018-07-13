@@ -83,7 +83,7 @@ page 43: We have added a reference to the definition.
 
 * page 24 intro: ``the operation of flip''
 
-  Reply: Done
+  Reply: Done.
 
 
 * Example 2.2 and many more occurrences: Through the paper there is a recurring
