@@ -1,4 +1,4 @@
-\documentclass{memo-l}
+\documentclass[draft]{memo-l}
 
 \usepackage[T1]{fontenc}
 \usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap,  shuffle, xargs, multicol, overpic, pdflscape, multirow, hvfloat, minibox, accents, array, xifthen, ae, aecompl, blkarray, pifont, mathtools}
@@ -626,7 +626,7 @@ Throughout, we always assume that~$Q$ is \defn{finite}, that is, it has only fin
 We usually denote the vertices of~$Q$ by~$u,v,w$ and the arrows of~$Q$~by~$\alpha, \beta, \gamma$.
 
 A \defn{path} in~$Q$ is a sequence~$\pi = \alpha_1 \dots \alpha_\ell$ of~$Q_1$ such that~$t(\alpha_k) = s(\alpha_{k+1})$ for all~${k \in [\ell-1]}$ (note that we compose arrows from left to right).
-The \defn{source} (resp.~\defn{target}) of~$\pi$ is~$s(\pi) \eqdef s(\alpha_1)$ (resp.~$t(\pi) \eqdef t(\alpha_\ell)$), and the \defn{length} of~$\pi$ is~$\ell(\pi) \eqdef \ell$.
+Its \defn{source} (resp.~\defn{target}) is~$s(\pi) \eqdef s(\alpha_1)$ (resp.~$t(\pi) \eqdef t(\alpha_\ell)$), and its \defn{length} is~$\ell(\pi) \eqdef \ell$.
 Note that for each vertex~$v \in Q_0$, we also consider the \defn{path~$\varepsilon_v$ of length zero} with source and target~$s(\varepsilon_v) = t(\varepsilon_v) = v$.
 
 Let~$k$ denote a field.
@@ -642,7 +642,7 @@ Two quivers~$Q = (Q_0, Q_1, s, t)$ and~$Q' = (Q_0', Q_1', s', t')$ are \defn{iso
 The bijection ${\phi_1 : Q_1 \to Q_1'}$ extends to a bijection on paths by~${\phi_1(\alpha_1 \cdots \alpha_\ell) = \phi_1(\alpha_1) \cdots \phi_1(\alpha_\ell)}$, and thus to a morphism~$\phi_1 : kQ \to kQ'$ of path algebras by linearity.
 We say that two bound quivers~$\bar Q = (Q,I)$ and~$\bar Q' = (Q',I')$ are \defn{isomorphic} if there there is an isomorphism~$\phi = (\phi_0, \phi_1)$ between the quivers~$Q$ and~$Q'$ such that~$\phi_1(I) = I'$.
 
-For a quiver~$Q = (Q_0, Q_1, s, t)$, define its \defn{reversed quiver} by~$\reversed{Q} \eqdef (Q_0, Q_1, t, s)$.
+For a quiver~$Q = (Q_0, Q_1, s, t)$, define its \defn{reversed quiver}~$\reversed{Q} \eqdef (Q_0, Q_1, t, s)$.
 For a path~$\pi$ on~$Q$, define its \defn{reversed path} on~$\reversed{Q}$ by~$\reversed{(\alpha_1 \cdots \alpha_\ell)} = \alpha_\ell \cdots \alpha_1$, and extend it by linearity to a morphism~$kQ \to k\reversed{Q}$ of path algebras.
 The \defn{reversed bound quiver} of a bound quiver~$\bar Q = (Q,I)$ is the bound quiver~$\reversed{\bar Q} \eqdef (\reversed{Q},\reversed{I})$.
 
@@ -1047,7 +1047,7 @@ Then the string and band modules over~$A$ form a complete list of indecomposable
 Moreover,
   \begin{itemize}
     \item A string module is never isomorphic to a band module.
-    \item Two string modules~$M(\rho)$ and~$M(\rho')$ are isomorphic if and only if~${\rho' = \rho^{\pm 1}}$.
+    \item Two string modules~$M(\rho), M(\rho')$ are isomorphic if and only if~${\rho' = \rho^{\pm 1}}$.
     \item Two band modules~$M(\varpi,\lambda, d)$ and~$M(\varpi', \lambda', d')$ are isomorphic if and only if~$d=d'$, and  
        \begin{itemize}
          \item either $\varpi$ is cyclically equivalent to~$\varpi'$, and~$\lambda = \lambda'$,
@@ -1066,7 +1066,7 @@ This description requires some additional definitions and notations.
 \label{def:peaksDeeps}
 We say that a string~$\rho$
   \begin{itemize}
-    \item \defn{starts} (resp.~\defn{ends}) \defn{on a peak} if there is no arrow~$\alpha$ such that~$\alpha \rho$ (resp.~$\rho\alpha^{-1}$) is a string,
+    \item \defn{starts} (resp.~\defn{ends}) \defn{on a peak} if there is no arrow~$\alpha$ such that~$\alpha \rho$ (resp.\,$\rho\alpha^{-1}$) is a string,
     \item \defn{starts} (resp.~\defn{ends}) \defn{in a deep} if there is no arrow~$\alpha$ such that~$\alpha^{-1} \rho$ (resp.~$\rho \alpha$) is a string.
   \end{itemize}
 \end{definition} 
@@ -1118,7 +1118,7 @@ In pictures, hooks and cohooks always look like
 \end{remark}
 
 \begin{example}
-In the quiver of Example~\ref{exm:aStringAlgebra}, the string~$\rho = \gamma\beta^{-1}\alpha^{-1}\gamma\beta^{-1}\alpha^{-1}\gamma\delta$ of Example~\ref{exm:drawingString} does not start on a deep, and we have
+The string~$\rho = \gamma\beta^{-1}\alpha^{-1}\gamma\beta^{-1}\alpha^{-1}\gamma\delta$ of Example~\ref{exm:drawingString} in the quiver of Example~\ref{exm:aStringAlgebra} does not start on a deep, and we have
 \[
 \rho = \;\vcenter{\hbox{\includegraphics[scale=0.3]{exmString1}}}
 \hspace{1.3cm}
@@ -1138,7 +1138,7 @@ Let~$\rho$ be a string for a string bound quiver~$\bar Q$.
   \begin{enumerate}
     \item If~$\rho$ starts on a peak and is not a path in~$\bar Q$, then there exists a unique string~$\rho'$ such that~$\rho'$ does not start in a deep, and~$\rho = \phantom{}_c\rho'$. We say that~$\rho'$ is obtained by \defn{removing a cohook at the start of~$\rho$} and denote it by~$_{c^{-1}}\rho$. If~$\rho$ is a path in~$\bar Q$, then we put~$_{c^{-1}}\rho =0$.
     
-    \item Dually, if~$\rho$ ends on a peak and is not the inverse of a path in~$\bar Q$, then the string obtained by \defn{removing a cohook at the end of~$\rho$} is~${\rho_{c^{-1}} \eqdef (_{c^{-1}} (\rho^{-1}) )^{-1}}$.
+    \item Dually, if~$\rho$ ends on a peak and is not the inverse of a path in~$\bar Q$, then the string obtained by \defn{removing a cohook at the end of~$\rho$} is~${\rho_{c^{-1}} \! \eqdef (_{c^{-1}} \! (\rho^{-1}) )^{-1}}$.
     
     %then there exists a unique string~$\rho'$ such that~$\rho'$ does not end in a deep, and~$\rho = \rho'_c$. We say that~$\rho'$ is obtained by \defn{removing a cohook at the end of~$\rho$} and denote it by~$\rho_{c^{-1}}$. If~$\rho$ is the inverse of a path in~$\bar Q$, then we put~$\rho_{c^{-1}} =0$.
     
@@ -1170,7 +1170,7 @@ We now have all definitions to describe the Auslander-Reiten translate of a stri
 \begin{theorem}[\cite{ButlerRingel}]
 \label{theorem: tau for strings}
 Consider a string algebra~$A = kQ/I$.
-The Auslander-Reiten translation transforms string modules to string modules: for a string~$\rho$ of~$\bar Q$, we have~${\tau \big( M(\rho) \big) = M(\rho')}$, where the string~$\rho'$ is obtained by following the table below.
+Then the Auslander-Reiten translation transforms string modules to string modules: for a string~$\rho$ of~$\bar Q$, we have~${\tau \big( M(\rho) \big) = M(\rho')}$, where the string~$\rho'$ is obtained by following the table below.
 \\[.3cm]
 	\centerline{
 	\begin{tabular}{|c|c|c|} 
@@ -1245,7 +1245,7 @@ it also appears naturally in the theory of $\tau$-tilting, see \cite[Sect.~5.1]{
 \begin{remark}
  A more practical way to think of $\b{g}$-vectors is by noting that $K_0(\proj \bar Q)$ is isomorphic to the free abelian group
  $\bigoplus_{v\in Q_0} \Z [P(v)] \cong \Z^{Q_0}$.  Thus, in the notation of Definition \ref{definition: g-vector of representation},
- if $P_0^M = \bigoplus_{v\in Q_0}P(v)^{\oplus a_v}$ and $P_1^M = \bigoplus_{v\in Q_0}P(v)^{\oplus b_v}$, 
+ if $P_0^M = \bigoplus_{v\in Q_0} \! P(v)^{\oplus a_v}$ and $P_1^M = \bigoplus_{v\in Q_0} \! P(v)^{\oplus b_v}$, 
  then
  \[
   \b{g}(M) = (a_v - b_v)_{v\in Q_0} \in \Z^{Q_0}.
@@ -1283,11 +1283,11 @@ An application of the combinatorics of strings allows us to compute the $\b{g}$-
         \medskip
   \item 
   		\(
-         \b{r} = \begin{cases}
+         \b{r} = \! \begin{cases}
                    0 & \textrm{if $\rho$ starts and ends in a deep,} \\
-                   \b{e}_{t(\alpha)}   & \textrm{if $\rho$ ends in a deep and $\alpha^{-1}\rho$ is a string, with $\alpha\in Q_1$,} \\
+                   \b{e}_{t(\alpha)}   & \textrm{if $\rho$ ends in a deep and $\alpha^{-1}\rho$ is a string with $\alpha\in Q_1$,} \\
                    \b{e}_{t(\beta)}    & \textrm{if $\rho$ starts in a deep and $\rho\beta$ is a string, with $\beta\in Q_1$,} \\
-                   \b{e}_{t(\alpha)} + \b{e}_{t(\beta)}  & \textrm{if $\alpha^{-1}\rho\beta$ is a string, with $\alpha, \beta\in Q_1$,}
+                   \b{e}_{t(\alpha)} + \b{e}_{t(\beta)} \!\!\! & \textrm{if $\alpha^{-1}\rho\beta$ is a string, with $\alpha, \beta\in Q_1$,}
                   \end{cases}
         \) \\
         \medskip
@@ -1525,7 +1525,7 @@ We therefore assume that~$\rho$ and~$\rho'$ are positive strings.
 We let~$\rho''$ be the string corresponding to~$\tau M(\rho')$ obtained from~$\rho'$ by the rules of Theorem~\ref{theorem: tau for strings}.
 
 Assume first that~$\rho$ attracts~$\rho'$ (Figure~\ref{fig:rho attracts rho'}), and let~$\alpha$ be as in Definition~\ref{definition: dance and attract}.
-Since~$\rho'$ does not start in a deep,~$\rho''$ starts at a substring~$\alpha_1\cdots\alpha_r$, where~$\alpha_r\cdots\alpha_1\alpha^{-1}$ is the cohook at the start of~$\rho'$.
+As~$\rho'$ does not start in a deep,~$\rho''$ starts at a substring~$\alpha_1\cdots\alpha_r$, where~$\alpha_r\cdots\alpha_1\alpha^{-1}$ is the cohook at the start of~$\rho'$.
 Let~$0\leq k\leq r$ be maximal such that~$\alpha_k\cdots\alpha_1$ is a substring (possibly a vertex if $k=0$) of~$\rho$ ending in~$u$, where~$u$ is as in Definition~\ref{definition: dance and attract}.
 By definition of a cohook,~$\alpha_k\cdots\alpha_1$ has to be on top of~$\rho$, and is at the bottom of~$\rho''$.
 By Proposition~\ref{prop:morphismsStringModules}, this implies the existence of a non-zero morphism from~$M(\rho)$ to~$M(\rho'') = \tau M(\rho')$.
