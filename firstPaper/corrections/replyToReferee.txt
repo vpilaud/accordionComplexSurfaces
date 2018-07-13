@@ -178,7 +178,7 @@ example the blossoming quiver has a little flower as exponent and the operation
 of blinding is represented by two half circle to suggest blinkers. I am not sure
 I am happy about these choices but I do not have better suggestions to offer.
 
-  Reply: While we agree that the notation set is non-conventional, we believe
+  Reply: While we agree that the notation set is unconventional, we believe
          that it fits well with our chosen terminology.  We thus respectfully 
          propose to keep the notation as it is.
 
