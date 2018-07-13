@@ -14,7 +14,7 @@ changes, which we first list.
   - page 43: $\mathcal{L}_{nk}(\overline{Q})$
   Could this notions be introduces, at least vaguely, before using them?
 
-  Reply:
+  Reply: page 43: We have added a reference to the definition.
 
 
 * page 1 paragraph 1: ``The interest in'' rather then ``The interest for''
@@ -41,7 +41,7 @@ changes, which we first list.
 * page 6, last line: while the meaning of $I^{rev}$ is clear this has not been
   introduced formally.
 
-  Reply:
+  Reply: 
 
 
 * Figure 1: all other figures in the paper are not separated into sub figures by
@@ -78,7 +78,7 @@ changes, which we first list.
 
 * page 24 intro: ``the operation of flip''
 
-  Reply:
+  Reply: Done
 
 
 * Example 2.2 and many more occurrences: Through the paper there is a recurring
@@ -87,7 +87,7 @@ changes, which we first list.
   suggest to remove this convention and to just refer to it as the recurring
   example or the example in figure 15.
 
-  Reply:
+  Reply: We have removed all appearances of _{exm}, and replaced them by references to the relevant figures.
 
 
 * Just below: ``See Figure 15'' is not needed here
@@ -97,12 +97,12 @@ changes, which we first list.
 
 * bottom of page 24 what is a non-kissing cycle? Do you mean not self-kissing?
 
-  Reply:
+  Reply: That was a mistake. Thank you for spotting it! We meant non-oriented cycle.
 
 
 * Figure 17: $Q_{pa}$ as above why is an example given a notation-like name?
 
-  Reply:
+  Reply: $Q_pa$ is now replaced by the more traditional $\overrightarrow{A_n}$.
 
 
 * Figure 18: crossing walks have not been introduced
@@ -123,7 +123,7 @@ changes, which we first list.
 
 * def 2.36: is any flip either increasing or decreasing?
 
-  Reply:
+  Reply: Yes. This has now been made axplicit and we have added the definition of decreasing.
 
 
 * def 3.4: do you mean ``any strict subset''?
@@ -138,7 +138,7 @@ changes, which we first list.
 
 * Proof of theorem 3.20: the numberings do not correspond to each other
 
-  Reply:
+  Reply: The numberings have been corrected.
 
 
 * page 49 previous to last paragraph: ``ordered by:'' should be ``ordered by''
