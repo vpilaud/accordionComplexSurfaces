@@ -97,8 +97,7 @@
 \renewcommand{\topfraction}{1} % possibility to have one page of pictures
 \renewcommand{\bottomfraction}{1} % possibility to have one page of pictures
 %\renewcommand\labelitemi{$\diamond$} % redefine itemize default symbol
-\newcommand{\ex}{_{\textrm{exm}}} % examples
-\newcommand{\pa}{_{\textrm{pa}}} % path
+\newcommand{\exmAn}{\overrightarrow{A_n}} % path
 
 % marginal comments
 \usepackage{todonotes}
@@ -1993,7 +1992,7 @@ The support~$\tau$-tilting complexes of the gentle algebras for all connected ge
 \label{part:combinatorics}
 
 This section focuses on the non-kissing complex of a gentle bound quiver, defined as the clique complex of a non-kissing relation among walks in a blossoming version of the quiver~(\ref{sec:blossomingQuivers}).
-We prove combinatorially that this complex is a pseudomanifold~(\ref{sec:nonKissingComplex}), introducing along the way the definitions of distinguished walks, arrows and substrings~(\ref{subsec:distinguished}) and the operation of flips~(\ref{subsec:flips}) that will be fundamental tools all throughout the paper.
+We prove combinatorially that this complex is a pseudomanifold~(\ref{sec:nonKissingComplex}), introducing along the way the definitions of distinguished walks, arrows and substrings~(\ref{subsec:distinguished}) and the operation of flip~(\ref{subsec:flips}) that will be fundamental tools all throughout the paper.
 We then prove the motivating result of this paper, namely that the support $\tau$-tilting complex is isomorphic to the non-kissing complex for any gentle bound quiver~(\ref{sec:nkcvsttc}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2020,7 +2019,7 @@ The vertices of~$Q\blossom_0 \ssm Q_0$ are called \defn{blossom vertices}, and t
 \end{definition}
 
 \begin{example}
-A gentle bound quiver~$\bar Q\ex$ and its blossoming gentle bound quiver~$\bar Q\ex\blossom$ are represented in \fref{fig:exmBlossomingQuiver}.
+A gentle bound quiver~$\bar Q$ and its blossoming gentle bound quiver~$\bar Q\blossom$ are represented in \fref{fig:exmBlossomingQuiver}.
 \end{example}
 
 The following lemma is immediate and left to the reader.
@@ -2043,7 +2042,7 @@ is the number of incoming (or equivalently outgoing) blossom arrows of~$\bar Q\b
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.6]{exmBlossomingQuiver}}
-	\caption{A gentle bound quiver~$\bar Q\ex$~(left) and its blossoming gentle bound quiver~$\bar Q\blossom\ex$~(right). Blossom vertices are white and blossom edges are thin.}
+	\caption{A gentle bound quiver~$\bar Q$~(left) and its blossoming gentle bound quiver~$\bar Q\blossom$~(right). Blossom vertices are white and blossom edges are thin.}
 	\label{fig:exmBlossomingQuiver}
 \end{figure}
 
@@ -2082,12 +2081,12 @@ It follows that a string in~$\bar Q\blossom$ is maximal if and only if it joins 
 \begin{definition}
 A \defn{walk} of~$\bar Q$ is a maximal string in~$\bar Q\blossom$ (thus joining two blossom vertices of~$\bar Q\blossom$).
 We denote by~$\walks(\bar Q)$ the set of all walks on~$\bar Q$.
-Note that~$\walks(\bar Q)$ is finite if and only if~$\bar Q$ has a relation in any non-kissing cycle.
+Note that~$\walks(\bar Q)$ is finite if and only if~$\bar Q$ has a relation in any (not necessarily oriented) cycle.
 As for strings, we often implicitly identify the two inverse walks~$\omega$ and~$\omega^{-1}$, and we let~$\walks^\pm(\bar Q) \eqdef \set{\{\omega, \omega^{-1}\}}{\omega \in \walks(\bar Q)}$ denote the set of undirected~walks.
 \end{definition}
 
 \begin{example}
-\fref{fig:exmFacet} shows examples of walks on the gentle quiver~$\bar Q\ex$ of \fref{fig:exmBlossomingQuiver}.
+\fref{fig:exmFacet} shows examples of walks on the gentle quiver~$\bar Q$ of \fref{fig:exmBlossomingQuiver}.
 \end{example}
 
 \begin{definition}
@@ -2159,7 +2158,7 @@ Some quivers are simultaneously dissection and grid bound quivers. This is in pa
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=1.5]{exmBijectionAssociahedron}}
-	\caption{An oriented path~$\bar Q\pa$ is simultaneously a triangulation and a grid bound quiver (top). A facet of the reduced non-kissing complex~$\RNKC[\bar Q\pa]$ can be seen as a triangulation or as a collection of non-kissing south-east paths (bottom).}
+	\caption{An oriented path~$\exmAn$ is simultaneously a triangulation and a grid bound quiver (top). A facet of the reduced non-kissing complex~$\RNKC[\exmAn]$ can be seen as a triangulation or as a collection of non-kissing south-east paths (bottom).}
 	\label{fig:exmBijectionAssociahedron}
 \end{figure}
 
@@ -2199,7 +2198,7 @@ We let~$\NKWalks(\bar Q)$ be the set of walks on~$\bar Q$ which are not self-kis
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.6]{exmFacet}}
-	\caption{(Left) Three walks on the quiver~$\bar Q\ex$ of \fref{fig:exmBlossomingQuiver}: the dotted red and orange walks are non-kissing, but both kiss the plain blue walk. (Right) A maximal collection~$F\ex$ of pairwise non-kissing walks on the quiver~$\bar Q\ex$: the thin light blue walks are straight, the others~are~bending.}
+	\caption{(Left) Three walks on the quiver~$\bar Q$ of \fref{fig:exmBlossomingQuiver}: the dotted red and orange walks are non-kissing, but both kiss the plain blue walk. (Right) A maximal collection~$F$ of pairwise non-kissing walks on the quiver~$\bar Q$: the thin light blue walks are straight, the others~are~bending.}
 	\label{fig:exmFacet}
 \end{figure}
 \end{example}
@@ -2212,7 +2211,7 @@ We thus consider the \defn{reduced non-kissing complex}~$\RNKC$ to be the deleti
 \end{definition}
 
 \begin{example}
-\fref{fig:exmFacet}\,(right) shows a facet~$F\ex$ of the non-kissing complex~$\NKC[\bar Q\ex]$ for the quiver~$\bar Q\ex$ of \fref{fig:exmBlossomingQuiver}.
+\fref{fig:exmFacet}\,(right) shows a facet~$F$ of the non-kissing complex~$\NKC[\bar Q]$ for the quiver~$\bar Q$ of \fref{fig:exmBlossomingQuiver}.
 The reduced non-kissing complexes of all connected gentle bound quivers with~$2$ vertices are illustrated on \fref{fig:all2}.
 The reduced non-kissing complexes of two gentle bound quivers with~$3$ vertices are illustrated on \fref{fig:exmNKC}\,(left).
 \end{example}
@@ -2648,7 +2647,7 @@ The (non-kissing) \defn{flip graph} of~$\bar Q$ is the dual graph~$\NKG$ of~$\RN
 \begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.6]{exmFlip}}
-	\caption{The flip of the orange walk~$\omega$ in the facet~$F\ex$ of \fref{fig:exmFacet}. The other two walks~$\mu, \nu$ of~$F\ex$ involved in the flip are the yellow and green walks. The distinguished arrows on each walk of~$F\ex$ are marked with triple arrows.}
+	\caption{The flip of the orange walk~$\omega$ in the facet~$F$ of \fref{fig:exmFacet}. The other two walks~$\mu, \nu$ of~$F$ involved in the flip are the yellow and green walks. The distinguished arrows on each walk of~$F$ are marked with triple arrows.}
 	\label{fig:exmFlip}
 \end{figure}
 \end{example}
@@ -2659,7 +2658,7 @@ The (non-kissing) \defn{flip graph} of~$\bar Q$ is the dual graph~$\NKG$ of~$\RN
 \label{def:increasingFlip}
 If the common substring~$\sigma$ of~$\omega$ and~$\omega'$ is on top of~$\omega$ and at the bottom of~$\omega'$, then we say that the flip~$F \to F'$ is \defn{increasing} and that the common substring~$\sigma$ is an \defn{ascent} of~$F$ and a \defn{descent} of~$F'$.
 We denote by ${\ascents(F) \subseteq \strings^\pm(\bar Q)}$ and $\descents(F) \subseteq \strings^\pm(\bar Q)$ the sets of ascents and descents of~$F$ respectively.
-%In the opposite situation, the flip is \defn{decreasing} and~$\sigma$ is a descent of~$F$ and an ascent of~$F'$.
+Otherwise,~$\sigma$ is a descent of~$F$ and an ascent of~$F'$ and the flip is called \defn{decreasing}.
 \end{definition}
 
 This provides a natural orientation of the non-kissing flip graph~$\NKG$.
@@ -2673,7 +2672,7 @@ In all pictures, graphs are oriented bottom-up.
 
 \begin{example}
 Oriented flip graphs were studied carefully in~\cite{GarverMcConville, MannevillePilaud-accordion, McConville} for the dissection and grid bound quivers introduced in Section~\ref{subsec:dissectionGridQuivers}.
-Note that when the quiver is an oriented path~$\bar Q\pa$, a flip in a facet of the non-kissing complex~$\NKC[\bar Q\pa]$ corresponds to the classical flip of a diagonal in the corresponding triangulation (see \fref{fig:exmBijectionAssociahedron}).
+Note that when the quiver is an oriented path~$\exmAn$, a flip in a facet of the non-kissing complex~$\NKC[\exmAn]$ corresponds to the classical flip of a diagonal in the corresponding triangulation (see \fref{fig:exmBijectionAssociahedron}).
 Moreover, the flip is increasing if and only if the slope of the diagonal increases along the flip.
 \end{example}
 
@@ -3194,7 +3193,7 @@ Theorem~\ref{thm:lattice} is already known for the dissection and grid bound qui
 
 In fact, our proof of Theorem~\ref{thm:lattice} is an adaptation of the proof  developed by T.~McConville in~\cite{McConville}.
 Namely, we define a closure operator on subsets of strings whose biclosed sets have a lattice structure~(\ref{sec:biclosedStrings}), define a natural lattice congruence on biclosed sets~(\ref{sec:latticeCongruence}), and show that the Hasse diagram of the lattice quotient is isomorphic to the non-kissing oriented flip graph~(\ref{sec:biclosedSetsToNKF}).
-Finally (\ref{sec:nonFriendlyComplex}), we study the join-irreducible elements of~$\NKL$ and the canonical join complex of~$\NKL$ which we call the non-friendly complex as in~\cite{GarverMcConville-grid}.
+Finally (\ref{sec:nonFriendlyComplex}), we study the join-irreducible elements of the non-kissing lattice~$\NKL$ (Definition~\ref{def:NKL}) and the canonical join complex of~$\NKL$ which we call the non-friendly complex as in~\cite{GarverMcConville-grid}.
 
 This section follows the same strategy as that of~\cite{McConville, GarverMcConville-grid} and many arguments are just translated to our context.
 The reader will certainly appreciate that the definitions on arbitrary gentle bound quivers become somewhat uniform and do not depend on vertical and horizontal edges as in~\cite{McConville}.
@@ -3470,7 +3469,7 @@ In order to prove point (1), we will make use of the following:
 
 We now prove the three points above:
 
-\begin{enumerate}
+\begin{enumerate}[(i)]
 \item We have $R \cup \closure{(\closure{\{\sigma\}} \cup \closure{\{\tau\}} )} =   R \cup \closure{\{\sigma,\tau\}}$.
 Condition (ii) thus shows that $R \cup \closure{\{\sigma,\tau\}}$ is biclosed.
 It follows that $S\vee T = R \cup \closure{\{\sigma,\tau\}}$.
@@ -3524,7 +3523,7 @@ As there is no ambiguity, we abbreviate the notation~$\Bicl{\strings^\pm(\bar Q)
 \begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.45]{exmBiclosed}}
-	\caption{Four sets of strings on the gentle bound quiver~$\bar Q\ex$ of \fref{fig:exmBlossomingQuiver}\,(left). The first is neither closed not coclosed, the second is closed but not coclosed, the third is coclosed but not closed, and the fourth is biclosed.}
+	\caption{Four sets of strings on the gentle bound quiver of \fref{fig:exmBlossomingQuiver}\,(left). The first is neither closed not coclosed, the second is closed but not coclosed, the third is coclosed but not closed, and the fourth is biclosed.}
 	\label{fig:exmBiclosed}
 \end{figure}
 \end{example}
@@ -3596,7 +3595,7 @@ For a string~$\sigma \in \strings^\pm(\bar Q)$, the closure~$\closure{\{\sigma\}
 \item otherwise, $\closure{\{\sigma\}} = \{\sigma\}$.
 \end{itemize}
 In particular, for any two strings~$\sigma, \tau$, the equality~$\closure{\{\sigma\}}=\closure{\{\tau\}}$ implies $\sigma=\tau$.
-We note that $\strings^\pm(\bar Q)$ is partially ordered by:~$\sigma \vartriangleleft \tau$ if and only if~$\sigma$ is a substring of~$\tau$.
+We note that $\strings^\pm(\bar Q)$ is partially ordered by~$\sigma \vartriangleleft \tau$ if and only if~$\sigma$ is a substring of~$\tau$.
 
 \medskip\noindent
 {\bf (i)}
@@ -3700,13 +3699,13 @@ The down and up projections~$\projDown$ and~$\projUp$ are illustrated on \fref{f
 			\put(31,8){$\projDown$}
 			\put(68,6){$\longrightarrow$}
 			\put(69,8){$\projUp$}
-			\put(12,-3){$\projDown(S\ex)$}
-			\put(50,-3){$S\ex$}
-			\put(85,-3){$\projUp(S\ex)$}
+			\put(12,-3){$\projDown(S)$}
+			\put(50,-3){$S$}
+			\put(85,-3){$\projUp(S)$}
 	\end{overpic}
 	}
 	\vspace{.3cm}
-	\caption{A biclosed set of strings~$S\ex \in \Bicl{\bar Q\ex}$ (middle) and its images~$\projDown(S\ex)$ (left) and~$\projUp(S\ex)$ (right) by the down and up projections of Definition~\ref{def:downUpProjections}. For space reasons, $\projUp(S\ex)$ is only represented partially: the remaining strings are obtained by adding independently the two dotted arrows to all strings containing their left endpoint.}
+	\caption{A biclosed set of strings~$S \in \Bicl{\bar Q}$ (middle), where~$\bar Q$ is the bound quiver of \fref{fig:exmBlossomingQuiver}, and its images~$\projDown(S)$ (left) and~$\projUp(S)$ (right) by the down and up projections of Definition~\ref{def:downUpProjections}. For space reasons, $\projUp(S)$ is only represented partially: the remaining strings are obtained by adding independently the two dotted arrows to all strings containing their left endpoint.}
 	\label{fig:exmProjections}
 \end{figure}
 \end{example}
@@ -3971,7 +3970,7 @@ Observe that~$\eta(\varnothing) = F_\deep$ and that~$\eta\big(\strings^\pm(\bar 
 \end{example}
 
 \begin{example}
-The map~$\eta$ is illustrated on \fref{fig:exmSurjection}\,(left) for the gentle bound quiver~$\bar Q\ex$ of \fref{fig:exmBlossomingQuiver}\,(left).
+The map~$\eta$ is illustrated on \fref{fig:exmSurjection}\,(left) for the gentle bound quiver of \fref{fig:exmBlossomingQuiver}\,(left).
 
 \begin{figure}[h]
 	\capstart
@@ -3981,9 +3980,9 @@ The map~$\eta$ is illustrated on \fref{fig:exmSurjection}\,(left) for the gentle
 			\put(29,10){$\eta$}
 			\put(69,8){$\longrightarrow$}
 			\put(70,10){$\zeta$}
-			\put(13,-3){$S\ex$}
-			\put(46,-3){$\eta(S\ex)$}
-			\put(77,-3){$\zeta(\eta(S\ex)) = \projDown(S\ex)$}
+			\put(13,-3){$S$}
+			\put(46,-3){$\eta(S)$}
+			\put(77,-3){$\zeta(\eta(S)) = \projDown(S)$}
 	\end{overpic}
 	}
 	\vspace{.3cm}
@@ -4039,7 +4038,7 @@ For a non-kissing facet~$F \in \NKC$, define
 \end{definition}
 
 \begin{example}
-The map~$\zeta$ is illustrated on \fref{fig:exmSurjection}\,(right)  for the gentle bound quiver~$\bar Q\ex$ of \fref{fig:exmBlossomingQuiver}\,(left).
+The map~$\zeta$ is illustrated on \fref{fig:exmSurjection}\,(right)  for the gentle bound quiver of \fref{fig:exmBlossomingQuiver}\,(left).
 \end{example}
 
 \begin{proposition}
@@ -4112,7 +4111,7 @@ Since~$\projDown$ is order-preserving, we obtain~${\zeta \big( \eta(S) \big) = \
 
 \begin{example}
 The maps~$\eta$ and~$\zeta$ are illustrated on \fref{fig:exmSurjection}\,(right).
-Compare~$\zeta(\eta(S\ex))$ on \fref{fig:exmSurjection}\,(right) with the down projection~$\projDown(S\ex)$ on \fref{fig:exmProjections}\,(left).
+Compare~$\zeta(\eta(S))$ on \fref{fig:exmSurjection}\,(right) with the down projection~$\projDown(S)$ on \fref{fig:exmProjections}\,(left).
 \end{example}
 
 \begin{corollary}
@@ -4230,7 +4229,7 @@ Finally, Propositions~\ref{prop:covers} and~\ref{prop:characterizationCoversLatt
 Corollary~\ref{coro:finalLatticeQuotient} is illustrated on \fref{fig:exmLatticeQuotient}, which shows a specific lattice quotient and the corresponding increasing flip graph.
 \end{example}
 
-\begin{definition}
+\begin{definition}\label{def:NKL}
 We call \defn{non-kissing lattice} and denote by~$\NKL$ the transitive closure of the non-kissing oriented flip graph~$\NKG$.
 \end{definition}
 
@@ -4816,7 +4815,7 @@ Observe that~$\gvector{\omega} = 0$ for a straight walk~$\omega$.
 \end{definition}
 
 \begin{example}
-The $\b{g}$-vector of the plain blue walk on \fref{fig:exmFacet}\,(left) is given by $(0,-1,0,0,1,0)$ (see \fref{fig:exmBlossomingQuiver} for the labeling order of the vertices of the quiver~$Q\ex$).
+The $\b{g}$-vector of the plain blue walk on \fref{fig:exmFacet}\,(left) is given by $(0,-1,0,0,1,0)$ (see \fref{fig:exmBlossomingQuiver} for the labeling order of the vertices of the quiver~$Q$).
 See \fref{fig:gcvectors} for more examples of $\b{g}$-vectors.
 \end{example}
 
@@ -4843,13 +4842,13 @@ We let~$\cvectors{F} \eqdef \set{\cvector{\omega}{F}}{\omega \in F}$ denote the 
 \end{definition}
 
 \begin{example}
-In the facet~$F\ex$ of \fref{fig:exmFacet}\,(right), the $\b{c}$-vector of the blue walk is~$(0,-1,0,0,0,0)$ while the $\b{c}$-vector of the yellow path is~$(0,1,0,1,1,0)$ (see \fref{fig:exmBlossomingQuiver} for the labeling order of the vertices of the quiver~$Q\ex$ and \fref{fig:gcvectors}\,(left) to see the distinguished arrows in the facet~$F\ex$).
+In the facet~$F$ of \fref{fig:exmFacet}\,(right), the $\b{c}$-vector of the blue walk is~$(0,-1,0,0,0,0)$ while the $\b{c}$-vector of the yellow path is~$(0,1,0,1,1,0)$ (see \fref{fig:exmBlossomingQuiver} for the labeling order of the vertices of the quiver~$Q$ and \fref{fig:gcvectors}\,(left) to see the distinguished arrows in the facet~$F$).
 See \fref{fig:gcvectors} for more examples of $\b{c}$-vectors.
 
 \begin{figure}[t]
 	\capstart
-	\centerline{$\raisebox{-1.5cm}{\begin{overpic}[scale=.6]{exmVectors}\put(60,4){$F\ex$}\end{overpic}}$ \qquad \input{gcmatrices}}
-	\caption{The $\b{g}$- and $\b{c}$-matrices of the facet~$F\ex$. Their columns correspond to the $\b{g}$- and $\b{c}$-vectors of the different walks of~$F\ex$. See \fref{fig:exmBlossomingQuiver} for the labeling order of the vertices of the quiver~$Q\ex$. Note that~$\gvectors{F\ex} \cdot \cvectors{F\ex}^T = \one$.}
+	\centerline{$\raisebox{-1.5cm}{\begin{overpic}[scale=.6]{exmVectors}\put(60,4){$F$}\end{overpic}}$ \qquad \input{gcmatrices}}
+	\caption{The $\b{g}$- and $\b{c}$-matrices of the facet~$F$ of \fref{fig:exmFacet}. Their columns correspond to the $\b{g}$- and $\b{c}$-vectors of the different walks of~$F$. See \fref{fig:exmBlossomingQuiver} for the labeling order of the vertices of the quiver~$Q$. Note that~$\gvectors{F} \cdot \cvectors{F}^T = \one$.}
 	\label{fig:gcvectors}
 \end{figure}
 \end{example}
