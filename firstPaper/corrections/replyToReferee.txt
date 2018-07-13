@@ -18,8 +18,11 @@ changes, which we first list.
   Could this notions be introduces, at least vaguely, before using them?
 
   Reply: 
-page 1: Modified to: The non-kissing complex is the simplicial complex of a compatibility relation, called non-kissing, on paths in a fixed shape of a grid.
-page 43: We have added a reference to the definition.
+	page 1: Modified to: The non-kissing complex is the simplicial complex 
+	of a compatibility relation, called non-kissing, on paths in a fixed 
+	shape of a grid.
+
+	page 43: We have added a reference to the definition.
 
 
 * page 1 paragraph 1: ``The interest in'' rather then ``The interest for''
@@ -92,7 +95,8 @@ page 43: We have added a reference to the definition.
   suggest to remove this convention and to just refer to it as the recurring
   example or the example in figure 15.
 
-  Reply: We have removed all appearances of _{exm}, and replaced them by references to the relevant figures.
+  Reply: We have removed all appearances of _{exm}, and replaced them by references
+	 to the relevant figures.
 
 
 * Just below: ``See Figure 15'' is not needed here
@@ -160,7 +164,7 @@ page 43: We have added a reference to the definition.
 * Example 3.44: It appears to me that the map, which is not explicit, is on the
   quotient of $Bic$
 
-  Reply:
+  Reply: We have made the sentence of Example 3.44 more precise.
 
 
 * pages 59,60,64,65,68,73 and probably more: the text goes outside the margin
