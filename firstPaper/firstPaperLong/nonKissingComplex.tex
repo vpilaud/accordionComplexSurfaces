@@ -374,7 +374,7 @@ Table~\ref{table:dictionary} provides a dictionary to translate between the alge
     reduced non-kissing complex~$\RNKC$ (Def.~\ref{def: nKc}) &
     Thm.~\ref{thm:nkc/sttiltc}
     \\ \hline
-    \multiLinesBox{(left) mutation of support \\ $\tau$-tilting objects (Thm.~\ref{thm: mutation of stautilts}~\cite{AdachiIyamaReiten})} &
+    \multiLinesBox{(left) mutation of support \\ $\tau$-tilting objects (Thm.~\ref{thm:mutationstautilts}~\cite{AdachiIyamaReiten})} &
     \multiLinesBox{(increasing) flip \\ (Prop.~\ref{prop:flip} and Def.~\ref{def:flip} \& \ref{def:increasingFlip})} &
     Thm.~\ref{thm:nkc/sttiltc}
     \\ \hline
@@ -463,7 +463,7 @@ Table~\ref{table:dictionary} provides a dictionary to translate between the alge
 %    reduced non-kissing complex~$\RNKC$ (Def.~\ref{def: nKc}) &
 %    Thm.~\ref{thm:nkc/sttiltc}
 %    \\ \hline
-%    \multiLinesBox{(left) mutation of support \\ $\tau$-tilting objects (Thm.~\ref{thm: mutation of stautilts}~\cite{AdachiIyamaReiten})} &
+%    \multiLinesBox{(left) mutation of support \\ $\tau$-tilting objects (Thm.~\ref{thm:mutationstautilts}~\cite{AdachiIyamaReiten})} &
 %    \multiLinesBox{(increasing) flip \\ (Prop.~\ref{prop:flip} and Def.~\ref{def:flip} \& \ref{def:increasingFlip})} &
 %    Thm.~\ref{thm:nkc/sttiltc}
 %    \\ \hline
@@ -724,7 +724,7 @@ Let~$v\in Q_0$, then~$\Hom{\bar Q} \big( P(v), M \big) = 0$ if and only if~$M_v=
 
 One of the most important results on support~$\tau$-tilting objects is the existence and uniqueness of a \defn{mutation}.  
 
-\begin{theorem}[\cite{AdachiIyamaReiten}]\label{thm: mutation of stautilts}
+\begin{theorem}[\cite{AdachiIyamaReiten}]\label{thm:mutationstautilts}
 Let~$N = \bigoplus_{i \in [n]} N_i$ be a support~$\tau$-tilting object, where each~$N_i$ is either an indecomposable representation or a shifted indecomposable projective representation.
 Then for any~${i \in [n]}$, there exists a unique indecomposable representation or shifted indecomposable projective representation~$N'_i$ not isomorphic to~$N_i$ and such that
 \[
@@ -1761,7 +1761,7 @@ Since~$\rho'$ starts at~$v$ and~$\nu$ is on top of~$\rho$, we deduce that~$\rho$
     \label{fig:not tau compatible case a}
 \end{figure}
 
-\item If~$\xi=\nu$. By Lemma~\ref{lemma: xi equals nu} below and the fact that~$\xi$ is on top of~$\rho$, we have that~$\rho$ reaches for~$\rho'$. 
+\item If~$\xi=\nu$. By Lemma~\ref{lem:xiEqualsNu} below and the fact that~$\xi$ is on top of~$\rho$, we have that~$\rho$ reaches for~$\rho'$. 
 
 \item Assume now that~$\xi$ is a non-empty strict substring of~$\nu$. Since~$\xi$ is not all of~$\nu$, at least one cohook was added to~$\rho'$ when forming~$\rho''$. We distinguish two cases:
 
@@ -1770,7 +1770,7 @@ Since~$\rho'$ starts at~$v$ and~$\nu$ is on top of~$\rho$, we deduce that~$\rho$
 By symmetry, we may assume that it is a left cohook.
 In that case,~$\rho'$ does not start in a deep and~$\rho''$ is of the form~$\rho''=\alpha_r\cdots\alpha_1\alpha^{-1}\xi(\beta^{-1}\sigma)$ for some substring~$\sigma$, some arrow~$\beta$ and some cohook~$\alpha_r\cdots\alpha_1\alpha^{-1}$.
 Moreover, there is some~$0\leq i\leq r$ such that~$\nu=\alpha_i\cdots\alpha_1\alpha^{-1}\xi$.
-The proof of Lemma~\ref{lemma: xi equals nu} shows that~$\rho'$ is of the form~$\xi\beta^{-1}\sigma'$.
+The proof of Lemma~\ref{lem:xiEqualsNu} shows that~$\rho'$ is of the form~$\xi\beta^{-1}\sigma'$.
 Since~$\nu$ is on top of~$\rho$, we have~$\rho=\rho_1\alpha^{-1}\xi(\beta\rho_2)$ for some substrings~$\rho_1,\rho_2$ and some arrow~$\beta$.
 This shows that~$\rho$ reaches for~$\rho'$ (we note that the swinging arms condition is satisfied).
 
@@ -1885,7 +1885,7 @@ The string~$\rho$ also contains~$\alpha^{-1}\xi\beta$ and therefore reaches for~
 \end{enumerate}
 \end{proof}
 
-\begin{lemma}\label{lemma: xi equals nu}
+\begin{lemma}\label{lem:xiEqualsNu}
 Let~$\rho'$ be a string for~$A$ and~$\rho''$ be the string obtained when computing~$\tau M(\rho')$ as in Theorem~\ref{theorem: tau for strings}.
 Assume that~$\xi$ is a substring common to~$\rho'$ and~$\rho''$, and that~$\xi$ is at the bottom of~$\rho''$.
 Then~$\rho'$ has a substring of the form~$\alpha\xi\beta^{-1}$, for some arrows~$\alpha, \beta$.
@@ -2312,9 +2312,11 @@ Consider now an arrow~$\alpha \in Q\blossom_1$ and a non-kissing face~$F \in \NK
 Let~$F_\alpha$ be the set of walks of~$F$ containing~$\alpha$, marked at an occurrence of~$\alpha$.
 Note that~$F_\alpha \ne \varnothing$ since it contains at least the straight walk passing through~$\alpha$, marked at~$\alpha$.
 Observe that this straight walk is always the minimal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$, since it always agrees with the direction of~$\alpha$.
-On the other hand, Proposition~\ref{prop: nk facets are finite}, below, shows that we can consider the maximal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$.
+On the other hand, Proposition~\ref{prop:nkFacetsAreFinite}, below, shows that we can consider the maximal marked walk of~$F_\alpha$ for the order~$\prec_\alpha$.
 Intuitively, it is the most countercurrent walk passing through~$\alpha$ with respect to the direction of~$\alpha$.
-\begin{lemma}\label{lemma: distinguished arrows exists}
+
+\begin{lemma}
+\label{lem:distArrowExist}
 Let~$F$ be a finite face of~$\NKC$, let~$\omega$ be a walk in~$F$, and let~$\alpha$ be an arrow on~$\omega$.
 Then, there is an arrow~$\beta$ oriented in the same direction as~$\alpha$ in~$\omega$ such that~$\omega$ (marked at~$\beta$) is maximal in~$F$ for~$\prec_\beta$.
 \end{lemma}
@@ -2330,12 +2332,12 @@ See \fref{fig:pure}\,(right) for an illustration.
 We conclude that~$\lambda = \omega$ has a distinguished arrow~$\beta$ in the direction of~$\alpha$.
 \end{proof}
 
-\begin{proposition}\label{prop: nk facets are finite}
+\begin{proposition}\label{prop:nkFacetsAreFinite}
 The faces of the non-kissing complex have finite cardinality.
 \end{proposition}
 
 \begin{proof}
-By Lemma~\ref{lemma: distinguished arrows exists}, the cardinality of any finite non-kissing face of~$\NKC$ is bounded by~$|Q_1\blossom|$.
+By Lemma~\ref{lem:distArrowExist}, the cardinality of any finite non-kissing face of~$\NKC$ is bounded by~$|Q_1\blossom|$.
 Thus, any collection of~$|Q_1\blossom|+1$ walks contains a kiss and all non-kissing faces are finite.
 % Let~$F$ be a non-kissing face.
 % Since the quiver~$Q$ has a finite number of arrows, it is enough to prove that each~$F_\alpha$ is finite.
@@ -2379,7 +2381,7 @@ For any non-kissing facet~$F \in \NKC$, each bending (resp. straight) walk of~$F
 \end{proposition}
 
 \begin{proof}
-In view of Lemma~\ref{lemma: distinguished arrows exists}, it remains to prove that each walk of~$F$ contains at most one distinguished arrow in each direction.
+In view of Lemma~\ref{lem:distArrowExist}, it remains to prove that each walk of~$F$ contains at most one distinguished arrow in each direction.
 Assume that a walk~$\omega$ has two distinguished arrows~$\alpha, \beta$ pointing in the same direction.
 Orient~$\omega$ in this same direction and assume without loss of generality that~$\alpha$ appears before~$\beta$ along~$\omega$.
 %Note that we also allow a priori~$\alpha, \beta$ to be different occurrences along~$\omega$ of the same arrow of~$Q\blossom_1$.
@@ -2408,7 +2410,7 @@ We obtained a contradiction in all cases, which shows that~$\mu$ is non-kissing 
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=1]{pure}}
-	\caption{A schematic illustration of the proof of Proposition~\ref{prop:distinguishedArrows}:~$\omega$ cannot have two distinguished arrows~$\alpha, \beta$ in the same direction (left), and for each arrow~$\alpha$ on~$\omega$, there is a distinguished arrow on~$\omega$ in the direction of~$\alpha$ (right). See the proof of Proposition~\ref{prop:distinguishedArrows} for a detailed description.}
+	\caption{A schematic illustration of the proofs of Lemma~\ref{lem:distArrowExist} and Proposition~\ref{prop:distinguishedArrows}: for each arrow~$\alpha$ on~$\omega$, there is a distinguished arrow on~$\omega$ in the direction of~$\alpha$ (left), and~$\omega$ cannot have two distinguished arrows~$\alpha, \beta$ in the same direction (right). See the proof of Proposition~\ref{prop:distinguishedArrows} for a detailed description.}
 	\label{fig:pure}
 \end{figure}
 \end{proof}
@@ -2741,7 +2743,7 @@ More precisely, for any string~$\sigma \in \strings^\pm(\bar Q)$ and any vertex~
 \end{remark}
 
 
-\begin{lemma}\label{lem: attract or dance vs kiss}
+\begin{lemma}\label{lem:attractDanceKiss}
 Let~$\sigma$ and~$\sigma'$ be two strings for the gentle bound quiver~$\bar Q$.
 Then~$\sigma$ attracts~$\sigma'$ or reaches for~$\sigma'$ if and only if~$\omega(\sigma)$ kisses~$\omega(\sigma')$.
 \end{lemma}
@@ -3066,7 +3068,6 @@ In that case, $\xi$ is strictly at the bottom of $\sigma'$.
 It is thus at the bottom of $_{h^{-1}}(\sigma')_{h^{-1}}$ and this gives a non-zero morphism in $\Hom{A} \big( M(\sigma), \tau M(\sigma') \big)$.
 \end{proof}
 
-\enlargethispage{.5cm}
 We conclude this section with the observation which motivated this paper.
 
 \begin{theorem}
@@ -3084,7 +3085,7 @@ induce
 
 
 \begin{proof}
-The theorem is a direct consequence of Lemma~\ref{lem: attract or dance vs kiss}, except for the fact that increasing flips correspond to left mutations.
+The theorem is a direct consequence of Lemma~\ref{lem:attractDanceKiss}, except for the fact that increasing flips correspond to left mutations.
 We use the notation of Proposition~\ref{prop:flip} and Figure~\ref{fig:flip}: let $F$ and~$F'$ be two adjacent facets such that the flip of~$F$ to~$F'$ is increasing, let $\omega$ and~$\omega'$ are the walks such that~$F \ssm \{\omega\} = F' \ssm \{\omega'\}$, let~$\{\alpha, \beta\} = \distinguishedArrows{\omega}{F}$ and~$\{\alpha', \beta'\} = \distinguishedArrows{\omega'}{F'}$, let~$\xi = \distinguishedString{\omega}{F} = \distinguishedString{\omega'}{F'}$, and let~$\mu = \distinguishedWalk{\alpha'}{F} = \distinguishedWalk{\beta}{F'}$ and~$\nu = \distinguishedWalk{\beta'}{F} = \distinguishedWalk{\alpha}{F'}$.
 We consider the four associated strings~$\sigma(\omega), \sigma(\omega'), \sigma(\mu)$ and~$\sigma(\nu)$.
 Note that~$\mu$ could be a straight walk, in which case we let~$\sigma(\mu)$ be~$\varnothing$ so that~$M \big( \sigma(\mu) \big) = 0$, and similarly for~$\nu$.
