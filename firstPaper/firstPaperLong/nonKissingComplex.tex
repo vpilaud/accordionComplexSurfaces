@@ -2204,7 +2204,7 @@ We let~$\NKWalks(\bar Q)$ be the set of walks on~$\bar Q$ which are not self-kis
 \end{example}
 
 \begin{definition}\label{def: nKc}
-The \defn{non-kissing complex} of~$\bar Q$ is the simplicial complex~$\NKC$ whose faces are the collections of pairwise non-kissing walks of~$\NKWalks^\pm(\bar Q)$.
+The \defn{non-kissing complex} of~$\bar Q$ is the simplicial complex $\NKC$ whose faces are the collections of pairwise non-kissing walks of~$\NKWalks^\pm(\bar Q)$.
 Note that self-kissing walks never appear in~$\NKC$ by definition.
 In contrast, no straight walk can kiss another walk by definition, so that they appear in all facets of~$\NKC$.
 We thus consider the \defn{reduced non-kissing complex}~$\RNKC$ to be the deletion of all straight walks from~$\NKC$.
@@ -2320,7 +2320,7 @@ Then, there is an arrow~$\beta$ oriented in the same direction as~$\alpha$ in~$\
 \end{lemma}
 
 \begin{proof}
-If~$\omega$ is not maximal in~$F$ for~$\prec_\alpha$, consider~${\mu \eqdef \min_{\prec_\alpha} \set{\nu \in F_\alpha}{\omega \prec_\alpha \nu}}$.
+If~$\omega$ is not maximal in~$F$ for~$\prec_\alpha$, let~${\mu \eqdef \min_{\prec_\alpha} \set{\nu \in F_\alpha}{\omega \prec_\alpha \nu}}$.
 Let~$\sigma$ denote the maximal common substring of~$\omega$ and~$\mu$ containing~$\alpha$.
 Since~$\omega$ and~$\mu$ are distinct, they split at an endpoint of~$\sigma$.
 At this endpoint, the arrow~$\beta$ of~$\omega$ not in~$\sigma$ points in the same direction as~$\alpha$ since~$\omega \prec_\alpha \mu$.
@@ -2335,7 +2335,7 @@ The faces of the non-kissing complex have finite cardinality.
 \end{proposition}
 
 \begin{proof}
-By Lemma~\ref{lemma: distinguished arrows exists}, the cardinality of any finite non-kissing face is bounded by~$|Q_1\blossom|$.
+By Lemma~\ref{lemma: distinguished arrows exists}, the cardinality of any finite non-kissing face of~$\NKC$ is bounded by~$|Q_1\blossom|$.
 Thus, any collection of~$|Q_1\blossom|+1$ walks contains a kiss and all non-kissing faces are finite.
 % Let~$F$ be a non-kissing face.
 % Since the quiver~$Q$ has a finite number of arrows, it is enough to prove that each~$F_\alpha$ is finite.
@@ -2364,7 +2364,7 @@ We write
 \end{definition}
 
 \begin{example}
-Distinguished arrows and walks are illustrated on \fref{fig:exmFlip}\,(left).
+\fref{fig:exmFlip}\,(left) illustrates distinguished arrows and walks.
 \end{example}
 
 \begin{example}
@@ -2443,7 +2443,7 @@ We denote by~$\distinguishableStrings^\pm(\bar Q)$ the set of distinguishable st
 
 \begin{example}
 %For any~$v \in Q_1$, the distinguished string of the peak walk~$v_\peak$ in the peak facet~$F_\peak$ is~$v$ and the distinguished string of the peak walk~$v_\peak$ in the peak facet~$F_\peak$ is~$v$.
-For any~$v \in Q_1$, we have~${\distinguishedString{v_\peak}{F_\peak} = \distinguishedString{v_\deep}{F_\deep} = \varepsilon_v}$.
+For~$v \in Q_1$, we have~${\distinguishedString{v_\peak}{F_\peak} = \distinguishedString{v_\deep}{F_\deep} = \varepsilon_v}$.
 \end{example}
 
 Using material from Part~\ref{part:lattice}, we will characterize distinguishable strings of~$\bar Q$ in Section~\ref{subsec:distinguishableStrings}.
@@ -2481,7 +2481,7 @@ This shows~(ii).
 \subsection{Flips}
 \label{subsec:flips}
 
-We now show that the non-kissing complex~$\RNKC$ is \defn{thin}, \ie that any codimension~$1$ non-kissing face of~$\RNKC$ is contained in exactly two non-kissing facets of~$\RNKC$.
+We now prove that the non-kissing complex~$\RNKC$ is \defn{thin}, \ie that any codimension~$1$ non-kissing face of~$\RNKC$ is contained in exactly two non-kissing facets of~$\RNKC$.
 Here again, it is more convenient to work with the unreduced non-kissing complex~$\NKC$.
 We adapt the proof of~\cite[Thm~3.2\,(3)]{McConville}.
 The following statement is schematized in \fref{fig:flip}.
@@ -3563,7 +3563,7 @@ are both biclosed for any~$\sigma_1, \dots, \sigma_\ell \in \strings^\pm(\bar Q)
 \begin{proof}
 The set $\closure{\Sigma_\bottom(\sigma)}$ is closed by definition.
 To prove that it is coclosed, consider~${\tau \in \closure{\Sigma_\bottom(\sigma)}}$.
-There are substrings~$\tau_1, \dots, \tau_{\ell-1} \in \Sigma_\bottom(\sigma)$, arrows $\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~${\varepsilon_1, \dots, \varepsilon_\ell \in \{-1,1\}}$ such that~$\tau = \tau_1 \alpha_1^{\varepsilon_1} \tau_2 \alpha_2^{\varepsilon_2} \cdots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \tau_\ell$.
+There are substrings~$\tau_1, \dots, \tau_{\ell-1} \in \Sigma_\bottom(\sigma)$, arrows $\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~${\varepsilon_1, \dots, \varepsilon_\ell \in \{-1,1\}}$ such that~$\tau = \tau_1 \alpha_1^{\varepsilon_1} \cdots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \tau_\ell$.
 Assume that~$\tau = \tau' \beta^\varepsilon \tau''$ for some strings~$\tau', \tau'' \in \strings(\bar Q)$, an arrow~$\beta \in Q_1$, and a sign~$\varepsilon$.
 If~$\beta^\varepsilon$ is one of the arrows~$\alpha_k^{\varepsilon_k}$, then both~$\tau'$ and~$\tau''$ are in~$\closure{\Sigma_\bottom(\sigma)}$.
 We can therefore assume that there exists~$k \in [\ell]$ such that~$\beta^\varepsilon$ appears inside the string~$\tau_k$.
@@ -3571,7 +3571,7 @@ Write~$\tau_k = \tau_k' \beta^\varepsilon \tau_k''$.
 We distinguish two cases:
 \begin{itemize}
 \item If~$\varepsilon = -1$, then~$\tau_k'$ is a bottom substring of~$\tau_k$ which is a bottom substring of~$\sigma$, so that~$\tau_k' \in \Sigma_\bottom(\sigma)$ and thus~$\tau' = \tau_1 \alpha_1^{\varepsilon_1} \dots \alpha_{k-1}^{\varepsilon_{k-1}} \tau_k' \in \closure{\Sigma_\bottom(\sigma)}$.
-\item Similarly, if~$\varepsilon = 1$, then~$\tau''_k$ is a bottom substring of~$\tau_k$ which is a bottom substring of~$\sigma$, so that~$\tau_k'' \in \Sigma_\bottom(\sigma)$ and~${\tau'' = \tau_k'' \alpha_k^{\varepsilon_k} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \tau_\ell \in \closure{\Sigma_\bottom(\sigma)}}$.
+\item Similarly, if~$\varepsilon = 1$, then~$\tau''_k$ is a bottom substring of~$\tau_k$ which is a bottom substring of~$\sigma$, thus~$\tau_k'' \in \Sigma_\bottom(\sigma)$ and~${\tau'' = \tau_k'' \alpha_k^{\varepsilon_k} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \tau_\ell \in \closure{\Sigma_\bottom(\sigma)}}$.
 \end{itemize}
 We conclude that~$\closure{\Sigma_\bottom(\sigma)}$ is coclosed, and thus biclosed.
 By Remark~\ref{rem:meetJoinBiclosedSets}, the set $\closure{\big( \bigcup_{i \in [\ell]} \Sigma_\bottom(\sigma_i) \big)}$ is also biclosed for any~$\sigma_1, \dots, \sigma_\ell \in \strings^\pm(\bar Q)$.
@@ -3848,7 +3848,7 @@ The proof is similar for~$\closure{\Sigma_\top(\sigma)}$ or follows by duality f
 \section{Biclosed sets of strings versus non-kissing facets}
 \label{sec:biclosedSetsToNKF}
 
-The goal of this section is to show that the non-kissing oriented flip graph~$\NKG$ is isomorphic to the Hasse diagram of the lattice quotient of the lattice of biclosed sets~$\Bicl{\bar Q}$ by the lattice congruence~$\equiv$.
+The objective of this section is to show that the non-kissing oriented flip graph~$\NKG$ is isomorphic to the Hasse diagram of the lattice quotient of the lattice of biclosed sets~$\Bicl{\bar Q}$ by the lattice congruence~$\equiv$.
 For this, we first need to define inverse bijections between congruence classes of biclosed sets of~$\Bicl{\bar Q}$ and non-kissing facets of~$\NKC$.
 
 \subsection{From biclosed sets of strings to non-kissing facets}
@@ -4042,7 +4042,7 @@ The map~$\zeta$ is illustrated on \fref{fig:exmSurjection}\,(right)  for the gen
 \end{example}
 
 \begin{proposition}
-For any non-kissing facet~$F \in \NKC$, the set of strings~$\zeta(F)$ is biclosed.
+The set of strings $\zeta(F)$ is biclosed for any non-kissing facet~$F \in \NKC$.
 \end{proposition}
 
 \begin{proof}
@@ -4067,7 +4067,7 @@ We now show that~$\eta$ is surjective and that~$\zeta$ provides a section of~$\e
 
 \begin{proposition}
 \label{prop:surjection}
-For any non-kissing facet~$F \in \NKC$, we have~${\eta \big( \zeta(F) \big) \! = F}$.
+We have~${\eta \big( \zeta(F) \big) \! = \! F}$ for any non-kissing facet~$F \! \in \! \NKC$.
 \end{proposition}
 
 \begin{proof}
@@ -4079,7 +4079,7 @@ Recall from Lemma~\ref{lem:distinguishedWalkEta} that~$\omega' = \omega(\alpha, 
 We distinguish two cases:
 \begin{itemize}
 \item Assume first that~$\omega \ssm \sigma$ has an incoming arrow at~$t(\sigma)$. Then~$\sigma$ is a bottom substring of~$\omega$, thus belongs to~$\zeta(F)$. This would imply that~$\omega' \ssm \sigma$ also has an incoming arrow at~$t(\sigma)$, thus contradicting the maximality of~$\sigma$ (even in the case that~$\sigma$ is a vertex).
-\item Assume now that~$\omega \ssm \sigma$ has an outgoing arrow at~$t(\sigma)$. Since~$\omega$ and~$\omega'$ split at~$t(\sigma)$, this forces~$\omega' \ssm \sigma$ to have an incoming arrow at~$t(\sigma)$. Thus,~${\sigma \in \zeta(F)}$. Therefore, there exist bottom substrings~$\sigma_1, \dots, \sigma_\ell$ of walks~$\omega_1, \dots, \omega_\ell$ of~$F$, arrows~${\alpha_1, \dots, \alpha_{\ell-1} \in Q_1}$, and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~${\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \cdots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell}$. Note that~$\omega_1 = \omega$ and thus~$\varepsilon_1 = -1$, as otherwise, we would have~$\omega \prec_\alpha \omega_1$, contradicting the definition of~$\omega$. Let~$k \in [\ell]$ be minimal such that~$\sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{k-1}^{\varepsilon_{k-1}} \sigma_k$ is not a bottom substring of~$\omega$ (note that, by assumption, $\sigma$ itself is not a bottom substring of~$\omega$, so that~$k$ is well defined). We thus have~$\varepsilon_{k-1} = -1$ while~$\varepsilon_k = 1$. This implies that~$\omega \ssm \sigma_k$ has two outgoing arrows at the endpoints of~$\sigma_k$, while~$\omega_k \ssm \sigma_k$ has two incoming arrows at the endpoints of~$\sigma_k$. This implies that~$\omega$ and~$\omega_k$ are kissing, contradicting the assumption that they both belong to the non-kissing facet~$F$ of~$\NKC$.
+\item Assume now that~$\omega \ssm \sigma$ has an outgoing arrow at~$t(\sigma)$. Since~$\omega$ and~$\omega'$ split at~$t(\sigma)$, this forces~$\omega' \ssm \sigma$ to have an incoming arrow at~$t(\sigma)$. Thus,~${\sigma \! \in \! \zeta(F)}$. Therefore, there exist bottom substrings~$\sigma_1, \dots, \sigma_\ell$ of walks~$\omega_1, \dots, \omega_\ell$ of~$F$, arrows~${\alpha_1, \dots, \alpha_{\ell-1} \in Q_1}$, and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~${\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \cdots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell}$. Note that~$\omega_1 = \omega$ and thus~$\varepsilon_1 = -1$, as otherwise, we would have~$\omega \prec_\alpha \omega_1$, contradicting the definition of~$\omega$. Let~$k \in [\ell]$ be minimal such that~$\sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{k-1}^{\varepsilon_{k-1}} \sigma_k$ is not a bottom substring of~$\omega$ (note that, by assumption, $\sigma$ itself is not a bottom substring of~$\omega$, so that~$k$ is well defined). We thus have~$\varepsilon_{k-1} = -1$ while~$\varepsilon_k = 1$. This implies that~$\omega \ssm \sigma_k$ has two outgoing arrows at the endpoints of~$\sigma_k$, while~$\omega_k \ssm \sigma_k$ has two incoming arrows at the endpoints of~$\sigma_k$. This implies that~$\omega$ and~$\omega_k$ are kissing, contradicting the assumption that they both belong to the non-kissing facet~$F$ of~$\NKC$.
 \end{itemize}
 As we obtain a contradiction in both cases, we conclude that~$\omega = \omega'$, \ie that ${\distinguishedWalk{\alpha}{F} = \distinguishedWalk{\alpha}{\eta(\zeta(F))}}$.
 Since this holds for any arrow~$\alpha \in Q_1\blossom$ and any walk has at least one distinguished arrow, we conclude that~$F = \eta \big( \zeta(F) \big)$.
@@ -4469,7 +4469,7 @@ Assume that $\closure{\Sigma_\bottom(\sigma)} = S \join T$ for some~$S,T \in \Bi
 Recall from Remark~\ref{rem:meetJoinBiclosedSets} that we have~${S \join T = \closure{(S \cup T)}}$.
 
 Assume first that~$\sigma \notin S \cup T$.
-Since~${\sigma \in \Sigma_\bottom(\sigma) \subseteq \closure{\Sigma_\bottom(\sigma)} = S \join T = \closure{(S \cup T)}}$, there exists strings~$\sigma_1, \dots, \sigma_\ell \in \closure{\Sigma_\bottom(\sigma)} \ssm \{\sigma\}$, arrows~$\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~$\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell$.
+As~${\sigma \in \Sigma_\bottom(\sigma) \subseteq \closure{\Sigma_\bottom(\sigma)} = S \join T = \closure{(S \cup T)}}$, there exists strings~$\sigma_1, \dots, \sigma_\ell \in \closure{\Sigma_\bottom(\sigma)} \ssm \{\sigma\}$, arrows~$\alpha_1, \dots, \alpha_{\ell-1} \in Q_1$ and signs~$\varepsilon_1, \dots, \varepsilon_{\ell-1} \in \{-1,1\}$ such that~$\sigma = \sigma_1 \alpha_1^{\varepsilon_1} \dots \alpha_{\ell-1}^{\varepsilon_{\ell-1}} \sigma_\ell$.
 Assume that there exists~$k \in [\ell-1]$ such that~$\varepsilon_k = 1$ and choose~$k$ maximal for this property.
 Then~$\sigma_{k-1} \in \closure{\Sigma_\bottom(\sigma)} \cap \Sigma_\top(\sigma) = \{\sigma\}$ by Proposition~\ref{prop:characterizationDistinguishableStrings} and Lemma~\ref{lem:sigmaBottomCapSigmaTop}.
 We obtain a similar contradiction if there exists~$k \in [\ell-1]$ such that~$\varepsilon_k = -1$.
@@ -4523,7 +4523,7 @@ By Propositions~\ref{prop:surjection} and~\ref{prop:sublattice}, we have
 \[
 F = \eta \big( \zeta(F) \big) = \eta \Big( \bigJoin_{\omega \in F} \closure{\Sigma_\bottom(\omega)} \Big) = \bigJoin_{\omega \in F} \eta \big( \closure{\Sigma_\bottom(\omega)} \big).
 \]
-Since~$F$ is join-irreducible, we obtain that there is~$\omega \in F$ such that~${F = \eta \big( \closure{\Sigma_\bottom(\omega)} \big)}$.
+As~$F$ is join-irreducible, we obtain that there is~$\omega \in F$ such that~${F = \eta \big( \closure{\Sigma_\bottom(\omega)} \big)}$.
 By Lemma~\ref{lem:bijectionWalksDistinguishableStrings}, we obtain that there exists a distinguishable string~$\sigma = \sigma_\bottom(\omega)$ such that ${\closure{\Sigma_\bottom(\omega)} = \closure{\Sigma_\bottom(\sigma)}}$.
 We conclude that~$F = \eta \big( \closure{\Sigma_\bottom(\sigma)} \big)$ so that~$\ji$ is surjective.
 \end{proof}
@@ -4629,7 +4629,7 @@ The bijection is illustrated in \fref{fig:exmNCP}.
 \end{example}
 
 \begin{theorem}
-The following assertions are equivalent for a subset~$\Sigma$ of~$\distinguishableStrings^\pm(\bar Q)$:
+The following assertions are equivalent for a~$\Sigma \subseteq \distinguishableStrings^\pm(\bar Q)$:
 \begin{enumerate}[(i)]
 \item $\Sigma$ is pairwise non-friendly.
 \item the set~$\ji(\Sigma) \eqdef \set{\ji(\sigma)}{\sigma \in \Sigma}$ is the canonical join-representation of an element in~$\NKL$.
@@ -4652,9 +4652,9 @@ Assume for example the first situation, the other two are similar.
 Since~$\rho \in \Sigma_\bottom(\tau)$ and~$\sigma', \sigma'' \in \Sigma_\bottom(\sigma)$, we have
 \[
 \closure{\Sigma_\bottom(\rho)} \subseteq \closure{\Sigma_\bottom(\tau)},
-\qquad
+\quad
 \closure{\Sigma_\bottom(\sigma')} \subseteq \closure{\Sigma_\bottom(\sigma)}
-\qquad\text{and}\qquad
+\quad\text{and}\quad
 \closure{\Sigma_\bottom(\sigma'')} \subseteq \closure{\Sigma_\bottom(\sigma)}.
 \]
 Therefore
@@ -4767,7 +4767,7 @@ Consider a pseudomanifold~$\Delta$ with vertex set~$V$ and a set of vectors~$\bi
 Then the following are equivalent:
 \begin{enumerate}
 \item $\Fan$ is the normal fan of a simple polytope in~$\R^n$;
-\item There exists a map~$h: V \to \R_{> 0}$ such that for any two adjacent facets~$\triangle, \triangle'$ of~$\Delta$ with~$\triangle \ssm \{v\} = \triangle' \ssm \{v'\}$, we have
+\item There exists a map~$h: V \to \R_{> 0}$ such that for any two adjacent facets~$\triangle$ and~$\triangle'$ of~$\Delta$ with~$\triangle \ssm \{v\} = \triangle' \ssm \{v'\}$, we have
 \[
 \alpha \, h(v) + \alpha' \, h(v') + \sum_{w \in \triangle \cap \triangle'} \beta_{w} \, h(w) > 0,
 \]
@@ -4805,7 +4805,7 @@ For a string~$\sigma \in \strings^\pm(\bar Q)$, we define~$\multiplicityVector_\
 We now define two families of vectors that will play a crucial role in the geometric construction.
 
 \begin{definition}\label{def: g-vectors for walks}
-For a walk~$\omega \in \NKWalks^\pm(\bar Q)$, we denote by~$\peaks{\omega}$ (resp.~by~$\deeps{\omega}$) the multiset of vertices of~$Q_0$ corresponding to the peaks (resp.~deeps) of~$\omega$.
+For a walk~$\omega \in \NKWalks^\pm(\bar Q)$, we let~$\peaks{\omega}$ (resp.~$\deeps{\omega}$) denote the multiset of vertices of~$Q_0$ corresponding to the peaks (resp.~deeps) of~$\omega$.
 The \defn{$\b{g}$-vector} of a walk~$\omega$ is the vector~${\gvector{\omega} \in \R^{Q_0}}$ defined by
 \[
 \gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}.
@@ -4855,7 +4855,7 @@ See \fref{fig:gcvectors} for more examples of $\b{c}$-vectors.
 
 \begin{example}
 \label{exm:gcvectors}
-The $\b{g}$- and $\b{c}$-vectors of the peak and deep facets~$F_\peak$ and~$F_\deep$ are given by
+The $\b{g}$- and $\b{c}$-vectors of the peak facet~$F_\peak$ and the deep facet~$F_\deep$ are given by
 \begin{align*}
 &\gvector{v_\peak} = \b{e}_v, \\ 
 &\gvector{v_\deep} = -\b{e}_v, \\
@@ -4878,10 +4878,10 @@ In particular, a $\b{c}$-vector is called \defn{positive} when all its coordinat
 \begin{remark}
 \label{rem:setcvectors}
 There is a subtle relation between $\b{c}$-vectors and strings. Indeed, $\b{c}$-vectors are multiplicity vectors of the vertex multisets of some strings of~$\bar Q$, but
-\begin{itemize}
-\item not all strings are distinguishable (see Definition~\ref{def:distinguishedSubstring} and Proposition~\ref{prop:characterizationDistinguishableStrings}), and
+\begin{enumerate}[(i)]
+\item not all strings are distinguishable (see Definition~\ref{def:distinguishedSubstring} and Proposition~\ref{prop:characterizationDistinguishableStrings}),
 \item distinct distinguishable strings may have identical vertex multisets.
-\end{itemize}
+\end{enumerate}
 \end{remark}
 
 The $\b{g}$- and $\b{c}$-vectors have been designed so that the following statement holds, as illustrated in \fref{fig:gcvectors}.
@@ -4991,13 +4991,13 @@ Note that the topmost quiver of \fref{fig:exmFans} is both a dissection and a gr
 \begin{remark}
 \label{rem:linDep}
 Theorem~\ref{thm:gvectorFan} extends to any finite-dimensional algebra~$A$. More precisely:
-\begin{itemize}
+\begin{enumerate}[(i)]
 \item As pointed out to us by L.~Demonet, a similar linear dependence holds for a mutation in the support $\tau$-tilting complex of any finite-dimensional algebra~$A$.
 Indeed, the~$\b{g}$-vector of a~$\tau$-rigid pair can be identified with the class of the corresponding $2$-term complex in the Grothendieck group of the bounded homotopy category of finitely generated projective modules over~$A$.
 The existence of an exchange triangle ${X \rightarrow \bigoplus_{i \in [k]} Y_i \rightarrow X' \rightarrow X[1]}$ (see~\cite{AiharaIyama}) immediately gives the equality~$[X] + [X'] = \sum_{i \in [k]} [Y_i]$ in the Grothendieck group, yielding the claimed linear dependence among~$\b{g}$-vectors.
-\item By Proposition~\ref{prop:characterizationFan}, this suffices to prove Theorem~\ref{thm:gvectorFan} for any finite-dimensional algebra~$A$ with finite support $\tau$-tilting complex. 
+\item By Proposition~\ref{prop:characterizationFan}, this suffices to prove Theorem~\ref{thm:gvectorFan} for any finite-dimensio\-nal algebra~$A$ with finite support $\tau$-tilting complex. 
 \item This simple argument fails when the support $\tau$-tilting complex is infinite. However, the set~$\gvectorFan$ is still a simplicial fan (not necessarily complete). This can be proven using the (much harder) result~\cite{DehyKeller, DemonetIyamaJasso} that $\tau$-rigid objects are determined by their~$\b{g}$-vectors.
-\end{itemize}
+\end{enumerate}
 \end{remark}
 
 \subsection{The non-kissing associahedron}
@@ -5060,7 +5060,7 @@ Define
 
 \begin{theorem}
 \label{thm:associahedron}
-For a gentle bound quiver~$\bar Q$ with finite non-kissing complex~$\RNKC$, the $\b{g}$-vector fan~$\gvectorFan$ is the normal fan of the \defn{$\bar Q$-associahedron}~$\Asso$ defined equivalently~as
+For a gentle bound quiver~$\bar Q$ whose non-kissing complex~$\RNKC$ is finite, the $\b{g}$-vector fan~$\gvectorFan$ is the normal fan of the \defn{$\bar Q$-associahedron}~$\Asso$ defined equivalently~as
 \begin{enumerate}[(i)]
 \item the convex hull of the points~$\point{F}$ for all non-kissing facets~${F \in \RNKC}$, or
 \item the intersection of the halfspaces~$\HS{\omega}$ for all walks~${\omega \in \NKWalks^\pm(\bar Q)}$.
@@ -5107,7 +5107,7 @@ The dissection and grid bound quivers introduced in Section~\ref{subsec:dissecti
 \begin{itemize}
 \item For a dissection~$D$, the $\bar Q(D)$-associahedron of the dissection bound quiver $\bar Q(D)$ was previously constructed in~\cite{MannevillePilaud-accordion} as a projection of a well-chosen associahedron.
 For example, the top line of \fref{fig:exmAssociahedra} already appeared in~\cite{MannevillePilaud-accordion}.
-\item In contrast, the non-kissing associahedron was not known for a grid bound quiver. Our construction thus answers a question of A.~Garver and T.~McConville~\cite{GarverMcConville-grid} concerning the polytopality of the $\b{g}$-vector fan~$\gvectorFan[\bar Q(L)]$ for a subset~$L$ of~$\Z^2$. Note that alternative polytopal realizations for the grid-associahedra were constructed in~\cite{SantosStumpWelker} using the dual of a nice triangulation of an order polytope and in~\cite[Sect.~4]{McConville} by a sequence of suspensions and edge subdivisions.
+\item In contrast, the non-kissing associahedron was not known for an arbitrary grid bound quiver. Our construction thus answers a question of A.~Garver and T.~McConville~\cite{GarverMcConville-grid} concerning the polytopality of the $\b{g}$-vector fan~$\gvectorFan[\bar Q(L)]$ for a subset~$L$ of~$\Z^2$. Note that alternative polytopal realizations for the grid-associahedra were constructed in~\cite{SantosStumpWelker} using the dual of a nice triangulation of an order polytope and in~\cite[Sect.~4]{McConville} by a sequence of suspensions and edge subdivisions.
 \item For oriented paths, the non-kissing associahedra are classical associahedra, constructed by J.-L.~Loday~\cite{Loday} and C.~Hohlweg and C.~Lange~\cite{HohlwegLange} and revisited in~\cite{HohlwegLangeThomas, Stella, PilaudSantos-brickPolytope, LangePilaud, HohlwegPilaudStella} (among others).
 \end{itemize}
 \end{example}
@@ -5126,7 +5126,7 @@ where the sums run over all indecomposable $2$-term presilting complexes.
 An exchange triangle $X \rightarrow \bigoplus_{i \in [k]} Y_i \rightarrow X' \rightarrow X[1]$ (see~\cite{AiharaIyama}) then gives rise to
 \begin{enumerate}[(i)]
 \item a linear dependence~$[X] + [X'] = \sum_{i \in [k]} [Y_i]$ in the Grothendieck group (see Remark~\ref{rem:linDep}),
-\item an inequality of the form~$\KN(X) + \KN(X') > \sum_{i \in [k]} \KN(Y_i)$ for~${\KN \in \{\KN_\ell, \KN_r\}}$.
+\item an inequality of the form~$\KN(X) + \KN(X') > \sum_{i \in [k]} \KN(Y_i)$ for~${\KN \! \in \! \{\KN_\ell, \KN_r\}}$.
 \end{enumerate}
 The proof is then similar to that of Theorem~\ref{thm:associahedron} and leads to the same results using either~$\KN_\ell$, $\KN_r$, or more symmetrically their sum~$\KN_\ell + \KN_r$.
 Compare to Remark~\ref{rem:KNvsTau}.
@@ -5221,7 +5221,7 @@ The lattice of biclosed sets~$\Bicl{\bar Q}$ was designed in~\cite{McConville} t
 
 \begin{example}
 \label{exm:permutahedron}
-When~$\bar Q$ is a type~$A$ quiver, the $\bar Q$-zonotope~$\Zono$ is the Minkowski sum of all characteristic vectors of intervals (\ie all type~$A_n$ roots), thus yielding the classical permutahedron.
+When~$\bar Q$ is a type~$A$ quiver, the $\bar Q$-zonotope~$\Zono$ is the Minkowski sum of all characteristic vectors of intervals (\ie all type~$A_n$ positive roots), thus yielding the classical permutahedron.
 In this situation, the $\bar Q$-associahedron~$\Asso$ is thus obtained by deleting inequalities in the facet description of the $\bar Q$-zonotope $\Zono$.
 See~\cite{Loday, HohlwegLange, LangePilaud} for details.
 \end{example}
