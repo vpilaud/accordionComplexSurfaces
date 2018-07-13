@@ -290,6 +290,7 @@ The three authors were partially supported by the French ANR grant SC3A: Surface
 
 \subsection*{Non-kissing complex and support $\tau$-tilting complex}
 
+\enlargethispage{-.8cm}
 The non-kissing complex is a simplicial complex of pairwise non-kissing paths in a fixed shape of a grid.
 It was introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary shapes.
 This complex is known to be a simplicial sphere, and it was actually realized as a polytope using successive edge stellations and suspensions in~\cite[Sect.~4]{McConville}.
@@ -315,10 +316,13 @@ More precisely, starting from any gentle bound quiver~$\bar Q = (Q,I)$, we attac
 We then define a combinatorial notion of compatibility on walks in $\bar Q \blossom$, called the non-kissing relation (see Section~\ref{sec:nonKissingComplex}).
 The motivating result of this paper is Theorem \ref{thm:nkc/sttiltc}.
 
+\bigskip
 \begin{theorem*}
 For any gentle bound quiver~$\bar Q = (Q,I)$, the non-kissing complex of walks in the blossoming quiver~$\bar Q \blossom$ is isomorphic to the support $\tau$-tilting complex of the gentle algebra~$kQ/I$.
 \end{theorem*}
 
+\newpage
+\enlargethispage{-.3cm}
 In short, to any walk in $\bar Q \blossom$ corresponds a representation of $\bar Q$, and this correspondence takes non-kissing walks to $\tau$-compatible representations.
 This connection between the combinatorially-flavored non-kissing complex and the algebraically-flavoured support $\tau$-tilting complex opens a bridge to go back and forth between the two worlds.
 It allows us, for instance, to combinatorially define mutation of support $\tau$-tilting modules (see Section \ref{subsec:flips}).
@@ -2193,7 +2197,7 @@ We let~$\NKWalks(\bar Q)$ be the set of walks on~$\bar Q$ which are not self-kis
 \end{figure}
 
 \begin{example}
-\fref{fig:exmFacet}~(left) gives examples of kissing and non-kissing walks.
+\fref{fig:exmFacet}~(left) illustrates kissing and non-kissing walks.
 %
 \begin{figure}[t]
 	\capstart
@@ -2406,7 +2410,7 @@ We now distinguish two cases (see \fref{fig:pure}\,(right)):
 \item If~$\lambda$ passes through~$\gamma$, then it enters~$\sigma$ with an incoming arrow (since~$\tau$ strictly contains~$\sigma$), contradicting the maximality of~$\nu$ in~$\prec_\gamma$. 
 \end{enumerate}
 We obtained a contradiction in all cases, which shows that~$\mu$ is non-kissing with any other walk~of~$F$.
-
+%
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=1]{pure}}
@@ -2417,7 +2421,8 @@ We obtained a contradiction in all cases, which shows that~$\mu$ is non-kissing 
 
 \begin{corollary}
 \label{coro:pure}
-The non-kissing complex~$\NKC$ is pure of dimension $|Q_0| + \Delta = 3|Q_0|-|Q_1|$. The reduced non-kissing complex~$\RNKC$ is pure of dimension~$|Q_0|$.
+The non-kissing complex~$\NKC$ is pure and its dimension is ${|Q_0| + \Delta = 3|Q_0|-|Q_1|}$.
+The reduced non-kissing complex~$\RNKC$ is pure and its dimension is $|Q_0|$.
 \end{corollary}
 
 \begin{proof}
@@ -2434,6 +2439,7 @@ b+s = 3|Q_0|-|Q_1|.
 \]
 \end{proof}
 
+\enlargethispage{.3cm}
 Since each bending walk in a non-kissing facet of~$\RNKC$ has two distinguished arrows, we can consider the substring they surround.
 
 \begin{definition}
@@ -2501,14 +2507,15 @@ Then
 \end{enumerate}
 \end{proposition}
 
-\begin{figure}[b]
+\begin{proof}
+%
+\begin{figure}[ht]
 	\capstart
 	\centerline{\includegraphics[scale=1]{flip}}
 	\caption{A schematic representation of flips in the non-kissing complex (see Proposition~\ref{prop:flip}). The flip exchanges the walk~$\omega = \rho \sigma \tau$ in the facet~$F$ (left) with the walk~$\omega' = \rho' \sigma \tau'$ in the facet~$F'$ (middle), using the walks~$\mu = \rho' \sigma \tau = \distinguishedWalk{\alpha'}{F \ssm \{\omega\}}$ and~$\nu = \rho \sigma \tau' = \distinguishedWalk{\beta'}{F \ssm \{\omega\}}$. The walk~$\omega'$ kisses~$\omega$ but no other walk of~$F$~(right).}
 	\label{fig:flip}
 \end{figure}
-
-\begin{proof}
+%
 Let~$v$ (resp.~$w$) be the endpoint of~$\sigma$ incident to~$\alpha$ and~$\alpha'$ (resp.~to~$\beta$ and~$\beta'$).
 %Assume for sake of contradiction that~$\sigma \tau$ is not a final substring of~$\mu$.
 The walk~$\mu$ splits into~$\rho' \mu'$ where~$t(\rho') = v$ and~$\rho'$ finishes with the marked occurrence of~$\alpha'$ along~$\mu$.
@@ -2646,7 +2653,7 @@ The (non-kissing) \defn{flip graph} of~$\bar Q$ is the dual graph~$\NKG$ of~$\RN
 \begin{example}
 \fref{fig:exmFlip} illustrates a flip in the non-kissing complex of the quiver of \fref{fig:exmBlossomingQuiver}.
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=.6]{exmFlip}}
 	\caption{The flip of the orange walk~$\omega$ in the facet~$F$ of \fref{fig:exmFacet}. The other two walks~$\mu, \nu$ of~$F$ involved in the flip are the yellow and green walks. The distinguished arrows on each walk of~$F$ are marked with triple arrows.}
@@ -2659,7 +2666,7 @@ The (non-kissing) \defn{flip graph} of~$\bar Q$ is the dual graph~$\NKG$ of~$\RN
 \begin{definition}
 \label{def:increasingFlip}
 If the common substring~$\sigma$ of~$\omega$ and~$\omega'$ is on top of~$\omega$ and at the bottom of~$\omega'$, then we say that the flip~$F \to F'$ is \defn{increasing} and that the common substring~$\sigma$ is an \defn{ascent} of~$F$ and a \defn{descent} of~$F'$.
-We denote by ${\ascents(F) \subseteq \strings^\pm(\bar Q)}$ and $\descents(F) \subseteq \strings^\pm(\bar Q)$ the sets of ascents and descents of~$F$ respectively.
+We let~${\ascents(F) \subseteq \strings^\pm(\bar Q)}$ and $\descents(F) \subseteq \strings^\pm(\bar Q)$ denote the sets of ascents and descents of~$F$ respectively.
 Otherwise,~$\sigma$ is a descent of~$F$ and an ascent of~$F'$ and the flip is called \defn{decreasing}.
 \end{definition}
 
@@ -2699,6 +2706,7 @@ Reversing all arrows reverses the orientation of the flips: \[\NKG[\reversed{\ba
 \section{Non-kissing complexes versus support $\tau$-tilting complexes}
 \label{sec:nkcvsttc}
 
+\enlargethispage{-.3cm}
 In this section, we start the dictionary of Table~\ref{table:dictionary} between algebraic notions on the support $\tau$-tilting complex of a gentle algebra and the combinatorial notions on the non-kissing complex of its blossoming quiver.
 
 \subsection{From walks to strings}
@@ -2815,7 +2823,7 @@ Moreover,~$\alpha_i\cdots\alpha_1$ is at the bottom of~$\omega(\sigma')$, so tha
 Assume that~$\sigma$ reaches for~$\sigma'$, and let~$\xi$ be the substring on top of~$\sigma$ and at the bottom of~$\sigma'$, as in Definition~\ref{definition: dance and attract}\,(ii).
 We distinguish three cases:
 
-\begin{figure}[t]
+\begin{figure}[p]
 \[
 \xy
 %
@@ -2877,11 +2885,11 @@ We distinguish three cases:
 \endxy
 \]
     \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ reaches for~$\sigma'$: case (a).}
-    \vspace{.1cm}
+    \vspace{.8cm}
     \label{fig: dance case a}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[p]
 \[
 \xy
 %
@@ -2939,11 +2947,11 @@ We distinguish three cases:
 \endxy
 \]
     \caption{The walks~$\omega(\sigma)$ and~$\omega(\sigma')$ when~$\sigma$ reaches for~$\sigma'$: case (b).}
-    \vspace{.1cm}
+    \vspace{.8cm}
     \label{fig: dance case b}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[p]
 \[
 \xy
 %
@@ -4885,6 +4893,7 @@ There is a subtle relation between $\b{c}$-vectors and strings. Indeed, $\b{c}$-
 \end{enumerate}
 \end{remark}
 
+\enlargethispage{-.4cm}
 The $\b{g}$- and $\b{c}$-vectors have been designed so that the following statement holds, as illustrated in \fref{fig:gcvectors}.
 
 \begin{proposition}
@@ -5006,6 +5015,7 @@ The existence of an exchange triangle ${X \rightarrow \bigoplus_{i \in [k]} Y_i 
 
 %We now restrict our attention to gentle bound quivers~$\bar Q$ with finite non-kissing complexes~$\RNKC$, \ie such that there is a relation of~$I$ in any cycle of~$Q$, oriented or not.
 %We then construct a polytopal realization of the $\b{g}$-vector fan~$\gvectorFan$.
+\enlargethispage{-.4cm}
 We still consider a gentle bound quiver~$\bar Q$ with finite non-kissing complex~$\RNKC$.
 We now construct a polytopal realization of the $\b{g}$-vector fan~$\gvectorFan$.
 
