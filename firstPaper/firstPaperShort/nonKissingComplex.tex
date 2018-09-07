@@ -4249,12 +4249,12 @@ We gather the constructions of Lemmas~\ref{lem:bijectionDistinguishableStringsWa
 \label{def:bijectionWalksDistinguishableStrings}
 For a distinguishable string~$\sigma \in \distinguishableStrings^\pm(\bar Q)$, we denote by $\omega_\bottom(\sigma) \in \NKWalks^\pm(\bar Q)$ the undirected walk constructed in Lemma~\ref{lem:bijectionDistinguishableStringsWalks}, meaning that~$\omega_\bottom(\sigma) = \{\omega(\alpha',S), \omega(\beta',S)\}$ where~$S = \closure{\Sigma_\bottom(\sigma)}$ and~$\alpha', \beta'$ are such that~$\alpha'\sigma\beta'^{-1} \in \strings(\bar Q\blossom)$.
 
-Conversely, for a non-self-kissing walk~$\omega \in \NKWalks^\pm(\bar Q)$ not in the peak facet, we denote by~$\sigma_\bottom(\omega)$ the inclusion minimal string in~$\set{\sigma \in \Sigma_\bottom(\omega)}{\closure{\Sigma_\bottom(\omega)} = \closure{\Sigma_\bottom(\sigma)}}$.
+Conversely, for a bending non-self-kissing walk~$\omega \in \NKWalks^\pm(\bar Q)$ not in the peak facet, we denote by~$\sigma_\bottom(\omega)$ the inclusion minimal string in~$\set{\sigma \in \Sigma_\bottom(\omega)}{\closure{\Sigma_\bottom(\omega)} = \closure{\Sigma_\bottom(\sigma)}}$.
 \end{definition}
 
 \begin{proposition}
 \label{prop:bijectionDistinguishableStringsWalks}
-The maps~$\omega_\bottom$ and~$\sigma_\bottom$ are inverse bijections between the distinguishable strings of~$\bar Q$ and the bending walks of~$\walks^\pm(\bar Q)$ not in the peak facet~$F_\peak$.
+The maps~$\omega_\bottom$ and~$\sigma_\bottom$ are inverse bijections between the distinguishable strings of~$\bar Q$ and the bending non-self-kissing walks of~$\NKWalks^\pm(\bar Q)$ not in the peak facet~$F_\peak$.
 \end{proposition}
 
 \begin{proof}
