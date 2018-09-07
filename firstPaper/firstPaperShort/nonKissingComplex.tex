@@ -1999,7 +1999,7 @@ However, bottom and top substrings are reversed: $\Sigma_\bottom(\reversed{\omeg
 	\label{fig:dissectionGridQuivers}
 \end{figure}
 
-\enlargethispage{.2cm}
+\enlargethispage{.8cm}
 Throughout the paper, we will illustrate our results with two specific families of gentle bound quivers:
 
 \para{Dissection quivers}
@@ -2044,6 +2044,7 @@ Some quivers are simultaneously dissection and grid bound quivers. This is in pa
 \section{The non-kissing complex}
 \label{sec:nonKissingComplex}
 
+\enlargethispage{.2cm}
 We now define and study first elementary properties of the non-kissing complex of a quiver.
 This section is inspired from previous works on grid bound quivers~\cite{PetersenPylyavskyySpeyer, SantosStumpWelker, McConville, GarverMcConville}.
 
@@ -2281,8 +2282,8 @@ We now distinguish two cases (see \fref{fig:pure}\,(right)):
 \item If~$\lambda$ passes through~$\beta$, then it enters~$\tau$ with an outgoing arrow (since it kisses~$\mu$), contradicting the maximality of~$\omega$~in~$\prec_\beta$.
 \item If~$\lambda$ passes through~$\gamma$, then it enters~$\sigma$ with an incoming arrow (since~$\tau$ strictly contains~$\sigma$), contradicting the maximality of~$\nu$ in~$\prec_\gamma$. 
 \end{enumerate}
-We obtained a contradiction in all cases, which shows that~$\mu$ is non-kissing with any other walk~of~$F$.
-
+We get a contradiction in all cases, therefore~$\mu$ is non-kissing with any other walk~of~$F$.
+%
 \begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[scale=1]{pure}}
@@ -2324,9 +2325,8 @@ We denote by~$\distinguishableStrings^\pm(\bar Q)$ the set of distinguishable st
 For any~$v \in Q_1$, we have~$\distinguishedString{v_\peak}{F_\peak} = \distinguishedString{v_\deep}{F_\deep} = \varepsilon_v$.
 \end{example}
 
+\enlargethispage{.3cm}
 Using material from Part~\ref{part:lattice}, we will characterize distinguishable strings of~$\bar Q$ in Section~\ref{subsec:distinguishableStrings}.
-
-\medskip
 We close this section by a technical lemma about distinguished arrows, which will be helpful to understand the different possible situations in Proposition~\ref{prop:flip}.
 
 \begin{lemma}
@@ -2712,7 +2712,7 @@ However, we choose an alternative proof, showing instead that $\Hom{A} \big( M(\
 Write $\omega(\sigma')=\alpha_r \cdots \alpha_1 \alpha^{-1} \sigma' \beta \beta_1^{-1} \cdots \beta_s^{-1}$ where $r,s\geq 0$, and where if $r\geq 1$, $\alpha_r$ is a blossoming arrow and $\alpha_1,\cdots,\alpha_{r-1},\alpha\in Q_1$ while if $r=0$ $\alpha$ is a blossoming arrow; and similarly for $\beta\beta_1^{-1}\cdots\beta_s^{-1}$.
 
 Assume first that $r$ and $s$ are positive.
-Then $\tau M(\sigma')$ is given by the string $\sigma''=\alpha_{r-1} \cdots \alpha_1 \alpha^{-1} \sigma' \beta \beta_1^{-1} \cdots \beta_{s-1}^{-1}$.
+Then $\tau M(\sigma')$ is given by the string $\sigma''=\alpha_{r-1} \cdots \alpha_1 \alpha^{-1} \sigma'$ $\beta \beta_1^{-1} \cdots \beta_{s-1}^{-1}$.
 Thus, $\xi$ is at the bottom of $\sigma''$ and $\Hom{A} \big( M(\sigma), \tau M(\sigma') \big) \neq 0$.
 
 Assume that exactly one of $r,s$ equals $0$.
