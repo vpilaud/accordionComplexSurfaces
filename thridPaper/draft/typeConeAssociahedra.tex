@@ -470,8 +470,9 @@ The acyclic and simply-laced case was treated in~\cite{BazierMatteDouvilleMousav
 Computer experiments indicate that the type cone is always simplicial for any seed (acyclic or not) in any finite type cluster algebra.
 While the case of acyclic seeds can be handled by representation theory~\cite{BazierMatteDouvilleMousavandThomasYildirim}, we have no proof at the moment for cyclic seeds.
 
-One important observation is that it seems there is ``one extremal exchangeable pair for each positive root'' (or equivalently each positive $c$-vector), meaning that for each positive root~$\beta \in \Phi^+$, there is precisely one extremal exchangeable pair~$\{x,x'\}$ of cluster variables for which the flip of~$x$ to~$x'$ (for any pair of clusters~$\{X,X'\}$ with~$X \ssm \{x\} = X' \ssm \{x'\}$) is in the direction of~$\beta$.
+One important observation is that it seems there is one extremal exchangeable pair for each positive $c$-vector, meaning that for each positive $c$-vector~$\beta$, there is precisely one extremal exchangeable pair~$\{x,x'\}$ of cluster variables for which the flip of~$x$ to~$x'$ (for any pair of clusters~$\{X,X'\}$ with~$X \ssm \{x\} = X' \ssm \{x'\}$) is in the direction of~$\beta$.
 The goal is thus to determine for each positive root which exchangeable pair is extremal.
+This should be done using the Auslander-Reiten quiver to construct two cluster variables from a $c$-vector (see the next paragraph for the idea).
 
 \subsection{Gentle associahedra}
 
@@ -479,14 +480,21 @@ We are already missing a criterion for exchangeable pairs of walks. See \cite[Se
 It seems that two exchangeable pairs are always kissing along a single distinguishable string.
 We need to prove that to see that the non-kissing fan is coherent (because for a pair of exchangeable walks, I can completely reconstruct the $\b{g}$-vector dependence of the flip if I know there distinguished substring).
 Note however that
-\begin{itemize}
+\begin{enumerate}
 \item exchangeable pairs might kiss along additional non-distinguishable strings (example: just a loop),
 \item non-exchangeable walks might kiss along a single distinguishable string (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon}).
-\end{itemize}
+\end{enumerate}
 
-\bigskip
 We have some conjectures on what the extremal exchangeable pairs should be.
 One clear (but a bit empty) result is that extremal exchangeable pairs correspond in the Auslander-Reiten quiver to rectangles whose four vertices are non-self-kissing and that cannot be tiled with smaller such rectangles.
+
+We checked on some (but probably not enough) small gentle quivers the following properties:
+\begin{enumerate}
+\item Any $c$-vector (\ie distinguishable string) is the direction of at least one extremal exchangeable pair.
+\item Consider a distinguishable string~$\sigma$. Let~$\omega$ (resp.~$\omega'$) be the walk obtained from~$\sigma$ by adding two hooks (resp.~two cohooks) at the endpoints of~$\sigma$. If the walks~$\omega$ and~$\omega'$ are non-self-kissing and exchangeable, then they form the unique extremal exchangeable pair directed by~$\sigma$. These extremal exchangeable pairs correspond to meshes of the Auslander-Reiten quiver.
+\item Otherwise, $\sigma$ is the direction to one or more extremal exchangeable pairs obtained by moving further in the Auslander-Reiten quiver (this is really unclear at the moment).
+\end{enumerate}
+
 
 \subsection{Graph associahedra}
 
