@@ -1,0 +1,1256 @@
+\documentclass{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
+\usepackage[noabbrev,capitalise]{cleveref}
+\usepackage[normalem]{ulem}
+\usepackage{marginnote}
+\hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usetikzlibrary{trees, decorations, decorations.markings, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
+\graphicspath{{figures/}}
+\makeatletter\def\input@path{{figures/}}\makeatother
+\usepackage{caption}
+\captionsetup{width=\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{theorem*}{Theorem}%[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{convention}[theorem]{Convention}
+
+\crefname{equation}{Equation}{Equations}
+
+% math special letters
+\newcommand{\R}{\mathbb{R}} % reals
+\newcommand{\N}{\mathbb{N}} % naturals
+\newcommand{\Z}{\mathbb{Z}} % integers
+\newcommand{\C}{\mathbb{C}} % complex
+\newcommand{\I}{\mathbb{I}} % set of integers
+\newcommand{\HH}{\mathbb{H}} % hyperplane
+\newcommand{\K}{k} % field
+\newcommand{\fA}{\mathfrak{A}} % alternating group
+\newcommand{\fS}{\mathfrak{S}} % symmetric group
+\newcommand{\cA}{\mathcal{A}} % algebra
+\newcommand{\cC}{\mathcal{C}} % collection
+\newcommand{\cS}{\mathcal{S}} % ground set
+\newcommand{\uR}{\underline{R}} % underline set
+\newcommand{\uS}{\underline{S}} % underline set
+\newcommand{\uT}{\underline{T}} % underline set
+\newcommand{\oS}{\overline{S}} % overline set
+\newcommand{\ucS}{\underline{\cS}} % underline ground set
+\renewcommand{\b}[1]{{\boldsymbol{#1}}} % bold letters
+\newcommand{\h}{\widehat} % hat letters
+
+% math commands
+\newcommand{\set}[2]{\left\{ #1 \;\middle|\; #2 \right\}} % set notation
+\newcommand{\bigset}[2]{\big\{ #1 \;\big|\; #2 \big\}} % big set notation
+\newcommand{\Bigset}[2]{\Big\{ #1 \;\Big|\; #2 \Big\}} % Big set notation
+\newcommand{\setangle}[2]{\left\langle #1 \;\middle|\; #2 \right\rangle} % set notation
+\newcommand{\ssm}{\smallsetminus} % small set minus
+\newcommand{\dotprod}[2]{\left\langle \, #1 \; \middle| \; #2 \, \right\rangle} % dot product
+\newcommand{\symdif}{\,\triangle\,} % symmetric difference
+\newcommand{\one}{{1\!\!1}} % the all one vector
+\newcommand{\eqdef}{\mbox{\,\raisebox{0.2ex}{\scriptsize\ensuremath{\mathrm:}}\ensuremath{=}\,}} % :=
+\newcommand{\defeq}{\mbox{~\ensuremath{=}\raisebox{0.2ex}{\scriptsize\ensuremath{\mathrm:}} }} % =:
+\newcommand{\simplex}{\triangle} % simplex
+\renewcommand{\implies}{\Rightarrow} % imply sign
+\newcommand{\transpose}[1]{{#1}^t} % transpose matrix
+
+% operators
+\DeclareMathOperator{\conv}{conv} % convex hull
+\DeclareMathOperator{\vect}{vect} % linear span
+\DeclareMathOperator{\cone}{cone} % cone hull
+\DeclareMathOperator{\inv}{inv} % inversions
+\DeclareMathOperator{\ascents}{asc} % ascents
+\DeclareMathOperator{\descents}{des} % descents
+
+% others
+\newcommand{\ie}{\textit{i.e.}~} % id est
+\newcommand{\eg}{\textit{e.g.}~} % exempli gratia
+\newcommand{\Eg}{\textit{E.g.}~} % exempli gratia
+\newcommand{\apriori}{\textit{a priori}} % a priori
+\newcommand{\viceversa}{\textit{vice versa}} % vice versa
+\newcommand{\versus}{\textit{vs.}~} % versus
+\newcommand{\aka}{\textit{a.k.a.}~} % also known as
+\newcommand{\perse}{\textit{per se}} % per se
+\newcommand{\ordinal}{\textsuperscript{th}} % th for ordinals
+\newcommand{\ordinalst}{\textsuperscript{st}} % st for ordinals
+\definecolor{darkblue}{rgb}{0,0,0.7} % darkblue color
+\definecolor{green}{RGB}{57,181,74} % green color
+\definecolor{violet}{RGB}{147,39,143} % violet color
+\newcommand{\red}{\color{red}} % red command
+\newcommand{\blue}{\color{blue}} % blue command
+\newcommand{\orange}{\color{orange}} % orange command
+\newcommand{\green}{\color{green}} % green command
+\newcommand{\darkblue}{\color{darkblue}} % darkblue command
+\newcommand{\defn}[1]{\textsl{\darkblue #1}} % emphasis of a definition
+\newcommand{\para}[1]{\medskip\noindent\uline{\textit{#1.}}} % paragraph
+\renewcommand{\topfraction}{1} % possibility to have one page of pictures
+\renewcommand{\bottomfraction}{1} % possibility to have one page of pictures
+\newcommand{\ex}{_{\textrm{exm}}} % examples
+\newcommand{\pa}{_{\textrm{pa}}} % path
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, scale=.7] (char) {#1};}}
+
+% marginal comments
+\usepackage{todonotes}
+\newcommand{\arnau}[1]{\todo[color=orange!30]{#1 --- A.}}
+\newcommand{\yann}[1]{\todo[color=red!30]{#1 --- Y.}}
+\newcommand{\vincent}[1]{\todo[color=blue!30]{#1 \\ \hfill --- V.}}
+\newcommand{\pierreguy}[1]{\todo[color=green!30]{#1 \\ \hfill --- PG.}}
+
+% geometry
+\newcommandx{\Asso}[2][1=n,2={}]{\mathsf{Asso}^{#2}(#1)} % associahedron
+\newcommandx{\Zono}[2][1=n,2={}]{\mathsf{Zono}^{#2}(#1)} % zonotope
+\newcommand{\Fan}{\mathcal{F}} % fan
+\newcommand{\multiplicityVector}{\b{m}} % multiplicity vector
+\newcommandx{\ray}[1][1=r]{\b{#1}} % ray
+\newcommandx{\rays}[1][1=R]{\b{#1}} % rays
+\newcommand{\gvector}[1]{\b{g}(#1)} % g-vector of the path #1
+\newcommand{\gvectors}[1]{\b{g}(#1)} % g-vectors of the paths #1
+\newcommandx{\gvectorFan}[1][1=\quiver]{\mathcal{F}(#1)} % g-vector fan
+
+% Type cone
+\newcommand{\typeCone}{\mathbb{TC}} % type cone
+\newcommand{\compatibilityDegree}[2]{(#1\,\|\,#2)} % compatibility degree
+\newcommandx{\coefficient}[3][1={\ray[s]}, 2=\ray, 3=\ray']{\alpha_{#2,#3}(#1)} % coefficient in linear dependence
+
+% Gentle associahedra
+\newcommand{\quiver}{\bar Q} % quiver
+\newcommand{\blossom}{^\text{\ding{96}}} % blossom
+\newcommandx{\strings}[1][1=\quiver]{\mathcal{S}(#1)} % strings
+\newcommandx{\distinguishableStrings}[1][1=\quiver]{\mathcal{S}_\mathrm{dist}(#1)} % distinguishable strings
+\newcommandx{\walks}[1][1=\quiver]{\mathcal{W}(#1)} % walks
+\newcommandx{\properWalks}[1][1=\quiver]{\mathcal{W}_\mathrm{prop}(#1)} % proper walks
+\renewcommand{\top}{\mathrm{top}} % top
+\newcommand{\bottom}{\mathrm{bot}} % bottom
+\newcommandx{\NKC}[1][1=\quiver]{\mathcal{NK}(#1)} % non-kissing complex
+\newcommandx{\RNKC}[1][1=\quiver]{\mathcal{RNK}(#1)} % reduced non-kissing complex
+\newcommand{\peaks}[1]{\mathsf{peaks}(#1)} % peaks
+\newcommand{\deeps}[1]{\mathsf{deeps}(#1)} % deeps
+\newcommand{\KN}{\textsc{kn}} % Kissing Number
+\newcommand{\hL}{\text{\rotatebox[origin=c]{180}{\checked}}}
+\newcommand{\hR}{\text{\rotatebox[origin=c]{180}{\reflectbox{\checked}}}}
+\newcommand{\cL}{\text{\reflectbox{\checked}}}
+\newcommand{\cR}{\text{\checked}}
+\newcommand{\hh}[1]{\hL#1\hR} % hook - hook
+\newcommand{\cc}[1]{\cL#1\cR} % cohook - cohook
+\newcommand{\hc}[1]{\hL#1\cR} % hook - cohook
+\newcommand{\ch}[1]{\cL#1\hR} % cohook - hook
+
+% Graph associahedra
+\newcommand{\ground}{V} % ground set
+\newcommandx{\graphG}[1][1=G]{#1} % graph
+\newcommandx{\tube}[1][1=t]{\mathsf{#1}} % tube
+\newcommandx{\tubes}{\mathcal{T}} % all tubes
+\newcommandx{\tubing}[1][1=T]{\mathsf{#1}} % tubing
+\newcommand{\connectedComponents}{\kappa} % connected components
+\newcommand{\nestedComplex}{\mathcal{N}} % nested complex
+\newcommand{\nonDisconnecting}{\mathrm{nd}} % non-disconnecting vertices
+\newcommand{\neighbors}{\mathrm{ne}} % neighbors
+
+%% SPECIFIC NON-KISSING COMPLEX
+%
+%% COMBINATORICS
+%% quiver
+%
+%% walks
+%\newcommand{\peaks}[1]{\mathsf{peaks}(#1)} % peaks
+%\newcommand{\deeps}[1]{\mathsf{deeps}(#1)} % deeps
+%\newcommand{\distinguishedWalk}[2]{\mathsf{dw}(#1,#2)} % distinguished walk
+%\newcommand{\distinguishedArrows}[2]{\mathsf{da}(#1,#2)} % distinguished arrows
+%\newcommand{\distinguishedString}[2]{\mathsf{ds}(#1,#2)} % distinguished string
+%\newcommand{\distinguishedSign}[2]{\varepsilon(#1,#2)} % distinguished sign
+%
+%% non-kissing complex, lattice, flip graph
+%\newcommand{\kn}{\kappa} % kissing number
+%\newcommand{\KN}{\textsc{kn}} % Kissing Number
+%\newcommandx{\NKC}[1][1=\quiver]{\mathcal{K}_{\mathrm{nk}}(#1)} % non-kissing complex
+%\newcommandx{\RNKC}[1][1=\quiver]{\mathcal{C}_{\mathrm{nk}}(#1)} % non-kissing complex
+%\newcommandx{\NKL}[1][1=\quiver]{\mathcal{L}_{\mathrm{nk}}(#1)} % non-kissing lattice
+%\newcommandx{\NKG}[1][1=\quiver]{\mathcal{G}_{\mathrm{nk}}(#1)} % non-kissing flip graph
+%\newcommandx{\NFC}[1][1=\quiver]{\mathcal{C}_{\mathrm{nf}}(#1)} % non-friendly complex
+%\newcommand{\peak}{\mathrm{peak}} % bottom dissection
+%\newcommand{\deep}{\mathrm{deep}} % top dissection
+%\newcommand{\reversed}[1]{#1^{\mathrm{rev}}} % reverse all arrows
+%\renewcommand{\top}{\mathrm{top}} % top
+%\newcommand{\bottom}{\mathrm{bot}} % bottom
+%\newcommand{\walk}{\operatorname{\omega}} % walk (of a curve)
+%
+%% accordion and slalom complexes
+%\newcommand{\surface}{\mathcal{S}} % an orientable surface
+%\newcommand{\dual}{^*} % duality
+%\newcommand{\dissection}{\mathrm{D}} % dissection of a marked surface
+%\newcommand{\vertices}{\mathcal{V}} % vertices of a dissection
+%\newcommand{\edges}{\mathcal{E}} % edges of a dissection
+%\newcommand{\faces}{\mathcal{F}} % faces of a dissection
+%\renewcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
+%\newcommandx{\RAC}[1][1=\dissection]{\mathcal{C}_{\mathrm{acc}}(#1)} % reduced accordion complex
+%\newcommandx{\SC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{sla}}(#1)} % slalom complex
+%\newcommandx{\RSC}[1][1=\dissection\dual]{\mathcal{C}_{\mathrm{sla}}(#1)} % reduced slalom complex
+%\newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
+%\newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
+%\newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
+%\newcommand{\edgeof}{\operatorname{\varepsilon}} % arc of a vertex
+%\newcommand{\dualedgeof}{\operatorname{\varepsilon}\dual} % dual arc of a vertex
+%\DeclareRobustCommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S
+%\DeclareRobustCommand{\ZZZ}{\mathsf{Z}} % Z
+%\newcommand{\vnext}[1]{#1_{\operatorname{next}}} % next point on the boundary of the surface
+%\newcommand{\vprevious}[1]{#1_{\operatorname{prev}}} % previous point on the boundary of the surface
+%
+%% lattices
+%\newcommand{\meet}{\wedge} % meet
+%\newcommand{\join}{\vee} % join
+%\newcommand{\bigMeet}{\bigwedge} % meet
+%\newcommand{\bigJoin}{\bigvee} % join
+%\newcommand{\closure}[1]{#1^{\mathrm{cl}}} % closure operator
+%\newcommand{\coclosure}[1]{#1^{\mathrm{cocl}}} % coclosure operator
+%\newcommand{\uclosure}[1]{#1^{\underline{\mathrm{cl}}}} % loop free closure operator
+%\newcommand{\Bicl}[1]{\mathsf{Bic}(#1)} % biclosed sets
+%\newcommand{\projDown}{\pi_\downarrow} % down projection map
+%\newcommand{\projUp}{\pi^\uparrow} % up projection map
+%\newcommand{\JI}{\mathsf{JI}} % join-irreducible
+%\newcommand{\MI}{\mathsf{MI}} % meet-irreducible
+%\newcommand{\Cong}{\mathsf{Cong}} % congruence lattice
+%\newcommand{\con}{\mathrm{con}} % congruence contracting a cover relation
+%\newcommand{\ji}{\mathsf{ji}} % join irreducible
+%\newcommand{\mi}{\mathsf{mi}} % meet irreducible
+%
+%% GEOMETRY
+%% d-vectors
+%\newcommand{\dvector}[1]{\mathbf{d}(#1)} % d-vector of the path #1
+%\newcommand{\dvectors}[1]{\mathbf{d}(#1)} % d-vectors of the paths #1
+%\newcommandx{\dvectorFan}[1][1=\quiver]{\mathcal{F}^\mathbf{d}(#1)} % d-vector fan
+%% g-vectors
+%\newcommand{\gvector}[1]{\mathbf{g}(#1)} % g-vector of the path #1
+%\newcommand{\gvectors}[1]{\mathbf{g}(#1)} % g-vectors of the paths #1
+%\newcommandx{\gvectorFan}[1][1=\quiver]{\mathcal{F}^\mathbf{g}(#1)} % g-vector fan
+%% c-vectors
+%\newcommand{\cvector}[2]{\mathbf{c}(#1 \in #2)} % c-vector of the path #1 in the facet #2
+%\newcommand{\cvectors}[1]{\mathbf{c}(#1)} % c-vectors of the paths #1
+%\newcommandx{\allcvectors}[1][1=\quiver]{\mathbf{C}(#1)} % all c-vectors with respect to the initial cluster #1
+%\newcommandx{\cvectorFan}[1][1=\quiver]{\mathcal{F}^\mathbf{c}(#1)} % fan of hyperplanes orthogonal to all c-vectors
+%% points, hyperplanes, half-spaces
+%\newcommand{\point}[1]{\mathbf{p}(#1)} % vertex of the grid associahedron corresponding to the cluster #1
+%\newcommandx{\ray}[1][1=r]{\mathbf{#1}} % ray
+%\newcommandx{\rays}[1][1=R]{\mathbf{#1}} % rays
+%\newcommand{\hs}{\mathbf{H}^{\le}} % half space
+%\newcommand{\HS}[1]{\mathbf{H}^{\le}(#1)} % half space
+%\newcommand{\hyp}{\mathbf{H}^{=}} % hyperplane
+%\newcommand{\Hyp}[1]{\mathbf{H}^{=}(#1)} % hyperplane
+%\newcommand{\fix}[1]{\mathrm{Fix}(#1)} % fix space
+%
+%% ALGEBRA
+%\newcommand{\Hom}[1]{\operatorname{{\rm Hom}}_{#1}}
+%\newcommand{\Ext}[1]{\operatorname{{\rm Ext}}_{#1}}
+%\newcommandx{\AR}[1][1=\quiver]{\mathrm{AR}(#1)} % Auslander-Reiten quiver
+%\newcommandx{\tTC}[1][1=\quiver]{\mathcal{K}^{\textrm{s$\tau$-tilt}}(#1)} % tau-tilting complex
+%\newcommand{\rep}{\operatorname{{\rm rep}}}
+%\newcommand{\proj}{\operatorname{{\rm proj}}}
+%\newcommand{\koszul}{^!} % duality
+
+%% formating the part command
+%\makeatletter
+%\def\part{\@startsection{part}{1}%
+%\z@{.7\linespacing\@plus\linespacing}{.8\linespacing}%
+%{\LARGE\sffamily\centering}}
+%\@addtoreset{section}{part}
+%\makeatother
+%\renewcommand{\thesection}{\arabic{part}.\arabic{section}}
+
+% formating the table of contents
+\makeatletter
+\def\l@section{\@tocline{1}{2pt}{0pc}{}{}}
+\makeatother
+\let\oldtocpart=\tocpart
+\renewcommand{\tocpart}[2]{\bf\large\oldtocpart{#1}{#2}}
+\let\oldtocsection=\tocsection
+\renewcommand{\tocsection}[2]{\bf\oldtocsection{#1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Type cones of $\b{g}$-vector fans}
+
+\thanks{YP, VP and PGP were partially supported by the French ANR grant SC3A~(15\,CE40\,0004\,01). AP and VP were partially supported by the French ANR grant CAPPS~(17\,CE40\,0018).}
+
+\author{Arnau Padrol}
+\address[Arnau Padrol]{IMJ - Paris Rive Gauche, Sorbonne Universit\'e}
+\email{arnau.padrol@imj-prg.fr.}
+\urladdr{\url{https://webusers.imj-prg.fr/~arnau.padrol/}}
+
+\author{Yann Palu}
+\address[Yann Palu]{LAMFA, Universit\'e Picardie Jules Verne, Amiens}
+\email{yann.palu@u-picardie.fr}
+\urladdr{\url{http://www.lamfa.u-picardie.fr/palu/}}
+
+\author{Vincent Pilaud}
+\address[Vincent Pilaud]{CNRS \& LIX, \'Ecole Polytechnique, Palaiseau}
+\email{vincent.pilaud@lix.polytechnique.fr}
+\urladdr{\url{http://www.lix.polytechnique.fr/~pilaud/}}
+
+\author{Pierre-Guy Plamondon}
+\address[Pierre-Guy Plamondon]{Laboratoire de Math\'ematiques d'Orsay, Universit\'e Paris-Sud, CNRS, Universit\'e Paris-Saclay}
+\email{pierre-guy.plamondon@math.u-psud.fr}
+\urladdr{\url{https://www.math.u-psud.fr/~plamondon/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{abstract}
+We investigate the type cone of the $\b{g}$-vector fans for different generalizations of the associahedron (hopefully generalized associahedra, gentle associahedra, graph associahedra, and maybe quotientopes and brick polytopes).
+The objective is to determine which are the exchangeable pairs of objects that describe the type cone.
+When the type cone happens to be simplicial, we derive simple descriptions of all polytopal realizations of the $\b{g}$-vector fan.
+\end{abstract}
+
+\maketitle
+
+We explain recent results of~\cite{BazierMatteDouvilleMousavandThomasYildirim}. Some advantages of our approach are:
+\begin{itemize}
+\item We manage to extend their results to other families of $\b{g}$-vector fans: first to all $\b{g}$-vector fans of finite type cluster algebras acyclic or not (whose polytopality was only proved recently in~\cite{HohlwegPilaudStella}), then to all $\b{g}$-vector fans of the $\tau$-tilting finite gentle algebras (whose polytopality was proved recently in~\cite{PaluPilaudPlamondon}), and finally to the nested fans of graph associahedra (whose polytopality was studied in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}).
+\item We have a simpler proof, only based on the transformation between the classical descriptions of a polytope of the form~$\set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$ and~$\set{\b{z} \in \R^N}{\b{K}\b{z} = \b{K}\b{h} \text{ and } \b{z} \ge 0}$ (this transformation is standard in optimization). In particular, we do not need to consider only rational polytopes and pass to the limit to deal with all real descriptions.
+\item We observe that we obtain all realizations of the $\b{g}$-vector fans of the considered families.
+\end{itemize}
+
+
+\section{Polytopal realizations and type cone of a simplicial fan}
+
+\subsection{Polytopes and fans}
+
+We briefly recall basic definitions and properties of polyhedral fans and polytopes, and refer to~\cite{Ziegler-polytopes} for a classical textbook on this topic.
+
+A hyperplane~$H \subset \R^d$ is a \defn{supporting hyperplane} of a set~$X \subset \R^d$ if~$H \cap X \ne \varnothing$ and~$X$ is contained in one of the two closed half-spaces of~$\R^d$ defined by~$H$.
+
+We denote by~$\R_{\ge0}\rays \eqdef \set{\sum_{\ray \in \rays} \lambda_{\ray} \, \ray}{\lambda_{\ray} \in \R_{\ge0}}$ the \defn{positive span} of a set~$\rays$ of vectors of~$\R^d$.
+A \defn{polyhedral cone} is a subset of~$\R^d$ defined equivalently as the positive span of finitely many vectors or as the intersection of finitely many closed linear halfspaces.
+The \defn{faces} of a cone~$C$ are the intersections of~$C$ with the supporting hyperplanes of~$C$.
+The $1$-dimensional (resp.~codimension~$1$) faces of~$C$ are called~\defn{rays} (resp.~\defn{facets}) of~$C$.
+A cone is \defn{simplicial} if it is generated by a set of independent vectors.
+
+A \defn{polyhedral fan} is a collection~$\Fan$ of polyhedral cones such that
+\begin{itemize}
+\item if~$C \in \Fan$ and~$F$ is a face of~$C$, then~$F \in \Fan$,
+\item the intersection of any two cones of~$\Fan$ is a face of both.
+\end{itemize}
+A fan is \defn{simplicial} if all its cones are, \defn{complete} if the union of its cones covers the ambient space~$\R^d$, and \defn{essential} if it contains the cone~$\{\b{0}\}$.
+% For two fans~$\Fan, \Fan[G]$ in~$\R^d$, we say that~$\Fan$ \defn{refines}~$\Fan[G]$ (and that~$\Fan[G]$ \defn{coarsens}~$\Fan$) if every cone of~$\Fan$ is contained in a cone of~$\Fan[G]$.
+
+A \defn{polytope} is a subset~$P$ of~$\R^d$ defined equivalently as the convex hull of finitely many points or as a bounded intersection of finitely many closed affine halfspaces.
+The \defn{dimension}~$\dim(P)$ is the dimension of the affine hull of~$P$.
+The \defn{faces} of~$P$ are the intersections of~$P$ with its supporting hyperplanes.
+The dimension~$0$ (resp.~dimension~$1$, resp.~codimension~$1$) faces are called \defn{vertices} (resp.~\defn{edges}, resp.~\defn{facets}) of~$P$.
+A polytope is \defn{simple} if its supporting hyperplanes are in general position, meaning that each vertex is incident to $\dim(P)$ facets (or equivalently to $\dim(P)$ edges).
+
+The (outer) \defn{normal cone} of a face~$F$ of~$P$ is the cone generated by the outer normal vectors of the facets of~$P$ containing~$F$.
+In other words, it is the cone of vectors~$\b{c}$ such that the linear form~${\b{x} \mapsto \dotprod{\b{c}}{\b{x}}}$ on~$P$ is maximized by all points of the face~$F$.
+The (outer) \defn{normal fan} of~$P$ is the collection of the (outer) normal cones of all its faces.
+We say that a complete polyhedral fan~$\Fan$ in~$\R^d$ is \defn{polytopal} when it is the normal fan of a polytope~$P$ of~$\R^d$, and that~$P$ is a \defn{polytopal realization} of~$\Fan$.
+
+\subsection{Type cone}
+
+Fix an essential complete simplicial fan~$\Fan$ in~$\R^n$. Let~$\b{G}$ the $N \times n$-matrix whose rows are the rays of~$\Fan$ and let~$\b{K}$ be a $(N-n) \times N$-matrix that spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$). For any height vector~$\b{h} \in \R^N$, we define the polytope
+\[
+P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}.
+\]
+We say that $h$ is \defn{$\Fan$-admissible} if $P_\b{h}$ is a polytopal realization of~$\Fan$.
+The following classical statement characterizes the $\Fan$-admissible height vectors.
+It is a reformulation of regularity of triangulations of vector configurations, introduced in the theory of secondary polytopes~\cite{GelfandKapranovZelevinsky}, see also~\cite{DeLoeraRambauSantos}.
+We present here a convenient formulation from~\cite[Lem.~2.1]{ChapotonFominZelevinsky}.
+
+\begin{proposition}
+\label{prop:characterizationPolytopalFan}
+Then the following are equivalent for any height vector~$h \in \R^N$:
+\begin{enumerate}
+\item The fan~$\Fan$ is the normal fan of the polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$.
+\item For any two adjacent cones~$\R \rays$ and~$\R \rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, we have
+\[
+\alpha \, h_{\ray} + \alpha' \, h_{\ray'} + \sum_{\ray[s] \in \rays \cap \rays'} \beta_{\ray[s]} \, h_{\ray[s]} > 0,
+\]
+where
+\[
+\alpha \, \ray + \alpha' \, \ray' + \sum_{\ray[s] \in \rays \cap \rays'} \beta_{\ray[s]} \, \ray[s] = 0
+\]
+is the unique (up to rescaling) linear dependence with~$\alpha, \alpha' > 0$ between the rays of~$\rays \cup \rays'$.
+\end{enumerate}
+\end{proposition}
+
+\begin{notation}
+For any two adjacent cones~$\R\rays$ and~$\R\rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, we denote by~$\coefficient[{\ray[s]}][\rays][\rays']$ the coefficient of~$\ray[s]$ in the unique linear dependence between the rays of~$\rays \cup \rays'$, \ie such that
+\[
+\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0.
+\]
+These coefficients are \apriori{} defined up to rescaling, but we additionally fix the rescaling so that~${\coefficient[\ray][\rays][\rays'] + \coefficient[\ray'][\rays][\rays'] = 2}$ (this convention is arbitrary, but will be convenient in \cref{sec:applications}).
+\end{notation}
+
+In this paper, we are interested in the set of all possible realizations of~$\Fan$. This was studied by P.~McMullen in~\cite{McMullen-typeCone}.
+
+\begin{definition}
+The \defn{type cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admissible height vectors~$\b{h}$:
+\begin{align*}
+\typeCone(\Fan) & \eqdef \set{\b{h} \in \R^N}{\Fan \text{ is the normal fan of } P_\b{h}} \\
+& = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0 \text{ for any adjacent cones~$\R\rays, \R\rays'$ of~$\Fan$}}.
+\end{align*}
+\end{definition}
+
+Note that the type cone is an open cone and contains a linearity subspace of dimension~$n$ (it is invariant by translation in~$\b{G} \R^n$). We could thus intersect~$\typeCone(\Fan)$ by the kernel of~$\b{G}$, or consider the projection~$\b{K}\typeCone(\Fan)$.
+
+\begin{definition}
+An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent cones~$\{\R\rays, \R\rays'\}$ of~$\Fan$ such that the corresponding inequality $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0$ in the definition of the type cone~$\typeCone(\Fan)$ actually defines a facet of~$\typeCone(\Fan)$.
+\end{definition}
+
+In other words, extremal adjacent pairs define the extremal rays of the polar of the type cone~$\typeCone(\Fan)$.
+Understanding the extremal adjacent pairs of~$\Fan$ enables to describe its type cone~$\typeCone(\Fan)$ and thus all its polytopal realizations.
+
+\begin{remark}
+\label{rem:dimTypeCone}
+Since the type cone is an open~$N$ dimensional cone with a linearity subspace of dimension~$n$, it has at least~$N-n$ facets.
+We say that the type cone is \defn{simplicial} when it has precisely $N-n$ facets.
+\end{remark}
+
+\subsection{Coherent fans}
+
+Two rays~$\ray$ and~$\ray'$ of~$\Fan$ are called \defn{compatible} if there are both contained in a cone of~$\Fan$ and \defn{exchangeable} if there are two adjacent cones~$\R\rays$ and~$\R\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$.
+If~$\rays(\Fan)$ denotes the set of rays of~$\Fan$, a \defn{compatibility degree} for~$\Fan$ is a function~$\compatibilityDegree{-}{-}: \rays(\Fan) \times \rays(\Fan) \to \R$ such that
+\begin{itemize}
+\item $\compatibilityDegree{\ray}{\ray'} = -1$ if~$\ray = \ray'$ and is non-negative otherwise,
+\item $\compatibilityDegree{\ray}{\ray'} = 0$ if ~$\ray$ and~$\ray'$ are compatible,
+\item $\compatibilityDegree{\ray}{\ray'} > 0$ if~$\ray \ne \ray'$ are incompatible,
+\item $\compatibilityDegree{\ray}{\ray'} = 1 = \compatibilityDegree{\ray'}{\ray}$ if and only if~$\ray$ and~$\ray'$ are exchangeable.
+\end{itemize}
+\vincent{The definition of compatibility degree is not really useful here.}
+
+\begin{definition}
+\label{def:coherent}
+We say that the fan~$\Fan$ is \defn{coherent} if for any two exchangeable rays~$\ray, \ray'$ of~$\Fan$, the linear dependence
+\vincent{Not sure of the choice of the name.}
+\[
+\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0.
+\]
+does not depend on the pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\ray, \ray'$.
+This implies in particular that the rays~$\ray[s]$ for which~$\coefficient[{\ray[s]}][\rays][\rays'] \ne 0$ belong to~$\rays \cup \rays'$ for any pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$. These rays are thus called \defn{forced rays} for the exchangeable pair~$\{\ray, \ray'\}$.
+\end{definition}
+
+When~$\Fan$ is coherent, we change the notation~$\coefficient[{\ray[s]}][\rays][\rays']$ to~$\coefficient$ and we obtain that the type cone of~$\Fan$ is expressed as
+\[
+\typeCone(\Fan) = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient \, \b{h}_{\ray[s]} > 0 \text{ for any exchangeable rays~$\ray, \ray'$ of~$\Fan$}}.
+\]
+
+\begin{definition}
+In a coherent fan~$\Fan$, an \defn{extremal exchangeable pair} is a pair of exchangeable rays~$\{\ray,\ray'\}$ such that the corresponding inequality~${\sum_{\ray[s] \in \rays \cup \rays'} \coefficient \, \b{h}_{\ray[s]} > 0}$ defines a facet of the type cone~$\typeCone(\Fan)$.
+\end{definition}
+
+In this paper, we will only consider coherent fans, and our objective will be to describe their extremal exchangeable pairs.
+
+\subsection{Alternative polytopal realizations}
+
+In this section, we provide alternative polytopal realizations of the fan~$\Fan$.
+We also discuss the behavior of these realizations in the situation when the type cone~$\typeCone(\Fan)$ is simplicial.
+
+We still consider an essential complete simplicial fan~$\Fan$ in~$\R^n$, the $N \times n$-matrix~$\b{G}$ whose rows are the rays of~$\Fan$, and the $(N-n) \times N$-matrix~$\b{K}$ which spans the left kernel of~$\b{G}$.
+
+\begin{proposition}
+\label{prop:alternativePolytopalRealization}
+The affine map~$\Psi: \R^n \to \R^N$ defined by~$\Psi(\b{x}) = \b{h} - G\b{x}$ sends the polytope
+\[
+P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}
+\]
+to the polytope
+\[
+Q_\b{h} \eqdef \set{\b{z} \in \R^N}{\b{K}\b{z} = \b{K}\b{h} \text{ and } \b{z} \ge 0}.
+\]
+\end{proposition}
+
+\begin{proof}
+For~$\b{x}$ in~$P_\b{h}$, we have $\Psi(\b{x}) \ge 0$ by definition and~$\b{K}\Psi(\b{x}) = \b{K}\b{h} - \b{K}\b{G}\b{x} = \b{K}\b{h}$ since~$\b{K}$ is the left kernel of~$\b{G}$. Therefore~$\Psi(\b{x}) \in Q_\b{h}$.
+Moreover, the map~$\Psi : P_\b{h} \to Q_\b{h}$ is:
+\begin{itemize}
+\item injective: Indeed, $\Psi(\b{x}) = \Psi(\b{x}')$ implies~$\b{G}(\b{x} - \b{x}') = 0$ and~$\b{G}$ has full rank since~$\Fan$ is essential and complete.
+\item surjective: Indeed, for~$\b{z} \in Q_\b{h}$, we have~$\b{K}(\b{h}-\b{z}) = 0$ so that~$\b{h}-\b{z}$ belongs to the right kernel of~$\b{K}$ which is the image of~$\b{G}$. Therefore, there exists~$\b{x} \in \R^n$ such that~$\b{h}-\b{z} = \b{G}\b{x}$. Therefore, $\b{z} = \Psi(\b{x})$ and~$\b{x} \in P_\b{h}$ since~$\b{h} - \b{G}\b{x} = \b{z} \ge 0$.\qedhere
+\end{itemize}
+\end{proof}
+
+\begin{corollary}
+\label{coro:simplicialTypeCone}
+Assume that the type cone~$\typeCone(\Fan)$ is simplicial and let~$\b{K}$ be the $(N-n) \times N$-matrix whose rows are the outer normal vectors of the facets of~$\typeCone(\Fan)$. Then the polytope
+\[
+R_\b{\ell} \eqdef \set{\b{z} \in \R^N}{K\b{z} = \b{\ell} \text{ and } \b{z} \ge 0}
+\]
+is a realization of the fan~$\Fan$ for any positive vector~$\b{\ell} \in \R_{>0}^{N-n}$.
+Moreover, the polytopes~$R_\b{\ell}$ for~$\b{\ell} \in \R_{>0}^{N-n}$ describe all polytopal realizations of~$\Fan$.
+\end{corollary}
+
+\begin{proof}
+Let~$\b{\ell} \in \R_{>0}^{N-n}$.
+Since~$\b{K}$ has full rank there exists~$\b{h} \in \R^N$ such that~$\b{K}\b{h} = \b{\ell}$.
+Since~$\b{K}\b{h} \ge 0$ and the rows of~$\b{K}$ are precisely all outer normal vectors of the facets of the type cone~$\typeCone(\Fan)$, we obtain that~$\b{h}$ belongs to~$\typeCone(\Fan)$.
+Since $R_\b{\ell} = Q_\b{h} \sim P_\b{h}$ by \cref{prop:alternativePolytopalRealization}, we conclude that~$R_\b{\ell}$ is a polytopal realization of~$\Fan$.
+Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{N-n}$, so that we obtain all polytopal realizations of~$\Fan$ this way.
+\end{proof}
+
+
+\section{Applications to different generalizations of the associahedron}
+\label{sec:applications}
+
+Introduction on the associahedron. Loday's associahedron. \\
+Three proofs that the type cone of Loday's associahedron~\cite{Loday} is simplicial and therefore explicit description of all realizations as follows:...\\
+Explain the parallel with $\b{g}$-vectors, $\b{c}$-vectors, etc.
+\vincent{TODO}
+
+\subsection{Generalized associahedra}
+
+The acyclic and simply-laced case was treated in~\cite{BazierMatteDouvilleMousavandThomasYildirim}.
+Computer experiments indicate that the type cone is always simplicial for any seed (acyclic or not) in any finite type cluster algebra.
+While the case of acyclic seeds can be handled by representation theory~\cite{BazierMatteDouvilleMousavandThomasYildirim}, we have no proof at the moment for cyclic seeds.
+
+One important observation is that it seems there is one extremal exchangeable pair for each positive $c$-vector, meaning that for each positive $c$-vector~$\beta$, there is precisely one extremal exchangeable pair~$\{x,x'\}$ of cluster variables for which the flip of~$x$ to~$x'$ (for any pair of clusters~$\{X,X'\}$ with~$X \ssm \{x\} = X' \ssm \{x'\}$) is in the direction of~$\beta$.
+The goal is thus to determine for each positive root which exchangeable pair is extremal.
+This should be done using the Auslander-Reiten quiver to construct two cluster variables from a $c$-vector (see the next paragraph for the idea).
+
+\subsection{Gentle associahedra}
+
+Gentle associahedra were constructed by Y.~Palu, V.~Pilaud and P.-G.~Plamondon~\cite{PaluPilaudPlamondon} in the context of support $\tau$-tilting for gentle algebras.
+For a given $\tau$-tilting finite gentle quiver~$\quiver$ (defined in the next section), the $\quiver$-associahedron~$\Asso[\quiver]$ is a simple polytope which encodes certain representations of~$\quiver$ and their $\tau$-tilting relations.
+Combinatorially, the $\quiver$-associahedron is a polytopal realization of the non-kissing complex of~$\quiver$, defined as the simplicial complex of all collections of walks on the blossoming quiver~$\quiver\blossom$ which are pairwise non-kissing.
+The non-kissing complex encompasses two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied b Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}.
+These two families naturally extend the classical associahedron, obtained from a line quiver.
+Non-kissing complexes are geometrically realized by polytopes called gentle associahedra, whose normal fan is called the non-kissing fan: its rays correspond to walks in the quiver and its cones are generated by the non-kissing walks.
+In this section, we describe the type cone of the non-kissing fan of a quiver~$\quiver$ with no self-kissing walks.
+
+\subsubsection{Non-kissing complex and non-kissing fan of a gentle quiver}
+
+We present the definitions and properties of the non-kissing complex of a gentle quiver, following the presentation of~\cite{PaluPilaudPlamondon}.
+
+\para{Gentle quivers}
+%
+Consider a \defn{bound quiver}~${\quiver = (Q,I)}$, formed by a finite quiver~$Q = (Q_0, Q_1, s, t)$ and an ideal~$I$ of the path algebra~$kQ$ (the~$k$-vector space generated by all paths in~$Q$, including vertices as paths of length zero, with multiplication induced by concatenation of paths) such that~$I$ is generated by linear combinations of paths of length at least two, and $I$ contains all sufficiently large paths. See~\cite{AssemSimsonSkowronski} for background.
+
+Following M.~Butler and C.~Ringel~\cite{ButlerRingel}, we say that~$\quiver$ is a \defn{gentle bound quiver} when
+\begin{enumerate}[(i)]
+\item each vertex~$a \in Q_0$ has at most two incoming and two outgoing arrows,
+\item the ideal~$I$ is generated by paths of length exactly two,
+\item for any arrow~$\beta \in Q_1$, there is at most one arrow~$\alpha \in Q_1$ such that~$t(\alpha) = s(\beta)$ and~${\alpha\beta\notin I}$ (resp.~$\alpha\beta \in I$) and at most one arrow~$\gamma \in Q_1$ such that~$t(\beta) = s(\gamma)$~and~${\beta\gamma\notin I}$~(resp.~${\beta\gamma \in I}$).
+\end{enumerate}
+The algebra~$kQ/I$ is called a \defn{gentle algebra}.
+
+The \defn{blossoming quiver}~$\quiver\blossom$ of a gentle quiver is the gentle quiver obtained by completing all vertices of~$\quiver$ with additional incoming or outgoing \defn{blossoms} such that all vertices of~$\quiver$ become $4$-valent.
+%
+%A gentle bound quiver~$\quiver$ is \defn{complete} if any vertex~$a \in Q_0$ is incident to either one ($a$ is a leaf) or four arrows ($a$ is an internal vertex).
+%The \defn{pruned subquiver} of a quiver~$\quiver$ is the locally gentle quiver obtained by deleting all leaves of~$\quiver$ (degree one vertices) and their incident arrows.
+%The \defn{blossoming quiver} of a locally gentle bound quiver~$\quiver$ is the complete locally gentle bound quiver~$\quiver\blossom$ whose pruned subquiver is~$\quiver$.
+%The vertices of~$Q\blossom_0 \ssm Q_0$ are called \defn{blossom vertices}, and the arrows in~$Q\blossom_1 \ssm Q_1$ are called \defn{blossom arrows}.
+%
+We now always assume that~$\quiver$ is a gentle quiver with blossoming quiver~$\quiver\blossom$.
+
+\para{Strings and walks}
+%
+A \defn{string} in~$\quiver = (Q,I)$ is a word of the form
+\(
+\rho = \alpha_1^{\varepsilon_1}\alpha_2^{\varepsilon_2}\cdots \alpha_\ell^{\varepsilon_\ell},
+\)
+where
+	\begin{enumerate}[(i)]
+	\item $\alpha_i \in Q_1$ and~$\varepsilon_i \in \{-1,1\}$ for all~$i \in [\ell]$,
+	\item $t(\alpha_i^{\varepsilon_i}) = s(\alpha_{i+1}^{\varepsilon_{i+1}})$ for all~$i \in [\ell-1]$,
+	\item there is no path~$\pi \in I$ such that~$\pi$ or~$\pi^{-1}$ appears as a factor of~$\rho$, and
+	\item $\rho$ is reduced, in the sense that no factor~$\alpha\alpha^{-1}$ or~$\alpha^{-1}\alpha$ appears in~$\rho$, for~$\alpha \in Q_1$.
+	\end{enumerate}
+%We say that~$\sigma$ is \defn{straight} if~$\varepsilon_1 = \dots = \varepsilon_\ell$.
+The integer~$\ell$ is called the \defn{length} of the string~$\rho$.
+%We let~$s(\rho) \eqdef s(\alpha_1^{\varepsilon_1})$ and~$t(\rho) \eqdef t(\alpha_\ell^{\varepsilon_\ell})$ denote the source and target of~$\rho$.
+For each vertex~$a \in Q_0$, there is also a \defn{string of length zero}, denoted by~$\varepsilon_a$, that starts and ends at~$a$.
+We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and call it an \defn{undirected string} of~$\quiver$.
+Let~$\strings$ denote the set of strings of~$\quiver$.
+
+A \defn{walk} of~$\quiver$ is a maximal maximal string of its blossoming quiver~$\quiver\blossom$ (meaning that each endpoint is a blossom).
+As for strings, we implicitly identify the two inverse walks~$\omega$ and~$\omega^{-1}$, and call it an \defn{undirected walk} of~$\quiver$.
+Let~$\walks$ denote the set of walks of~$\quiver$.
+
+A \defn{substring} of a walk~$\omega = \alpha_1^{\varepsilon_1} \cdots \alpha_\ell^{\varepsilon_\ell}$ of~$\quiver$ is a string~$\sigma = \alpha_{i+1}^{\varepsilon_{i+1}} \cdots \alpha_{j-1}^{\varepsilon_{j-1}}$ of~$\quiver$ for some indices~$1 \le i < j \le \ell$. Note that by definition,
+\begin{itemize}
+\item the endpoints of~$\sigma$ are not allowed to blossom endpoints of~$\omega$,
+\item the position of~$\sigma$ as a factor of~$\omega$ matters (the same string at a different position is considered a different substring).
+\item the string~$\varepsilon_a$ is a substring of~$\omega$ for each occurence of~$a$ as a vertex of~$\omega$ (take~$j = i+1$).
+\end{itemize}
+We denote by~$\Sigma(\omega)$ the set of substrings of~$\omega$.
+We say that the substring~$\sigma = \alpha_{i+1}^{\varepsilon_{i+1}} \cdots \alpha_{j-1}^{\varepsilon_{j-1}}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \alpha_1^{\varepsilon_1} \cdots \alpha_\ell^{\varepsilon_\ell}$ if~$\varepsilon_i = 1$ and~$\varepsilon_j = -1$ (resp.~if~$\varepsilon_i = -1$ and~$\varepsilon_j = 1$).
+In other words the two arrows of~$\omega$ incident to the endpoints of~$\sigma$ point towards~$\sigma$ (resp.~outwards from~$\sigma$).
+We denote by~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ the sets of bottom and top substrings of~$\omega$ respectively.
+We use the same notation for undirected walks (of course, substrings of an undirected walk are undirected).
+
+A \defn{peak} (resp.~\defn{deep}) of a walk~$\omega$ is a substring of~$\omega$ of length zero which is on top (resp.~at the bottom of~$\omega$).
+A walk~$\omega$ is \defn{straight} if it has no peak or deep (\ie if~$\omega$ or~$\omega^{-1}$ is a path in~$\bar Q\blossom$), and \defn{bending} otherwise.
+We denote by~$\peaks{\omega}$ (resp.~$\deeps{\omega}$) the multisets of vertices of peaks (resp.~deeps) of~$\omega$.
+
+\para{Non-kissing complex}
+%
+Let~$\omega$ and~$\omega'$ be two undirected walks on~$\quiver$.
+We say that~$\omega$ \defn{kisses}~$\omega'$ if ${\Sigma_\top(\omega) \cap \Sigma_\bottom(\omega')} \ne \varnothing$.
+In other words, $\omega$ and~$\omega'$ share a common substring~$\sigma$, and both arrows of~$\omega$ (resp.~of~$\omega'$) not in~$\sigma$ are outgoing (resp.~incoming) at the endpoints of~$\sigma$.
+%See \fref{fig:kissing}.
+We say that~$\omega$ and~$\omega'$ are \defn{kissing} if~$\omega$ kisses~$\omega'$ or~$\omega'$ kisses~$\omega$ (or both).
+Note that we authorize the situation where the common finite substring is reduced to a vertex~$a$, that~$\omega$ can kiss~$\omega'$ several times, that~$\omega$ and~$\omega'$ can mutually kiss, and that~$\omega$ can kiss itself.
+We say that a walk is \defn{proper} if it is not straight nor self-kissing.
+We denote by~$\properWalks$ the set of all proper walks of~$\quiver$.
+
+%\begin{figure}[h]
+%	\capstart
+%	\centerline{\includegraphics[scale=1]{kissing}}
+%	\caption{A schematic representation of two kissing walks: $\omega$~kisses~$\omega'$.}
+%	\label{fig:kissing}
+%\end{figure}
+%
+The (reduced) \defn{non-kissing complex} of~$\quiver$ is the simplicial complex~$\NKC$ whose faces are the collections of pairwise non-kissing proper walks of~$\quiver$.
+As shown in~\cite[Thm.~2.46]{PaluPilaudPlamondon}, this simplicial complex is a combinatorial model for the support $\tau$-tilting complex on $\tau$-rigid modules over~$kQ/I$.
+The quiver~$\quiver$ is called \defn{$\tau$-tilting finite} or \defn{non-kissing finite} when this complex is finite (in other words, $\quiver$ has finitely may non-kissing walks).
+
+\para{Non-kissing fan and gentle associahedron}
+%
+Let~$(\b{e}_v)_{v \in Q_0}$ denote the canonical basis of~$\R^{Q_0}$.
+For a multiset~$V = \{\!\{v_1, \dots, v_k\}\!\}$ of~$Q_0$, we denote by $\multiplicityVector_V \eqdef \sum_{i \in [k]} \b{e}_{v_i}$.
+The \defn{$\b{g}$-vector} of a walk~$\omega$ is the vector~$\gvector{\omega} \in \R^{Q_0}$ defined by~$\gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}$.
+Note that by definition, the $\gvector{\omega} = 0$ for a straight walk~$\omega$.
+We also define~$\gvectors{F} \eqdef \set{\gvector{\omega}}{\omega \in F}$ for a face~$F$ of~$\NKC$.
+These vectors support a complete simplicial fan realization of the non-kissing complex complex.
+Examples are illustrated in \cref{fig:nonkissingFans}.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{nonkissingFans}}
+	\caption{Two non-kissing fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{PaluPilaudPlamondon}.}
+	\label{fig:nonkissingFans}
+\end{figure}
+
+\begin{theorem}[{\cite[Thm.~4.17]{PaluPilaudPlamondon}}]
+For any non-kissing finite gentle quiver~$\quiver$, the set of cones
+\[
+\gvectorFan[\quiver] \eqdef \set{\R_{\ge 0} \, \gvectors{F}}{F \text{ non-kissing face of } \NKC}
+\]
+is a complete simplicial fan of~$\R^{Q_0}$, called \defn{non-kissing fan} of~$\quiver$, which realizes the non-kissing complex~$\NKC$.
+\end{theorem}
+
+It is proved in~\cite[Thm.~4.27]{PaluPilaudPlamondon} that the non-kissing fan comes from a polytope.
+For a walk~$\omega$, denote by~$\KN(\omega)$ the sum over all other walks~$\omega'$ of the number of kisses between~$\omega$~and~$\omega'$.
+
+\begin{theorem}[{\cite[Thm.~4.27]{PaluPilaudPlamondon}}]
+For any non-kissing finite gentle quiver~$\quiver$, the non-kissing fan~$\gvectorFan[\quiver]$ is the normal fan of the gentle associahedron~$\Asso[\quiver]$, defined as the intersection of the half-spaces~$\set{\b{x} \in \R^{Q_0}}{\dotprod{\gvector{\omega}}{\b{x}} \le \KN(\omega)}$ for all walks~$\omega \in \properWalks$.
+\end{theorem}
+
+\para{Flips in the non-kissing fan}
+%
+Although we lack a characterization of the exchangeable pairs of the non-kissing complex (see \cref{rem:exchangeablePairsNKC}, we can still describe the linear dependence among the $\b{g}$-vectors involved in a flip.
+The following statement is partially proved in~\cite[Thm.~4.17]{PaluPilaudPlamondon}.
+
+\begin{proposition}
+\label{prop:exchangeablePairsNKC}
+Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then
+\begin{enumerate}[(i)]
+\item For any non-kissing facet~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, there exists a unique maximal common substring~$\sigma$ of~$\omega$ and~$\omega'$ that decomposes~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ such that the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
+\item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ actually depend on the exchangeable walks~$\omega$ and~$\omega'$, not on the adjacent non-kissing facet~$F $ and~$F'$.
+\item Moreover, the linear dependence between the $\b{g}$-vectors of~$F \cup F'$ is given by
+\[
+\gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
+\]
+In other words, the non-kissing fan of~$\quiver$ is coherent.
+\item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\lambda}$ for~$\lambda \in F \cap F'$ is the multiplicity vector~$\multiplicityVector_{\sigma}$ of the vertices of the substring~$\sigma$ of~$\omega$ and~$\omega'$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon}.
+\vincent{Point~(ii) to prove.}
+\end{proof}
+
+In \cref{prop:exchangeablePairsNKC}, the string~$\sigma$ is called the \defn{distinguished} substring of~$\omega$ and~$\omega'$.
+We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished string of an exchangeable pair.
+Note that an equivalent definition of distinguishable strings is given in~\cite[Def.~2.30]{PaluPilaudPlamondon}.
+We denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
+
+\begin{remark}
+\label{rem:exchangeablePairsNKC}
+In view of \cref{prop:exchangeablePairsNKC}, it is tempting to look for a characterization of the exchangeable pairs~$\omega, \omega'$ using the kisses between~$\omega$ and~$\omega'$.
+However, as illustrated in \cref{fig:nonkissingFans}\,(right), note that
+\begin{itemize}
+\item two exchangeable walks may kiss along more than one string, but only one is the distinguished string,
+\item two non-exchangeable walks can kiss along more than one distinguishable string,
+\item two walks that kiss along a single distinguishable string are not always exchangeable,
+\item not all strings are distinguishable.
+\end{itemize}
+\vincent{More explicit. TODO}
+\end{remark}
+
+The following result will also be essential in our discussion.
+
+\begin{proposition}[{\cite[3.68]{PaluPilaudPlamondon}}]
+\label{prop:bijectionStringsWalks}
+The number of distinguishable strings~$\distinguishableStrings$ and proper walks~$\properWalks$ of the quiver~$\quiver$ are related by
+\[
+|\distinguishableStrings| + |Q_0| = |\properWalks|.
+\]
+\end{proposition}
+
+
+We are now ready to describe the type cone of the non-kissing fan~$\gvectorFan[\quiver]$.
+We first treat the case when~$\quiver$ has no self-kissing walks, which includes the case of the classical associahedron.
+We show that the type cone is then simplicial which gives another proof of \cref{thm:simplicialTypeConeAsso} and \cref{coro:descriptionAllAsso}.
+
+\subsubsection{Simplicial type cones for self-kissing free quivers}
+
+In this section, we focus on the following family of gentle quivers, which was also considered in~\cite[Sect.~4]{}.
+
+\begin{proposition}
+\label{prop:noSelfKissing}
+The following conditions are equivalent for a gentle quiver~$\quiver$.
+\begin{enumerate}[(i)]
+\item any (non necessarily oriented) cycle of~$\quiver$ contains at least two relations in~$I$,
+\item any string of~$\quiver$ is distinguishable,
+\item no walk on~$\quiver$ is self-kissing.
+\end{enumerate}
+\end{proposition}
+
+The quivers of this family is particularly well-behaved: they avoid all pathologies of \cref{rem:exchangeablePairsNKC} and we will prove that the type cone of their non-kissing fan happens to be simplicial.
+Note that this family already contains a lot of relevant examples, including:
+\begin{itemize}
+\item classical associahedra
+\item grid associahedra
+\item dissection associahedra
+\end{itemize}
+\vincent{More explicit. TODO}
+
+%For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\hL\sigma$, resp.~$\sigma\cR$, resp.~$\cL\sigma$) the unique string of~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\hL\sigma = \alpha_\ell^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma$, resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$, resp.~$\cL\sigma = \alpha_\ell \dots \alpha_2 \alpha_1^{-1} \sigma$) with~$\ell \ge 1$ and~$\alpha_1, \dots, \alpha_\ell \in Q_1$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$, resp.~$s(\alpha_\ell)$, resp.~$t(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
+For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
+These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~\defn{cohook}) to~$\sigma$.
+We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
+The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply be denoted~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
+
+%For a string~$\sigma$ of~$\quiver$, we denote by~$\hh{\sigma}$, $\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$ the unique walks on~$\quiver$ of the~form
+%\begin{alignat*}{3}
+%\hh{\sigma} & = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell
+%\qquad\qquad
+%& \cc{\sigma} & = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}
+%\\
+%\hc{\sigma} & = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}
+%\qquad\qquad
+%& \ch{\sigma} & = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell.
+%\end{alignat*}
+%%\begin{itemize}
+%%\item by~$\hh{\sigma}$ the unique walk on~$\quiver$ of the form~$\hh{\sigma} = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell$,
+%%\item by~$\cc{\sigma}$ the unique walk on~$\quiver$ of the form~$\cc{\sigma} = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}$.
+%%\item by~$\hc{\sigma}$ the unique walk on~$\quiver$ of the form~$\hc{\sigma} = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}$.
+%%\item by~$\ch{\sigma}$ the unique walk on~$\quiver$ of the form~$\ch{\sigma} = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell$.
+%%\end{itemize}
+%with~$k,\ell \ge 1$ and~$\alpha_1, \dots, \alpha_k, \beta_1, \dots, \beta_\ell \in Q_1$.
+%The following statement ensures that in a gentle quiver with no self-kissing walk, the walks~$\hh{\sigma}$ and~$\cc{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
+
+\begin{proposition}
+For any gentle quiver~$\quiver$ with no self-kissing walk and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
+\end{proposition}
+
+\begin{proof}
+We just need to prove that there exists a ridge~$R$ of~$\NKC$ containing both~$\hc{\sigma}$ and~$\ch{\sigma}$ and such that~$R \cup \{\cc{\sigma}\}$ and~$R \cup \{\hh{\sigma}\}$ are adjacent facets of~$\NKC$.
+\vincent{TODO}
+\end{proof}
+
+The following statement describes the type cone of the non-kissing fan of a gentle quiver with no self-kissing walks.
+
+\begin{proposition}
+\label{prop:extremalExchangeablePairsNKC}
+For any gentle quiver~$\quiver$ with no self-kissing walk, the extremal exchangeable pairs for the non-kissing fan of~$\quiver$ are precisely the pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for all strings~$\sigma \in \strings$.
+\end{proposition}
+
+\begin{proof}
+Let~$(\b{f}_\omega)_{\omega \in \walks}$ be the canonical basis of~$\R^{\walks}$.
+Consider two exchangeable walks~$\omega$ and~$\omega'$ with distinguished substring~$\sigma \in \Sigma_\top(\omega) \cap \Sigma_\bottom(\omega')$.
+Decompose~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ and define~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$ as in \cref{prop:exchangeablePairsNKC}\,(i). \cref{prop:exchangeablePairsNKC}\,(iii) ensures that the linear dependence between the corresponding $\b{g}$-vectors is given by
+\[
+\gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
+\]
+Therefore, the outer normal vector of the corresponding inequality of the type cone~$\typeCone(\gvectorFan[\quiver])$ is
+\[
+\b{n}(\omega, \omega') \eqdef \b{f}_\omega + \b{f}_{\omega'} - \b{f}_\mu - \b{f}_\nu.
+\]
+We claim that this normal vector is always a positive linear combination of the normal vectors~$\b{m}(\sigma) \eqdef \b{n}(\cc{\sigma}, \hh{\sigma}) = \b{f}_{\cc{\sigma}} + \b{f}_{\hh{\sigma}} - \b{f}_{\hc{\sigma}} - \b{f}_{\ch{\sigma}}$ for all string~$\sigma \in \strings$.
+Our proof works by descending induction on the length~$\lambda(\omega,\omega') \eqdef \ell(\sigma)$ of the common substring of~$\omega$ and~$\omega'$.
+If~$\lambda(\omega, \omega')$ is big enough, then the walk~$\omega$ (resp.~$\omega'$) is just obtained by adding two outgoing (resp.~incoming) blossoms at the end of~$\sigma$, thus $\omega = \cc{\sigma}$ (resp.~$\omega' = \hh{\sigma}$), and there is nothing to prove.
+Assume now that~$\omega \ne \hh{\sigma}$ (the situations where~$\omega' \ne \cc{\sigma}$ or~$\omega \ne \rho \sigma \hR$ are symmetric).
+%Assume now that~$\omega \ne \hh{\sigma}$, for instance that~$\omega \ne \hL \sigma \tau$ (the situations where~$\omega' \ne \cc{\sigma}$ or~$\omega \ne \rho \sigma \hR$ are symmetric).
+%Let~$\xi \eqdef \hL \sigma \tau$ and $\zeta \eqdef \hL \sigma \tau'$.
+%These notations are summarized in \cref{fig:proofExtremalExchangeablePairsNKC}.
+If~$\rho \ne \cL$, observe that
+\begin{itemize}
+\item $\omega$ and~$\cL \sigma \tau'$ are exchangeable with~$\b{n}(\omega, \cL \sigma \tau') = \b{f}_\omega + \b{f}_{\cL \sigma \tau'} - \b{f}_{\cL \sigma \tau} - \b{f}_\nu$, and
+\item $\cL \sigma \tau$ and~$\omega'$ are exchangeable with~$\b{n}(\cL \sigma \tau, \omega') = \b{f}_{\cL \sigma \tau} + \b{f}_{\omega'} - \b{f}_{\cL \sigma \tau'} - \b{f}_\mu$.
+\end{itemize}
+We derive that
+\[
+\b{n}(\omega, \omega') = \b{n}(\omega, \cL \sigma \tau') + \b{n}(\cL \sigma \tau, \omega').
+\]
+Observe moreover that since~$\omega$ has outgoing arrows at the endpoints of~$\sigma$, the common substring of~$\omega$ and~$\cL \sigma \tau'$ strictly contains~$\sigma$ so that $\lambda(\omega, \cL \sigma \tau') > \lambda(\omega, \omega')$.
+By induction, $\b{n}(\omega, \cL \sigma \tau')$ is thus a positive linear combination of~$\b{m}(\sigma)$ for~$\sigma \in \strings$.
+%
+By symmetry, we obtain the four equalities
+\[
+\b{n}(\omega, \omega') = 
+\begin{cases}
+\b{n}(\omega, \cL \sigma \tau') + \b{n}(\cL \sigma \tau, \omega') & \text{if } \rho \ne \cL, \\
+\b{n}(\omega, \rho' \sigma \cR) + \b{n}(\rho \sigma \cR, \omega') & \text{if } \tau \ne \cR, \\
+\b{n}(\omega, \hL \sigma \tau') + \b{n}(\hL \sigma \tau, \omega') & \text{if } \rho' \ne \hL, \\
+\b{n}(\omega, \rho' \sigma \hR) + \b{n}(\rho \sigma \hR, \omega') & \text{if } \tau' \ne \hR.
+\end{cases}
+\]
+These four equalities are illustrated on \cref{fig:fourEqualities}.
+%
+\begin{figure}[t]
+	\capstart
+%	\centerline{\includegraphics[scale=1.2]{fourEqualities}}
+	\centerline{
+	\begin{tabular}{c@{\qquad}c}
+		\includegraphics[scale=1.2]{fourEqualities1} & \includegraphics[scale=1.2]{fourEqualities2} \\
+		$\b{n}({\red \omega}, {\orange \omega'}) = \b{n}({\red \omega}, {\blue \cL \sigma \tau'}) + \b{n}({\green \cL \sigma \tau}, {\orange \omega'})$ & $\b{n}({\red \omega}, {\orange \omega'}) = \b{n}({\red \omega}, {\blue \rho' \sigma \cR}) + \b{n}({\green \rho \sigma \cR}, {\orange \omega'})$ \\[.4cm]
+		\includegraphics[scale=1.2]{fourEqualities3} & \includegraphics[scale=1.2]{fourEqualities4} \\
+		$\b{n}({\red \omega}, {\orange \omega'}) = \b{n}({\red \omega}, {\blue \hL \sigma \tau'}) + \b{n}({\green \hL \sigma \tau}, {\orange \omega'})$ & $\b{n}({\red \omega}, {\orange \omega'}) = \b{n}({\red \omega}, {\blue \rho' \sigma \hR}) + \b{n}({\green \rho \sigma \hR}, {\orange \omega'})$ \\
+	\end{tabular}
+	}
+	\caption{Schematic representation of te four equalities in the proof of \cref{prop:extremalExchangeablePairsNKC}.}
+	\label{fig:fourEqualities}
+\end{figure}
+%
+Moreover~$\b{n}(\omega, \cL \sigma \tau')$, $\b{n}(\cL \sigma \tau, \hL \sigma \cR)$, $\b{n}(\cL \sigma \hR, \hL \sigma \tau')$ and~$\b{n}(\hL \sigma \tau, \omega')$ are all positive combinations of~$\b{m}(\sigma)$ for~$\sigma \in \strings$ by induction hypothesis.
+%
+Applying these equalities one after the other, we obtain
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}[t]{l@{\;\;}l@{\;}l@{\;}l@{\;}l@{\;}l@{\;}l@{\;}l@{\;}l@{\;}l}
+  & \b{n}(\omega, \omega') & & \hfill\raisebox{-.1cm}{\text{\tiny{Equality 1}}} & & & & & & \\
+\cline{2-4}
+= & \b{n}(\omega, \cL \sigma \tau') & + & \b{n}(\cL \sigma \tau, \omega') & & & & & & \hfill\raisebox{-.1cm}{\text{\tiny{Equality 2}}} \\
+\cline{4-10}
+= & \b{n}(\omega, \cL \sigma \tau') & + & \b{n}(\cL \sigma \tau, \hL \sigma \tau') & & \hfill\raisebox{-.1cm}{\text{\tiny{Equality 3}}} & & & + & \b{n}(\hL \sigma \tau, \omega') \\
+\cline{4-6}
+= & \b{n}(\omega, \cL \sigma \tau') & + & \b{n}(\cL \sigma \tau, \hL \sigma \cR) & + & \b{n}(\cL \sigma \cR, \hL \sigma \tau') & & \hfill\raisebox{-.1cm}{\text{\tiny{Equality 4}}} & + & \b{n}(\hL \sigma \tau, \omega') \\
+\cline{6-8}
+= & \b{n}(\omega, \cL \sigma \tau') & + & \b{n}(\cL \sigma \tau, \hL \sigma \cR) & + & \b{n}(\cL \sigma \cR, \hL \sigma \hR) & + & \b{n}(\cL \sigma \hR, \hL \sigma \tau') & + & \b{n}(\hL \sigma \tau, \omega') \\
+= & \b{n}(\omega, \cL \sigma \tau') & + & \b{n}(\cL \sigma \tau, \hL \sigma \cR) & + & \multicolumn{1}{c}{\b{m}(\sigma)} & + & \b{n}(\cL \sigma \hR, \hL \sigma \tau') & + & \b{n}(\hL \sigma \tau, \omega')
+\end{array}
+\renewcommand{\arraystretch}{1}
+\]
+where we fix the convention~$\b{n}(\lambda, \lambda) = 0$ in case~$\rho = \hL$, $\rho' = \cL$, $\tau = \hR$ or~$\tau' = \cR$.
+%
+We conclude that~$\b{n}(\omega, \omega')$ is a positive combination of~$\b{m}(\sigma)$ for~$\sigma \in \strings$, since~$\b{n}(\omega, \cL \sigma \tau')$, $\b{n}(\cL \sigma \tau, \hL \sigma \cR)$, $\b{n}(\cL \sigma \hR, \hL \sigma \tau')$ and~$\b{n}(\hL \sigma \tau, \omega')$ are.
+This shows that all extremal exchangeable pairs are of the form~$\{\cc{\sigma}, \hh{\sigma}\}$ for~$\sigma \in \strings$.
+
+Conversely, we know from \cref{rem:dimTypeCone} that there are at least~$|\walks|-|Q_0|$ extremal exchangeable pairs. Since this~$|\strings| = |\distinguishableStrings| = |\walks| - |Q_0|$ by~\cref{prop:bijectionStringsWalks}, we conclude that all exchangeable pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for~$\sigma \in \strings$ are extremal.
+\end{proof}
+
+Combining \cref{coro:simplicialTypeCone}, \cref{prop:bijectionStringsWalks} and \cref{prop:extremalExchangeablePairsNKC}, we derive the following description of all polytopal realizations of the non-kissing fan.
+
+\begin{corollary}
+For any gentle quiver~$\quiver$ with no self-kissing walk and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
+\[
+R_\b{\ell}(\quiver) \eqdef \bigset{\b{z} \in \R^{\walks}}{\b{z} \ge 0 \text{ and } \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \ell_\sigma \text{ for all } \sigma \in \strings}
+\]
+is a realization of the non-kissing fan~$\gvectorFan[\quiver]$.
+Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\strings}$ describe all polytopal realizations of~$\gvectorFan[\quiver]$.
+\end{corollary}
+
+\begin{proof}
+\cref{prop:extremalExchangeablePairsNKC} asserts that the type cone~$\typeCone(\gvectorFan[\quiver])$ has one facet for each string of~$\quiver$.
+Since all strings are distinguishable by \cref{prop:noSelfKissing}, the number of facets of~$\typeCone(\gvectorFan[\quiver])$ is $|\strings| = |\distinguishableStrings| = |\walks| - |Q_0|$ by~\cref{prop:bijectionStringsWalks}, so that~$\typeCone(\gvectorFan[\quiver])$ is simplicial. We then conclude by a simple application of \cref{coro:simplicialTypeCone}.
+\end{proof}
+
+We also obtain from \cref{prop:extremalExchangeablePairsNKC} the following surprising property.
+
+\begin{corollary}
+Any $\b{c}$-vector supports exactly one extremal exchangeable pair.
+\end{corollary}
+
+\begin{remark}
+\label{rem:meshARquiver}
+Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we note that the extremal exchangeable pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ and their linear dependences~${\gvector{\cc{\sigma}} + \gvector{\hh{\sigma}} - \gvector{\hc{\sigma}} - \gvector{\ch{\sigma}}}$ precisely correspond to the meshes of the Auslander-Reiten quiver of~$\quiver$.
+\end{remark}
+
+\subsubsection{Towards the general case}
+
+We are already missing a criterion for exchangeable pairs of walks. See \cite[Sect.~9]{BrustleDouvilleMousavandThomasYildirim}.
+It seems that two exchangeable walks are always kissing along a single distinguishable string.
+We need to prove that to see that the non-kissing fan is coherent (because for a pair of exchangeable walks, I can completely reconstruct the $\b{g}$-vector dependence of the flip if I know there distinguished substring).
+Note however that
+\begin{enumerate}
+\item exchangeable pairs might kiss along additional non-distinguishable strings (example: just a loop),
+\item non-exchangeable walks might kiss along a single distinguishable string (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon}).
+\item non-exchangeable walks might kiss along two or more distinguishable strings (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon}).
+\end{enumerate}
+
+%In view of these two points, the following conjecture seems plausible.
+%
+%\begin{conjecture}
+%Two walks~$\omega$ and~$\omega'$ are exchangeable if and only if
+%\begin{itemize}
+%\item they kiss along a single distinguishable string~$\sigma$ (note that they might also kiss along other strings as long as they are not distinguishable),
+%\item decomposing~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ according to their common distinguishable string, the two walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$ are non-self-kissing.
+%\end{itemize}
+%Recall that with these notations, for any flip exchanging~$\omega$ and~$\omega'$, we have the linear dependence
+%\[
+%\gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
+%\]
+%\end{conjecture}
+
+We have some conjectures on what the extremal exchangeable pairs should be.
+One clear (but a bit empty) result is that extremal exchangeable pairs correspond in the Auslander-Reiten quiver to rectangles whose four vertices are non-self-kissing and that cannot be tiled with smaller such rectangles.
+
+We checked on some (but probably not enough) small gentle quivers the following properties:
+\begin{enumerate}
+\item Any $c$-vector (\ie distinguishable string) is the direction of at least one extremal exchangeable pair.
+\item Consider a distinguishable string~$\sigma$. Let~$\omega$ (resp.~$\omega'$) be the walk obtained from~$\sigma$ by adding two hooks (resp.~two cohooks) at the endpoints of~$\sigma$. If the walks~$\omega$ and~$\omega'$ are non-self-kissing and exchangeable, then they form the unique extremal exchangeable pair directed by~$\sigma$. These extremal exchangeable pairs correspond to meshes of the Auslander-Reiten quiver.
+\item Otherwise, $\sigma$ is the direction to one or more extremal exchangeable pairs obtained by moving further in the Auslander-Reiten quiver (this is really unclear at the moment).
+\end{enumerate}
+
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=.6]{fan}}
+	\caption{The shards corresponding to the facets of the type cone. Is there a geometric meaning?}
+	\label{fig:fanShards}
+\end{figure}
+
+\subsection{Graph associahedra}
+
+Graph associahedra were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}.
+For a given graph~$\graphG$, the $\graphG$-associahedron~$\Asso[\graphG]$ is a simple polytope whose combinatorial structure encodes the connected subgraphs of~$\graphG$ and their nested structure.
+More precisely, the $\graphG$-associahedron is a polytopal realization of the nested complex of~$\graphG$, defined as the simplicial complex of all collections of tubes (connected induced subgraphs) of~$\graphG$ which are pairwise compatible (either nested, or disjoint and non-adjacent).
+As illustrated in~\cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra.
+The graph associahedra were extended to the \defn{nestohedra}, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}.
+Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}.
+For a given graph~$\graphG$, the resulting polytopes all have the same normal fan, called nested fan of~$\graphG$: its rays are the characteristic vectors of the tubes, and its cones are generated by characteristic vectors of compatible tubes.
+In this section, we describe the type cone of the nested fan of any graph~$\graphG$.
+
+\begin{figure}[t]
+	\capstart
+	\centerline{
+		\begin{tabular}{c@{\;}c@{\;}c@{\;}c}
+    		permutahedron &
+    		associahedron &
+    		cyclohedron &
+    		stellohedron \\
+    		\includegraphics[scale=.6]{permutahedron} &
+    		\includegraphics[scale=.6]{associahedron} &
+    		\includegraphics[scale=.6]{cyclohedron} &
+    		\includegraphics[scale=.6]{stellohedron} \\
+    		\includegraphics[scale=.6]{permutahedronTubings} &
+    		\includegraphics[scale=.6]{associahedronTubings} &
+    		\includegraphics[scale=.6]{cyclohedronTubings} &
+    		\includegraphics[scale=.6]{stellohedronTubings} \\[.1cm]
+    		complete graph &
+    		path &
+    		cycle &
+    		star
+		\end{tabular}
+	}
+	\caption{Some classical families of polytopes as graph associahedra. Illustration from~\cite{MannevillePilaud-compatibilityFans}.}
+	\label{fig:specialGraphAssociahedra}
+\end{figure}
+
+\subsubsection{Nested complex and nested fan of a graph}
+
+We present the definitions and properties of the nested complex of a graph, following ideas from~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}.
+
+\para{Nested complex}
+%
+Let~$\graphG$ be a graph with vertex set~$\ground$.
+Let~$\connectedComponents(\graphG)$ denote the set of connected components of~$\graphG$ and define~$n \eqdef |\ground|-|\connectedComponents(\graphG)|$.
+A \defn{tube} of~$\graphG$ is a non-empty connected induced subgraph of~$\graphG$.
+The set of tubes of~$\graphG$ is denoted by~$\tubes(\graphG)$.
+The inclusion maximal tubes of~$\graphG$ are its connected components~$\connectedComponents(\graphG)$, and all other tubes are called \defn{proper}.
+Two tubes~$\tube, \tube'$ of~$\graphG$ are \defn{compatible} if they are either nested (\ie $\tube \subseteq \tube'$ or~$\tube' \subseteq \tube$), or disjoint and non-adjacent (\ie $\tube \cup \tube'$ is not a tube of~$\graphG$).
+A \defn{tubing} on~$\graphG$ is a set~$\tubing$ of pairwise compatible proper tubes of~$\graphG$.
+The \defn{nested complex} of~$\graphG$ is the simplicial complex~$\nestedComplex(\graphG)$ of all tubings on~$\graphG$.
+
+\para{Nested fan and graph associahedron}
+%
+Let~$(\b{e}_v)_{v \in \ground}$ be the canonical basis of~$\R^\ground$.
+We consider the hyperplane~${\HH \eqdef \bigset{\b{x} \in \R^\ground}{\sum_{w \in W} x_w = 0 \text{ for all } W \in \connectedComponents(\graphG)}}$ and let~$\pi : \R^\ground \to \HH$ denote the orthogonal projection on~$\HH$.
+The \defn{$\b{g}$-vector} of a tube~$\tube$ of~$\graphG$ is the projection~$\gvector{\tube} \eqdef \pi \big( \sum_{v \in \tube} \b{e}_v \big)$ of the characteristic vector of~$\tube$.
+Note that by definition,~$\gvector{\graphG} = 0$.
+We also define~$\gvectors{\tubing} \eqdef \set{\gvector{\tube}}{\tube \in \tubing}$ for a tubing~$\tubing$ on~$\graphG$.
+These vectors support a complete simplicial fan realization of the nested complex.
+Examples are illustrated in \cref{fig:nestedFans}.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.55]{nestedFans}}
+	\caption{Two nested fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$.}
+	\label{fig:nestedFans}
+\end{figure}
+
+\begin{theorem}[\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}]
+For any graph~$\graphG$, the set of cones
+\[
+\gvectorFan[\graphG] \eqdef \set{\R_{\ge 0} \, \gvectors{\tubing}}{\tubing \text{ tubing on } \graphG}
+\]
+is a complete simplicial fan of~$\HH$, called \defn{nested fan} of~$\graphG$, which realizes the nested complex~$\nestedComplex(\graphG)$.
+\end{theorem}
+
+It is proved in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky} that the nested fan comes from a polytope.
+For any subset~$U \subseteq \ground$, denote by~$\triangle_U \eqdef \conv\set{\b{e}_u}{u \in U}$ the face of the standard simplex~$\triangle_\ground$ corresponding to~$U$.
+
+\begin{theorem}[\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}]
+For any graph~$\graphG$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron~$\Asso[\graphG]$, defined as the Minkowski sum~$\sum_{\tube \in \tubes(\graphG)} \triangle_{\tube}$ of the faces of the standard simplex corresponding to all tubes of~$\graphG$.
+\end{theorem}
+
+\para{Flips in the nested fan}
+%
+The following statement follows from~\cite{MannevillePilaud-compatibilityFans, Zelevinsky}.
+
+\begin{proposition}
+\label{prop:exchangeablePairsGA}
+Let~$\tube, \tube'$ be two tubes of~$\graphG$. Then
+\begin{enumerate}[(i)]
+\item The tubes~$\tube$ and~$\tube'$ are exchangeable if and only if $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
+\item For any maximal tubings~$\tubing, \tubing$ on~$\graphG$ with $\tubing \ssm \{\tube\} = \tubing' \ssm \{\tube'\}$, both~$\tubing \cup \connectedComponents(\graphG)$ and~$\tubing' \cup \connectedComponents(\graphG)$ contain the tube~$\tube \cup \tube'$ and the connected components of~$\tube \cap \tube'$.
+\item The linear dependence between the $\b{g}$-vectors of~$\tubing \cup \tubing'$ is given by
+\[
+\gvector{\tube} + \gvector{\tube'} = \gvector{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \gvector{\tube[s]}.
+\]
+In other words, the nested fan of~$\graphG$ is coherent.
+\item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\tube[s]}$ for~$\tube[s] \in \tubing \cap \tubing'$ is~$\b{e}_v - \b{e}_{v'}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Points~(i) and~(ii) was proved in~\cite{MannevillePilaud-compatibilityFans}. Point~(iii) follows from the fact that
+\[
+\sum_{v \in \tube} \b{e}_v + \sum_{v \in \tube'} \b{e}_v = \sum_{v \in \tube \cup \tube'} \b{e}_v + \sum_{v \in \tube \cap \tube'} \b{e}_v = \sum_{v \in \tube \cup \tube'} \b{e}_v + \sum_{\substack{\tube[s] \in \connectedComponents(\tube \cap \tube') \\ v \in \tube[s]}} \b{e}_v.
+\]
+Finally for~(iv), any tube~$\tube[s] \in \tubing \cap \tubing'$ that contains~$v$ or~$v'$ actually contains both (to be compatible with~$\tube$ and~$\tube'$). Therefore, $\gvector{\tube[s]}$ is orthogonal to~$\b{e}_v - \b{e}_{v'}$ for any tube~$\tube[s] \in \tubing \cap \tubing'$.
+\end{proof}
+
+We are now ready to describe the type cone of the nested fan~$\gvectorFan[\graphG]$.
+We first treat the case when~$G$ is a path so that the $\graphG$-associahedron is a classical associahedron.
+We show that the type cone is then simplicial which gives another proof of \cref{thm:simplicialTypeConeAsso} and \cref{coro:descriptionAllAsso}.
+
+\subsubsection{Simplicial type cones for path associahedra}
+
+We start with the case of the path.
+Recall that the tubes of the path are the intervals of~$[n]$ and that two intervals~$[i,j]$ and~$[i',j']$ of~$[n]$ are exchangeable if either~${i < i' \le j+1 < j'+1}$ or~${i' < i \le j'+1 < j+1}$.
+
+\begin{proposition}
+\label{prop:extremalExchangeablePairsA}
+%The extremal exchangeable pairs for the nested fan of the path are precisely the pairs of intervals~$\{[i,j], [i+1,j+1]\}$ for~$1 \le i \le j \le n-1$.
+Two intervals~$[i,j]$ and~$[i',j']$ of~$[n]$ form an extremal exchangeable pair for the nested fan of the path if and only if~$i = i'+1$ and~$j = j'+1$, or the opposite.
+\end{proposition}
+
+\begin{proof}
+Let~$(\b{f}_{[i,j]})_{1 \le i \le j \le n}$ be the canonical basis of~$\R^{\binom{n+1}{2}}$.
+Consider two exchangeable tubes~$[i,j]$ and~$[i',j']$ with~${i < i' \le j+1 < j'+1}$.
+By \cref{prop:exchangeablePairsGA}\,(iii), the linear dependence between the corresponding $\b{g}$-vectors is given by
+\[
+\gvector{[i,j]} + \gvector{[i',j']} = \gvector{[i,j']} + \gvector{[i',j]}
+\]
+Therefore, the outer normal vector of the corresponding inequality of the type cone~$\typeCone(\gvectorFan[\graphG])$ is
+\[
+\b{n}(i,j,i',j') \eqdef \b{f}_{[i,j]} + \b{f}_{[i',j']} - \b{f}_{[i,j']} - \b{f}_{[i',j]}
+\]
+Denoting
+\[
+\b{m}(k,\ell) \eqdef \b{n}(k,\ell-1,k+1,\ell) = \b{f}_{[k, \ell-1]} + \b{f}_{[k+1, \ell]} - \b{f}_{[k, \ell]} - \b{f}_{[k+1, \ell-1]},
+\]
+we obtain that
+\[
+\b{n}(i,j,i',j') = \sum_{\substack{k \in {[i,i'[} \\ \ell \in {]j,j']}}} \b{m}(k,\ell).
+\]
+Indeed, on the right hand side, the basis vector~$\b{f}_{[k,\ell]}$ appears with a positive sign in~$\b{m}(k,{\ell+1})$ for~$(k,\ell) \in {[i,i'[} \times {[j,j'[}$ and in~$\b{m}(k-1, \ell)$ for~$(k,\ell) \in {]i,i']} \times {]j,j']}$, and with a negative sign in~$\b{m}(k,\ell)$ for~$(k,\ell) \in {[i,i'[} \times {]j,j']}$ and in~$\b{m}(k-1,\ell+1)$ for~$(k,\ell) \in {]i,i']} \times {[j,j'[}$.
+Therefore, these contributions all vanish except when~$[k, \ell]$ is one of the tubes~$[i,j]$, $[i',j']$, $[i,j']$ or~$[i',j]$.
+%For any~$i \le k < i'$ and~$j < \ell \le j'$, the exchange relation between the tubes~$[k, \ell-1]$ and~$[k+1, \ell]$ is given by
+%\begin{equation}
+%\label{eq:exch2}
+%\tag{$\mathrm{ER}_k^\ell$}
+%\gvector{[k, \ell-1]} + \gvector{[k+1, \ell]} = \gvector{[k, \ell]} + \gvector{[k+1, \ell-1]}.
+%\end{equation}
+%Summing the exchange relations~\eqref{eq:exch2} over all pairs~$(k,\ell) \in {[i,i'[} \times {]j,j']}$, we obtain after simplifications the exchange relation~\eqref{eq:exch1}.
+%Indeed, the $\b{g}$-vector of each tube~$[k, \ell]$ appears on the left hand sides of the exchange relations~($\mathrm{ER}_k^{\ell+1}$) for~$(k,\ell) \in {[i,i'[} \times {[j,j'[}$ and ($\mathrm{ER}_{k-1}^\ell$) for~$(k,\ell) \in {]i,i']} \times {]j,j']}$ and on the right hand sides of the exchange relations~($\mathrm{ER}_k^\ell$) for~$(k,\ell) \in {[i,i'[} \times {]j,j']}$ and~($\mathrm{ER}_{k-1}^{\ell+1}$) for~$(k,\ell) \in {]i,i']} \times {[j,j'[}$.
+%Therefore, these contributions all vanish except when~$[k, \ell]$ is one of the tubes~$[i,j]$, $[i',j']$, $[i,j']$ or~$[i',j]$.
+This shows that any exchange relation is a positive linear combination of the exchange relations corresponding to all pairs of tubes~$[i,j]$ and~$[i',j']$ of~$[n]$ such that~$i = i'+1$ and~$j = j'+1$.
+
+We now need to show that all these exchangeable pairs are extremal.
+Assume that~$\b{m}(k,\ell)$ can be written as the linear combination
+\begin{equation}
+\label{eq:linComb}
+\b{m}(k,\ell) = \sum \lambda(i,j,i',j') \, \b{n}(i,j,i',j'),
+\end{equation}
+where~$\lambda(i,j,i',j') \ge 0$ for all exchangeable pairs~$\{[i,j], [i',j']\}$.
+Note that~$\sum \lambda(i,j,i',j') \ge 1$ since the coefficient of~$\b{f}_{[k,\ell]}$ in~$\b{m}(k,\ell)$ is~$-1$.
+Consider the linear form~$\Phi: \R^N \to \R$ defined by~$\Phi(\b{f}_{[i,j]}) = -(j-i)^2$.
+A quick computation shows that
+\[
+\Phi(\b{n}(i,j,i',j')) = 2(i'-i)(j'-j).
+\]
+Applying~$\Phi$ to \cref{eq:linComb}, we obtain
+\[
+1 = \sum \lambda(i,j,i',j')(i'-i)(j'-j).
+\]
+Since~$\sum \lambda(i,j,i',j') \ge 1$ we obtain that~$\lambda(k,\ell-1,k+1,\ell) = 1$ and~$\lambda(i,j,i',j') = 0$ for all other exchangeable pairs~$\{[i,j], [i',j']\}$.
+\end{proof}
+
+\subsubsection{General case}
+
+We now consider an arbitrary graph~$\graphG$ and describe the type cone of its nested fan.
+\cref{prop:extremalExchangeablePairsA} extends as follows.
+% We denote by~$X \symdif Y$ the symmetric difference of two sets~$X$ and~$Y$.
+
+\begin{proposition}
+\label{prop:extremalExchangeablePairsGA}
+%A pair~$\{\tube, \tube'\}$ of exchangeable tubes of~$\graphG$ is extremal if and only if~$|\tube \symdif \tube'| = 2$.
+Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$ if and only if~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
+\end{proposition}
+
+\begin{proof}
+Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$ and let~$p = |\tube \cup \tube'|$.
+By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
+Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected.
+We can thus label the elements of~$\tube \cup \tube'$ by~$\{v_1, \dots, v_p\}$ such that~$\{v_i, \dots, v_j\}$ induces a tube~$\tube_{k,\ell}$ of~$\graphG$ for any~$1 \le k \le \ell \le p$. 
+The map~$[k,\ell] \mapsto \tube_{k,\ell}$ is thus an injection from the tubes of the path~$\graphG[P]_p$ to that of~$\graphG$ that fulfills
+\begin{itemize}
+\item $\tube_{k,\ell-1} \ssm \{v_k\} = \tube_{k+1,\ell} \ssm \{v_\ell\}$ for any~$1 \le k \le \ell \le p$, and
+\item $\gvector{\tube_{k,\ell}} = M\gvector{[k,\ell]}$ for any~$1 \le k \le \ell \le p$, where~$M$ is the matrix sending~$\b{e}_m$ to~$\b{e}_{v_m}$.
+\end{itemize}
+Therefore, this map transports the linear combinations of \cref{prop:extremalExchangeablePairsA}.
+We conclude that the exchange relation corresponding to the exchangeable pair~$\{\tube, \tube'\}$ is a positive linear combination of the exchange relations corresponding to the pairs~$\{\tube_{k,\ell-1}, \tube_{k+1,\ell}\}$ for all~${(k,\ell) \in {[1, p-|\tube'|+1[} \times {]|\tube|, p]}}$.
+
+We now need to show that all these pairs are extremal.
+\vincent{TODO}
+\end{proof}
+
+The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
+
+\begin{corollary}
+\label{coro:extremalExchangeablePairsGA}
+The extremal exchangeable pairs for the nested fan of~$\graphG$ are equivalently
+\begin{enumerate}[(i)]
+\item the pairs of tubes~$\tube[r] \cup \{v\}$ and~$\tube[r] \cup \{v'\}$ for any tube~$\tube[r] \in \tubes(\graphG)$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
+\item the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes(\graphG)$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$,
+\end{enumerate}
+\end{corollary}
+
+We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan, which we can explicitly express using one of the following two equivalent conditions.
+
+%\begin{corollary}
+%Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes(\graphG)$ and a height vector~$\b{h} \in \R^{\tubes(\graphG)}$ such that~$\b{h}_{\graphG} = 0$ and
+%\[
+%\b{h}_{\tube} + \b{h}_{\tube'} > \b{h}_{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{h}_{\tube[s]}
+%\]
+%for any pair of tubes~$\{\tube, \tube'\}$ of~$\graphG$ with~$\tube \ssm \{v\} = \tube' \ssm \{v'\}$ where~$v$ is a neighbor of~$\tube'$ and~$v'$ is a neighbor of~$\tube$.
+%Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
+%\[
+%\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes(\graphG)}.
+%\]
+%\end{corollary}
+
+\begin{corollary}
+Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes(\graphG)$ and a height vector~$\b{h} \in \R^{\tubes(\graphG)}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying one of the two following equivalent conditions:
+\begin{enumerate}[(i)]
+\item $\b{h}_{\tube[r] \cup \{v\}} + \b{h}_{\tube[r] \cup \{v'\}} > \b{h}_{\tube[r] \cup \{v, v'\}} + \b{h}_{\tube[r]}$ for any tube~$\tube[r] \in \tubes(\graphG)$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
+\item $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes(\graphG)$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
+\end{enumerate}
+Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
+\[
+\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes(\graphG)}.
+\]
+\end{corollary}
+
+We also obtain from \cref{prop:extremalExchangeablePairsGA} the following surprising property.
+
+\begin{corollary}
+Any $\b{c}$-vector supports at least one extremal exchangeable pair.
+\end{corollary}
+
+\begin{proof}
+Consider a $\b{c}$-vector~$\b{e}_v - \b{e}_{v'}$ for two distinct vertices~$v, v'$ in a common connected component of~$\graphG$. Let~$\tube[r]$ be a path from~$v$ to~$v'$ in~$\graphG$ and let~$\tube \eqdef \tube[r] \cup \{v\}$ and~$\tube' \eqdef \tube[r] \cup \{v'\}$. Then $\{\tube, \tube'\}$ is an extremal exchangeable pair with $\b{c}$-vector~$\b{e}_v - \b{e}_{v'}$.
+\end{proof}
+
+We derive from~\cref{coro:extremalExchangeablePairsGA} the number of extremal exchangeable pairs of the nested fan.
+For a tube~$\tube$ of~$\graphG$, we denote by~$\neighbors(\tube)$ the number of neighbors of~$\tube$ and by~$\nonDisconnecting(\tube)$ the number of non-disconnecting vertices of~$\tube$.
+In other words, it $\neighbors(\tube)$ (resp.~$\nonDisconnecting(\tube)$) is the number of tubes covering~$\tube$ (resp.~covered by~$\tube$) in the inclusion poset of all tubes of~$\graphG$.
+
+\begin{corollary}
+\label{coro:numberExtremalExchangeablePairsGA}
+The nested fan~$\gvectorFan[\graphG]$ has~$\!\!\!\! \sum\limits_{\tube[r] \in \tubes(\graphG)} \!\! \binom{\neighbors(\tube[r])}{2} = \!\!\!\! \sum\limits_{\tube[s] \in \tubes(\graphG)} \!\! \binom{\nonDisconnecting(\tube[s])}{2}$ extremal exchangeable pairs.
+\end{corollary}
+
+%\begin{proof}
+%By \cref{prop:extremalExchangeablePairsGA}, extremal exchangeable pairs are in bijection with quadruples~$(\tube[r], \tube[t], \tube[t'], \tube[s])$ of tubes of~$\graphG$ where~$\tube[t]$ and~$\tube[t']$ are distinct tubes covering~$\tube[r]$ and covered by~$\tube[s]$ in the inclusion poset of all tubes of~$\graphG$.
+%The result immediately follows.
+%\end{proof}
+
+The formula of \cref{coro:numberExtremalExchangeablePairsGA} can be made more explicit for specific families of graph associahedra discussed in the introduction and illustrated in \cref{fig:specialGraphAssociahedra}.
+
+\begin{proposition}
+The number of extreme exchangeable pairs of the nested fan~$\gvectorFan[\graphG]$ is:
+\begin{itemize}
+\item $2^{n-2}\binom{n}{2}$ for the permutahedron (complete graph associahedron),
+\item $\binom{n}{2}$ for the associahedron (path associahedron),
+\item $3\binom{n}{2} - n$ for the cyclohedron (cycle associahedron),
+\item $n-1+2^{n-3}\binom{n-1}{2}$ for the stellohedron (star associahedron).
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+For the permutahedron, choose any two vertices~$v,v'$, and complete them into a tube by selecting any subset of the~$n-2$ remaining vertices.
+For the associahedron, choose any two vertices~$v,v'$, and complete them into a tube by taking the path between them.
+For the cyclohedron, choose the two vertices~$v,v'$, and complete them into a tube by taking either all the cycle, or one of the two paths between~$v$ and~$v'$ (this gives three options in general, but only two when~$v,v'$ are neighbors).
+For the stellohedron, choose either~$v$ as the center of the star and~$v'$ as one of the $n-1$ leaves, or $v$~and~$v'$ as leaves of the star and complete them into a tube by taking the center and any subset of the $n-3$ remaining leaves.
+\end{proof}
+
+%\begin{example}
+%The formula of \cref{coro:numberExtremalExchangeablePairsGA} can be made more explicit for specific families of graph associahedra:
+%\begin{itemize}
+%\item the permutahedron (complete graph associahedron) has~$2^{n-2}\binom{n}{2}$ extreme exchangeable pairs (choose the two vertices~$v,v'$, and complete them into a tube by selecting any subset of the~$n-2$ remaining vertices),
+%\item the associahedron (path associahedron) has~$\binom{n}{2}$ extreme exchangeable pairs (choose the two vertices~$v,v'$, and complete them into a tube by taking the path between them),
+%\item the cyclohedron (cycle associahedron) has~$3\binom{n}{2} - n$ extreme exchangeable pairs (choose the two vertices~$v,v'$, and complete them into a tube by taking either all the cycle, or one of the two paths between~$v$ and~$v'$; this gives three options in general, but only two when~$v,v'$ are neighbors),
+%\item the stellohedron (star associahedron) has $n-1+2^{n-3}\binom{n-1}{2}$ extreme exchangeable pairs (choose either~$v$ as the center of the star and~$v'$ as one of the $n-1$ leaves, or $v$~and~$v'$ as leaves of the star and complete them into a tube by taking the center and any subset of the $n-3$ remaining leaves).
+%\end{itemize}
+%\end{example}
+
+To conclude on graph associahedra, we characterize the graphs~$\graphG$ whose nested fan has a simplicial type cone.
+
+\begin{proposition}
+The type cone~$\typeCone(\gvectorFan[\graphG])$ is simplicial if and only if~$\graphG$ is a path.
+\end{proposition}
+
+\begin{proof}
+Note that any tube~$\tube$ with~$|\tube| \ge 2$ has two non-disconnecting vertices when it is a path, and at least three non-disconnecting vertices otherwise (the leaves of an arbitrary spanning tree of~$\tube$).
+Therefore, each tube of~$\tubes(\graphG)$ which is not a singleton contributes to at least one extremal exchangeable pairs.
+We conclude that the number of extremal exchangeable pairs is at least:
+\[
+|\tubes(\graphG)| - |V| = |\tubes(\graphG) \ssm \{\graphG\}| - (|V|-1) = N - n,
+\]
+with equality if and only if all tubes of~$\graphG$ are paths, \ie if and only if~$\graphG$ is a path.
+\end{proof}
+
+\subsection{Quotientopes}
+
+Be careful that the quotient fans are not simplicial.
+
+\subsection{Brick polytopes}
+
+Be careful that the brick fans are not simplicial.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{alpha}
+\bibliography{typeConeAssociahedra}
+\label{sec:biblio}
+
+\end{document}
