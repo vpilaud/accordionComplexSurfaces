@@ -322,7 +322,7 @@ When the type cone happens to be simplicial, we derive simple descriptions of al
 
 We explain recent results of~\cite{BazierMatteDouvilleMousavandThomasYildirim}. Some advantages of our approach are:
 \begin{itemize}
-\item We manage to extend their results to other families of $\b{g}$-vector fans: first to all $\b{g}$-vector fans of finite type cluster algebras acyclic or not (whose polytopality was only proved recently in~\cite{HohlwegPilaudStella}), then to all $\b{g}$-vector fans of the $\tau$-tilting finite gentle algebras (whose polytopality was proved recently in~\cite{PaluPilaudPlamondon}), and finally to the nested fans of graph associahedra (whose polytopality was studied in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}).
+\item We manage to extend their results to other families of $\b{g}$-vector fans: first to all $\b{g}$-vector fans of finite type cluster algebras acyclic or not (whose polytopality was only proved recently in~\cite{HohlwegPilaudStella}), then to all $\b{g}$-vector fans of the $\tau$-tilting finite gentle algebras (whose polytopality was proved recently in~\cite{PaluPilaudPlamondon-nonkissing}), and finally to the nested fans of graph associahedra (whose polytopality was studied in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}).
 \item We have a simpler proof, only based on the transformation between the classical descriptions of a polytope of the form~$\set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$ and~$\set{\b{z} \in \R^N}{\b{K}\b{z} = \b{K}\b{h} \text{ and } \b{z} \ge 0}$ (this transformation is standard in optimization). In particular, we do not need to consider only rational polytopes and pass to the limit to deal with all real descriptions.
 \item We observe that we obtain all realizations of the $\b{g}$-vector fans of the considered families.
 \end{itemize}
@@ -435,26 +435,27 @@ If~$\rays(\Fan)$ denotes the set of rays of~$\Fan$, a \defn{compatibility degree
 \vincent{The definition of compatibility degree is not really useful here.}
 
 \begin{definition}
-\label{def:coherent}
-We say that the fan~$\Fan$ is \defn{coherent} if for any two exchangeable rays~$\ray, \ray'$ of~$\Fan$, the linear dependence
-\vincent{Not sure of the choice of the name.}
+\label{def:uerp}
+We say that two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a \defn{unique exchange relation} when the linear dependence
 \[
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0.
 \]
 does not depend on the pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\ray, \ray'$.
 This implies in particular that the rays~$\ray[s]$ for which~$\coefficient[{\ray[s]}][\rays][\rays'] \ne 0$ belong to~$\rays \cup \rays'$ for any pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$. These rays are thus called \defn{forced rays} for the exchangeable pair~$\{\ray, \ray'\}$.
+
+We say that the fan~$\Fan$ has the \defn{unique exchange property} if any two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a unique exchange relation
 \end{definition}
 
-When~$\Fan$ is coherent, we change the notation~$\coefficient[{\ray[s]}][\rays][\rays']$ to~$\coefficient$ and we obtain that the type cone of~$\Fan$ is expressed as
+When~$\Fan$ has the unique exchange relation property, we change the notation~$\coefficient[{\ray[s]}][\rays][\rays']$ to~$\coefficient$ and we obtain that the type cone of~$\Fan$ is expressed as
 \[
 \typeCone(\Fan) = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient \, \b{h}_{\ray[s]} > 0 \text{ for any exchangeable rays~$\ray, \ray'$ of~$\Fan$}}.
 \]
 
 \begin{definition}
-In a coherent fan~$\Fan$, an \defn{extremal exchangeable pair} is a pair of exchangeable rays~$\{\ray,\ray'\}$ such that the corresponding inequality~${\sum_{\ray[s] \in \rays \cup \rays'} \coefficient \, \b{h}_{\ray[s]} > 0}$ defines a facet of the type cone~$\typeCone(\Fan)$.
+In a fan~$\Fan$ with the unique exchange relation property, an \defn{extremal exchangeable pair} is a pair of exchangeable rays~$\{\ray,\ray'\}$ such that the corresponding inequality~${\sum_{\ray[s] \in \rays \cup \rays'} \coefficient \, \b{h}_{\ray[s]} > 0}$ defines a facet of the type cone~$\typeCone(\Fan)$.
 \end{definition}
 
-In this paper, we will only consider coherent fans, and our objective will be to describe their extremal exchangeable pairs.
+In this paper, we will only consider fans with the unique exchange relation property, and our objective will be to describe their extremal exchangeable pairs.
 
 \subsection{Alternative polytopal realizations}
 
@@ -523,7 +524,7 @@ This should be done using the Auslander-Reiten quiver to construct two cluster v
 
 \subsection{Gentle associahedra}
 
-Gentle associahedra were constructed by Y.~Palu, V.~Pilaud and P.-G.~Plamondon~\cite{PaluPilaudPlamondon} in the context of support $\tau$-tilting for gentle algebras.
+Gentle associahedra were constructed by Y.~Palu, V.~Pilaud and P.-G.~Plamondon~\cite{PaluPilaudPlamondon-nonkissing} in the context of support $\tau$-tilting for gentle algebras.
 For a given $\tau$-tilting finite gentle quiver~$\quiver$ (defined in the next section), the $\quiver$-associahedron~$\Asso[\quiver]$ is a simple polytope which encodes certain representations of~$\quiver$ and their $\tau$-tilting relations.
 Combinatorially, the $\quiver$-associahedron is a polytopal realization of the non-kissing complex of~$\quiver$, defined as the simplicial complex of all collections of walks on the blossoming quiver~$\quiver\blossom$ which are pairwise non-kissing.
 The non-kissing complex encompasses two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied by Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}.
@@ -533,7 +534,7 @@ In this section, we describe the type cone of the non-kissing fan of a quiver~$\
 
 \subsubsection{Non-kissing complex and non-kissing fan of a gentle quiver}
 
-We present the definitions and properties of the non-kissing complex of a gentle quiver, following the presentation of~\cite{PaluPilaudPlamondon}.
+We present the definitions and properties of the non-kissing complex of a gentle quiver, following the presentation of~\cite{PaluPilaudPlamondon-nonkissing}.
 
 \para{Gentle quivers}
 %
@@ -615,7 +616,7 @@ We denote by~$\properWalks$ the set of all proper walks of~$\quiver$.
 %\end{figure}
 %
 The (reduced) \defn{non-kissing complex} of~$\quiver$ is the simplicial complex~$\NKC$ whose faces are the collections of pairwise non-kissing proper walks of~$\quiver$.
-As shown in~\cite[Thm.~2.46]{PaluPilaudPlamondon}, this simplicial complex is a combinatorial model for the support $\tau$-tilting complex on $\tau$-rigid modules over~$kQ/I$.
+As shown in~\cite[Thm.~2.46]{PaluPilaudPlamondon-nonkissing}, this simplicial complex is a combinatorial model for the support $\tau$-tilting complex on $\tau$-rigid modules over~$kQ/I$.
 The quiver~$\quiver$ is called \defn{$\tau$-tilting finite} or \defn{non-kissing finite} when this complex is finite (in other words, $\quiver$ has finitely may non-kissing walks).
 
 \para{Non-kissing fan and gentle associahedron}
@@ -631,11 +632,11 @@ Examples are illustrated in \cref{fig:nonkissingFans}.
 \begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.45]{nonkissingFans}}
-	\caption{Two non-kissing fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{PaluPilaudPlamondon}.}
+	\caption{Two non-kissing fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
 	\label{fig:nonkissingFans}
 \end{figure}
 
-\begin{theorem}[{\cite[Thm.~4.17]{PaluPilaudPlamondon}}]
+\begin{theorem}[{\cite[Thm.~4.17]{PaluPilaudPlamondon-nonkissing}}]
 For any non-kissing finite gentle quiver~$\quiver$, the set of cones
 \[
 \gvectorFan[\quiver] \eqdef \set{\R_{\ge 0} \, \gvectors{F}}{F \text{ non-kissing face of } \NKC}
@@ -643,17 +644,17 @@ For any non-kissing finite gentle quiver~$\quiver$, the set of cones
 is a complete simplicial fan of~$\R^{Q_0}$, called \defn{non-kissing fan} of~$\quiver$, which realizes the non-kissing complex~$\NKC$.
 \end{theorem}
 
-It is proved in~\cite[Thm.~4.27]{PaluPilaudPlamondon} that the non-kissing fan comes from a polytope.
+It is proved in~\cite[Thm.~4.27]{PaluPilaudPlamondon-nonkissing} that the non-kissing fan comes from a polytope.
 For a walk~$\omega$, denote by~$\KN(\omega)$ the sum over all other walks~$\omega'$ of the number of kisses between~$\omega$~and~$\omega'$.
 
-\begin{theorem}[{\cite[Thm.~4.27]{PaluPilaudPlamondon}}]
+\begin{theorem}[{\cite[Thm.~4.27]{PaluPilaudPlamondon-nonkissing}}]
 For any non-kissing finite gentle quiver~$\quiver$, the non-kissing fan~$\gvectorFan[\quiver]$ is the normal fan of the gentle associahedron~$\Asso[\quiver]$, defined as the intersection of the half-spaces~$\set{\b{x} \in \R^{Q_0}}{\dotprod{\gvector{\omega}}{\b{x}} \le \KN(\omega)}$ for all walks~$\omega \in \properWalks$.
 \end{theorem}
 
 \para{Flips in the non-kissing fan}
 %
 Although we lack a characterization of the exchangeable pairs of the non-kissing complex (see \cref{rem:exchangeablePairsNKC}), we can still describe the linear dependence among the $\b{g}$-vectors involved in a flip.
-The following statement is partially proved in~\cite[Thm.~4.17]{PaluPilaudPlamondon}.
+The following statement is partially proved in~\cite[Thm.~4.17]{PaluPilaudPlamondon-nonkissing}.
 
 \begin{proposition}
 \label{prop:exchangeablePairsNKC}
@@ -665,19 +666,19 @@ Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then
 \[
 \gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
 \]
-In other words, the non-kissing fan of~$\quiver$ is coherent.
+In other words, the non-kissing fan of~$\quiver$ has the unique exchange relation property.
 \item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\lambda}$ for~$\lambda \in F \cap F'$ is the multiplicity vector~$\multiplicityVector_{\sigma}$ of the vertices of the substring~$\sigma$ of~$\omega$ and~$\omega'$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon}.
+Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}.
 \vincent{Point~(ii) to prove.}
 \end{proof}
 
 In \cref{prop:exchangeablePairsNKC}, the string~$\sigma$ is called the \defn{distinguished} substring of~$\omega$ and~$\omega'$.
 We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished string of an exchangeable pair.
-Note that an equivalent definition of distinguishable strings is given in~\cite[Def.~2.30]{PaluPilaudPlamondon}.
+Note that an equivalent definition of distinguishable strings is given in~\cite[Def.~2.30]{PaluPilaudPlamondon-nonkissing}.
 We denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
 
 \begin{remark}
@@ -697,7 +698,7 @@ However, as illustrated in \cref{fig:nonkissingFans}\,(right), note that
 %
 The following result will also be essential in our discussion.
 
-\begin{proposition}[{\cite[3.68]{PaluPilaudPlamondon}}]
+\begin{proposition}[{\cite[3.68]{PaluPilaudPlamondon-nonkissing}}]
 \label{prop:bijectionStringsWalks}
 The number of distinguishable strings~$\distinguishableStrings$ and proper walks~$\properWalks$ of the quiver~$\quiver$ are related by
 \[
@@ -740,7 +741,7 @@ Note that this family already contains a lot of relevant examples, including:
 
 %For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\hL\sigma$, resp.~$\sigma\cR$, resp.~$\cL\sigma$) the unique string of~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\hL\sigma = \alpha_\ell^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma$, resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$, resp.~$\cL\sigma = \alpha_\ell \dots \alpha_2 \alpha_1^{-1} \sigma$) with~$\ell \ge 1$ and~$\alpha_1, \dots, \alpha_\ell \in Q_1$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$, resp.~$s(\alpha_\ell)$, resp.~$t(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
-These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~\defn{cohook}) to~$\sigma$.
+These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~\defn{cohook}) to~$\sigma$.
 We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
 The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply be denoted~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
 
@@ -894,12 +895,12 @@ Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we
 
 We are already missing a criterion for exchangeable pairs of walks. See \cite[Sect.~9]{BrustleDouvilleMousavandThomasYildirim}.
 It seems that two exchangeable walks are always kissing along a single distinguishable string.
-We need to prove that to see that the non-kissing fan is coherent (because for a pair of exchangeable walks, I can completely reconstruct the $\b{g}$-vector dependence of the flip if I know there distinguished substring).
+We need to prove that to see that the non-kissing fan has the unique exchange relation property (because for a pair of exchangeable walks, I can completely reconstruct the $\b{g}$-vector dependence of the flip if I know there distinguished substring).
 Note however that
 \begin{enumerate}
 \item exchangeable pairs might kiss along additional non-distinguishable strings (example: just a loop),
-\item non-exchangeable walks might kiss along a single distinguishable string (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon}).
-\item non-exchangeable walks might kiss along two or more distinguishable strings (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon}).
+\item non-exchangeable walks might kiss along a single distinguishable string (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon-nonkissing}).
+\item non-exchangeable walks might kiss along two or more distinguishable strings (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon-nonkissing}).
 \end{enumerate}
 
 %In view of these two points, the following conjecture seems plausible.
@@ -1031,7 +1032,7 @@ Let~$\tube, \tube'$ be two tubes of~$\graphG$. Then
 \[
 \gvector{\tube} + \gvector{\tube'} = \gvector{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \gvector{\tube[s]}.
 \]
-In other words, the nested fan of~$\graphG$ is coherent.
+In other words, the nested fan of~$\graphG$ has the unique exchange relation property.
 \item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\tube[s]}$ for~$\tube[s] \in \tubing \cap \tubing'$ is~$\b{e}_v - \b{e}_{v'}$.
 \end{enumerate}
 \end{proposition}
