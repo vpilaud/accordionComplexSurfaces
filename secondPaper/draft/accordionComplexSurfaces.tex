@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
 \usepackage{marginnote}
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
@@ -148,7 +148,7 @@
 \newcommand{\vertices}{\mathcal{V}} % vertices of a dissection
 \newcommand{\edges}{\mathcal{E}} % edges of a dissection
 \newcommand{\faces}{\mathcal{F}} % faces of a dissection
-\renewcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
+\newcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
 \newcommandx{\RAC}[1][1=\dissection]{\mathcal{C}_{\mathrm{acc}}(#1)} % reduced accordion complex
 \newcommandx{\SC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{sla}}(#1)} % slalom complex
 \newcommandx{\RSC}[1][1=\dissection\dual]{\mathcal{C}_{\mathrm{sla}}(#1)} % reduced slalom complex
@@ -264,7 +264,7 @@
 \begin{abstract}
 Starting from a locally gentle bound quiver, we define on the one hand a simplicial complex, called the non-kissing complex.
 On the other hand, we construct a punctured, marked, oriented surface with boundary, endowed with a pair of dual dissections.
-From those geometric data, we define two simplicial complexes: the accordion complex, and the slalom complex, generalizing work of A. Garver and T. McConville in the case of a disk.
+From those geometric data, we define two simplicial complexes: the accordion complex, and the slalom complex, generalizing work of A.~Garver and T.~McConville in the case of a disk.
 We show that all three simplicial complexes are isomorphic, and that they are pure and thin.
 In particular, there is a notion of mutation on their facets, akin to $\tau$-tilting mutation.
 Along the way, we also construct inverse bijections between the set of isomorphism classes of locally gentle bound quivers and the set of homeomorphism classes of punctured, marked, oriented surfaces with boundary, endowed with a pair of dual dissections.
@@ -281,7 +281,7 @@ The aim of this paper is to prove that two combinatorial objects, called the \em
 Both complexes appeared in different works in specific cases: the non-kissing complex of a grid appeared in \cite{McConville}, while the non-crossing complex of a disk appeared in \cite{GarverMcConville, MannevillePilaud-accordion}.
 It was shown in \cite{PaluPilaudPlamondon} that these complexes are special cases of a more general simplicial complex, defined for any gentle algebra (see also~\cite{BrustleDouvilleMousavandThomasYildirim}).
 
-In order to unify these two objects, we are lead to introduce two generalizations.
+In order to unify these two objects, we are led to introduce two generalizations.
 On the algebraic side, the non-kissing complex is extended from the class of gentle algebras to that of locally gentle algebras (which are an infinite-dimensional version of gentle algebras).
 On the geometric side, we construct the non-crossing complex of an arbitrary oriented punctured surface endowed with a pair of dual dissections.
 
@@ -328,7 +328,7 @@ It has also been shown in \cite{BaurCoelhoSimoes} that any gentle algebra is obt
 In the case where the surface is a polygon, the $\tau$-tilting theory of the algebra of a dissection has been studied in \cite{PaluPilaudPlamondon, PilaudPlamondonStella}.
 
 Conversely, the construction of a surface associated to a gentle algebra has appeared in \cite{OpperPlamondonSchroll}.
-We give a different construction of the same surface in this paper, which is obtained by ``glueing'' quadrilaterals to the arrows of the blossoming quiver (as defined in \cite{PaluPilaudPlamondon}, and called ``framed quiver'' in \cite{BrustleDouvilleMousavandThomasYildirim}).
+We give a different construction of the same surface in this paper, which is obtained by ``glueing'' quadrilaterals to the arrows of the blossoming quiver (as defined in \cite{PaluPilaudPlamondon}, and called ``fringed quiver'' in \cite{BrustleDouvilleMousavandThomasYildirim}).
 Our construction has the advantage that it easily yields the two dual dissections of the surface at the same time (the dissection and dual lamination of \cite{OpperPlamondonSchroll}).
 Note that our dissections are always cellular, while those in \cite{BaurCoelhoSimoes} can be arbitrary.
 Remarkably, gentle algebras and surfaces were linked recently in \cite{HaidenKatzarkovKontsevich, LekiliPolishchuk}, where the Fukaya category of the surface is shown to be equivalent to the bounded derived category of the associated gentle~algebra.
