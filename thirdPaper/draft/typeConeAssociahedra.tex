@@ -1273,7 +1273,7 @@ Be careful that the brick fans are not simplicial.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Relations for~$\b{g}$-vectors in~$2$-Calabi--Yau triangulated categories}
 %%%%%
-\subsection{Setting}
+\subsection{Setting}\label{sect::setting}
 Let~$\field$ be a field.  Let~$\cat$ be a~$\field$-linear triangulated category with suspension functor~$\susp$.  We fix a collection~$\ind(\cat)$ of representatives of isomorphism classes of indecomposable objects of~$\cat$. We will assume the following:
 \begin{itemize}
  \item $\cat$ is essentially small (in particular,~$\ind(\cat)$ is a set);
@@ -1384,8 +1384,8 @@ In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$
 We can finally state the main theorem of this section. \pg{recall Auslander}
 
 \begin{theorem}\label{theo::relations-g-vecteurs}
- Let~$\cat$ be a category satisying the hypotheses of \ref{} \pg{add ref}.  Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set~\[L:=\big\{\ell_X \ | \ X\in \ind(\cat)\setminus \add(\susp T) \big\}\] generates the kernel of~$\b g:\Ksp(\cat) \to \Kg(\cat)$. 
- In this case, the set~$L$ is a basis of the kernel of~$\b g$, and \pg{add formula}, for any $x\in \ker(\b g)$, we have that
+ Let~$\cat$ be a category satisying the hypotheses of Section \ref{sect::setting}.  Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set~\[L:=\big\{\ell_X \ | \ X\in \ind(\cat)\setminus \add(\susp T) \big\}\] generates the kernel of~$\b g:\Ksp(\cat) \to \Kg(\cat)$. 
+ In this case, the set~$L$ is a basis of the kernel of~$\b g$, and for any $x\in \ker(\b g)$, we have that
  \[
   x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
  \]
@@ -1410,7 +1410,7 @@ We can finally state the main theorem of this section. \pg{recall Auslander}
 %%%%
 \subsection{Proof of Theorem \ref{theo::relations-g-vecteurs}}
 
-\begin{lemma}
+\begin{lemma}\label{lemm::bilinear-form-suspention-T}
  If~$X$ or~$Y$ lie in~$\add(\susp T)$, then~$\langle X, Y \rangle = 0$.
 \end{lemma}
 \begin{proof}
@@ -1476,6 +1476,86 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general n
  If~$B\ncong A$, then the definition of an almost-split triangle implies that~$Ff^*$ is surjective. \pg{add an exact sequence here; image of Ffstar is non-invertible elements} Thus~$\coker(Ff^*) = 0$, and by additivity of the dimension in exact sequences, we get that~$\langle \ell_A, B \rangle =0$.
  
  If~$B\cong A$, then~$\coker(Ff^*)$ is isomorphic to the residue field of~$\End{\Lambda}(FA)$, which is isomorphic to the residue field~$\field_A$ of~$A$.
+\end{proof}
+
+\begin{lemma}\label{lemm::coefficients}
+ Let~$x\in \Ksp(\cat)$, and write~\[x=\sum_{A\in \ind(\cat)} \lambda_A [A].\]  Then for any~$A\in\ind(\cat)\setminus \add(\susp T)$, we have that
+ \[
+  \lambda_A = \langle \ell_A, x \rangle = \langle x, r_A \rangle.
+ \]
+\end{lemma}
+\begin{proof}
+ Let~$B\in \ind(\cat) \setminus \add(\susp T)$.  Applying Lemma~\ref{lemm::bilinear-form}, we get that
+ \[
+  \langle \ell_B, x \rangle = \langle \ell_B, \sum_{A\in \ind(\cat)} \lambda_A [A] \rangle = \sum_{A\in \ind{\cat}} \lambda_A \langle \ell_B, [A] \rangle = \lambda_A.
+ \]
+ The equality~$\lambda_A = \langle x, r_A\rangle$ is proved in a similar way.
+\end{proof}
+
+\begin{corollary}\label{lemm::test-susp-T}
+ Let~$x\in \Ksp(\cat)$.  Then the following are equivalent.
+ \begin{enumerate}
+  \item $x\in \Ksp(\add(\susp T))$;
+  \item $\langle x, [A]\rangle = 0$ for all~$A\in \ind(\cat)$;
+  \item $\langle [A], x \rangle = 0$ for all~$A\in \ind(\cat)$.
+ \end{enumerate}
+\end{corollary}
+\begin{proof}
+ We will only proof that (1) is equivalent to (2); the proof that (1) is equivalent to (3) is similar.  
+ 
+ Assume that (2) holds.  Then, by Lemma~\ref{lemm::coefficients}, we have that
+ \[
+  x = \sum_{A\in \ind(\cat)\setminus \add(\susp T)} \langle \ell_A, x \rangle + \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i] = \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i].
+ \]
+ Thus~$x\in \Ksp(\add(\susp T))$, and (1) holds.
+ 
+ Assume now that (1) holds.  Then~$\langle x, [A]\rangle = 0$ for any~$A$ by Lemma~\ref{lemm::bilinear-form-suspention-T}.  Thus (2) holds.
+\end{proof}
+
+\begin{proposition}\label{prop::free-set}
+ \begin{enumerate}
+  \item The set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}$ is free in~$\Ksp(\cat)$.
+  \item The set~$\{[r_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}$ is free in~$\Ksp(\cat)$.
+ \end{enumerate}
+\end{proposition}
+\begin{proof}
+ We only prove (1); the proof of (2) is similar.  Assume that~
+ \[
+  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \lambda_A \ell_A + \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
+ \]
+ Then~$\langle x, [A] \rangle = 0$ for all~$A\in\ind(\cat) \setminus \add(\susp T)$.  But~$\langle x, [A] \rangle = \lambda_A$ by Lemma~\ref{lemm::bilinear-form}.  Thus~
+ \[
+  x = \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
+ \]
+ But the~$[\susp T_i]$ are linearly independent in~$\Ksp(\cat)$.  Thus~$\lambda_i = 0$ for all~$i\in \{1, \ldots, n\}$.  This finishes the proof.
+\end{proof}
+
+\begin{proposition}
+ Assume that~$\ind(\cat)$ is finite.  Then the set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \}$ is a basis of the kernel of~$\b g$.  Moreover, for any~$x\in \ker \b g$, we have that
+ \[
+  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+ \]
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{prop::free-set}, the set is free.  Let~$x\in \ker \b g$.  Consider the element
+\[
+ z = x- \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+\]
+Then for any~$B\in \ind{\cat}$, we have that
+\[
+ \langle  z, [B] \rangle = \Big\langle x- \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A, [B] \Big\rangle = \langle x, [B] \rangle - \langle x, [B] \rangle = 0, 
+\]
+where the second equality is obtained by using Lemma~\ref{lemm::bilinear-form}.  By Lemma~\ref{lemm::test-susp-T}, this implies that~$z\in \Ksp(\add(\susp T))$.  Since~$z\in \ker(\b g)$ and since~$\b g$ is injective on~$\Ksp(\add (\susp T))$, we get that~$z=0$.  This finishes the proof.
+\pg{We need a lemma saying that g is injective on K(add(susp T))}
+\end{proof}
+
+All that remains is to prove the converse in the statement of Theorem~\ref{theo::relations-g-vecteurs}.
+
+\begin{proposition}
+ Assume that the set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \}$ is a basis of the kernel of~$\b g$. Then~$\ind(\cat)$ is finite.
+\end{proposition}
+\begin{proof}
+ 
 \end{proof}
 
 \pg{TO DO}
