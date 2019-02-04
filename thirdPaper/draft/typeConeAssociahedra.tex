@@ -112,7 +112,7 @@
 \newcommand{\arnau}[1]{\todo[color=orange!30]{#1 --- A.}}
 \newcommand{\yann}[1]{\todo[color=red!30]{#1 --- Y.}}
 \newcommand{\vincent}[1]{\todo[color=blue!30]{#1 \\ \hfill --- V.}}
-\newcommand{\pierreguy}[1]{\todo[color=green!30]{#1 \\ \hfill --- PG.}}
+\newcommand{\pg}[1]{\todo[color=green!30]{#1 \\ \hfill --- PG.}}
 
 % geometry
 \newcommandx{\Asso}[2][1=n,2={}]{\mathsf{Asso}^{#2}(#1)} % associahedron
@@ -163,6 +163,21 @@
 \newcommand{\nestedComplex}{\mathcal{N}} % nested complex
 \newcommand{\nonDisconnecting}{\mathrm{nd}} % non-disconnecting vertices
 \newcommand{\neighbors}{\mathrm{ne}} % neighbors
+
+% PG et Yann
+\newcommand{\field}{\mathbb{K}}
+\newcommand{\cat}{\mathcal{C}}
+\newcommand{\Hom}[1]{\operatorname{Hom}_{#1}}
+\newcommand{\susp}{\Sigma}
+\newcommand{\add}{\operatorname{add}}
+\newcommand{\MOD}{\operatorname{mod}}
+\newcommand{\End}[1]{\operatorname{End}_{#1}}
+\newcommand{\spl}{\operatorname{sp}}
+\newcommand{\Ksp}{K_0^{\spl}}
+\newcommand{\Kg}{K_0^{\b{g}}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\CC}{\phi}
 
 %% SPECIFIC NON-KISSING COMPLEX
 %
@@ -1390,6 +1405,379 @@ We conclude that the number of extremal exchangeable pairs is at least:
 \]
 with equality if and only if all tubes of~$\graphG$ are paths, \ie if and only if~$\graphG$ is a path.
 \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relations for~$\b{g}$-vectors in~$2$-Calabi--Yau triangulated categories}
+%%%%%
+\subsection{Setting}\label{sect::setting}
+Let~$\field$ be a field.  Let~$\cat$ be a~$\field$-linear triangulated category with suspension functor~$\susp$.  We fix a collection~$\ind(\cat)$ of representatives of isomorphism classes of indecomposable objects of~$\cat$. We will assume the following:
+\begin{itemize}
+ \item $\cat$ is essentially small (in particular,~$\ind(\cat)$ is a set);
+ \item $\cat$ is~$\Hom{}$-finite: for each pair of objects~$X$ and~$Y$, the~$\field$-vector space~$\cat(X,Y)$ is finite-dimensional;
+ \item $\cat$ is Krull--Schmidt: the endomorphism algebra of any indecomposable object is local;
+ \item $\cat$ is~$2$-Calabi--Yau: for each pair of objects~$X$ and~$Y$, there is an isomorphism of bifunctors
+ \[
+  \cat(X,\susp Y) \to D\cat(Y,\susp X)
+ \]
+ where~$D=\Hom{\field}(-,\field)$ is the usual duality of vector spaces;
+ \item $\cat$ contains a basic cluster-tilting object~$T=\bigoplus_{i=1}^n T_i$:
+ \[
+  \textrm{for any object~$X$,} \quad \cat(T, \susp X) = 0 \quad \textrm{if and only if} \quad X\in \add(T),
+ \]
+ where~$\add(T)$ is the smallest additive full subcategory of~$\cat$ containing the~$T_i$'s and closed under isomorphisms.
+\end{itemize}
+
+
+%%%%
+\subsection{Statement of the theorem}
+We need to introduce some notations before stating the main result of this section.  Let~$\Lambda:= \End{\cat}(T)$, and let~$F$ be the functor
+\[
+ F=\cat(T,-):\cat \xrightarrow{} \MOD \Lambda.
+\]
+\begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]
+ The functor~$F$ induces an equivalence of~$\field$-linear categories
+ \[
+  F:\cat/(\susp T) \xrightarrow{} \MOD \Lambda,
+ \]
+ where~$(\susp T)$ is the ideal of morphisms factoring through an object of~$\add(\susp T)$ and~$\MOD \Lambda$ is the category of finite-dimensional right~$\Lambda$-modules.  This equivalence induces further equivalences between~$\add(T)$ and the category of projective modules, and between~$\add(\susp^2 T)$ and that of injective modules.
+\end{proposition}
+
+For categories with a cluster-tilting objects, the~$2$-Calabi--Yau condition implies other duality results which we shall need.
+
+\begin{proposition}[\cite{Palu}]
+ For any pair of objects~$X$ and~$Y$ in~$\cat$, there is an isomorphism of bifunctors
+ \[
+  (\susp T)\cat(X, \susp Y) \xrightarrow{\cong} \cat(Y, \susp X)/(\susp T),
+ \]
+ where~$(\susp T)\cat(X, \susp Y)$ is the space of morphisms from~$X$ to~$Y$ factoring through~$(\susp T)$.
+\end{proposition}
+
+\begin{remark}
+ Although the field~$\field$ is assumed to be algebraically closed in~\cite{Palu}, this assumption is not needed in the proof, and the result is valid over any field.
+\end{remark}
+
+Finally, we need the existence of almost-split triangles in~$\cat$.  Recall that a triangle
+\[
+ X\xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} \susp X
+\]
+in~$\cat$ is \defn{almost-split} if~$X$ and~$Z$ are indecomposable,~$h$ is non-zero, and any non-section~$X\to X'$ factors through~$f$  (or equivalently, any non-retraction~$Z'\to Z$ factors through~$g$).  We say that a triangulated category \defn{has almost-split triangles} if there is an almost-split triangle as above for any indecomposable object~$X$. 
+
+\begin{proposition}[]\pg{Cite Happel}
+ Any triangulated category admitting a Serre functor has almost-split triangles.  In particular, any~$2$-Calabi--Yau triangulated category has almost-split triangles.
+\end{proposition}
+
+
+\begin{definition}\label{defi::grothendieck-group}
+ \begin{enumerate}
+  \item Let~$\Ksp(\cat)$ be the \defn{split Grothendieck group} of~$\cat$, that is, the free abelian group generated by symbols~$[X]$, where~$[X]$ denotes the isomorphism class of~$X$ in~$\cat$, modulo the following relations: for any objects~$Y$ and~$Z$, we let~$[Y\oplus Z] = [Y] + [Z]$. 
+  
+  \item Let~$\Kg(\cat)$ be the quotient of~$\Ksp(\cat)$ by the relations~$[X]+[Z]-[Y]$ for all triangles
+  \[
+   X\xrightarrow{} Y \xrightarrow{} Z \xrightarrow{h} \susp X
+  \]
+  with~$h\in (\susp T)$.  Denote by~$\b g:\Ksp(\cat) \to \Kg(\cat)$ the canonical projection.
+
+ \end{enumerate}
+
+ 
+\end{definition}
+In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$\ind(\cat)$.  The choice of the notation for~$\Kg(\cat)$ is motivated by Section~\ref{sect::applications-g-vectors}, where we study relations between~$\b g$-vectors.
+
+\begin{definition}
+ For any two objects~$X$ and~$Y$ of~$\cat$, define
+ \[
+  \langle X, Y \rangle := \dim_{\field} \Hom{\Lambda}(FX,FY).
+ \]
+ This defines a bilinear form
+ \[
+  \langle -,-\rangle : \Ksp(\cat) \times \Ksp(\cat) \xrightarrow{} \Z.
+ \]
+\end{definition}
+
+\begin{notation}
+\begin{enumerate}
+ \item For any indecomposable object~$X$ of~$\cat$, let
+ \[
+  X \to E \to \susp^{-1} X \to \susp X
+ \]
+ be an almost split triangle (unique up to isomorphism).  We let
+ \[
+  \ell_X := [X] + [\susp^{-1} X]  - [E] \in \Ksp(\cat).
+ \]
+ 
+ \item For any indecomposable object~$Y$ of~$\cat$, let
+ \[
+  \susp Y \to E' \to  Y \to \susp^2 Y
+ \]
+ be an almost split triangle (unique up to isomorphism).  We let
+ \[
+  r_Y := [Y] + [\susp Y]  - [E'] \in \Ksp(\cat).
+ \]
+\end{enumerate}
+\end{notation}
+
+
+We can finally state the main theorem of this section. \pg{recall Auslander}
+
+\begin{theorem}\label{theo::relations-g-vecteurs}
+ Let~$\cat$ be a category satisying the hypotheses of Section \ref{sect::setting}.  Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set~\[L:=\big\{\ell_X \ | \ X\in \ind(\cat)\setminus \add(\susp T) \big\}\] generates the kernel of~$\b g:\Ksp(\cat) \to \Kg(\cat)$. 
+ In this case, the set~$L$ is a basis of the kernel of~$\b g$, and for any $x\in \ker(\b g)$, we have that
+ \[
+  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+ \]
+\end{theorem}
+
+\begin{corollary}
+ Assume that~$\ind(\cat)$ is finite.  Let~$X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X$ be a triangle with~$h\in (\susp T)$.  Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in \ind(\cat)\setminus \add(\susp T)$.
+\end{corollary}
+\begin{proof}
+ We know that~$x=\sum_{A\in \ind(\cat)\setminus \add(\susp T)} \frac{\langle x, [A] \rangle}{\langle \ell_A, [A] \rangle} \ell_A$; since~$\langle \ell_A, [A] \rangle$ is positive by Lemma~\ref{lemm::bilinear-form}, we only need to show that each~$\langle x, [A] \rangle$ is non-negative. 
+ The functor~$F=\cat(T,-)$ induces an exact sequence
+ \[
+  FX \to FE \to FY \to 0,
+ \]
+ which in turn induces an exact sequence
+ \[
+  0\to \Hom{\Lambda}(FY, FA) \to \Hom{\Lambda}(FE, FA) \xrightarrow{f} \Hom{\Lambda}(FX, FA) \to \coker(f) \to 0.
+ \]
+ Therefore~$\langle x, [A] \rangle = \dim_{\field} \coker(f) \geq 0$.
+\end{proof}
+
+%%%%
+\subsection{Proof of Theorem \ref{theo::relations-g-vecteurs}}
+
+\begin{lemma}\label{lemm::bilinear-form-suspention-T}
+ If~$X$ or~$Y$ lie in~$\add(\susp T)$, then~$\langle X, Y \rangle = 0$.
+\end{lemma}
+\begin{proof}
+ This is because~$F\susp T = 0$.
+\end{proof}
+
+\begin{lemma}\label{lemm::almost-split}
+ Let~$X\xrightarrow{} Y \xrightarrow{} \susp^{-1} X \xrightarrow{h} \susp X$ be an almost-split triangle.  Then~$X\notin \add(\susp T)$ if and only if~$h\in (\susp T)$.
+\end{lemma}
+\begin{proof}
+ If~$X\in \add(\susp T)$, then~$h$ cannot be in~$(\susp T)$, otherwise it would be zero since~$\cat(T, \susp T) =0$.  
+ 
+ Assume now that~$X\notin \add(\susp T)$.  Let~$\field_X$ be the residue field of the algebra~$\End{\cat}(X)$. 
+ By definition of an almost-split triangle,~$h$ is in the socle of the right~$\End{\cat}(X)$-module~$\cat(\susp^{-1} X, \susp X)$.  Moreover, this socle is a one-dimensional~$\field_X$-vector space; indeed, the~$2$-Calabi--Yau condition gives an isomorphism
+ \[
+  \cat(\susp^{-1} X, \susp X) \cong D\cat(X, X).
+ \]
+ Thus the socle of the right module~$\cat(\susp^{-1} X, \susp X)$ has the same~$\field_X$ dimension as the top of the left module~$\cat(X,X)$.  Since~$X$ is indecomposable,~$\cat(X,X)$ is local, and its top is one-dimensional over~$\field_X$.
+ 
+ Now,~$(\susp T)\cat(\susp^{-1} X, \susp X)$ is a sub-module of~$\cat(\susp^{-1} X, \susp X)$.  Therefore, if~$(\susp T)\cat(\susp^{-1} X, \susp X)$ is non-zero, then it contains the one-dimensional socle of~$\cat(\susp^{-1} X, \susp X)$, and thus contains~$h$.   
+ By \cite{Palu},
+ \[
+  (\susp T)\cat(\susp^{-1} X, \susp X) \cong D\cat(X, X)/(\susp T). 
+ \]
+The identity morphism of~$X$ is not in~$(\susp T)$, since~$X$ is not in~$\add(\susp T)$.  Thus the right-hand side is non-zero, and so neither is the left-hand side.  By the above, this implies that~$h\in (\susp T)\cat(\susp^{-1} X, \susp X)$, which finishes the proof.
+\end{proof}
+
+
+
+\begin{lemma}\label{lemm::bilinear-form}
+Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general notation for redisue field}
+\begin{enumerate}
+ \item If~$A \notin \add(\susp T)$, then
+ \[
+  \langle \ell_A, B \rangle = \begin{cases}
+                               0 & \textrm{if~$A\ncong B$;} \\
+                               \dim_{\field}\field_A & \textrm{if~$A\cong B$.}
+                              \end{cases}
+ \]
+ 
+ \item If~$B \notin \add(\susp T)$, then
+ \[
+  \langle A, r_B \rangle = \begin{cases}
+                               0 & \textrm{if~$A\ncong B$;} \\
+                               \dim_{\field}\field_B & \textrm{if~$A\cong B$.}
+                              \end{cases}
+ \]
+\end{enumerate} 
+\end{lemma}
+\begin{proof}
+ We only prove the first assertion; the second one is proved dually.  Assume that~$A\notin\add(\susp T)$.  Let
+ \[
+  A \xrightarrow{f} E \xrightarrow{} \susp^{-1} A \xrightarrow{h} \susp A
+ \]
+ be an almost-split triangle.  By Lemma~\ref{lemm::almost-split}, the morphism~$h$ is in~$(\susp T)$.  Applying the functor~$F=\cat(T,-)$, we get an exact sequence
+ \[
+  FA\xrightarrow{Ff} FE \xrightarrow{} F\susp^{-1} A \xrightarrow{} 0.
+ \]
+ Applying now the functor~$\Hom{\Lambda}(-, FB)$, we get an exact sequence
+ \[
+  0 \xrightarrow{} \Hom{\Lambda}(F\susp^{-1} A, FB) \xrightarrow{} \Hom{\Lambda}(FE, FB) \xrightarrow{Ff^*} \Hom{\Lambda}(FA, FB) \xrightarrow{} \coker(Ff^*) \xrightarrow{} 0
+ \]
+ If~$B\ncong A$, then the definition of an almost-split triangle implies that~$Ff^*$ is surjective. \pg{add an exact sequence here; image of Ffstar is non-invertible elements} Thus~$\coker(Ff^*) = 0$, and by additivity of the dimension in exact sequences, we get that~$\langle \ell_A, B \rangle =0$.
+ 
+ If~$B\cong A$, then~$\coker(Ff^*)$ is isomorphic to the residue field of~$\End{\Lambda}(FA)$, which is isomorphic to the residue field~$\field_A$ of~$A$.
+\end{proof}
+
+\begin{lemma}\label{lemm::coefficients}
+ Let~$x\in \Ksp(\cat)$, and write~\[x=\sum_{A\in \ind(\cat)} \lambda_A [A].\]  Then for any~$A\in\ind(\cat)\setminus \add(\susp T)$, we have that
+ \[
+  \lambda_A = \langle \ell_A, x \rangle = \langle x, r_A \rangle.
+ \]
+\end{lemma}
+\begin{proof}
+ Let~$B\in \ind(\cat) \setminus \add(\susp T)$.  Applying Lemma~\ref{lemm::bilinear-form}, we get that
+ \[
+  \langle \ell_B, x \rangle = \langle \ell_B, \sum_{A\in \ind(\cat)} \lambda_A [A] \rangle = \sum_{A\in \ind{\cat}} \lambda_A \langle \ell_B, [A] \rangle = \lambda_A.
+ \]
+ The equality~$\lambda_A = \langle x, r_A\rangle$ is proved in a similar way.
+\end{proof}
+
+\begin{corollary}\label{lemm::test-susp-T}
+ Let~$x\in \Ksp(\cat)$.  Then the following are equivalent.
+ \begin{enumerate}
+  \item $x\in \Ksp(\add(\susp T))$;
+  \item $\langle x, [A]\rangle = 0$ for all~$A\in \ind(\cat)$;
+  \item $\langle [A], x \rangle = 0$ for all~$A\in \ind(\cat)$.
+ \end{enumerate}
+\end{corollary}
+\begin{proof}
+ We will only proof that (1) is equivalent to (2); the proof that (1) is equivalent to (3) is similar.  
+ 
+ Assume that (2) holds.  Then, by Lemma~\ref{lemm::coefficients}, we have that
+ \[
+  x = \sum_{A\in \ind(\cat)\setminus \add(\susp T)} \langle \ell_A, x \rangle + \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i] = \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i].
+ \]
+ Thus~$x\in \Ksp(\add(\susp T))$, and (1) holds.
+ 
+ Assume now that (1) holds.  Then~$\langle x, [A]\rangle = 0$ for any~$A$ by Lemma~\ref{lemm::bilinear-form-suspention-T}.  Thus (2) holds.
+\end{proof}
+
+\begin{proposition}\label{prop::free-set}
+ \begin{enumerate}
+  \item The set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}$ is free in~$\Ksp(\cat)$.
+  \item The set~$\{[r_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}$ is free in~$\Ksp(\cat)$.
+ \end{enumerate}
+\end{proposition}
+\begin{proof}
+ We only prove (1); the proof of (2) is similar.  Assume that~
+ \[
+  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \lambda_A \ell_A + \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
+ \]
+ Then~$\langle x, [A] \rangle = 0$ for all~$A\in\ind(\cat) \setminus \add(\susp T)$.  But~$\langle x, [A] \rangle = \lambda_A$ by Lemma~\ref{lemm::bilinear-form}.  Thus~
+ \[
+  x = \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
+ \]
+ But the~$[\susp T_i]$ are linearly independent in~$\Ksp(\cat)$.  Thus~$\lambda_i = 0$ for all~$i\in \{1, \ldots, n\}$.  This finishes the proof.
+\end{proof}
+
+\begin{proposition}
+ Assume that~$\ind(\cat)$ is finite.  Then the set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \}$ is a basis of the kernel of~$\b g$.  Moreover, for any~$x\in \ker \b g$, we have that
+ \[
+  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+ \]
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{prop::free-set}, the set is free.  Let~$x\in \ker \b g$.  Consider the element
+\[
+ z = x- \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+\]
+Then for any~$B\in \ind{\cat}$, we have that
+\[
+ \langle  z, [B] \rangle = \Big\langle x- \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A, [B] \Big\rangle = \langle x, [B] \rangle - \langle x, [B] \rangle = 0, 
+\]
+where the second equality is obtained by using Lemma~\ref{lemm::bilinear-form}.  By Lemma~\ref{lemm::test-susp-T}, this implies that~$z\in \Ksp(\add(\susp T))$.  Since~$z\in \ker(\b g)$ and since~$\b g$ is injective on~$\Ksp(\add (\susp T))$, we get that~$z=0$.  This finishes the proof.
+\pg{We need a lemma saying that g is injective on K(add(susp T))}
+\end{proof}
+
+\begin{corollary}
+ If~$\ind(\cat)$ is finite, then the set~\[\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}\] is a basis of~$\Ksp(\cat)$.
+\end{corollary}
+\begin{proof}
+ By Proposition~\ref{prop::free-set}, the set is free.  It suffices to prove that it generates~$\Ksp(\cat)$.  Let~$x\in \Ksp(\cat)$.  Consider
+ \[
+  z = x - \sum_{A\in \ind{\cat}} \frac{\langle x, A \rangle}{\langle \ell_A, A\rangle} \ell_A.
+ \]
+ Then for any~$B\in \ind(\cat)$, we have that~$\langle z, [B] \rangle = 0$.  By Lemma~\ref{lemm::test-susp-T}, this implies that~$z\in \Ksp(\add(\susp T))$, and finishes the proof.
+\end{proof}
+
+
+All that remains is to prove the converse in the statement of Theorem~\ref{theo::relations-g-vecteurs}.
+
+\begin{proposition}
+ Assume that the set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \}$ is a basis of the kernel of~$\b g$. Then~$\ind(\cat)$ is finite.
+\end{proposition}
+\begin{proof}
+ Let~$x\in \ker \b g$, and write~$x = \sum_{[A]\in \ind(\cat)} \lambda_A[A]$, where the sum has finite support.  For any~$B$ not in the support of the sum, we have that~$\langle x, [B] \rangle = 0$.
+ 
+ Now,~$[T]+[\susp T]$ is in the kernel of~$\b g$, but~$\langle [T] + [\susp T], [B] \rangle = \langle [T], [B] \rangle = 0$ if and only if~$B\in \add(\susp T)$.  Thus~$\ind(\cat)$ has to be finite.
+\end{proof}
+
+
+
+
+
+
+%%%%
+\subsection{Application to~$\b g$-vectors}\label{sect::applications-g-vectors}
+
+We recall the following results and definition from \cite{DehyKeller,Palu}.
+
+\begin{proposition}
+ Let~$X$ be an object of~$\cat$. Then there exists a triangle
+ \[
+  T_1^X \to T^0_X \to X \to \susp T_1^X
+ \]
+ with~$T_1^X$ and~$T_0^X$ in~$\add(T)$.
+
+\end{proposition}
+
+\begin{definition}
+ The \defn{index} of an object~$X$ is the element
+ \[
+  \ind_T(X) := [T_0^X] - [T_1^X] \in \Ksp(\add(T)).
+ \]
+\end{definition}
+
+The notion of index is very close to the definition of the map~$\b g:\Ksp(\cat)\to \Kg(\cat)$ of Definition~\ref{defi::grothendieck-group}.  The link is given by the following result.
+
+\begin{proposition}[\cite{Palu}]
+ Let~$X\xrightarrow{} Y \xrightarrow{} Z \xrightarrow{h} \susp X$ be a triangle.
+ Then
+ \[
+  \ind_T(X) + \ind_T(Z) - \ind_T(Y) = 0
+ \]
+ if and only if~$h\in (\susp T)$.
+\end{proposition}
+
+\begin{corollary}
+ There is an isomorphism~$\phi:\Kg(\cat) \to \Ksp(\add(T))$ such that~$\ind_T = \phi\circ \b g$.  In particular,~$\Kg(\cat)$ is a free abelian group generated by the~$[T_i]$.
+\end{corollary}
+
+\begin{theorem}[]\pg{cite???}
+ Let~$\cat$ be the cluster category of a valued quiver of Dynkin type~$A,B,C,D,E,F$ or~$G$.  Let~$T$ be a basic cluster-tilting object in~$\cat$, and let~$Q$ be the valued Gabriel quiver of~$\End{\cat}(T)$.  Then there is a bijection
+ \[
+  \CC: \ind(\cat) \xrightarrow{} \{\textrm{cluster variables in the cluster algebra of~$Q$}\},
+ \]
+ which has the follwing properties.
+ \begin{itemize}
+  \item For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
+  \item For any~$X\in \ind(\cat)$, the~$\b g$-vector of~$\CC(X)$ is~$\b g([X])$, where we identify~$\Z^n$ and~$\Kg(\cat)$ via the isomorphism sending~$(a_1, \ldots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
+  \item For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
+ \end{itemize}
+\end{theorem}
+
+The cluster category also contains enough information to detect positive mutations.
+
+\begin{proposition}
+ Let~$X,Y\in \ind(\cat)$ be such that~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.  Let 
+ \[
+  X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X \quad \textrm{and} \quad Y\xrightarrow{} E' \xrightarrow{} X \xrightarrow{h'} \susp Y
+ \]
+ be triangles with~$h$ and~$h'$ non-zero (these triangles are unique up to isomorphism).  Then~$\CC(Y)$ is obtained by performing a positive mutation on~$\CC(X)$ in some seed if and only if~$h\in (\susp T)$.
+ \begin{proof}
+  \pg{TO DO, Vincent: definition of positive mutation?}
+ \end{proof}
+\end{proposition}
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
