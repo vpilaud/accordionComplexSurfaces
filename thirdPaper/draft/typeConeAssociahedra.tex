@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray, overpic}
 \usepackage[noabbrev,capitalise]{cleveref}
 \usepackage[normalem]{ulem}
 \usepackage{marginnote}
@@ -847,6 +847,20 @@ for any two cluster variables~$x,y \in \seed$.
 %
 The following statement is well known.
 \vincent{Explain}
+Examples are illustrated in \cref{fig:clusterFans}.
+
+\begin{figure}[h]
+	\capstart
+	%\centerline{\includegraphics[scale=.45]{clusterFans}}
+	\centerline{
+	\begin{overpic}[scale=.45]{clusterFans}
+	\put(-19,30){$\left[\begin{array}{@{}c@{\;}c@{\;}c@{}} 0 & -1 & 1 \\ 1 & 0 & -1 \\ -1 & 1 & 0 \end{array}\right]$}
+	\put(98,30){$\left[\begin{array}{@{}c@{\;}c@{\;}c@{}} 0 & -1 & 2 \\ 1 & 0 & -2 \\ -1 & 1 & 0 \end{array}\right]$}
+	\end{overpic}
+	}
+  \caption{Two $\b{g}$-vector fans~$\gvectorFan[\B_\circ]$ for the type~$A_3$~(left) and type~$C_3$~(right) cyclic initial exchange matrices. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{HohlwegPilaudStella}.}
+	\label{fig:clusterFans}
+\end{figure}
 
 \begin{theorem}
 \label{thm:gvectorFan}
