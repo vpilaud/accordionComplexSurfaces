@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray, overpic}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
 \usepackage[noabbrev,capitalise]{cleveref}
 \usepackage[normalem]{ulem}
 \usepackage{marginnote}
@@ -833,20 +833,6 @@ for any two cluster variables~$x,y \in \seed$.
 %
 The following statement is well known.
 \vincent{Explain}
-Examples are illustrated in \cref{fig:clusterFans}.
-
-\begin{figure}[h]
-	\capstart
-	%\centerline{\includegraphics[scale=.45]{clusterFans}}
-	\centerline{
-	\begin{overpic}[scale=.45]{clusterFans}
-	\put(-19,30){$\left[\begin{array}{@{}c@{\;}c@{\;}c@{}} 0 & -1 & 1 \\ 1 & 0 & -1 \\ -1 & 1 & 0 \end{array}\right]$}
-	\put(98,30){$\left[\begin{array}{@{}c@{\;}c@{\;}c@{}} 0 & -1 & 2 \\ 1 & 0 & -2 \\ -1 & 1 & 0 \end{array}\right]$}
-	\end{overpic}
-	}
-  \caption{Two $\b{g}$-vector fans~$\gvectorFan[\B_\circ]$ for the type~$A_3$~(left) and type~$C_3$~(right) cyclic initial exchange matrices. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{HohlwegPilaudStella}.}
-	\label{fig:clusterFans}
-\end{figure}
 
 \begin{theorem}
 \label{thm:gvectorFan}
@@ -1019,8 +1005,9 @@ The following statement is partially proved in~\cite[Thm.~4.17]{PaluPilaudPlamon
 \label{prop:exchangeablePairsNKC}
 Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then
 \begin{enumerate}[(i)]
-\item For any non-kissing facet~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, there exists a unique maximal common substring~$\sigma$ of~$\omega$ and~$\omega'$ that decomposes~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ such that the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
-\item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ actually depend on the exchangeable walks~$\omega$ and~$\omega'$, not on the adjacent non-kissing facet~$F $ and~$F'$.
+\item For any non-kissing facet~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = F' \ssm \{\omega'\}$, there exists a unique maximal common substring~$\sigma$ of~$\omega$ and~$\omega'$ that decomposes~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ such that the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
+\item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ only depend on the exchangeable walks~$\omega$ and~$\omega'$, not on the adjacent non-kissing facets~$F $ and~$F'$.
+\yann{This needs more assumptions.  Move to another proposition.}
 \item Moreover, the linear dependence between the $\b{g}$-vectors of~$F \cup F'$ is given by
 \[
 \gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
@@ -1096,7 +1083,7 @@ The following conditions are equivalent for a gentle quiver~$\quiver$.
 \end{enumerate}
 \end{proposition}
 
-The quivers of this family is particularly well-behaved: they avoid all pathologies of \cref{rem:exchangeablePairsNKC} and we will prove that the type cone of their non-kissing fan happens to be simplicial.
+The quivers of this family are particularly well-behaved: they avoid all pathologies of \cref{rem:exchangeablePairsNKC} and we will prove that the type cone of their non-kissing fan happens to be simplicial.\pg{Need to exclude two-cycles, else false.}
 Note that this family already contains a lot of relevant examples, including:
 \begin{itemize}
 \item classical associahedra
@@ -1297,7 +1284,7 @@ One clear (but a bit empty) result is that extremal exchangeable pairs correspon
 We checked on some (but probably not enough) small gentle quivers the following properties:
 \begin{enumerate}
 \item Any $c$-vector (\ie distinguishable string) is the direction of at least one extremal exchangeable pair.
-\item Consider a distinguishable string~$\sigma$. Let~$\omega$ (resp.~$\omega'$) be the walk obtained from~$\sigma$ by adding two hooks (resp.~two cohooks) at the endpoints of~$\sigma$. If the walks~$\omega$ and~$\omega'$ are non-self-kissing and exchangeable, then they form the unique extremal exchangeable pair directed by~$\sigma$. These extremal exchangeable pairs correspond to meshes of the Auslander-Reiten quiver.
+\item Consider a distinguishable string~$\sigma$. Let~$\omega$ (resp.~$\omega'$) be the walk obtained from~$\sigma$ by adding two hooks (resp.~two cohooks) at the endpoints of~$\sigma$. If the walks~$\omega$ and~$\omega'$ are non-self-kissing and exchangeable, then they form the unique extremal exchangeable pair directed by~$\sigma$. These extremal exchangeable pairs correspond to meshes of the Auslander-Reiten quiver.\pg{The conjecture is the word ``unique''.}
 \item Otherwise, $\sigma$ is the direction to one or more extremal exchangeable pairs obtained by moving further in the Auslander-Reiten quiver (this is really unclear at the moment).
 \end{enumerate}
 
@@ -1988,9 +1975,9 @@ The cluster category also contains enough information to detect positive mutatio
 \begin{proposition}
  Let~$X,Y\in \ind(\cat)$ be such that~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.  Let 
  \[
-  X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X \quad \textrm{and} \quad Y\xrightarrow{} E' \xrightarrow{} X \xrightarrow{h'} \susp Y
+  X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X 
  \]
- be triangles with~$h$ and~$h'$ non-zero (these triangles are unique up to isomorphism).  Then~$\CC(Y)$ is obtained by performing a positive mutation on~$\CC(X)$ in some seed if and only if~$h\in (\susp T)$.
+ be triangle with~$h$ non-zero (this triangle is unique up to isomorphism).  Then~$\CC(Y)$ is obtained by performing a positive mutation on~$\CC(X)$ in some seed if and only if~$h\in (\susp T)$.
  \begin{proof}
   \pg{TO DO, Vincent: definition of positive mutation?}
  \end{proof}
