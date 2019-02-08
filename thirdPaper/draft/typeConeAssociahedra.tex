@@ -123,15 +123,11 @@
 \newcommand{\multiplicityVector}{\b{m}} % multiplicity vector
 \newcommandx{\ray}[1][1=r]{\b{#1}} % ray
 \newcommandx{\rays}[1][1=R]{\b{#1}} % rays
-\newcommand{\gvector}[1]{\b{g}(#1)} % g-vector of #1
-\newcommand{\gvectorFull}[2]{\b{g}(#1,#2)} % g-vector of #2 wrt #1
-\newcommand{\gvectors}[1]{\b{g}(#1)} % g-vectors of #1
-\newcommand{\gvectorsFull}[2]{\b{g}(#1,#2)} % g-vectors of #2 wrt #1
+\newcommand{\gvector}[1]{\b{g}(#1)} % g-vector of the path #1
+\newcommand{\gvectors}[1]{\b{g}(#1)} % g-vectors of the paths #1
 \newcommandx{\gvectorFan}[1][1=\quiver]{\mathcal{F}(#1)} % g-vector fan
-\newcommand{\cvector}[2]{\mathbf{c}(#2 \in #1)} % c-vector of the cluster variable #2 in the cluster #1
-\newcommand{\cvectorFull}[3]{\mathbf{c}(#1,#3 \in #2)} % c-vector of the cluster variable #3 in the cluster #2 with respect to the initial cluster #1
-\newcommand{\cvectors}[1]{\mathbf{c}(#1)} % c-vectors of the cluster #1
-\newcommand{\cvectorsFull}[2]{\mathbf{c}(#1,#2)} % c-vectors of the cluster #2 with respect to the initial cluster #1
+\newcommand{\cvector}[3]{\mathbf{c}(#1, #3 \in #2)} % c-vector of the cluster variable #3 in the cluster #2 with respect to the initial cluster #1
+\newcommand{\cvectors}[2]{\mathbf{c}(#1, #2)} % c-vectors of the cluster #2 with respect to the initial cluster #1
 
 % Type cone
 \newcommand{\typeCone}{\mathbb{TC}} % type cone
@@ -146,7 +142,6 @@
 \newcommand{\cluster}{\mathrm{X}} % a cluster
 \newcommandx{\clusters}{\mathcal{X}} % all clusters
 \newcommand{\coefficients}{\mathrm{P}} % a coefficients tuple
-\newcommandx{\variables}[1][1=\clusterAlgebra]{\mathcal{V}(#1)} % all variables
 \newcommandx{\clusterAlgebra}[2][1=\B_\circ, 2=\coefficients_\circ]{\mathcal{A}\!\left(#1,#2\right)} % cluster algebra
 \newcommandx{\principalClusterAlgebra}[1][1=\B_\circ]{\mathcal{A}_{\mathrm{pr}}\left(#1\right)} % principal coefficients cluster algebra
 \newcommandx{\coefficientFreeClusterAlgebra}[1][1=\B_\circ]{\mathcal{A}_{\mathrm{fr}}(#1)} % coefficient free cluster algebra
@@ -179,8 +174,6 @@
 \newcommand{\cc}[1]{\cL#1\cR} % cohook - cohook
 \newcommand{\hc}[1]{\hL#1\cR} % hook - cohook
 \newcommand{\ch}[1]{\cL#1\hR} % cohook - hook
-\newcommand{\distinguishedString}[2]{\mathsf{ds}(#1,#2)} % distinguished string
-\newcommand{\distinguishedSign}[2]{\varepsilon(#1,#2)} % distinguished sign
 
 % Graph associahedra
 \newcommand{\ground}{V} % ground set
@@ -365,8 +358,6 @@ When the type cone happens to be simplicial, we derive simple descriptions of al
 
 \maketitle
 
-\tableofcontents
-
 We explain recent results of~\cite{BazierMatteDouvilleMousavandThomasYildirim}. Some advantages of our approach are:
 \begin{itemize}
 \item We manage to extend their results to other families of $\b{g}$-vector fans: first to all $\b{g}$-vector fans of finite type cluster algebras acyclic or not (whose polytopality was only proved recently in~\cite{HohlwegPilaudStella}), then to all $\b{g}$-vector fans of the $\tau$-tilting finite gentle algebras (whose polytopality was proved recently in~\cite{PaluPilaudPlamondon-nonkissing}), and finally to the nested fans of graph associahedra (whose polytopality was studied in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}).
@@ -429,7 +420,7 @@ We present here a convenient formulation from~\cite[Lem.~2.1]{ChapotonFominZelev
 Then the following are equivalent for any height vector~$h \in \R^N$:
 \begin{enumerate}
 \item The fan~$\Fan$ is the normal fan of the polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$.
-\item For any two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$,
+\item For any two adjacent cones~$\R \rays$ and~$\R \rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, we have
 \[
 \alpha \, h_{\ray} + \alpha' \, h_{\ray'} + \sum_{\ray[s] \in \rays \cap \rays'} \beta_{\ray[s]} \, h_{\ray[s]} > 0,
 \]
@@ -442,7 +433,7 @@ is the unique (up to rescaling) linear dependence with~$\alpha, \alpha' > 0$ bet
 \end{proposition}
 
 \begin{notation}
-For any two adjacent cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, we denote by~$\coefficient[{\ray[s]}][\rays][\rays']$ the coefficient of~$\ray[s]$ in the unique linear dependence between the rays of~$\rays \cup \rays'$, \ie such that
+For any two adjacent cones~$\R\rays$ and~$\R\rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, we denote by~$\coefficient[{\ray[s]}][\rays][\rays']$ the coefficient of~$\ray[s]$ in the unique linear dependence between the rays of~$\rays \cup \rays'$, \ie such that
 \[
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0.
 \]
@@ -455,14 +446,14 @@ In this paper, we are interested in the set of all possible realizations of~$\Fa
 The \defn{type cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admissible height vectors~$\b{h}$:
 \begin{align*}
 \typeCone(\Fan) & \eqdef \set{\b{h} \in \R^N}{\Fan \text{ is the normal fan of } P_\b{h}} \\
-& = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0 \text{ for any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$}}.
+& = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0 \text{ for any adjacent cones~$\R\rays, \R\rays'$ of~$\Fan$}}.
 \end{align*}
 \end{definition}
 
 Note that the type cone is an open cone and contains a linearity subspace of dimension~$n$ (it is invariant by translation in~$\b{G} \R^n$). We could thus intersect~$\typeCone(\Fan)$ by the kernel of~$\b{G}$, or consider the projection~$\b{K}\typeCone(\Fan)$.
 
 \begin{definition}
-An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent maximal cones~$\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ such that the corresponding inequality $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0$ in the definition of the type cone~$\typeCone(\Fan)$ actually defines a facet of~$\typeCone(\Fan)$.
+An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent cones~$\{\R\rays, \R\rays'\}$ of~$\Fan$ such that the corresponding inequality $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0$ in the definition of the type cone~$\typeCone(\Fan)$ actually defines a facet of~$\typeCone(\Fan)$.
 \end{definition}
 
 In other words, extremal adjacent pairs define the extremal rays of the polar of the type cone~$\typeCone(\Fan)$.
@@ -478,7 +469,7 @@ We say that the type cone is \defn{simplicial} when it has precisely $N-n$ facet
 
 \subsection{Coherent fans}
 
-Two rays~$\ray$ and~$\ray'$ of~$\Fan$ are called \defn{compatible} if there are both contained in a cone of~$\Fan$ and \defn{exchangeable} if there are two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$.
+Two rays~$\ray$ and~$\ray'$ of~$\Fan$ are called \defn{compatible} if there are both contained in a cone of~$\Fan$ and \defn{exchangeable} if there are two adjacent cones~$\R\rays$ and~$\R\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$.
 If~$\rays(\Fan)$ denotes the set of rays of~$\Fan$, a \defn{compatibility degree} for~$\Fan$ is a function~$\compatibilityDegree{-}{-}: \rays(\Fan) \times \rays(\Fan) \to \R$ such that
 \begin{itemize}
 \item $\compatibilityDegree{\ray}{\ray'} = -1$ if~$\ray = \ray'$ and is non-negative otherwise,
@@ -494,7 +485,7 @@ We say that two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a \defn{unique e
 \[
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0.
 \]
-does not depend on the pair~$\{\rays, \rays'\}$ of adjacent maximal cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\ray, \ray'$.
+does not depend on the pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\ray, \ray'$.
 This implies in particular that the rays~$\ray[s]$ for which~$\coefficient[{\ray[s]}][\rays][\rays'] \ne 0$ belong to~$\rays \cup \rays'$ for any pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$. These rays are thus called \defn{forced rays} for the exchangeable pair~$\{\ray, \ray'\}$.
 
 We say that the fan~$\Fan$ has the \defn{unique exchange property} if any two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a unique exchange relation
@@ -586,10 +577,10 @@ Any polytope in~$\typeCone(\Fan)$ is the Minkowski sum of at most~$N-n$ polytope
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Applications to three generalizations of the associahedron}
+\section{Applications to different generalizations of the associahedron}
 \label{sec:applications}
 
-In this section, we study the type cones of complete simplicial fans arising as normal fans of three families of generalizations of the associahedron: the generalized associahedra of finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasI, FominZelevinsky-ClusterAlgebrasII, FominZelevinsky-ClusterAlgebrasIV, HohlwegLangeThomas, HohlwegPilaudStella}, the gentle associahedra~\cite{PaluPilaudPlamondon-nonkissing}, and the graph associahedra~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}. 
+In this section, we study the type cones of complete simplicial fans arising as normal fans of three families of generalizations of the associahedron: the generalized associahedra of finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasI, FominZelevinsky-ClusterAlgebrasII, FominZelevinsky-ClusterAlgebrasIV, HohlwegLangeThomas}, the gentle associahedra~\cite{PaluPilaudPlamondon-nonkissing}, and the graph associahedra~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}. 
 All these families contain the classical associahedra~$\Asso[n]$ constructed in~\cite{ShniderSternberg, Loday}.
 We first describe these associahedra and their type cones as they are the prototypes of our constructions.
 
@@ -639,7 +630,7 @@ Then both triangulations~$T$ and~$T'$ contain the square $aa'bb'$, and the linea
 In particular, the fan~$\gvectorFan[n]$ has the unique exchange property.
 \end{proposition}
 
-From these linear dependencies, we obtain a redundant description of the type cone of the fan~$\gvectorFan[n]$.
+From these linear dependencies, we obtain that the type cone of the fan~$\gvectorFan[n]$.
 
 \begin{corollary}
 Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type cone of the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$ is given by
@@ -703,18 +694,12 @@ is an $n$-dimensional associahedron.
 
 %%%%%%%%%%%
 
-\subsection{Finite type cluster complexes and generalized associahedra}
+\subsection{Generalized associahedra}
 
-%We now extend the results of the previous section to the $\b{g}$-vector fan of any finite type cluster algebra with respect to any seed (acyclic or not).
+We now extend the results of the previous section to the $\b{g}$-vector fan of any finite type cluster algebra with respect to any seed (acyclic or not).
 Cluster algebras were introduced by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasI} with motivation coming from total positivity and canonical bases.
 Here, we will focus on finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasII} and more specifically on properties of their $\b{g}$-vectors~\cite{FominZelevinsky-ClusterAlgebrasIV}.
 These $\b{g}$-vectors support a complete simplicial fan, which is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, and revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
-More recently in~\cite{BazierMatteDouvilleMousavandThomasYildirim}, V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Yildirim extended the construction of associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to acyclic seeds of simply laced finite type cluster algebras.
-Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply laced or not) cluster algebra with respect to any seed (acyclic or not) by showing that the type cone of the $\b{g}$-vector fan of any finite type cluster algebra is simplicial.
-
-\subsubsection{Cluster algebras and $\b{g}$-vector fans}
-
-We present some definitions and properties of finite type cluster algebras and their $\b{g}$-vector fans, following the presentation of~\cite{HohlwegPilaudStella}.
 
 \para{Cluster algebras}
 %
@@ -765,7 +750,7 @@ An important point is that mutations are involutions: $\mu_{x'} \big( \mu_{x}(\s
 We say that two seeds are \defn{mutationally equivalent} when they can be obtained from each other by a sequence of mutations (we also use the same terminology for exchange matrices).
 %We consider an \defn{initial seed} $\seed_\circ = (\B_\circ, \coefficients_\circ, \cluster_\circ)$ whose cluster variables are supposed to be~$x_1, \dots, x_n$.
 
-\begin{definition}[{\cite[Def.~2.11]{FominZelevinsky-ClusterAlgebrasIV}}]
+\begin{definition}[{\cite[Definition~2.11]{FominZelevinsky-ClusterAlgebrasIV}}]
 The (geometric type) \defn{cluster algebra} $\clusterAlgebra$ is the $\Z\Trop{m}$-subring of~$\Q(x_1, \dots, x_n, p_1, \dots, p_m)$ generated by all the cluster variables in all the seeds mutationally equivalent to an initial seed~$\seed_\circ = (\B_\circ, \coefficients_\circ, \cluster_\circ)$ with cluster variables~$\cluster_\circ = \{x_1, \dots, x_n\}$.
 \end{definition}
 
@@ -800,11 +785,12 @@ Moreover, for~$\B_\circ^\vee \eqdef -\transpose{\B_\circ}$, then the map sending
 %
 We now consider principal coefficients to define the $\b{g}$- and $\b{c}$-vectors.
 
-\begin{definition}[{\cite[Def.~3.1]{FominZelevinsky-ClusterAlgebrasIV}}]
+\begin{definition}[{\cite[Definition~3.1]{FominZelevinsky-ClusterAlgebrasIV}}]
 The cluster algebra with \defn{principal coefficients} at~$\B_\circ$ is the cluster algebra~$\principalClusterAlgebra \eqdef \clusterAlgebra[\B_\circ][\coefficients_\circ]$ in~$\Q(x_1, \dots, x_n, p_1, \dots, p_n)$, where~$\coefficients_\circ = \{p_x\}_{x \in \cluster_\circ}$ are precisely the generators~$p_1, \dots, p_n$ of~$\Trop{n}$ relabeled by~$\cluster_\circ$.
 \end{definition}
 
-Principal coefficients cluster algebras are $\Z^n$-graded (in the fundamental weight basis~$\{\omega_x\}_{x \in \cluster_\circ}$ of~$V$) for the degree function~$\deg(\B_\circ,\cdot)$ on $\principalClusterAlgebra$ is obtained by setting
+Cluster algebras with principal coefficients are $\Z^n$-graded (in the basis~$\{\omega_x\}_{x \in \cluster_\circ}$ of~$V$).
+The degree function~$\deg(\B_\circ,\cdot)$ on $\principalClusterAlgebra$ is obtained by setting
 \(
 \deg(\B_\circ,  x) \eqdef \fundamentalWeight_x
 \)
@@ -813,37 +799,37 @@ and
 \deg(\B_\circ, p_x) \eqdef \sum_{y \in \cluster_\circ} -b_{yx} \fundamentalWeight_y
 \)
 for any $x\in\cluster_\circ$.
-%This assignment makes all exchange relations and all cluster variables in~$\principalClusterAlgebra$ homogeneous~\cite{FominZelevinsky-ClusterAlgebrasIV} and it justifies the definition of the following family of integer vectors associated to cluster variables.
+This assignment makes all exchange relations and all cluster variables in~$\principalClusterAlgebra$ homogeneous~\cite{FominZelevinsky-ClusterAlgebrasIV} and it justifies the definition of the following family of integer vectors associated to cluster variables.
 
 \begin{definition}[\cite{FominZelevinsky-ClusterAlgebrasIV}]
-The \defn{$\b{g}$-vector}~$\gvector{x} = \gvectorFull{\B_\circ}{x}$ of a cluster variable~$x \in \principalClusterAlgebra$ is its degree.
-We denote by $\gvectors{\seed} = \gvectorFull{\B_\circ}{\seed} \eqdef \set{\gvectorFull{\B_\circ}{x}}{x \in \seed}$ the set of $\b{g}$-vectors of a seed~$\seed$.
+The \defn{$\b{g}$-vector}~$\gvector{\B_\circ}{x}$ of a cluster variable~$x \in \principalClusterAlgebra$ is its degree.
+We denote by $\gvectors{\B_\circ}{\seed} \eqdef \set{\gvector{\B_\circ}{x}}{x \in \seed}$ the set of $\b{g}$-vectors of the cluster variable in the seed~$\seed$ of~$\principalClusterAlgebra$.
 \end{definition}
 
 The next definition gives another family of integer vectors, introduced implicitly in~\cite{FominZelevinsky-ClusterAlgebrasIV}, that are relevant in the structure of~$\principalClusterAlgebra$.
 
 \begin{definition}
-The \defn{$\b{c}$-vector} of a cluster variable $x$ in a seed~$\seed$ of~$\principalClusterAlgebra$ is the vector
+Given a seed~$\seed$ in~$\principalClusterAlgebra$, the \defn{$\b{c}$-vector} of a cluster variable $x \in \seed$ is the vector
 \(
-\cvector{\seed}{x} = \cvectorFull{\B_\circ}{\seed}{x} \eqdef \sum_{y \in \cluster_\circ} c_{yx} \, \simpleRoot_y
+\cvector{\B_\circ}{\seed}{x} \eqdef \sum_{y \in \cluster_\circ} c_{yx} \, \simpleRoot_y
 \)
 of exponents of~$p_x = \prod_{y \in \cluster_\circ} (p_y)^{c_{yx}}$.
-We denote by~$\cvectors{\seed} = \cvectorsFull{\B_\circ}{\seed} \eqdef \set{\cvectorFull{\B_\circ}{\seed}{x}}{x \in \seed}$ the set of $\b{c}$-vectors of a seed~$\seed$.
+We denote by~$\cvectors{\B_\circ}{\seed} \eqdef \set{\cvector{\B_\circ}{\seed}{x}}{x \in \seed}$ the set of $\b{c}$-vectors of a seed~$\seed$.
 \end{definition}
 
 These two families of vectors are connected via the isomorphism~$x \mapsto x^\vee$ between the cluster complexes of~$\principalClusterAlgebra$ and~$\principalClusterAlgebra[\B_\circ^\vee]$ described above.
 
-\begin{theorem}[{\cite[Thm~1.2]{NakanishiZelevinsky}}]
+\begin{theorem}[{\cite[Theorem~1.2]{NakanishiZelevinsky}}]
 \label{thm:duality}
 For any seed~$\seed$ of~$\principalClusterAlgebra$, let $\seed^\vee$ be its dual in $\principalClusterAlgebra[\B_\circ^\vee]$.
-Then the set of $\b{g}$-vectors~$\gvectorFull{\B_\circ}{\seed}$ and the set of $\b{c}$-vectors~$\cvectorsFull{\B_\circ^\vee}{\seed^\vee}$ form dual bases, that is
+Then the set of $\b{g}$-vectors~$\gvector{\B_\circ}{\seed}$ and the set of $\b{c}$-vectors~$\cvectors{\B_\circ^\vee}{\seed^\vee}$ form dual bases, that is
 \(
-{\bigdotprod{\gvectorFull{\B_\circ}{x}}{\cvectorFull{\B_\circ^\vee}{\seed^\vee}{y^\vee}} = \delta_{x=y}}
+{\bigdotprod{\gvector{\B_\circ}{x}}{\cvector{\B_\circ^\vee}{\seed^\vee}{y^\vee}} = \delta_{x=y}}
 \)
 for any two cluster variables~$x,y \in \seed$.
 \end{theorem}
 
-\para{The $\b{g}$-vector fan and generalized associahedron}
+\para{The $\b{g}$-vector fan}
 %
 The following statement is well known.
 \vincent{Explain}
@@ -858,39 +844,28 @@ together with all their faces, forms a complete simplicial fan, called the \defn
 \end{theorem}
 
 Moreover, this fan is known to be polytopal.
-More precisely, consider a vector~$\b{h} \in \R^{\variables}$ such that
-\[
-\b{h}_x + \b{h}_{x'} > \max \Big( \sum_{{y \in \cluster \cap \cluster', \; b_{xy} < 0}} -b_{xy} \, \b{h}_y \;,  \sum_{{y \in \cluster \cap \cluster', \; b_{xy} > 0}} b_{xy} \, \b{h}_y \Big).
-\]
-for any adjacent seeds~$(\B, \coefficients, \cluster)$ and~$(\B', \coefficients', \cluster')$ with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$.
-Such a vector~$\b{h}$ exists, see the discussion in~\cite[Prop.~28]{HohlwegPilaudStella}.
 
 \begin{theorem}[{\cite[Thm.~26]{HohlwegPilaudStella}}]
 \label{thm:gvectorFan}
-For any finite type exchange matrix~$\B_\circ$, the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$ is the normal fan of the \defn{$\B_\circ$-associahedron}~$\Asso[\B_\circ, \b{h}]$ defined equivalently as
-\begin{enumerate}[(i)]
-\item the convex hull of the points~$\sum_{x \in \seed} \b{h}_x \, \cvectorFull{\B_\circ^\vee}{\seed^\vee}{x^\vee}$ for all seeds~$\seed$ of~$\principalClusterAlgebra$, or
-\item the intersection of the halfspaces~$\set{\b{v} \in V^\vee}{\dotprod{\gvectorFull{\B_\circ}{x}}{\b{v}} \le \b{h}_x}$ for all cluster variables~$x$ of~$\principalClusterAlgebra$.
-\end{enumerate}
+For any finite type exchange matrix~$\B_\circ$, the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$ is the normal fan of the polytope defined by...
+\vincent{TODO}
 \end{theorem}
 
 \para{Flips in the $\b{g}$-vector fan}
 
 
-
 \newpage
+The acyclic and simply-laced case was treated in~\cite{BazierMatteDouvilleMousavandThomasYildirim}.
+Computer experiments indicate that the type cone is always simplicial for any seed (acyclic or not) in any finite type cluster algebra.
+While the case of acyclic seeds can be handled by representation theory~\cite{BazierMatteDouvilleMousavandThomasYildirim}, we have no proof at the moment for cyclic seeds.
 
-\begin{remark}
 One important observation is that it seems there is one extremal exchangeable pair for each positive $c$-vector, meaning that for each positive $c$-vector~$\beta$, there is precisely one extremal exchangeable pair~$\{x,x'\}$ of cluster variables for which the flip of~$x$ to~$x'$ (for any pair of clusters~$\{X,X'\}$ with~$X \ssm \{x\} = X' \ssm \{x'\}$) is in the direction of~$\beta$.
 The goal is thus to determine for each positive root which exchangeable pair is extremal.
 This should be done using the Auslander-Reiten quiver to construct two cluster variables from a $c$-vector (see the next paragraph for the idea).
-\end{remark}
-
-\newpage
 
 %%%%%%%%%%%
 
-\subsection{Non-kissing complexes and gentle associahedra}
+\subsection{Gentle associahedra}
 
 Gentle associahedra were constructed by Y.~Palu, V.~Pilaud and P.-G.~Plamondon~\cite{PaluPilaudPlamondon-nonkissing} in the context of support $\tau$-tilting for gentle algebras.
 For a given $\tau$-tilting finite gentle quiver~$\quiver$ (defined in the next section), the $\quiver$-associahedron~$\Asso[\quiver]$ is a simple polytope which encodes certain representations of~$\quiver$ and their $\tau$-tilting relations.
@@ -987,47 +962,16 @@ The (reduced) \defn{non-kissing complex} of~$\quiver$ is the simplicial complex~
 As shown in~\cite[Thm.~2.46]{PaluPilaudPlamondon-nonkissing}, this simplicial complex is a combinatorial model for the support $\tau$-tilting complex on $\tau$-rigid modules over~$kQ/I$.
 The quiver~$\quiver$ is called \defn{$\tau$-tilting finite} or \defn{non-kissing finite} when this complex is finite (in other words, $\quiver$ has finitely may non-kissing walks).
 
-\para{$\b{g}$- and $\b{c}$-vectors}
-%
-We now define two families of vectors associated to walks in the non-kissing complex.
-Let~$(\b{e}_v)_{v \in Q_0}$ denote the canonical basis of~$\R^{Q_0}$.
-For a multiset~$V = \{\!\{v_1, \dots, v_k\}\!\}$ of~$Q_0$, we denote by $\multiplicityVector_V \eqdef \sum_{i \in [k]} \b{e}_{v_i}$.
-
-\begin{definition}[{\cite[Def.~{4.8}]{PaluPilaudPlamondon-nonkissing}}]
-The \defn{$\b{g}$-vector} of a walk~$\omega$ is~$\gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}$.
-We denote by~$\gvectors{F} \eqdef \set{\gvector{\omega}}{\omega \in F}$ the set of $\b{g}$-vectors of a facet~$F$.
-\end{definition}
-
-Note that by definition, the $\gvector{\omega} = 0$ for a straight walk~$\omega$.
-
-To define the other family of vectors, we need to recall the notion of distinguished substring of a walk defined in~\cite[Def.~2.25]{PaluPilaudPlamondon-nonkissing}.
-Consider an arrow~$\alpha \in Q_1$ contained in two distinct walks~$\omega, \omega'$ of a non-kissing facet~$F \in \NKC$, and let~$\sigma$ denote the common substring of~$\omega$ and~$\omega'$.
-We write~$\omega \prec_\alpha \omega'$ if $\omega$ enters and/or exits~$\sigma$ with arrows in the direction pointed by~$\alpha$, while $\omega'$ enters and/or exits~$\sigma$ with arrows in the direction opposite to~$\alpha$.
-The \defn{distinguished walk} of the non-kissing facet~$F \in \NKC$ at the arrow~$\alpha$ is the maximum walk of~$F$ for~$\prec_\alpha$.
-The \defn{distinguished arrows} of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ are the arrow where~$\omega$ is the distinguished walk.
-It is shown in~\cite[Prop.~2.28]{PaluPilaudPlamondon-nonkissing} that each bending walk in a non-kissing facet has precisely two distinguished arrows, pointing in opposite directions.
-The \defn{distinguished substring}~$\distinguishedString{\omega}{F}$ of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ is the substring located between its two distinguished arrows.
-
-\begin{definition}[{\cite[Def.~{4.11}]{PaluPilaudPlamondon-nonkissing}}]
-The \defn{$\b{c}$-vector} of a walk~$\omega$ in a non-kissing facet~${F \in \NKC}$ is~${\cvector{F}{\omega} \eqdef \distinguishedSign{\omega}{F} \, \multiplicityVector_{\distinguishedString{\omega}{F}}}$, where~$\distinguishedSign{\omega}{F} \in \{-1,1\}$ is positive if~${\distinguishedString{\omega}{F} \in \Sigma_\top(\omega)}$ and negative if~${\distinguishedString{\omega}{F} \in \Sigma_\bottom(\omega)}$.
-We denote by~$\cvectors{F} \eqdef \set{\cvector{F}{\omega}}{\omega \in F}$ the set of $\b{c}$-vectors~of~a~facet~$F$.
-\end{definition}
-
-The $\b{g}$- and $\b{c}$-vectors also form dual bases.
-
-\begin{proposition}
-\label{prop:gvectorscvectorsDualBases}
-For any non-kissing facet~$F \in \NKC$, the set of $\b{g}$-vectors~$\gvectors{F}$ and the set of $\b{c}$-vectors~$\cvectors{F}$ form dual bases, that is
-\(
-{\bigdotprod{\gvector{\omega}}{\cvector{F}{\omega'}} = \delta_{\omega=\omega'}}
-\)
-for any two walks~$\omega, \omega' \in F$.
-\end{proposition}
-
 \para{Non-kissing fan and gentle associahedron}
 %
-The $\b{g}$-vectors support a complete simplicial fan realization of the non-kissing complex complex.
+Let~$(\b{e}_v)_{v \in Q_0}$ denote the canonical basis of~$\R^{Q_0}$.
+For a multiset~$V = \{\!\{v_1, \dots, v_k\}\!\}$ of~$Q_0$, we denote by $\multiplicityVector_V \eqdef \sum_{i \in [k]} \b{e}_{v_i}$.
+The \defn{$\b{g}$-vector} of a walk~$\omega$ is the vector~$\gvector{\omega} \in \R^{Q_0}$ defined by~$\gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}$.
+Note that by definition, the $\gvector{\omega} = 0$ for a straight walk~$\omega$.
+We also define~$\gvectors{F} \eqdef \set{\gvector{\omega}}{\omega \in F}$ for a face~$F$ of~$\NKC$.
+These vectors support a complete simplicial fan realization of the non-kissing complex complex.
 Examples are illustrated in \cref{fig:nonkissingFans}.
+\vincent{Define $\b{c}$-vectors}
 
 \begin{figure}[h]
 	\capstart
@@ -1048,11 +992,8 @@ It is proved in~\cite[Thm.~4.27]{PaluPilaudPlamondon-nonkissing} that the non-ki
 For a walk~$\omega$, denote by~$\KN(\omega)$ the sum over all other walks~$\omega'$ of the number of kisses between~$\omega$~and~$\omega'$.
 
 \begin{theorem}[{\cite[Thm.~4.27]{PaluPilaudPlamondon-nonkissing}}]
-For any non-kissing finite gentle quiver~$\quiver$, the non-kissing fan~$\gvectorFan[\quiver]$ is the normal fan of the \defn{gentle associahedron}~$\Asso[\quiver]$ defined equivalently as:
-\begin{enumerate}[(i)]
-\item the convex hull of the points~$\sum_{\omega \in F} \KN(\omega) \, \cvector{F}{\omega}$ for all facets~${F \in \NKC}$,~or
-\item the intersection of the halfspaces~$\bigset{\b{x} \in \R^{Q_0}}{\dotprod{\gvector{\omega}}{\b{x}} \le \KN(\omega)}$ for all walks~$\omega$ on~$\bar Q$.
-\end{enumerate}
+For any non-kissing finite gentle quiver~$\quiver$, the non-kissing fan~$\gvectorFan[\quiver]$ is the normal fan of the gentle associahedron~$\Asso[\quiver]$, defined as the intersection of the half-spaces~$\set{\b{x} \in \R^{Q_0}}{\dotprod{\gvector{\omega}}{\b{x}} \le \KN(\omega)}$ for all walks~$\omega \in \properWalks$.
+\vincent{Give the vertex description using $c$-vectors}
 \end{theorem}
 
 \para{Flips in the non-kissing fan}
@@ -1084,7 +1025,6 @@ In \cref{prop:exchangeablePairsNKC}, the string~$\sigma$ is called the \defn{dis
 We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished string of an exchangeable pair.
 Note that an equivalent definition of distinguishable strings is given in~\cite[Def.~2.30]{PaluPilaudPlamondon-nonkissing}.
 We denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
-\vincent{Clean that}
 
 \begin{remark}
 \label{rem:exchangeablePairsNKC}
@@ -1097,7 +1037,6 @@ However, as illustrated in \cref{fig:nonkissingFans}\,(right), note that
 \item not all strings are distinguishable.
 \end{itemize}
 \vincent{More explicit. TODO}
-\vincent{Do we still have these problems when the gentle algebra is brick and/or without oriented $2$-cycle?}
 \end{remark}
 
 \begin{corollary}
@@ -1357,7 +1296,7 @@ We checked on some (but probably not enough) small gentle quivers the following 
 
 %%%%%%%%%%%
 
-\subsection{Graphical nested complexes and graph associahedra}
+\subsection{Graph associahedra}
 
 Graph associahedra were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}.
 For a given graph~$\graphG$, the $\graphG$-associahedron~$\Asso[\graphG]$ is a simple polytope whose combinatorial structure encodes the connected subgraphs of~$\graphG$ and their nested structure.
@@ -1671,13 +1610,12 @@ We conclude that the number of extremal exchangeable pairs is at least:
 with equality if and only if all tubes of~$\graphG$ are paths, \ie if and only if~$\graphG$ is a path.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Relations for~$\b{g}$-vectors in~$2$-Calabi--Yau triangulated categories}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Relations for~$\b{g}$-vectors in finite type cluster algebras via~$2$-Calabi--Yau triangulated categories}
+
+In~\cite{Auslander1984}, M.~Auslander showed that the relations in the Grothendieck group of an Artin algebra are generated by the ones given by almost-split sequences precisely when the algebra is of finite representation type.  Inspired by this result, we will show that a similar statement holds (Theorem~\ref{theo::relations-g-vecteurs}) for the~$\b g$-vectors (or indices) of objects in a~$2$-Calabi--Yau triangulated category. 
 
 \subsection{Setting}\label{sect::setting}
 Let~$\field$ be a field.  Let~$\cat$ be a~$\field$-linear triangulated category with suspension functor~$\susp$.  We fix a collection~$\ind(\cat)$ of representatives of isomorphism classes of indecomposable objects of~$\cat$. We will assume the following:
@@ -2078,7 +2016,7 @@ The cluster category also contains enough information to detect positive mutatio
 \subsubsection{$2$-Calabi--Yau Frobenius exact categories}\label{sect::2CYexact}
 
 %%
-\subsubsection{$2$-term complexes of projective modules}
+\subsubsection{$2$-term complexes of projective modules}\label{sect::Kbproj}
 
 %%
 \subsubsection{Objects presented by a rigid object}
@@ -2087,7 +2025,7 @@ The cluster category also contains enough information to detect positive mutatio
 \subsection{Examples}
 
 %%
-\subsubsection{Associative algebras}\label{sect::Kbproj}
+\subsubsection{Associative algebras}
 
 %%
 \subsubsection{A quotient of a Frobenius category}
