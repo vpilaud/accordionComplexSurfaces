@@ -1643,7 +1643,7 @@ We need to introduce some notations before stating the main result of this secti
 \[
  F=\cat(T,-):\cat \xrightarrow{} \MOD \Lambda.
 \]
-\begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]
+\begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]\label{prop::functor-F}
  The functor~$F$ induces an equivalence of~$\field$-linear categories
  \[
   F:\cat/(\susp T) \xrightarrow{} \MOD \Lambda,
@@ -1671,10 +1671,9 @@ Finally, we need the existence of almost-split triangles in~$\cat$.  Recall that
 \]
 in~$\cat$ is \defn{almost-split} if~$X$ and~$Z$ are indecomposable,~$h$ is non-zero, and any non-section~$X\to X'$ factors through~$f$  (or equivalently, any non-retraction~$Z'\to Z$ factors through~$g$).  We say that a triangulated category \defn{has almost-split triangles} if there is an almost-split triangle as above for any indecomposable object~$X$. 
 
-\begin{proposition}[]\pg{Cite Happel}
+\begin{proposition}[Proposition I.2.3 of~\cite{ReitenVandenbergh}]
  Any triangulated category admitting a Serre functor has almost-split triangles.  In particular, any~$2$-Calabi--Yau triangulated category has almost-split triangles.
 \end{proposition}
-
 
 \begin{definition}\label{defi::grothendieck-group}
  \begin{enumerate}
@@ -1726,7 +1725,7 @@ In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$
 \end{notation}
 
 
-We can finally state the main theorem of this section. \pg{recall Auslander}
+We can finally state the main theorem of this section, which is an analogue of the main result of~\cite{Auslander1984}.
 
 \begin{theorem}\label{theo::relations-g-vecteurs}
  Let~$\cat$ be a category satisying the hypotheses of Section \ref{sect::setting}.  Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set~\[L:=\big\{\ell_X \ | \ X\in \ind(\cat)\setminus \add(\susp T) \big\}\] generates the kernel of~$\b g:\Ksp(\cat) \to \Kg(\cat)$. 
@@ -1850,13 +1849,16 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general n
  \[
   FA\xrightarrow{Ff} FE \xrightarrow{} F\susp^{-1} A \xrightarrow{} 0.
  \]
- Applying now the functor~$\Hom{\Lambda}(-, FB)$, we get an exact sequence
+ Applying now the functors~$\cat(-, B)$ and~$\Hom{\Lambda}(-, FB)$, we get a commutative diagram whose rows are exact sequences and whose vertical maps are surjective by Proposition~\ref{prop::functor-F}.
  \[
-  0 \xrightarrow{} \Hom{\Lambda}(F\susp^{-1} A, FB) \xrightarrow{} \Hom{\Lambda}(FE, FB) \xrightarrow{Ff^*} \Hom{\Lambda}(FA, FB) \xrightarrow{} \coker(Ff^*) \xrightarrow{} 0
+  \xymatrix{ & \cat(\susp^{-1} A, B)\ar[r]\ar@{->>}[d] & \cat(E, B)\ar[r]^{f^*}\ar@{->>}[d] & \cat(A,B)\ar[r]\ar@{->>}[d] & \coker(f^*)\ar[r]\ar@{->>}[d] & 0 \\
+  0 \ar[r] & \Hom{\Lambda}(F\susp^{-1} A, FB)\ar[r] & \Hom{\Lambda}(FE, FB)\ar[r]^{Ff^*} & \Hom{\Lambda}(FA, FB)\ar[r] & \coker(Ff^*)\ar[r] & 0.
+  }
  \]
- If~$B\ncong A$, then the definition of an almost-split triangle implies that~$Ff^*$ is surjective. \pg{add an exact sequence here; image of Ffstar is non-invertible elements} Thus~$\coker(Ff^*) = 0$, and by additivity of the dimension in exact sequences, we get that~$\langle \ell_A, B \rangle =0$.
+
+ If~$B\ncong A$, then the definition of an almost-split triangle implies that~$f^*$ is surjective.  Thus~$\coker(f^*)=0$, so that~$\coker(Ff^*) = 0$, and by additivity of the dimension in exact sequences, we get that~$\langle \ell_A, B \rangle =0$.
  
- If~$B\cong A$, then~$\coker(Ff^*)$ is isomorphic to the residue field of~$\End{\Lambda}(FA)$, which is isomorphic to the residue field~$\field_A$ of~$A$.
+ If~$B\cong A$, then~$\coker(f^*)$ is isomorphic to the residue field~$\field_A$ of~$\cat(A,A)$.  Since~$A$ is not in~$\add(\susp T)$, the ideal of endomorphisms of~$A$ factoring through an object of~$\add(\susp T)$ is contained in the maximal ideal of~$\cat(A,A)$.  Therefore, the rightmost morphism in the commutative diagram is an isomorphism, so~$\coker(Ff^*)$ is isomorphic to~$\field_A$.
 \end{proof}
 
 \begin{lemma}\label{lemm::coefficients}
