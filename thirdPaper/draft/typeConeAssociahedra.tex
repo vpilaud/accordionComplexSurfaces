@@ -217,6 +217,7 @@
 \newcommand{\Modt}{\operatorname{Mod}\tc}
 \newcommand{\modt}{\MOD\tc}
 \newcommand{\kzero}[1]{K_0(#1)}
+\newcommand{\eps}{\varepsilon}
 
 %% SPECIFIC NON-KISSING COMPLEX
 %
@@ -2080,7 +2081,7 @@ The cluster category also contains enough information to detect positive mutatio
 %%%%
 \subsection{Setting}\label{setting::extricat}
 
-In this section, we let~$\cat$ be a Krull--Schmidt, extriangulated category with a fixed full subcategory~$\tc$ satisfying the following three properties:
+In this section, we let~$\cat$ be a Krull--Schmidt, extriangulated category with a fixed full additive \yann{additive contains strictly full + stable under taking summands} subcategory~$\tc$ satisfying the following three properties:
 \begin{enumerate}
  \item Every~$T\in\tc$ is projective in~$\cat$;
  \item For each~$T\in\tc$, the morphism~$T\to 0$ is an inflation for the extriangulated structure of~$\cat$;
@@ -2117,7 +2118,7 @@ Extending by additivity, this defines (uniquely up to isomorphism) an object~$\s
 
 
 \begin{notation}
-We let~$\Modt$ denote the category of functors from~$\tc$ to Abelian groups, and~$\modt$ its full subcategory of functors that are finitely presented, i.e. cokernels of morphisms between representable functors.
+We let~$\Modt$ denote the category of additive functors from~$\tc$ to Abelian groups, and~$\modt$ its full subcategory of functors that are finitely presented, i.e. cokernels of morphisms between representable functors.
 We let~$F:\cat\to\Modt$ be the functor defined on objects by sending~$X\in\cat$ to~$\cat(-,X)|_\tc$.
 \end{notation}
 
@@ -2129,7 +2130,7 @@ F:\cat\to\modt.
 \]
 \end{lemma}
 
-Proposition~\ref{prop::KRextricat} below extends similar results from [REF]\yann{ref: BMR, KR ,KZ, IY...} (see also Proposition~\ref{prop::BMR-KR}) to the setting under consideration. We note that the proof requires minor modifications.
+Proposition~\ref{prop::KRextricat} below extends similar results from [REF]\yann{ref: BMR, KR ,KZ, IY...} (see also Proposition~\ref{prop::functor-F}) to the setting under consideration. We note that the proof requires minor modifications.
 
 \begin{proposition}\label{prop::KRextricat}
 The functor~$F$ induces an equivalence of categories
@@ -2222,11 +2223,86 @@ Let~$X\infl E\defl Y\dashrightarrow$ be any extriangle.
 Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\setminus\add(\susp T)$.
 \end{corollary}
 
-
-
-
 %%%%
 \subsection{Proof of Theorem~\ref{theorem::extricats}}
+
+We let~$\cat$ and~$\tc$ be as in Setting~\ref{setting::extricat}.
+We will make it explicit when more assumptions are needed.
+
+We start by stating some immediate implications of the existence of conflations~$T\infl 0 \defl \susp T$, for~$T\in\tc$.
+
+\begin{lemma}
+The following holds:
+\begin{enumerate}[{\rm (a)}]
+ \item An object belongs to~$\tc$ if and only if it is projective in~$\cat$.
+ \item For any~$T,T'\in\tc$, we have~$\cat(T,\susp T')=0$.
+ \item For any~$X\in\cat$ and~$T\in\tc$,~$\cat(X,\susp T)\cong\mathbb{E}(X,T)$.
+ \item For any~$X\in\cat$ and~$T\in\tc$,~$\cat(T,X)\cong\mathbb{E}(\susp T,X)$.
+ \item The full subcategory~$\susp\tc$ is rigid in~$\cat$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) If~$X$ is projective in~$\cat$, then the deflation~$T_0^X\defl X$ splits and~$X$ is a summand of~$T_0^X$.
+
+(b) This follows from the fact that~$T$ is projective and~$0\defl\susp T'$ is a deflation.
+
+(c) and (d) are obtained from the long exact sequences associated with the extriangle~$T\infl 0\defl \susp T\dashrightarrow$.
+
+(e) For any~$T,T'\in\tc$, we have~$\mathbb{E}(\susp T,\susp T') \cong \cat(T,\susp T')=0$.
+\end{proof}
+
+\begin{lemma}\label{lemma::shifts of extriangles}
+Let~$X\in\cat$ and let
+\[
+T_1^X\overset{f_X}{\infl} T_0^X\overset{g_X}{\defl} X \overset{\delta_X}{\dashrightarrow}, \ \ \ T_0^X\infl 0\defl \susp T_0^X\overset{\delta_0}{\dashrightarrow}, \ \ \ T_1^X\infl 0\defl \susp T_1^X\overset{\delta_1}{\dashrightarrow}
+\]
+be extriangles with~$T_0^X,T_1^X\in\tc$.
+Then there are extriangles
+\[
+T_0^X\overset{g_X}{\infl} X \overset{h_X}{\defl} \susp T_1^X \overset{(f_X)_\ast\delta_1}{\dashrightarrow}, \ \ \ X \overset{h_X}{\infl} \susp T_1^X \overset{\susp f_X}{\defl} \susp T_0^X \overset{(g_X)_\ast\delta_0}{\dashrightarrow}
+\]
+where~$h_X$ is the unique morphism in~$\cat(X,\susp T_1^X)$ satisfying~$(h_X)^\ast\delta_1=\delta_X$ and~$\susp f_X$ is the unique morphism in~$\cat(\susp T_1^X,\susp T_0^X)$ satisfying~$(\susp f_X)^\ast\delta_0 = (f_X)_\ast\delta_1$.
+\end{lemma}
+
+\begin{proof}
+The first extriangle is obtained by applying the dual of~\cite[Proposition 3.15]{NakaokaPalu} to~$\delta_X$ and~$\delta_1$, and the second one is obtained similarly from~$\delta_0$ and ~$(f_X)_\ast \delta_1$.
+\end{proof}
+
+\begin{remark}
+For any~$T\in\ind(\tc)$, fix an extriangle~$T\infl 0\defl\susp T\overset{\eps_T}{\dashrightarrow}$, and extend those choices to the all of~$\tc$ by additivity.
+As noticed in Lemma~\ref{lemma::shifts of extriangles}, for any morphism~$T\overset{f}{\to}T'$ in~$\tc$, there is a unique morphism~$\susp f\in\cat(\susp T,\susp T')$ such that~$f_\ast\eps_T=(\susp f)^\ast\eps_{T'}$, as illustrated below:
+\[
+\xy
+(-12,6)*+{T}="0";
+(0,6)*+{0}="2";
+(12,6)*+{\susp T}="4";
+(24,6)*+{}="6";
+%
+(-12,-6)*+{T'}="10";
+(0,-6)*+{0}="12";
+(12,-6)*+{\susp T'}="14";
+(24,-6)*+{}="16";
+%
+{\ar "0";"2"};
+{\ar "2";"4"};
+{\ar@{-->}^{\eps_T} "4";"6"};
+%
+{\ar_{f} "0";"10"};
+{\ar "2";"12"};
+{\ar^{\susp f} "4";"14"};
+%
+{\ar "10";"12"};
+{\ar "12";"14"};
+{\ar@{-->}_{\eps_{T'}} "14";"16"};
+\endxy
+\]
+which gives an equivalence of additive categories
+\[
+ \susp: \tc \to \susp\tc
+\]
+where~$\susp\tc$ is the full subcategory of~$\cat$ whose objects are of the form~$\susp T$, for some~$T\in\tc$.
+\end{remark}
 
 %%%%
 \subsection{Application to certain categories}
