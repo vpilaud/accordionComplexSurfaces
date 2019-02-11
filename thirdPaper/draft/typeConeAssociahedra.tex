@@ -202,6 +202,15 @@
 \newcommand{\CC}{\phi}
 \newcommand{\proj}{\operatorname{proj}}
 
+% extriangulated
+\newcommand{\tc}{\mathcal{T}}
+\newcommand{\ec}{\mathcal{E}}
+\newcommand{\infl}{\rightarrowtail}
+\newcommand{\defl}{\twoheadrightarrow}
+\newcommand{\Modt}{\operatorname{Mod}\tc}
+\newcommand{\modt}{\MOD\tc}
+\newcommand{\kzero}[1]{K_0(#1)}
+
 %% SPECIFIC NON-KISSING COMPLEX
 %
 %% COMBINATORICS
@@ -1643,7 +1652,7 @@ We need to introduce some notations before stating the main result of this secti
 \[
  F=\cat(T,-):\cat \xrightarrow{} \MOD \Lambda.
 \]
-\begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]
+\begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]\label{prop::BMR-KR}
  The functor~$F$ induces an equivalence of~$\field$-linear categories
  \[
   F:\cat/(\susp T) \xrightarrow{} \MOD \Lambda,
@@ -1692,7 +1701,7 @@ in~$\cat$ is \defn{almost-split} if~$X$ and~$Z$ are indecomposable,~$h$ is non-z
 \end{definition}
 In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$\ind(\cat)$.  The choice of the notation for~$\Kg(\cat)$ is motivated by Section~\ref{sect::applications-g-vectors}, where we study relations between~$\b g$-vectors.
 
-\begin{definition}
+\begin{definition}\label{defi::bilinear form}
  For any two objects~$X$ and~$Y$ of~$\cat$, define
  \[
   \langle X, Y \rangle := \dim_{\field} \Hom{\Lambda}(FX,FY).
@@ -1703,7 +1712,7 @@ In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$
  \]
 \end{definition}
 
-\begin{notation}
+\begin{notation}\label{notation::ell_X}
 \begin{enumerate}
  \item For any indecomposable object~$X$ of~$\cat$, let
  \[
@@ -1988,24 +1997,155 @@ The cluster category also contains enough information to detect positive mutatio
 \section{Relations for~$\b{g}$-vectors in brick algebras via extriangulated categories}
 
 %%%%
-\subsection{Setting}
+\subsection{Setting}\label{setting::extricat}
+
+In this section, we let~$\cat$ be a Krull--Schmidt, extriangulated category with a fixed full subcategory~$\tc$ satisfying the following three properties:
+\begin{enumerate}
+ \item Every~$T\in\tc$ is projective in~$\cat$;
+ \item For each~$T\in\tc$, the morphism~$T\to 0$ is an inflation for the extriangulated structure of~$\cat$;
+ \item For each~$X\in\cat$, there is an extriangle~$T_1^X\infl T_0^X \defl X \overset{\delta_X}{\dashrightarrow}$ in~$\cat$ with~$T_0^X, T_1^X$ in~$\tc$.
+\end{enumerate}
+
 
 
 \begin{remark}
- Examples of categories satisfying the above properties are
+ Examples of categories satisfying the properties above are
  \begin{itemize}
-  \item $2$-Calabi--Yau triangulaged categories admitting a cluster-tilting object (see Section~\ref{sect::2CYTriangulated});
+  \item $2$-Calabi--Yau triangulated categories admitting a cluster-tilting object (see Section~\ref{sect::2CYTriangulated});
   \item $2$-Calabi--Yau Frobenius exact categories (see Section~\ref{sect::2CYexact});
-  \item for any Artin algebra~$\Lambda$, the category~$K^{[-1,0]}(\proj \Lambda)$ of complexes of finitely generated projective~$\Lambda$-modules concentrated in degrees~$-1$ and~$0$, with morphisms considered up to homotopy (see Section~\ref{sect::Kbproj}).
+  \item for any Artin algebra~$\Lambda$, the category~$K^{[-1,0]}(\proj \Lambda)$ of complexes of finitely generated projective~$\Lambda$-modules concentrated in degrees~$-1$ and~$0$, with morphisms considered up to homotopy (see Section~\ref{sect::Kbproj});
+  \item more generally, extriangulated categories~$\cat$ constructed as follows: if~$\tc$ is a rigid subcategory of an extriangulated category~$\ec$, we let~$\cat$ be the full subcategory of~$\ec$ whose objects satisfy condition (3), equipped with the extriangulated structure obtained from that of~$\ec$ by considering those extriangles in~$\ec$ all whose terms belong to~$\cat$ and whose deflation is~$\tc$-epi (see Section~\ref{sect::Rigid}).
  \end{itemize}
-
 \end{remark}
 
+\yann{Rappels sur les categories extriangulees}
 %%%%
+\subsection{Statement of preliminary results on extriangulated categories}
+\label{subsection: prelim on extricats}
+
+We let~$\cat$ be as in Setting~\ref{setting::extricat}.
+
+\begin{notation}
+For any indecomposable object~$T\in\tc$, we fix an extriangle~$T\infl 0 \defl \susp T \dashrightarrow$.
+Extending by additivity, this defines (uniquely up to isomorphism) an object~$\susp T$, for each object~$T\in\tc$.
+\end{notation}
+
+\begin{remark}
+ As will be proven below [REF], this notation extends to an equivalence of categories from the category~$\tc$ of projective objects in~$\cat$ to the category~$\susp\tc$ of injective objects in~$\cat$.
+\end{remark}
+
+
+\begin{notation}
+We let~$\Modt$ denote the category of functors from~$\tc$ to Abelian groups, and~$\modt$ its full subcategory of functors that are finitely presented, i.e. cokernels of morphisms between representable functors.
+We let~$F:\cat\to\Modt$ be the functor defined on objects by sending~$X\in\cat$ to~$\cat(-,X)|_\tc$.
+\end{notation}
+
+\begin{lemma}
+For any~$X\in\cat$, the functor~$FX$ is finitely presented.
+We thus have a functor
+\[
+F:\cat\to\modt.
+\]
+\end{lemma}
+
+Proposition~\ref{prop::KRextricat} below extends similar results from [REF]\yann{ref: BMR, KR ,KZ, IY...} (see also Proposition~\ref{prop::BMR-KR}) to the setting under consideration. We note that the proof requires minor modifications.
+
+\begin{proposition}\label{prop::KRextricat}
+The functor~$F$ induces an equivalence of categories
+\[
+F: \cat/(\susp\tc) \to \modt
+\]
+where~$(\susp\tc)$ is the ideal of morphisms factoring through an object of the form~$\susp T$, for some~$T\in\tc$.
+% This equivalence induces further equivalences between~$\tc$ and the category of projectives, and between~$\tau\susp\tc$ and that of injectives.
+\end{proposition}
+
+\begin{remark}
+Because the category~$\cat$ does not have weak kernels in general, the category~$\modt$ might not be abelian.
+However, in all our applications, the subcategory~$\tc$ is of the form~$\add(T)$ for some object~$T$.
+In that case,~$\modt$ is equivalent to~$\MOD\End{\cat}(T)$ and thus abelian.
+\end{remark}
+
+\yann{Applying $X\mapsto\mathbb{E}(-,X)|_{\susp\tc}$ might solve this issue?}
+
+\begin{definition}
+We let~$\kzero{\cat}$ denote the Grothendieck group of~$\cat$, that is, the quotient of the free abelian group generated by symbols~$[X]$, for each $X\in\cat$, by the relations~$[X]-[Y]+[Z]$, for each conflation~$X\infl Y\defl Z$ in~$\cat$.
+\end{definition}
+
+\begin{remark}
+Since~$\tc$ is extension-closed in~$\cat$, it inherits an extriangulated structure.
+Because~$\tc$ is made of projective objects in~$\cat$, its extriangulated structure splits and we have~$\kzero{\tc}\cong\Ksp(\tc)$.
+\end{remark}
+
+
+The notion of index from \yann{ref RVdB, DK, P, also studied in ....} generalises to our current setting.
+
+\begin{definition}
+For any object~$X\in\cat$, fix some extriangle
+\[
+T_1^X \infl T_0^X \defl X \overset{\delta_X}{\dashrightarrow}
+\]
+and define
+\[
+\ind_\tc X = [T_0^X]-[T_1^X]\in\kzero{\tc}.
+\]
+\end{definition}
+
+\begin{proposition}
+ The assignment~$X\mapsto\ind_\tc X$ is well-defined and induces an isomorphism
+\[
+\ind_\tc : \kzero{\cat} \overset{\cong}{\longrightarrow} \kzero{\tc}
+\]
+of abelian groups.
+\end{proposition}
+
 \subsection{Statement of the theorem}
 
+Let~$\cat$ be as in Setting~\ref{setting::extricat}.
+
+\begin{remark}
+Assume moreover that~$\cat$ is $\field$-linear and Ext-finite.
+By the preliminary results of Section~\ref{subsection: prelim on extricats}, we can apply~\cite[Proposition 4.2]{IyamaNakaokaPalu} to obtain that~$\modt$ is Hom-finite.
+In particular, if $\tc=\add T$, then $\End{\cat}(T)$ is a finite-dimensional~$\field$-algebra.
+It thus also follows that Definition~\ref{defi::bilinear form} still makes sense in this more general settup: For any~$X,Y\in\cat$,
+\[
+\langle X,Y\rangle := \dim_\field \Hom{\tc}(FX,FY) = \dim_\field \cat/(\susp\tc)(X,Y).
+\]
+\end{remark}
+
+When this makes sense, we make use of Notation~\ref{notation::ell_X}: if
+\[
+X \infl E \defl Y \dashrightarrow
+\]
+is an almost-split sequence (see~\cite{IyamaNakaokaPalu} for a definition in this setting), we let
+\[
+ \ell_X := [X]+[Y]-[E]\in\Ksp(\cat).
+\]
+
+
+\begin{theorem}\label{theorem::extricats}
+Assume that~$\cat$ is a~$\field$-linear, Ext-finite, Krull--Schmidt, extriangulated category with Auslander--Reiten--Serre duality.
+Assume that~$T$ is a projective object of~$\cat$ such that any~$X\in\cat$ admits an extriangle~$T_1^X\infl T_0^X\defl X\dashrightarrow$ with~$T_0^X, T_1^X\in\add(T)$, and for any~$T'\in\add(T)$ the morphism~$T'\to 0$ is an inflation. Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
+\[
+ L:=\left\{\ell_X \ | \ X\in \ind(\cat)\setminus \add(\susp T) \right\}
+\]
+generates the kernel of the canonical projection~$\b g:\Ksp(\cat) \to \kzero{\cat}$. 
+In this case, the set~$L$ is a basis of the kernel of~$\b g$, and for any $x\in \ker(\b g)$, we have that
+ \[
+  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+ \]
+\end{theorem}
+
+\begin{corollary}
+Assume that~$\ind(\cat)$ is finite.
+Let~$X\infl E\defl Y\dashrightarrow$ be any extriangle.
+Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\setminus\add(\susp T)$.
+\end{corollary}
+
+
+
+
 %%%%
-\subsection{Proof of Theorem~\ref{}}
+\subsection{Proof of Theorem~\ref{theorem::extricats}}
 
 %%%%
 \subsection{Application to certain categories}
@@ -2032,7 +2172,7 @@ We know from~\cite{} that the indecomposable objects of~$K^{[-1,0]}(\proj \Lambd
 \end{proof}
 
 %%
-\subsubsection{Objects presented by a rigid object}
+\subsubsection{Objects presented by a rigid object}\label{sect::Rigid}
 
 %%%%
 \subsection{Examples}
