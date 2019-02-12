@@ -8,12 +8,17 @@
 \hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
 \usepackage[all]{xy}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{tkz-graph}
 \usetikzlibrary{trees, decorations, decorations.markings, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
 \graphicspath{{figures/}}
 \makeatletter\def\input@path{{figures/}}\makeatother
 \usepackage{caption}
 \captionsetup{width=\textwidth}
+
+
+%\tikzlibrary{matrix,quotes,arrows.meta}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2390,7 +2395,7 @@ where~$h_X$ is the unique morphism in~$\cat(X,\susp T_1^X)$ satisfying~$(h_X)^\a
 The first extriangle is obtained by applying the dual of~\cite[Proposition 3.15]{NakaokaPalu} to~$\delta_X$ and~$\delta_1$, and the second one is obtained similarly from~$\delta_0$ and ~$(f_X)_\ast \delta_1$.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{remark::equivalence Sigma}
 For any~$T\in\ind(\tc)$, fix an extriangle~$T\infl 0\defl\susp T\overset{\eps_T}{\dashrightarrow}$, and extend those choices to the all of~$\tc$ by additivity.
 As noticed in Lemma~\ref{lemma::shifts of extriangles}, for any morphism~$T\overset{f}{\to}T'$ in~$\tc$, there is a unique morphism~$\susp f\in\cat(\susp T,\susp T')$ such that~$f_\ast\eps_T=(\susp f)^\ast\eps_{T'}$, as illustrated below:
 \[
@@ -2418,12 +2423,85 @@ As noticed in Lemma~\ref{lemma::shifts of extriangles}, for any morphism~$T\over
 {\ar@{-->}_{\eps_{T'}} "14";"16"};
 \endxy
 \]
-which gives an equivalence of additive categories
+This gives an equivalence of additive categories
 \[
  \susp: \tc \to \susp\tc
 \]
-where~$\susp\tc$ is the full subcategory of~$\cat$ whose objects are of the form~$\susp T$, for some~$T\in\tc$.
+where~$\susp\tc$ is the full subcategory of~$\cat$ whose objects are isomorphic to objects of the form~$\susp T$, for some~$T\in\tc$.
 \end{remark}
+
+\begin{lemma}\label{lemma:: mphs in T are inflations}
+Every morphism in~$\tc$ is an inflation.
+\end{lemma}
+
+\begin{proof}
+Let~$T_1 \overset{t}{\to} T_0$ be a morphism in~$\tc$.
+Using the notation of Remark~\ref{remark::equivalence Sigma}, there is an extriangle~$T_1\infl 0\defl \susp T_1 \overset{\eps_{T_1}}{\dashrightarrow}$.
+Consider the extriangle~$T_0\overset{g}{\infl} X \overset{h}{\defl} \susp T_1 \overset{t_\ast\eps_{T_1}}{\dashrightarrow}$.
+By~\cite[Proposition 3.17]{NakaokaPalu}, there is a commutative diagram of extriangles
+\[
+\xy
+(-7,7)*+{T_1}="2";
+(7,7)*+{0}="4";
+(21,7)*+{\susp T_1}="6";
+(28,7)*+{}="8";
+%
+(-7,-7)*+{T_0}="12";
+(7,-7)*+{X}="14";
+(21,-7)*+{\susp T_1}="16";
+(28,-7)*+{}="18";
+%
+(-7,-21)*+{X}="22";
+(7,-21)*+{X}="24";
+%
+(-7,-28)*+{}="32";
+(7,-28)*+{}="34";
+%
+{\ar@{>->} "2";"4"};
+{\ar@{->>} "4";"6"};
+{\ar@{-->}^{\eps_{T_1}} "6";"8"};
+%
+{\ar@{>->}_{t'} "2";"12"};
+{\ar "4";"14"};
+{\ar@{=} "6";"16"};
+%
+{\ar^{g} "12";"14"};
+{\ar^{h} "14";"16"};
+{\ar@{-->}^{t_\ast\eps_{T_1}} "16";"18"};
+%
+{\ar_{g} "12";"22"};
+{\ar^{1} "14";"24"};
+%
+{\ar@{=} "22";"24"};
+%
+{\ar@{-->}^{h^\ast\eps_{T_1}} "22";"32"};
+{\ar@{-->} "24";"34"};
+%
+{\ar@{}|\circlearrowright "2";"14"};
+{\ar@{}|\circlearrowright "4";"16"};
+{\ar@{}|\circlearrowright "12";"24"};
+\endxy
+\]
+satisfying~$(t')_\ast\eps_{T_1}=t_\ast\eps_{T_1}$.
+We thus have~$t'=t$.
+\end{proof}
+
+\begin{remark}
+ It follows from the proof of Lemma~\ref{lemma:: mphs in T are inflations} that conditions (1), (2), (3) in Setting~\ref{setting::extricat} are equivalent to conditions (1), (2), (3'), where
+\[
+{\rm (3')} \ \ \ \cat = \tc\ast\susp\tc.
+\]
+\end{remark}
+
+
+\begin{proof}[Proof of Proposition~\ref{prop::KRextricat}]
+
+\end{proof}
+
+\begin{corollary}
+The objects in~$\susp\tc$ are precisely the injective objects in~$\cat$.
+\end{corollary}
+
 
 %%%%
 \subsection{Application to certain categories}
@@ -2442,7 +2520,7 @@ We know from~\cite{} that the indecomposable objects of~$K^{[-1,0]}(\proj \Lambd
 
 \pg{Add introducing paragraph}
 
-\begin{theorem}
+\begin{theorem}\label{theo::brick-algebra-condition}
  Let~$\Lambda$ be a brick algebra.  Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 \end{theorem}
 \begin{proof}
@@ -2457,6 +2535,81 @@ We know from~\cite{} that the indecomposable objects of~$K^{[-1,0]}(\proj \Lambd
 
 %%
 \subsubsection{Associative algebras}
+\begin{example}[A gentle algebra]
+ Consider the algebra~$\Lambda$ given the the path algebra of the quiver
+ \[
+  \begin{tikzcd}
+   1 \arrow[r, "\alpha"] & 2\arrow[r, "\beta"] & 3\arrow[r, "\gamma"] & 4
+  \end{tikzcd}
+ \]
+ modulo the relation~$\gamma\beta\alpha = 0$.  The Auslander--Reiten quiver of the extriangulated category~$K^{[-1, 0]}(\proj\Lambda)$ is depicted below.
+ \[
+ \hspace*{-1cm}
+ {\tiny
+  \begin{tikzcd}
+    &&&& (0\to P_4)\arrow[ddr] && (P_2\to 0)\arrow[ddr] && \\
+    && (0\to P_3)\arrow[dr] && (P_1\to 0)\arrow[dr] &&&& \\
+    & (0\to P_2)\arrow[dr]\arrow[ur] && (P_1\to P_3)\arrow[uur]\arrow[ur]\arrow[dr] && (P_2\to P_4)\arrow[uur]\arrow[dr] && (P_3\to 0)\arrow[dr] & \\
+    (0\to P_1) \arrow[ur] && (P_1\to P_2)\arrow[ur] && (P_2\to P_3)\arrow[ur]  && (P_3\to P_4)\arrow[ur] && (P_4\to 0)
+  \end{tikzcd}
+ }
+ \]
+ The Auslander--Reiten quiver of the module category is obtained by taking the quotient by the ideal generated by the shifted projective modules.
+ \[
+ \hspace*{-1cm}
+ {\footnotesize
+  \begin{tikzcd}
+    &&&& \begin{matrix} 4\\3\\2 \end{matrix}\arrow[ddr] && \\
+    && \begin{matrix} 3\\2\\1 \end{matrix}\arrow[dr] &&&& \\
+    & \begin{matrix} 2\\1 \end{matrix}\arrow[dr]\arrow[ur] && \begin{matrix} 3\\2 \end{matrix}\arrow[uur]\arrow[dr] && \begin{matrix} 4\\3 \end{matrix}\arrow[dr] & \\
+    \begin{matrix} 1 \end{matrix} \arrow[ur] && \begin{matrix} 2 \end{matrix}\arrow[ur] && \begin{matrix} 3 \end{matrix}\arrow[ur] && \begin{matrix}4 \end{matrix}
+  \end{tikzcd}
+ }
+ \]
+ The conditions of Theorem~\ref{theo::brick-algebra-condition} are satisfied.
+
+\end{example}
+
+
+
+\begin{example}[Preprojective algebra of type~$A_3$]
+ Let~$\Lambda$ be the preprojective algebra of type~$A_3$: it is the path algebra of the quiver
+ \[
+ \begin{tikzcd}
+  1\arrow[r, shift left = 2pt, "\alpha"] & 2\arrow[l, shift left = 2pt, "\bar \alpha"] \arrow[r, shift left = 2pt, "\beta"]& 3\arrow[l, shift left = 2pt, "\bar \beta"]
+ \end{tikzcd}
+ \] 
+ modulo the relations~$\alpha \bar \alpha = 0$, $\bar \beta \beta = 0$ and~$\bar \alpha \alpha + \beta \bar \beta = 0$. 
+ The Auslander--Reiten quiver of the extriangulated category~$K^{[-1,0]}(\proj \Lambda)$ is depicted below.  Note that it is periodic.
+ 
+ \[
+  \hspace*{-2cm}
+ {\tiny
+  \begin{tikzcd}
+   (P_1 \to P_3)\arrow[dr] && (P_3\to P_2)\arrow[r]\arrow[dr] & (0\to P_3)\arrow[r]& (P_1\to P_3)\arrow[r]\arrow[dr] & (P_1\to 0)\arrow[r] & (P_2\to P_1)\arrow[dr]&& (P_1\to P_2) \\
+   (0\to P_2)\ar[r] & (P_2\to P_2)\arrow[ur]\arrow[dr]\arrow[r] & (P_2\to 0)\arrow[r] & (P_1\oplus P_3\to P_2)\arrow[ur]\arrow[dr] && (P_2\to P_1\oplus P_3)\arrow[ur]\arrow[dr]\arrow[r] & (0\to P_2)\arrow[r] & (P_2\to P_2)\arrow[ur]\arrow[dr]\arrow[r] & (P_2\to 0) \\
+   (P_2\to P_1)\arrow[ur] && (P_1\to P_2)\arrow[ur]\arrow[r] & (0\to P_1)\arrow[r] & (P_3\to P_1)\arrow[r]\arrow[ur] & (P_3\to 0)\arrow[r] & (P_2\to P_3)\arrow[ur] && (P_3\to P_2)
+  \end{tikzcd}
+  }
+ \]
+
+ The Auslander--Reiten quiver of the module category~$\MOD(\Lambda)$ can be obtained by applying the functor~$\Hom{}(\Lambda, -)$.
+ 
+ \[
+  \hspace*{-2cm}
+ {\footnotesize
+  \begin{tikzcd}
+   \begin{matrix} 3 \end{matrix}\arrow[dr] && \begin{matrix} 2 \\ 1 \end{matrix}\arrow[r]\arrow[dr] & \begin{matrix} 3 \\ 2 \\ 1 \end{matrix}\arrow[r]& \begin{matrix} 3 \\ 2 \end{matrix}\arrow[dr] && \begin{matrix} 1 \end{matrix}\arrow[dr]&& \begin{matrix} 2 \\ 3 \end{matrix} \\
+   \begin{matrix} 2 \\ 13 \\ 2 \end{matrix}\ar[r] & \begin{matrix} 2\\ 13 \end{matrix}\arrow[ur]\arrow[dr] && \begin{matrix} 2 \end{matrix}\arrow[ur]\arrow[dr] && \begin{matrix} 13\\2 \end{matrix}\arrow[ur]\arrow[dr]\arrow[r] & \begin{matrix} 2\\13\\2 \end{matrix}\arrow[r] & \begin{matrix} 2\\13 \end{matrix}\arrow[ur]\arrow[dr] &  \\
+   \begin{matrix} 1 \end{matrix}\arrow[ur] && \begin{matrix} 2\\3 \end{matrix}\arrow[ur]\arrow[r] & \begin{matrix} 1\\2\\3 \end{matrix}\arrow[r] & \begin{matrix} 1\\2 \end{matrix}\arrow[ur] && \begin{matrix} 3\\1 \end{matrix}\arrow[ur] && \begin{matrix} 2\\1 \end{matrix}
+  \end{tikzcd}
+  }
+ \]
+ 
+One can check directly that the condition of Theorem~\ref{theo::brick-algebra-condition} is not satisfied. 
+\end{example}
+
+
 
 %%
 \subsubsection{A quotient of a Frobenius category}
