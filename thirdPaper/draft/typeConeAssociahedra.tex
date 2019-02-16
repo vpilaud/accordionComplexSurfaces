@@ -2522,18 +2522,48 @@ The objects in~$\susp\tc$ are precisely the injective objects in~$\cat$.
 
 %%
 \subsubsection{$2$-term complexes of projective modules}\label{sect::Kbproj}
-Let~$\Lambda$ be an Artin algebra.  Then the homotopy category~$K^b(\proj \Lambda)$ is a triangulated category, and its full subcategory~$K^{[-1,0]}(\proj \Lambda)$ of complexes concentrated in degrees~$-1$ and~$0$ is closed under extensions.  Therefore, it is an extriangulated category.
+Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the homotopy category~$K^b(\proj \Lambda)$ is a triangulated category, and we consider its full subcategory~$K^{[-1,0]}(\proj \Lambda)$ of complexes concentrated in degrees~$-1$ and~$0$.
 
-We know from~\cite{} that the indecomposable objects of~$K^{[-1,0]}(\proj \Lambda)$ are in natural bijection with the indecomposable~$\Lambda$-modules and with the shifted indecomposable projective~$\Lambda$-modules.  Thus it has finitely many isomorphism classes of indecomposable objects if and only if~$\Lambda$ is representation-finite.  This gives a setting in which to apply Theorem~\ref{}.
+\begin{proposition}\label{prop::2kbproj-is-extriangulated}
+ Let~$\Lambda$ be any Artin algebra.  Then the category~$K^{[-1,0]}(\proj \Lambda)$ is an extriangulated category satisfying the assumptions (1) to (3) of Section~\ref{setting::extricat}, wiht~$\tc = \add(\Lambda)$.  If, moreover,~$\Lambda$ is finite-dimensional over a field~$\field$, then~$K^{[-1,0]}(\proj \Lambda)$ satisfies all assumptions of Section~\ref{setting::extricat}. 
+\end{proposition}
+\begin{proof}
+ The category~$K^{[-1,0]}(\proj \Lambda)$ is closed under extensions in~$K^b(\proj \Lambda)$, so it is an extriangulated category whose conflations are induced by triangles in~$K^b(\proj\Lambda)$ by~\cite[Remark 2.18]{NakaokaPalu}.  Now, the object~$\Lambda$ is projective in~$K^{[-1,0]}(\proj \Lambda)$, since if~$X\infl Y\defl Z$ is a conflation, then we get a long exact sequence
+ \[
+  \Hom{K^b}(\Lambda,Y)\to \Hom{K^b}(\Lambda,Z) \to  \Hom{K^b}(\Lambda, \susp X),
+ \]
+ and the last term vanishes, since~$\susp X$ is a complex concentrated in degrees~$-2$ and~$-1$, while~$\Lambda$ is in degree~$0$.  This proves that~$\Lambda$ is projective.
+ 
+ The morphism~$\Lambda \to 0$ is an inflation, since~$\Lambda\infl 0 \defl \susp \Lambda$ is a conflation.  Moreover, if~$X= P_1\xrightarrow{f}P_0$ is an object of~$K^{[-1,0]}(\proj\Lambda)$, then it lies in a conflation~$P_1\stackrel{f}{\infl} P_0 \defl X$ by definition.  We have proved that properties~(1) t0 (3) of Section~\ref{setting::extricat} are satisfied.
+ 
+ Finally, assume that~$\Lambda$ is finite-dimensional over a field~$\field$.  Then~$K^{[-1,0]}(\proj\Lambda)$ is Krull--Schmidt,~$\field$-linear and Ext-finite, since this is true for~$K^b(\proj\Lambda)$ for any finite-dimensional algebra~$\Lambda$.  Moreover, it has Auslander--Reiten--Serre duality by~\cite[Proposition 6.1]{IyamaNakaokaPalu}.
+\end{proof}
 
-\pg{Add introducing paragraph}
+Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
 
 \begin{theorem}\label{theo::brick-algebra-condition}
- Let~$\Lambda$ be a brick algebra.  Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+ Let~$\Lambda$ be a brick algebra which is finite-dimensional over a field~$\field$\pg{True for any Artin algebra?}.  Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 \end{theorem}
+
+\begin{lemma}\label{lemm::AR-conflations-and-sequences}
+ Let~$\Lambda$ be any Artin algebra.  Let~$X\infl Y\defl Z$ be an almost-split conflation in~$K^{[-1,0]}(\proj \Lambda)$ such that~$Z$ is not in~$\add(\susp \Lambda)$.  Denote by~$F$ the functor~$\Hom{K^b}(\Lambda, -):K^{[-1,0]}(\proj \Lambda) \to \MOD \Lambda$.  Then there is an almost-split sequence
+ \[
+  0\to FX\to FY \to FZ \to 0
+ \]
+ in~$\MOD\Lambda$.
+\end{lemma}
 \begin{proof}
- \pg{TO DO}
+ 
 \end{proof}
+
+\begin{lemma}\label{lemm::if-AR-sequences-are-mutation}
+ Let~$\Lambda$ be an Artin algebra.  Assume that for any almost-split conflation~$\tau X \infl E \defl X$ of~$K^{[-1,0]}(\proj\Lambda)$, we have that~$\Hom{K^b}(X, \susp E) = \Hom{K^b}(E, \susp X) = 0$ and~$\Hom{K^b}(\tau X, \susp E) = \Hom{K^b}(E, \susp \tau X) = 0$.  Then for any indecomposable~$\Lambda$-module~$M$, we have that~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+\end{lemma}
+\begin{proof}
+ 
+\end{proof}
+
+
 
 %%
 \subsubsection{Objects presented by a rigid object}\label{sect::Rigid}
