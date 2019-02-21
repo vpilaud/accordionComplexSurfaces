@@ -883,7 +883,7 @@ Examples are illustrated in \cref{fig:clusterFans}.
 	\put(98,30){$\left[\begin{array}{@{}c@{\;}c@{\;}c@{}} 0 & -1 & 2 \\ 1 & 0 & -2 \\ -1 & 1 & 0 \end{array}\right]$}
 	\end{overpic}
 	}
-  \caption{Two $\b{g}$-vector fans~$\gvectorFan[\B_\circ]$ for the type~$A_3$~(left) and type~$C_3$~(right) cyclic initial exchange matrices. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{HohlwegPilaudStella}.}
+	\caption{Two $\b{g}$-vector fans~$\gvectorFan[\B_\circ]$ for the type~$A_3$~(left) and type~$C_3$~(right) cyclic initial exchange matrices. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{HohlwegPilaudStella}.}
 	\label{fig:clusterFans}
 \end{figure}
 
@@ -1522,22 +1522,22 @@ In this section, we describe the type cone of the nested fan of any graph~$\grap
 	\capstart
 	\centerline{
 		\begin{tabular}{c@{\;}c@{\;}c@{\;}c}
-    		permutahedron &
-    		associahedron &
-    		cyclohedron &
-    		stellohedron \\
-    		\includegraphics[scale=.6]{permutahedron} &
-    		\includegraphics[scale=.6]{associahedron} &
-    		\includegraphics[scale=.6]{cyclohedron} &
-    		\includegraphics[scale=.6]{stellohedron} \\
-    		\includegraphics[scale=.6]{permutahedronTubings} &
-    		\includegraphics[scale=.6]{associahedronTubings} &
-    		\includegraphics[scale=.6]{cyclohedronTubings} &
-    		\includegraphics[scale=.6]{stellohedronTubings} \\[.1cm]
-    		complete graph &
-    		path &
-    		cycle &
-    		star
+			permutahedron &
+			associahedron &
+			cyclohedron &
+			stellohedron \\
+			\includegraphics[scale=.6]{permutahedron} &
+			\includegraphics[scale=.6]{associahedron} &
+			\includegraphics[scale=.6]{cyclohedron} &
+			\includegraphics[scale=.6]{stellohedron} \\
+			\includegraphics[scale=.6]{permutahedronTubings} &
+			\includegraphics[scale=.6]{associahedronTubings} &
+			\includegraphics[scale=.6]{cyclohedronTubings} &
+			\includegraphics[scale=.6]{stellohedronTubings} \\[.1cm]
+			complete graph &
+			path &
+			cycle &
+			star
 		\end{tabular}
 	}
 	\caption{Some classical families of polytopes as graph associahedra. Illustration from~\cite{MannevillePilaud-compatibilityFans}.}
@@ -1849,9 +1849,9 @@ Let~$\field$ be a field.  Let~$\cat$ be a~$\field$-linear triangulated category 
 %%%%%%%%%%%
 
 \subsection{Statement of the theorem}
-We need to introduce some notations before stating the main result of this section.  Let~$\Lambda:= \End{\cat}(T)$, and let~$F$ be the functor
+We need to introduce some notations before stating the main result of this section.  Let~$\Lambda\eqdef \End{\cat}(T)$, and let~$F$ be the functor
 \[
- F=\cat(T,-):\cat \xrightarrow{} \MOD \Lambda.
+F = \cat(T,-): \cat \xrightarrow{} \MOD \Lambda.
 \]
 
 \begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]\label{prop::functor-F}
@@ -1906,7 +1906,7 @@ In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$
 \begin{definition}\label{defi::bilinear form}
  For any two objects~$X$ and~$Y$ of~$\cat$, define
  \[
-  \langle X, Y \rangle := \dim_{\field} \Hom{\Lambda}(FX,FY).
+  \langle X, Y \rangle \eqdef \dim_{\field} \Hom{\Lambda}(FX,FY).
  \]
  This defines a bilinear form
  \[
@@ -1922,7 +1922,7 @@ In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$
  \]
  be an almost split triangle (unique up to isomorphism).  We let
  \[
-  \ell_X := [X] + [\susp^{-1} X]  - [E] \in \Ksp(\cat).
+  \ell_X \eqdef [X] + [\susp^{-1} X]  - [E] \in \Ksp(\cat).
  \]
  
  \item For any indecomposable object~$Y$ of~$\cat$, let
@@ -1931,7 +1931,7 @@ In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$
  \]
  be an almost split triangle (unique up to isomorphism).  We let
  \[
-  r_Y := [Y] + [\susp Y]  - [E'] \in \Ksp(\cat).
+  r_Y \eqdef [Y] + [\susp Y]  - [E'] \in \Ksp(\cat).
  \]
 \end{enumerate}
 \end{notation}
@@ -1940,18 +1940,22 @@ In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$
 We can finally state the main theorem of this section, which is an analogue of the main result of~\cite{Auslander1984}.
 
 \begin{theorem}\label{theo::relations-g-vecteurs}
- Let~$\cat$ be a category satisying the hypotheses of Section \ref{sect::setting}.  Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set~\[L:=\big\{\ell_X \ | \ X\in \ind(\cat)\setminus \add(\susp T) \big\}\] generates the kernel of~$\b g:\Ksp(\cat) \to \Kg(\cat)$. 
+ Let~$\cat$ be a category satisying the hypotheses of Section \ref{sect::setting}.  Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
+ \[
+ L \eqdef \bigset{\ell_X}{X\in \ind(\cat) \ssm \add(\susp T)}
+ \]
+ generates the kernel of~$\b g:\Ksp(\cat) \to \Kg(\cat)$. 
  In this case, the set~$L$ is a basis of the kernel of~$\b g$, and for any $x\in \ker(\b g)$, we have that
  \[
-  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+  x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
  \]
 \end{theorem}
 
 \begin{corollary}
- Assume that~$\ind(\cat)$ is finite.  Let~$X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X$ be a triangle with~$h\in (\susp T)$.  Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in \ind(\cat)\setminus \add(\susp T)$.
+ Assume that~$\ind(\cat)$ is finite.  Let~$X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X$ be a triangle with~$h\in (\susp T)$.  Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in \ind(\cat)\ssm \add(\susp T)$.
 \end{corollary}
 \begin{proof}
- We know that~$x=\sum_{A\in \ind(\cat)\setminus \add(\susp T)} \frac{\langle x, [A] \rangle}{\langle \ell_A, [A] \rangle} \ell_A$; since~$\langle \ell_A, [A] \rangle$ is positive by Lemma~\ref{lemm::bilinear-form}, we only need to show that each~$\langle x, [A] \rangle$ is non-negative. 
+ We know that~$x=\sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, [A] \rangle}{\langle \ell_A, [A] \rangle} \ell_A$; since~$\langle \ell_A, [A] \rangle$ is positive by Lemma~\ref{lemm::bilinear-form}, we only need to show that each~$\langle x, [A] \rangle$ is non-negative. 
  The functor~$F=\cat(T,-)$ induces an exact sequence
  \[
   FX \to FE \to FY \to 0,
@@ -1981,7 +1985,7 @@ Before we can prove Theorem~\ref{theo::relations-g-vecteurs}, we need to recall 
 \begin{definition}
  The \defn{index} of an object~$X$ is the element
  \[
-  \ind_T(X) := [T_0^X] - [T_1^X] \in \Ksp(\add(T)).
+  \ind_T(X) \eqdef [T_0^X] - [T_1^X] \in \Ksp(\add(T)).
  \]
 \end{definition}
 
@@ -2074,13 +2078,13 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general n
 \end{proof}
 
 \begin{lemma}\label{lemm::coefficients}
- Let~$x\in \Ksp(\cat)$, and write~\[x=\sum_{A\in \ind(\cat)} \lambda_A [A].\]  Then for any~$A\in\ind(\cat)\setminus \add(\susp T)$, we have that
+ Let~$x\in \Ksp(\cat)$, and write~\[x=\sum_{A\in \ind(\cat)} \lambda_A [A].\]  Then for any~$A\in\ind(\cat) \ssm \add(\susp T)$, we have that
  \[
   \lambda_A = \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle} = \frac{\langle x, r_A \rangle}{\langle A, r_A \rangle}.
  \]
 \end{lemma}
 \begin{proof}
- Let~$B\in \ind(\cat) \setminus \add(\susp T)$.  Applying Lemma~\ref{lemm::bilinear-form}, we get that
+ Let~$B\in \ind(\cat) \ssm \add(\susp T)$.  Applying Lemma~\ref{lemm::bilinear-form}, we get that
  \[
   \langle \ell_B, x \rangle = \langle \ell_B, \sum_{A\in \ind(\cat)} \lambda_A [A] \rangle = \sum_{A\in \ind{\cat}} \lambda_A \langle \ell_B, [A] \rangle = \lambda_B \langle \ell_B, [B] \rangle.
  \]
@@ -2100,7 +2104,7 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general n
  
  Assume that (2) holds.  Then, by Lemma~\ref{lemm::coefficients}, we have that
  \[
-  x = \sum_{A\in \ind(\cat)\setminus \add(\susp T)} \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle}[A] + \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i] = \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i].
+  x = \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle}[A] + \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i] = \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i].
  \]
  Thus~$x\in \Ksp(\add(\susp T))$, and (1) holds.
  
@@ -2109,16 +2113,16 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general n
 
 \begin{proposition}\label{prop::free-set}
  \begin{enumerate}
-  \item The set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}$ is free in~$\Ksp(\cat)$.
-  \item The set~$\{[r_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}$ is free in~$\Ksp(\cat)$.
+  \item The set~$\set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \dots, n}$ is free in~$\Ksp(\cat)$.
+  \item The set~$\set{[r_A]}{A\in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \dots, n}$ is free in~$\Ksp(\cat)$.
  \end{enumerate}
 \end{proposition}
 \begin{proof}
  We only prove (1); the proof of (2) is similar.  Assume that~
  \[
-  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \lambda_A \ell_A + \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
+  x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \lambda_A \ell_A + \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
  \]
- Then~$\langle x, [A] \rangle = 0$ for all~$A\in\ind(\cat) \setminus \add(\susp T)$.  But~$\langle x, [A] \rangle = \lambda_A$ by Lemma~\ref{lemm::bilinear-form}.  Thus~
+ Then~$\langle x, [A] \rangle = 0$ for all~$A\in\ind(\cat) \ssm \add(\susp T)$.  But~$\langle x, [A] \rangle = \lambda_A$ by Lemma~\ref{lemm::bilinear-form}.  Thus~
  \[
   x = \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
  \]
@@ -2126,25 +2130,29 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general n
 \end{proof}
 
 \begin{proposition}
- Assume that~$\ind(\cat)$ is finite.  Then the set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \}$ is a basis of the kernel of~$\b g$.  Moreover, for any~$x\in \ker \b g$, we have that
+ Assume that~$\ind(\cat)$ is finite.  Then the set~$\set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b g$.  Moreover, for any~$x\in \ker \b g$, we have that
  \[
-  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+  x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
  \]
 \end{proposition}
 \begin{proof}
 By Proposition~\ref{prop::free-set}, the set is free.  Let~$x\in \ker \b g$.  Consider the element
 \[
- z = x- \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+ z = x- \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
 Then for any~$B\in \ind{\cat}$, we have that
 \[
- \langle  z, [B] \rangle = \Big\langle x- \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A, [B] \Big\rangle = \langle x, [B] \rangle - \langle x, [B] \rangle = 0, 
+ \langle  z, [B] \rangle = \Big\langle x- \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A, [B] \Big\rangle = \langle x, [B] \rangle - \langle x, [B] \rangle = 0, 
 \]
 where the second equality is obtained by using Lemma~\ref{lemm::bilinear-form}.  By Lemma~\ref{lemm::test-susp-T}, this implies that~$z\in \Ksp(\add(\susp T))$.  Since~$z\in \ker(\b g)$ and since~$\b g$ is injective on~$\Ksp(\add (\susp T))$ by Corollary~\ref{coro::grothendieck-g-vectors}, we get that~$z=0$.  This finishes the proof.
 \end{proof}
 
 \begin{corollary}
- If~$\ind(\cat)$ is finite, then the set~\[\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \} \cup \{[\susp T_i] \ | \ i=1, \ldots, n\}\] is a basis of~$\Ksp(\cat)$.
+ If~$\ind(\cat)$ is finite, then the set
+ \[
+ \set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \ldots, n}
+ \]
+ is a basis of~$\Ksp(\cat)$.
 \end{corollary}
 \begin{proof}
  By Proposition~\ref{prop::free-set}, the set is free.  It suffices to prove that it generates~$\Ksp(\cat)$.  Let~$x\in \Ksp(\cat)$.  Consider
@@ -2158,7 +2166,7 @@ where the second equality is obtained by using Lemma~\ref{lemm::bilinear-form}. 
 All that remains is to prove the converse in the statement of Theorem~\ref{theo::relations-g-vecteurs}.
 
 \begin{proposition}
- Assume that the set~$\{[\ell_A] \ | \ A\in \ind(\cat) \setminus \add(\susp T) \}$ is a basis of the kernel of~$\b g$. Then~$\ind(\cat)$ is finite.
+ Assume that the set~$\set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b g$. Then~$\ind(\cat)$ is finite.
 \end{proposition}
 \begin{proof}
  Let~$x\in \ker \b g$, and write~$x = \sum_{[A]\in \ind(\cat)} \lambda_A[A]$, where the sum has finite support.  For any~$B$ not in the support of the sum, we have that~$\langle x, [B] \rangle = 0$.
@@ -2323,7 +2331,7 @@ By the preliminary results of Section~\ref{subsection: prelim on extricats}, we 
 In particular, if $\tc=\add T$, then $\End{\cat}(T)$ is a finite-dimensional~$\field$-algebra.
 It thus also follows that Definition~\ref{defi::bilinear form} still makes sense in this more general settup: For any~$X,Y\in\cat$,
 \[
-\langle X,Y\rangle := \dim_\field \Hom{\tc}(FX,FY) = \dim_\field \cat/(\susp\tc)(X,Y).
+\langle X,Y\rangle \eqdef \dim_\field \Hom{\tc}(FX,FY) = \dim_\field \cat/(\susp\tc)(X,Y).
 \]
 \end{remark}
 
@@ -2333,7 +2341,7 @@ X \infl E \defl Y \dashrightarrow
 \]
 is an almost-split sequence (see~\cite{IyamaNakaokaPalu} for a definition in this setting), we let
 \[
- \ell_X := [X]+[Y]-[E]\in\Ksp(\cat).
+ \ell_X \eqdef [X]+[Y]-[E]\in\Ksp(\cat).
 \]
 
 
@@ -2341,19 +2349,19 @@ is an almost-split sequence (see~\cite{IyamaNakaokaPalu} for a definition in thi
 Assume that~$\cat$ is a~$\field$-linear, Ext-finite, Krull--Schmidt, extriangulated category with Auslander--Reiten--Serre duality.
 Assume that~$T$ is a projective object of~$\cat$ such that any~$X\in\cat$ admits an extriangle~$T_1^X\infl T_0^X\defl X\dashrightarrow$ with~$T_0^X, T_1^X\in\add(T)$, and the morphism~$T\to 0$ is an inflation. Fix a conflation~$T\to 0 \to \susp T$. Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
 \[
- L:=\left\{\ell_X \ | \ X\in \ind(\cat)\setminus \add(\susp T) \right\}
+L \eqdef \bigset{\ell_X}{X\in \ind(\cat) \ssm \add(\susp T)}
 \]
 generates the kernel of the canonical projection~$\b g:\Ksp(\cat) \to \kzero{\cat}$. 
 In this case, the set~$L$ is a basis of the kernel of~$\b g$, and for any $x\in \ker(\b g)$, we have that
  \[
-  x= \sum_{A\in \ind(\cat) \setminus \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+  x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
  \]
 \end{theorem}
 
 \begin{corollary}
 Assume that~$\ind(\cat)$ is finite.
 Let~$X\infl E\defl Y\dashrightarrow$ be any extriangle.
-Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\setminus\add(\susp T)$.
+Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\ssm \add(\susp T)$.
 \end{corollary}
 
 %%%%
