@@ -153,7 +153,8 @@
 \newcommand{\coefficients}{\mathrm{P}} % a coefficients tuple
 \newcommandx{\variables}[2][1=\B_\circ, 2 = \coefficients_\circ]{\mathcal{V}(#1,#2)} % all variables
 \newcommandx{\clusterAlgebra}[2][1=\B_\circ, 2=\coefficients_\circ]{\mathcal{A}\!\left(#1,#2\right)} % cluster algebra
-\newcommandx{\principalClusterAlgebra}[1][1=\B_\circ]{\mathcal{A}_{\mathrm{pr}}\left(#1\right)} % principal coefficients cluster algebra
+\newcommandx{\principalClusterAlgebra}[1][1=\B_\circ]{\mathcal{A}\left(#1\right)} % principal coefficients cluster algebra
+\newcommandx{\principalVariables}[1][1=\B_\circ]{\mathcal{V}(#1)} % all variables, principal case
 \newcommandx{\coefficientFreeClusterAlgebra}[1][1=\B_\circ]{\mathcal{A}_{\mathrm{fr}}(#1)} % coefficient free cluster algebra
 \newcommandx{\clusterComplex}[1][1=\B_\circ]{\Delta(#1)} % cluster complex
 \newcommand{\B}{\mathrm{B}} % b-matrix
@@ -161,6 +162,7 @@
 \newcommand{\D}{\mathrm{D}} % symmetrizer
 \newcommand{\simpleRoot}{\alpha} % simple root
 \newcommand{\fundamentalWeight}{\omega} % fundamental weights
+\newcommandx{\meshes}[1][1=\B_\circ]{\mathcal{M}\!\left(#1\right)} % meshes
 
 % Gentle associahedra
 \newcommand{\quiver}{\bar Q} % quiver
@@ -491,7 +493,8 @@ We say that the type cone is \defn{simplicial} when it has precisely $N-n$ facet
 
 %%%%%%%%%%%
 
-\subsection{Coherent fans}
+\subsection{Unique exchange property}
+\label{subsec:uniqueExchangeProperty}
 
 Two rays~$\ray$ and~$\ray'$ of~$\Fan$ are called \defn{compatible} if there are both contained in a cone of~$\Fan$ and \defn{exchangeable} if there are two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$.
 If~$\rays(\Fan)$ denotes the set of rays of~$\Fan$, a \defn{compatibility degree} for~$\Fan$ is a function~$\compatibilityDegree{-}{-}: \rays(\Fan) \times \rays(\Fan) \to \R$ such that
@@ -622,30 +625,30 @@ Equivalently, its vertices correspond to rooted binary trees with $(n+1)$ intern
 These bijections become clear when the convex $(n+3)$-gon is drawn with its vertices on a concave curve labeled by~$0, \dots, n+2$.
 The following statement provides three equivalent geometric constructions of~$\Asso[n]$.
 
-\begin{proposition}
-\label{prop:associahedronLoday}
+\begin{theorem}
+\label{thm:associahedronLoday}
 The associahedron~$\Asso[n]$ can be described equivalently as:
 \begin{itemize}
 \item the convex hull of the points~$L(T) \in \R^{n+1}$ for all rooted binary trees~$T$ with~$n+1$ internal nodes, where the $i$th coordinate of~$L(T)$ is the product of the number of leaves in the left subtree by the number of leaves in the right subtree of the $i$th node of~$T$ in inorder~\cite{Loday},
-\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{i \le \ell \le j} x_\ell \ge \binom{j-i+2}{2}}$ for all proper intervals~$[i,j]$ of~$[n+1]$,~\cite{ShniderSternberg},
+\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{a < \ell < b} x_\ell \ge \binom{b-a+2}{2}}$ for all internal diagonal~$(a,b)$ of \mbox{the $(n+3)$-gon~\cite{ShniderSternberg}},
 \item the Minkowski sum of the faces~$\simplex_{[i,j]}$ of the standard $n$-dimensional simplex~$\simplex$ corresponding to all proper intervals~$[i,j]$ of~$[n+1]$,~\cite{Postnikov}.
 \end{itemize}
-\end{proposition}
+\end{theorem}
 
 We now focus on the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$.
 Since~$\Asso[n]$ leaves in a hyperplane of~$\R^{n+1}$, so does its normal fan.
 Let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = 0}$ and~$\pi : \R^{n+1} \to \HH$ denote the orthogonal projection.
 
-\begin{proposition}
-\label{prop:normalFanLoday}
+\begin{theorem}
+\label{thm:normalFanLoday}
 In the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$, 
 \begin{itemize}
-\item the normal vector of the facet corresponding to an internal diagonal~$(a,b)$ of the $(n+3)$-gon is the vector~$\gvector{a,b} \eqdef \pi\big( \sum_{a < \ell < b} \b{e}_\ell \big) = (n+1) \sum_{a < \ell < b} \b{e}_\ell - (j-i+1) \sum_{1 \le \ell \le n+1} \b{e}_\ell$.
+\item the normal vector of the facet corresponding to an internal diagonal~$(a,b)$ of the $(n+3)$-gon is the vector~$\gvector{a,b} \eqdef \pi\big( \sum_{a < \ell < b} \b{e}_\ell \big) = (n+1) \sum_{a < \ell < b} \b{e}_\ell - (b-a+1) \sum_{1 \le \ell \le n+1} \b{e}_\ell$.
 \item the normal cone of the vertex corresponding to a rooted binary tree~$T$ is the incidence cone~$\bigset{\b{x} \in \HH}{x_i \le x_j \text{ for all edges $i \to j$ in $T$}}$.
 \end{itemize}
-\end{proposition}
+\end{theorem}
 
-Let us also recall the linear dependencies in this fan and observe that it has the unique exchange property.
+Let us also recall the linear dependencies in this fan and observe that it has the unique exchange property discussed in \cref{subsec:uniqueExchangeProperty}.
 From now on, we use the convention that~$\gvector{a,b} = 0$ when~$(a,b)$ is a boundary edge of the $(n+3)$-gon.
 
 \begin{proposition}
@@ -704,7 +707,7 @@ This shows that any exchange relation is a positive linear combination of the ex
 Conversely, since~$\gvectorFan[n]$ has dimension~$n$ and~$n(n+3)/2$ rays (corresponding to the internal diagonals of the $(n+3)$-gon), we know from \cref{rem:dimTypeCone} that there are at least~$n(n+1)/2$ extremal exchangeable pairs. We thus conclude that all exchangeable pairs of diagonals~$\{(a,b-1), (a+1,b)\}$ for~$1 \le a < b-2 \le n$ are extremal.
 \end{proof}
 
-The following statement follows from the end of the previous proof.
+Our next statement follows from the end of the previous proof.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeAsso}
@@ -733,7 +736,7 @@ Cluster algebras were introduced by S.~Fomin and A.~Zelevinsky~\cite{FominZelevi
 Here, we will focus on finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasII} and more specifically on properties of their $\b{g}$-vectors~\cite{FominZelevinsky-ClusterAlgebrasIV}.
 These $\b{g}$-vectors support a complete simplicial fan, which is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, and revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
 More recently in~\cite{BazierMatteDouvilleMousavandThomasYildirim}, V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Yildirim extended the construction of associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to acyclic seeds of simply laced finite type cluster algebras.
-Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply laced or not) cluster algebra with respect to any seed (acyclic or not) by showing that the type cone of the $\b{g}$-vector fan of any finite type cluster algebra is simplicial.
+Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply laced or not) cluster algebra with respect to any seed (acyclic or not) by providing a direct proof that the type cone of the $\b{g}$-vector fan of any finite type cluster algebra is simplicial.
 
 \subsubsection{Cluster algebras and $\b{g}$-vector fans}
 
@@ -780,7 +783,7 @@ p'_y =
 \begin{cases}
 	p_x^{-1}  & \text{if } y = x', \\
 	p_y\negativeExponents{p_x}^{b_{xy}}  & \text{if } y \neq x' \text{ and } b_{xy} \leq 0, \\
-	p_y\positiveExponents{p_x}^{b_{xy}}  & \text{if } y \neq x' \text{ and } b_{xy} > 0,
+	p_y\positiveExponents{p_x}^{b_{xy}}  & \text{if } y \neq x' \text{ and } b_{xy} > 0.
 \end{cases}
 \]
 \end{itemize}
@@ -788,12 +791,7 @@ An important point is that mutations are involutions: $\mu_{x'} \big( \mu_{x}(\s
 We say that two seeds are \defn{mutationally equivalent} when they can be obtained from each other by a sequence of mutations (we also use the same terminology for exchange matrices).
 %We consider an \defn{initial seed} $\seed_\circ = (\B_\circ, \coefficients_\circ, \cluster_\circ)$ whose cluster variables are supposed to be~$x_1, \dots, x_n$.
 We denote by~$\variables$ the collection of all cluster variables in the seeds mutationally equivalent to an initial seed~$\seed_\circ = (\B_\circ, \coefficients_\circ, \cluster_\circ)$ with cluster variables~$\cluster_\circ = \{x_1, \dots, x_n\}$.
-
-\begin{definition}[{\cite[Def.~2.11]{FominZelevinsky-ClusterAlgebrasIV}}]
-The (geometric type) \defn{cluster algebra} $\clusterAlgebra$ is the $\Z\Trop{m}$-subring of~$\Q(x_1, \dots, x_n, p_1, \dots, p_m)$ generated by~$\variables$.
-% all the cluster variables in all the seeds mutationally equivalent to an initial seed~$\seed_\circ = (\B_\circ, \coefficients_\circ, \cluster_\circ)$ with cluster variables~$\cluster_\circ = \{x_1, \dots, x_n\}$.
-\end{definition}
-
+The (geometric type) \defn{cluster algebra} $\clusterAlgebra$ is the $\Z\Trop{m}$-subring of~$\Q(x_1, \dots, x_n, p_1, \dots, p_m)$ generated by the cluster variables in~$\variables$.
 The \defn{cluster complex} of~$\clusterAlgebra$ is the simplicial complex whose vertices are the cluster variables of~$\clusterAlgebra$ and whose facets are the clusters of~$\clusterAlgebra$.
 
 \para{Finite type}
@@ -818,17 +816,14 @@ From now on, we fix a finite type cluster algebra~$\clusterAlgebra$ and we consi
 \end{itemize}
 and the basis of simple roots is dual to the basis of fundamental coweights, while the basis of fundamental weights is dual to the basis of simple coroots.
 
-The cluster complex of a finite cluster algebra~$\clusterAlgebra$ is independent of the choice of coefficients and of the choice of the initial seed (as long at it remains in the same mutation class), and therefore only depends on the cluster type of~$\clusterAlgebra$ (\ie the Cartan type of~$\A(\B)$ in \cref{thm:finiteTypeClassification}).
-Moreover, for~$\B_\circ^\vee \eqdef -\transpose{\B_\circ}$, then the map sending a cluster variable~$x$ in a seed~$\seed$ of~$\clusterAlgebra$ to the cluster variable~$x^\vee$ in the seed~$\seed^\vee$ of~$\principalClusterAlgebra[\B_\circ^\vee]$ obtained by the same sequence of mutations defines a natural isomorphism between the cluster complexes of~$\clusterAlgebra$ and~$\clusterAlgebra[\B_\circ^\vee]$.
+The cluster complex of a finite type cluster algebra~$\clusterAlgebra$ is independent of the choice of coefficients and of the choice of the initial seed (as long at it remains in the same mutation class), and therefore only depends on the cluster type of~$\clusterAlgebra$ (\ie the Cartan type of~$\A{\B}$ in \cref{thm:finiteTypeClassification}).
+Moreover, for~$\B_\circ^\vee \eqdef -\transpose{\B_\circ}$, then the map sending a cluster variable~$x$ in a seed~$\seed$ of~$\clusterAlgebra$ to the cluster variable~$x^\vee$ in the seed~$\seed^\vee$ of~$\clusterAlgebra[\B_\circ^\vee]$ obtained by the same sequence of mutations defines a natural isomorphism between the cluster complexes of~$\clusterAlgebra$ and~$\clusterAlgebra[\B_\circ^\vee]$.
 
 \para{Principal coefficients and $\b{g}$- and $\b{c}$-vectors}
 %
 We now consider principal coefficients to define the $\b{g}$- and $\b{c}$-vectors.
-
-\begin{definition}[{\cite[Def.~3.1]{FominZelevinsky-ClusterAlgebrasIV}}]
-The cluster algebra with \defn{principal coefficients} at~$\B_\circ$ is the cluster algebra~$\principalClusterAlgebra \eqdef \clusterAlgebra[\B_\circ][\coefficients_\circ]$ in~$\Q(x_1, \dots, x_n, p_1, \dots, p_n)$, where~$\coefficients_\circ = \{p_x\}_{x \in \cluster_\circ}$ are precisely the generators~$p_1, \dots, p_n$ of~$\Trop{n}$ relabeled by~$\cluster_\circ$.
-\end{definition}
-
+As defined in~\cite[Def.~3.1]{FominZelevinsky-ClusterAlgebrasIV}, the cluster algebra with \defn{principal coefficients} at~$\B_\circ$ is the cluster algebra~$\clusterAlgebra[\B_\circ][\coefficients_\circ]$ in~$\Q(x_1, \dots, x_n, p_1, \dots, p_n)$, where~$\coefficients_\circ = \{p_x\}_{x \in \cluster_\circ}$ are precisely the generators~$p_1, \dots, p_n$ of~$\Trop{n}$ relabeled by~$\cluster_\circ$.
+For simplicity, we drop the mention of the coefficients for principal cluster algebras in the notations for seeds~$\seed = (\B, \cluster)$, for cluster algebras~$\principalClusterAlgebra$ and for variables~$\principalVariables$.
 Principal coefficients cluster algebras are $\Z^n$-graded (in the fundamental weight basis~$\{\omega_x\}_{x \in \cluster_\circ}$ of~$V$) for the degree function~$\deg(\B_\circ,\cdot)$ on $\principalClusterAlgebra$ is obtained by setting
 \(
 \deg(\B_\circ,  x) \eqdef \fundamentalWeight_x
@@ -870,8 +865,7 @@ for any two cluster variables~$x,y \in \seed$.
 
 \para{The $\b{g}$-vector fan and generalized associahedron}
 %
-The following statement is well known.
-\vincent{Explain}
+The following statement is well known and admits several possible proofs as discussed in~\cite[Sect.~4]{HohlwegPilaudStella}.
 Examples are illustrated in \cref{fig:clusterFans}.
 
 \begin{figure}[h]
@@ -897,11 +891,11 @@ together with all their faces, forms a complete simplicial fan, called the \defn
 \end{theorem}
 
 Moreover, this fan is known to be polytopal.
-More precisely, consider a vector~$\b{h} \in \R^{\variables}$ such that
+More precisely, consider a vector~$\b{h} \in \R^{\principalVariables}$ such that
 \[
 \b{h}_x + \b{h}_{x'} > \max \Big( \sum_{{y \in \cluster \cap \cluster', \; b_{xy} < 0}} -b_{xy} \, \b{h}_y \;,  \sum_{{y \in \cluster \cap \cluster', \; b_{xy} > 0}} b_{xy} \, \b{h}_y \Big).
 \]
-for any adjacent seeds~$(\B, \coefficients, \cluster)$ and~$(\B', \coefficients', \cluster')$ with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$.
+for any adjacent seeds~$(\B, \cluster)$ and~$(\B', \cluster')$ with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$.
 Such a vector~$\b{h}$ exists, see the discussion in~\cite[Prop.~28]{HohlwegPilaudStella}.
 
 \begin{theorem}[{\cite[Thm.~26]{HohlwegPilaudStella}}]
@@ -920,7 +914,7 @@ The following proposition was stated in~\cite[Lem.~19]{HohlwegPilaudStella}.
 
 \begin{lemma}
 \label{lem:linearDependencegvectorsCA}
-For any finite type~exchange matrix~$\B_\circ$ and any adjacent seeds~${(\B, \coefficients, \cluster)}$ and~${(\B', \coefficients', \cluster')}$ in $\principalClusterAlgebra$ with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_\circ$ satisfy precisely one of the following two linear dependences
+For any finite type~exchange matrix~$\B_\circ$ and any adjacent seeds~${(\B, \cluster)}$ and~${(\B', \cluster')}$ in $\principalClusterAlgebra$ with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_\circ$ satisfy precisely one of the following two linear dependences
 \[
 \gvectorFull{\B_\circ}{x} + \gvectorFull{\B_\circ}{x'} = \sum_{\substack{y \in \cluster \cap \cluster' \\ b_{xy} < 0}} -b_{xy} \, \gvectorFull{\B_\circ}{y}
 \quad\text{or}\quad
@@ -928,7 +922,7 @@ For any finite type~exchange matrix~$\B_\circ$ and any adjacent seeds~${(\B, \co
 \]
 \end{lemma}
 
-Note that \cref{lem:linearDependencegvectorsCA} implies \cref{thm:generalizedAsso} since it ensures that the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the $\b{g}$-vector fan contains the cone of~${\b{h} \in \R^{\variables}}$ such that
+Note that \cref{lem:linearDependencegvectorsCA} implies \cref{thm:generalizedAsso} since it ensures that the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the $\b{g}$-vector fan contains the cone of~${\b{h} \in \R^{\principalVariables}}$ such that
 \(
 \b{h}_x + \b{h}_{x'} > \sum_{{y \in \cluster \cap \cluster', \; b_{xy} < 0}} -b_{xy}
 \)
@@ -937,7 +931,7 @@ and
 % \quad\text{and}\quad
 \b{h}_x + \b{h}_{x'} > \sum_{{y \in \cluster \cap \cluster', \; b_{xy} > 0}} b_{xy} \, \b{h}_y
 \)
-for any seeds~$(\B, \coefficients, \cluster)$ and~$(\B', \coefficients', \cluster')$ with~${\cluster \ssm \{x\} = \cluster' \ssm \{x'\}}$.
+for any seeds~$(\B, \cluster)$ and~$(\B', \cluster')$ with~${\cluster \ssm \{x\} = \cluster' \ssm \{x'\}}$.
 
 Unfortunately, \cref{lem:linearDependencegvectorsCA} is less precise than \cref{prop:exchangeablePairsAsso}. Indeed, which of the two possible linear dependences is satisfied by the $\b{g}$-vectors of~$\cluster \cup \cluster'$ depends on the initial exchange matrix~$\B_\circ$.
 We will prove however that it is independent of the seeds containing~$x$ and~$x'$.
@@ -950,46 +944,45 @@ For any finite type exchange matrix~$\B_\circ$, the $\b{g}$-vector fan has the u
 \subsubsection{Type cone of $\b{g}$-vector fans}
 
 The linear dependences of \cref{lem:linearDependencegvectorsCA} provide a redundant description of the type cone of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
-We denote by~$\b{n}(\B_\circ, x, x')$ the normal vector of the inequality of the type cone corresponding to two exchangeable cluster variable~$x$ to~$x'$ (it is well defined by \cref{prop:uniqueExchangePropertyCA}.
+We denote by~$\b{n}(\B_\circ, x, x')$ the normal vector of the inequality of the type cone corresponding to two exchangeable cluster variable~$x$ to~$x'$ (it is well defined by \cref{prop:uniqueExchangePropertyCA}).
 In other words, depending on which of the two linear dependences of \cref{lem:linearDependencegvectorsCA} holds, we have
 \[
 \b{n}(\B_\circ, x, x') \eqdef \b{f}_x + \b{f}_{x'} - \sum_{\substack{y \in \cluster \cap \cluster' \\ b_{xy} < 0}} -b_{xy} \, \b{f}_y
 \qquad\text{or}\qquad
 \b{n}(\B_\circ, x, x') \eqdef \b{f}_x + \b{f}_{x'} - \sum_{\substack{y \in \cluster \cap \cluster' \\ b_{xy} > 0}} b_{xy} \, \b{f}_y,
 \]
-where~$(\b{f}_x)_{x \in \variables}$ denotes the canonical basis of~$\R^{\variables}$.
+where~$(\b{f}_x)_{x \in \principalVariables}$ denotes the canonical basis of~$\R^{\principalVariables}$.
 We obtain the following statement.
 
 \begin{corollary}
 \label{coro:typeConeCA}
 For any finite type exchange matrix~$\B_\circ$, the type cone of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$ is given by
 \[
-\typeCone(\gvectorFan[\B_\circ]) = \set{\b{h} \in \R^{\variables}}{\dotprod{\b{n}(\B_\circ, x, x')}{\b{h}} > 0 \text{ for all exchangeable cluster variables } x, x'}.
+\typeCone(\gvectorFan[\B_\circ]) = \set{\b{h} \in \R^{\principalVariables}}{\dotprod{\b{n}(\B_\circ, x, x')}{\b{h}} > 0 \text{ for all exchangeable cluster variables } x, x'}.
 \]
 \end{corollary}
 
 In order to describe the facets of this type cone, we need the following special mutations.
 
 \begin{definition}
-Consider a seed~$(\B, \coefficients, \cluster)$ and a cluster variable~$x \in \cluster$. The mutation of~$\seed$ in direction~$x$ is a \defn{mesh mutation} if the entries~$b_{xy}$ for~$y \in X$ are all non-negative, or all non-positive.
+Consider a seed~$(\B, \cluster)$ and a cluster variable~$x \in \cluster$. The mutation of~$\seed$ in direction~$x$ is a \defn{mesh mutation} if the entries~$b_{xy}$ for~$y \in \cluster$ are all non-negative, or all non-positive.
 \end{definition}
 
-For instance, in the initial seed~$(\B_\circ, \coefficients_\circ, \cluster_\circ)$, the mutation in the direction of any variable~${x_\circ \in \cluster_\circ}$ is a mesh.
-% and the corresponding $\b{g}$-vector linear dependence is~$\gvectorFull{\B_\circ}{x_\circ} + \gvectorFull{\B_\circ}{x_\circ'} = 0$.
-%%, so that~$\b{n}(\B_\circ, x_\circ, x_\circ') = \b{f}_{x_\circ} + \b{f}_{x_\circ'}$. 
+For instance, in the initial seed~$(\B_\circ, \cluster_\circ)$, the mutation in the direction of any variable~${x_\circ \in \cluster_\circ}$ is a mesh.
 We call these meshes \defn{initial}.
+We denote by~$\meshes$ the set of all pairs~$(x,x')$ where~$x$ and~$x'$ are two non-initial cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a mesh mutation.
 The following statement describes the other meshes.
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
-There is precisely one non-initial mesh directed by each positive $\b{c}$-vector of the cluster algebra. Therefore, the number of non-initial meshes is~$N-n$.
+There is precisely one non-initial mesh directed by each positive $\b{c}$-vector of the cluster algebra~$\principalClusterAlgebra$. Therefore~$|\principalVariables| = |\meshes| + n$.
 \end{lemma}
 
-%The linear dependence among the $\b{g}$-vectors of an initial mesh is just~$\gvectorFull{\B_\circ}{x_\circ} + \gvectorFull{\B_\circ}{x_\circ'} = 0$.
-The following statement describes the linear dependence in any other mesh mutation.
+The following statement describes the linear dependence in the mesh mutations.
 
 \begin{lemma}
-Consider two adjacent seeds~${(\B, \coefficients, \cluster)}$ and~${(\B', \coefficients', \cluster')}$ with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$ such that the entries~$b_{xy}$ for~$y \in X$ are all non-positive or all non-negative.
+\label{lem:dependenceMesh}
+Consider two adjacent seeds~${(\B, \cluster)}$ and~${(\B', \cluster')}$ with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$ such that the entries~$b_{xy}$ for~$y \in \cluster$ are all non-positive or all non-negative.
 If either~$x$ or~$x'$ is an initial cluster variable, then
 \[
 \gvectorFull{\B_\circ}{x} + \gvectorFull{\B_\circ}{x'} = 0.
@@ -1003,39 +996,41 @@ Otherwise, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_
 %\]
 \end{lemma}
 
+For~$(x,x') \in \meshes$ and~$y \in \principalVariables$, we denote by~$\alpha_{x,x',y}$ the coefficient of~$\gvectorFull{\B_\circ}{y}$ in the linear dependence between the $\b{g}$-vectors~$\gvectorFull{\B_\circ}{x}$ and~$\gvectorFull{\B_\circ}{x'}$. In other words, according to \cref{lem:dependenceMesh}, if~${(\B, \cluster)}$ and~${(\B', \cluster')}$ are two adjacent seeds with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$, we have~$\alpha_{x,x',y} = |b_{xy}|$ for~$y \in \cluster \cap \cluster'$ and~$\alpha_{x,x',y} = 0$ otherwise.
+
 Our main result states that the linear dependences between the $\b{g}$-vectors of any mutation can be decomposed into positive combinations of linear dependences arising from meshes.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsCA}
+For any finite type exchange matrix~$\B_\circ$ (acyclic or not), the non-initial mesh mutations precisely correspond to the extremal exchangeable pairs of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
 \end{proposition}
 
-Our next statement follws from~\cref{prop:extremalExchangeablePairsCA,lem:bijectionMeshMutations}.
+This statement will be proved in full generality in \cref{???}.
+We proved it in \cref{prop:extremalExchangeablePairsAsso} for acyclic initial seeds in type~$A$. To provide an intuition of the result, we sketch here a proof for arbitrary initial seeds in type~$A$.
+
+\begin{proof}[Sketch of \cref{prop:extremalExchangeablePairsCA} in type~$A$]
+We need to prove that the normal vector~$\b{n}(\B_\circ, y, y')$ for any exchangeable pair~$\{y,y'\}$ is a positive linear combination of the vectors~$\b{n}(\B_\circ, x, x')$ for non-initial meshes.
+\vincent{Do we really want to do that?}
+\end{proof}
+
+Our next statement follows from~\cref{prop:extremalExchangeablePairsCA,lem:bijectionMeshMutations}.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeCA}
 The type cone~$\typeCone(\gvectorFan[n])$ is simplicial.
 \end{corollary}
 
-Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeCA,prop:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$. This result was stated in~\cite{BazierMatteDouvilleMousavandThomasYildirim} in the special situation of acyclic seeds in simply-laced types.
+Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeCA,prop:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
+This result was stated in~\cite{BazierMatteDouvilleMousavandThomasYildirim} in the special situation of acyclic seeds in simply-laced types.
+Note that our proof is quite different from~\cite{BazierMatteDouvilleMousavandThomasYildirim} as it relies on our type cone approach.
 
 \begin{theorem}
-For any finite type exchange matrix~$\B_\circ$, and for any~$\b{\ell} \in \R_{>0}^{N-n}$, the polytope
+For any finite type exchange matrix~$\B_\circ$, and for any~$\b{\ell} \in \R_{>0}^{\meshes}$, the polytope
 \[
-R_{\b{\ell}}(\B_\circ) \eqdef \set{\b{z} \in \R^{\variables}}{...}
+R_{\b{\ell}}(\B_\circ) \eqdef \Bigset{\b{z} \in \R^{\principalVariables}}{\b{z} \ge 0 \text{ and } \b{z}_x + \b{z}_{x'} = \sum_{y \in \principalVariables} \alpha_{x,x',y} \, \b{z}_{y} \text{ for all } (x,x') \in \meshes}
 \]
 is a generalized associahedron, whose normal fan is the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
 \end{theorem}
-
-
-\newpage
-
-\begin{remark}
-One important observation is that it seems there is one extremal exchangeable pair for each positive $c$-vector, meaning that for each positive $c$-vector~$\beta$, there is precisely one extremal exchangeable pair~$\{x,x'\}$ of cluster variables for which the flip of~$x$ to~$x'$ (for any pair of clusters~$\{X,X'\}$ with~$X \ssm \{x\} = X' \ssm \{x'\}$) is in the direction of~$\beta$.
-The goal is thus to determine for each positive root which exchangeable pair is extremal.
-This should be done using the Auslander-Reiten quiver to construct two cluster variables from a $c$-vector (see the next paragraph for the idea).
-\end{remark}
-
-\newpage
 
 %%%%%%%%%%%
 
