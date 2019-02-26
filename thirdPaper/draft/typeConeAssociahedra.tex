@@ -17,7 +17,6 @@
 \captionsetup{width=\textwidth}
 
 
-%\tikzlibrary{matrix,quotes,arrows.meta}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2365,7 +2364,7 @@ We will make it explicit when more assumptions are needed.
 
 We start by stating some immediate implications of the existence of conflations~$T\infl 0 \defl \susp T$, for~$T\in\tc$.
 
-\begin{lemma}
+\begin{lemma}\label{lemma::first consequences}
 The following holds:
 \begin{enumerate}[{\rm (a)}]
  \item An object belongs to~$\tc$ if and only if it is projective in~$\cat$.
@@ -2452,18 +2451,18 @@ By~\cite[Proposition 3.17]{NakaokaPalu}, there is a commutative diagram of extri
 (-7,7)*+{T_1}="2";
 (7,7)*+{0}="4";
 (21,7)*+{\susp T_1}="6";
-(28,7)*+{}="8";
+(32,7)*+{}="8";
 %
 (-7,-7)*+{T_0}="12";
 (7,-7)*+{X}="14";
 (21,-7)*+{\susp T_1}="16";
-(28,-7)*+{}="18";
+(32,-7)*+{}="18";
 %
 (-7,-21)*+{X}="22";
 (7,-21)*+{X}="24";
 %
-(-7,-28)*+{}="32";
-(7,-28)*+{}="34";
+(-7,-32)*+{}="32";
+(7,-32)*+{}="34";
 %
 {\ar@{>->} "2";"4"};
 {\ar@{->>} "4";"6"};
@@ -2509,6 +2508,20 @@ We thus have~$t'=t$.
 \begin{corollary}
 The objects in~$\susp\tc$ are precisely the injective objects in~$\cat$.
 \end{corollary}
+
+\begin{proof}
+First note that any injective object belongs to~$\susp \tc$, by Lemma~\ref{lemma::shifts of extriangles}.
+Let us prove that the converse holds.
+Let~$\susp T \infl X \overset{f}{\defl} Y\overset{\delta}{\dashrightarrow}$ be an extriangle with~$T\in\tc$.
+Since~$\cat(-,\susp T)|_\tc = 0$ and~$f$ is~$\tc$-epic, the morphism~$\cat(-,f)_\tc$ is an isomorphism in~$\modt$.
+By Proposition~\ref{prop::KRextricat}, there are morphisms~$Y\overset{s}{\to} X$,~$Y\xrightarrow{h}\susp T'$,~$\susp T'\xrightarrow{t} Y$, for some~$T'\in\tc$ satisfying
+\[
+fs = id_Y + th.
+\]
+By Lemma~\ref{lemma::first consequences} (e),~$\susp\tc$ is a rigid subcategory so that~$t^\ast\delta=0$.
+Equivalently, there is a morphism~$\susp T'\xrightarrow{k} X$ such that~$t=fk$.
+We thus have~$f(s-kh)=id_Y$, showing that the extriangle splits.
+\end{proof}
 
 
 %%%%
