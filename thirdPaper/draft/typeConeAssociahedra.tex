@@ -2306,7 +2306,7 @@ and define
 \]
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}\label{prop::index iso extricat}
  The assignment~$X\mapsto\ind_\tc X$ is well-defined and induces an isomorphism
 \[
 \ind_\tc : \kzero{\cat} \overset{\cong}{\longrightarrow} \kzero{\tc}
@@ -2534,7 +2534,7 @@ Equivalently, there is a morphism~$\susp T'\xrightarrow{k} X$ such that~$t=fk$.
 We thus have~$f(s-kh)=id_Y$, showing that the extriangle splits.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lemma::index well-defined extricat}
  The index is well-defined. More precisely, for any object~$X\in\cat$ and any two conflations~$T_1\overset{f}{\infl} T_0 \overset{g}{\defl} X$,~$T'_1\overset{f'}{\infl} T'_0 \overset{g'}{\defl} X$ with~$T_0,T_1,T'_0,T'_1\in\tc$, we have~$[T_0]-[T_1]=[T'_0]-[T'_1]$ in~$\kzero{\tc}$.
 \end{lemma}
 
@@ -2578,7 +2578,12 @@ Since the objects in~$\tc$ are projective, the two conflations with middle term~
 The equality~$[T'_1]+[T_0]=[T_1]+[T'_0]$ thus holds in~$\kzero{\tc}$.
 \end{proof}
 
-\begin{lemma}
+\begin{remark}
+We note that Lemma~\ref{lemma::index well-defined extricat} only requires the subcategory~$\tc$ to be rigid, and not made of projective objects.
+However, this stronger assumption is used in the proof of Lemma~\ref{lemma::index kzero extricat} below.
+\end{remark}
+
+\begin{lemma}\label{lemma::index kzero extricat}
  The index descends to~$\kzero{\cat}$: For any conflation~$X\infl Y\defl Z$ in~$\cat$, we have~$\ind_\tc Y = \ind_\tc X + \ind_\tc Z$ in~$\kzero{\tc}$.
 \end{lemma}
 
@@ -2590,15 +2595,15 @@ By~\cite[Proposition 3.15]{NakaokaPalu} and axiom (ET4)$^{\mathrm{op}}$, there a
 \xy
 %
 (-7,21)*+{T^Z_1}="-12";
-(7,21)*+{T^Z_1}="-14";
+(10,21)*+{T^Z_1}="-14";
 %
-(-21,7)*+{X}="0";
+(-24,7)*+{X}="0";
 (-7,7)*+{X\oplus T^Z_0}="2";
-(7,7)*+{T^Z_0}="4";
+(10,7)*+{T^Z_0}="4";
 %
-(-21,-7)*+{X}="10";
+(-24,-7)*+{X}="10";
 (-7,-7)*+{Y}="12";
-(7,-7)*+{Z}="14";
+(10,-7)*+{Z}="14";
 %
 {\ar@{=} "-12";"-14"};
 %
@@ -2619,18 +2624,18 @@ By~\cite[Proposition 3.15]{NakaokaPalu} and axiom (ET4)$^{\mathrm{op}}$, there a
 {\ar@{}|\circlearrowright "0";"12"};
 {\ar@{}|\circlearrowright "2";"14"};
 \endxy
-\ \ \ \
+\ \ \ \ \ \ \ \
 \xy
-(-21,7)*+{T^X_1}="0";
-(-7,7)*+{B}="2";
-(7,7)*+{T^Z_1}="4";
+(-24,21)*+{T^X_1}="0";
+(-7,21)*+{B}="2";
+(14,21)*+{T^Z_1}="4";
 %
-(-21,-7)*+{T^X_1}="10";
-(-7,-7)*+{T^X_0\oplus T^Z_0}="12";
-(7,-7)*+{X\oplus T^Z_0}="14";
+(-24,7)*+{T^X_1}="10";
+(-7,7)*+{T^X_0\oplus T^Z_0}="12";
+(14,7)*+{X\oplus T^Z_0}="14";
 %
-(-7,-21)*+{Y}="22";
-(7,-21)*+{Y}="24";
+(-7,-7)*+{Y}="22";
+(14,-7)*+{Y}="24";
 %
 %
 {\ar "0";"2"};
@@ -2657,6 +2662,13 @@ where we have used the fact that~$T_0^Z$ is projective in~$\cat$.
 Moreover, the conflation with middle term~$B$ splits, which implies that~$B$ is isomorphic to~$T_1^X\oplus T_1^Z$.
 \end{proof}
 
+\begin{proof}[Proof of Proposition~\ref{prop::index iso extricat}]
+ By Lemma~\ref{lemma::index well-defined extricat} and Lemma~\ref{lemma::index kzero extricat}, the index induces an well-defined morphism of abelian groups~$\ind_\tc:\kzero{\cat}\to\kzero{\tc}$.
+ It remains to prove that it is an isomorphism.
+ Let~$\pi:\kzero{\tc}\to\kzero{\cat}$ send a class~$[T]\in\kzero{\tc}$ to the class~$[T]\in\kzero{\cat}$.
+ The existence, for any~$T\in\tc$, of a conflation~$0\infl T\defl T$ shows that~$\pi$ is right inverse to~$\ind_\tc$.
+ To see that it is also a left inverse, note that if~$T_1\infl T_0\defl X$ is a conflation in~$\cat$, then the equality~$[X]=[T_0]-[T_1]$ holds in~$\kzero{\cat}$.
+\end{proof}
 
 %%%%
 \subsection{Application to certain categories}
