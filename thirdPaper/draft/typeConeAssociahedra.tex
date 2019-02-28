@@ -2352,7 +2352,7 @@ In this case, the set~$L$ is a basis of the kernel of~$\b g$, and for any $x\in 
  \]
 \end{theorem}
 
-\begin{corollary}
+\begin{corollary}\label{corollary::meshes positively generate extricats}
 Assume that~$\ind(\cat)$ is finite.
 Let~$X\infl E\defl Y\dashrightarrow$ be any extriangle.
 Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\ssm \add(\susp T)$.
@@ -2670,10 +2670,13 @@ Moreover, the conflation with middle term~$B$ splits, which implies that~$B$ is 
  To see that it is also a left inverse, note that if~$T_1\infl T_0\defl X$ is a conflation in~$\cat$, then the equality~$[X]=[T_0]-[T_1]$ holds in~$\kzero{\cat}$.
 \end{proof}
 
-\begin{proof}[Proof of Theorem~\ref{theorem::extricats}]
- 
+\begin{proof}[Proof of Theorem~\ref{theorem::extricats}]\yann{PG: Est-ce que cela te semble suffisant, ou veux-tu que j'ajoute des d\'etails ? }
+ The proof is know similar to the proof of Theorem~\ref{theo::relations-g-vecteurs}, by using Proposition~\ref{prop::KRextricat} instead of Proposition~\ref{prop::functor-F}, Proposition~\ref{prop::index iso extricat} instead of Corollary~\ref{coro::grothendieck-g-vectors}, and the fact that~$\tc$ is made of projective objects instead of Lemma~\ref{lemm::almost-split}.
 \end{proof}
 
+\begin{proof}[Proof of Corollary~\ref{corollary::meshes positively generate extricats}]
+\yann{TO DO}
+\end{proof}
 
 
 %%%%
@@ -2732,6 +2735,32 @@ Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to ap
 
 %%
 \subsubsection{Objects presented by a rigid object}\label{sect::Rigid}
+
+We know describe a setup satisfying the assumptions of Section~\ref{sect::setting} that, at the same time, subsumes all examples given so far, while being easily checked in practice.\yann{A reformuler...}
+
+Let~$(\ec,\mathbb{E},\mathfrak{s})$ be an extriangulated category (for example, a small exact category or a triangulated category), and let~$\tc$ be an essentially small \yann{Cette hypoth\`ese n'appara\^it pas dans [HLN], mais me semble n\'ecessaire...} subcategory of~$\ec$.
+
+For any~$X,Y\in\ec$, let~$\mathbb{E}_\tc(X,Y)$ be the subset of~$\mathbb{E}(X,Y)$ consisting of those~$\delta$ that satisfy~$f^\ast\delta = 0$, for any~$T\in\tc$ and any~$T\xrightarrow{f}X$.
+It is easily seen that~$\mathbb{E}_\tc$ is an additive subfunctor of~$\mathbb{E}$.
+Consider $(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ endowed with the resctriction of the additive realisation~$\mathfrak{s}$.
+Since the deflations in~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ are precisely the deflations in~$(\ec,\mathbb{E},\mathfrak{s})$ that are~$\tc$-epic, they are closed under composition.
+We can thus apply~\cite[Proposition 3.14]{HerschendLiuNakaoka} to obtain that~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ is an extriangulated category.
+With that relative structure, the objects in~$\tc$ become projective.
+Define~$\cat$ to be the full subcategory of~$\ec$ whose objects~$X$ admit an~$\mathfrak{s}_\tc$-conflation~$T_1\infl T_0\defl X$.
+
+\begin{lemma}
+ The full subcategory~$\cat$ is extension-closed in~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$, and thus inherits an extriangulated structure.
+\end{lemma}
+
+\begin{proof}
+ This follows from the proof of Lemma~\ref{lemma::index kzero extricat}.
+\end{proof}
+
+\begin{proposition}
+ 
+\end{proposition}
+
+
 
 %%%%
 \subsection{Examples}
