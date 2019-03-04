@@ -225,115 +225,6 @@
 \newcommand{\kzero}[1]{K_0(#1)}
 \newcommand{\eps}{\varepsilon}
 
-%% SPECIFIC NON-KISSING COMPLEX
-%
-%% COMBINATORICS
-%% quiver
-%
-%% walks
-%\newcommand{\peaks}[1]{\mathsf{peaks}(#1)} % peaks
-%\newcommand{\deeps}[1]{\mathsf{deeps}(#1)} % deeps
-%\newcommand{\distinguishedWalk}[2]{\mathsf{dw}(#1,#2)} % distinguished walk
-%\newcommand{\distinguishedArrows}[2]{\mathsf{da}(#1,#2)} % distinguished arrows
-%\newcommand{\distinguishedString}[2]{\mathsf{ds}(#1,#2)} % distinguished string
-%\newcommand{\distinguishedSign}[2]{\varepsilon(#1,#2)} % distinguished sign
-%
-%% non-kissing complex, lattice, flip graph
-%\newcommand{\kn}{\kappa} % kissing number
-%\newcommand{\KN}{\textsc{kn}} % Kissing Number
-%\newcommandx{\NKC}[1][1=\quiver]{\mathcal{K}_{\mathrm{nk}}(#1)} % non-kissing complex
-%\newcommandx{\RNKC}[1][1=\quiver]{\mathcal{C}_{\mathrm{nk}}(#1)} % non-kissing complex
-%\newcommandx{\NKL}[1][1=\quiver]{\mathcal{L}_{\mathrm{nk}}(#1)} % non-kissing lattice
-%\newcommandx{\NKG}[1][1=\quiver]{\mathcal{G}_{\mathrm{nk}}(#1)} % non-kissing flip graph
-%\newcommandx{\NFC}[1][1=\quiver]{\mathcal{C}_{\mathrm{nf}}(#1)} % non-friendly complex
-%\newcommand{\peak}{\mathrm{peak}} % bottom dissection
-%\newcommand{\deep}{\mathrm{deep}} % top dissection
-%\newcommand{\reversed}[1]{#1^{\mathrm{rev}}} % reverse all arrows
-%\renewcommand{\top}{\mathrm{top}} % top
-%\newcommand{\bottom}{\mathrm{bot}} % bottom
-%\newcommand{\walk}{\operatorname{\omega}} % walk (of a curve)
-%
-%% accordion and slalom complexes
-%\newcommand{\surface}{\mathcal{S}} % an orientable surface
-%\newcommand{\dual}{^*} % duality
-%\newcommand{\dissection}{\mathrm{D}} % dissection of a marked surface
-%\newcommand{\vertices}{\mathcal{V}} % vertices of a dissection
-%\newcommand{\edges}{\mathcal{E}} % edges of a dissection
-%\newcommand{\faces}{\mathcal{F}} % faces of a dissection
-%\renewcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
-%\newcommandx{\RAC}[1][1=\dissection]{\mathcal{C}_{\mathrm{acc}}(#1)} % reduced accordion complex
-%\newcommandx{\SC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{sla}}(#1)} % slalom complex
-%\newcommandx{\RSC}[1][1=\dissection\dual]{\mathcal{C}_{\mathrm{sla}}(#1)} % reduced slalom complex
-%\newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
-%\newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
-%\newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
-%\newcommand{\edgeof}{\operatorname{\varepsilon}} % arc of a vertex
-%\newcommand{\dualedgeof}{\operatorname{\varepsilon}\dual} % dual arc of a vertex
-%\DeclareRobustCommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S
-%\DeclareRobustCommand{\ZZZ}{\mathsf{Z}} % Z
-%\newcommand{\vnext}[1]{#1_{\operatorname{next}}} % next point on the boundary of the surface
-%\newcommand{\vprevious}[1]{#1_{\operatorname{prev}}} % previous point on the boundary of the surface
-%
-%% lattices
-%\newcommand{\meet}{\wedge} % meet
-%\newcommand{\join}{\vee} % join
-%\newcommand{\bigMeet}{\bigwedge} % meet
-%\newcommand{\bigJoin}{\bigvee} % join
-%\newcommand{\closure}[1]{#1^{\mathrm{cl}}} % closure operator
-%\newcommand{\coclosure}[1]{#1^{\mathrm{cocl}}} % coclosure operator
-%\newcommand{\uclosure}[1]{#1^{\underline{\mathrm{cl}}}} % loop free closure operator
-%\newcommand{\Bicl}[1]{\mathsf{Bic}(#1)} % biclosed sets
-%\newcommand{\projDown}{\pi_\downarrow} % down projection map
-%\newcommand{\projUp}{\pi^\uparrow} % up projection map
-%\newcommand{\JI}{\mathsf{JI}} % join-irreducible
-%\newcommand{\MI}{\mathsf{MI}} % meet-irreducible
-%\newcommand{\Cong}{\mathsf{Cong}} % congruence lattice
-%\newcommand{\con}{\mathrm{con}} % congruence contracting a cover relation
-%\newcommand{\ji}{\mathsf{ji}} % join irreducible
-%\newcommand{\mi}{\mathsf{mi}} % meet irreducible
-%
-%% GEOMETRY
-%% d-vectors
-%\newcommand{\dvector}[1]{\mathbf{d}(#1)} % d-vector of the path #1
-%\newcommand{\dvectors}[1]{\mathbf{d}(#1)} % d-vectors of the paths #1
-%\newcommandx{\dvectorFan}[1][1=\quiver]{\mathcal{F}^\mathbf{d}(#1)} % d-vector fan
-%% g-vectors
-%\newcommand{\gvector}[1]{\mathbf{g}(#1)} % g-vector of the path #1
-%\newcommand{\gvectors}[1]{\mathbf{g}(#1)} % g-vectors of the paths #1
-%\newcommandx{\gvectorFan}[1][1=\quiver]{\mathcal{F}^\mathbf{g}(#1)} % g-vector fan
-%% c-vectors
-%\newcommand{\cvector}[2]{\mathbf{c}(#1 \in #2)} % c-vector of the path #1 in the facet #2
-%\newcommand{\cvectors}[1]{\mathbf{c}(#1)} % c-vectors of the paths #1
-%\newcommandx{\allcvectors}[1][1=\quiver]{\mathbf{C}(#1)} % all c-vectors with respect to the initial cluster #1
-%\newcommandx{\cvectorFan}[1][1=\quiver]{\mathcal{F}^\mathbf{c}(#1)} % fan of hyperplanes orthogonal to all c-vectors
-%% points, hyperplanes, half-spaces
-%\newcommand{\point}[1]{\mathbf{p}(#1)} % vertex of the grid associahedron corresponding to the cluster #1
-%\newcommandx{\ray}[1][1=r]{\mathbf{#1}} % ray
-%\newcommandx{\rays}[1][1=R]{\mathbf{#1}} % rays
-%\newcommand{\hs}{\mathbf{H}^{\le}} % half space
-%\newcommand{\HS}[1]{\mathbf{H}^{\le}(#1)} % half space
-%\newcommand{\hyp}{\mathbf{H}^{=}} % hyperplane
-%\newcommand{\Hyp}[1]{\mathbf{H}^{=}(#1)} % hyperplane
-%\newcommand{\fix}[1]{\mathrm{Fix}(#1)} % fix space
-%
-%% ALGEBRA
-%\newcommand{\Hom}[1]{\operatorname{{\rm Hom}}_{#1}}
-%\newcommand{\Ext}[1]{\operatorname{{\rm Ext}}_{#1}}
-%\newcommandx{\AR}[1][1=\quiver]{\mathrm{AR}(#1)} % Auslander-Reiten quiver
-%\newcommandx{\tTC}[1][1=\quiver]{\mathcal{K}^{\textrm{s$\tau$-tilt}}(#1)} % tau-tilting complex
-%\newcommand{\rep}{\operatorname{{\rm rep}}}
-%\newcommand{\proj}{\operatorname{{\rm proj}}}
-%\newcommand{\koszul}{^!} % duality
-
-%% formating the part command
-%\makeatletter
-%\def\part{\@startsection{part}{1}%
-%\z@{.7\linespacing\@plus\linespacing}{.8\linespacing}%
-%{\LARGE\sffamily\centering}}
-%\@addtoreset{section}{part}
-%\makeatother
-%\renewcommand{\thesection}{\arabic{part}.\arabic{section}}
-
 % formating the table of contents
 \makeatletter
 \def\l@section{\@tocline{1}{2pt}{0pc}{}{}}
@@ -471,7 +362,7 @@ In this paper, we are interested in the set of all possible realizations of~$\Fa
 The \defn{type cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admissible height vectors~$\b{h}$:
 \begin{align*}
 \typeCone(\Fan) & \eqdef \set{\b{h} \in \R^N}{\Fan \text{ is the normal fan of } P_\b{h}} \\
-& = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0 \text{ for any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$}}.
+& = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0 \; \begin{array}{l} \text{for any adjacent maximal} \\ \text{cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$} \end{array}}.
 \end{align*}
 \end{definition}
 
@@ -519,7 +410,7 @@ We say that the fan~$\Fan$ has the \defn{unique exchange property} if any two ex
 
 When~$\Fan$ has the unique exchange relation property, we change the notation~$\coefficient[{\ray[s]}][\rays][\rays']$ to~$\coefficient$ and we obtain that the type cone of~$\Fan$ is expressed as
 \[
-\typeCone(\Fan) = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient \, \b{h}_{\ray[s]} > 0 \text{ for any exchangeable rays~$\ray, \ray'$ of~$\Fan$}}.
+\typeCone(\Fan) = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient \, \b{h}_{\ray[s]} > 0 \text{ for any exchangeable rays~$\ray$ and~$\ray'$ of~$\Fan$}}.
 \]
 
 \begin{definition}
@@ -752,7 +643,6 @@ and
 \(
 \negativeExponents{p} \eqdef \prod\limits_{i \in [m]} p_i^{-\min(a_i,0)}
 \).
-%so that~$p = \positiveExponents{p} \negativeExponents{p}^{-1}$.
 
 \medskip
 A \defn{seed}~$\seed$ is a triple~$(\B, \coefficients, \cluster)$ where
@@ -927,7 +817,6 @@ Note that \cref{lem:linearDependencegvectorsCA} implies \cref{thm:generalizedAss
 \)
 and
 \(
-% \quad\text{and}\quad
 \b{h}_x + \b{h}_{x'} > \sum_{{y \in \cluster \cap \cluster', \; b_{xy} > 0}} b_{xy} \, \b{h}_y
 \)
 for any seeds~$(\B, \cluster)$ and~$(\B', \cluster')$ with~${\cluster \ssm \{x\} = \cluster' \ssm \{x'\}}$.
@@ -990,9 +879,6 @@ Otherwise, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_
 \[
 \gvectorFull{\B_\circ}{x} + \gvectorFull{\B_\circ}{x'} = \sum_{y \in \cluster \cap \cluster'} |b_{xy}| \, \gvectorFull{\B_\circ}{y}.
 \]
-%\[
-%\b{n}(\B_\circ, x, x') = \b{f}_x + \b{f}_{x'} - \sum_{y \in \cluster \cap \cluster'} |b_{xy}| \, \b{f}_y
-%\]
 \end{lemma}
 
 For~$(x,x') \in \meshes$ and~$y \in \principalVariables$, we denote by~$\alpha_{x,x',y}$ the coefficient of~$\gvectorFull{\B_\circ}{y}$ in the linear dependence between the $\b{g}$-vectors~$\gvectorFull{\B_\circ}{x}$ and~$\gvectorFull{\B_\circ}{x'}$. In other words, according to \cref{lem:dependenceMesh}, if~${(\B, \cluster)}$ and~${(\B', \cluster')}$ are two adjacent seeds with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$, we have~$\alpha_{x,x',y} = |b_{xy}|$ for~$y \in \cluster \cap \cluster'$ and~$\alpha_{x,x',y} = 0$ otherwise.
@@ -1044,6 +930,7 @@ Non-kissing complexes are geometrically realized by polytopes called gentle asso
 In this section, we describe the type cone of the non-kissing fan of a quiver~$\quiver$ with no self-kissing walks.
 
 \subsubsection{Non-kissing complex and non-kissing fan of a gentle quiver}
+\label{subsubsec:nonkissingComplex}
 
 We present the definitions and properties of the non-kissing complex of a gentle quiver, following the presentation of~\cite{PaluPilaudPlamondon-nonkissing}.
 
@@ -1150,6 +1037,7 @@ The \defn{distinguished walk} of the non-kissing facet~$F \in \NKC$ at the arrow
 The \defn{distinguished arrows} of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ are the arrow where~$\omega$ is the distinguished walk.
 It is shown in~\cite[Prop.~2.28]{PaluPilaudPlamondon-nonkissing} that each bending walk in a non-kissing facet has precisely two distinguished arrows, pointing in opposite directions.
 The \defn{distinguished substring}~$\distinguishedString{\omega}{F}$ of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ is the substring located between its two distinguished arrows.
+We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished string of a walk in a non-kissing facet, and we denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
 
 \begin{definition}[{\cite[Def.~{4.11}]{PaluPilaudPlamondon-nonkissing}}]
 The \defn{$\b{c}$-vector} of a walk~$\omega$ in a non-kissing facet~${F \in \NKC}$ is~${\cvector{F}{\omega} \eqdef \distinguishedSign{\omega}{F} \, \multiplicityVector_{\distinguishedString{\omega}{F}}}$, where~$\distinguishedSign{\omega}{F} \in \{-1,1\}$ is positive if~${\distinguishedString{\omega}{F} \in \Sigma_\top(\omega)}$ and negative if~${\distinguishedString{\omega}{F} \in \Sigma_\bottom(\omega)}$.
@@ -1180,7 +1068,7 @@ Examples are illustrated in \cref{fig:nonkissingFans}.
 \end{figure}
 
 \begin{theorem}[{\cite[Thm.~4.17]{PaluPilaudPlamondon-nonkissing}}]
-\label{thm:nonkissingAsso}
+\label{thm:nonkissingFan}
 For any non-kissing finite gentle quiver~$\quiver$, the set of cones
 \[
 \gvectorFan[\quiver] \eqdef \set{\R_{\ge 0} \, \gvectors{F}}{F \text{ non-kissing face of } \NKC}
@@ -1192,6 +1080,7 @@ It is proved in~\cite[Thm.~4.27]{PaluPilaudPlamondon-nonkissing} that the non-ki
 For a walk~$\omega$, denote by~$\KN(\omega)$ the sum over all other walks~$\omega'$ of the number of kisses between~$\omega$~and~$\omega'$.
 
 \begin{theorem}[{\cite[Thm.~4.27]{PaluPilaudPlamondon-nonkissing}}]
+\label{thm:nonkissingAsso}
 For any non-kissing finite gentle quiver~$\quiver$, the non-kissing fan~$\gvectorFan[\quiver]$ is the normal fan of the \defn{gentle associahedron}~$\Asso[\quiver]$ defined equivalently as:
 \begin{enumerate}[(i)]
 \item the convex hull of the points~$\sum_{\omega \in F} \KN(\omega) \, \cvector{F}{\omega}$ for all facets~${F \in \NKC}$,~or
@@ -1224,32 +1113,20 @@ Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.
 \vincent{Point~(ii) to prove.}
 \end{proof}
 
-In \cref{prop:exchangeablePairsNKC}, the string~$\sigma$ is called the \defn{distinguished} substring of~$\omega$ and~$\omega'$.
-We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished string of an exchangeable pair.
-Note that an equivalent definition of distinguishable strings is given in~\cite[Def.~2.30]{PaluPilaudPlamondon-nonkissing}.
-We denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
-\vincent{Clean that}
-
 \begin{remark}
 \label{rem:exchangeablePairsNKC}
 In view of \cref{prop:exchangeablePairsNKC}, it is tempting to look for a characterization of the exchangeable pairs~$\omega, \omega'$ using the kisses between~$\omega$ and~$\omega'$.
+This question was discussed in \cite[Sect.~9]{BrustleDouvilleMousavandThomasYildirim}.
 However, as illustrated in \cref{fig:nonkissingFans}\,(right), note that
 \begin{itemize}
-\item two exchangeable walks may kiss along more than one string, but only one is the distinguished string,
+\item two exchangeable walks may kiss along more than one string (only one is distinguished),
 \item two non-exchangeable walks can kiss along more than one distinguishable string,
 \item two walks that kiss along a single distinguishable string are not always exchangeable,
 \item not all strings are distinguishable.
 \end{itemize}
-\vincent{More explicit. TODO}
+In \cref{subsubsec:simplicialTypeConeNKC}, we will restrict to a situation that avoids all these patologies.
 \vincent{Do we still have these problems when the gentle algebra is brick and/or without oriented $2$-cycle?}
 \end{remark}
-
-\begin{corollary}
-For any non-kissing finite gentle quiver~$\quiver$, the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ is given by
-\[
-\typeCone(\gvectorFan[\quiver]) = \set{\b{h} \in \R^{\walks}}{\begin{array}{l} \b{h}_\omega = 0 \text{ for any improper walk } \omega \\ \b{h}_\omega + \b{h}_{\omega'} > \b{h}_\mu + \b{h}_\nu \text{ for any exchangeable walks } \omega, \omega' \end{array}}.
-\]
-\end{corollary}
 
 \para{Numerology}
 %
@@ -1265,17 +1142,59 @@ The number of distinguishable strings~$\distinguishableStrings$ and proper walks
 
 \para{Two families of examples: grid and dissection quivers}
 %
-We conclude this recollections on non-kissing complexes by two families of examples.
-\vincent{TODO}
+We conclude this recollections on non-kissing complexes by two families of examples:
+\begin{enumerate}[(1)]
+\item \textbf{Grid quivers}: Consider the infinite grid quiver~$\quiver_{Z^2}$, whose vertices are all integer points of~$\Z^2$, whose arrows connect between~$(i,j) \longrightarrow (i,j+1)$ and~$(i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$, and whose relations forbid~$(i-1,j) \longrightarrow (i,j) \longrightarrow (i,j+1)$ and~$(i,j-1) \longrightarrow (i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$. A \defn{gentle grid quiver} is any subquiver~$\quiver_A$ of~$\quiver_{Z^2}$ induced by a finite subset~$A \subset \Z^2$ of the integer grid. The non-kissing complex of gentle grid quivers were introduced in~\cite{McConville} with motivation coming from~\cite{PetersenPylyavskyySpeyer} and~\cite{SantosStumpWelker}. 
 
-\bigskip
-We are now ready to describe the type cone of the non-kissing fan~$\gvectorFan[\quiver]$.
-We first treat the case when~$\quiver$ has no self-kissing walks, which includes both grid and dissection quivers, thus in particular the case of the classical associahedron.
-We show that the type cone is then simplicial which gives another proof of \cref{thm:simplicialTypeConeAsso} and \cref{coro:descriptionAllAsso}.
+\smallskip
+\item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. The non-kissing complex of~$\quiver_D$ the corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
+\end{enumerate}
 
-\subsubsection{Simplicial type cones for self-kissing free quivers}
+\vincent{Example picture?}
 
-In this section, we focus on the following family of gentle quivers, which was also considered in~\cite[Sect.~4]{}.
+\smallskip
+These two families of non-kissing complexes are well-behaved as they avoid all pathologies of \cref{rem:exchangeablePairsNKC}.
+However, they still provide good examples of non-kissing complexes.
+In particular, both families contain the classical associahedron.
+Namely, the gentle associahedron~$\Asso[\quiver]$ is the classical associahedron of~\cite{ShniderSternberg, Loday} presented in \cref{thm:associahedronLoday} when~${\quiver = \quiver_A}$ for the path~${A = \set{(0,j)}{j \in [n]}}$ or equivalently~$\quiver = \quiver_D$ for the fan triangulation~$D$ (where all internal diagonals incident to the same point).
+More generally, $\Asso[\quiver]$ is an associahedron of~\cite{HohlwegLange} when~$\quiver = \quiver_A$ for a ribbon~$A$ or equivalently~$\quiver = \quiver_D$ for a triangulation~$D$.
+
+Note that, it was shown in~\cite{PaluPilaudPlamondon-surfaces} that the accordion complexes can be extended to dissections of arbitrary orientable surfaces with marked points and then provide a geometric model for all non-kissing complexes of gentle quivers.
+
+\subsubsection{Type cones of non-kissing fans}
+
+We now discuss the type cones of the non-kissing fans defined in \cref{thm:nonkissingFan}. We obtain from \cref{prop:exchangeablePairsNKC} the following redundant description.
+
+\begin{corollary}
+For any non-kissing finite gentle quiver~$\quiver$, the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ is given by
+\[
+\typeCone(\gvectorFan[\quiver]) = \set{\b{h} \in \R^{\walks}}{\begin{array}{l} \b{h}_\omega = 0 \text{ for any improper walk } \omega \\ \b{h}_\omega + \b{h}_{\omega'} > \b{h}_\mu + \b{h}_\nu \text{ for any exchangeable walks } \omega, \omega' \end{array}},
+\]
+where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are defined in \cref{prop:exchangeablePairsNKC}.
+\end{corollary}
+
+\begin{example}
+\label{exm:typeConeNKC}
+Consider the gentle quivers of \cref{fig:typeConeNKC}.
+\vincent{Todo}
+\end{example}
+
+As illustrated in \cref{exm:typeConeNKC}, the type cone of the non-kissing fan is not simplicial and we do not always understand its extremal exchangeable pairs.
+In the next section section, we will explore a special family of gentle quivers for which we can completely describe the type cone.
+The combination of this special family with computer experiments in the general case support the following conjecture.
+
+\begin{conjecture}
+Consider a distinguishable string~$\sigma \in \distinguishableStrings$, and let~$\omega$ (resp.~$\omega'$) be the walk obtained from~$\sigma$ by adding two hooks (resp.~two cohooks) at the endpoints of~$\sigma$. Then
+\begin{enumerate}
+\item The $\b{c}$-vector~$\multiplicityVector_\sigma$ is the direction of at least one extremal exchangeable pair.
+\item If the walks~$\omega$ and~$\omega'$ are non-self-kissing and exchangeable, then they form the unique extremal exchangeable pair directed by~$\sigma$. These extremal exchangeable pairs correspond to meshes of the Auslander-Reiten quiver.
+\end{enumerate}
+\end{conjecture}
+
+\subsubsection{Simplicial type cones for self-kissing-free and $2$-cycle-free quivers}
+\label{subsubsec:simplicialTypeConeNKC}
+
+In this section, we focus on the following family of gentle quivers, which was also considered in~\cite[Sect.~4]{GarverMcConvilleMousavand}.
 
 \begin{proposition}
 \label{prop:noSelfKissing}
@@ -1287,43 +1206,22 @@ The following conditions are equivalent for a gentle quiver~$\quiver$.
 \end{enumerate}
 \end{proposition}
 
-The quivers of this family are particularly well-behaved: they avoid all pathologies of \cref{rem:exchangeablePairsNKC} and we will prove that the type cone of their non-kissing fan happens to be simplicial.\pg{Need to exclude two-cycles, else false.}
-Note that this family already contains a lot of relevant examples, including:
+We say that a gentle quiver~$\quiver$ is \defn{simple} when
 \begin{itemize}
-\item classical associahedra
-\item grid associahedra
-\item dissection associahedra
+\item it satisfies the three equivalent conditions of \cref{prop:noSelfKissing},
+\item it contains no cycle of length~$2$.
 \end{itemize}
-\vincent{More explicit. TODO}
+Note that this family already contains a lot of relevant examples, including the grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
+In particular, the classical associahedron is the gentle associahedron of a simple gentle quiver.
+We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a simple gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
 
-%For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\hL\sigma$, resp.~$\sigma\cR$, resp.~$\cL\sigma$) the unique string of~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\hL\sigma = \alpha_\ell^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma$, resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$, resp.~$\cL\sigma = \alpha_\ell \dots \alpha_2 \alpha_1^{-1} \sigma$) with~$\ell \ge 1$ and~$\alpha_1, \dots, \alpha_\ell \in Q_1$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$, resp.~$s(\alpha_\ell)$, resp.~$t(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~\defn{cohook}) to~$\sigma$.
 We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
 The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply be denoted~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
 
-%For a string~$\sigma$ of~$\quiver$, we denote by~$\hh{\sigma}$, $\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$ the unique walks on~$\quiver$ of the~form
-%\begin{alignat*}{3}
-%\hh{\sigma} & = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell
-%\qquad\qquad
-%& \cc{\sigma} & = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}
-%\\
-%\hc{\sigma} & = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}
-%\qquad\qquad
-%& \ch{\sigma} & = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell.
-%\end{alignat*}
-%%\begin{itemize}
-%%\item by~$\hh{\sigma}$ the unique walk on~$\quiver$ of the form~$\hh{\sigma} = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell$,
-%%\item by~$\cc{\sigma}$ the unique walk on~$\quiver$ of the form~$\cc{\sigma} = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}$.
-%%\item by~$\hc{\sigma}$ the unique walk on~$\quiver$ of the form~$\hc{\sigma} = \alpha_k^{-1} \dots \alpha_2^{-1} \alpha_1 \sigma \beta_1 \beta_2^{-1} \dots \beta_\ell^{-1}$.
-%%\item by~$\ch{\sigma}$ the unique walk on~$\quiver$ of the form~$\ch{\sigma} = \alpha_k \dots \alpha_2 \alpha_1^{-1} \sigma \beta_1^{-1} \beta_2 \dots \beta_\ell$.
-%%\end{itemize}
-%with~$k,\ell \ge 1$ and~$\alpha_1, \dots, \alpha_k, \beta_1, \dots, \beta_\ell \in Q_1$.
-%The following statement ensures that in a gentle quiver with no self-kissing walk, the walks~$\hh{\sigma}$ and~$\cc{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
-
 \begin{proposition}
-For any gentle quiver~$\quiver$ with no self-kissing walk and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
-\vincent{This is FALSE...}
+For any simple gentle quiver~$\quiver$ and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
 \end{proposition}
 
 \begin{proof}
@@ -1335,7 +1233,7 @@ The following statement describes the type cone of the non-kissing fan of a gent
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsNKC}
-For any gentle quiver~$\quiver$ with no self-kissing walk, the extremal exchangeable pairs for the non-kissing fan of~$\quiver$ are precisely the pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for all strings~$\sigma \in \strings$.
+For any simple gentle quiver~$\quiver$, the extremal exchangeable pairs for the non-kissing fan of~$\quiver$ are precisely the pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for all strings~$\sigma \in \strings$.
 \end{proposition}
 
 \begin{proof}
@@ -1426,13 +1324,14 @@ The following statement now follows from \cref{prop:bijectionStringsWalks,prop:e
 
 \begin{corollary}
 \label{coro:simplicialTypeConeNKC}
-For any gentle quiver~$\quiver$ with no self-kissing walk, the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan~$\quiver$ is simplicial.
+For any simple gentle quiver~$\quiver$, the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan~$\quiver$ is simplicial.
 \end{corollary}
 
 Combining \cref{coro:simplicialTypeCone}, \cref{coro:simplicialTypeConeNKC} and \cref{prop:extremalExchangeablePairsNKC}, we derive the following description of all polytopal realizations of the non-kissing fan~$\gvectorFan[\quiver]$ of a quiver~$\quiver$ with no self-kissing~walk.
 
 \begin{corollary}
-For any gentle quiver~$\quiver$ with no self-kissing walk and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
+\label{coro:allPolytopalRealizationsNKC}
+For any simple gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
 \[
 R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any improper walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
 \]
@@ -1455,49 +1354,6 @@ Any $\b{c}$-vector supports exactly one extremal exchangeable pair.
 \label{rem:meshARquiver}
 Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we note that the extremal exchangeable pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ and their linear dependencies~${\gvector{\cc{\sigma}} + \gvector{\hh{\sigma}} - \gvector{\hc{\sigma}} - \gvector{\ch{\sigma}}}$ precisely correspond to the meshes of the Auslander-Reiten quiver of~$\quiver$.
 \end{remark}
-
-\subsubsection{Towards the general case}
-
-We are already missing a criterion for exchangeable pairs of walks. See \cite[Sect.~9]{BrustleDouvilleMousavandThomasYildirim}.
-It seems that two exchangeable walks are always kissing along a single distinguishable string.
-We need to prove that to see that the non-kissing fan has the unique exchange relation property (because for a pair of exchangeable walks, I can completely reconstruct the $\b{g}$-vector dependence of the flip if I know their distinguished substring).
-Note however that
-\begin{enumerate}
-\item exchangeable pairs might kiss along additional non-distinguishable strings (example: just a loop),
-\item non-exchangeable walks might kiss along a single distinguishable string (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon-nonkissing}).
-\item non-exchangeable walks might kiss along two or more distinguishable strings (example: see the cyclic triangle in~\cite{PaluPilaudPlamondon-nonkissing}).
-\end{enumerate}
-
-%In view of these two points, the following conjecture seems plausible.
-%
-%\begin{conjecture}
-%Two walks~$\omega$ and~$\omega'$ are exchangeable if and only if
-%\begin{itemize}
-%\item they kiss along a single distinguishable string~$\sigma$ (note that they might also kiss along other strings as long as they are not distinguishable),
-%\item decomposing~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ according to their common distinguishable string, the two walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$ are non-self-kissing.
-%\end{itemize}
-%Recall that with these notations, for any flip exchanging~$\omega$ and~$\omega'$, we have the linear dependence
-%\[
-%\gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
-%\]
-%\end{conjecture}
-
-We have some conjectures on what the extremal exchangeable pairs should be.
-One clear (but a bit empty) result is that extremal exchangeable pairs correspond in the Auslander-Reiten quiver to rectangles whose four vertices are non-self-kissing and that cannot be tiled with smaller such rectangles.
-
-We checked on some (but probably not enough) small gentle quivers the following properties:
-\begin{enumerate}
-\item Any $c$-vector (\ie distinguishable string) is the direction of at least one extremal exchangeable pair.
-\item Consider a distinguishable string~$\sigma$. Let~$\omega$ (resp.~$\omega'$) be the walk obtained from~$\sigma$ by adding two hooks (resp.~two cohooks) at the endpoints of~$\sigma$. If the walks~$\omega$ and~$\omega'$ are non-self-kissing and exchangeable, then they form the unique extremal exchangeable pair directed by~$\sigma$. These extremal exchangeable pairs correspond to meshes of the Auslander-Reiten quiver.\pg{The conjecture is the word ``unique''.}
-\item Otherwise, $\sigma$ is the direction to one or more extremal exchangeable pairs obtained by moving further in the Auslander-Reiten quiver (this is really unclear at the moment).
-\end{enumerate}
-
-\begin{figure}[t]
-	\capstart
-	\centerline{\includegraphics[scale=.6]{fan}}
-	\caption{The shards corresponding to the facets of the type cone. Is there a geometric meaning?}
-	\label{fig:fanShards}
-\end{figure}
 
 %%%%%%%%%%%
 
