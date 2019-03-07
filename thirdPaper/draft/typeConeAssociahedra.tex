@@ -2527,7 +2527,7 @@ Moreover, the conflation with middle term~$B$ splits, which implies that~$B$ is 
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{theorem::extricats}]\yann{PG: Est-ce que cela te semble suffisant, ou veux-tu que j'ajoute des d\'etails ? }
- The proof is know similar to the proof of Theorem~\ref{theo::relations-g-vecteurs}, by using Proposition~\ref{prop::KRextricat} instead of Proposition~\ref{prop::functor-F}, Proposition~\ref{prop::index iso extricat} instead of Corollary~\ref{coro::grothendieck-g-vectors}, and the fact that~$\tc$ is made of projective objects instead of Lemma~\ref{lemm::almost-split}.
+ The proof is now similar to the proof of Theorem~\ref{theo::relations-g-vecteurs}, by using Proposition~\ref{prop::KRextricat} instead of Proposition~\ref{prop::functor-F}, Proposition~\ref{prop::index iso extricat} instead of Corollary~\ref{coro::grothendieck-g-vectors}, and the fact that~$\tc$ is made of projective objects instead of Lemma~\ref{lemm::almost-split}.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{corollary::meshes positively generate extricats}]
@@ -2590,9 +2590,9 @@ Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to ap
 
 
 %%
-\subsubsection{Objects presented by a rigid object}\label{sect::Rigid}
+\subsubsection{Objects presented by a subcategory}\label{sect::prT}
 
-We know describe a setup satisfying the assumptions of Section~\ref{sect::setting} that, at the same time, subsumes all examples given so far, while being easily checked in practice.\yann{A reformuler...}
+We know describe a setup satisfying the assumptions of Section~\ref{setting::extricat} that, at the same time, subsumes all examples given so far, while being easily checked in practice.\yann{A reformuler...}
 
 Let~$(\ec,\mathbb{E},\mathfrak{s})$ be an extriangulated category (for example, a small exact category or a triangulated category), and let~$\tc$ be an essentially small \yann{Cette hypoth\`ese n'appara\^it pas dans [HLN], mais me semble n\'ecessaire...} subcategory of~$\ec$.
 
@@ -2604,7 +2604,7 @@ We can thus apply~\cite[Proposition 3.14]{HerschendLiuNakaoka} to obtain that~$(
 With that relative structure, the objects in~$\tc$ become projective.
 Define~$\cat$ to be the full subcategory of~$\ec$ whose objects~$X$ admit an~$\mathfrak{s}_\tc$-conflation~$T_1\infl T_0\defl X$.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:: prT is extriangulated}
  The full subcategory~$\cat$ is extension-closed in~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$, and thus inherits an extriangulated structure.
 \end{lemma}
 
@@ -2612,16 +2612,24 @@ Define~$\cat$ to be the full subcategory of~$\ec$ whose objects~$X$ admit an~$\m
  This follows from the proof of Lemma~\ref{lemma::index kzero extricat}.
 \end{proof}
 
-\begin{proposition}
-Assume that
-Then the extriangulated category~$\cat$ satisfies the assumptions (1) to (3) of Section~\ref{sect::setting}.
+\begin{notation}
+ Write~$\tc^\perp$ for the full subcategory of~$\ec$ whose objects are those objects~$X\in\ec$ that satisfy~$\ec(T,X)=0$, for any~$T\in\tc$.
+\end{notation}
+
+\begin{proposition}\label{prop::prT}
+Assume that, for any~$T\in\tc$, there is an~$\mathfrak{s}$-conflation~$T\infl 0\defl X_T$ in~$\ec$ with~$X_T\in\tc^\perp$.
+Then the extriangulated category~$\cat$ satisfies the assumptions (1) to (3) of Section~\ref{setting::extricat}.
 \end{proposition}
 
 \begin{proof}
 For any~$T\in\tc$ the existence of an extriangle~$0\infl T\defl T\overset{0}{\dashrightarrow}$ shows that~$\tc$ is a full subcategory of~$\cat$.
-
-
+By Lemma~\ref{lemma:: prT is extriangulated}, the category~$\cat$ is extriangulated and, by definition of this extriangulated structure, the objects in~$\tc$ are projective in~$\cat$.
+Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is equivalent to that of the proposition.
 \end{proof}
+
+\begin{remark}
+ The categories considered in Sections~\ref{sect::2CYTriangulated},~\ref{sect::2CYexact} and~\ref{sect::Kbproj} all fall into the setting of Proposition~\ref{prop::prT}.
+\end{remark}
 
 
 
