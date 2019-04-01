@@ -11,13 +11,10 @@
 \usepackage{tikz-cd}
 \usepackage{tkz-graph}
 \usetikzlibrary{trees, decorations, decorations.markings, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
-\graphicspath{{figures/}}
+\graphicspath{{figures/}{figures/walks/}{figures/tubes}}
 \makeatletter\def\input@path{{figures/}}\makeatother
 \usepackage{caption}
 \captionsetup{width=\textwidth}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -112,6 +109,7 @@
 \newcommand{\ex}{_{\textrm{exm}}} % examples
 \newcommand{\pa}{_{\textrm{pa}}} % path
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, scale=.7] (char) {#1};}}
+\newcommand{\compactVector}[3]{\begin{bmatrix} #1 \\[-.1cm] #2 \\[-.1cm] #3 \end{bmatrix}}
 
 % marginal comments
 \usepackage{todonotes}
@@ -851,13 +849,13 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan
 \end{corollary}
 
 \begin{example}
-Consider the initial $B$-matrices~$\B_\circ$ whose cluster fans are illustrated in \cref{fig:clusterFans}.
-\newcommand{\compactVector}[3]{\begin{bmatrix} #1 \\[-.1cm] #2 \\[-.1cm] #3 \end{bmatrix}}
+Consider the cluster fans illustrated in \cref{fig:clusterFans}.
+The type cone of the left one lives in~$\R^9$, has a linearity space of dimension~$3$ (a basis is given below) and $6$ facet defining inequalities (given below). 
 
 \[
-\begin{array}{c|ccccccccc}
-\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1 + x_2}{x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} \\[.3cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{1}{-1} & \compactVector{0}{0}{-1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} \\[.5cm]
+\begin{array}{r|ccccccccc}
+\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1 + x_2}{x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} \\[.2cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{1}{-1} & \compactVector{0}{0}{-1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} \\[.6cm]
 \text{lines}		& 0 & 0 & 1 & 1 & 0 & -1 & -1 & 0 & 0 \\
 					& 0 & -1 & 0 & 0 & 1 & -1 & 0 & 0 & 1 \\
 					& 1 & 1 & 0 & -1 & 0 & 1 & 0 & -1 & -1 \\[.2cm]
@@ -903,10 +901,14 @@ Consider the initial $B$-matrices~$\B_\circ$ whose cluster fans are illustrated 
 % An inequality (0, 0, 0, 1, 0, 0, 0, 1, -1) x + 0 >= 0,
 % An inequality (0, 0, 0, 0, 1, 0, -1, -1, 1) x + 0 >= 0)
 
-\centerline{$
-\begin{array}{c|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}c}
-\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.3cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{2}{-1} & \compactVector{0}{1}{-1} & \compactVector{-1}{1}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} & \compactVector{-2}{0}{1} & \compactVector{-1}{0}{0}  \\[.5cm]
+\bigskip
+\noindent
+The type cone of the right one lives in~$\R^12$, has a linearity space of dimension~$3$ (a basis is given below) and $9$ facet defining inequalities (given below). 
+
+\[
+\begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}c}
+\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.2cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{2}{-1} & \compactVector{0}{1}{-1} & \compactVector{-1}{1}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} & \compactVector{-2}{0}{1} & \compactVector{-1}{0}{0}  \\[.6cm]
 \text{lines}		& 1 & 1 & 2 & 1 & 0 & 0 & -1 & 0 & -1 & -2 & 0 & -1 \\
 					& 0 & 1 & 0 & 0 & -1 & 2 & 1 & 1 & -1 & 0 & 0 & 0 \\
 					& 0 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 0 & 1 & -1 & 0 \\[.2cm]
@@ -920,7 +922,7 @@ Consider the initial $B$-matrices~$\B_\circ$ whose cluster fans are illustrated 
 					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
 					& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
 \end{array}
-$}
+\]
 
 %sage: B = Matrix([[0,-1,2],[1,0,-2],[-1,1,0]])
 %sage: CA = ClusterAlgebra(B)
@@ -1288,7 +1290,24 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 
 \begin{example}
 \label{exm:typeConeNKC}
-Consider the gentle quivers whose non-kissing fans are illustrated in \cref{fig:nonkissingFans}.
+Consider the non-kissing fans illustrated in \cref{fig:nonkissingFans}.
+The type cone of the left one lives in~$\R^9$, has a linearity space of dimension~$3$ (a basis is given below) and $6$ facet defining inequalities (given below). 
+
+\[
+\begin{array}{r|cccccccc}
+\text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA8}} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{1}{-1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{lines}		& 0 & -1 & 0 & 1 & -1 & 0 & 1 & 0 \\
+					& 1 & 1 & 0 & 0 & 1 & -1 & -1 & 0 \\
+					& 0 & 0 & 1 & 0 & -1 & 0 & 0 & -1 \\[.2cm]
+\text{inequalities} & -1 & 0 & 0 & 1 & 1 & 0 & 0 & -1 \\
+					& 1 & 0 & 0 & -1 & 0 & 0 & 1 & 0 \\
+					& 0 & -1 & 1 & 0 & 1 & 0 & 0 & 0 \\
+					& 0 & 0 & 0 & 1 & 0 & 1 & -1 & 0 \\
+					& 0 & 1 & 0 & 0 & -1 & 0 & 0 & 1
+\end{array}
+\]
+
 %sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e3':['b']}}, [('a','b')])
 %
 %sage: Q.non_kissing_fan().rays()
@@ -1305,37 +1324,63 @@ Consider the gentle quivers whose non-kissing fans are illustrated in \cref{fig:
 %sage: TCNKC = type_cone_NKC(Q)
 %sage: TCNKC
 %A 8-dimensional polyhedron in QQ^8 defined as the convex hull of 1 vertex, 5 rays, 3 lines
+%sage: TCNKC.lines()
+%(A line in the direction (0, 0, 1, 0, 1, 0, -1, -1),
+% A line in the direction (1, 0, 0, 0, -1, -1, 1, 1),
+% A line in the direction (0, 1, 0, -1, 0, 0, 0, -1))
 %sage: TCNKC.inequalities()
 %(An inequality (-1, 0, 1, -1, 0, 0, 0, 1) x + 0 >= 0,
 % An inequality (1, 0, -1, 0, 1, 0, 0, 0) x + 0 >= 0,
 % An inequality (0, 1, 0, 0, 0, 0, -1, 1) x + 0 >= 0,
 % An inequality (0, 0, 1, 0, -1, 1, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 0, 1, 0, 0, 1, -1) x + 0 >= 0)
-%sage: TCNKC.lines()
-%(A line in the direction (0, 0, 1, 0, 1, 0, -1, -1),
-% A line in the direction (1, 0, 0, 0, -1, -1, 1, 1),
-% A line in the direction (0, 1, 0, -1, 0, 0, 0, -1))
 
+\bigskip
+\noindent
+The type cone of the right one lives in~$\R^11$, has a linearity space of dimension~$3$ (a basis is given below) and $9$ facet defining inequalities (given below). In particular, it is not simplicial.
+
+\[
+\begin{array}{r|c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c}
+\text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB11}} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{1}{0}{-1} & \compactVector{0}{-1}{1} & \compactVector{0}{1}{-1} & \compactVector{-1}{0}{1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{lines}		& 0 & -1 & 0 & 1 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+					& 1 & 0 & 0 & 1 & 1 & 0 & 0 & -1 & -1 & 0 & 0 \\
+					& 1 & 0 & 1 & 1 & 0 & 1 & -1 & 0 & -1 & 0 & -1 \\[.2cm]
+\text{inequalities} & 0 & 0 & 0 & 1 & 0 & -1 & 0 & 1 & 0 & 0 & 0 \\
+					& -1 & 1 & 0 & 0 & 1 & 0 & -1 & 0 & 0 & 0 & 0 \\
+					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 & 0 & 1 \\
+					& 1 & 0 & -1 & -1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+					& 0 & 0 & 0 & 1 & -1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+					& 0 & 0 & 1 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -1 & 1 & -1 & 0 \\
+					& 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 & 0 & 1 & -1 \\
+					& 0 & -1 & 0 & 0 & 0 & 0 & 1 & 1 & -1 & 0 & 0
+\end{array}
+\]
 
 %sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e3':['b']}, 'e3':{'e1':['c']}}, [('b','c')])
 %
 %sage: Q.non_kissing_fan().rays()
-%N( 1,  0,  0),
-%N( 0,  0,  1),
-%N( 1,  0, -1),
-%N( 1, -1,  0),
-%N( 0,  0, -1),
-%N(-1,  0,  1),
-%N( 0, -1,  0),
-%N( 0, -1,  1),
-%N(-1,  0,  0),
-%N( 0,  1,  0),
-%N( 0,  1, -1)
+%N( 1,  0,  0),0
+%N( 0,  0,  1),1
+%N( 1,  0, -1),2
+%N( 1, -1,  0),3
+%N( 0,  0, -1),4
+%N(-1,  0,  1),5
+%N( 0, -1,  0),6
+%N( 0, -1,  1),7
+%N(-1,  0,  0),8
+%N( 0,  1,  0),9
+%N( 0,  1, -1)10
 %in 3-d lattice N
 %
 %sage: TCNKC = type_cone_NKC(Q)
 %sage: TCNKC
 %A 11-dimensional polyhedron in QQ^11 defined as the convex hull of 1 vertex, 9 rays, 3 lines
+%sage: TCNKC.lines()
+%(A line in the direction (0, 0, 0, 1, 0, 0, 1, 1, 0, -1, -1),
+% A line in the direction (1, 0, 1, 1, 0, -1, 0, 0, -1, 0, 0),
+% A line in the direction (1, 1, 0, 1, -1, 0, 0, 1, -1, 0, -1))
 %sage: TCNKC.inequalities()
 %(An inequality (0, 0, 0, 1, 0, 1, 0, -1, 0, 0, 0) x + 0 >= 0,
 % An inequality (-1, 0, 1, 0, 0, 0, 0, 0, 0, 1, -1) x + 0 >= 0,
@@ -1346,10 +1391,6 @@ Consider the gentle quivers whose non-kissing fans are illustrated in \cref{fig:
 % An inequality (0, 0, 0, 0, 0, -1, -1, 1, 1, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 1, -1, -1, 0, 1, 0, 0, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 0, 0, 0, 1, 0, 0, -1, -1, 1) x + 0 >= 0)
-%sage: TCNKC.lines()
-%(A line in the direction (0, 0, 0, 1, 0, 0, 1, 1, 0, -1, -1),
-% A line in the direction (1, 0, 1, 1, 0, -1, 0, 0, -1, 0, 0),
-% A line in the direction (1, 1, 0, 1, -1, 0, 0, 1, -1, 0, -1))
 \vincent{Todo}
 \end{example}
 
