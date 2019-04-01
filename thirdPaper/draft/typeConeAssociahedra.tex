@@ -624,13 +624,13 @@ is an $n$-dimensional associahedron.
 %We now extend the results of the previous section to the $\b{g}$-vector fan of any finite type cluster algebra with respect to any seed (acyclic or not).
 Cluster algebras were introduced by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasI} with motivation coming from total positivity and canonical bases.
 Here, we will focus on finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasII} and more specifically on properties of their $\b{g}$-vectors~\cite{FominZelevinsky-ClusterAlgebrasIV}.
-These $\b{g}$-vectors support a complete simplicial fan, which is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, and revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
+These $\b{g}$-vectors support a complete simplicial fan, which is called \defn{$\b{g}$-vector fan} or \defn{cluster fan}. It is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, and revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
 More recently in~\cite{BazierMatteDouvilleMousavandThomasYildirim}, V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Yildirim extended the construction of associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to acyclic seeds of simply laced finite type cluster algebras.
-Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply laced or not) cluster algebra with respect to any seed (acyclic or not) by providing a direct proof that the type cone of the $\b{g}$-vector fan of any finite type cluster algebra is simplicial.
+Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply laced or not) cluster algebra with respect to any seed (acyclic or not) by providing a direct proof that the type cone of the cluster fan of any finite type cluster algebra is simplicial.
 
-\subsubsection{Cluster algebras and $\b{g}$-vector fans}
+\subsubsection{Cluster algebras and cluster fans}
 
-We present some definitions and properties of finite type cluster algebras and their $\b{g}$-vector fans, following the presentation of~\cite{HohlwegPilaudStella}.
+We present some definitions and properties of finite type cluster algebras and their cluster fans, following the presentation of~\cite{HohlwegPilaudStella}.
 
 \para{Cluster algebras}
 %
@@ -752,7 +752,7 @@ Then the set of $\b{g}$-vectors~$\gvectorFull{\B_\circ}{\seed}$ and the set of $
 for any two cluster variables~$x,y \in \seed$.
 \end{theorem}
 
-\para{The $\b{g}$-vector fan and generalized associahedron}
+\para{Cluster fan and generalized associahedron}
 %
 The following statement is well known and admits several possible proofs as discussed in~\cite[Sect.~4]{HohlwegPilaudStella}.
 Examples are illustrated in \cref{fig:clusterFans}.
@@ -766,7 +766,7 @@ Examples are illustrated in \cref{fig:clusterFans}.
 	\put(98,30){$\left[\begin{array}{@{}c@{\;}c@{\;}c@{}} 0 & -1 & 2 \\ 1 & 0 & -2 \\ -1 & 1 & 0 \end{array}\right]$}
 	\end{overpic}
 	}
-	\caption{Two $\b{g}$-vector fans~$\gvectorFan[\B_\circ]$ for the type~$A_3$~(left) and type~$C_3$~(right) cyclic initial exchange matrices. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{HohlwegPilaudStella}.}
+	\caption{Two cluster fans~$\gvectorFan[\B_\circ]$ for the type~$A_3$~(left) and type~$C_3$~(right) cyclic initial exchange matrices. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{HohlwegPilaudStella}.}
 	\label{fig:clusterFans}
 \end{figure}
 
@@ -776,7 +776,7 @@ For any finite type exchange matrix~$\B_\circ$, the collection of cones \\[.1cm]
 \centerline{
 $\gvectorFan[\B_\circ] \eqdef \bigset{\R_{\ge0} \, \gvectorsFull{\B_\circ}{\seed}}{\seed \text{ seed of } \principalClusterAlgebra},$
 } \\[.1cm]
-together with all their faces, forms a complete simplicial fan, called the \defn{$\b{g}$-vector fan} of~$\B_\circ$.
+together with all their faces, forms a complete simplicial fan, called the \defn{$\b{g}$-vector fan} or \defn{cluster fan} of~$\B_\circ$.
 \end{theorem}
 
 Moreover, this fan is known to be polytopal.
@@ -789,14 +789,14 @@ Such a vector~$\b{h}$ exists, see the discussion in~\cite[Prop.~28]{HohlwegPilau
 
 \begin{theorem}[{\cite[Thm.~26]{HohlwegPilaudStella}}]
 \label{thm:generalizedAsso}
-For any finite type exchange matrix~$\B_\circ$, the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$ is the normal fan of the \defn{$\B_\circ$-associahedron}~$\Asso[\B_\circ, \b{h}]$ defined equivalently as
+For any finite type exchange matrix~$\B_\circ$, the cluster fan~$\gvectorFan[\B_\circ]$ is the normal fan of the \defn{$\B_\circ$-associahedron}~$\Asso[\B_\circ, \b{h}]$ defined equivalently as
 \begin{enumerate}[(i)]
 \item the convex hull of the points~$\sum_{x \in \seed} \b{h}_x \, \cvectorFull{\B_\circ^\vee}{\seed^\vee}{x^\vee}$ for all seeds~$\seed$ of~$\principalClusterAlgebra$, or
 \item the intersection of the halfspaces~$\set{\b{v} \in V^\vee}{\dotprod{\gvectorFull{\B_\circ}{x}}{\b{v}} \le \b{h}_x}$ for all cluster variables~$x$ of~$\principalClusterAlgebra$.
 \end{enumerate}
 \end{theorem}
 
-\para{Mutations in the $\b{g}$-vector fan}
+\para{Mutations in the cluster fan}
 %
 We now discuss the linear dependences between $\b{g}$-vectors of adjacent seeds.
 The following proposition was stated in~\cite[Lem.~19]{HohlwegPilaudStella}.
@@ -811,7 +811,7 @@ For any finite type~exchange matrix~$\B_\circ$ and any adjacent seeds~${(\B, \cl
 \]
 \end{lemma}
 
-Note that \cref{lem:linearDependencegvectorsCA} implies \cref{thm:generalizedAsso} since it ensures that the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the $\b{g}$-vector fan contains the cone of~${\b{h} \in \R^{\principalVariables}}$ such that
+Note that \cref{lem:linearDependencegvectorsCA} implies \cref{thm:generalizedAsso} since it ensures that the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the cluster fan contains the cone of~${\b{h} \in \R^{\principalVariables}}$ such that
 \(
 \b{h}_x + \b{h}_{x'} > \sum_{{y \in \cluster \cap \cluster', \; b_{xy} < 0}} -b_{xy}
 \)
@@ -826,12 +826,12 @@ We will prove however that it is independent of the seeds containing~$x$ and~$x'
 
 \begin{proposition}
 \label{prop:uniqueExchangePropertyCA}
-For any finite type exchange matrix~$\B_\circ$, the $\b{g}$-vector fan has the unique exchange relation property.
+For any finite type exchange matrix~$\B_\circ$, the cluster fan has the unique exchange relation property.
 \end{proposition}
 
-\subsubsection{Type cone of finite type $\b{g}$-vector fans}
+\subsubsection{Type cone of finite type cluster fans}
 
-The linear dependences of \cref{lem:linearDependencegvectorsCA} provide a redundant description of the type cone of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
+The linear dependences of \cref{lem:linearDependencegvectorsCA} provide a redundant description of the type cone of the cluster fan~$\gvectorFan[\B_\circ]$.
 We denote by~$\b{n}(\B_\circ, x, x')$ the normal vector of the inequality of the type cone corresponding to two exchangeable cluster variable~$x$ to~$x'$ (it is well defined by \cref{prop:uniqueExchangePropertyCA}).
 In other words, depending on which of the two linear dependences of \cref{lem:linearDependencegvectorsCA} holds, we have
 \[
@@ -844,13 +844,32 @@ We obtain the following statement.
 
 \begin{corollary}
 \label{coro:typeConeCA}
-For any finite type exchange matrix~$\B_\circ$, the type cone of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$ is given by
+For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan~$\gvectorFan[\B_\circ]$ is given by
 \[
 \typeCone(\gvectorFan[\B_\circ]) = \set{\b{h} \in \R^{\principalVariables}}{\dotprod{\b{n}(\B_\circ, x, x')}{\b{h}} > 0 \text{ for all exchangeable cluster variables } x, x'}.
 \]
 \end{corollary}
 
 \begin{example}
+Consider the initial $B$-matrices~$\B_\circ$ whose cluster fans are illustrated in \cref{fig:clusterFans}.
+\newcommand{\compactVector}[3]{\begin{bmatrix} #1 \\[-.1cm] #2 \\[-.1cm] #3 \end{bmatrix}}
+
+\[
+\begin{array}{c|ccccccccc}
+\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1 + x_2}{x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} \\[.3cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{1}{-1} & \compactVector{0}{0}{-1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} \\[.5cm]
+\text{lines}		& 0 & 0 & 1 & 1 & 0 & -1 & -1 & 0 & 0 \\
+					& 0 & -1 & 0 & 0 & 1 & -1 & 0 & 0 & 1 \\
+					& 1 & 1 & 0 & -1 & 0 & 1 & 0 & -1 & -1 \\[.2cm]
+\text{inequalities} & -1 & 0 & 0 & 0 & 1 & 1 & -1 & 0 & 0 \\
+ 					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 \\
+ 					& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 \\
+ 					& 0 & 0 & 1 & -1 & 0 & 0 & 0 & 1 & 0 \\
+ 					& 0 & 1 & 0 & 0 & 0 & -1 & 1 & 0 & 0 \\
+ 					& 0 & -1 & 0 & 1 & 0 & 1 & 0 & -1 & 0
+\end{array}
+\]
+
 %sage: B = Matrix([[0,-1,1],[1,0,-1],[-1,1,0]])
 %sage: CA = ClusterAlgebra(B)
 %
@@ -872,6 +891,10 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the $\b{g}$-vec
 %sage: TCCA = type_cone_CA(CA)
 %sage: TCCA
 %A 9-dimensional polyhedron in QQ^9 defined as the convex hull of 1 vertex, 6 rays, 3 lines
+%sage: TCCA.lines()
+%(A line in the direction (0, 1, 0, -1, 1, 0, 0, 0, -1),
+% A line in the direction (0, 0, 1, 0, 0, 1, 0, -1, -1),
+% A line in the direction (1, 0, 0, 0, -1, -1, -1, 1, 1))
 %sage: TCCA.inequalities()
 %(An inequality (-1, 0, 1, -1, 0, 0, 0, 0, 1) x + 0 >= 0,
 % An inequality (1, 0, -1, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
@@ -880,6 +903,24 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the $\b{g}$-vec
 % An inequality (0, 0, 0, 1, 0, 0, 0, 1, -1) x + 0 >= 0,
 % An inequality (0, 0, 0, 0, 1, 0, -1, -1, 1) x + 0 >= 0)
 
+\centerline{$
+\begin{array}{c|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}c}
+\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.3cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{2}{-1} & \compactVector{0}{1}{-1} & \compactVector{-1}{1}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} & \compactVector{-2}{0}{1} & \compactVector{-1}{0}{0}  \\[.5cm]
+\text{lines}		& 1 & 1 & 2 & 1 & 0 & 0 & -1 & 0 & -1 & -2 & 0 & -1 \\
+					& 0 & 1 & 0 & 0 & -1 & 2 & 1 & 1 & -1 & 0 & 0 & 0 \\
+					& 0 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 0 & 1 & -1 & 0 \\[.2cm]
+\text{inequalities} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 \\
+					& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 \\
+					& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 \\
+					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 \\
+					& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 \\
+					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+					& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{array}
+$}
 
 %sage: B = Matrix([[0,-1,2],[1,0,-2],[-1,1,0]])
 %sage: CA = ClusterAlgebra(B)
@@ -959,7 +1000,7 @@ Our main result states that the linear dependences between the $\b{g}$-vectors o
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsCA}
-For any finite type exchange matrix~$\B_\circ$ (acyclic or not), the non-initial mesh mutations precisely correspond to the extremal exchangeable pairs of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
+For any finite type exchange matrix~$\B_\circ$ (acyclic or not), the non-initial mesh mutations precisely correspond to the extremal exchangeable pairs of the cluster fan~$\gvectorFan[\B_\circ]$.
 \end{proposition}
 
 This statement will be proved in full generality in \cref{???}.
@@ -977,7 +1018,7 @@ Our next statement follows from~\cref{prop:extremalExchangeablePairsCA,lem:bijec
 The type cone~$\typeCone(\gvectorFan[n])$ is simplicial.
 \end{corollary}
 
-Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeCA,prop:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
+Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeCA,prop:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the cluster fan~$\gvectorFan[\B_\circ]$.
 This result was stated in~\cite{BazierMatteDouvilleMousavandThomasYildirim} in the special situation of acyclic seeds in simply-laced types.
 Note that our proof is quite different from~\cite{BazierMatteDouvilleMousavandThomasYildirim} as it relies on our type cone approach.
 
@@ -986,7 +1027,7 @@ For any finite type exchange matrix~$\B_\circ$, and for any~$\b{\ell} \in \R_{>0
 \[
 R_{\b{\ell}}(\B_\circ) \eqdef \Bigset{\b{z} \in \R^{\principalVariables}}{\b{z} \ge 0 \text{ and } \b{z}_x + \b{z}_{x'} = \sum_{y \in \principalVariables} \alpha_{x,x',y} \, \b{z}_{y} \text{ for all } (x,x') \in \meshes}
 \]
-is a generalized associahedron, whose normal fan is the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
+is a generalized associahedron, whose normal fan is the cluster fan~$\gvectorFan[\B_\circ]$.
 \end{theorem}
 
 %%%%%%%%%%%
@@ -1247,7 +1288,7 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 
 \begin{example}
 \label{exm:typeConeNKC}
-Consider the gentle quivers of \cref{fig:nonkissingFans}.
+Consider the gentle quivers whose non-kissing fans are illustrated in \cref{fig:nonkissingFans}.
 %sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e3':['b']}}, [('a','b')])
 %
 %sage: Q.non_kissing_fan().rays()
