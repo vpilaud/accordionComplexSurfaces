@@ -192,7 +192,7 @@
 \newcommand{\ground}{V} % ground set
 \newcommandx{\graphG}[1][1=G]{#1} % graph
 \newcommandx{\tube}[1][1=t]{\mathsf{#1}} % tube
-\newcommandx{\tubes}{\mathcal{T}} % all tubes
+\newcommandx{\tubes}[1][1=\graphG]{\mathcal{T}(#1)} % all tubes
 \newcommandx{\tubing}[1][1=T]{\mathsf{#1}} % tubing
 \newcommand{\connectedComponents}{\kappa} % connected components
 \newcommand{\nestedComplex}{\mathcal{N}} % nested complex
@@ -829,7 +829,7 @@ We will prove however that it is independent of the seeds containing~$x$ and~$x'
 For any finite type exchange matrix~$\B_\circ$, the $\b{g}$-vector fan has the unique exchange relation property.
 \end{proposition}
 
-\subsubsection{Type cone of $\b{g}$-vector fans}
+\subsubsection{Type cone of finite type $\b{g}$-vector fans}
 
 The linear dependences of \cref{lem:linearDependencegvectorsCA} provide a redundant description of the type cone of the $\b{g}$-vector fan~$\gvectorFan[\B_\circ]$.
 We denote by~$\b{n}(\B_\circ, x, x')$ the normal vector of the inequality of the type cone corresponding to two exchangeable cluster variable~$x$ to~$x'$ (it is well defined by \cref{prop:uniqueExchangePropertyCA}).
@@ -849,6 +849,78 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the $\b{g}$-vec
 \typeCone(\gvectorFan[\B_\circ]) = \set{\b{h} \in \R^{\principalVariables}}{\dotprod{\b{n}(\B_\circ, x, x')}{\b{h}} > 0 \text{ for all exchangeable cluster variables } x, x'}.
 \]
 \end{corollary}
+
+\begin{example}
+%sage: B = Matrix([[0,-1,1],[1,0,-1],[-1,1,0]])
+%sage: CA = ClusterAlgebra(B)
+%
+%sage: CA.explore_to_depth(infinity)
+%sage: gvectors = CA.cluster_fan().rays()
+%sage: for gvector in gvectors:
+%....:     print gvector, CA.cluster_variable(gvector)
+%....:     
+%N(1, 0, 0) x0
+%N(0, 0, 1) x2
+%N(1, -1, 0) (x0 + x2)/x1
+%N(0, 0, -1) (x0 + x1 + x2)/(x1*x2)
+%N(-1, 0, 1) (x1 + x2)/x0
+%N(0, -1, 0) (x0 + x1 + x2)/(x0*x1)
+%N(-1, 0, 0) (x0 + x1 + x2)/(x0*x2)
+%N(0, 1, 0) x1
+%N(0, 1, -1) (x0 + x1)/x2
+%
+%sage: TCCA = type_cone_CA(CA)
+%sage: TCCA
+%A 9-dimensional polyhedron in QQ^9 defined as the convex hull of 1 vertex, 6 rays, 3 lines
+%sage: TCCA.inequalities()
+%(An inequality (-1, 0, 1, -1, 0, 0, 0, 0, 1) x + 0 >= 0,
+% An inequality (1, 0, -1, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, -1, 1, 0, 1, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, -1, 0, 1, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 0, 0, 0, 1, -1) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, 1, 0, -1, -1, 1) x + 0 >= 0)
+
+
+%sage: B = Matrix([[0,-1,2],[1,0,-2],[-1,1,0]])
+%sage: CA = ClusterAlgebra(B)
+%
+%sage: CA.explore_to_depth(infinity)
+%sage: gvectors = CA.cluster_fan().rays()
+%sage: for gvector in gvectors:
+%....:     print gvector, CA.cluster_variable(gvector)
+%....:     
+%N(-1, 1, 0) (x0^2 + x1^2 + x1*x2)/(x0*x2)
+%N(0, 2, -1) (x0^2 + x1^2)/x2
+%N(1, 0, 0) x0
+%N(0, 0, 1) x2
+%N(-2, 0, 1) (x0^2 + x1^2 + 2*x1*x2 + x2^2)/(x0^2*x2)
+%N(1, -1, 0) (x0 + x2)/x1
+%N(0, 0, -1) (x0^2 + x1^2 + 2*x0*x2 + x2^2)/(x1^2*x2)
+%N(-1, 0, 1) (x1 + x2)/x0
+%N(0, -1, 0) (x0 + x1 + x2)/(x0*x1)
+%N(-1, 0, 0) (x0^2 + x1^2 + x0*x2 + x1*x2)/(x0*x1*x2)
+%N(0, 1, 0) x1
+%N(0, 1, -1) (x0^2 + x1^2 + x0*x2)/(x1*x2)
+%
+%sage: TCCA = type_cone_CA(CA)
+%sage: TCCA
+%A 12-dimensional polyhedron in QQ^12 defined as the convex hull of 1 vertex, 9 rays, 3 lines
+%sage: TCCA.lines()
+%(A line in the direction (0, 0, 1, 2, 0, 0, -2, 1, -1, -1, 1, -1),
+% A line in the direction (1, 2, 0, 0, 0, -1, 0, 0, -1, 0, 1, 1),
+% A line in the direction (0, 1, 0, -1, -1, 0, 1, -1, 0, 0, 0, 1))
+%sage: TCCA.inequalities()
+%(An inequality (-2, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0) x + 0 >= 0,
+% An inequality (-1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0) x + 0 >= 0,
+% An inequality (1, 0, 0, 0, -1, 0, 0, 1, 0, 0, -1, 0) x + 0 >= 0,
+% An inequality (0, 0, -1, 0, 0, 1, -1, 0, 0, 0, 0, 1) x + 0 >= 0,
+% An inequality (1, -1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1) x + 0 >= 0,
+% An inequality (0, 0, 0, -1, 0, 1, 0, 1, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -2) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 1, 0, 0, -2, 0, 0, 0, 0) x + 0 >= 0)
+\vincent{todo}
+\end{example}
 
 In order to describe the facets of this type cone, we need the following special mutations.
 
@@ -1025,7 +1097,7 @@ For a multiset~$V = \{\!\{v_1, \dots, v_k\}\!\}$ of~$Q_0$, we denote by $\multip
 
 \begin{definition}[{\cite[Def.~{4.8}]{PaluPilaudPlamondon-nonkissing}}]
 The \defn{$\b{g}$-vector} of a walk~$\omega$ is~$\gvector{\omega} \eqdef \multiplicityVector_{\peaks{\omega}} - \multiplicityVector_{\deeps{\omega}}$.
-We denote by~$\gvectors{F} \eqdef \set{\gvector{\omega}}{\omega \in F}$ the set of $\b{g}$-vectors of a facet~$F$.
+We set~$\gvectors{F} \eqdef \set{\gvector{\omega}}{\omega \in F}$ for a non-kissing facet~$F \in \NKC$.
 \end{definition}
 
 Note that by definition, the $\gvector{\omega} = 0$ for a straight walk~$\omega$.
@@ -1041,7 +1113,7 @@ We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguish
 
 \begin{definition}[{\cite[Def.~{4.11}]{PaluPilaudPlamondon-nonkissing}}]
 The \defn{$\b{c}$-vector} of a walk~$\omega$ in a non-kissing facet~${F \in \NKC}$ is~${\cvector{F}{\omega} \eqdef \distinguishedSign{\omega}{F} \, \multiplicityVector_{\distinguishedString{\omega}{F}}}$, where~$\distinguishedSign{\omega}{F} \in \{-1,1\}$ is positive if~${\distinguishedString{\omega}{F} \in \Sigma_\top(\omega)}$ and negative if~${\distinguishedString{\omega}{F} \in \Sigma_\bottom(\omega)}$.
-We denote by~$\cvectors{F} \eqdef \set{\cvector{F}{\omega}}{\omega \in F}$ the set of $\b{c}$-vectors~of~a~facet~$F$.
+We set~$\cvectors{F} \eqdef \set{\cvector{F}{\omega}}{\omega \in F}$ for a non-kissing facet~$F \in \NKC$.
 \end{definition}
 
 The $\b{g}$- and $\b{c}$-vectors also form dual bases.
@@ -1147,7 +1219,7 @@ We conclude this recollections on non-kissing complexes by two families of examp
 \item \textbf{Grid quivers}: Consider the infinite grid quiver~$\quiver_{Z^2}$, whose vertices are all integer points of~$\Z^2$, whose arrows connect between~$(i,j) \longrightarrow (i,j+1)$ and~$(i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$, and whose relations forbid~$(i-1,j) \longrightarrow (i,j) \longrightarrow (i,j+1)$ and~$(i,j-1) \longrightarrow (i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$. A \defn{gentle grid quiver} is any subquiver~$\quiver_A$ of~$\quiver_{Z^2}$ induced by a finite subset~$A \subset \Z^2$ of the integer grid. The non-kissing complex of gentle grid quivers were introduced in~\cite{McConville} with motivation coming from~\cite{PetersenPylyavskyySpeyer} and~\cite{SantosStumpWelker}. 
 
 \smallskip
-\item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. The non-kissing complex of~$\quiver_D$ the corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
+\item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. The non-kissing complex of~$\quiver_D$ then corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
 \end{enumerate}
 
 \vincent{Example picture?}
@@ -1175,7 +1247,68 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 
 \begin{example}
 \label{exm:typeConeNKC}
-Consider the gentle quivers of \cref{fig:typeConeNKC}.
+Consider the gentle quivers of \cref{fig:nonkissingFans}.
+%sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e3':['b']}}, [('a','b')])
+%
+%sage: Q.non_kissing_fan().rays()
+%N( 1,  0,  0),
+%N( 0,  0,  1),
+%N( 1, -1,  0),
+%N( 0,  0, -1),
+%N( 0, -1,  0),
+%N(-1,  0,  0),
+%N( 0,  1,  0),
+%N( 0,  1, -1)
+%in 3-d lattice N
+%
+%sage: TCNKC = type_cone_NKC(Q)
+%sage: TCNKC
+%A 8-dimensional polyhedron in QQ^8 defined as the convex hull of 1 vertex, 5 rays, 3 lines
+%sage: TCNKC.inequalities()
+%(An inequality (-1, 0, 1, -1, 0, 0, 0, 1) x + 0 >= 0,
+% An inequality (1, 0, -1, 0, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, 0, 0, -1, 1) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, -1, 1, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 0, 0, 1, -1) x + 0 >= 0)
+%sage: TCNKC.lines()
+%(A line in the direction (0, 0, 1, 0, 1, 0, -1, -1),
+% A line in the direction (1, 0, 0, 0, -1, -1, 1, 1),
+% A line in the direction (0, 1, 0, -1, 0, 0, 0, -1))
+
+
+%sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e3':['b']}, 'e3':{'e1':['c']}}, [('b','c')])
+%
+%sage: Q.non_kissing_fan().rays()
+%N( 1,  0,  0),
+%N( 0,  0,  1),
+%N( 1,  0, -1),
+%N( 1, -1,  0),
+%N( 0,  0, -1),
+%N(-1,  0,  1),
+%N( 0, -1,  0),
+%N( 0, -1,  1),
+%N(-1,  0,  0),
+%N( 0,  1,  0),
+%N( 0,  1, -1)
+%in 3-d lattice N
+%
+%sage: TCNKC = type_cone_NKC(Q)
+%sage: TCNKC
+%A 11-dimensional polyhedron in QQ^11 defined as the convex hull of 1 vertex, 9 rays, 3 lines
+%sage: TCNKC.inequalities()
+%(An inequality (0, 0, 0, 1, 0, 1, 0, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (-1, 0, 1, 0, 0, 0, 0, 0, 0, 1, -1) x + 0 >= 0,
+% An inequality (1, 0, -1, 0, 1, 0, 0, 0, 0, 0, 0) x + 0 >= 0,
+% An inequality (1, -1, 0, -1, 0, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, -1, 1, 0, 0, 0, 0, 0, 0, 1) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, 0, 0, 1, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, 0, -1, -1, 1, 1, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 1, -1, -1, 0, 1, 0, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, 0, 1, 0, 0, -1, -1, 1) x + 0 >= 0)
+%sage: TCNKC.lines()
+%(A line in the direction (0, 0, 0, 1, 0, 0, 1, 1, 0, -1, -1),
+% A line in the direction (1, 0, 1, 1, 0, -1, 0, 0, -1, 0, 0),
+% A line in the direction (1, 1, 0, 1, -1, 0, 0, 1, -1, 0, -1))
 \vincent{Todo}
 \end{example}
 
@@ -1194,7 +1327,7 @@ Consider a distinguishable string~$\sigma \in \distinguishableStrings$, and let~
 \subsubsection{Simplicial type cones for self-kissing-free and $2$-cycle-free quivers}
 \label{subsubsec:simplicialTypeConeNKC}
 
-In this section, we focus on the following family of gentle quivers, which was also considered in~\cite[Sect.~4]{GarverMcConvilleMousavand}.
+The following family of gentle quivers was considered in~\cite[Sect.~4]{GarverMcConvilleMousavand}.
 
 \begin{proposition}
 \label{prop:noSelfKissing}
@@ -1206,11 +1339,16 @@ The following conditions are equivalent for a gentle quiver~$\quiver$.
 \end{enumerate}
 \end{proposition}
 
+In this section, we need to restrict even further the family of gentle quivers we consider.
+
+\begin{definition}
 We say that a gentle quiver~$\quiver$ is \defn{simple} when
 \begin{itemize}
 \item it satisfies the three equivalent conditions of \cref{prop:noSelfKissing},
 \item it contains no cycle of length~$2$.
 \end{itemize}
+\end{definition}
+
 Note that this family already contains a lot of relevant examples, including the grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
 In particular, the classical associahedron is the gentle associahedron of a simple gentle quiver.
 We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a simple gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
@@ -1403,7 +1541,7 @@ We present the definitions and properties of the nested complex of a graph, foll
 Let~$\graphG$ be a graph with vertex set~$\ground$.
 Let~$\connectedComponents(\graphG)$ denote the set of connected components of~$\graphG$ and define~$n \eqdef |\ground|-|\connectedComponents(\graphG)|$.
 A \defn{tube} of~$\graphG$ is a connected induced subgraph of~$\graphG$.
-The set of tubes of~$\graphG$ is denoted by~$\tubes(\graphG)$.
+The set of tubes of~$\graphG$ is denoted by~$\tubes$.
 The inclusion maximal tubes of~$\graphG$ are its connected components~$\connectedComponents(\graphG)$.
 The tubes which are neither empty nor maximal are called \defn{proper}.
 Two tubes~$\tube, \tube'$ of~$\graphG$ are \defn{compatible} if they are either nested (\ie $\tube \subseteq \tube'$ or~$\tube' \subseteq \tube$), or disjoint and non-adjacent (\ie $\tube \cup \tube'$ is not a tube of~$\graphG$).
@@ -1414,13 +1552,17 @@ The \defn{nested complex} of~$\graphG$ is the simplicial complex~$\nestedComplex
 %
 Let~$(\b{e}_v)_{v \in \ground}$ be the canonical basis of~$\R^\ground$.
 We consider the hyperplane~${\HH \eqdef \bigset{\b{x} \in \R^\ground}{\sum_{w \in W} x_w = 0 \text{ for all } W \in \connectedComponents(\graphG)}}$ and let~$\pi : \R^\ground \to \HH$ denote the orthogonal projection on~$\HH$.
+
+\begin{definition}
 The \defn{$\b{g}$-vector} of a tube~$\tube$ of~$\graphG$ is the projection~$\gvector{\tube} \eqdef \pi \big( \sum_{v \in \tube} \b{e}_v \big)$ of the characteristic vector of~$\tube$.
-Note that by definition,~$\gvector{\graphG} = 0$.
-We also define~$\gvectors{\tubing} \eqdef \set{\gvector{\tube}}{\tube \in \tubing}$ for a tubing~$\tubing$ on~$\graphG$.
+We set~$\gvectors{\tubing} \eqdef \set{\gvector{\tube}}{\tube \in \tubing}$ for a tubing~$\tubing$ on~$\graphG$.
+\end{definition}
+
+Note that by definition, $\gvector(\varnothing) = 0$ and $\gvector{W} = 0$ for all connected components~$W \in \connectedComponents(\graphG)$.
 These vectors support a complete simplicial fan realization of the nested complex.
 Examples are illustrated in \cref{fig:nestedFans}.
 
-\begin{figure}[h]
+\begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=.55]{nestedFans}}
 	\caption{Two nested fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$.}
@@ -1428,6 +1570,7 @@ Examples are illustrated in \cref{fig:nestedFans}.
 \end{figure}
 
 \begin{theorem}[\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}]
+\label{thm:nestedFan}
 For any graph~$\graphG$, the set of cones
 \[
 \gvectorFan[\graphG] \eqdef \set{\R_{\ge 0} \, \gvectors{\tubing}}{\tubing \text{ tubing on } \graphG}
@@ -1439,7 +1582,7 @@ It is proved in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zel
 For any subset~$U \subseteq \ground$, denote by~$\triangle_U \eqdef \conv\set{\b{e}_u}{u \in U}$ the face of the standard simplex~$\triangle_\ground$ corresponding to~$U$.
 
 \begin{theorem}[\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}]
-For any graph~$\graphG$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron~$\Asso[\graphG]$, defined as the Minkowski sum~$\sum_{\tube \in \tubes(\graphG)} \triangle_{\tube}$ of the faces of the standard simplex corresponding to all tubes of~$\graphG$.
+For any graph~$\graphG$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron~$\Asso[\graphG]$, defined as the Minkowski sum~$\sum_{\tube \in \tubes} \triangle_{\tube}$ of the faces of the standard simplex corresponding to all tubes of~$\graphG$.
 \end{theorem}
 
 \para{Flips in the nested fan}
@@ -1469,74 +1612,32 @@ Points~(i) and~(ii) was proved in~\cite{MannevillePilaud-compatibilityFans}. Poi
 Finally for~(iv), any tube~$\tube[s] \in \tubing \cap \tubing'$ that contains~$v$ or~$v'$ actually contains both (to be compatible with~$\tube$ and~$\tube'$). Therefore, $\gvector{\tube[s]}$ is orthogonal to~$\b{e}_v - \b{e}_{v'}$ for any tube~$\tube[s] \in \tubing \cap \tubing'$.
 \end{proof}
 
-We are now ready to describe the type cone of the nested fan~$\gvectorFan[\graphG]$.
-We first treat the case when~$G$ is a path so that the $\graphG$-associahedron is a classical associahedron.
-We show that the type cone is then simplicial which gives another proof of \cref{thm:simplicialTypeConeAsso} and \cref{coro:descriptionAllAsso}.
+\subsubsection{Type cones of graphical nested fans}
 
-\subsubsection{Simplicial type cones for path associahedra}
+We now discuss the type cones of the graphical nested fans defined in \cref{thm:nestedFan}.
+We first obtain from \cref{prop:exchangeablePairsGA} the following redundant description.
 
-We start with the case of the path on~$n+1$ vertices.
-Recall that the tubes of the path are the intervals of~$[n+1]$ and that two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ are exchangeable if either~${i < i' \le j+1 < j'+1}$ or~${i' < i \le j'+1 < j+1}$.
+\begin{corollary}
+For any graph~$\graphG$, the type cone of the nested fan~$\gvectorFan[\graphG]$ is given by
+\[
+\typeCone(\gvectorFan[\graphG]) = \set{\b{h} \in \R^{\tubes}}{\begin{array}{l} \b{h}_{\tube} = 0 \text{ for any improper tube } \tube \\ \b{h}_{\tube} + \b{h}_{\tube'} > \b{h}_{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{h}_{\tube[s]} \text{ for any exchangeable tubes } \tube, \tube' \end{array}}.
+\]
+\end{corollary}
+
+\begin{example}
+\label{exm:typeConeGA}
+\vincent{Todo}
+\end{example}
+
+In the remaining of this section, we describe the facet defining inequalities of the type cone of the graphical nested fans.
+Observe first that we have already indirectly described this type cone when the graph is a path in \cref{prop:extremalExchangeablePairsAsso}.
+Recall that on the path with~$n+1$ vertices, the tubes of the path are the intervals of~$[n+1]$ and that two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ are exchangeable if either~${i < i' \le j+1 < j'+1}$ or~${i' < i \le j'+1 < j+1}$.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsA}
 %The extremal exchangeable pairs for the nested fan of the path are precisely the pairs of intervals~$\{[i,j], [i+1,j+1]\}$ for~$1 \le i \le j \le n-1$.
 Two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ form an extremal exchangeable pair for the nested fan of the path if and only if~$i = i'+1$ and~$j = j'+1$, or the opposite.
 \end{proposition}
-
-\begin{proof}
-Let~$(\b{f}_{[i,j]})_{1 \le i \le j \le n}$ be the canonical basis of~$\R^{\binom{n+1}{2}}$.
-Consider two exchangeable tubes~$[i,j]$ and~$[i',j']$ with~${i < i' \le j+1 < j'+1}$.
-By \cref{prop:exchangeablePairsGA}\,(iii), the linear dependence between the corresponding $\b{g}$-vectors is given by
-\[
-\gvector{[i,j]} + \gvector{[i',j']} = \gvector{[i,j']} + \gvector{[i',j]}.
-\]
-Therefore, the outer normal vector of the corresponding inequality of the type cone~$\typeCone(\gvectorFan[\graphG])$ is
-\[
-\b{n}(i,j,i',j') \eqdef \b{f}_{[i,j]} + \b{f}_{[i',j']} - \b{f}_{[i,j']} - \b{f}_{[i',j]}.
-\]
-Denoting
-\[
-\b{m}(k,\ell) \eqdef \b{n}(k,\ell-1,k+1,\ell) = \b{f}_{[k, \ell-1]} + \b{f}_{[k+1, \ell]} - \b{f}_{[k, \ell]} - \b{f}_{[k+1, \ell-1]},
-\]
-we obtain that
-\[
-\b{n}(i,j,i',j') = \sum_{\substack{k \in {[i,i'[} \\ \ell \in {]j,j']}}} \b{m}(k,\ell).
-\]
-Indeed, on the right hand side, the basis vector~$\b{f}_{[k,\ell]}$ appears with a positive sign in~$\b{m}(k,{\ell+1})$ for~$(k,\ell) \in {[i,i'[} \times {[j,j'[}$ and in~$\b{m}(k-1, \ell)$ for~$(k,\ell) \in {]i,i']} \times {]j,j']}$, and with a negative sign in~$\b{m}(k,\ell)$ for~$(k,\ell) \in {[i,i'[} \times {]j,j']}$ and in~$\b{m}(k-1,\ell+1)$ for~$(k,\ell) \in {]i,i']} \times {[j,j'[}$.
-Therefore, these contributions all vanish except when~$[k, \ell]$ is one of the tubes~$[i,j]$, $[i',j']$, $[i,j']$ or~$[i',j]$.
-%For any~$i \le k < i'$ and~$j < \ell \le j'$, the exchange relation between the tubes~$[k, \ell-1]$ and~$[k+1, \ell]$ is given by
-%\begin{equation}
-%\label{eq:exch2}
-%\tag{$\mathrm{ER}_k^\ell$}
-%\gvector{[k, \ell-1]} + \gvector{[k+1, \ell]} = \gvector{[k, \ell]} + \gvector{[k+1, \ell-1]}.
-%\end{equation}
-%Summing the exchange relations~\eqref{eq:exch2} over all pairs~$(k,\ell) \in {[i,i'[} \times {]j,j']}$, we obtain after simplifications the exchange relation~\eqref{eq:exch1}.
-%Indeed, the $\b{g}$-vector of each tube~$[k, \ell]$ appears on the left hand sides of the exchange relations~($\mathrm{ER}_k^{\ell+1}$) for~$(k,\ell) \in {[i,i'[} \times {[j,j'[}$ and ($\mathrm{ER}_{k-1}^\ell$) for~$(k,\ell) \in {]i,i']} \times {]j,j']}$ and on the right hand sides of the exchange relations~($\mathrm{ER}_k^\ell$) for~$(k,\ell) \in {[i,i'[} \times {]j,j']}$ and~($\mathrm{ER}_{k-1}^{\ell+1}$) for~$(k,\ell) \in {]i,i']} \times {[j,j'[}$.
-%Therefore, these contributions all vanish except when~$[k, \ell]$ is one of the tubes~$[i,j]$, $[i',j']$, $[i,j']$ or~$[i',j]$.
-This shows that any exchange relation is a positive linear combination of the exchange relations corresponding to all pairs of tubes~$[i,j]$ and~$[i',j']$ of~$[n+1]$ such that~$i = i'+1$ and~$j = j'+1$.
-
-We now need to show that all these exchangeable pairs are extremal.
-Assume that~$\b{m}(k,\ell)$ can be written as the linear combination
-\begin{equation}
-\label{eq:linComb}
-\b{m}(k,\ell) = \sum \lambda(i,j,i',j') \, \b{n}(i,j,i',j'),
-\end{equation}
-where~$\lambda(i,j,i',j') \ge 0$ for all exchangeable pairs~$\{[i,j], [i',j']\}$.
-Note that~$\sum \lambda(i,j,i',j') \ge 1$ since the coefficient of~$\b{f}_{[k,\ell]}$ in~$\b{m}(k,\ell)$ is~$-1$.
-Consider the linear form~$\Phi: \R^N \to \R$ defined by~$\Phi(\b{f}_{[i,j]}) = -(j-i)^2$.
-A quick computation shows that
-\[
-\Phi(\b{n}(i,j,i',j')) = 2(i'-i)(j'-j).
-\]
-Applying~$\Phi$ to \cref{eq:linComb}, we obtain
-\[
-1 = \sum \lambda(i,j,i',j')(i'-i)(j'-j).
-\]
-Since~$\sum \lambda(i,j,i',j') \ge 1$ we obtain that~$\lambda(k,\ell-1,k+1,\ell) = 1$ and~$\lambda(i,j,i',j') = 0$ for all other exchangeable pairs~$\{[i,j], [i',j']\}$.
-\end{proof}
-
-\subsubsection{General case}
 
 We now consider an arbitrary graph~$\graphG$ and describe the type cone of its nested fan.
 \cref{prop:extremalExchangeablePairsA} extends as follows.
@@ -1571,34 +1672,34 @@ The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
 \label{coro:extremalExchangeablePairsGA}
 The extremal exchangeable pairs for the nested fan of~$\graphG$ are equivalently
 \begin{enumerate}[(i)]
-\item the pairs of tubes~$\tube[r] \cup \{v\}$ and~$\tube[r] \cup \{v'\}$ for any tube~$\tube[r] \in \tubes(\graphG)$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
-\item the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes(\graphG)$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$,
+\item the pairs of tubes~$\tube[r] \cup \{v\}$ and~$\tube[r] \cup \{v'\}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
+\item the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$,
 \end{enumerate}
 \end{corollary}
 
 We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan, which we can explicitly express using one of the following two equivalent conditions.
 
 %\begin{corollary}
-%Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes(\graphG)$ and a height vector~$\b{h} \in \R^{\tubes(\graphG)}$ such that~$\b{h}_{\graphG} = 0$ and
+%Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\graphG} = 0$ and
 %\[
 %\b{h}_{\tube} + \b{h}_{\tube'} > \b{h}_{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{h}_{\tube[s]}
 %\]
 %for any pair of tubes~$\{\tube, \tube'\}$ of~$\graphG$ with~$\tube \ssm \{v\} = \tube' \ssm \{v'\}$ where~$v$ is a neighbor of~$\tube'$ and~$v'$ is a neighbor of~$\tube$.
 %Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 %\[
-%\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes(\graphG)}.
+%\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}.
 %\]
 %\end{corollary}
 
 \begin{corollary}
-Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes(\graphG)$ and a height vector~$\b{h} \in \R^{\tubes(\graphG)}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying one of the two following equivalent conditions:
+Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying one of the two following equivalent conditions:
 \begin{enumerate}[(i)]
-\item $\b{h}_{\tube[r] \cup \{v\}} + \b{h}_{\tube[r] \cup \{v'\}} > \b{h}_{\tube[r] \cup \{v, v'\}} + \b{h}_{\tube[r]}$ for any tube~$\tube[r] \in \tubes(\graphG)$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
-\item $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes(\graphG)$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
+\item $\b{h}_{\tube[r] \cup \{v\}} + \b{h}_{\tube[r] \cup \{v'\}} > \b{h}_{\tube[r] \cup \{v, v'\}} + \b{h}_{\tube[r]}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
+\item $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
 \end{enumerate}
 Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 \[
-\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes(\graphG)}.
+\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}.
 \]
 \end{corollary}
 
@@ -1618,7 +1719,7 @@ In other words, it $\neighbors(\tube)$ (resp.~$\nonDisconnecting(\tube)$) is the
 
 \begin{corollary}
 \label{coro:numberExtremalExchangeablePairsGA}
-The nested fan~$\gvectorFan[\graphG]$ has~$\!\!\!\! \sum\limits_{\tube[r] \in \tubes(\graphG)} \!\! \binom{\neighbors(\tube[r])}{2} = \!\!\!\! \sum\limits_{\tube[s] \in \tubes(\graphG)} \!\! \binom{\nonDisconnecting(\tube[s])}{2}$ extremal exchangeable pairs.
+The nested fan~$\gvectorFan[\graphG]$ has~$\!\!\!\! \sum\limits_{\tube[r] \in \tubes} \!\! \binom{\neighbors(\tube[r])}{2} = \!\!\!\! \sum\limits_{\tube[s] \in \tubes} \!\! \binom{\nonDisconnecting(\tube[s])}{2}$ extremal exchangeable pairs.
 \end{corollary}
 
 %\begin{proof}
@@ -1663,10 +1764,10 @@ The type cone~$\typeCone(\gvectorFan[\graphG])$ is simplicial if and only if~$\g
 
 \begin{proof}
 Note that any tube~$\tube$ with~$|\tube| \ge 2$ has two non-disconnecting vertices when it is a path, and at least three non-disconnecting vertices otherwise (the leaves of an arbitrary spanning tree of~$\tube$).
-Therefore, each tube of~$\tubes(\graphG)$ which is not a singleton contributes to at least one extremal exchangeable pairs.
+Therefore, each tube of~$\tubes$ which is not a singleton contributes to at least one extremal exchangeable pairs.
 We conclude that the number of extremal exchangeable pairs is at least:
 \[
-|\tubes(\graphG)| - |V| = |\tubes(\graphG) \ssm \{\varnothing, \graphG\}| - (|V|-1) = N - n,
+|\tubes| - |V| = |\tubes \ssm \{\varnothing, \graphG\}| - (|V|-1) = N - n,
 \]
 with equality if and only if all tubes of~$\graphG$ are paths, \ie if and only if~$\graphG$ is a path.
 \end{proof}
