@@ -1903,7 +1903,7 @@ Let~$\field$ be a field.  Let~$\cat$ be a~$\field$-linear triangulated category 
 
 %%%%%%%%%%%
 
-\subsection{Statement of the theorem}
+\subsection{Statement of the theorem}\label{subsect::Statement cluster cats}
 We need to introduce some notations before stating the main result of this section.  Let~$\Lambda\eqdef \End{\cat}(T)$, and let~$F$ be the functor
 \[
 F = \cat(T,-): \cat \xrightarrow{} \MOD \Lambda.
@@ -2746,7 +2746,25 @@ The proof is similar to that of Corollary~\ref{corollary::meshes positively gene
 %%
 \subsubsection{$2$-Calabi--Yau triangulated categories}\label{sect::2CYTriangulated}
 
-Let~$\cat$ be a triangulated category which is assumed Krull--Schmidt, Hom-finite, 2-Calabi--Yau, with a cluster-tilting subcategory~$\tc$.
+Let~$\cat$ be a triangulated category with shift functor~$\susp$.
+We assume moreover that~$\cat$ is~$\field$-linear, Krull--Schmidt, Hom-finite, 2-Calabi--Yau, with a cluster-tilting object~$T$.
+Then~$\cat$ satisfies all the assumptions of Setting~\ref{setting::extricat} for Section~\ref{sect::Statment extricats} but assumption (1).
+
+We fix this issue by considering a relative extriangulated structure.
+Let~$\mathbb{E}_T$ be the additive sub-bifunctor of~$\cat(-,\susp -)$ formed by those morphisms that factor through~$\add\susp T$.
+Then~$(\cat,\mathbb{E}_T)$ becomes extriangulated by~\cite[Proposition 3.14]{HerschendLiuNakaoka} (this can also be checked directly).
+The extriangles of~$\cat$ are precisely the triangles~$X\overset{f}{\rightarrow}Y\overset{g}{\rightarrow} Z \overset{h}{\dashrightarrow}$, for which the morphism~$h$ factors through~$\add\susp T$.
+By construction, Condition (1) is now satisfied.
+Moreover, the triangles appearing in Conditions (2) and (3) are extriangles for this relative structure, which shows that those two conditions are still satisfied for the extriangulated structure~$(\cat,\mathbb{E}_T)$.
+
+\begin{remark}
+The index of an object~$X$ in the triangulated category~$\cat$, coincide with its class in the Grothendieck group of~$\cat$ for the relative extriangulated structure given by~$\mathbb{E}_T$.
+\end{remark}
+
+\begin{remark}
+ The main results of Section~\ref{subsect::Statement cluster cats} can thus be viewed as specific cases of the results of Section~\ref{sect::extricats}: Theorem~\ref{theo::relations-g-vecteurs} and Corollary~\ref{corollary::meshes positively generate cluster cats} are consequences of Theorem~\ref{theorem::extricats} and Corollary~\ref{corollary::meshes positively generate extricats}.
+\end{remark}
+
 
 
 %%
