@@ -1030,6 +1030,7 @@ We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are tw
 \end{definition}
 
 \vincent{Link to \cref{sec:clusterCategories}.}
+\vincent{\cref{lem:bijectionMeshMutations} might become a conjecture.}
 \vincent{Pictures quivers.}
 
 \begin{lemma}
@@ -1077,6 +1078,7 @@ It follows from \cref{prop:meshMutations} that ...
 %Our next statement follows from~\cref{thm:extremalExchangeablePairsCA,lem:bijectionMeshMutations}.
 \end{proof}
 
+\vincent{Should we give a type $A$ intuition here?}
 %This statement will be proved in full generality in \cref{???}.
 %We proved it in \cref{prop:extremalExchangeablePairsAsso} for acyclic initial seeds in type~$A$. To provide an intuition of the result, we sketch here a proof for arbitrary initial seeds in type~$A$.
 %
@@ -1507,18 +1509,19 @@ The following conditions are equivalent for a gentle quiver~$\quiver$.
 \end{proposition}
 
 In this section, we need to restrict even further the family of gentle quivers we consider.
+\vincent{rephrase}
 
 \begin{definition}
-We say that a gentle quiver~$\quiver$ is \defn{simple} when
+A gentle quiver~$\quiver$ is called:
 \begin{itemize}
-\item it satisfies the three equivalent conditions of \cref{prop:noSelfKissing},
-\item it contains no cycle of length~$2$.
+\item \defn{brick}: it satisfies the three equivalent conditions of \cref{prop:noSelfKissing},
+\item \defn{$2$-acyclic}: it contains no cycle of length~$2$.
 \end{itemize}
 \end{definition}
 
 Note that this family already contains a lot of relevant examples, including the grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
-In particular, the classical associahedron is the gentle associahedron of a simple gentle quiver.
-We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a simple gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
+In particular, the classical associahedron is the gentle associahedron of a brick $2$-acyclic gentle quiver.
+We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
 
 For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~\defn{cohook}) to~$\sigma$.
@@ -1526,7 +1529,7 @@ We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
 The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply be denoted~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
 
 \begin{proposition}
-For any simple gentle quiver~$\quiver$ and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
+For any brick $2$-acyclic gentle quiver~$\quiver$ and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
 \end{proposition}
 
 \begin{proof}
@@ -1538,7 +1541,7 @@ The following statement describes the type cone of the non-kissing fan of a gent
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsNKC}
-For any simple gentle quiver~$\quiver$, the extremal exchangeable pairs for the non-kissing fan of~$\quiver$ are precisely the pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for all strings~$\sigma \in \strings$.
+For any brick $2$-acyclic gentle quiver~$\quiver$, the extremal exchangeable pairs for the non-kissing fan of~$\quiver$ are precisely the pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for all strings~$\sigma \in \strings$.
 \end{proposition}
 
 \begin{proof}
@@ -1629,14 +1632,14 @@ The following statement now follows from \cref{prop:bijectionStringsWalks,prop:e
 
 \begin{corollary}
 \label{coro:simplicialTypeConeNKC}
-For any simple gentle quiver~$\quiver$, the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan~$\quiver$ is simplicial.
+For any brick $2$-acyclic gentle quiver~$\quiver$, the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan~$\quiver$ is simplicial.
 \end{corollary}
 
 Combining \cref{coro:simplicialTypeCone}, \cref{coro:simplicialTypeConeNKC} and \cref{prop:extremalExchangeablePairsNKC}, we derive the following description of all polytopal realizations of the non-kissing fan~$\gvectorFan[\quiver]$ of a quiver~$\quiver$ with no self-kissing~walk.
 
 \begin{corollary}
 \label{coro:allPolytopalRealizationsNKC}
-For any simple gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
+For any brick $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
 \[
 R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any improper walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
 \]
@@ -1659,6 +1662,8 @@ Any $\b{c}$-vector supports exactly one extremal exchangeable pair.
 \label{rem:meshARquiver}
 Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we note that the extremal exchangeable pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ and their linear dependencies~${\gvector{\cc{\sigma}} + \gvector{\hh{\sigma}} - \gvector{\hc{\sigma}} - \gvector{\ch{\sigma}}}$ precisely correspond to the meshes of the Auslander-Reiten quiver of~$\quiver$.
 \end{remark}
+
+\vincent{All this section is wrong when the quiver is not brick or has a cycle of length~$2$.}
 
 %%%%%%%%%%%
 
@@ -2352,6 +2357,9 @@ The cluster category also contains enough information to detect positive mutatio
  \end{proof}
 \end{proposition}
 
+\vincent{Here should come the proof of \cref{prop:meshMutations}.}
+
+\vincent{Here should come the proof of \cref{prop:uniqueExchangePropertyCA}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Relations for~$\b{g}$-vectors in brick algebras via extriangulated categories}
@@ -2507,6 +2515,8 @@ Assume that~$\ind(\cat)$ is finite.
 Let~$X\infl E\defl Y\dashrightarrow$ be any extriangle.
 Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\ssm \add(\susp T)$.
 \end{corollary}
+
+\vincent{Here should come the proof of \cref{prop:exchangeablePairsNKC}.}
 
 %%%%
 \subsection{Proofs of preliminary results and of Theorem~\ref{theorem::extricats}}
@@ -2902,7 +2912,7 @@ Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to ap
  
 \end{proof}
 
-
+\vincent{Here should be explained that the gentle algebra result is a special case of this.}
 
 %%
 \subsubsection{Objects presented by a subcategory}\label{sect::prT}
