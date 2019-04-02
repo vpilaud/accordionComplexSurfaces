@@ -970,8 +970,10 @@ In order to describe the facets of this type cone, we need the following special
 %Consider a seed~$\seed = (\B, \cluster)$ and a cluster variable~$x \in \cluster$.
 The mutation of a seed~$\seed = (\B, \cluster)$ in the direction of a cluster variable~$x \in \cluster$ is a \defn{mesh mutation} that \defn{starts} (resp.~\defn{ends}) at~$x$ if the entries~$b_{xy}$ for~$y \in \cluster$ are all non-negative (resp.~all non-positive).
 A mesh mutation is \defn{initial} if it starts at a cluster variable of an initial seed.
-We denote by~$\meshes$ the set of all pairs~$(x,x')$ where~$x$ and~$x'$ are two cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a non-initial mesh mutation.
+We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are two cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a non-initial mesh mutation.
 \end{definition}
+\vincent{Link to \cref{sec:clusterCategories}.}
+\vincent{Pictures quivers.}
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
@@ -1010,6 +1012,10 @@ For any finite type exchange matrix~$\B_\circ$ (acyclic or not, simply-laced or 
 \end{theorem}
 
 \begin{proof}
+%Conversely, since~$\gvectorFan[n]$ has dimension~$n$ and~$n(n+3)/2$ rays (corresponding to the internal diagonals of the $(n+3)$-gon), we know from \cref{rem:dimTypeCone} that there are at least~$n(n+1)/2$ extremal exchangeable pairs. We thus conclude that all exchangeable pairs of diagonals~$\{(a,b-1), (a+1,b)\}$ for~$1 \le a < b-2 \le n$ are extremal.
+%
+%
+%Our next statement follows from~\cref{thm:extremalExchangeablePairsCA,lem:bijectionMeshMutations}.
 \end{proof}
 
 %This statement will be proved in full generality in \cref{???}.
@@ -1020,17 +1026,17 @@ For any finite type exchange matrix~$\B_\circ$ (acyclic or not, simply-laced or 
 %\vincent{Do we really want to do that?}
 %\end{proof}
 
-We also obtain from \cref{thm:extremalExchangeablePairsCA} the following surprising property.
-
-\begin{corollary}
-Any $\b{c}$-vector supports exactly one extremal exchangeable pair.
-\end{corollary}
-
-Our next statement follows from~\cref{thm:extremalExchangeablePairsCA,lem:bijectionMeshMutations}.
+Our next statement follows from the end of the previous proof.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeCA}
 The type cone~$\typeCone(\gvectorFan[n])$ is simplicial.
+\end{corollary}
+
+We also obtain from \cref{thm:extremalExchangeablePairsCA} the following surprising property.
+
+\begin{corollary}
+Any positive dual $\b{c}$-vector supports exactly one extremal exchangeable pair.
 \end{corollary}
 
 Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeCA,thm:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the cluster fan~$\gvectorFan[\B_\circ]$.
