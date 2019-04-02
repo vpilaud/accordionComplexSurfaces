@@ -732,10 +732,10 @@ The next definition gives another family of integer vectors, introduced implicit
 \begin{definition}
 The \defn{$\b{c}$-vector} of a cluster variable $x$ in a seed~$\seed$ of~$\principalClusterAlgebra$ is the vector
 \(
-\cvector{\seed}{x} = \cvectorFull{\B_\circ}{\seed}{x} \eqdef \sum_{y \in \cluster_\circ} c_{yx} \, \simpleRoot_y
+{\cvector{\seed}{x} = \cvectorFull{\B_\circ}{\seed}{x} \eqdef \sum_{y \in \cluster_\circ} c_{yx} \, \simpleRoot_y}
 \)
 of exponents of~$p_x = \prod_{y \in \cluster_\circ} (p_y)^{c_{yx}}$.
-We denote by~$\cvectors{\seed} = \cvectorsFull{\B_\circ}{\seed} \eqdef \set{\cvectorFull{\B_\circ}{\seed}{x}}{x \in \seed}$ the set of $\b{c}$-vectors of a seed~$\seed$.
+We denote by ${\cvectors{\seed} = \cvectorsFull{\B_\circ}{\seed} \eqdef \set{\cvectorFull{\B_\circ}{\seed}{x}}{x \in \seed}}$ the set of $\b{c}$-vectors of a seed~$\seed$.
 \end{definition}
 
 These two families of vectors are connected via the isomorphism~$x \mapsto x^\vee$ between the cluster complexes of~$\principalClusterAlgebra$ and~$\principalClusterAlgebra[\B_\circ^\vee]$ described above.
@@ -970,13 +970,12 @@ In order to describe the facets of this type cone, we need the following special
 %Consider a seed~$\seed = (\B, \cluster)$ and a cluster variable~$x \in \cluster$.
 The mutation of a seed~$\seed = (\B, \cluster)$ in the direction of a cluster variable~$x \in \cluster$ is a \defn{mesh mutation} that \defn{starts} (resp.~\defn{ends}) at~$x$ if the entries~$b_{xy}$ for~$y \in \cluster$ are all non-negative (resp.~all non-positive).
 A mesh mutation is \defn{initial} if it starts at a cluster variable of an initial seed.
-\end{definition}
-
 We denote by~$\meshes$ the set of all pairs~$(x,x')$ where~$x$ and~$x'$ are two cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a non-initial mesh mutation.
+\end{definition}
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
-There is precisely one non-initial mesh directed by each positive $\b{c}$-vector of the cluster algebra~$\principalClusterAlgebra$. Therefore~$|\principalVariables| = |\meshes| + n$.
+There is precisely one non-initial mesh directed by each positive $\b{c}$-vector of the cluster algebra~$\principalClusterAlgebra[\B_\circ^\vee]$. Therefore~$|\principalVariables| = |\meshes| + n$.
 \end{lemma}
 
 The following statement describes the linear dependence in the mesh mutations.
@@ -996,29 +995,45 @@ Otherwise, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_
 
 For~$(x,x') \in \meshes$ and~$y \in \principalVariables$, we denote by~$\alpha_{x,x',y}$ the coefficient of~$\gvectorFull{\B_\circ}{y}$ in the linear dependence between the $\b{g}$-vectors~$\gvectorFull{\B_\circ}{x}$ and~$\gvectorFull{\B_\circ}{x'}$. In other words, according to \cref{lem:dependenceMesh}, if~${(\B, \cluster)}$ and~${(\B', \cluster')}$ are two adjacent seeds with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$, we have~$\alpha_{x,x',y} = |b_{xy}|$ for~$y \in \cluster \cap \cluster'$ and~$\alpha_{x,x',y} = 0$ otherwise.
 
-Our main result states that the linear dependences between the $\b{g}$-vectors of any mutation can be decomposed into positive combinations of linear dependences arising from meshes.
+The following will be shown in \cref{sec:clusterCategories}.
 
 \begin{proposition}
-\label{prop:extremalExchangeablePairsCA}
-For any finite type exchange matrix~$\B_\circ$ (acyclic or not), the non-initial mesh mutations precisely correspond to the extremal exchangeable pairs of the cluster fan~$\gvectorFan[\B_\circ]$.
+\label{prop:meshMutations}
+For any finite type exchange matrix~$\B_\circ$ (acyclic or not, simply-laced or not), the linear dependence between the $\b{g}$-vectors of any mutation can be decomposed into positive combinations of linear dependences between $\b{g}$-vectors of non-initial mesh mutations.
 \end{proposition}
 
-This statement will be proved in full generality in \cref{???}.
-We proved it in \cref{prop:extremalExchangeablePairsAsso} for acyclic initial seeds in type~$A$. To provide an intuition of the result, we sketch here a proof for arbitrary initial seeds in type~$A$.
+We derive from \cref{prop:meshMutations} the following description of the facets of the type cone of the $\b{g}$-vector fan.
 
-\begin{proof}[Sketch of \cref{prop:extremalExchangeablePairsCA} in type~$A$]
-We need to prove that the normal vector~$\b{n}(\B_\circ, y, y')$ for any exchangeable pair~$\{y,y'\}$ is a positive linear combination of the vectors~$\b{n}(\B_\circ, x, x')$ for non-initial meshes.
-\vincent{Do we really want to do that?}
+\begin{theorem}
+\label{thm:extremalExchangeablePairsCA}
+For any finite type exchange matrix~$\B_\circ$ (acyclic or not, simply-laced or not), the non-initial mesh mutations precisely correspond to the extremal exchangeable pairs of the cluster fan~$\gvectorFan[\B_\circ]$.
+\end{theorem}
+
+\begin{proof}
 \end{proof}
 
-Our next statement follows from~\cref{prop:extremalExchangeablePairsCA,lem:bijectionMeshMutations}.
+%This statement will be proved in full generality in \cref{???}.
+%We proved it in \cref{prop:extremalExchangeablePairsAsso} for acyclic initial seeds in type~$A$. To provide an intuition of the result, we sketch here a proof for arbitrary initial seeds in type~$A$.
+%
+%\begin{proof}[Sketch of \cref{thm:extremalExchangeablePairsCA} in type~$A$]
+%We need to prove that the normal vector~$\b{n}(\B_\circ, y, y')$ for any exchangeable pair~$\{y,y'\}$ is a positive linear combination of the vectors~$\b{n}(\B_\circ, x, x')$ for non-initial meshes.
+%\vincent{Do we really want to do that?}
+%\end{proof}
+
+We also obtain from \cref{thm:extremalExchangeablePairsCA} the following surprising property.
+
+\begin{corollary}
+Any $\b{c}$-vector supports exactly one extremal exchangeable pair.
+\end{corollary}
+
+Our next statement follows from~\cref{thm:extremalExchangeablePairsCA,lem:bijectionMeshMutations}.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeCA}
 The type cone~$\typeCone(\gvectorFan[n])$ is simplicial.
 \end{corollary}
 
-Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeCA,prop:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the cluster fan~$\gvectorFan[\B_\circ]$.
+Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeCA,thm:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the cluster fan~$\gvectorFan[\B_\circ]$.
 This result was stated in~\cite{BazierMatteDouvilleMousavandThomasYildirim} in the special situation of acyclic seeds in simply-laced types.
 Note that our proof is quite different from~\cite{BazierMatteDouvilleMousavandThomasYildirim} as it relies on our type cone approach.
 
