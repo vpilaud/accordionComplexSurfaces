@@ -224,6 +224,15 @@
 \newcommand{\kzero}[1]{K_0(#1)}
 \newcommand{\eps}{\varepsilon}
 
+% formating the part command
+\makeatletter
+\def\part{\@startsection{part}{1}%
+\z@{.7\linespacing\@plus\linespacing}{.8\linespacing}%
+{\LARGE\sffamily\centering}}
+\@addtoreset{section}{part}
+\makeatother
+\renewcommand{\thesection}{\arabic{part}.\arabic{section}}
+
 % formating the table of contents
 \makeatletter
 \def\l@section{\@tocline{1}{2pt}{0pc}{}{}}
@@ -235,7 +244,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Type cones of $\b{g}$-vector fans}
+\title[Generalized associahedra and minimal relations between $\b{g}$-vectors]{Associahedra for finite type cluster algebras \\ and minimal relations between $\b{g}$-vectors}
 
 \thanks{YP, VP and PGP were partially supported by the French ANR grant SC3A~(15\,CE40\,0004\,01). AP and VP were partially supported by the French ANR grant CAPPS~(17\,CE40\,0018).}
 
@@ -279,6 +288,10 @@ We explain recent results of~\cite{BazierMatteDouvilleMousavandThomasYildirim}. 
 \item We have a simpler proof, only based on the transformation between the classical descriptions of a polytope of the form~$\set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$ and~$\set{\b{z} \in \R^N}{\b{K}\b{z} = \b{K}\b{h} \text{ and } \b{z} \ge 0}$ (this transformation is standard in optimization). In particular, we do not need to consider only rational polytopes and pass to the limit to deal with all real descriptions.
 \item We observe that we obtain all realizations of the $\b{g}$-vector fans of the considered families.
 \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Type cones of $\b{g}$-vector fans}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1031,7 +1044,7 @@ We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are tw
 
 \vincent{Link to \cref{sec:clusterCategories}.}
 \vincent{\cref{lem:bijectionMeshMutations} might become a conjecture.}
-\vincent{Pictures quivers.}
+\vincent{Pictures AR quivers + labeling of meshes reported on the inequalities.}
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
@@ -1063,7 +1076,7 @@ The following will be shown in \cref{sec:clusterCategories}.
 For any finite type exchange matrix~$\B_\circ$ (acyclic or not, simply-laced or not), the linear dependence between the $\b{g}$-vectors of any mutation can be decomposed into positive combinations of linear dependences between $\b{g}$-vectors of non-initial mesh mutations.
 \end{proposition}
 
-We derive from \cref{prop:meshMutations} the following description of the facets of the type cone of the $\b{g}$-vector fan.
+We derive from \cref{prop:meshMutations} the following description of the facets of the type cone of the cluster fan.
 
 \begin{theorem}
 \label{thm:extremalExchangeablePairsCA}
@@ -1479,6 +1492,7 @@ The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dime
 % A line in the direction (1, 0, 1, 1, 0, -1, 0, 0, -1, 0, 0),
 % A line in the direction (1, 1, 0, 1, -1, 0, 0, 1, -1, 0, -1))
 \vincent{Todo}
+\vincent{Pictures AR quivers + labeling of meshes reported on the inequalities.}
 \end{example}
 
 As illustrated in \cref{exm:typeConeNKC}, the type cone of the non-kissing fan is not simplicial and we do not always understand its extremal exchangeable pairs.
@@ -1970,6 +1984,10 @@ We conclude that the number of extremal exchangeable pairs is at least:
 with equality if and only if all tubes of~$\graphG$ are paths, \ie if and only if~$\graphG$ is a path.
 \end{proof}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{Grothendieck group and relations between $\b{g}$-vectors}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
