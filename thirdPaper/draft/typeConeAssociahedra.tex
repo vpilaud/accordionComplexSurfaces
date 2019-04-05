@@ -11,7 +11,7 @@
 \usepackage{tikz-cd}
 \usepackage{tkz-graph}
 \usetikzlibrary{trees, decorations, decorations.markings, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
-\graphicspath{{figures/}{figures/walks/}{figures/tubes/}}
+\graphicspath{{figures/}{figures/diagonals/}{figures/walks/}{figures/tubes/}}
 \makeatletter\def\input@path{{figures/}}\makeatother
 \usepackage{caption}
 \captionsetup{width=\textwidth}
@@ -109,7 +109,7 @@
 \renewcommand{\bottomfraction}{1} % possibility to have one page of pictures
 \newcommand{\ex}{_{\textrm{exm}}} % examples
 \newcommand{\pa}{_{\textrm{pa}}} % path
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, scale=.7] (char) {#1};}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle, draw, inner sep=1.5pt, scale=.7] (char) {#1};}}
 \newcommand{\compactVector}[3]{\begin{bmatrix} #1 \\[-.1cm] #2 \\[-.1cm] #3 \end{bmatrix}}
 
 % marginal comments
@@ -571,6 +571,7 @@ All these families contain the classical associahedra~$\Asso[n]$ constructed in~
 %%%%%%%%%%%
 
 \subsection{Classical associahedra}
+\label{subsec:typeConeAsso}
 
 We first describe the associahedra of~\cite{ShniderSternberg, Loday} and their type cones as they are the prototypes of our constructions.
 
@@ -608,6 +609,14 @@ In the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$,
 \end{itemize}
 \end{theorem}
 
+\begin{figure}[h]
+	\capstart
+	\centerline{\raisebox{.5cm}{\includegraphics[scale=.45]{lodayFan2}}\hspace{1.5cm}\includegraphics[scale=.45]{lodayFan3}}
+	\caption{The normal fans~$\gvectorFan[2]$ and~$\gvectorFan[3]$ of J.-L.~Loday's associahedra. As the rightmost fan is $3$-dimensional, we intersect it with the sphere and stereographically project it from the direction~$(-1,-1,-1)$.}
+	\label{fig:lodayFans}
+\end{figure}
+
+These fans are illustrated in \cref{fig:lodayFans} in dimension~$2$ and~$3$.
 Let us also recall the linear dependencies in this fan and observe that it has the unique exchange property discussed in \cref{subsec:uniqueExchangeProperty}.
 From now on, we use the convention that~$\gvector{a,b} = 0$ when~$(a,b)$ is a boundary edge of the $(n+3)$-gon.
 
@@ -633,6 +642,121 @@ Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type
 \typeCone(\gvectorFan[n]) = \set{\b{h} \in \R^{X(n)}}{\begin{array}{l} \b{h}_{(0,n+2)} = 0, \qquad\text{and}\qquad \b{h}_{(a,a+1)} = 0 \text{ for all } 0 \le a \le n+1 \\ \b{h}_{(a,b)} + \b{h}_{(a',b')} > \b{h}_{(a,b')} + \b{h}_{(a',b)} \text{ for all } 0 \le a < a' < b < b' \le n+2 \end{array}}.
 \]
 \end{corollary}
+
+\begin{example}
+Consider the fan~$\gvectorFan[2]$ and~$\gvectorFan[3]$ illustrated in \cref{fig:lodayFans}.
+The type cone of~$\gvectorFan[3]$ in~$\R^9$, has a linearity space of dimension~$3$ and $6$ facet defining inequalities (given below). 
+
+\[
+\begin{array}{r|cccccccccc}
+\text{diagonals} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB1}}  & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB2}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB3}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB4}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB5}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB6}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB7}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB8}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB9}} \\[.3cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{1}{0} & \compactVector{0}{-1}{1} & \compactVector{-1}{0}{1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+%\text{linearity}	& 0 & 1 & 0 & 1 & 0 & -1 & 0 & -1 & 0 \\
+%\text{space}		& 0 & 1 & 1 & 1 & 1 & 0 & 0 & -1 & -1 \\
+%					& 1 & 1 & 1 & 0 & 0 & 0 & -1 & -1 & -1 \\
+\text{facet}		& 1 & -1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & \red \circled{A} \\
+\text{defining} 	& 0 & 1 & -1 & -1 & 1 & 0 & 0 & 0 & 0 & \red \circled{B} \\
+\text{inequalities}	& 0 & 0 & 1 & 0 & -1 & 0 & 1 & 0 & 0 & \red \circled{C} \\
+					& 0 & 0 & 0 & 1 & -1 & 1 & 0 & 0 & 0 & \red \circled{D} \\
+					& 0 & 0 & 0 & 0 & 1 & -1 & -1 & 1 & 0 & \red \circled{E} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -1 & 1 & \red \circled{F} \\[.2cm]
+\end{array}
+\]
+
+%sage: B = Matrix([[0,1,0],[-1,0,1],[0,-1,0]])
+%sage: CA = ClusterAlgebra(B)
+%
+%sage: CA.explore_to_depth(infinity)
+%sage: gvectors = CA.cluster_fan().rays()
+%sage: for gvector in gvectors:
+%....:     print gvector, CA.cluster_variable(gvector)
+%....:     
+%N(-1, 1, 0) (x1 + 1)/x0
+%N(1, 0, 0) x0
+%N(0, 0, 1) x2
+%N(0, -1, 1) (x0 + x2)/x1
+%N(0, 0, -1) (x1 + 1)/x2
+%N(-1, 0, 1) (x1*x2 + x0 + x2)/(x0*x1)
+%N(0, -1, 0) (x0*x1 + x0 + x2)/(x1*x2)
+%N(-1, 0, 0) (x0*x1 + x1*x2 + x0 + x2)/(x0*x1*x2)
+%N(0, 1, 0) x1
+%
+%sage: TCCA = type_cone_CA(CA)
+%sage: TCCA
+%A 9-dimensional polyhedron in QQ^9 defined as the convex hull of 1 vertex, 6 rays, 3 lines
+%sage: TCCA.lines()
+%(A line in the direction (1, 0, 0, -1, 0, 0, -1, 0, 1),
+% A line in the direction (1, 0, 1, 0, -1, 1, -1, 0, 1),
+% A line in the direction (0, 1, 1, 0, -1, 0, -1, -1, 1))
+%sage: TCCA.inequalities()
+%(An inequality (-1, 0, -1, 0, 0, 1, 0, 0, 1) x + 0 >= 0,
+% An inequality (1, 1, 0, 0, 0, 0, 0, 0, -1) x + 0 >= 0,
+% An inequality (1, 0, 0, 1, 0, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, -1, 0, 1, 1, -1, 0) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, 0, -1, 0, 1, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 1, 0, -1, 0, 0) x + 0 >= 0)
+
+\begin{figure}
+    \begin{adjustbox}{center}
+        \begin{tikzpicture}
+        	\matrix (m) [matrix of math nodes, row sep=.35cm, column sep=.2cm, nodes={anchor=center, align=center, inner sep=0pt}]{
+        		& \;\includegraphics[scale=.6]{diagonalA2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.6]{diagonalA4} & \\
+        		\;\includegraphics[scale=.6]{diagonalA1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.6]{diagonalA3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.6]{diagonalA5} \\};
+        	\draw[->] (m-2-1) -- (m-1-2);
+        	\draw[->] (m-1-2) -- (m-2-3);
+        	\draw[->] (m-2-3) -- (m-1-4);
+        	\draw[->] (m-1-4) -- (m-2-5);
+        	\draw[red] (a) -- (m-2-1);
+        	\draw[red] (a) -- (m-2-3);
+        	\draw[red] (a) -- (m-1-2);
+        	\draw[red] (b) -- (m-1-2);
+        	\draw[red] (b) -- (m-1-4);
+        	\draw[red] (b) -- (m-2-3);
+        	\draw[red] (c) -- (m-2-3);
+        	\draw[red] (c) -- (m-2-5);
+        	\draw[red] (c) -- (m-1-4);
+        \end{tikzpicture}
+        \quad
+        \begin{tikzpicture}
+        	\matrix (m) [matrix of math nodes, row sep=.35cm, column sep=.2cm, nodes={anchor=center, align=center, inner sep=0pt}]{
+        		&& \;\includegraphics[scale=.6]{diagonalB3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.6]{diagonalB7} && \\
+        		& \;\includegraphics[scale=.6]{diagonalB2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.6]{diagonalB5} & \node (e) {\red \circled{E}}; & \;\includegraphics[scale=.6]{diagonalB8} & \\
+        		\;\includegraphics[scale=.6]{diagonalB1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.6]{diagonalB4} & \node (d) {\red \circled{D}}; & \;\includegraphics[scale=.6]{diagonalB6} & \node (f) {\red \circled{F}}; & \;\includegraphics[scale=.6]{diagonalB9} \\};
+        	\draw[->] (m-3-1) -- (m-2-2);
+        	\draw[->] (m-2-2) -- (m-1-3);
+        	\draw[->] (m-2-2) -- (m-3-3);
+        	\draw[->] (m-1-3) -- (m-2-4);
+        	\draw[->] (m-3-3) -- (m-2-4);
+        	\draw[->] (m-2-4) -- (m-1-5);
+        	\draw[->] (m-2-4) -- (m-3-5);
+        	\draw[->] (m-1-5) -- (m-2-6);
+        	\draw[->] (m-3-5) -- (m-2-6);
+        	\draw[->] (m-2-6) -- (m-3-7);
+        	\draw[red] (a) -- (m-3-1);
+        	\draw[red] (a) -- (m-3-3);
+        	\draw[red] (a) -- (m-2-2);
+        	\draw[red] (b) -- (m-2-2);
+        	\draw[red] (b) -- (m-2-4);
+        	\draw[red] (b) -- (m-1-3);
+        	\draw[red] (b) -- (m-3-3);
+        	\draw[red] (c) -- (m-1-3);
+        	\draw[red] (c) -- (m-1-5);
+        	\draw[red] (c) -- (m-2-4);
+        	\draw[red] (d) -- (m-3-3);
+        	\draw[red] (d) -- (m-3-5);
+        	\draw[red] (d) -- (m-2-4);
+        	\draw[red] (e) -- (m-2-4);
+        	\draw[red] (e) -- (m-2-6);
+        	\draw[red] (e) -- (m-1-5);
+        	\draw[red] (e) -- (m-3-5);
+        	\draw[red] (f) -- (m-3-5);
+        	\draw[red] (f) -- (m-3-7);
+        	\draw[red] (f) -- (m-2-6);
+        \end{tikzpicture}
+    \end{adjustbox}
+	\caption{The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[n])$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+\end{figure}
+\end{example}
 
 We now describe the facets of this type cone~$\typeCone(\gvectorFan[n])$.
 
@@ -690,6 +814,7 @@ is an $n$-dimensional associahedron.
 %%%%%%%%%%%
 
 \subsection{Finite type cluster complexes and generalized associahedra}
+\label{subsec:typeConeCA}
 
 %We now extend the results of the previous section to the $\b{g}$-vector fan of any finite type cluster algebra with respect to any seed (acyclic or not).
 Cluster algebras were introduced by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasI} with motivation coming from total positivity and canonical bases.
@@ -923,21 +1048,21 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan
 
 \begin{example}
 Consider the cluster fans illustrated in \cref{fig:clusterFans}.
-The type cone of the left fan lives in~$\R^9$, has a linearity space of dimension~$3$ (a basis is given below) and $6$ facet defining inequalities (given below). 
+The type cone of the left fan lives in~$\R^9$, has a linearity space of dimension~$3$ and $6$ facet defining inequalities (given below). 
 
 \[
-\begin{array}{r|ccccccccc}
+\begin{array}{r|cccccccccc}
 \text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1 + x_2}{x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} \\[.2cm]
 \text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{1}{-1} & \compactVector{0}{0}{-1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} \\[.6cm]
 %\text{linearity}	& 0 & 0 & 1 & 1 & 0 & -1 & -1 & 0 & 0 \\
 %\text{space}		& 0 & -1 & 0 & 0 & 1 & -1 & 0 & 0 & 1 \\
 %					& 1 & 1 & 0 & -1 & 0 & 1 & 0 & -1 & -1 \\[.2cm]
-\text{facet}		& -1 & 0 & 0 & 0 & 1 & 1 & -1 & 0 & 0 \\
-\text{defining} 	& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 \\
-\text{inequalities}	& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 \\
- 					& 0 & 0 & 1 & -1 & 0 & 0 & 0 & 1 & 0 \\
- 					& 0 & 1 & 0 & 0 & 0 & -1 & 1 & 0 & 0 \\
- 					& 0 & -1 & 0 & 1 & 0 & 1 & 0 & -1 & 0 \\[.2cm]
+\text{facet} 		& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & \red \circled{A} \\
+\text{defining}		& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & \red \circled{B} \\
+\text{inequalities}	& 0 & 0 & 1 & -1 & 0 & 0 & 0 & 1 & 0 & \red \circled{C} \\
+ 					& 0 & -1 & 0 & 1 & 0 & 1 & 0 & -1 & 0 & \red \circled{D} \\
+ 					& 0 & 1 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & \red \circled{E} \\
+					& -1 & 0 & 0 & 0 & 1 & 1 & -1 & 0 & 0 & \red \circled{F} \\[.2cm]
 \end{array}
 \]
 
@@ -975,7 +1100,7 @@ The type cone of the left fan lives in~$\R^9$, has a linearity space of dimensio
 % An inequality (0, 0, 0, 0, 1, 0, -1, -1, 1) x + 0 >= 0)
 
 \noindent
-The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dimension~$3$ (a basis is given below) and $9$ facet defining inequalities (given below). 
+The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dimension~$3$ and $9$ facet defining inequalities (given below). 
 
 \[
 \begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}c}
@@ -1034,6 +1159,89 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
 % An inequality (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -2) x + 0 >= 0,
 % An inequality (0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 0, 1, 1, 0, 0, -2, 0, 0, 0, 0) x + 0 >= 0)
+
+\begin{figure}
+    \begin{adjustbox}{center}
+%        \begin{tikzpicture}
+%        	\matrix (m) [matrix of math nodes, row sep=.35cm, column sep=.2cm, nodes={anchor=center, align=center, inner sep=0pt}]{
+%        		& \;\includegraphics[scale=.6]{diagonalA2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.6]{diagonalA4} & \\
+%        		\;\includegraphics[scale=.6]{diagonalA1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.6]{diagonalA3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.6]{diagonalA5} \\};
+%        	\draw[->] (m-2-1) -- (m-1-2);
+%        	\draw[->] (m-1-2) -- (m-2-3);
+%        	\draw[->] (m-2-3) -- (m-1-4);
+%        	\draw[->] (m-1-4) -- (m-2-5);
+%        	\draw[red] (a) -- (m-2-1);
+%        	\draw[red] (a) -- (m-2-3);
+%        	\draw[red] (a) -- (m-1-2);
+%        	\draw[red] (b) -- (m-1-2);
+%        	\draw[red] (b) -- (m-1-4);
+%        	\draw[red] (b) -- (m-2-3);
+%        	\draw[red] (c) -- (m-2-3);
+%        	\draw[red] (c) -- (m-2-5);
+%        	\draw[red] (c) -- (m-1-4);
+%        \end{tikzpicture}
+%        \quad
+		\newcommand{\fitClusterVariable}[1]{\parbox[c][.7cm][c]{1.5cm}{\centering $#1$}}
+        \begin{tikzpicture}
+        	\matrix (m) [matrix of math nodes, row sep=.4cm, column sep=-.1cm, nodes={anchor=center, align=center, inner sep=0pt}]{
+        		\fitClusterVariable{\phantom{1}} & \node (e1) {\red \circled{E}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_2 x_3}} && \fitClusterVariable{x_3} & \node (c) {\red \circled{C}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_1 x_3}} && \fitClusterVariable{x_1} & \node (a2) {\red \circled{A}}; & \fitClusterVariable{\phantom{1}} \\
+        		& \fitClusterVariable{\frac{x_1 + x_2}{x_3}} & \node (f1) {\red \circled{F}}; & \fitClusterVariable{\frac{x_1 + x_3}{x_2}} & \node (b) {\red \circled{B}}; & \fitClusterVariable{\frac{x_2 + x_3}{x_1}} & \node (d) {\red \circled{D}}; & \fitClusterVariable{\frac{x_1 + x_2}{x_3}} & \node (f2) {\red \circled{F}}; & \fitClusterVariable{\frac{x_1 + x_3}{x_2}} \\
+        		\fitClusterVariable{\phantom{1}} && \fitClusterVariable{x_1} & \node (a1) {\red \circled{A}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_1 x_2}} && \fitClusterVariable{x_2} & \node (e2) {\red \circled{E}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_2 x_3}} && \fitClusterVariable{\phantom{1}} \\};
+        	\draw[->] (m-2-2) -- (m-1-3);
+        	\draw[->] (m-2-2) -- (m-3-3);
+        	\draw[->] (m-1-3) -- (m-2-4);
+        	\draw[->] (m-3-3) -- (m-2-4);
+        	\draw[->] (m-2-4) -- (m-1-5);
+        	\draw[->] (m-2-4) -- (m-3-5);
+        	\draw[->] (m-1-5) -- (m-2-6);
+        	\draw[->] (m-3-5) -- (m-2-6);
+        	\draw[->] (m-2-6) -- (m-1-7);
+        	\draw[->] (m-2-6) -- (m-3-7);
+        	\draw[->] (m-1-7) -- (m-2-8);
+        	\draw[->] (m-3-7) -- (m-2-8);
+        	\draw[->] (m-2-8) -- (m-1-9);
+        	\draw[->] (m-2-8) -- (m-3-9);
+        	\draw[->] (m-1-9) -- (m-2-10);
+        	\draw[->] (m-3-9) -- (m-2-10);
+        	\draw[densely dotted, thick] (m-1-1) -- (m-2-2);
+        	\draw[densely dotted, thick] (m-3-1) -- (m-2-2);
+        	\draw[densely dotted, thick] (m-2-10) -- (m-1-11);
+        	\draw[densely dotted, thick] (m-2-10) -- (m-3-11);
+        	\draw[red] (a1) -- (m-3-3);
+        	\draw[red] (a1) -- (m-3-5);
+        	\draw[red] (a1) -- (m-2-4);
+        	\draw[red] (a2) -- (m-1-9);
+        	\draw[red, densely dotted, thick] (a2) -- (m-1-11);
+        	\draw[red] (a2) -- (m-2-10);
+        	\draw[red] (b) -- (m-2-4);
+        	\draw[red] (b) -- (m-2-6);
+        	\draw[red] (b) -- (m-1-5);
+        	\draw[red] (b) -- (m-3-5);
+        	\draw[red] (c) -- (m-1-5);
+        	\draw[red] (c) -- (m-1-7);
+        	\draw[red] (c) -- (m-2-6);
+        	\draw[red] (d) -- (m-2-6);
+        	\draw[red] (d) -- (m-2-8);
+        	\draw[red] (d) -- (m-1-7);
+        	\draw[red] (d) -- (m-3-7);
+        	\draw[red, densely dotted, thick] (e1) -- (m-1-1);
+        	\draw[red] (e1) -- (m-1-3);
+        	\draw[red] (e1) -- (m-2-2);
+        	\draw[red] (e2) -- (m-3-7);
+        	\draw[red] (e2) -- (m-3-9);
+        	\draw[red] (e2) -- (m-2-8);
+        	\draw[red] (f1) -- (m-2-2);
+        	\draw[red] (f1) -- (m-2-4);
+        	\draw[red] (f1) -- (m-1-3);
+        	\draw[red] (f1) -- (m-3-3);
+        	\draw[red] (f2) -- (m-2-8);
+        	\draw[red] (f2) -- (m-2-10);
+        	\draw[red] (f2) -- (m-1-9);
+        	\draw[red] (f2) -- (m-3-9);
+        \end{tikzpicture}
+    \end{adjustbox}
+	\caption{}%The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[])$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+\end{figure}
 \end{example}
 
 In order to describe the facets of this type cone, we need the following special mutations.
@@ -1131,6 +1339,7 @@ is a generalized associahedron, whose normal fan is the cluster fan~$\gvectorFan
 %%%%%%%%%%%
 
 \subsection{Non-kissing complexes and gentle associahedra}
+\label{subsec:typeConeNKC}
 
 Gentle associahedra were constructed by Y.~Palu, V.~Pilaud and P.-G.~Plamondon~\cite{PaluPilaudPlamondon-nonkissing} in the context of support $\tau$-tilting for gentle algebras.
 For a given $\tau$-tilting finite gentle quiver~$\quiver$ (defined in the next section), the $\quiver$-associahedron~$\Asso[\quiver]$ is a simple polytope which encodes certain representations of~$\quiver$ and their $\tau$-tilting relations.
@@ -1387,7 +1596,7 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 \begin{example}
 \label{exm:typeConeNKC}
 Consider the non-kissing fans illustrated in \cref{fig:nonkissingFans}.
-The type cone of the left fan lives in~$\R^9$, has a linearity space of dimension~$3$ (a basis is given below) and $6$ facet defining inequalities (given below). 
+The type cone of the left fan lives in~$\R^9$, has a linearity space of dimension~$3$ and $6$ facet defining inequalities (given below). 
 
 \[
 \begin{array}{r|ccccccccc}
@@ -1436,7 +1645,7 @@ The type cone of the left fan lives in~$\R^9$, has a linearity space of dimensio
 % A line in the direction (0, 1, 0, -1, 0, 0, 0, -1))
 
 \noindent
-The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ (a basis is given below) and $9$ facet defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ and $9$ facet defining inequalities (given below). In particular, it is not simplicial.
 
 \[
 \begin{array}{r|c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}cc}
@@ -1557,96 +1766,97 @@ The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dime
 %\end{figure}
 
 \begin{figure}
-\begin{adjustbox}{center}
-\begin{tikzpicture}
-	\matrix (m) [matrix of math nodes, row sep=.15cm, column sep=.3cm, nodes={anchor=center, align=center, inner sep=0pt}]{
-		&&& \includegraphics[scale=.5]{walkA1} & \node (d) {\red \circled{D}}; & \includegraphics[scale=.5]{walkA7} & \\
-		\includegraphics[scale=.5]{walkA3} & \node (a) {\red \circled{A}}; & \includegraphics[scale=.5]{walkA5} & \node (c) {\red \circled{C}}; & \includegraphics[scale=.5]{walkA4} & \node (e) {\red \circled{E}}; & \includegraphics[scale=.5]{walkA6} \\
-		& \includegraphics[scale=.5]{walkA2} & \node (b) {\red \circled{B}}; & \includegraphics[scale=.5]{walkA8} &&& \\};
-	\draw[->] (m-2-1) -- (m-3-2);
-	\draw[->] (m-3-2) -- (m-2-3);
-	\draw[->] (m-2-3) -- (m-1-4);
-	\draw[->] (m-2-3) -- (m-3-4);
-	\draw[->] (m-1-4) -- (m-2-5);
-	\draw[->] (m-3-4) -- (m-2-5);
-	\draw[->] (m-2-5) -- (m-1-6);
-	\draw[->] (m-1-6) -- (m-2-7);
-	\draw[red] (a) -- (m-2-1);
-	\draw[red] (a) -- (m-2-3);
-	\draw[red] (a) -- (m-3-2);
-	\draw[red] (b) -- (m-3-2);
-	\draw[red] (b) -- (m-3-4);
-	\draw[red] (b) -- (m-2-3);
-	\draw[red] (c) -- (m-2-3);
-	\draw[red] (c) -- (m-2-5);
-	\draw[red] (c) -- (m-1-4);
-	\draw[red] (c) -- (m-3-4);
-	\draw[red] (d) -- (m-1-4);
-	\draw[red] (d) -- (m-1-6);
-	\draw[red] (d) -- (m-2-5);
-	\draw[red] (e) -- (m-2-5);
-	\draw[red] (e) -- (m-2-7);
-	\draw[red] (e) -- (m-1-6);
-\end{tikzpicture}
-\quad
-\begin{tikzpicture}
-	\matrix (m) [matrix of math nodes, row sep=.3cm, column sep=.1cm, nodes={anchor=center, align=center, inner sep=0pt}]{
-		&& \includegraphics[scale=.5]{walkB3} && \includegraphics[scale=.5]{walkB11} && \\
-		& \includegraphics[scale=.5]{walkB1} & \node (b) {\red \circled{B}}; && \node (f) {\red \circled{F}}; & \includegraphics[scale=.5]{walkB10} & \\
-		\includegraphics[scale=.5]{walkB2} & \node (a) {\red \circled{A}}; & \includegraphics[scale=.5]{walkB5} & \node (d) at (-.3,.3) {\red \circled{D}}; \node (e) at (.3,.3) {\red \circled{E}}; & \includegraphics[scale=.5]{walkB6} & \node (h) {\red \circled{H}}; & \includegraphics[scale=.5]{walkB9} \\
-		\node (k1) {\red \circled{K}}; & \includegraphics[scale=.5]{walkB7} & \node (c) {\red \circled{C}}; & \includegraphics[scale=.5]{walkB4} & \node (g) {\red \circled{G}}; & \includegraphics[scale=.5]{walkB8} & \node (k2) {\red \circled{K}}; \\};
-	\draw[->] (m-3-1) -- (m-2-2);
-	\draw[->] (m-3-1) -- (m-4-2);
-	\draw[->] (m-2-2) -- (m-1-3);
-	\draw[->] (m-2-2) -- (m-3-3);
-	\draw[->] (m-4-2) -- (m-3-3);
-	\draw[->] (m-1-3) -- (m-3-5);
-	\draw[->] (m-3-3) -- (m-1-5);
-	\draw[->] (m-3-3) -- (m-4-4);
-	\draw[->] (m-4-4) -- (m-3-5);
-	\draw[->] (m-1-5) -- (m-2-6);
-	\draw[->] (m-3-5) -- (m-2-6);
-	\draw[->] (m-3-5) -- (m-4-6);
-	\draw[->] (m-2-6) -- (m-3-7);
-	\draw[->] (m-4-6) -- (m-3-7);
-	\draw[red] (a) -- (m-3-1);
-	\draw[red] (a) -- (m-3-3);
-	\draw[red] (a) -- (m-2-2);
-	\draw[red] (a) -- (m-4-2);
-	\draw[red] (b) -- (m-2-2);
-	\draw[red] (b) -- (m-1-5);
-	\draw[red] (b) -- (m-3-3);
-	\draw[red] (c) -- (m-4-2);
-	\draw[red] (c) -- (m-4-4);
-	\draw[red] (c) -- (m-3-3);
-	\draw[red] (d) -- (m-2-2);
-	\draw[red] (d) -- (m-3-5.200);
-	\draw[red] (d) -- (m-1-3);
-	\draw[red] (d) -- (m-4-4);
-	\draw[red] (e) -- (m-3-3.340);
-	\draw[red] (e) -- (m-2-6);
-	\draw[red] (e) -- (m-4-4);
-	\draw[red] (e) -- (m-1-5);
-	\draw[red] (f) -- (m-1-3);
-	\draw[red] (f) -- (m-2-6);
-	\draw[red] (f) -- (m-3-5);
-	\draw[red] (g) -- (m-4-4);
-	\draw[red] (g) -- (m-4-6);
-	\draw[red] (g) -- (m-3-5);
-	\draw[red] (h) -- (m-3-5);
-	\draw[red] (h) -- (m-3-7);
-	\draw[red] (h) -- (m-2-6);
-	\draw[red] (h) -- (m-4-6);
-	\draw[red] (k1) -- (m-3-1);
-	\draw[red] (k1) -- (m-4-2);
-	\draw[red, densely dotted] (k1.west) -- ([xshift=-.3cm]k1.west);
-	\draw[red, densely dotted] (k1.south) -- ([yshift=-.3cm]k1.south);
-	\draw[red] (k2) -- (m-4-6);
-	\draw[red] (k2) -- (m-3-7);
-	\draw[red, densely dotted] (k2.east) -- ([xshift=.3cm]k2.east);
-	\draw[red, densely dotted] (k2.south) -- ([yshift=-.3cm]k2.south);
-\end{tikzpicture}
-\end{adjustbox}
+    \begin{adjustbox}{center}
+        \begin{tikzpicture}
+        	\matrix (m) [matrix of math nodes, row sep=.15cm, column sep=.3cm, nodes={anchor=center, align=center, inner sep=0pt}]{
+        		&&& \includegraphics[scale=.5]{walkA1} & \node (d) {\red \circled{D}}; & \includegraphics[scale=.5]{walkA7} & \\
+        		\includegraphics[scale=.5]{walkA3} & \node (a) {\red \circled{A}}; & \includegraphics[scale=.5]{walkA5} & \node (c) {\red \circled{C}}; & \includegraphics[scale=.5]{walkA4} & \node (e) {\red \circled{E}}; & \includegraphics[scale=.5]{walkA6} \\
+        		& \includegraphics[scale=.5]{walkA2} & \node (b) {\red \circled{B}}; & \includegraphics[scale=.5]{walkA8} &&& \\};
+        	\draw[->] (m-2-1) -- (m-3-2);
+        	\draw[->] (m-3-2) -- (m-2-3);
+        	\draw[->] (m-2-3) -- (m-1-4);
+        	\draw[->] (m-2-3) -- (m-3-4);
+        	\draw[->] (m-1-4) -- (m-2-5);
+        	\draw[->] (m-3-4) -- (m-2-5);
+        	\draw[->] (m-2-5) -- (m-1-6);
+        	\draw[->] (m-1-6) -- (m-2-7);
+        	\draw[red] (a) -- (m-2-1);
+        	\draw[red] (a) -- (m-2-3);
+        	\draw[red] (a) -- (m-3-2);
+        	\draw[red] (b) -- (m-3-2);
+        	\draw[red] (b) -- (m-3-4);
+        	\draw[red] (b) -- (m-2-3);
+        	\draw[red] (c) -- (m-2-3);
+        	\draw[red] (c) -- (m-2-5);
+        	\draw[red] (c) -- (m-1-4);
+        	\draw[red] (c) -- (m-3-4);
+        	\draw[red] (d) -- (m-1-4);
+        	\draw[red] (d) -- (m-1-6);
+        	\draw[red] (d) -- (m-2-5);
+        	\draw[red] (e) -- (m-2-5);
+        	\draw[red] (e) -- (m-2-7);
+        	\draw[red] (e) -- (m-1-6);
+        \end{tikzpicture}
+        \quad
+        \begin{tikzpicture}
+        	\matrix (m) [matrix of math nodes, row sep=.3cm, column sep=.1cm, nodes={anchor=center, align=center, inner sep=0pt}]{
+        		&& \includegraphics[scale=.5]{walkB3} && \includegraphics[scale=.5]{walkB11} && \\
+        		& \includegraphics[scale=.5]{walkB1} & \node (b) {\red \circled{B}}; && \node (f) {\red \circled{F}}; & \includegraphics[scale=.5]{walkB10} & \\
+        		\includegraphics[scale=.5]{walkB2} & \node (a) {\red \circled{A}}; & \includegraphics[scale=.5]{walkB5} & \node (d) at (-.3,.3) {\red \circled{D}}; \node (e) at (.3,.3) {\red \circled{E}}; & \includegraphics[scale=.5]{walkB6} & \node (h) {\red \circled{H}}; & \includegraphics[scale=.5]{walkB9} \\
+        		\node (k1) {\red \circled{K}}; & \includegraphics[scale=.5]{walkB7} & \node (c) {\red \circled{C}}; & \includegraphics[scale=.5]{walkB4} & \node (g) {\red \circled{G}}; & \includegraphics[scale=.5]{walkB8} & \node (k2) {\red \circled{K}}; \\};
+        	\draw[->] (m-3-1) -- (m-2-2);
+        	\draw[->] (m-3-1) -- (m-4-2);
+        	\draw[->] (m-2-2) -- (m-1-3);
+        	\draw[->] (m-2-2) -- (m-3-3);
+        	\draw[->] (m-4-2) -- (m-3-3);
+        	\draw[->] (m-1-3) -- (m-3-5);
+        	\draw[->] (m-3-3) -- (m-1-5);
+        	\draw[->] (m-3-3) -- (m-4-4);
+        	\draw[->] (m-4-4) -- (m-3-5);
+        	\draw[->] (m-1-5) -- (m-2-6);
+        	\draw[->] (m-3-5) -- (m-2-6);
+        	\draw[->] (m-3-5) -- (m-4-6);
+        	\draw[->] (m-2-6) -- (m-3-7);
+        	\draw[->] (m-4-6) -- (m-3-7);
+        	\draw[red] (a) -- (m-3-1);
+        	\draw[red] (a) -- (m-3-3);
+        	\draw[red] (a) -- (m-2-2);
+        	\draw[red] (a) -- (m-4-2);
+        	\draw[red] (b) -- (m-2-2);
+        	\draw[red] (b) -- (m-1-5);
+        	\draw[red] (b) -- (m-3-3);
+        	\draw[red] (c) -- (m-4-2);
+        	\draw[red] (c) -- (m-4-4);
+        	\draw[red] (c) -- (m-3-3);
+        	\draw[red] (d) -- (m-2-2);
+        	\draw[red] (d) -- (m-3-5.200);
+        	\draw[red] (d) -- (m-1-3);
+        	\draw[red] (d) -- (m-4-4);
+        	\draw[red] (e) -- (m-3-3.340);
+        	\draw[red] (e) -- (m-2-6);
+        	\draw[red] (e) -- (m-4-4);
+        	\draw[red] (e) -- (m-1-5);
+        	\draw[red] (f) -- (m-1-3);
+        	\draw[red] (f) -- (m-2-6);
+        	\draw[red] (f) -- (m-3-5);
+        	\draw[red] (g) -- (m-4-4);
+        	\draw[red] (g) -- (m-4-6);
+        	\draw[red] (g) -- (m-3-5);
+        	\draw[red] (h) -- (m-3-5);
+        	\draw[red] (h) -- (m-3-7);
+        	\draw[red] (h) -- (m-2-6);
+        	\draw[red] (h) -- (m-4-6);
+        	\draw[red] (k1) -- (m-3-1);
+        	\draw[red] (k1) -- (m-4-2);
+        	\draw[red, densely dotted, thick] (k1.west) -- ([xshift=-.3cm]k1.west);
+        	\draw[red, densely dotted, thick] (k1.south) -- ([yshift=-.3cm]k1.south);
+        	\draw[red] (k2) -- (m-4-6);
+        	\draw[red] (k2) -- (m-3-7);
+        	\draw[red, densely dotted, thick] (k2.east) -- ([xshift=.3cm]k2.east);
+        	\draw[red, densely dotted, thick] (k2.south) -- ([yshift=-.3cm]k2.south);
+        \end{tikzpicture}
+    \end{adjustbox}
+	\caption{The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[\quiver])$ represented on the Auslander Reiten quiver of the gentle algebra of~$\quiver$. While they correspond to meshes on the left, they are not as clear in the general case as on the right. See also \cref{sect::extricats}.}
 \end{figure}
 \end{example}
 
@@ -1837,6 +2047,7 @@ Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we
 %%%%%%%%%%%
 
 \subsection{Graphical nested complexes and graph associahedra}
+\label{subsec:typeConeGA}
 
 Graph associahedra were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}.
 For a given graph~$\graphG$, the $\graphG$-associahedron~$\Asso[\graphG]$ is a simple polytope whose combinatorial structure encodes the connected subgraphs of~$\graphG$ and their nested structure.
@@ -1968,11 +2179,11 @@ For any graph~$\graphG$, the type cone of the nested fan~$\gvectorFan[\graphG]$ 
 \begin{example}
 \label{exm:typeConeGA}
 Consider the nested fans illustrated in \cref{fig:nestedFans}.
-The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimension~$3$ (a basis is given below) and $19$ facet defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimension~$3$ and $19$ facet defining inequalities (given below). In particular, it is not simplicial.
 
 \[
 \begin{array}{r|c@{\;\;\;}c@{\;\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
-\text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA11}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA12}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA13}}  \\[.6cm]
+\text{tubes} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA11}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA12}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA13}}  \\[.6cm]
 \text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{0}{2}{-1} & \compactVector{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVector{1}{-2}{0} & \compactVector{\nicefrac{1}{2}}{0}{\nicefrac{-1}{2}} & \compactVector{-1}{2}{0} & \compactVector{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVector{-1}{0}{0} & \compactVector{0}{-2}{1} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
 %\text{linearity}	& 1 & 0 & 0 & 0 & 2 & 1 & 2 & -1 & -2 & -1 & 0 & 0 & 0 \\ 
 %\text{space}		& -2 & -1 & 0 & -2 & 0 & 0 & -4 & 0 & 4 & 2 & 2 & 1 & 0 \\
@@ -2064,12 +2275,13 @@ The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimen
 %sage: len(TCNF.inequalities())
 %12
 
+\vincent{Should only be 1 and -1...}
 \noindent
-The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ (a basis is given below) and $12$ facet defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ and $12$ facet defining inequalities (given below). In particular, it is not simplicial.
 
 \[
 \begin{array}{r|c@{\;\;\;}c@{\;\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
-\text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB11}} \\[.6cm]
+\text{tubes} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB11}} \\[.6cm]
 \text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVector{1}{-2}{0} & \compactVector{-1}{2}{0} & \compactVector{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVector{-1}{0}{0} & \compactVector{0}{-2}{1} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
 %\text{linearity}	& 0 & 1 & 0 & -4 & -2 & 2 & 0 & 0 & -2 & -1 & 0 \\
 %\text{space}		& 1 & 0 & 0 & 2 & 1 & -1 & -2 & -1 & 0 & 0 & 0 \\
