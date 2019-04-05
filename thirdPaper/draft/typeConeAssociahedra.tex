@@ -110,7 +110,8 @@
 \newcommand{\ex}{_{\textrm{exm}}} % examples
 \newcommand{\pa}{_{\textrm{pa}}} % path
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle, draw, inner sep=1.5pt, scale=.7] (char) {#1};}}
-\newcommand{\compactVector}[3]{\begin{bmatrix} #1 \\[-.1cm] #2 \\[-.1cm] #3 \end{bmatrix}}
+\newcommand{\compactVectorD}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\compactVectorT}[3]{\begin{bmatrix} #1 \\[-.1cm] #2 \\[-.1cm] #3 \end{bmatrix}}
 
 % marginal comments
 \usepackage{todonotes}
@@ -645,12 +646,25 @@ Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type
 
 \begin{example}
 Consider the fan~$\gvectorFan[2]$ and~$\gvectorFan[3]$ illustrated in \cref{fig:lodayFans}.
+The type cone of~$\gvectorFan[2]$ in~$\R^5$, has a linearity space of dimension~$2$ and $3$ facet defining inequalities (given below). 
+
+\[
+\begin{array}{r|cccccc}
+\text{diagonals} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA1}}  & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA2}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA3}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA4}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA5}} \\[.3cm]
+\text{$\b{g}$-vectors} & \compactVectorD{1}{0} & \compactVectorD{0}{1} & \compactVectorD{1}{-1} & \compactVectorD{-1}{0} & \compactVectorD{0}{-1} \\[.6cm]
+\text{facet}		& 1 & -1 & 1 & 0 & 0 & \red \circled{A} \\
+\text{defining} 	& 0 & 1 & -1 & 1 & 0 & \red \circled{B} \\
+\text{inequalities}	& 0 & 0 & 1 & -1 & 1 & \red \circled{C} \\[.2cm]
+\end{array}
+\]
+
+\noindent
 The type cone of~$\gvectorFan[3]$ in~$\R^9$, has a linearity space of dimension~$3$ and $6$ facet defining inequalities (given below). 
 
 \[
 \begin{array}{r|cccccccccc}
-\text{diagonals} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB1}}  & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB2}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB3}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB4}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB5}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB6}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB7}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB8}} & \raisebox{-.25cm}{\;\includegraphics[scale=.6]{diagonalB9}} \\[.3cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{1}{0} & \compactVector{0}{-1}{1} & \compactVector{-1}{0}{1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{diagonals} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB1}}  & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB2}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB3}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB4}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB5}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB6}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB7}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB8}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB9}} \\[.3cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
 %\text{linearity}	& 0 & 1 & 0 & 1 & 0 & -1 & 0 & -1 & 0 \\
 %\text{space}		& 0 & 1 & 1 & 1 & 1 & 0 & 0 & -1 & -1 \\
 %					& 1 & 1 & 1 & 0 & 0 & 0 & -1 & -1 & -1 \\
@@ -700,8 +714,8 @@ The type cone of~$\gvectorFan[3]$ in~$\R^9$, has a linearity space of dimension~
     \begin{adjustbox}{center}
         \begin{tikzpicture}
         	\matrix (m) [matrix of math nodes, row sep=.35cm, column sep=.2cm, nodes={anchor=center, align=center, inner sep=0pt}]{
-        		& \;\includegraphics[scale=.6]{diagonalA2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.6]{diagonalA4} & \\
-        		\;\includegraphics[scale=.6]{diagonalA1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.6]{diagonalA3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.6]{diagonalA5} \\};
+        		& \;\includegraphics[scale=.7]{diagonalA2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.7]{diagonalA4} & \\
+        		\;\includegraphics[scale=.7]{diagonalA1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.7]{diagonalA3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.7]{diagonalA5} \\};
         	\draw[->] (m-2-1) -- (m-1-2);
         	\draw[->] (m-1-2) -- (m-2-3);
         	\draw[->] (m-2-3) -- (m-1-4);
@@ -719,9 +733,9 @@ The type cone of~$\gvectorFan[3]$ in~$\R^9$, has a linearity space of dimension~
         \quad
         \begin{tikzpicture}
         	\matrix (m) [matrix of math nodes, row sep=.35cm, column sep=.2cm, nodes={anchor=center, align=center, inner sep=0pt}]{
-        		&& \;\includegraphics[scale=.6]{diagonalB3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.6]{diagonalB7} && \\
-        		& \;\includegraphics[scale=.6]{diagonalB2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.6]{diagonalB5} & \node (e) {\red \circled{E}}; & \;\includegraphics[scale=.6]{diagonalB8} & \\
-        		\;\includegraphics[scale=.6]{diagonalB1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.6]{diagonalB4} & \node (d) {\red \circled{D}}; & \;\includegraphics[scale=.6]{diagonalB6} & \node (f) {\red \circled{F}}; & \;\includegraphics[scale=.6]{diagonalB9} \\};
+        		&& \;\includegraphics[scale=.7]{diagonalB3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.7]{diagonalB7} && \\
+        		& \;\includegraphics[scale=.7]{diagonalB2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.7]{diagonalB5} & \node (e) {\red \circled{E}}; & \;\includegraphics[scale=.7]{diagonalB8} & \\
+        		\;\includegraphics[scale=.7]{diagonalB1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.7]{diagonalB4} & \node (d) {\red \circled{D}}; & \;\includegraphics[scale=.7]{diagonalB6} & \node (f) {\red \circled{F}}; & \;\includegraphics[scale=.7]{diagonalB9} \\};
         	\draw[->] (m-3-1) -- (m-2-2);
         	\draw[->] (m-2-2) -- (m-1-3);
         	\draw[->] (m-2-2) -- (m-3-3);
@@ -1053,7 +1067,7 @@ The type cone of the left fan lives in~$\R^9$, has a linearity space of dimensio
 \[
 \begin{array}{r|cccccccccc}
 \text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1 + x_2}{x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} \\[.2cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{1}{-1} & \compactVector{0}{0}{-1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{0}{1}{-1} & \compactVectorT{0}{0}{-1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-1}{0} \\[.6cm]
 %\text{linearity}	& 0 & 0 & 1 & 1 & 0 & -1 & -1 & 0 & 0 \\
 %\text{space}		& 0 & -1 & 0 & 0 & 1 & -1 & 0 & 0 & 1 \\
 %					& 1 & 1 & 0 & -1 & 0 & 1 & 0 & -1 & -1 \\[.2cm]
@@ -1105,7 +1119,7 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
 \[
 \begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}c}
 \text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.2cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{-1}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{2}{-1} & \compactVector{0}{1}{-1} & \compactVector{-1}{1}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} & \compactVector{-2}{0}{1} & \compactVector{-1}{0}{0}  \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{0}{2}{-1} & \compactVectorT{0}{1}{-1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} & \compactVectorT{-2}{0}{1} & \compactVectorT{-1}{0}{0}  \\[.6cm]
 %\text{linearity}	& 1 & 1 & 2 & 1 & 0 & 0 & -1 & 0 & -1 & -2 & 0 & -1 \\
 %\text{space}		& 0 & 1 & 0 & 0 & -1 & 2 & 1 & 1 & -1 & 0 & 0 & 0 \\
 %					& 0 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 0 & 1 & -1 & 0 \\[.2cm]
@@ -1164,8 +1178,8 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
     \begin{adjustbox}{center}
 %        \begin{tikzpicture}
 %        	\matrix (m) [matrix of math nodes, row sep=.35cm, column sep=.2cm, nodes={anchor=center, align=center, inner sep=0pt}]{
-%        		& \;\includegraphics[scale=.6]{diagonalA2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.6]{diagonalA4} & \\
-%        		\;\includegraphics[scale=.6]{diagonalA1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.6]{diagonalA3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.6]{diagonalA5} \\};
+%        		& \;\includegraphics[scale=.7]{diagonalA2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.7]{diagonalA4} & \\
+%        		\;\includegraphics[scale=.7]{diagonalA1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.7]{diagonalA3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.7]{diagonalA5} \\};
 %        	\draw[->] (m-2-1) -- (m-1-2);
 %        	\draw[->] (m-1-2) -- (m-2-3);
 %        	\draw[->] (m-2-3) -- (m-1-4);
@@ -1601,7 +1615,7 @@ The type cone of the left fan lives in~$\R^9$, has a linearity space of dimensio
 \[
 \begin{array}{r|ccccccccc}
 \text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkA8}} \\[.6cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{0}{1}{-1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{0}{1}{-1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
 %\text{linearity}	& 0 & -1 & 0 & 1 & -1 & 0 & 1 & 0 \\
 %\text{space}		& 1 & 1 & 0 & 0 & 1 & -1 & -1 & 0 \\
 %					& 0 & 0 & 1 & 0 & -1 & 0 & 0 & -1 \\[.2cm]
@@ -1650,7 +1664,7 @@ The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dime
 \[
 \begin{array}{r|c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}cc}
 \text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{walkB11}} \\[.6cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{1}{0}{-1} & \compactVector{0}{-1}{1} & \compactVector{0}{1}{-1} & \compactVector{-1}{0}{1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{1}{0}{-1} & \compactVectorT{0}{-1}{1} & \compactVectorT{0}{1}{-1} & \compactVectorT{-1}{0}{1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
 %\text{linearity}	& 0 & -1 & 0 & 1 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
 %\text{space}		& 1 & 0 & 0 & 1 & 1 & 0 & 0 & -1 & -1 & 0 & 0 \\
 %					& 1 & 0 & 1 & 1 & 0 & 1 & -1 & 0 & -1 & 0 & -1 \\[.2cm]
@@ -2184,7 +2198,7 @@ The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimen
 \[
 \begin{array}{r|c@{\;\;\;}c@{\;\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
 \text{tubes} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA11}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA12}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA13}}  \\[.6cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{0}{2}{-1} & \compactVector{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVector{1}{-2}{0} & \compactVector{\nicefrac{1}{2}}{0}{\nicefrac{-1}{2}} & \compactVector{-1}{2}{0} & \compactVector{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVector{-1}{0}{0} & \compactVector{0}{-2}{1} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{0}{2}{-1} & \compactVectorT{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVectorT{1}{-2}{0} & \compactVectorT{\nicefrac{1}{2}}{0}{\nicefrac{-1}{2}} & \compactVectorT{-1}{2}{0} & \compactVectorT{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-2}{1} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
 %\text{linearity}	& 1 & 0 & 0 & 0 & 2 & 1 & 2 & -1 & -2 & -1 & 0 & 0 & 0 \\ 
 %\text{space}		& -2 & -1 & 0 & -2 & 0 & 0 & -4 & 0 & 4 & 2 & 2 & 1 & 0 \\
 %					& 0 & 0 & -1 & 1 & -2 & 0 & 2 & 0 & -2 & 0 & -1 & 0 & 1 \\[.2cm]
@@ -2282,7 +2296,7 @@ The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dime
 \[
 \begin{array}{r|c@{\;\;\;}c@{\;\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
 \text{tubes} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB11}} \\[.6cm]
-\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVector{1}{-2}{0} & \compactVector{-1}{2}{0} & \compactVector{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVector{-1}{0}{0} & \compactVector{0}{-2}{1} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVectorT{1}{-2}{0} & \compactVectorT{-1}{2}{0} & \compactVectorT{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-2}{1} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
 %\text{linearity}	& 0 & 1 & 0 & -4 & -2 & 2 & 0 & 0 & -2 & -1 & 0 \\
 %\text{space}		& 1 & 0 & 0 & 2 & 1 & -1 & -2 & -1 & 0 & 0 & 0 \\
 %					& 1 & 0 & 1 & 4 & 1 & -1 & 0 & -1 & 1 & 0 & -1 \\[.2cm]
