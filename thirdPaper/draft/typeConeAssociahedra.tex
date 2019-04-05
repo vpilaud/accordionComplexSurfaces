@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
 \usepackage[T1]{fontenc}
-\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray, overpic}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, wasysym, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray, overpic, nicefrac}
 \usepackage[noabbrev,capitalise]{cleveref}
 \usepackage[normalem]{ulem}
 \usepackage{marginnote}
@@ -499,7 +499,12 @@ Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{
 
 %%%%%%%%%%%
 
-\subsection{Faces of the type-cone and Minkowski sums}
+\subsection{Faces of the type-cone}
+
+%%%%%%%%%%%
+
+\subsection{Minkowski sums}
+
 Recall that the \defn{Minkowski sum} of two polytopes $P$ and $Q$ is the polytope $P+Q=\set{p+q}{p\in P\text{ and } q\in Q}$. 
 
 \begin{lemma}
@@ -516,45 +521,40 @@ P_\b{h} + P_{\b{h}'} & = \set{\b{x} + \b{x}'}{\b{x} \in P_\b{h} \text{ and } \b{
 \end{align*}
 \end{proof}
 
+We say that~$P$ is a \defn{Minkowski summand} of~$R$ if there is a polytope~$Q$ such that $R=P+Q$, and a \defn{weak Minkowski summand} if there is a $\lambda \ge 0$ and a polytope~$Q$ such that ${\lambda R = P + Q}$. 
+\cref{lem:MinkowskiSum} ensures that convex combinations in the type-cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type-cone~$\ctypeCone(\Fan)$ modulo linearity (the cone of weak Minkowski summands is studied by W.~Meyer in~\cite{Meyer}, to see that it is equivalent to the type-cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
 
-
-We say that~$P$ is a \defn{Minkowski summand} of~$R$ if there is a polytope~$Q$ such that $R=P+Q$, and a \defn{weak Minkowski summand} if there is a $\lambda\geq 0$ and a polytope~$Q$ such that $\lambda R=P+Q$. 
-\cref{lem:MinkowskiSum} ensures that convex combinations in the type-cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type-cone~$\ctypeCone(\Fan)$ modulo linearity (the cone of weak Minkowski summands is studied by Meyer in~\cite{Meyer1974}, to see that it is equivalent to the type-cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
-
-This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the type-cone. These correspond to indecomposable polytopes~(cf.~\cite{Meyer1974} or \cite{McMullen-typeCone}). A polytope $P$ in $\R^n$ is 
-  called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda\geq 0$ and $t\in\R^n$.
+This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the type-cone. These correspond to indecomposable polytopes, see~\cite{Meyer} or \cite{McMullen-typeCone}. A polytope $P$ in $\R^n$ is called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda \ge 0$ and $t \in \R^n$.
 
 \begin{corollary}
-\arnau{See \cite{Meyer1974} and \cite{McMullen-typeCone}}
+\arnau{See \cite{Meyer} and \cite{McMullen-typeCone}}
 Any polytope in~$\typeCone(\Fan)$ is the Minkowski sum of at most~$N-n$ indecomposable polytopes corresponding to the rays of~$\b{K}\typeCone(\Fan)$.
 \end{corollary}
 
-
-If $P=Q+R$, then we say that $R$ is the \defn{Minkowski difference} of $P$ and $Q$, which we denote by $R=P-Q$. We will only consider the case where $Q$ is a summand of $P$.
-There are two natural ways this construction generalizes to arbitrary pairs of polyhedra. On the one hand, we have $P-Q=\set{x\in\R^n}{x+Q\subseteq P}$. 
-Notice that $P_\b{h}-P_{\b{h}'}=P_{\b{h} - \b{h'}}$ when $P_{\b{h}'}$ is a Minkowski summand of $P_\b{h}$. Considering arbitrary differences of support functions gives rise to  \defn{virtual polyhedra}, which is the Grothendieck group of the semigroup of polytopes with Minkowski sums~\cite{PukhlikovKhovanskii1992}.
+If $P = Q + R$, then we say that~$R$ is the \defn{Minkowski difference} of~$P$ and~$Q$, denoted~${R = P - Q}$. Note that this is only defined when~$Q$ is a Minkowski summand of~$P$.
+There are two natural ways this construction generalizes to arbitrary pairs of polyhedra. On the one hand, we have $P - Q = \set{x \in \R^n}{x + Q \subseteq P}$. 
+Notice that $P_\b{h}-P_{\b{h}'}=P_{\b{h} - \b{h'}}$ when $P_{\b{h}'}$ is a Minkowski summand of $P_\b{h}$. Considering arbitrary differences of support functions gives rise to \defn{virtual polyhedra}, which is the Grothendieck group of the semigroup of polytopes with Minkowski sums~\cite{PukhlikovKhovanskii}.
 
 \begin{corollary}
-Let $\b{h}_1,\dots, \b{h}_{N-n}\in \ctypeCone(\Fan)$ form a basis of $\ker \b{G}$. Then every $P_\b{h}$ with $\b{h}\in \ctypeCone(\Fan)$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
+Let $\b{h}_1,\dots, \b{h}_{N-n}\in \ctypeCone(\Fan)$ form a basis of $\ker \b{G}$. Then for any~$\b{h} \in \ctypeCone(\Fan)$, the polytope~$P_\b{h}$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
 \end{corollary}
 \begin{proof}
  It suffices to express the projection of $\b{h}$ into $\ker\b{G}$ in terms of $\b{h}_1,\dots, \b{h}_{N-n}$, and to separate those terms with positive and negative coefficients to express Minkowski sums and differences.
 \end{proof}
 
-
-This is used in~\cite{ArdilaBenedettiDoker} to show that every generalized permutahedron can be written uniquelyas a signed Minkowski sum of simplices. 
+This is used in~\cite{ArdilaBenedettiDoker} to show that every generalized permutahedron can be written uniquely as a signed Minkowski sum of simplices. 
 \arnau{This has consequences in expressing volume and other valuations! I have to have a look at it.}
 In the particular case when the type-cone is simplicial, then we can get rid of the Minkowski differences.
+
 \begin{corollary}
- If the type-cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then the $N-n$ idecomposable polytopes $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$ arising from the rays of $\ctypeCone(\Fan)$
- verify that 
- \begin{enumerate}[(i)]
-  \item  every $P_\b{h}$ with $\b{h}\in \typeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$; and
- \item  every $P_\b{h}$ with $\b{h}\in \ctypeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
- \end{enumerate}
- 
+If the type-cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then the $N-n$ idecomposable polytopes $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$ arising from the rays of $\ctypeCone(\Fan)$ verify that 
+\begin{enumerate}[(i)]
+\item  every $P_\b{h}$ with $\b{h}\in \typeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$; and
+\item  every $P_\b{h}$ with $\b{h}\in \ctypeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
+\end{enumerate} 
 \end{corollary}
- Note that such a family of polytopes giving rise to unique positive representations only exists when the type-cone is simplicial.
+
+Note that such a family of polytopes giving rise to unique positive representations only exists when the type-cone is simplicial.
 
 \arnau{By \cite{McMullen-Valuations} valuations on the polytope $\alpha_1P_{\b{h}_1}+\cdots+\alpha_{N-n}P_{\b{h}_{N-n}}$ (such as volume) are a polynomial on $\alpha_1\dots\alpha_{N-n}$ with coefficients the mixed volumes. This also works when the $\alpha$'s are not necessarily positive \cite{ArdilaBenedettiDoker}. Does this help in any way?}
 
@@ -1813,32 +1813,182 @@ For any graph~$\graphG$, the type cone of the nested fan~$\gvectorFan[\graphG]$ 
 \begin{example}
 \label{exm:typeConeGA}
 Consider the nested fans illustrated in \cref{fig:nestedFans}.
-The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimension~$3$ (a basis is given below) and $6$ facet defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimension~$3$ (a basis is given below) and $19$ facet defining inequalities (given below). In particular, it is not simplicial.
 
 \[
-\begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
+\begin{array}{r|c@{\;\;\;}c@{\;\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
 \text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA11}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA12}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA13}}  \\[.6cm]
-\text{$\b{g}$-vectors} & \\ %\compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{1}{0}{-1} & \compactVector{0}{-1}{1} & \compactVector{0}{1}{-1} & \compactVector{-1}{0}{1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
-\text{linearity}	& 
-\text{space}		& \\[.2cm]
-\text{inequalities} & \\[.2cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{0}{2}{-1} & \compactVector{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVector{1}{-2}{0} & \compactVector{\nicefrac{1}{2}}{0}{\nicefrac{-1}{2}} & \compactVector{-1}{2}{0} & \compactVector{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVector{-1}{0}{0} & \compactVector{0}{-2}{1} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+
+\text{linearity}	& 1 & 0 & 0 & 0 & 2 & 1 & 2 & -1 & -2 & -1 & 0 & 0 & 0 \\ 
+\text{space}		& -2 & -1 & 0 & -2 & 0 & 0 & -4 & 0 & 4 & 2 & 2 & 1 & 0 \\
+					& 0 & 0 & -1 & 1 & -2 & 0 & 2 & 0 & -2 & 0 & -1 & 0 & 1 \\[.2cm]
+\text{inequalities} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -2 & 1 \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & -2 & 0 \\
+					& -1 & 2 & 0 & -1 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & -1 & -1 & 2 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & -1 & 2 & 0 & 0 & 0 & 0 & 2 & -1 \\
+					& -1 & 2 & -1 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+					& -1 & 0 & 0 & 0 & 2 & -1 & 2 & 0 & 0 & 0 & 0 & 0 & 0 \\
+					& 0 & 2 & -1 & 0 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 & 0 \\
+					& 0 & 0 & -1 & 0 & 2 & 0 & 0 & 0 & 2 & 0 & -1 & 0 & 0 \\
+					& 0 & 0 & 0 & 0 & 2 & -1 & 0 & 0 & 0 & 0 & -1 & 2 & 0 \\
+					& 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & -2 & 1 & 0 & 0 & 0 \\
+					& 0 & 0 & 1 & 0 & -2 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 1 & 0 & 0 \\
+					& 1 & 0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 & 0 & 1 \\
+					& 1 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+					& 1 & -2 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+					& 0 & 0 & 0 & 1 & 0 & 0 & 0 & -1 & 0 & 1 & 0 & 0 & -1 \\
+					& 0 & 0 & 0 & 1 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 \\
+					& 0 & -2 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\[.2cm]
 \end{array}
 \]
+
+%sage: G = Graph([[1,2,3,4], [[1,2],[1,3],[1,4],[2,3],[3,4]]])
+%sage: M = Matrix([g_vector_GA(G, (1,)), g_vector_GA(G, (1,2)), g_vector_GA(G, (1,2,3)), [1,1,1,1]]).inverse()
+%sage: rays
+%{(1,): (1, 0, 0),
+% (1, 2): (0, 1, 0),
+% (1, 2, 3): (0, 0, 1),
+% (1, 2, 3, 4): (0, 0, 0),
+% (1, 2, 4): (0, 2, -1),
+% (1, 3): (1/2, -1, 1/2),
+% (1, 3, 4): (1, -2, 0),
+% (1, 4): (1/2, 0, -1/2),
+% (2,): (-1, 2, 0),
+% (2, 3): (-1/2, 0, 1/2),
+% (2, 3, 4): (-1, 0, 0),
+% (3,): (0, -2, 1),
+% (3, 4): (0, -1, 0),
+% (4,): (0, 0, -1)}
+
+%sage: NF = Fan([Cone([rays[tuple(tube)] for tube in tubing]) for tubing in maximal_tubings(G)])
+%sage: NF.rays()
+%N( 0, -1,  0),
+%N( 0,  2, -1),
+%N( 1,  0,  0),
+%N(-1,  2,  0),
+%N( 0,  0,  1),
+%N( 1, -2,  0),
+%N( 0, -2,  1),
+%N( 0,  0, -1),
+%N(-1,  0,  1),
+%N( 1,  0, -1),
+%N(-1,  0,  0),
+%N( 0,  1,  0),
+%N( 1, -2,  1)
+%in 3-d lattice N
+
+%sage: TCNF = type_cone(NF)
+%sage: TCNF
+%A 13-dimensional polyhedron in QQ^13 defined as the convex hull of 1 vertex, 25 rays, 3 lines
+%sage: TCNF.lines()
+%(A line in the direction (0, 0, 1, -1, 0, 1, 0, 0, -1, 1, -1, 0, 1),
+% A line in the direction (1, -2, -2, 0, 0, 0, 2, 0, 2, -2, 2, -1, 0),
+% A line in the direction (0, 1, 0, 0, -1, 0, -1, 1, -1, 1, 0, 0, -1))
+%sage: TCNF.inequalities()
+%(An inequality (-2, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0) x + 0 >= 0,
+% An inequality (-2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0) x + 0 >= 0,
+% An inequality (0, -1, -1, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0) x + 0 >= 0,
+% An inequality (2, 0, 0, 0, 0, 0, -1, 0, 1, 0, -1, 0, 0) x + 0 >= 0,
+% An inequality (2, 0, 0, 0, 0, -1, 0, -1, 0, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 2, 1) x + 0 >= 0,
+% An inequality (0, 0, -1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 1) x + 0 >= 0,
+% An inequality (0, 0, 0, -1, -1, 0, 0, 0, 1, 0, 0, 2, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, -1, 0, -1, 0, 1, 0, 0, 0, 1) x + 0 >= 0,
+% An inequality (2, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 1) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, 1, 0, 0, 0, -1, 0, 1, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, -1) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1) x + 0 >= 0,
+% An inequality (0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, -2, 0) x + 0 >= 0,
+% An inequality (0, 1, 0, -1, 0, 0, 0, -1, 0, 0, 1, 0, 0) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, -2, 0) x + 0 >= 0)
+%sage: len(TCNF.inequalities())
+%12
 
 \noindent
-The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ (a basis is given below) and $9$ facet defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ (a basis is given below) and $12$ facet defining inequalities (given below). In particular, it is not simplicial.
 
 \[
-\begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
-\text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeA2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB11}} \\[.6cm]
-\text{$\b{g}$-vectors} & \\ %\compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{1}{-1}{0} & \compactVector{1}{0}{-1} & \compactVector{0}{-1}{1} & \compactVector{0}{1}{-1} & \compactVector{-1}{0}{1} & \compactVector{-1}{0}{0} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
-\text{linearity}	& 
-\text{space}		& \\[.2cm]
-\text{inequalities} & \\[.2cm]
+\begin{array}{r|c@{\;\;\;}c@{\;\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c}
+\text{walks} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB1}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB2}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB3}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB4}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB5}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB6}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB7}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB8}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB9}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB10}} & \raisebox{-.4cm}{\includegraphics[scale=.5]{tubeB11}} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVector{1}{0}{0} & \compactVector{0}{1}{0} & \compactVector{0}{0}{1} & \compactVector{\nicefrac{1}{2}}{-1}{\nicefrac{1}{2}} & \compactVector{1}{-2}{0} & \compactVector{-1}{2}{0} & \compactVector{\nicefrac{-1}{2}}{0}{\nicefrac{1}{2}} & \compactVector{-1}{0}{0} & \compactVector{0}{-2}{1} & \compactVector{0}{-1}{0} & \compactVector{0}{0}{-1} \\[.6cm]
+\text{linearity}	& 0 & 1 & 0 & -4 & -2 & 2 & 0 & 0 & -2 & -1 & 0 \\
+\text{space}		& 1 & 0 & 0 & 2 & 1 & -1 & -2 & -1 & 0 & 0 & 0 \\
+					& 1 & 0 & 1 & 4 & 1 & -1 & 0 & -1 & 1 & 0 & -1 \\[.2cm]
+\text{inequalities} & -1 & 2 & -1 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+					& 1 & -2 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+					& 0 & 2 & -1 & 0 & 0 & -1 & 2 & 0 & 0 & 0 & 0 \\
+					& 1 & 0 & 0 & -2 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+					& 0 & 0 & -1 & 2 & 0 & 0 & 2 & 0 & -1 & 0 & 0 \\
+					& 0 & 0 & 0 & 2 & -1 & 0 & 0 & 0 & -1 & 2 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 1 & 0 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & 0 & 2 & -1 & -1 & 2 & 0 \\
+					& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -2 & 1 \\
+					& 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & -2 & 0 \\
+					& 0 & 0 & 1 & 0 & 0 & 0 & -2 & 1 & 0 & 0 & 0 \\
+					& 0 & 0 & 1 & -2 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\[.2cm]
 \end{array}
 \]
 
-\vincent{Todo}
+%sage: G = Graph([[1,2,3,4], [[1,2],[1,3],[2,3],[3,4]]])
+%sage: M = Matrix([g_vector_GA(G, (1,)), g_vector_GA(G, (1,2)), g_vector_GA(G, (1,2,3)), [1,1,1,1]]).inverse()
+%sage: rays = {tuple(tube) : (g_vector_GA(G, tube)*M)[:-1] for tube in tubes(G)}
+%sage: rays
+%{(1,): (1, 0, 0),
+% (1, 2): (0, 1, 0),
+% (1, 2, 3): (0, 0, 1),
+% (1, 2, 3, 4): (0, 0, 0),
+% (1, 3): (1/2, -1, 1/2),
+% (1, 3, 4): (1, -2, 0),
+% (2,): (-1, 2, 0),
+% (2, 3): (-1/2, 0, 1/2),
+% (2, 3, 4): (-1, 0, 0),
+% (3,): (0, -2, 1),
+% (3, 4): (0, -1, 0),
+% (4,): (0, 0, -1)}
+
+%sage: NF = Fan([Cone([rays[tuple(tube)] for tube in tubing]) for tubing in maximal_tubings(G)])
+%sage: NF.rays()
+%N( 1,  0,  0),
+%N(-1,  2,  0),
+%N( 0,  0,  1),
+%N( 1, -2,  0),
+%N( 0,  0, -1),
+%N(-1,  0,  1),
+%N( 1, -2,  1),
+%N( 0, -2,  1),
+%N(-1,  0,  0),
+%N( 0,  1,  0),
+%N( 0, -1,  0)
+%in 3-d lattice N
+
+%sage: TCNF = type_cone(NF)
+%sage: TCNF
+%A 11-dimensional polyhedron in QQ^11 defined as the convex hull of 1 vertex, 11 rays, 3 lines
+%sage: TCNF.lines()
+%(A line in the direction (0, 2, 0, -2, 0, 0, -2, -2, 0, 1, -1),
+% A line in the direction (1, -1, 0, 1, 0, -1, 1, 0, -1, 0, 0),
+% A line in the direction (1, -1, 1, 1, -1, 0, 2, 1, -1, 0, 0))
+%sage: TCNF.inequalities()
+%(An inequality (-1, 0, -1, 0, 0, 0, 1, 0, 0, 2, 0) x + 0 >= 0,
+% An inequality (1, 1, 0, 0, 0, 0, 0, 0, 0, -2, 0) x + 0 >= 0,
+% An inequality (0, -1, -1, 0, 0, 1, 0, 0, 0, 2, 0) x + 0 >= 0,
+% An inequality (1, 0, 0, 0, 0, 0, -1, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, -1, 0, 0, 1, 1, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, -1, 0, 0, 1, -1, 0, 0, 2) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, 0, -1, 0, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, 0, 1, 0, -1, -1, 0, 2) x + 0 >= 0,
+% An inequality (0, 0, 0, 0, 1, 0, 0, 1, 0, 0, -2) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 1, 1, 0, 0, -1, 0, 0, 0, 0) x + 0 >= 0)
+%sage: len(TCNF.inequalities())
+%12
 \end{example}
 
 In the remaining of this section, we describe the facet defining inequalities of the type cone of the graphical nested fans.
