@@ -318,8 +318,8 @@ A \defn{polyhedral fan} is a collection~$\Fan$ of polyhedral cones such that
 \item if~$C \in \Fan$ and~$F$ is a face of~$C$, then~$F \in \Fan$,
 \item the intersection of any two cones of~$\Fan$ is a face of both.
 \end{itemize}
-A fan is \defn{simplicial} if all its cones are, \defn{complete} if the union of its cones covers the ambient space~$\R^d$, and \defn{essential} if it contains the cone~$\{\b{0}\}$.
-% For two fans~$\Fan, \Fan[G]$ in~$\R^d$, we say that~$\Fan$ \defn{refines}~$\Fan[G]$ (and that~$\Fan[G]$ \defn{coarsens}~$\Fan$) if every cone of~$\Fan$ is contained in a cone of~$\Fan[G]$.
+A fan is \defn{simplicial} if all its cones are, \defn{complete} if the union of its cones covers the ambient space~$\R^d$, and \defn{essential} if it contains the cone~$\{\b{0}\}$. Note that every complete fan is the product of an essential fan with its linearity space.
+For two fans~$\Fan, \Fan'$ in~$\R^d$, we say that~$\Fan$ \defn{refines}~$\Fan'$ (and that~$\Fan'$ \defn{coarsens}~$\Fan$) if every cone of~$\Fan$ is contained in a cone of~$\Fan'$.
 
 A \defn{polytope} is a subset~$P$ of~$\R^d$ defined equivalently as the convex hull of finitely many points or as a bounded intersection of finitely many closed affine halfspaces.
 The \defn{dimension}~$\dim(P)$ is the dimension of the affine hull of~$P$.
@@ -380,13 +380,15 @@ The \defn{type-cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admis
 \end{align*}
 \end{definition}
 
-Note that the type-cone is an open cone and contains a linearity subspace of dimension~$n$ (it is invariant by translation in~$\b{G} \R^n$). We could thus intersect~$\typeCone(\Fan)$ by the kernel of~$\b{G}$, or consider the projection~$\b{K}\typeCone(\Fan)$.
+Note that the type-cone is an open cone and contains a linearity subspace of dimension~$n$ (it is invariant by translation in~$\b{G} \R^n$). 
+% We could thus intersect~$\typeCone(\Fan)$ with the kernel of~$\b{G}$, or consider the projection~$\b{K}\typeCone(\Fan)$.
+It is sometimes useful to get rid of the linearity by considering the projection~$\b{K}\typeCone(\Fan)$. 
 
-We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$. It is a closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ for adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$.
+We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ for adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}.
 
 \begin{remark}
  \label{rmk:non-simplicial}
-Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typecone} can be easily adapted to non-simplicial fans. If~$\Fan$ is an arbitrary essential complete fan, it suffices to consider consider any simplicial refinement~$\Fan'$, and set some of the strict inequalities of the definition of $\typeCone(\Fan')$ to equality. Specifically, for any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan'$ we impose
+Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typecone} can be easily adapted to non-simplicial fans. If~$\Fan$ is an arbitrary complete fan, it suffices to consider consider any simplicial refinement~$\Fan'$, and set some of the strict inequalities of the definition of $\typeCone(\Fan')$ to equality. Specifically, for any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan'$ we impose
 \[
  \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} {\left\{\begin{array}{l} =\\ >\end{array}\right\}} 0
 \]
@@ -404,7 +406,7 @@ Understanding the extremal adjacent pairs of~$\Fan$ enables to describe its type
 
 \begin{remark}
 \label{rem:dimTypeCone}
-Since the type-cone is an open~$N$ dimensional cone with a linearity subspace of dimension~$n$, it has at least~$N-n$ facets.
+Since the type-cone is an~$N$ dimensional cone with a linearity subspace of dimension~$n$, it has at least~$N-n$ facets.
 We say that the type-cone is \defn{simplicial} when it has precisely $N-n$ facets.
 \end{remark}
 
@@ -524,9 +526,9 @@ P_\b{h} + P_{\b{h}'} & = \set{\b{x} + \b{x}'}{\b{x} \in P_\b{h} \text{ and } \b{
 \end{proof}
 
 We say that~$P$ is a \defn{Minkowski summand} of~$R$ if there is a polytope~$Q$ such that $R=P+Q$, and a \defn{weak Minkowski summand} if there is a $\lambda \ge 0$ and a polytope~$Q$ such that ${\lambda R = P + Q}$. 
-\cref{lem:MinkowskiSum} ensures that convex combinations in the type-cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type-cone~$\ctypeCone(\Fan)$ modulo linearity (the cone of weak Minkowski summands is studied by W.~Meyer in~\cite{Meyer}, to see that it is equivalent to the type-cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
+\cref{lem:MinkowskiSum} ensures that convex combinations in the type-cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type-cone~$\ctypeCone(\Fan)$ modulo linearity (the cone of weak Minkowski summands was studied by W.~Meyer in~\cite{Meyer}, to see that it is equivalent to the type-cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
 
-This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the type-cone. These correspond to indecomposable polytopes, see~\cite{Meyer} or \cite{McMullen-typeCone}. A polytope $P$ in $\R^n$ is called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda \ge 0$ and $t \in \R^n$.
+This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the closed 6type-cone. These correspond to indecomposable polytopes, see~\cite{Meyer} or \cite{McMullen-typeCone}. A polytope $P\subseteq\R^n$ is called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda \ge 0$ and $t \in \R^n$.
 
 \begin{corollary}
 \arnau{See \cite{Meyer} and \cite{McMullen-typeCone}}
