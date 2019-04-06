@@ -576,8 +576,6 @@ All these families contain the classical associahedra~$\Asso[n]$ constructed in~
 
 We first describe the associahedra of~\cite{ShniderSternberg, Loday} and their type cones as they are the prototypes of our constructions.
 
-\vincent{Example type cone}
-
 \subsubsection{Associahedra and their normal fans}
 
 We quickly recall the combinatorics and the geometric construction of~\cite{ShniderSternberg, Loday} for the associahedron~$\Asso[n]$.
@@ -1117,21 +1115,21 @@ The type cone of the left fan lives in~$\R^9$, has a linearity space of dimensio
 The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dimension~$3$ and $9$ facet defining inequalities (given below). 
 
 \[
-\begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}c}
+\begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}cc}
 \text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.2cm]
 \text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{0}{2}{-1} & \compactVectorT{0}{1}{-1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} & \compactVectorT{-2}{0}{1} & \compactVectorT{-1}{0}{0}  \\[.6cm]
 %\text{linearity}	& 1 & 1 & 2 & 1 & 0 & 0 & -1 & 0 & -1 & -2 & 0 & -1 \\
 %\text{space}		& 0 & 1 & 0 & 0 & -1 & 2 & 1 & 1 & -1 & 0 & 0 & 0 \\
 %					& 0 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 0 & 1 & -1 & 0 \\[.2cm]
 \text{facet}		& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 \\
-\text{defining}		& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 \\
-\text{inequalities}	& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 \\
+\text{defining}		& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & \red \circled{E2} \\
+\text{inequalities}	& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 & \red \circled{D} \\
 					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 \\
-					& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 \\
-					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
-					& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\[.2cm]
+					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & \red \circled{F2} \\
+					& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & \red \circled{B} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & \red \circled{E3} \\
+					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & \red \circled{A1} \\
+					& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & \red \circled{C} \\[.2cm]
 \end{array}
 \]
 
@@ -1176,31 +1174,14 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
 
 \begin{figure}
     \begin{adjustbox}{center}
-%        \begin{tikzpicture}
-%        	\matrix (m) [matrix of math nodes, row sep=.35cm, column sep=.2cm, nodes={anchor=center, align=center, inner sep=0pt}]{
-%        		& \;\includegraphics[scale=.7]{diagonalA2} & \node (b) {\red \circled{B}}; & \;\includegraphics[scale=.7]{diagonalA4} & \\
-%        		\;\includegraphics[scale=.7]{diagonalA1} & \node (a) {\red \circled{A}}; & \;\includegraphics[scale=.7]{diagonalA3} & \node (c) {\red \circled{C}}; & \;\includegraphics[scale=.7]{diagonalA5} \\};
-%        	\draw[->] (m-2-1) -- (m-1-2);
-%        	\draw[->] (m-1-2) -- (m-2-3);
-%        	\draw[->] (m-2-3) -- (m-1-4);
-%        	\draw[->] (m-1-4) -- (m-2-5);
-%        	\draw[red] (a) -- (m-2-1);
-%        	\draw[red] (a) -- (m-2-3);
-%        	\draw[red] (a) -- (m-1-2);
-%        	\draw[red] (b) -- (m-1-2);
-%        	\draw[red] (b) -- (m-1-4);
-%        	\draw[red] (b) -- (m-2-3);
-%        	\draw[red] (c) -- (m-2-3);
-%        	\draw[red] (c) -- (m-2-5);
-%        	\draw[red] (c) -- (m-1-4);
-%        \end{tikzpicture}
-%        \quad
 		\newcommand{\fitClusterVariable}[1]{\parbox[c][.7cm][c]{1.5cm}{\centering $#1$}}
         \begin{tikzpicture}
         	\matrix (m) [matrix of math nodes, row sep=.4cm, column sep=-.1cm, nodes={anchor=center, align=center, inner sep=0pt}]{
         		\fitClusterVariable{\phantom{1}} & \node (e1) {\red \circled{E}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_2 x_3}} && \fitClusterVariable{x_3} & \node (c) {\red \circled{C}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_1 x_3}} && \fitClusterVariable{x_1} & \node (a2) {\red \circled{A}}; & \fitClusterVariable{\phantom{1}} \\
         		& \fitClusterVariable{\frac{x_1 + x_2}{x_3}} & \node (f1) {\red \circled{F}}; & \fitClusterVariable{\frac{x_1 + x_3}{x_2}} & \node (b) {\red \circled{B}}; & \fitClusterVariable{\frac{x_2 + x_3}{x_1}} & \node (d) {\red \circled{D}}; & \fitClusterVariable{\frac{x_1 + x_2}{x_3}} & \node (f2) {\red \circled{F}}; & \fitClusterVariable{\frac{x_1 + x_3}{x_2}} \\
         		\fitClusterVariable{\phantom{1}} && \fitClusterVariable{x_1} & \node (a1) {\red \circled{A}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_1 x_2}} && \fitClusterVariable{x_2} & \node (e2) {\red \circled{E}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_2 x_3}} && \fitClusterVariable{\phantom{1}} \\};
+        	\draw[densely dotted, thick] (m-1-1) -- (m-2-2);
+        	\draw[densely dotted, thick] (m-3-1) -- (m-2-2);
         	\draw[->] (m-2-2) -- (m-1-3);
         	\draw[->] (m-2-2) -- (m-3-3);
         	\draw[->] (m-1-3) -- (m-2-4);
@@ -1217,8 +1198,6 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
         	\draw[->] (m-2-8) -- (m-3-9);
         	\draw[->] (m-1-9) -- (m-2-10);
         	\draw[->] (m-3-9) -- (m-2-10);
-        	\draw[densely dotted, thick] (m-1-1) -- (m-2-2);
-        	\draw[densely dotted, thick] (m-3-1) -- (m-2-2);
         	\draw[densely dotted, thick] (m-2-10) -- (m-1-11);
         	\draw[densely dotted, thick] (m-2-10) -- (m-3-11);
         	\draw[red] (a1) -- (m-3-3);
@@ -1252,6 +1231,76 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
         	\draw[red] (f2) -- (m-2-10);
         	\draw[red] (f2) -- (m-1-9);
         	\draw[red] (f2) -- (m-3-9);
+        \end{tikzpicture}
+    \end{adjustbox}
+    %
+    \begin{adjustbox}{center}
+		\newcommand{\fitClusterVariable}[1]{\parbox[c][.7cm][c]{2.3cm}{\centering $#1$}}
+        \begin{tikzpicture}
+        	\matrix (m) [matrix of math nodes, row sep=.4cm, column sep=-.7cm, nodes={anchor=center, align=center, inner sep=0pt}]{
+        		& \fitClusterVariable{\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}} && \fitClusterVariable{x_3} & \node (c) {\red \circled{C}}; & \fitClusterVariable{\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}} & \node (e) {\red \circled{E}}; & \fitClusterVariable{\frac{x_1^2 + x_2^2}{x_3}} & \node (h) {\red \circled{H}}; & \fitClusterVariable{\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}} && \fitClusterVariable{\phantom{1}} \\
+        		\fitClusterVariable{\phantom{1}} & \node (i1) {\red \circled{I}}; & \fitClusterVariable{\frac{x_1 + x_3}{x_2}} & \node (b) {\red \circled{B}}; & \fitClusterVariable{\frac{x_2 + x_3}{x_1}} & \node (d) {\red \circled{D}}; & \fitClusterVariable{\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}} & \node (g) {\red \circled{G}}; & \fitClusterVariable{\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}} & \node (i2) {\red \circled{I}}; & \fitClusterVariable{\frac{x_1 + x_3}{x_2}} & \\
+        		& \fitClusterVariable{x_1} & \node (a1) {\red \circled{A}}; & \fitClusterVariable{\frac{x_1 + x_2 + x_3}{x_1 x_2}} && \fitClusterVariable{x_2} & \node (f) {\red \circled{F}}; & \fitClusterVariable{\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}} && \fitClusterVariable{x_1} & \node (a2) {\red \circled{A}}; & \fitClusterVariable{\phantom{1}} \\};
+        	\draw[densely dotted, thick] (m-2-1) -- (m-1-2);
+        	\draw[densely dotted, thick] (m-2-1) -- (m-3-2);
+        	\draw[->] (m-1-2) -- (m-2-3);
+        	\draw[->] (m-3-2) -- (m-2-3);
+        	\draw[->] (m-2-3) -- (m-1-4);
+        	\draw[->] (m-2-3) -- (m-3-4);
+        	\draw[->] (m-1-4) -- (m-2-5);
+        	\draw[->] (m-3-4) -- (m-2-5);
+        	\draw[->] (m-2-5) -- (m-1-6);
+        	\draw[->] (m-2-5) -- (m-3-6);
+        	\draw[->] (m-1-6) -- (m-2-7);
+        	\draw[->] (m-3-6) -- (m-2-7);
+        	\draw[->] (m-2-7) -- (m-1-8);
+        	\draw[->] (m-2-7) -- (m-3-8);
+        	\draw[->] (m-1-8) -- (m-2-9);
+        	\draw[->] (m-3-8) -- (m-2-9);
+        	\draw[->] (m-2-9) -- (m-1-10);
+        	\draw[->] (m-2-9) -- (m-3-10);
+        	\draw[->] (m-1-10) -- (m-2-11);
+        	\draw[->] (m-3-10) -- (m-2-11);
+        	\draw[densely dotted, thick] (m-2-11) -- (m-1-12);
+        	\draw[densely dotted, thick] (m-2-11) -- (m-3-12);
+        	\draw[red] (a1) -- (m-3-2);
+        	\draw[red] (a1) -- (m-3-4);
+        	\draw[red] (a1) -- (m-2-3);
+        	\draw[red] (a2) -- (m-3-10);
+        	\draw[red] (a2) -- (m-3-12);
+        	\draw[red] (a2) -- (m-2-11);
+        	\draw[red] (b) -- (m-2-3);
+        	\draw[red] (b) -- (m-2-5);
+        	\draw[red] (b) -- (m-1-4);
+        	\draw[red] (b) -- (m-3-4);
+        	\draw[red] (c) -- (m-1-4);
+        	\draw[red] (c) -- (m-1-6);
+        	\draw[red] (c) -- (m-2-5);
+        	\draw[red] (d) -- (m-2-5);
+        	\draw[red] (d) -- (m-2-7);
+        	\draw[red] (d) -- (m-1-6);
+        	\draw[red] (d) -- (m-3-6);
+        	\draw[red] (e) -- (m-1-6);
+        	\draw[red] (e) -- (m-1-8);
+        	\draw[red] (e) -- (m-2-7);
+        	\draw[red] (f) -- (m-3-6);
+        	\draw[red] (f) -- (m-3-8);
+        	\draw[red] (f) -- (m-2-7);
+        	\draw[red] (g) -- (m-2-7);
+        	\draw[red] (g) -- (m-2-9);
+        	\draw[red] (g) -- (m-1-8);
+        	\draw[red] (g) -- (m-3-8);
+        	\draw[red] (h) -- (m-1-8);
+        	\draw[red] (h) -- (m-1-10);
+        	\draw[red] (h) -- (m-2-9);
+        	\draw[red] (i1) -- (m-2-1);
+        	\draw[red] (i1) -- (m-2-3);
+        	\draw[red] (i1) -- (m-1-2);
+        	\draw[red] (i1) -- (m-3-2);
+        	\draw[red] (i2) -- (m-2-9);
+        	\draw[red] (i2) -- (m-2-11);
+        	\draw[red] (i2) -- (m-1-10);
+        	\draw[red] (i2) -- (m-3-10);
         \end{tikzpicture}
     \end{adjustbox}
 	\caption{}%The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[])$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
