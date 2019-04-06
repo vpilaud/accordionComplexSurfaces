@@ -384,17 +384,29 @@ Note that the type-cone is an open cone and contains a linearity subspace of dim
 % We could thus intersect~$\typeCone(\Fan)$ with the kernel of~$\b{G}$, or consider the projection~$\b{K}\typeCone(\Fan)$.
 It is sometimes useful to get rid of the linearity by considering the projection~$\b{K}\typeCone(\Fan)$. 
 
-We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ for adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}.
+We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it the \defn{closed type-cone} of~$\Fan$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ for adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}.
 
-\begin{remark}
- \label{rmk:non-simplicial}
-Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typecone} can be easily adapted to non-simplicial fans. If~$\Fan$ is an arbitrary complete fan, it suffices to consider consider any simplicial refinement~$\Fan'$, and set some of the strict inequalities of the definition of $\typeCone(\Fan')$ to equality. Specifically, for any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan'$ we impose
-\[
- \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} {\left\{\begin{array}{l} =\\ >\end{array}\right\}} 0
-\]
-with `$>$' when $\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ do not belong to the same maximal cone of $\Fan$; and with `$=$' if $\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ belong to the same maximal cone of $\Fan$.
-\end{remark}
 
+Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typecone} can be easily adapted to non-simplicial fans. For an arbitrary complete fan, it suffices to consider consider any simplicial refinement, and set some of the strict inequalities of the definition of the type cone to equality.
+\begin{proposition}
+ \label{prop:non-simplicial}
+ Let $\Fan'$ be a complete fan that coarsens the essential complete simplicial fan~$\Fan$.
+ The \defn{type-cone}~$\typeCone(\Fan')$ of all $\Fan'$-admissible height vectors~$\b{h}$ is
+ \begin{align*}
+ \typeCone(\Fan) 
+%  & \eqdef \set{\b{h} \in \R^N}{\Fan \text{ is the normal fan of } P_\b{h}} \\
+& = \left\{\b{h} \in \R^N\;\middle|\;
+\begin{array}{ll}
+ \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} = 0
+ & \begin{array}{l} \text{for any adjacent maximal cones} \\ \text{$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ \textbf{belonging}}\\\text{to the same maximal cone of $\Fan'$; and}\end{array}
+\\\\
+\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0
+ & \begin{array}{l} \text{for any adjacent maximal cones} \\ \text{$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ \textbf{not belonging}}\\\text{to the same maximal cone of $\Fan'$}\end{array}
+\end{array}
+ \right\}.
+ \end{align*}
+\end{proposition}
+\arnau{should add proof or citation}
 
 \begin{definition}
 An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent maximal cones~$\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ such that the corresponding inequality $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ in the definition of the type-cone~$\ctypeCone(\Fan)$ actually defines a facet of~$\ctypeCone(\Fan)$.
@@ -504,6 +516,28 @@ Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{
 %%%%%%%%%%%
 
 \subsection{Faces of the type-cone}
+
+\begin{theorem}
+ Let $\Fan$ be a polytopal fan. Then the relatively open faces of~$\ctypeCone(\Fan)$ are the type-cones of all (polytopal) coarsenings of~$\Fan$. 
+\end{theorem}
+\begin{proof}
+ Let $\Fan'$ be a simplicial refinement of $\Fan$. By~\cref{prop:non-simplicial}, the type-cone of any coarsening of $\Fan$ is a relatively open cell of the hyperplane arrangement defined by adjacent pairs of~$\Fan'$. The type-cone of the coarsening is not empty whenever it is polytopal. When non-empty, distinct coarsenings give rise to distinct cells (one will have an equation that is a strict inequality in the other). And all lie in the closure of~$\typeCone(\Fan)$, since no non-strict inequality is violated.
+ 
+ For the converse, observe that for $\b{h}\in\ctypeCone(\Fan)$, the normal fan of $P_{\b{h}}$ is the polytopal complete fan obtained by merging all pairs of adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ such that $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} = 0$.
+\end{proof}
+
+Some observations are in place:
+
+\begin{itemize}
+ \item Note that any extremal adjacent pair $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ gives rise to a facet of $\ctypeCone(\Fan)$, but that this pair might not be unique for this facet. There might be several extremal adjacent pairs giving rise to the same facet. 
+ This situation arises when, in order to have a polytopal polyhedral fan, more pairs of adjacent cones must be merged.
+ For example, when we have the unique exchange property and there are many pairs of cones separating the same exchangeable pair of rays.
+ 
+ \item Mergings induced by extremal adjacent pairs are not the only ones that can take place in the boundary of~$\ctypeCone(\Fan)$. Indeed, if $\Fan'$ is the coarsening defining a lower-dimensional face~$\typeCone(\Fan')$ of~$\ctypeCone(\Fan)$, then to get $\Fan$ we have to perform all the coarsenings given by facets of~$\ctypeCone(\Fan)$ containing~$\typeCone(\Fan')$. But we might have to perform more coarsenings arising from exchangeable pairs  $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ whose inequality is redundant for~$\ctypeCone(\Fan)$ but tight for all points in~$\typeCone(\Fan')$.
+ \item Even if $\Fan$ is essential, not all its polytopal coarsenings need to be. Indeed, it can happen that there is a certain polytopal coarsening $\Fan'$ in which all the cells have a common linearity space. In this case, $\Fan'$ is the normal fan of a lower dimensional polytope (whose codimension is the dimension of the linearity space of $\Fan'$). 
+ For this to happen, it is necessary (but not sufficient) that there is a positive linear dependence between some rays of $\Fan$. 
+\end{itemize}
+
 
 %%%%%%%%%%%
 
