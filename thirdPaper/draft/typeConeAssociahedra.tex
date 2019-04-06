@@ -680,7 +680,8 @@ Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type
 
 \begin{example}
 Consider the fan~$\gvectorFan[2]$ and~$\gvectorFan[3]$ illustrated in \cref{fig:lodayFans}.
-The type cone of~$\gvectorFan[2]$ in~$\R^5$, has a linearity space of dimension~$2$ and $3$ facet defining inequalities (given below). 
+The type cone of~$\gvectorFan[2]$ lives in~$\R^5$ and has a linearity space of dimension~$2$.
+It has $3$ facet defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititesAsso}\,(left).
 
 \[
 \begin{array}{r|cccccc}
@@ -693,7 +694,8 @@ The type cone of~$\gvectorFan[2]$ in~$\R^5$, has a linearity space of dimension~
 \]
 
 \noindent
-The type cone of~$\gvectorFan[3]$ in~$\R^9$, has a linearity space of dimension~$3$ and $6$ facet defining inequalities (given below). 
+The type cone of~$\gvectorFan[2]$ lives in~$\R^9$ and has a linearity space of dimension~$3$.
+It has $6$ facet defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititesAsso}\,(left).
 
 \[
 \begin{array}{r|cccccccccc}
@@ -803,6 +805,7 @@ The type cone of~$\gvectorFan[3]$ in~$\R^9$, has a linearity space of dimension~
         \end{tikzpicture}
     \end{adjustbox}
 	\caption{The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[n])$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+	\label{fig:labelFacetDefiningInequalititesAsso}
 \end{figure}
 \end{example}
 
@@ -1096,7 +1099,8 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan
 
 \begin{example}
 Consider the cluster fans illustrated in \cref{fig:clusterFans}.
-The type cone of the left fan lives in~$\R^9$, has a linearity space of dimension~$3$ and $6$ facet defining inequalities (given below). 
+The type cone of the left fan of \cref{fig:clusterFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
+It has $6$ facet defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititesCA}\,(top).
 
 \[
 \begin{array}{r|cccccccccc}
@@ -1148,7 +1152,8 @@ The type cone of the left fan lives in~$\R^9$, has a linearity space of dimensio
 % An inequality (0, 0, 0, 0, 1, 0, -1, -1, 1) x + 0 >= 0)
 
 \noindent
-The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dimension~$3$ and $9$ facet defining inequalities (given below). 
+The type cone of the right fan of \cref{fig:clusterFans} lives in~$\R^{12}$ and has a linearity space of dimension~$3$.
+It has $9$ facet defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititesCA}\,(bottom).
 
 \[
 \begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}cc}
@@ -1157,15 +1162,15 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
 %\text{linearity}	& 1 & 1 & 2 & 1 & 0 & 0 & -1 & 0 & -1 & -2 & 0 & -1 \\
 %\text{space}		& 0 & 1 & 0 & 0 & -1 & 2 & 1 & 1 & -1 & 0 & 0 & 0 \\
 %					& 0 & 0 & -1 & -1 & 0 & 1 & 1 & 0 & 0 & 1 & -1 & 0 \\[.2cm]
-\text{facet}		& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 \\
-\text{defining}		& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & \red \circled{E2} \\
-\text{inequalities}	& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 & \red \circled{D} \\
-					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & \red \circled{F2} \\
-					& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & \red \circled{B} \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & \red \circled{E3} \\
-					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & \red \circled{A1} \\
-					& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & \red \circled{C} \\[.2cm]
+\text{facet}		& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & \red \circled{A} \\
+\text{defining}		& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & \red \circled{B} \\
+\text{inequalities}	& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & \red \circled{C} \\
+					& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 & \red \circled{D} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & \red \circled{E} \\
+					& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & \red \circled{F} \\
+					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & \red \circled{G} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 & \red \circled{H} \\
+					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 & \red \circled{I} \\[.2cm]
 \end{array}
 \]
 
@@ -1339,22 +1344,24 @@ The type cone of the right fan lives in~$\R^{12}$, has a linearity space of dime
         	\draw[red] (i2) -- (m-3-10);
         \end{tikzpicture}
     \end{adjustbox}
-	\caption{}%The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[])$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+	\caption{The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the cluster fan correspond to the mesh mutations described in \cref{thm:extremalExchangeablePairsCA}. See \cref{sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+	\label{fig:labelFacetDefiningInequalititesCA}
 \end{figure}
 \end{example}
 
 In order to describe the facets of this type cone, we need the following special mutations.
 
 \begin{definition}
+\label{def:meshMutation}
 %Consider a seed~$\seed = (\B, \cluster)$ and a cluster variable~$x \in \cluster$.
 The mutation of a seed~$\seed = (\B, \cluster)$ in the direction of a cluster variable~$x \in \cluster$ is a \defn{mesh mutation} that \defn{starts} (resp.~\defn{ends}) at~$x$ if the entries~$b_{xy}$ for~$y \in \cluster$ are all non-negative (resp.~all non-positive).
 A mesh mutation is \defn{initial} if it starts at a cluster variable of an initial seed.
+\vincent{Problem here. In my examples, the condition is to end at an initial cluster variable.}
 We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are two cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a non-initial mesh mutation.
 \end{definition}
 
 \vincent{Link to \cref{sec:clusterCategories}.}
 \vincent{\cref{lem:bijectionMeshMutations} might become a conjecture.}
-\vincent{Pictures AR quivers + labeling of meshes reported on the inequalities.}
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
@@ -1695,7 +1702,8 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 \begin{example}
 \label{exm:typeConeNKC}
 Consider the non-kissing fans illustrated in \cref{fig:nonkissingFans}.
-The type cone of the left fan lives in~$\R^9$, has a linearity space of dimension~$3$ and $6$ facet defining inequalities (given below). 
+The type cone of the left fan of \cref{fig:nonkissingFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
+It has $6$ facet defining inequalities (given below), which correspond to the flips described in \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and illustrated in \cref{fig:labelFacetDefiningInequalititesNKC}\,(left).
 
 \[
 \begin{array}{r|ccccccccc}
@@ -1744,7 +1752,9 @@ The type cone of the left fan lives in~$\R^9$, has a linearity space of dimensio
 % A line in the direction (0, 1, 0, -1, 0, 0, 0, -1))
 
 \noindent
-The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ and $9$ facet defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the right fan of \cref{fig:nonkissingFans} lives in~$\R^{11}$ and has a linearity space of dimension~$3$.
+It has $9$ facet defining inequalities (given below), which correspond to the flips illustrated in \cref{fig:labelFacetDefiningInequalititesNKC}\,(right).
+In particular, it is not simplicial.
 
 \[
 \begin{array}{r|c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}cc}
@@ -1955,7 +1965,8 @@ The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dime
         	\draw[red, densely dotted, thick] (k2.south) -- ([yshift=-.3cm]k2.south);
         \end{tikzpicture}
     \end{adjustbox}
-	\caption{The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[\quiver])$ represented on the Auslander Reiten quiver of the gentle algebra of~$\quiver$. While they correspond to meshes on the left, they are not as clear in the general case as on the right. See also \cref{sect::extricats}.}
+	\caption{The facet defining inequalities of the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan, represented on the Auslander Reiten quiver of the gentle algebra of~$\quiver$. While they correspond to meshes on the left, they are not as clear in the general case as on the right. See also \cref{sect::extricats}.}
+	\label{fig:labelFacetDefiningInequalititesNKC}
 \end{figure}
 \end{example}
 
@@ -2007,6 +2018,7 @@ We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
 The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply be denoted~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
 
 \begin{proposition}
+\label{prop:interestingExchangeablePairsNKC}
 For any brick $2$-acyclic gentle quiver~$\quiver$ and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
 \end{proposition}
 
