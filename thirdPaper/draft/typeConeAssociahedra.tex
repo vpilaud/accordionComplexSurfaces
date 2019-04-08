@@ -419,7 +419,7 @@ It is sometimes useful to get rid of the linearity by considering the projection
 We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it the \defn{closed type-cone} of~$\Fan$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ for adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}.
 
 
-Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typecone} can be easily adapted to non-simplicial fans. For an arbitrary complete fan, it suffices to consider any simplicial refinement, and set some of the strict inequalities of the definition of the type cone to equality.
+Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typecone} can be easily adapted to non-simplicial fans. To describe the type-cone of an arbitrary complete fan, it suffices to consider any simplicial refinement, and to set some of the strict inequalities of the definition of the type cone to equality.
 \begin{proposition}
  \label{prop:non-simplicial}
  Let $\Fan'$ be a complete fan that coarsens the essential complete simplicial fan~$\Fan$.
@@ -553,7 +553,7 @@ Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{
  Let $\Fan$ be a polytopal fan. Then the relatively open faces of~$\ctypeCone(\Fan)$ are the type-cones of all (polytopal) coarsenings of~$\Fan$. 
 \end{theorem}
 \begin{proof}
- Let $\Fan'$ be a simplicial refinement of $\Fan$. By~\cref{prop:non-simplicial}, the type-cone of any coarsening of $\Fan$ is a relatively open cell of the hyperplane arrangement defined by adjacent pairs of~$\Fan'$. The type-cone of the coarsening is not empty whenever it is polytopal. When non-empty, distinct coarsenings give rise to distinct cells (one will have an equation that is a strict inequality in the other). And all lie in the closure of~$\typeCone(\Fan)$, since no non-strict inequality is violated.
+ Let $\Fan'$ be a simplicial refinement of $\Fan$. By~\cref{prop:non-simplicial}, the type-cone of any coarsening of $\Fan$ is a relatively open cell of the hyperplane arrangement defined by adjacent pairs of~$\Fan'$. The type-cone of the coarsening is not empty whenever it is polytopal. When non-empty, distinct coarsenings give rise to distinct cells (one will have an equation that is a strict inequality in the other). And all lie in the closure of~$\typeCone(\Fan)$, since they are al in the closure of all the defining half-spaces.
  
  For the converse, observe that for $\b{h}\in\ctypeCone(\Fan)$, the normal fan of $P_{\b{h}}$ is the polytopal complete fan obtained by merging all pairs of adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ such that $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} = 0$.
 \end{proof}
@@ -561,14 +561,28 @@ Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{
 Some observations are in place:
 
 \begin{itemize}
- \item Note that any extremal adjacent pair $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ gives rise to a facet of $\ctypeCone(\Fan)$, but that this pair might not be unique for this facet. There might be several extremal adjacent pairs giving rise to the same facet. 
- This situation arises when, in order to have a polytopal polyhedral fan, more pairs of adjacent cones must be merged.
- For example, when we have the unique exchange property and there are many pairs of cones separating the same exchangeable pair of rays.
+ \item Note that any extremal adjacent pair $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ gives rise to a facet of $\ctypeCone(\Fan)$, but that this pair might not be unique for this facet. There might be several extremal adjacent pairs giving rise to the same facet. This happens often when we have the unique exchange property and there are many pairs of cones separating the same exchangeable pair of rays.
  
- \item Mergings induced by extremal adjacent pairs are not the only ones that can take place in the boundary of~$\ctypeCone(\Fan)$. Indeed, if $\Fan'$ is the coarsening defining a lower-dimensional face~$\typeCone(\Fan')$ of~$\ctypeCone(\Fan)$, then to get $\Fan$ we have to perform all the coarsenings given by facets of~$\ctypeCone(\Fan)$ containing~$\typeCone(\Fan')$. But we might have to perform more coarsenings arising from exchangeable pairs  $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ whose inequality is redundant for~$\ctypeCone(\Fan)$ but tight for all points in~$\typeCone(\Fan')$.
+ \item Mergings induced by extremal adjacent pairs are not the only ones that can take place in the boundary of~$\ctypeCone(\Fan)$. Indeed, if $\Fan'$ is the coarsening defining a lower-dimensional face~$\typeCone(\Fan')$ of~$\ctypeCone(\Fan)$, then to get $\Fan$ we have to perform all the coarsenings given by facets of~$\ctypeCone(\Fan)$ containing~$\typeCone(\Fan')$. But we might have to perform more coarsenings arising from exchangeable pairs  $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ whose inequality is redundant for~$\ctypeCone(\Fan)$ but tight for all points in~$\typeCone(\Fan')$.  This situation arises when, in order to have a polytopal polyhedral fan, more pairs of adjacent cones must be merged.
  \item Even if $\Fan$ is essential, not all its polytopal coarsenings need to be. Indeed, it can happen that there is a certain polytopal coarsening $\Fan'$ in which all the cells have a common linearity space. In this case, $\Fan'$ is the normal fan of a lower dimensional polytope (whose codimension is the dimension of the linearity space of $\Fan'$). 
  For this to happen, it is necessary (but not sufficient) that there is a positive linear dependence between some rays of $\Fan$. 
 \end{itemize}
+
+
+\begin{example}\label{ex:typecone}
+Consider the $2$-dimensional fan~$\Fan$ depicted in \cref{fig:typecone} (left) (we will encounter this fan again in \cref{exm:typeConeAsso}). It has five rays $v_1,\dots,v_5$ and five maximal cones $a,\dots, e$. Its type-cone lies in~$\R^5$, but has a $2$-dimensional linearity space. It suffices to study $\b{K}\ctypeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$. One can further reduce the dimension by intersecting with a transversal hyperplane, to get a $2$-dimensional representation. This is the triangle that is depicted in \cref{fig:typecone} (right). The five pairs of adjacent maximal cones give rise to five defining inequalities for $\ctypeCone(\Fan)$, although only three are non-redundant. If $H_{ij}$ is the hyperplane supporting the inequality given by the two adjacent maximal cones~$i$ and~$j$, then only $H_{ab}$, $H_{cd}$ and $H_{bc}$ support facets of the type-cone. The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type-cones of three coarsenings of~$\Fan$, obtained by merging certain adjacent maximal cones (those that are extremal). One of the rays generating~$\b{K}\ctypeCone(\Fan)$ corresponds to a $2$-dimensional simplex, and its normal fan is obtained by merging two pairs of extremal adjacent maximal cones. The two remaining rays lie not only in the hyperplanes~$H_{ij}$ defining the facets it belongs to, but also one extra such hyperplane. Its normal fan has only two cones, one arising as a merging of three cones and one arising as a merging of two cones. These fans are not essential, they have a one-dimensional linearity. Hence, the corresponding polytopes are not full-dimensional, they are of codimension~$1$.
+
+\begin{figure}[htpb]
+	\capstart
+	\centerline{{\includegraphics[width=.3\linewidth]{typeconeFan}}\hspace{1.5cm}\includegraphics[width=.4\linewidth]{typecone}}
+	\caption{A complete $2$-dimensional fan~$\Fan$ with five rays $v_1,\dots,v_5$ and five maximal cones $a,\dots, e$. We depict the intersection of $\b{K}\ctypeCone(F)$ with a hyperplane to get a $2$-dimensional slice. On top of each face of $\ctypeCone(F)$, and example of polytope with the corresponding normal fan is depicted.}
+	\label{fig:typecone}
+\end{figure}
+
+
+\end{example}
+
+
 
 
 %%%%%%%%%%%
@@ -624,7 +638,10 @@ If the type-cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then the $N-n$ ideco
 \end{enumerate} 
 \end{corollary}
 
-Note that such a family of polytopes giving rise to unique positive representations only exists when the type-cone is simplicial.
+Note that such a family of polytopes giving rise to unique positive representations only exists when the type-cone is simplicial (both unicity and positivity only happen when the type-cone is simplicial).
+
+In the case of \cref{ex:typecone}, we get that any polytope in $\ctypeCone(\Fan)$ is a positive Minkowski combination of a triangle and two of its edges. This is the normal fan of 
+Loday's $2$-dimensional associahedron, and the realization as a Minkowski sum of faces of a simplex was given by Postnikov in~\cite{Postnikov}.
 
 \arnau{By \cite{McMullen-Valuations} valuations on the polytope $\alpha_1P_{\b{h}_1}+\cdots+\alpha_{N-n}P_{\b{h}_{N-n}}$ (such as volume) are a polynomial on $\alpha_1\dots\alpha_{N-n}$ with coefficients the mixed volumes. This also works when the $\alpha$'s are not necessarily positive \cite{ArdilaBenedettiDoker}. Does this help in any way?}
 
