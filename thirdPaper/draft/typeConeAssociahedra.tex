@@ -328,7 +328,7 @@ This new perspective has several advantages, as our proof uniformly applies to:
 
 \smallskip
 \begin{itemize}
-\item \textbf{any initial seed}, regardless of whether it is acyclic or not (see \cref{exm:typeConeCA,fig:clusterFans,fig:labelFacetDefiningInequalititesCA} for examples in types~$A_3$ and~$C_3$~cyclic). In contrast, the proof of~\cite{BazierMatteDouvilleMousavandThomasYildirim} only treats acyclic initial seeds.
+\item \textbf{any initial seed}, regardless of whether it is acyclic or not (see \cref{exm:typeConeCA,fig:clusterFans,fig:labelFacetDefiningInequalititiesCA1,fig:labelFacetDefiningInequalititiesCA2} for examples in types~$A_3$ and~$C_3$~cyclic). In contrast, the proof of~\cite{BazierMatteDouvilleMousavandThomasYildirim} only treats acyclic initial seeds.
 
 \smallskip
 \item \textbf{all finite type cluster algebras}, regardless of whether it is simply-laced or not (see \cref{exm:typeConeCA} for an example in type~$C_3$). In contrast, even with the acyclicity restriction, the result of~\cite{BazierMatteDouvilleMousavandThomasYildirim} is first proved in simply-laced cases ($A$, $D$ and~$E$) using representation theory of quivers. Extension to the non simply-laced cases is then argued by a folding argument. Although not presented in detail, this argument is subtle and technical.
@@ -385,7 +385,7 @@ It is also motivates the study of relevant objects revealed by the type cone dic
 
 \smallskip
 \begin{itemize}
-\item The facet-defining inequalities of the type cone of~$\Fan$ correspond to very specific pairs of adjacent maximal cones of~$\Fan$ whose corresponding linear dependences minimally generate all such dependences. While they correspond to mesh mutations for cluster algebras and brick $2$-acyclic gentle algebras, they are not clear in general (see for instance \cref{fig:labelFacetDefiningInequalititesNKC}\,(right)). It would be particularly interesting to fully understand these specific mutations for arbitrary ($\tau$-tilting finite) gentle algebras.
+\item The facet-defining inequalities of the type cone of~$\Fan$ correspond to very specific pairs of adjacent maximal cones of~$\Fan$ whose corresponding linear dependences minimally generate all such dependences. While they correspond to mesh mutations for cluster algebras and brick $2$-acyclic gentle algebras, they are not clear in general (see for instance \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right)). It would be particularly interesting to fully understand these specific mutations for arbitrary ($\tau$-tilting finite) gentle algebras.
 
 \smallskip
 \item The rays of the type cone of~$\Fan$ correspond to specific polytopes which form a positive Minkowski basis of all realizations of~$\Fan$ (see \cref{subsec:MinkowskiSums}). In particular, when the type cone is simplicial, any polytopal realization of~$\Fan$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of the polytopes corresponding to the rays of the type cone. For cluster algebras, it follows from~\cite[Sect.~6]{BazierMatteDouvilleMousavandThomasYildirim} that these polytopes are Newton polytopes of the $F$-polynomials. It would be interesting to obtain similar algebraic interpretations for the rays of the type cones of the non-kissing fans of gentle algebras.
@@ -859,7 +859,7 @@ Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type
 \label{exm:typeConeAsso}
 Consider the fan~$\gvectorFan[2]$ and~$\gvectorFan[3]$ illustrated in \cref{fig:lodayFans}.
 The type cone of~$\gvectorFan[2]$ lives in~$\R^5$ and has a linearity space of dimension~$2$ (this is the type cone studied in \cref{exm:typeCone,exm:typeConeCoarsenings,exm:typeConeMinkowskiSum}).
-It has $3$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititesAsso}\,(left).
+It has $3$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(left).
 
 \[
 \begin{array}{r|cccccc}
@@ -871,12 +871,13 @@ It has $3$ facet-defining inequalities (given below), which correspond to the fl
 \end{array}
 \]
 
+\medskip
 \noindent
 In all our tables, we just record the coefficients of the inequalities, which are then easily reconstructed.
 For instance, the inequality~$\red \circled{A}$ above is given by~$\b{h}_{\includegraphics[scale=.3]{diagonalA1}} + \b{h}_{\includegraphics[scale=.3]{diagonalA3}} > \b{h}_{\includegraphics[scale=.3]{diagonalA2}}$.
 
 The type cone of~$\gvectorFan[2]$ lives in~$\R^9$ and has a linearity space of dimension~$3$.
-It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititesAsso}\,(left).
+It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(left).
 
 \[
 \begin{array}{r|cccccccccc}
@@ -890,6 +891,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -1 & 1 & \red \circled{F} \\[.2cm]
 \end{array}
 \]
+\medskip
 
 %sage: B = Matrix([[0,1,0],[-1,0,1],[0,-1,0]])
 %sage: CA = ClusterAlgebra(B)
@@ -984,7 +986,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
         \end{tikzpicture}
     \end{adjustbox}
 	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[n])$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
-	\label{fig:labelFacetDefiningInequalititesAsso}
+	\label{fig:labelFacetDefiningInequalititiesAsso}
 \end{figure}
 \end{example}
 
@@ -1028,8 +1030,9 @@ Our next statement follows from the end of the previous proof.
 The type cone~$\typeCone(\gvectorFan[n])$ is simplicial.
 \end{corollary}
 
-Combining \cref{coro:simplicialTypeCone}, \cref{coro:simplicialTypeConeAsso} and \cref{prop:extremalExchangeablePairsAsso}, we derive the following description of all polytopal realizations of the fan~$\gvectorFan[n]$, thus recovering all associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}.
-We note that the arguments used in~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} were quite different from the present approach.
+\enlargethispage{.2cm}
+Combining \cref{coro:simplicialTypeCone}, \cref{coro:simplicialTypeConeAsso} and \cref{prop:extremalExchangeablePairsAsso}, we derive the following description of all polytopal realizations of the fan~$\gvectorFan[n]$, recovering all associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}.
+Note that the arguments of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} were quite different from the present~approach.
 
 \begin{corollary}[{\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}}]
 \label{coro:allPolytopalRealizationsAsso}
@@ -1043,7 +1046,7 @@ is an $n$-dimensional associahedron, whose normal fan is~$\gvectorFan[n]$.
 Moreover, the polytopes~$R_\b{\ell}(n)$ for~$\b{\ell} \in \R_{>0}^{Y(n)}$ describe all polytopal realizations of the fan~$\gvectorFan[n]$.
 \end{corollary}
 
-\vincent{Describe the rays of the type cone. They are the Minkowski basis.}
+%\vincent{Describe the rays of the type cone. They are the Minkowski basis.}
 
 %%%%%%%%%%%
 
@@ -1186,7 +1189,7 @@ for any two cluster variables~$x,y \in \seed$.
 The following statement is well known and admits several possible proofs as discussed in~\cite[Sect.~4]{HohlwegPilaudStella}.
 Examples are illustrated in \cref{fig:clusterFans}.
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\capstart
 	%\centerline{\includegraphics[scale=.45]{clusterFans}}
 	\begin{adjustbox}{center}
@@ -1284,7 +1287,7 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan
 \label{exm:typeConeCA}
 Consider the cluster fans illustrated in \cref{fig:clusterFans}.
 The type cone of the left fan of \cref{fig:clusterFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
-It has $6$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititesCA}\,(top).
+It has $6$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA1}.
 
 \[
 \begin{array}{r|cccccccccc}
@@ -1332,66 +1335,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the me
 % An inequality (0, 0, 0, 1, 0, 0, 0, 1, -1) x + 0 >= 0,
 % An inequality (0, 0, 0, 0, 1, 0, -1, -1, 1) x + 0 >= 0)
 
-\noindent
-The type cone of the right fan of \cref{fig:clusterFans} lives in~$\R^{12}$ and has a linearity space of dimension~$3$.
-It has $9$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititesCA}\,(bottom).
-
-\[
-\begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}cc}
-\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.2cm]
-\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{0}{2}{-1} & \compactVectorT{0}{1}{-1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} & \compactVectorT{-2}{0}{1} & \compactVectorT{-1}{0}{0}  \\[.6cm]
-\text{facet}		& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & \red \circled{A} \\
-\text{defining}		& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & \red \circled{B} \\
-\text{inequalities}	& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & \red \circled{C} \\
-					& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 & \red \circled{D} \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & \red \circled{E} \\
-					& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & \red \circled{F} \\
-					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & \red \circled{G} \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 & \red \circled{H} \\
-					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 & \red \circled{I} \\[.2cm]
-\end{array}
-\]
-
-%sage: B = Matrix([[0,-1,2],[1,0,-2],[-1,1,0]])
-%sage: CA = ClusterAlgebra(B)
-%
-%sage: CA.explore_to_depth(infinity)
-%sage: gvectors = CA.cluster_fan().rays()
-%sage: for gvector in gvectors:
-%....:     print gvector, CA.cluster_variable(gvector)
-%....:     
-%N(-1, 1, 0) (x0^2 + x1^2 + x1*x2)/(x0*x2)
-%N(0, 2, -1) (x0^2 + x1^2)/x2
-%N(1, 0, 0) x0
-%N(0, 0, 1) x2
-%N(-2, 0, 1) (x0^2 + x1^2 + 2*x1*x2 + x2^2)/(x0^2*x2)
-%N(1, -1, 0) (x0 + x2)/x1
-%N(0, 0, -1) (x0^2 + x1^2 + 2*x0*x2 + x2^2)/(x1^2*x2)
-%N(-1, 0, 1) (x1 + x2)/x0
-%N(0, -1, 0) (x0 + x1 + x2)/(x0*x1)
-%N(-1, 0, 0) (x0^2 + x1^2 + x0*x2 + x1*x2)/(x0*x1*x2)
-%N(0, 1, 0) x1
-%N(0, 1, -1) (x0^2 + x1^2 + x0*x2)/(x1*x2)
-%
-%sage: TCCA = type_cone_CA(CA)
-%sage: TCCA
-%A 12-dimensional polyhedron in QQ^12 defined as the convex hull of 1 vertex, 9 rays, 3 lines
-%sage: TCCA.lines()
-%(A line in the direction (0, 0, 1, 2, 0, 0, -2, 1, -1, -1, 1, -1),
-% A line in the direction (1, 2, 0, 0, 0, -1, 0, 0, -1, 0, 1, 1),
-% A line in the direction (0, 1, 0, -1, -1, 0, 1, -1, 0, 0, 0, 1))
-%sage: TCCA.inequalities()
-%(An inequality (-2, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0) x + 0 >= 0,
-% An inequality (-1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0) x + 0 >= 0,
-% An inequality (1, 0, 0, 0, -1, 0, 0, 1, 0, 0, -1, 0) x + 0 >= 0,
-% An inequality (0, 0, -1, 0, 0, 1, -1, 0, 0, 0, 0, 1) x + 0 >= 0,
-% An inequality (1, -1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1) x + 0 >= 0,
-% An inequality (0, 0, 0, -1, 0, 1, 0, 1, -1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -2) x + 0 >= 0,
-% An inequality (0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 0, 1, 1, 0, 0, -2, 0, 0, 0, 0) x + 0 >= 0)
-
-\begin{figure}
+\begin{figure}[h]
 	\capstart
     \begin{adjustbox}{center}
 		\newcommand{\fitClusterVariable}[1]{\parbox[c][.7cm][c]{1.5cm}{\centering $#1$}}
@@ -1453,7 +1397,71 @@ It has $9$ facet-defining inequalities (given below), which correspond to the me
         	\draw[red] (f2) -- (m-3-9);
         \end{tikzpicture}
     \end{adjustbox}
-    %
+	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the cluster fan correspond to the mesh mutations described in \cref{thm:extremalExchangeablePairsCA}. See \cref{sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+	\label{fig:labelFacetDefiningInequalititiesCA1}
+\end{figure}
+
+\noindent
+The type cone of the right fan of \cref{fig:clusterFans} lives in~$\R^{12}$ and has a linearity space of dimension~$3$.
+It has $9$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA2}.
+
+\[
+\begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}cc}
+\text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.2cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{0}{2}{-1} & \compactVectorT{0}{1}{-1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} & \compactVectorT{-2}{0}{1} & \compactVectorT{-1}{0}{0}  \\[.6cm]
+\text{facet}		& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & \red \circled{A} \\
+\text{defining}		& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & \red \circled{B} \\
+\text{inequalities}	& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & \red \circled{C} \\
+					& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 & \red \circled{D} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & \red \circled{E} \\
+					& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & \red \circled{F} \\
+					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & \red \circled{G} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 & \red \circled{H} \\
+					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 & \red \circled{I} \\[.2cm]
+\end{array}
+\]
+
+%sage: B = Matrix([[0,-1,2],[1,0,-2],[-1,1,0]])
+%sage: CA = ClusterAlgebra(B)
+%
+%sage: CA.explore_to_depth(infinity)
+%sage: gvectors = CA.cluster_fan().rays()
+%sage: for gvector in gvectors:
+%....:     print gvector, CA.cluster_variable(gvector)
+%....:     
+%N(-1, 1, 0) (x0^2 + x1^2 + x1*x2)/(x0*x2)
+%N(0, 2, -1) (x0^2 + x1^2)/x2
+%N(1, 0, 0) x0
+%N(0, 0, 1) x2
+%N(-2, 0, 1) (x0^2 + x1^2 + 2*x1*x2 + x2^2)/(x0^2*x2)
+%N(1, -1, 0) (x0 + x2)/x1
+%N(0, 0, -1) (x0^2 + x1^2 + 2*x0*x2 + x2^2)/(x1^2*x2)
+%N(-1, 0, 1) (x1 + x2)/x0
+%N(0, -1, 0) (x0 + x1 + x2)/(x0*x1)
+%N(-1, 0, 0) (x0^2 + x1^2 + x0*x2 + x1*x2)/(x0*x1*x2)
+%N(0, 1, 0) x1
+%N(0, 1, -1) (x0^2 + x1^2 + x0*x2)/(x1*x2)
+%
+%sage: TCCA = type_cone_CA(CA)
+%sage: TCCA
+%A 12-dimensional polyhedron in QQ^12 defined as the convex hull of 1 vertex, 9 rays, 3 lines
+%sage: TCCA.lines()
+%(A line in the direction (0, 0, 1, 2, 0, 0, -2, 1, -1, -1, 1, -1),
+% A line in the direction (1, 2, 0, 0, 0, -1, 0, 0, -1, 0, 1, 1),
+% A line in the direction (0, 1, 0, -1, -1, 0, 1, -1, 0, 0, 0, 1))
+%sage: TCCA.inequalities()
+%(An inequality (-2, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0) x + 0 >= 0,
+% An inequality (-1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0) x + 0 >= 0,
+% An inequality (1, 0, 0, 0, -1, 0, 0, 1, 0, 0, -1, 0) x + 0 >= 0,
+% An inequality (0, 0, -1, 0, 0, 1, -1, 0, 0, 0, 0, 1) x + 0 >= 0,
+% An inequality (1, -1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1) x + 0 >= 0,
+% An inequality (0, 0, 0, -1, 0, 1, 0, 1, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -2) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 1, 0, 0, -2, 0, 0, 0, 0) x + 0 >= 0)
+
+\begin{figure}
+	\capstart
     \begin{adjustbox}{center}
 		\newcommand{\fitClusterVariable}[1]{\parbox[c][.7cm][c]{2.3cm}{\centering $#1$}}
         \begin{tikzpicture}
@@ -1524,7 +1532,7 @@ It has $9$ facet-defining inequalities (given below), which correspond to the me
         \end{tikzpicture}
     \end{adjustbox}
 	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the cluster fan correspond to the mesh mutations described in \cref{thm:extremalExchangeablePairsCA}. See \cref{sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
-	\label{fig:labelFacetDefiningInequalititesCA}
+	\label{fig:labelFacetDefiningInequalititiesCA2}
 \end{figure}
 \end{example}
 
@@ -1889,7 +1897,7 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 \label{exm:typeConeNKC}
 Consider the non-kissing fans illustrated in \cref{fig:nonkissingFans}.
 The type cone of the left fan of \cref{fig:nonkissingFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
-It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and illustrated in \cref{fig:labelFacetDefiningInequalititesNKC}\,(left).
+It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(left).
 
 \[
 \begin{array}{r|ccccccccc}
@@ -1936,7 +1944,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 
 \noindent
 The type cone of the right fan of \cref{fig:nonkissingFans} lives in~$\R^{11}$ and has a linearity space of dimension~$3$.
-It has $9$ facet-defining inequalities (given below), which correspond to the flips illustrated in \cref{fig:labelFacetDefiningInequalititesNKC}\,(right).
+It has $9$ facet-defining inequalities (given below), which correspond to the flips illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right).
 In particular, it is not simplicial.
 
 \[
@@ -2147,7 +2155,7 @@ In particular, it is not simplicial.
         \end{tikzpicture}
     \end{adjustbox}
 	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan, represented on the Auslander Reiten quiver of the gentle algebra of~$\quiver$. While they correspond to meshes on the left, they are not as clear in the general case as on the right. See also \cref{sec:extricats}.}
-	\label{fig:labelFacetDefiningInequalititesNKC}
+	\label{fig:labelFacetDefiningInequalititiesNKC}
 \end{figure}
 \end{example}
 
