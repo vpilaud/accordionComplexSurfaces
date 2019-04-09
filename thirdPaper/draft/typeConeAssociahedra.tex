@@ -304,7 +304,7 @@ They show that the resulting polytope is always a generalized associahedron, and
 A by-product of their construction is that the space of all polytopal realizations of the $\b{g}$-vector fan of~$\c{A}$ with respect to the initial acyclic seed~$\seed_\circ$ is a simplicial cone.
 
 \medskip
-In this paper, we revisit, extend and explore further this construction using an reversed approach.
+In this paper, we revisit, extend and explore further this construction using a reversed approach.
 Given a complete simplicial fan~$\Fan$, we consider the space~$\typeCone(\Fan)$ of all its polytopal realizations, called type cone of~$\Fan$ in~\cite{McMullen-typeCone}.
 This type cone is known to be a polyhedral cone defined by a collection of inequalities corresponding to the linear dependences among the rays of~$\Fan$ contained in pairs of adjacent maximal cones of~$\Fan$ (see \cref{def:typeCone}).
 Our approach is based on an elementary but powerful observation: if the type cone~$\typeCone(\Fan)$ is a simplicial cone, then all polytopal realizations of~$\Fan$ can be described as sections of a high dimensional positive orthant with a collection of affine subspaces corresponding to the facets of~$\typeCone(\Fan)$ (see \cref{coro:simplicialTypeCone}).
@@ -337,7 +337,7 @@ For this, we use representation theory in the setting of a~$2$-Calabi--Yau trian
 
 \smallskip
 \noindent
-These two aspects are interesting for their own right and might be useful in different communities: the geometric side enables to describe all polytopal realizations of a fan with simplicial type cone (which is sometimes easier to check than to find an explicit realization), while the algebraic side provides fundamental new results on the $\b{g}$-vectors and the Grothendieck groups of cluster algebras.
+These two aspects are interesting in their own right and might be useful in different communities: the geometric side enables to describe all polytopal realizations of a fan with simplicial type cone (which is sometimes easier to check than to find an explicit realization), while the algebraic side provides fundamental new results on the $\b{g}$-vectors and the Grothendieck groups of cluster algebras.
 We have therefore voluntarily split our presentation into two clearly marked parts that can be read independently.
 The geometric side, which uses elementary techniques, is presented in \cref{part:geometry} together with all its polytopal realization consequences.
 The algebraic side, which is our core contribution, is presented in \cref{part:algebra}. 
@@ -355,7 +355,7 @@ In the present paper, we explore specifically two families of such generalizatio
 \end{itemize}
 
 \smallskip
-Further families of generalizations of the associahedron certainly deserve to be studied with our type cone approach
+Further families of generalizations of the associahedron certainly deserve to be studied with our type cone approach.
 We are investigating in particular brick polytopes~\cite{PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and quotientopes~\cite{Reading-latticeCongruences, Reading-CambrianLattices, PilaudSantos-quotientopes}.
 In fact, as already mentioned, it seems sometimes easier to find all polytopal realizations of a fan (by describing its type cone in terms of certain specific pairs of adjacent maximal cones) than to identify one specific explicit realization.
 This is clearly the case when the type cone is simplicial as illustrated by the results of this paper: we naturally obtained all polytopal realizations of the $\b{g}$-vector fans of cluster algebras from cyclic seeds and of gentle algebras whose polytopality was only established very recently~\cite{HohlwegPilaudStella, PaluPilaudPlamondon-nonkissing}.
@@ -480,7 +480,7 @@ It is sometimes useful to get rid of the linearity by considering the projection
 We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it the \defn{closed type cone} of~$\Fan$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ for adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}.
 
 
-Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typeCone} can be easily adapted to non-simplicial fans. To describe the type cone of an arbitrary complete fan, it suffices to consider any simplicial refinement, and to set some of the strict inequalities of the definition of the type cone to equality.
+Although we will only treat with simplicial fans, for completeness, note that \cref{prop:characterizationPolytopalFan} and \cref{def:typeCone} can be easily adapted to non-simplicial fans. To describe the type cone of an arbitrary complete fan, it suffices to consider any simplicial refinement, and to set some of the strict inequalities of the definition of the type cone to equality (see~\cite[Prop.~3]{PilaudSantos-quotientopes} for a proof).
 
 \begin{proposition}
 \label{prop:non-simplicial}
@@ -500,7 +500,7 @@ The \defn{type cone}~$\typeCone(\Fan')$ of all $\Fan'$-admissible height vectors
 \right\}.
 \end{align*}
 \end{proposition}
-\arnau{should add proof or citation}
+
 
 \begin{definition}
 An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent maximal cones~$\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ such that the corresponding inequality $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ in the definition of the type cone~$\ctypeCone(\Fan)$ actually defines a facet of~$\ctypeCone(\Fan)$.
@@ -616,7 +616,8 @@ Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{
  Let $\Fan$ be a polytopal fan. Then the relatively open faces of~$\ctypeCone(\Fan)$ are the type cones of all (polytopal) coarsenings of~$\Fan$. 
 \end{theorem}
 \begin{proof}
- Let $\Fan'$ be a simplicial refinement of $\Fan$. By~\cref{prop:non-simplicial}, the type cone of any coarsening of $\Fan$ is a relatively open cell of the hyperplane arrangement defined by adjacent pairs of~$\Fan'$. The type cone of the coarsening is not empty whenever it is polytopal. When non-empty, distinct coarsenings give rise to distinct cells (one will have an equation that is a strict inequality in the other). And all lie in the closure of~$\typeCone(\Fan)$, since they are al in the closure of all the defining half-spaces.
+ Let $\Fan'$ be a simplicial refinement of $\Fan$. By~\cref{prop:non-simplicial}, the type cone of any coarsening of $\Fan$ is a relatively open cell of the hyperplane arrangement defined by adjacent pairs of~$\Fan'$. The type cone of the coarsening is not empty whenever it is polytopal. When non-empty, distinct coarsenings give rise to distinct cells (one will have an equation that is a strict inequality in the other). And all lie in the closure of~$\typeCone(\Fan)$, since they are all in the closure of all the defining half-spaces.
+ Thus every coarsening decribes a relatively open face of~$\ctypeCone(\Fan)$.
  
  For the converse, observe that for $\b{h}\in\ctypeCone(\Fan)$, the normal fan of $P_{\b{h}}$ is the polytopal complete fan obtained by merging all pairs of adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ such that $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} = 0$.
 \end{proof}
@@ -633,12 +634,12 @@ Some observations are in place:
 
 \begin{example}
 \label{ex:typecone}
-Consider the $2$-dimensional fan~$\Fan$ depicted in \cref{fig:typecone} (left) (we will encounter this fan again in \cref{exm:typeConeAsso}). It has five rays $v_1,\dots,v_5$ and five maximal cones $a,\dots, e$. Its type cone lies in~$\R^5$, but has a $2$-dimensional linearity space. It suffices to study $\b{K}\ctypeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$. One can further reduce the dimension by intersecting with a transversal hyperplane, to get a $2$-dimensional representation. This is the triangle that is depicted in \cref{fig:typecone} (right). The five pairs of adjacent maximal cones give rise to five defining inequalities for $\ctypeCone(\Fan)$, although only three are non-redundant. If $H_{ij}$ is the hyperplane supporting the inequality given by the two adjacent maximal cones~$i$ and~$j$, then only $H_{ab}$, $H_{cd}$ and $H_{bc}$ support facets of the type cone. The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type cones of three coarsenings of~$\Fan$, obtained by merging certain adjacent maximal cones (those that are extremal). One of the rays generating~$\b{K}\ctypeCone(\Fan)$ corresponds to a $2$-dimensional simplex, and its normal fan is obtained by merging two pairs of extremal adjacent maximal cones. The two remaining rays lie not only in the hyperplanes~$H_{ij}$ defining the facets it belongs to, but also one extra such hyperplane. Its normal fan has only two cones, one arising as a merging of three cones and one arising as a merging of two cones. These fans are not essential, they have a one-dimensional linearity. Hence, the corresponding polytopes are not full-dimensional, they are of codimension~$1$.
+Consider the $2$-dimensional fan~$\Fan$ depicted in \cref{fig:typecone} (left) (we will encounter this fan again in \cref{exm:typeConeAsso}). It has five rays $v_1,\dots,v_5$ and five maximal cones $a,\dots, e$. Its type cone lies in~$\R^5$, but has a $2$-dimensional linearity space. It suffices to study $\b{K}\ctypeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$. One can further reduce the dimension by intersecting with a transversal hyperplane to get a $2$-dimensional representation. This is the triangle that is depicted in \cref{fig:typecone} (right). The five pairs of adjacent maximal cones give rise to five defining inequalities for $\ctypeCone(\Fan)$, although only three are non-redundant. If $H_{ij}$ is the hyperplane supporting the inequality given by the two adjacent maximal cones~$i$ and~$j$, then only $H_{ab}$, $H_{cd}$ and $H_{bc}$ support facets of the type cone. The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type cones of three coarsenings of~$\Fan$, obtained by merging certain adjacent maximal cones (those that are extremal). One of the rays generating~$\b{K}\ctypeCone(\Fan)$ corresponds to a $2$-dimensional simplex, and its normal fan is obtained by merging two pairs of extremal adjacent maximal cones. The two remaining rays lie not only in hyperplanes~$H_{ij}$ defining facets of the type cone, but also one extra such hyperplane. Their normal fans have only two cones, one arising as a merging of three cones and one arising as a merging of two cones. These fans are not essential, they have a one-dimensional linearity. Hence, the corresponding polytopes are not full-dimensional, they are of codimension~$1$.
 
 \begin{figure}[htpb]
 	\capstart
 	\centerline{{\includegraphics[width=.3\linewidth]{typeconeFan}}\hspace{1.5cm}\includegraphics[width=.4\linewidth]{typecone}}
-	\caption{A complete $2$-dimensional fan~$\Fan$ with five rays $v_1,\dots,v_5$ and five maximal cones $a,\dots, e$. We depict the intersection of $\b{K}\ctypeCone(F)$ with a hyperplane to get a $2$-dimensional slice. On top of each face of $\ctypeCone(F)$, and example of polytope with the corresponding normal fan is depicted.}
+	\caption{A complete $2$-dimensional fan~$\Fan$ with five rays $v_1,\dots,v_5$ and five maximal cones $a,\dots, e$. We depict the intersection of $\b{K}\ctypeCone(F)$ with a hyperplane to get a $2$-dimensional section. On top of each face of $\ctypeCone(F)$, and example of polytope with the corresponding normal fan is depicted.}
 	\label{fig:typecone}
 \end{figure}
 \end{example}
@@ -667,11 +668,11 @@ P_\b{h} + P_{\b{h}'} & = \set{\b{x} + \b{x}'}{\b{x} \in P_\b{h} \text{ and } \b{
 We say that~$P$ is a \defn{Minkowski summand} of~$R$ if there is a polytope~$Q$ such that $R=P+Q$, and a \defn{weak Minkowski summand} if there is a $\lambda \ge 0$ and a polytope~$Q$ such that ${\lambda R = P + Q}$. 
 \cref{lem:MinkowskiSum} ensures that convex combinations in the type cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type cone~$\ctypeCone(\Fan)$ modulo linearity (the cone of weak Minkowski summands was studied by W.~Meyer in~\cite{Meyer}, to see that it is equivalent to the type cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
 
-This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the closed 6type cone. These correspond to indecomposable polytopes, see~\cite{Meyer} or \cite{McMullen-typeCone}. A polytope $P\subseteq\R^n$ is called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda \ge 0$ and $t \in \R^n$.
+This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the closed type cone. These correspond to indecomposable polytopes, see~\cite{Meyer} or \cite{McMullen-typeCone}. A polytope $P\subseteq\R^n$ is called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda \ge 0$ and $t \in \R^n$.
 
 \begin{corollary}
-\arnau{See \cite{Meyer} and \cite{McMullen-typeCone}}
-Any polytope in~$\typeCone(\Fan)$ is the Minkowski sum of at most~$N-n$ indecomposable polytopes corresponding to the rays of~$\b{K}\typeCone(\Fan)$.
+% % \arnau{See \cite{Meyer} and \cite{McMullen-typeCone}}
+Any polytope in~$\ctypeCone(\Fan)$ is the Minkowski sum of at most~$N-n$ indecomposable polytopes corresponding to the rays of~$\b{K}\ctypeCone(\Fan)$.
 \end{corollary}
 
 If $P = Q + R$, then we say that~$R$ is the \defn{Minkowski difference} of~$P$ and~$Q$, denoted~${R = P - Q}$. Note that this is only defined when~$Q$ is a Minkowski summand of~$P$.
@@ -679,10 +680,10 @@ There are two natural ways this construction generalizes to arbitrary pairs of p
 Notice that $P_\b{h}-P_{\b{h}'}=P_{\b{h} - \b{h'}}$ when $P_{\b{h}'}$ is a Minkowski summand of $P_\b{h}$. Considering arbitrary differences of support functions gives rise to \defn{virtual polyhedra}, which is the Grothendieck group of the semigroup of polytopes with Minkowski sums~\cite{PukhlikovKhovanskii}.
 
 \begin{corollary}
-Let $\b{h}_1,\dots, \b{h}_{N-n}\in \ctypeCone(\Fan)$ form a basis of $\ker \b{G}$. Then for any~$\b{h} \in \ctypeCone(\Fan)$, the polytope~$P_\b{h}$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
+Let $\b{h}_1,\dots, \b{h}_{N-n}\in \ctypeCone(\Fan)$ form a basis of the left kernel of~$\b{G}$. Then for any~$\b{h} \in \ctypeCone(\Fan)$, the polytope~$P_\b{h}$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
 \end{corollary}
 \begin{proof}
-It suffices to express the projection of $\b{h}$ into $\ker\b{G}$ in terms of $\b{h}_1,\dots, \b{h}_{N-n}$, and to separate those terms with positive and negative coefficients to express Minkowski sums and differences.
+It suffices to express the projection of $\b{h}$ onto the left kernel of~$\b{G}$ in terms of $\b{h}_1,\dots, \b{h}_{N-n}$, and to separate those terms with positive and negative coefficients to express Minkowski sums and differences.
 \end{proof}
 
 This is used in~\cite{ArdilaBenedettiDoker} to show that every generalized permutahedron can be written uniquely as a signed Minkowski sum of simplices. 
@@ -693,11 +694,11 @@ In the particular case when the type cone is simplicial, then we can get rid of 
 If the type cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then the $N-n$ idecomposable polytopes $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$ arising from the rays of $\ctypeCone(\Fan)$ verify that 
 \begin{enumerate}[(i)]
 \item  every $P_\b{h}$ with $\b{h}\in \typeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$; and
-\item  every $P_\b{h}$ with $\b{h}\in \ctypeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
+\item  every $P_\b{h}$ with $\b{h}\in \ctypeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of non-negative dilates of $P_{\b{h}_1},\dots, P_{\b{h}_{N-n}}$.
 \end{enumerate} 
 \end{corollary}
 
-Note that such a family of polytopes giving rise to unique positive representations only exists when the type cone is simplicial (both unicity and positivity only happen when the type cone is simplicial).
+Note that such a family of polytopes giving rise to unique positive/non-negative representations only exists when the type cone is simplicial. We get unicity with any basis, but in general we cannot guarantee non-negativity unless we are in the simplicial cone they span. If we take all rays of the type cone, we get non-negativity, but the representation is not unique unless the cone is simplicial.
 
 In the case of \cref{ex:typecone}, we get that any polytope in $\ctypeCone(\Fan)$ is a positive Minkowski combination of a triangle and two of its edges. This is the normal fan of 
 Loday's $2$-dimensional associahedron, and the realization as a Minkowski sum of faces of a simplex was given by Postnikov in~\cite{Postnikov}.
