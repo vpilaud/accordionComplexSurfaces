@@ -395,7 +395,7 @@ It is also motivates the study of relevant objects revealed by the type cone dic
 \item The rays of the type cone of~$\Fan$ correspond to specific polytopes which form a positive Minkowski basis of all realizations of~$\Fan$ (see \cref{subsec:MinkowskiSums}). In particular, when the type cone is simplicial, any polytopal realization of~$\Fan$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of these polytopes. For cluster algebras, it follows from~\cite[Sect.~6]{BazierMatteDouvilleMousavandThomasYildirim} that these polytopes are Newton polytopes of the $F$-polynomials. It would be interesting to obtain similar algebraic interpretations for the rays of the type cones of the non-kissing fans of gentle~algebras.
 
 \smallskip
-\item mixed volumes
+\item Once we get a representation of a polytope~$P$ as a signed Minkowski sum~$P=\sum_{1\leq i\leq k}\alpha_i Q_i$, we get a formula for the volume of $P$ as a multivariate polynomial in $\alpha_1,\dots,\alpha_k$ whose coefficients are the mixed volumes of $Q_1,\dots, Q_k$~\cite{ArdilaBenedettiDoker,McMullen-Valuations}. These encode rich combinatorial information when representing generalized permuahedra as positive Minkowski sum of coordinate simplices or hypersimplices~\cite{Postnikov}, and in particular for matroid polytopes~\cite{ArdilaBenedettiDoker}. It would be interesting to get such volume formulas for polytopal realizations of $\b{g}$-vector fans of cluster algebras, and combinatorial interpretations for their coefficients.
 \end{itemize}
 
 \smallskip
@@ -507,8 +507,8 @@ We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it th
 \enlargethispage{.5cm}
 Consider the $2$-dimensional fan~$\Fan$ depicted in \cref{fig:typeCone} (left) (we will encounter this fan again in \cref{exm:typeConeCoarsenings,exm:typeConeMinkowskiSum,exm:typeConeAsso}).
 It has five rays labeled~$1, \dots, 5$ and five maximal cones labeled~$a,\dots, e$.
-Its type cone~$\ctypeCone(\Fan)$ lies in~$\R^5$, but has a $2$-dimensional linearity space.
-The five pairs of adjacent maximal cones of~$\Fan$ give rise to following five defining inequalities for~$\ctypeCone(\Fan)$:
+Its type cone~$\typeCone(\Fan)$ lies in~$\R^5$, but has a $2$-dimensional linearity space.
+The five pairs of adjacent maximal cones of~$\Fan$ give rise to following five defining inequalities for~$\typeCone(\Fan)$:
 \begin{gather*}
 H^>_{ab}: \; \b{h}_1 + \b{h}_3 - \b{h}_2 > 0
 \qquad
@@ -522,15 +522,15 @@ H^>_{ae}: \; \b{h}_2 + \b{h}_5 > 0,
 \end{gather*}
 where $H^>_{ij}$ denotes the halfspace defined by the inequality corresponding to the two adjacent maximal cones~$i$ and~$j$.
 Note that the inequalities~$H^>_{ae}$ and~$H^>_{de}$ are redundant.
-For example, the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, \nicefrac{5}{4}, 1, \nicefrac{5}{4})$ belongs to the type cone~$\ctypeCone(\Fan)$, and the corresponding polytope is represented in \cref{fig:typeCone} (middle).
-To represent this type cone, it suffices to represent~$\b{K}\ctypeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$.
+For example, the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, \nicefrac{5}{4}, 1, \nicefrac{5}{4})$ belongs to the type cone~$\typeCone(\Fan)$, and the corresponding polytope is represented in \cref{fig:typeCone} (middle).
+To represent this type cone, it suffices to represent~$\b{K}\typeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$.
 One can further reduce the dimension by intersecting with a transversal hyperplane to get a $2$-dimensional representation.
 This is the red triangle depicted in \cref{fig:typeCone} (right).
 
 \begin{figure}[htpb]
 	\capstart
 	\centerline{{\includegraphics[scale=1]{typeConeFan}} \quad {\includegraphics[scale=1]{typeConePolytope}} \quad \raisebox{.5cm}{\includegraphics[scale=.45]{typeCone}}}
-	\caption{A $2$-dimensional fan~$\Fan$ with five rays $1, \dots, 5$ and five maximal cones~$a, \dots, e$ (left), its polytopal realization corresponding to the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, 1, 1, \nicefrac{5}{4})$ (middle), and the intersection of $\b{K}\ctypeCone(\Fan)$ with a hyperplane to get a $2$-dimensional slice (right).}
+	\caption{A $2$-dimensional fan~$\Fan$ with five rays $1, \dots, 5$ and five maximal cones~$a, \dots, e$ (left), its polytopal realization corresponding to the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, 1, 1, \nicefrac{5}{4})$ (middle), and the intersection of $\b{K}\typeCone(\Fan)$ with a hyperplane to get a $2$-dimensional slice (right).}
 	\label{fig:typeCone}
 \end{figure}
 \end{example}
@@ -542,6 +542,7 @@ An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent maximal cones~$
 In other words, extremal adjacent pairs define the extremal rays of the polar of the closed type cone~$\ctypeCone(\Fan)$.
 Understanding the extremal adjacent pairs of~$\Fan$ enables to describe its type cone~$\typeCone(\Fan)$ and thus all its polytopal realizations.
 For instance in 
+\arnau{unfinished sentence}
 
 \begin{remark}
 \label{rem:dimTypeCone}
