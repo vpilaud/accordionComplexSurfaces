@@ -2628,8 +2628,7 @@ For any graph~$\graphG$, the type cone of the nested fan~$\gvectorFan[\graphG]$ 
 \end{corollary}
 
 \begin{example}
-For the complete graph~$\graphG[K]_n$, all the inequalities of \cref{coro:typeConeGA} actually define facets of~$\typeCone(\gvectorFan[\graphG[K]_n])$.
-The corresponding admissible height vectors are precisely the submodular functions, \ie the functions~$\b{h} : 2^{[n]} \to \R$ such that~$\b{h}_{\varnothing} = 0$ and~$\b{h}_{A} + \b{h}_{B} > \b{h}_{A \cap B} + \b{h}_{A \cup B}$ for any~$A, B \subseteq [n]$.
+For the complete graph~$\graphG[K]_n$, the admissible height vectors are precisely the submodular functions, \ie the functions~$\b{h} : 2^{[n]} \to \R$ such that~$\b{h}_{\varnothing} = 0$ and~$\b{h}_{A} + \b{h}_{B} > \b{h}_{A \cap B} + \b{h}_{A \cup B}$ for any~$A, B \subseteq [n]$.
 This is precisely the description of the generalized permutahedra introduced by A.~Postnikov in~\cite{Postnikov} and E.-M.~Feichtner and B.~Sturmfels in~\cite{FeichtnerSturmfels}.
 \end{example}
 
@@ -2832,7 +2831,7 @@ Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair f
 Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$ and let~$p = |\tube \cup \tube'|$.
 By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
 Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected.
-We can thus label the elements of~$\tube \cup \tube'$ by~$\{v_1, \dots, v_p\}$ such that~$\{v_i, \dots, v_j\}$ induces a tube~$\tube_{k,\ell}$ of~$\graphG$ for any~$1 \le k \le \ell \le p$. 
+We can thus label the elements of~$\tube \cup \tube'$ by~$\{v_1, \dots, v_p\}$ such that~$\{v_k, \dots, v_\ell\}$ induces a tube~$\tube_{k,\ell}$ of~$\graphG$ for any~$1 \le k \le \ell \le p$. 
 The map~$[k,\ell] \mapsto \tube_{k,\ell}$ is thus an injection from the tubes of the path~$\graphG[P]_p$ to that of~$\graphG$ that fulfills
 \begin{itemize}
 \item $\tube_{k,\ell-1} \ssm \{v_k\} = \tube_{k+1,\ell} \ssm \{v_\ell\}$ for any~$1 \le k \le \ell \le p$, and
