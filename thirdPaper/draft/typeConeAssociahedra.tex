@@ -894,7 +894,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 
 %sage: B = Matrix([[0,1,0],[-1,0,1],[0,-1,0]])
 %sage: CA = ClusterAlgebra(B)
-%
+
 %sage: CA.explore_to_depth(infinity)
 %sage: gvectors = CA.cluster_fan().rays()
 %sage: for gvector in gvectors:
@@ -909,7 +909,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 %N(0, -1, 0) (x0*x1 + x0 + x2)/(x1*x2)
 %N(-1, 0, 0) (x0*x1 + x1*x2 + x0 + x2)/(x0*x1*x2)
 %N(0, 1, 0) x1
-%
+
 %sage: TCCA = type_cone_CA(CA)
 %sage: TCCA
 %A 9-dimensional polyhedron in QQ^9 defined as the convex hull of 1 vertex, 6 rays, 3 lines
@@ -1305,7 +1305,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the me
 
 %sage: B = Matrix([[0,-1,1],[1,0,-1],[-1,1,0]])
 %sage: CA = ClusterAlgebra(B)
-%
+
 %sage: CA.explore_to_depth(infinity)
 %sage: gvectors = CA.cluster_fan().rays()
 %sage: for gvector in gvectors:
@@ -1320,7 +1320,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the me
 %N(-1, 0, 0) (x0 + x1 + x2)/(x0*x2)
 %N(0, 1, 0) x1
 %N(0, 1, -1) (x0 + x1)/x2
-%
+
 %sage: TCCA = type_cone_CA(CA)
 %sage: TCCA
 %A 9-dimensional polyhedron in QQ^9 defined as the convex hull of 1 vertex, 6 rays, 3 lines
@@ -1424,7 +1424,7 @@ $}
 
 %sage: B = Matrix([[0,-1,2],[1,0,-2],[-1,1,0]])
 %sage: CA = ClusterAlgebra(B)
-%
+
 %sage: CA.explore_to_depth(infinity)
 %sage: gvectors = CA.cluster_fan().rays()
 %sage: for gvector in gvectors:
@@ -1442,7 +1442,7 @@ $}
 %N(-1, 0, 0) (x0^2 + x1^2 + x0*x2 + x1*x2)/(x0*x1*x2)
 %N(0, 1, 0) x1
 %N(0, 1, -1) (x0^2 + x1^2 + x0*x2)/(x1*x2)
-%
+
 %sage: TCCA = type_cone_CA(CA)
 %sage: TCCA
 %A 12-dimensional polyhedron in QQ^12 defined as the convex hull of 1 vertex, 9 rays, 3 lines
@@ -1938,7 +1938,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 \]
 
 %sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e3':['b']}}, [('a','b')])
-%
+
 %sage: Q.non_kissing_fan().rays()
 %N( 1,  0,  0),
 %N( 0,  0,  1),
@@ -1949,7 +1949,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 %N( 0,  1,  0),
 %N( 0,  1, -1)
 %in 3-d lattice N
-%
+
 %sage: TCNKC = type_cone_NKC(Q)
 %sage: TCNKC
 %A 8-dimensional polyhedron in QQ^8 defined as the convex hull of 1 vertex, 5 rays, 3 lines
@@ -1963,10 +1963,6 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 % An inequality (0, 1, 0, 0, 0, 0, -1, 1) x + 0 >= 0,
 % An inequality (0, 0, 1, 0, -1, 1, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 0, 1, 0, 0, 1, -1) x + 0 >= 0)
-%sage: TCNKC.lines()
-%(A line in the direction (0, 0, 1, 0, 1, 0, -1, -1),
-% A line in the direction (1, 0, 0, 0, -1, -1, 1, 1),
-% A line in the direction (0, 1, 0, -1, 0, 0, 0, -1))
 
 \medskip
 \noindent
@@ -1991,7 +1987,7 @@ In particular, it is not simplicial.
 \]
 
 %sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e3':['b']}, 'e3':{'e1':['c']}}, [('b','c')])
-%
+
 %sage: Q.non_kissing_fan().rays()
 %N( 1,  0,  0),0
 %N( 0,  0,  1),1
@@ -2005,7 +2001,7 @@ In particular, it is not simplicial.
 %N( 0,  1,  0),9
 %N( 0,  1, -1)10
 %in 3-d lattice N
-%
+
 %sage: TCNKC = type_cone_NKC(Q)
 %sage: TCNKC
 %A 11-dimensional polyhedron in QQ^11 defined as the convex hull of 1 vertex, 9 rays, 3 lines
@@ -2023,10 +2019,6 @@ In particular, it is not simplicial.
 % An inequality (0, 0, 0, 0, 0, -1, -1, 1, 1, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 1, -1, -1, 0, 1, 0, 0, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 0, 0, 0, 1, 0, 0, -1, -1, 1) x + 0 >= 0)
-%sage: TCNKC.lines()
-%(A line in the direction (0, 0, 0, 1, 0, 0, 1, 1, 0, -1, -1),
-% A line in the direction (1, 0, 1, 1, 0, -1, 0, 0, -1, 0, 0),
-% A line in the direction (1, 1, 0, 1, -1, 0, 0, 1, -1, 0, -1))
 
 %\begin{figure}
 %\begin{adjustbox}{center}
@@ -2400,10 +2392,90 @@ Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we
 
 %\vincent{Describe the rays of the type cone. They are the Minkowski basis.}
 
-\begin{example}
+\begin{remark}
 \label{exm:nonSimplicialTypeConeNKC}
-\vincent{All this section is wrong when the quiver is not brick or has a cycle of length~$2$.}
-\end{example}
+Note that \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and therefore~\cref{coro:simplicialTypeConeNKC,coro:allPolytopalRealizationsNKC} fail when the quiver is not brick or not $2$-acyclic.
+The smallest exemples are the $2$-cycles whose non-kissing fans are represented in \cref{fig:nonkissingFans2}.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{nonkissingFans2}}
+	\caption{The non-kissing fans of two $2$-cyclic gentle quivers. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
+	\label{fig:nonkissingFans2}
+\end{figure}
+
+The left one is not brick: it has a non-distinguishable string and a self-kissing walk.
+The right one is brick but is not $2$-acyclic.
+
+In both cases, \cref{prop:interestingExchangeablePairsNKC} fails for the string~$\sigma$ of length~$0$ at vertex~$1$ (resp.~$2$) as the resulting walks~$\cc{\sigma}$ and~$\hh{\sigma}$ have $\b{g}$-vectors~$\gvector{\cc{\sigma}} = (1,-1)$ and~$\gvector{\hh{\sigma}} = (-1,1)$ (resp.~$\gvector{\cc{\sigma}} = (-1,1)$ and~$\gvector{\hh{\sigma}} = (1,-1)$), and are therefore not exchangeable.
+\cref{prop:extremalExchangeablePairsNKC} also fails as the type cone has dimension~$4$ and the following~$5$ inequalities:
+
+\[
+\begin{array}{r|cccccc}
+\text{walks} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkC1}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkC2}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkC3}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkC4}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkC5}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkC6}} \\[.2cm]
+& \raisebox{-.25cm}{\includegraphics[scale=.5]{walkD1}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkD2}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkD3}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkD4}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkD5}} & \raisebox{-.25cm}{\includegraphics[scale=.5]{walkD6}} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorD{1}{0} & \compactVectorD{0}{1} & \compactVectorD{-1}{1} & \compactVectorD{-1}{0} & \compactVectorD{0}{-1} & \compactVectorD{1}{-1} \\[.6cm]
+\text{facet}		& 1 & -1 & 1 & 0 & 0 & 0 \\
+\text{defining}		& 0 & 1 & -1 & 1 & 0 & 0 \\
+\text{inequalities}	& 0 & 0 & 1 & -1 & 1 & 0 \\
+					& 0 & 0 & 0 & 1 & -1 & 1 \\
+					& 1 & 0 & 0 & 0 & 1 & -1 \\[.2cm]
+\end{array}
+\]
+
+\noindent
+(since the fans are the same, the type cones are the same and we therefore present them together)
+
+%sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e1':['b']}}, [('b','a')])
+
+%sage: Q.non_kissing_fan().rays()
+%N( 0,  1),
+%N(-1,  1),
+%N(-1,  0),
+%N( 0, -1),
+%N( 1,  0),
+%N( 1, -1)
+%in 2-d lattice N
+
+%sage: TCNKC = type_cone_NKC(Q)
+%sage: TCNKC
+%A 6-dimensional polyhedron in QQ^6 defined as the convex hull of 1 vertex, 5 rays, 2 lines
+%sage: TCNKC.lines()
+%(A line in the direction (1, 0, -1, -1, 1, 0),
+% A line in the direction (1, 1, 0, -1, 0, -1))
+%sage: TCNKC.inequalities()
+%(An inequality (-1, 1, 0, 0, 1, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 1, -1) x + 0 >= 0,
+% An inequality (0, 0, 1, -1, 0, 1) x + 0 >= 0,
+% An inequality (0, 1, -1, 1, 0, 0) x + 0 >= 0,
+% An inequality (1, -1, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (1, 0, 0, 0, -1, 1) x + 0 >= 0)
+
+%sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e1':['b']}}, [('a','b'), ('b','a')])
+
+%sage: Q.non_kissing_fan().rays()
+%N( 0,  1),
+%N(-1,  1),
+%N(-1,  0),
+%N( 0, -1),
+%N( 1,  0),
+%N( 1, -1)
+%in 2-d lattice N
+
+%sage: TCNKC = type_cone_NKC(Q)
+%sage: TCNKC
+%A 6-dimensional polyhedron in QQ^6 defined as the convex hull of 1 vertex, 5 rays, 2 lines
+%sage: TCNKC.lines()
+%(A line in the direction (1, 0, -1, -1, 1, 0),
+% A line in the direction (1, 1, 0, -1, 0, -1))
+%sage: TCNKC.inequalities()
+%(An inequality (-1, 1, 0, 0, 1, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 1, -1) x + 0 >= 0,
+% An inequality (0, 0, 1, -1, 0, 1) x + 0 >= 0,
+% An inequality (0, 1, -1, 1, 0, 0) x + 0 >= 0,
+% An inequality (1, -1, 1, 0, 0, 0) x + 0 >= 0,
+% An inequality (1, 0, 0, 0, -1, 1) x + 0 >= 0)
+\end{remark}
 
 
 %%%%%%%%%%%
@@ -2421,7 +2493,7 @@ Graph associahedra and nestohedra have been geometrically realized in different 
 For a given graph~$\graphG$, the resulting polytopes all have the same normal fan, called nested fan of~$\graphG$: its rays are the characteristic vectors of the tubes, and its cones are generated by characteristic vectors of compatible tubes.
 In this section, we describe the type cone of the nested fan of any graph~$\graphG$.
 
-\begin{figure}[t]
+\begin{figure}[b]
 	\capstart
 	\begin{adjustbox}{center}
 		\begin{tabular}{c@{\;}c@{\;}c@{\;}c}
