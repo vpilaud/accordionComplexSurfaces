@@ -557,7 +557,6 @@ Let $\c{G}$ be a complete fan that coarsens the essential complete simplicial fa
 The \defn{type cone}~$\typeCone(\c{G})$ of all $\c{G}$-admissible height vectors~$\b{h}$ is
 \begin{align*}
 \typeCone(\c{G}) 
-%  & \eqdef \set{\b{h} \in \R^N}{\Fan \text{ is the normal fan of } P_\b{h}} \\
 & = \left\{\b{h} \in \R^N\;\middle|\;
 \begin{array}{ll}
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} = 0
@@ -575,16 +574,7 @@ The \defn{type cone}~$\typeCone(\c{G})$ of all $\c{G}$-admissible height vectors
 \subsection{Unique exchange property}
 \label{subsec:uniqueExchangeProperty}
 
-Two rays~$\ray$ and~$\ray'$ of~$\Fan$ are
-% called \defn{compatible} if there are both contained in a cone of~$\Fan$ and 
-\defn{exchangeable} if there are two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$.
-%If~$\rays(\Fan)$ denotes the set of rays of~$\Fan$, a \defn{compatibility degree} for~$\Fan$ is a function~$\compatibilityDegree{-}{-}: \rays(\Fan) \times \rays(\Fan) \to \R$ such that
-%\begin{itemize}
-%\item $\compatibilityDegree{\ray}{\ray'} = -1$ if~$\ray = \ray'$ and is non-negative otherwise,
-%\item $\compatibilityDegree{\ray}{\ray'} = 0$ if ~$\ray$ and~$\ray'$ are compatible,
-%\item $\compatibilityDegree{\ray}{\ray'} > 0$ if~$\ray \ne \ray'$ are incompatible,
-%\item $\compatibilityDegree{\ray}{\ray'} = 1 = \compatibilityDegree{\ray'}{\ray}$ if and only if~$\ray$ and~$\ray'$ are exchangeable.
-%\end{itemize}
+Two rays~$\ray$ and~$\ray'$ of~$\Fan$ are \defn{exchangeable} if there are two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$.
 
 \begin{definition}
 \label{def:uerp}
@@ -594,7 +584,6 @@ We say that two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a \defn{unique e
 \]
 does not depend on the pair~$\{\rays, \rays'\}$ of adjacent maximal cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\ray, \ray'$.
 This implies in particular that the rays~$\ray[s]$ for which~$\coefficient[{\ray[s]}][\rays][\rays'] \ne 0$ belong to~$\rays \cup \rays'$ for any pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$. 
-%These rays are thus called \defn{forced rays} for the exchangeable pair~$\{\ray, \ray'\}$.
 
 We say that the fan~$\Fan$ has the \defn{unique exchange property} if any two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a unique exchange relation.
 \end{definition}
@@ -842,7 +831,6 @@ From now on, we use the convention that~$\gvector{a,b} = 0$ when~$(a,b)$ is a bo
 
 \begin{proposition}
 \label{prop:exchangeablePairsAsso}
-%Consider two exchangeable proper intervals~$[i,j]$ and~$[\ell,k]$ of~$[n+1]$, corresponding to two crossing diagonals~$(i-1,j+1)$ and~$(k-1,\ell+1)$ of the $(n+3)$-gon with~$0 \le i-1 < k-1 < j+1 < \ell+1 \le n+2$.
 Let~$(a,b)$ and~$(a',b')$ be two crossing diagonals with~${0 \le a < a' < b < b' \le n+2}$, and let~$T$ and~$T'$ be any two triangulations such that~$T \ssm \{(a,b)\} = T' \ssm \{(a',b')\}$.
 Then both triangulations~$T$ and~$T'$ contain the square $aa'bb'$, and the linear dependence between the $\b{g}$-vectors of~$T \cup T'$ is given by
 \[
@@ -1050,7 +1038,6 @@ For~$n \in \N$, define~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$ and~$Y(n) 
 Then for any~$\b{\ell} \in \R_{>0}^{Y(n)}$, the polytope
 \[
 R_\b{\ell}(n) \eqdef \set{\b{z} \in \R^{X(n)}}{\begin{array}{l} \b{z} \ge 0, \quad \b{z}_{(0,n+2)} = 0 \quad\text{and}\quad \b{z}_{(a,a+1)} = 0 \text{ for all } 0 \le a \le n+1 \\ \b{z}_{(a,b-1)} + \b{z}_{(a+1,b)} - \b{z}_{(a,b)} - \b{z}_{(a+1,b-1)} = \b{\ell}_{(a,b)} \text{ for all } (a,b) \in Y(n) \end{array}}
-%\bigset{\b{z} \in \R^{X(n)}}{\b{z} \ge 0, \; \b{z}_{1,n+1} = 0 \text{ and } \b{z}_{i,j} + \b{z}_{i+1,j+1} - \b{z}_{i,j+1} - \b{z}_{i+1,j} = \b{\ell}_{i,j} \text{ for } (i,j) \in X(n-1)}
 \]
 is an $n$-dimensional associahedron, whose normal fan is~$\gvectorFan[n]$.
 Moreover, the polytopes~$R_\b{\ell}(n)$ for~$\b{\ell} \in \R_{>0}^{Y(n)}$ describe all polytopal realizations of the fan~$\gvectorFan[n]$.
@@ -1063,7 +1050,6 @@ Moreover, the polytopes~$R_\b{\ell}(n)$ for~$\b{\ell} \in \R_{>0}^{Y(n)}$ descri
 \subsection{Finite type cluster complexes and generalized associahedra}
 \label{subsec:typeConeCA}
 
-%We now extend the results of the previous section to the $\b{g}$-vector fan of any finite type cluster algebra with respect to any seed (acyclic or not).
 Cluster algebras were introduced by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasI} with motivation coming from total positivity and canonical bases.
 Here, we will focus on finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasII} and more specifically on properties of their $\b{g}$-vectors~\cite{FominZelevinsky-ClusterAlgebrasIV}.
 These $\b{g}$-vectors support a complete simplicial fan, which is called \defn{$\b{g}$-vector fan} or \defn{cluster fan}. It is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, and revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
@@ -1554,7 +1540,6 @@ In order to describe the facets of this type cone, we need the following special
 
 \begin{definition}
 \label{def:meshMutation}
-%Consider a seed~$\seed = (\B, \cluster)$ and a cluster variable~$x \in \cluster$.
 The mutation of a seed~$\seed = (\B, \cluster)$ in the direction of a cluster variable~$x \in \cluster$ is a \defn{mesh mutation} that \defn{starts} (resp.~\defn{ends}) at~$x$ if the entries~$b_{xy}$ for~$y \in \cluster$ are all non-negative (resp.~all non-positive).
 A mesh mutation is \defn{initial} if it ends at a cluster variable of an initial seed.
 We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are two cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a non-initial mesh mutation.
@@ -1682,12 +1667,6 @@ Following M.~Butler and C.~Ringel~\cite{ButlerRingel}, we say that~$\quiver$ is 
 The algebra~$kQ/I$ is called a \defn{gentle algebra}.
 
 The \defn{blossoming quiver}~$\quiver\blossom$ of a gentle quiver is the gentle quiver obtained by completing all vertices of~$\quiver$ with additional incoming or outgoing \defn{blossoms} such that all vertices of~$\quiver$ become $4$-valent.
-%
-%A gentle bound quiver~$\quiver$ is \defn{complete} if any vertex~$a \in Q_0$ is incident to either one ($a$ is a leaf) or four arrows ($a$ is an internal vertex).
-%The \defn{pruned subquiver} of a quiver~$\quiver$ is the locally gentle quiver obtained by deleting all leaves of~$\quiver$ (degree one vertices) and their incident arrows.
-%The \defn{blossoming quiver} of a locally gentle bound quiver~$\quiver$ is the complete locally gentle bound quiver~$\quiver\blossom$ whose pruned subquiver is~$\quiver$.
-%The vertices of~$Q\blossom_0 \ssm Q_0$ are called \defn{blossom vertices}, and the arrows in~$Q\blossom_1 \ssm Q_1$ are called \defn{blossom arrows}.
-%
 We now always assume that~$\quiver$ is a gentle quiver with blossoming quiver~$\quiver\blossom$.
 
 \para{Strings and walks}
@@ -1703,9 +1682,7 @@ where
 	\item there is no path~$\pi \in I$ such that~$\pi$ or~$\pi^{-1}$ appears as a factor of~$\rho$, and
 	\item $\rho$ is reduced, in the sense that no factor~$\alpha\alpha^{-1}$ or~$\alpha^{-1}\alpha$ appears in~$\rho$, for~$\alpha \in Q_1$.
 	\end{enumerate}
-%We say that~$\sigma$ is \defn{straight} if~$\varepsilon_1 = \dots = \varepsilon_\ell$.
 The integer~$\ell$ is called the \defn{length} of the string~$\rho$.
-%We let~$s(\rho) \eqdef s(\alpha_1^{\varepsilon_1})$ and~$t(\rho) \eqdef t(\alpha_\ell^{\varepsilon_\ell})$ denote the source and target of~$\rho$.
 For each vertex~$a \in Q_0$, there is also a \defn{string of length zero}, denoted by~$\varepsilon_a$, that starts and ends at~$a$.
 We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and call it an \defn{undirected string} of~$\quiver$.
 Let~$\strings$ denote the set of strings of~$\quiver$.
@@ -1761,7 +1738,7 @@ The quiver~$\quiver$ is called \defn{$\tau$-tilting finite} or \defn{non-kissing
 
 \para{Two families of examples: grid and dissection quivers}
 %
-We conclude this recollections on non-kissing complexes by two families of examples:
+The initial motivation for non-kissing complexes came from two families of examples:
 \begin{enumerate}[(1)]
 \item \textbf{Grid quivers}: Consider the infinite grid quiver~$\quiver_{Z^2}$, whose vertices are all integer points of~$\Z^2$, whose arrows connect between~$(i,j) \longrightarrow (i,j+1)$ and~$(i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$, and whose relations forbid~$(i-1,j) \longrightarrow (i,j) \longrightarrow (i,j+1)$ and~$(i,j-1) \longrightarrow (i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$. A \defn{gentle grid quiver} is any subquiver~$\quiver_A$ of~$\quiver_{Z^2}$ induced by a finite subset~$A \subset \Z^2$ of the integer grid. The non-kissing complex of gentle grid quivers were introduced in~\cite{McConville} with motivation coming from~\cite{PetersenPylyavskyySpeyer} and~\cite{SantosStumpWelker}. 
 
@@ -2702,17 +2679,14 @@ Recall that on the path with~$n+1$ vertices, the tubes of the path are the inter
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsA}
-%The extremal exchangeable pairs for the nested fan of the path are precisely the pairs of intervals~$\{[i,j], [i+1,j+1]\}$ for~$1 \le i \le j \le n-1$.
 Two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ form an extremal exchangeable pair for the nested fan of the path if and only if~$i = i'+1$ and~$j = j'+1$, or the opposite.
 \end{proposition}
 
 We now consider an arbitrary graph~$\graphG$ and describe the type cone of its nested fan.
 \cref{prop:extremalExchangeablePairsA} extends as follows.
-% We denote by~$X \symdif Y$ the symmetric difference of two sets~$X$ and~$Y$.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsGA}
-%A pair~$\{\tube, \tube'\}$ of exchangeable tubes of~$\graphG$ is extremal if and only if~$|\tube \symdif \tube'| = 2$.
 Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$ if and only if~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
 \end{proposition}
 
@@ -2745,18 +2719,6 @@ The extremal exchangeable pairs for the nested fan of~$\graphG$ are equivalently
 \end{corollary}
 
 We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan, which we can explicitly express using one of the following two equivalent conditions.
-
-%\begin{corollary}
-%Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\graphG} = 0$ and
-%\[
-%\b{h}_{\tube} + \b{h}_{\tube'} > \b{h}_{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{h}_{\tube[s]}
-%\]
-%for any pair of tubes~$\{\tube, \tube'\}$ of~$\graphG$ with~$\tube \ssm \{v\} = \tube' \ssm \{v'\}$ where~$v$ is a neighbor of~$\tube'$ and~$v'$ is a neighbor of~$\tube$.
-%Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
-%\[
-%\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}.
-%\]
-%\end{corollary}
 
 \begin{corollary}
 Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying one of the two following equivalent conditions:
@@ -2797,7 +2759,7 @@ The nested fan~$\gvectorFan[\graphG]$ has~$\!\!\!\! \sum\limits_{\tube[r] \in \t
 The formula of \cref{coro:numberExtremalExchangeablePairsGA} can be made more explicit for specific families of graph associahedra discussed in the introduction and illustrated in \cref{fig:specialGraphAssociahedra}.
 
 \begin{proposition}
-The number of extreme exchangeable pairs of the nested fan~$\gvectorFan[\graphG]$ is:
+The number of extremal exchangeable pairs of the nested fan~$\gvectorFan[\graphG]$ is:
 \begin{itemize}
 \item $2^{n-2}\binom{n}{2}$ for the permutahedron (complete graph associahedron),
 \item $\binom{n}{2}$ for the associahedron (path associahedron),
@@ -2812,16 +2774,6 @@ For the associahedron, choose any two vertices~$v,v'$, and complete them into a 
 For the cyclohedron, choose the two vertices~$v,v'$, and complete them into a tube by taking either all the cycle, or one of the two paths between~$v$ and~$v'$ (this gives three options in general, but only two when~$v,v'$ are neighbors).
 For the stellohedron, choose either~$v$ as the center of the star and~$v'$ as one of the $n-1$ leaves, or $v$~and~$v'$ as leaves of the star and complete them into a tube by taking the center and any subset of the $n-3$ remaining leaves.
 \end{proof}
-
-%\begin{example}
-%The formula of \cref{coro:numberExtremalExchangeablePairsGA} can be made more explicit for specific families of graph associahedra:
-%\begin{itemize}
-%\item the permutahedron (complete graph associahedron) has~$2^{n-2}\binom{n}{2}$ extreme exchangeable pairs (choose the two vertices~$v,v'$, and complete them into a tube by selecting any subset of the~$n-2$ remaining vertices),
-%\item the associahedron (path associahedron) has~$\binom{n}{2}$ extreme exchangeable pairs (choose the two vertices~$v,v'$, and complete them into a tube by taking the path between them),
-%\item the cyclohedron (cycle associahedron) has~$3\binom{n}{2} - n$ extreme exchangeable pairs (choose the two vertices~$v,v'$, and complete them into a tube by taking either all the cycle, or one of the two paths between~$v$ and~$v'$; this gives three options in general, but only two when~$v,v'$ are neighbors),
-%\item the stellohedron (star associahedron) has $n-1+2^{n-3}\binom{n-1}{2}$ extreme exchangeable pairs (choose either~$v$ as the center of the star and~$v'$ as one of the $n-1$ leaves, or $v$~and~$v'$ as leaves of the star and complete them into a tube by taking the center and any subset of the $n-3$ remaining leaves).
-%\end{itemize}
-%\end{example}
 
 To conclude on graph associahedra, we characterize the graphs~$\graphG$ whose nested fan has a simplicial type cone.
 
