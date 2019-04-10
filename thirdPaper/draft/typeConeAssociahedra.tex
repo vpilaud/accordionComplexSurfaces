@@ -805,6 +805,7 @@ The associahedron~$\Asso[n]$ can be described equivalently as:
 \end{itemize}
 \end{theorem}
 
+\enlargethispage{.1cm}
 We now focus on the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$.
 Since~$\Asso[n]$ lives in a hyperplane of~$\R^{n+1}$, so does its normal fan.
 Let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = 0}$ and~$\pi : \R^{n+1} \to \HH$ denote the orthogonal projection.
@@ -1638,6 +1639,7 @@ Moreover, the polytopes~$R_\b{\ell}(T)$ for~$\b{\ell} \in \R_{>0}^{\Delta(n) \ss
 \subsection{Non-kissing complexes and gentle associahedra}
 \label{subsec:typeConeNKC}
 
+\enlargethispage{-.4cm}
 Gentle associahedra were constructed by Y.~Palu, V.~Pilaud and P.-G.~Plamondon~\cite{PaluPilaudPlamondon-nonkissing} in the context of support $\tau$-tilting for gentle algebras.
 For a given $\tau$-tilting finite gentle quiver~$\quiver$ (defined in the next section), the $\quiver$-associahedron~$\Asso[\quiver]$ is a simple polytope which encodes certain representations of~$\quiver$ and their $\tau$-tilting relations.
 Combinatorially, the $\quiver$-associahedron is a polytopal realization of the non-kissing complex of~$\quiver$, defined as the simplicial complex of all collections of walks on the blossoming quiver~$\quiver\blossom$ which are pairwise non-kissing.
@@ -1652,6 +1654,7 @@ In this section, we describe the type cone of the non-kissing fan of a quiver~$\
 \label{subsubsec:nonkissingComplex}
 
 We present the definitions and properties of the non-kissing complex of a gentle quiver, following the presentation of~\cite{PaluPilaudPlamondon-nonkissing}.
+See also~\cite{BrustleDouvilleMousavandThomasYildirim} for an alternative presentation.
 
 \para{Gentle quivers}
 %
@@ -1719,19 +1722,19 @@ We denote by~$\peaks{\omega}$ (resp.~$\deeps{\omega}$) the multisets of vertices
 Let~$\omega$ and~$\omega'$ be two undirected walks on~$\quiver$.
 We say that~$\omega$ \defn{kisses}~$\omega'$ if ${\Sigma_\top(\omega) \cap \Sigma_\bottom(\omega')} \ne \varnothing$.
 In other words, $\omega$ and~$\omega'$ share a common substring~$\sigma$, and both arrows of~$\omega$ (resp.~of~$\omega'$) not in~$\sigma$ are outgoing (resp.~incoming) at the endpoints of~$\sigma$.
-%See \fref{fig:kissing}.
+See \cref{fig:kissingCrossing} for a schematic representation and \cref{fig:exmNonkissing}\,(middle) where the three walks are pairwise kissing.
 We say that~$\omega$ and~$\omega'$ are \defn{kissing} if~$\omega$ kisses~$\omega'$ or~$\omega'$ kisses~$\omega$ (or both).
 Note that we authorize the situation where the common finite substring is reduced to a vertex~$a$, that~$\omega$ can kiss~$\omega'$ several times, that~$\omega$ and~$\omega'$ can mutually kiss, and that~$\omega$ can kiss itself.
-For example, \cref{fig:exmNonkissing}\,(middle) shows three walks that are pairwise kissing, and the orange walk is self-kissing (at its self-intersection).
+For example, the orange walk in \cref{fig:exmNonkissing}\,(middle) is self-kissing (at its self-intersection).
 We say that a walk is \defn{proper} if it is not straight nor self-kissing.
 We denote by~$\properWalks$ the set of all proper walks of~$\quiver$.
 
-%\begin{figure}[h]
-%	\capstart
-%	\centerline{\includegraphics[scale=1]{kissing}}
-%	\caption{A schematic representation of two kissing walks: $\omega$~kisses~$\omega'$.}
-%	\label{fig:kissing}
-%\end{figure}
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=1]{kissingCrossing}}
+	\caption{A schematic representation of kissing and non-kissing walks. The walks $\omega$ and~$\omega'$ kiss (left) while the walks~$\mu$ and~$\nu$ share a common substring but do not kiss (right). Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
+	\label{fig:kissingCrossing}
+\end{figure}
 
 The (reduced) \defn{non-kissing complex} of~$\quiver$ is the simplicial complex~$\NKC$ whose faces are the collections of pairwise non-kissing proper walks of~$\quiver$.
 For example, \cref{fig:exmNonkissing}\,(right) represents a non-kissing facet.
@@ -1748,7 +1751,7 @@ The initial motivation for non-kissing complexes came from two families of examp
 \item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. See \cref{fig:dissectionGridQuivers}. The non-kissing complex of~$\quiver_D$ then corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
 \end{enumerate}
 
-\begin{figure}[t]
+\begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.35]{gridQuiver} \quad \includegraphics[scale=.8]{dissectionQuiver} \quad \includegraphics[scale=1.2]{bijectionAssociahedronGrid} \quad \includegraphics[scale=1.2]{bijectionAssociahedronDissection}}
 	\caption{A gentle grid quiver (left), a gentle dissection quiver (middle left), and a path quiver which is both the gentle grid quiver of a ribbon (middle right) and the dissection quiver of a triangulation (right). Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
@@ -1781,6 +1784,7 @@ Note that by definition, the $\gvector{\omega} = 0$ for a straight walk~$\omega$
 To define the other family of vectors, we need to recall the notion of distinguished substring of a walk defined in~\cite[Def.~2.25]{PaluPilaudPlamondon-nonkissing}.
 Consider an arrow~$\alpha \in Q_1$ contained in two distinct walks~$\omega, \omega'$ of a non-kissing facet~$F \in \NKC$, and let~$\sigma$ denote the common substring of~$\omega$ and~$\omega'$.
 We write~$\omega \prec_\alpha \omega'$ if $\omega$ enters and/or exits~$\sigma$ with arrows in the direction pointed by~$\alpha$, while $\omega'$ enters and/or exits~$\sigma$ with arrows in the direction opposite to~$\alpha$.
+For example, in \cref{fig:kissingCrossing}, we have~$\mu \prec_\gamma \nu$ but~$\nu \prec_\delta \mu$.
 The \defn{distinguished walk} of the non-kissing facet~$F \in \NKC$ at the arrow~$\alpha$ is the maximum walk of~$F$ for~$\prec_\alpha$.
 The \defn{distinguished arrows} of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ are the arrow where~$\omega$ is the distinguished walk.
 It is shown in~\cite[Prop.~2.28]{PaluPilaudPlamondon-nonkissing} that each bending walk in a non-kissing facet has precisely two distinguished arrows, pointing in opposite directions.
@@ -1807,6 +1811,7 @@ for any two walks~$\omega, \omega' \in F$.
 
 \para{Non-kissing fan and gentle associahedron}
 %
+\enlargethispage{.2cm}
 The $\b{g}$-vectors support a complete simplicial fan realization of the non-kissing complex complex.
 Examples are illustrated in \cref{fig:nonkissingFans}.
 
@@ -1819,7 +1824,7 @@ For any non-kissing finite gentle quiver~$\quiver$, the set of cones
 is a complete simplicial fan of~$\R^{Q_0}$, called \defn{non-kissing fan} of~$\quiver$, which realizes the non-kissing complex~$\NKC$.
 \end{theorem}
 
-\begin{figure}[h]
+\begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=.45]{nonkissingFans}}
 	\caption{Two non-kissing fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
@@ -1840,14 +1845,16 @@ For any non-kissing finite gentle quiver~$\quiver$, the non-kissing fan~$\gvecto
 
 \para{Flips in the non-kissing fan}
 %
+\enlargethispage{-.4cm}
 Although we lack a characterization of the exchangeable pairs of the non-kissing complex (see \cref{rem:exchangeablePairsNKC}), we can still describe the linear dependence among the $\b{g}$-vectors involved in a flip.
 The following statement is partially proved in~\cite[Thm.~4.17]{PaluPilaudPlamondon-nonkissing}.
+The notations are illustrated in \cref{fig:flip}.
 
 \begin{proposition}
 \label{prop:exchangeablePairsNKC}
 Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then
 \begin{enumerate}[(i)]
-\item For any non-kissing facet~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, there exists a unique maximal common substring~$\sigma$ of~$\omega$ and~$\omega'$ that decomposes~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ such that the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
+\item For any non-kissing facets~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, the distinguished substrings of~$\omega$ in~$F$ and of~$\omega'$ in~$F'$ coincide to a string~$\sigma$. Moreover, if we decompose~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$, then the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
 \item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ actually depend on the exchangeable walks~$\omega$ and~$\omega'$, not on the adjacent non-kissing facet~$F $ and~$F'$.
 \item Moreover, the linear dependence between the $\b{g}$-vectors of~$F \cup F'$ is given by
 \[
@@ -1856,6 +1863,13 @@ Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then
 In other words, the non-kissing fan of~$\quiver$ has the unique exchange relation property.
 \item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\lambda}$ for~$\lambda \in F \cap F'$ is the multiplicity vector~$\multiplicityVector_{\sigma}$ of the vertices of the substring~$\sigma$ of~$\omega$ and~$\omega'$.
 \end{enumerate}
+%
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[scale=1]{flip}}
+	\caption{A schematic representation of a flip. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
+	\label{fig:flip}
+\end{figure}
 \end{proposition}
 
 \begin{proof}
@@ -1906,6 +1920,7 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 
 \begin{example}
 \label{exm:typeConeNKC}
+\enlargethispage{.4cm}
 Consider the non-kissing fans illustrated in \cref{fig:nonkissingFans}.
 The type cone of the left fan of \cref{fig:nonkissingFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
 It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(left).
@@ -1953,6 +1968,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 % A line in the direction (1, 0, 0, 0, -1, -1, 1, 1),
 % A line in the direction (0, 1, 0, -1, 0, 0, 0, -1))
 
+\medskip
 \noindent
 The type cone of the right fan of \cref{fig:nonkissingFans} lives in~$\R^{11}$ and has a linearity space of dimension~$3$.
 It has $9$ facet-defining inequalities (given below), which correspond to the flips illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right).
@@ -2073,7 +2089,7 @@ In particular, it is not simplicial.
 %\end{adjustbox}
 %\end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\capstart
     \begin{adjustbox}{center}
         \begin{tikzpicture}
@@ -2224,11 +2240,36 @@ For any brick $2$-acyclic gentle quiver~$\quiver$ and any string~$\sigma \in \st
 \end{proposition}
 
 \begin{proof}
-We just need to prove that there exists a ridge~$R$ of~$\NKC$ containing both~$\hc{\sigma}$ and~$\ch{\sigma}$ and such that~$R \cup \{\cc{\sigma}\}$ and~$R \cup \{\hh{\sigma}\}$ are adjacent facets of~$\NKC$.
+We fix some notations similar to that of \cref{fig:flip}.
+Let~$\omega \eqdef \cc{\sigma}$, $\omega' \eqdef \hh{\sigma}$, $\mu \eqdef \hc{\sigma}$ and~$\nu \eqdef \ch{\sigma}$.
+%Let~$v,y$ be the two endpoints of~$\sigma$, and let~$u$ (resp.~$w$, resp.~$x$, resp.~$z$) be the only peak of~$\mu$ (resp.~deep of~$\mu$, resp.~peak of~$\nu$, resp.~deep of~$\nu$) that is not a substring of~$\sigma$.
+%Finally, let~$\alpha = v \to w$, $\alpha' = u \to v$, $\beta = y \to z$ and $\beta' = x \to y$.
+See \cref{fig:flip}.
 
+Since~$\quiver$ is brick, these walks are not self-kissing by \cref{prop:noSelfKissing} and since they are bending, they are proper walks.
+We want to show that there are non-kissing facets~$F, F'$ of the non-kissing complex~$\NKC$ containing both~$\mu$ and~$\nu$ and such that~$F \ssm \{\omega\} = F' \ssm \{\omega'\}$.
 
+We first show that~$\mu$ and~$\nu$ are compatible.
+Let~$\tau$ be a maximal common substring of~$\mu$ and~$\nu$.
+If~$\sigma$ and~$\tau$ are not disjoint, then~$\sigma = \tau$ and $\mu$ and~$\nu$ are not kissing at~$\tau$.
+We can therefore assume that $\tau$ appears completely before or completely after~$\sigma$ in both~$\mu$ and~$\nu$.
+We distinguish the different cases:
+\begin{itemize}
+\item If~$\tau$ appears before~$\sigma$ in both~$\mu$ and~$\nu$, then~$\alpha \tau \alpha'$ form a cycle in~$\quiver$. If~$\tau$ is reduced to a vertex, then we have a $2$-cycle. Otherwise, since~$\alpha\tau$ is a substring of~$\nu$ and~$\alpha'\tau$ is a substring of~$\nu$, the cycle~$\alpha \tau \alpha'$ contains a unique relation~$\alpha'\alpha$. This rules out this case under the assumption that~$\quiver$ is brick $2$-acyclic. The case when~$\tau$ appears after~$\sigma$ in both~$\mu$ and~$\nu$ is symmetric.
+\item If~$\tau$ appears before~$\sigma$ in~$\mu$ and after~$\sigma$ in~$\nu$, then~$\omega$, $\mu$ and~$\nu$ finish at the same blossom so that~$\mu$ and~$\nu$ are not kissing at~$\tau$. The case when~$\tau$ appears after~$\sigma$ in~$\mu$ and before~$\sigma$ in~$\nu$ is identical.
+\end{itemize}
+We conclude that~$\mu$ and~$\nu$ are non-kissing, which also implies that~$\{\mu, \nu, \omega\}$ and~$\{\mu, \nu, \omega'\}$ are non-kissing faces of~$\NKC$.
+We can therefore consider a non-kissing facet~$F$ containing~$\{\mu, \nu, \omega\}$.
 
-\vincent{TODO}
+We claim that~$\omega$ is distinguished at~$\alpha$ and~$\beta$ in the facet~$F$, that~$\mu$ is distinguished at~$\alpha'$ and that~$\nu$ is distinguished at~$\beta'$.
+Let us just prove that~$\mu$ is distinguished at~$\alpha'$, the other statements being similar.
+Consider any walk~$\lambda$ of~$F$ containing~$\alpha'$, and let~$\tau$ be the maximal common substring of~$\omega$ and~$\lambda$.
+Note that~$\omega$ has the outgoing arrow~$\alpha$ while~$\lambda$ has the incoming arrow~$\alpha'$ at one end of~$\tau$.
+Since~$\omega$ and~$\lambda$ are compatible, it ensures that either~$\tau$ ends at a blossom, or $\lambda$ has an outgoing arrow at the other end of~$\tau$.
+This shows that~$\lambda \prec_{\alpha'} \mu$ since $\lambda$ separates from~$\mu$ with an arrow in the same direction as~$\alpha'$.
+
+Since this precisely coincides with the description of the flip in the non-kissing complex (see \cref{prop:exchangeablePairsNKC}\,(i) or \cite[Prop.~2.31]{PaluPilaudPlamondon-nonkissing} for an alternative presentation), we conclude that the flip of~$\omega$ in~$F$ creates a facet~$F'$ containing~$\omega'$.
+Therefore, $\omega$ and~$\omega'$ are exchangeable with distinguished substring~$\sigma$.
 \end{proof}
 
 The following statement describes the type cone of the non-kissing fan of a gentle quiver with no self-kissing walks.
@@ -2357,7 +2398,7 @@ Any $\b{c}$-vector supports exactly one extremal exchangeable pair.
 Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we note that the extremal exchangeable pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ and their linear dependencies~${\gvector{\cc{\sigma}} + \gvector{\hh{\sigma}} - \gvector{\hc{\sigma}} - \gvector{\ch{\sigma}}}$ precisely correspond to the meshes of the Auslander-Reiten quiver of~$\quiver$.
 \end{remark}
 
-\vincent{Describe the rays of the type cone. They are the Minkowski basis.}
+%\vincent{Describe the rays of the type cone. They are the Minkowski basis.}
 
 \begin{example}
 \label{exm:nonSimplicialTypeConeNKC}
@@ -2367,6 +2408,7 @@ Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we
 
 %%%%%%%%%%%
 
+\newpage
 \subsection{Graphical nested complexes and graph associahedra}
 \label{subsec:typeConeGA}
 
