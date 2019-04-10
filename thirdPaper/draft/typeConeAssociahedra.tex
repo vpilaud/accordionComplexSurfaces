@@ -795,6 +795,8 @@ All these families contain the classical associahedra~$\Asso[n]$ constructed in~
 
 We first describe the associahedra of~\cite{ShniderSternberg, Loday} and their type cones as they are the prototypes of our constructions.
 
+%%%
+
 \subsubsection{Associahedra and their normal fans}
 
 We quickly recall the combinatorics and the geometric construction of~\cite{ShniderSternberg, Loday} for the associahedron~$\Asso[n]$.
@@ -848,6 +850,8 @@ Then both triangulations~$T$ and~$T'$ contain the square $aa'bb'$, and the linea
 \]
 In particular, the fan~$\gvectorFan[n]$ has the unique exchange property.
 \end{proposition}
+
+%%%
 
 \subsubsection{Type cones of associahedra}
 
@@ -1066,6 +1070,8 @@ These $\b{g}$-vectors support a complete simplicial fan, which is called \defn{$
 More recently in~\cite{BazierMatteDouvilleMousavandThomasYildirim}, V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Yildirim extended the construction of associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to acyclic seeds of simply-laced finite type cluster algebras.
 Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply-laced or not) cluster algebra with respect to any seed (acyclic or not) by providing a direct proof that the type cone of the cluster fan of any finite type cluster algebra is simplicial.
 
+%%%
+
 \subsubsection{Cluster algebras and cluster fans}
 
 We present some definitions and properties of finite type cluster algebras and their cluster fans, following the presentation of~\cite{HohlwegPilaudStella}.
@@ -1268,6 +1274,8 @@ We will prove however that it is independent of the seeds containing~$x$ and~$x'
 For any finite type exchange matrix~$\B_\circ$, the cluster fan has the unique exchange relation property.
 \end{proposition}
 
+%%%
+
 \subsubsection{Type cone of finite type cluster fans}
 
 The linear dependences of \cref{lem:linearDependencegvectorsCA} provide a redundant description of the type cone of the cluster fan~$\gvectorFan[\B_\circ]$.
@@ -1411,7 +1419,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the me
 The type cone of the right fan of \cref{fig:clusterFans} lives in~$\R^{12}$ and has a linearity space of dimension~$3$.
 It has $9$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA2}.
 
-\[
+\centerline{$
 \begin{array}{r|c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;\;}c@{\;}c@{\;}c@{\;}c@{}c@{}c@{}cc}
 \text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2}{x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_2 x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_1 x_3 + x_3^2}{x_2^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + 2 x_2 x_3 + x_3^2}{x_1^2 x_3}$} & \rotatebox{70}{$\frac{x_1^2 + x_2^2 + x_1 x_3 + x_2 x_3}{x_1 x_2 x_3}$} \\[.2cm]
 \text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{1}{-1}{0} & \compactVectorT{0}{2}{-1} & \compactVectorT{0}{1}{-1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} & \compactVectorT{-2}{0}{1} & \compactVectorT{-1}{0}{0}  \\[.6cm]
@@ -1425,7 +1433,7 @@ It has $9$ facet-defining inequalities (given below), which correspond to the me
 					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 & \red \circled{H} \\
 					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 & \red \circled{I} \\[.2cm]
 \end{array}
-\]
+$}
 
 %sage: B = Matrix([[0,-1,2],[1,0,-2],[-1,1,0]])
 %sage: CA = ClusterAlgebra(B)
@@ -1466,7 +1474,7 @@ It has $9$ facet-defining inequalities (given below), which correspond to the me
 % An inequality (0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0, 0) x + 0 >= 0,
 % An inequality (0, 0, 0, 1, 1, 0, 0, -2, 0, 0, 0, 0) x + 0 >= 0)
 
-\begin{figure}
+\begin{figure}[h]
 	\capstart
     \begin{adjustbox}{center}
 		\newcommand{\fitClusterVariable}[1]{\parbox[c][.7cm][c]{2.3cm}{\centering $#1$}}
@@ -1578,7 +1586,7 @@ Otherwise, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_
 For~$\{x,x'\} \in \meshes$ and~$y \in \principalVariables$, we denote by~$\alpha_{x,x',y}$ the coefficient of~$\gvectorFull{\B_\circ}{y}$ in the linear dependence between the $\b{g}$-vectors~$\gvectorFull{\B_\circ}{x}$ and~$\gvectorFull{\B_\circ}{x'}$. In other words, according to \cref{lem:dependenceMesh}, if~${(\B, \cluster)}$ and~${(\B', \cluster')}$ are two adjacent seeds with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$, we have~$\alpha_{x,x',y} = |b_{xy}|$ for~$y \in \cluster \cap \cluster'$ and~$\alpha_{x,x',y} = 0$ otherwise.
 
 The following will be shown in \cref{sec:clusterCategories}.
-\vincent{Link to \cref{sec:clusterCategories}.}
+\vincent{Precise link to \cref{sec:clusterCategories}.}
 
 \begin{proposition}
 \label{prop:meshMutations}
@@ -1654,6 +1662,8 @@ These two families naturally extend the classical associahedron, obtained from a
 Non-kissing complexes are geometrically realized by polytopes called gentle associahedra, whose normal fan is called the non-kissing fan: its rays correspond to walks in the quiver and its cones are generated by the non-kissing walks.
 In this section, we describe the type cone of the non-kissing fan of a quiver~$\quiver$ with no self-kissing walks.
 
+%%%
+
 \subsubsection{Non-kissing complex and non-kissing fan of a gentle quiver}
 \label{subsubsec:nonkissingComplex}
 
@@ -1720,6 +1730,13 @@ A \defn{peak} (resp.~\defn{deep}) of a walk~$\omega$ is a substring of~$\omega$ 
 A walk~$\omega$ is \defn{straight} if it has no peak or deep (\ie if~$\omega$ or~$\omega^{-1}$ is a path in~$\quiver\blossom$), and \defn{bending} otherwise.
 We denote by~$\peaks{\omega}$ (resp.~$\deeps{\omega}$) the multisets of vertices of peaks (resp.~deeps) of~$\omega$.
 
+\begin{figure}[t]
+	\capstart
+	\centerline{\includegraphics[width=\textwidth]{exmNonkissing}}
+	\caption{A blossoming quiver (left), three pairwise kissing walks (middle), and a non-kissing facet (right). Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
+	\label{fig:exmNonkissing}
+\end{figure}
+
 \para{Non-kissing complex}
 %
 Let~$\omega$ and~$\omega'$ be two undirected walks on~$\quiver$.
@@ -1741,6 +1758,32 @@ We denote by~$\properWalks$ the set of all proper walks of~$\quiver$.
 The (reduced) \defn{non-kissing complex} of~$\quiver$ is the simplicial complex~$\NKC$ whose faces are the collections of pairwise non-kissing proper walks of~$\quiver$.
 As shown in~\cite[Thm.~2.46]{PaluPilaudPlamondon-nonkissing}, this simplicial complex is a combinatorial model for the support $\tau$-tilting complex on $\tau$-rigid modules over~$kQ/I$.
 The quiver~$\quiver$ is called \defn{$\tau$-tilting finite} or \defn{non-kissing finite} when this complex is finite (in other words, $\quiver$ has finitely may non-kissing walks).
+
+\para{Two families of examples: grid and dissection quivers}
+%
+We conclude this recollections on non-kissing complexes by two families of examples:
+\begin{enumerate}[(1)]
+\item \textbf{Grid quivers}: Consider the infinite grid quiver~$\quiver_{Z^2}$, whose vertices are all integer points of~$\Z^2$, whose arrows connect between~$(i,j) \longrightarrow (i,j+1)$ and~$(i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$, and whose relations forbid~$(i-1,j) \longrightarrow (i,j) \longrightarrow (i,j+1)$ and~$(i,j-1) \longrightarrow (i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$. A \defn{gentle grid quiver} is any subquiver~$\quiver_A$ of~$\quiver_{Z^2}$ induced by a finite subset~$A \subset \Z^2$ of the integer grid. The non-kissing complex of gentle grid quivers were introduced in~\cite{McConville} with motivation coming from~\cite{PetersenPylyavskyySpeyer} and~\cite{SantosStumpWelker}. 
+
+\smallskip
+\item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. The non-kissing complex of~$\quiver_D$ then corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
+\end{enumerate}
+
+\begin{figure}[ht]
+	\capstart
+	\centerline{\includegraphics[scale=.8]{dissectionQuiver} \quad \includegraphics[scale=.35]{gridQuiver} \quad \includegraphics[scale=1.2]{bijectionAssociahedronDissection} \quad \includegraphics[scale=1.2]{bijectionAssociahedronGrid}}
+	\caption{}
+	\label{fig:dissectionGridQuivers}
+\end{figure}
+
+These two families of non-kissing complexes are well-behaved as they avoid all pathologies of \cref{rem:exchangeablePairsNKC}.
+However, they still provide good examples of non-kissing complexes.
+In particular, both families contain the classical associahedron.
+Namely, the gentle associahedron~$\Asso[\quiver]$ is the classical associahedron of~\cite{ShniderSternberg, Loday} presented in \cref{thm:associahedronLoday} when~${\quiver = \quiver_A}$ for the path~${A = \set{(0,j)}{j \in [n]}}$ or equivalently~$\quiver = \quiver_D$ for the fan triangulation~$D$ (where all internal diagonals incident to the same point).
+More generally, $\Asso[\quiver]$ is an associahedron of~\cite{HohlwegLange} when~$\quiver = \quiver_A$ for a ribbon~$A$ or equivalently~$\quiver = \quiver_D$ for a triangulation~$D$.
+See \cref{fig:dissectionGridQuivers}\,(right).
+
+Note that, it was shown in~\cite{PaluPilaudPlamondon-surfaces} that the accordion complexes can be extended to dissections of arbitrary orientable surfaces with marked points and then provide a geometric model for all non-kissing complexes of gentle quivers.
 
 \para{$\b{g}$- and $\b{c}$-vectors}
 %
@@ -1865,30 +1908,7 @@ The number of distinguishable strings~$\distinguishableStrings$ and proper walks
 \]
 \end{proposition}
 
-\para{Two families of examples: grid and dissection quivers}
-%
-We conclude this recollections on non-kissing complexes by two families of examples:
-\begin{enumerate}[(1)]
-\item \textbf{Grid quivers}: Consider the infinite grid quiver~$\quiver_{Z^2}$, whose vertices are all integer points of~$\Z^2$, whose arrows connect between~$(i,j) \longrightarrow (i,j+1)$ and~$(i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$, and whose relations forbid~$(i-1,j) \longrightarrow (i,j) \longrightarrow (i,j+1)$ and~$(i,j-1) \longrightarrow (i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$. A \defn{gentle grid quiver} is any subquiver~$\quiver_A$ of~$\quiver_{Z^2}$ induced by a finite subset~$A \subset \Z^2$ of the integer grid. The non-kissing complex of gentle grid quivers were introduced in~\cite{McConville} with motivation coming from~\cite{PetersenPylyavskyySpeyer} and~\cite{SantosStumpWelker}. 
-
-\smallskip
-\item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. The non-kissing complex of~$\quiver_D$ then corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
-\end{enumerate}
-
-\begin{figure}[ht]
-	\capstart
-	\centerline{\includegraphics[scale=.8]{dissectionQuiver} \quad \includegraphics[scale=.35]{gridQuiver} \quad \includegraphics[scale=1.2]{bijectionAssociahedronDissection} \quad \includegraphics[scale=1.2]{bijectionAssociahedronGrid}}
-	\caption{}
-	\label{fig:dissectionGridQuivers}
-\end{figure}
-
-These two families of non-kissing complexes are well-behaved as they avoid all pathologies of \cref{rem:exchangeablePairsNKC}.
-However, they still provide good examples of non-kissing complexes.
-In particular, both families contain the classical associahedron.
-Namely, the gentle associahedron~$\Asso[\quiver]$ is the classical associahedron of~\cite{ShniderSternberg, Loday} presented in \cref{thm:associahedronLoday} when~${\quiver = \quiver_A}$ for the path~${A = \set{(0,j)}{j \in [n]}}$ or equivalently~$\quiver = \quiver_D$ for the fan triangulation~$D$ (where all internal diagonals incident to the same point).
-More generally, $\Asso[\quiver]$ is an associahedron of~\cite{HohlwegLange} when~$\quiver = \quiver_A$ for a ribbon~$A$ or equivalently~$\quiver = \quiver_D$ for a triangulation~$D$.
-
-Note that, it was shown in~\cite{PaluPilaudPlamondon-surfaces} that the accordion complexes can be extended to dissections of arbitrary orientable surfaces with marked points and then provide a geometric model for all non-kissing complexes of gentle quivers.
+%%%
 
 \subsubsection{Type cones of non-kissing fans}
 
@@ -2180,6 +2200,8 @@ Consider a distinguishable string~$\sigma \in \distinguishableStrings$, and let~
 \end{enumerate}
 \end{conjecture}
 
+%%%
+
 \subsubsection{Simplicial type cones for self-kissing-free and $2$-cycle-free quivers}
 \label{subsubsec:simplicialTypeConeNKC}
 
@@ -2401,6 +2423,8 @@ In this section, we describe the type cone of the nested fan of any graph~$\grap
 	\label{fig:specialGraphAssociahedra}
 \end{figure}
 
+%%%
+
 \subsubsection{Nested complex and nested fan of a graph}
 
 We present the definitions and properties of the nested complex of a graph, following ideas from~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}.
@@ -2480,6 +2504,8 @@ Points~(i) and~(ii) was proved in~\cite{MannevillePilaud-compatibilityFans}. Poi
 \]
 Finally for~(iv), any tube~$\tube[s] \in \tubing \cap \tubing'$ that contains~$v$ or~$v'$ actually contains both (to be compatible with~$\tube$ and~$\tube'$). Therefore, $\gvector{\tube[s]}$ is orthogonal to~$\b{e}_v - \b{e}_{v'}$ for any tube~$\tube[s] \in \tubing \cap \tubing'$.
 \end{proof}
+
+%%%
 
 \subsubsection{Type cones of graphical nested fans}
 
@@ -3736,7 +3762,7 @@ The proof is similar to that of Corollary~\ref{corollary::meshes positively gene
 
 \subsection{Application to certain categories}
 
-%%%%%%%%%%%
+%%%
 
 \subsubsection{$2$-Calabi--Yau triangulated categories}
 \label{sect::2CYTriangulated}
@@ -3760,13 +3786,13 @@ The index of an object~$X$ in the triangulated category~$\cat$, coincide with it
  The main results of Section~\ref{subsect::Statement cluster cats} can thus be viewed as specific cases of the results of Section~\ref{sec:extricats}: Theorem~\ref{theo::relations-g-vecteurs} and Corollary~\ref{corollary::meshes positively generate cluster cats} are consequences of Theorem~\ref{theorem::extricats} and Corollary~\ref{corollary::meshes positively generate extricats}.
 \end{remark}
 
+%%%
 
-
-%%
 \subsubsection{$2$-Calabi--Yau Frobenius exact categories}
 \label{sect::2CYexact}
 
-%%
+%%%
+
 \subsubsection{$2$-term complexes of projective modules}
 \label{sect::Kbproj}
 Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the homotopy category~$K^b(\proj \Lambda)$ is a triangulated category, and we consider its full subcategory~$K^{[-1,0]}(\proj \Lambda)$ of complexes concentrated in degrees~$-1$ and~$0$.
@@ -3816,7 +3842,8 @@ Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to ap
 
 \vincent{Here should be explained that the gentle algebra result is a special case of this.}
 
-%%
+%%%
+
 \subsubsection{Objects presented by a subcategory}
 \label{sect::prT}
 
@@ -3870,7 +3897,7 @@ Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is e
 
 \subsection{Examples}
 
-%%
+%%%
 
 \subsubsection{Associative algebras}
 \begin{example}[A gentle algebra]
@@ -3947,9 +3974,8 @@ Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is e
 One can check directly that the condition of Theorem~\ref{theo::brick-algebra-condition} is not satisfied. 
 \end{example}
 
+%%%
 
-
-%%
 \subsubsection{A quotient of a Frobenius category}
 
 
