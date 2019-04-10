@@ -290,7 +290,7 @@ In particular, we prove, in those two setups, an analogue of a result of M. Ausl
 \newpage
 \tableofcontents
 
-\enlargethispage{-.3cm}
+\newpage
 \section*{Introduction}
 
 The associahedron is a ``mythical polytope'' \cite{Haiman} whose facial structure encodes Catalan families: its vertices correspond to parenthesizations of a non-associative product, triangulations of a convex polygon, or binary trees; its edges correspond to applications of the associativity rule, diagonal flips, or edge rotations; and in general its faces correspond to partial parenthesizations, diagonal dissections, or Schr\"oder trees.
@@ -1875,9 +1875,13 @@ We conclude this recollections on non-kissing complexes by two families of examp
 \item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. The non-kissing complex of~$\quiver_D$ then corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
 \end{enumerate}
 
-\vincent{Example picture?}
+\begin{figure}[ht]
+	\capstart
+	\centerline{\includegraphics[scale=.8]{dissectionQuiver} \quad \includegraphics[scale=.35]{gridQuiver} \quad \includegraphics[scale=1.2]{bijectionAssociahedronDissection} \quad \includegraphics[scale=1.2]{bijectionAssociahedronGrid}}
+	\caption{}
+	\label{fig:dissectionGridQuivers}
+\end{figure}
 
-\smallskip
 These two families of non-kissing complexes are well-behaved as they avoid all pathologies of \cref{rem:exchangeablePairsNKC}.
 However, they still provide good examples of non-kissing complexes.
 In particular, both families contain the classical associahedron.
@@ -2423,7 +2427,7 @@ The \defn{$\b{g}$-vector} of a tube~$\tube$ of~$\graphG$ is the projection~$\gve
 We set~$\gvectors{\tubing} \eqdef \set{\gvector{\tube}}{\tube \in \tubing}$ for a tubing~$\tubing$ on~$\graphG$.
 \end{definition}
 
-Note that by definition, $\gvector(\varnothing) = 0$ and $\gvector{W} = 0$ for all connected components~$W \in \connectedComponents(\graphG)$.
+Note that by definition, $\gvector{\varnothing} = 0$ and $\gvector{W} = 0$ for all connected components~$W \in \connectedComponents(\graphG)$.
 These vectors support a complete simplicial fan realization of the nested complex.
 Examples are illustrated in \cref{fig:nestedFans}.
 
