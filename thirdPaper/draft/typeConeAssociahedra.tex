@@ -3911,15 +3911,111 @@ Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to ap
 
 \begin{lemma}
 \label{lemm::AR-conflations-and-sequences}
- Let~$\Lambda$ be any Artin algebra.  Let~$X\infl Y\defl Z$ be an almost-split conflation in~$K^{[-1,0]}(\proj \Lambda)$ such that~$Z$ is not in~$\add(\susp \Lambda)$.  Denote by~$F$ the functor~$\Hom{K^b}(\Lambda, -):K^{[-1,0]}(\proj \Lambda) \to \MOD \Lambda$.  Then there is an almost-split sequence
+ Let~$\Lambda$ be any Artin algebra.  Let~$X\overset{a}{\infl} Y \overset{b}{\defl} Z$ be an almost-split conflation in~$K^{[-1,0]}(\proj \Lambda)$ such that~$Z$ is not in~$\add(\susp \Lambda)$.  Denote by~$F$ the functor~$\Hom{K^b}(\Lambda, -):K^{[-1,0]}(\proj \Lambda) \to \MOD \Lambda$.  Then there is an almost-split sequence
  \[
   0\to FX\to FY \to FZ \to 0
  \]
  in~$\MOD\Lambda$.
 \end{lemma}
+
 \begin{proof}
- 
+The almost-split conflation induces an exact sequence
+\[
+F\susp^{-1}Y\to F\susp^{-1}Z \to FX \to FY\to FZ\to F\susp X.
+\]
+Because~$X$ is concentrated in non-positive degrees,~$FX=0$.
+Let us verify that the map~$F\susp^{-1}Y\to F\susp^{-1}Z$ is surjective.
+Let~$\Lambda \xrightarrow{f} \susp^{-1} Z$ be a morphism in~$K^b(\proj \Lambda)$.
+Since~$Y\overset{b}{\to} Z$ is right almost-split, and~$Z$ is indecomposable not in~$\add(\susp\Lambda)$, the morphism~$\susp f$ factors through~$b$.
+This implies the required surjectivity, and we have a short exact sequence
+\[
+ 0 \to FX \xrightarrow{Fa} FY\xrightarrow{Fb} FZ\to 0.
+\]
+Because~$\MOD\Lambda$ and~$K^b(\proj \Lambda)$ are Krull--Schmidt, it is immediate to check that~$Fb$ (resp.~$Fa$) inherits from~$b$ (resp.~$a$) the property of being right (resp. left) almost-split.
 \end{proof}
+
+\begin{lemma}
+\label{lemm::then-AR-seq-are-mutation}
+Let~$\Lambda$ be an Artin algebra, let~$\tau X\infl E\defl X$ be an Auslander--Reiten conflation in~$K^{[-1,0]}(\proj\Lambda)$ and denote~$FX=M$.
+Assume that:\yann{There might be some redundancies in the assumptions}
+\begin{enumerate}
+ \item $X\notin\add(\susp\Lambda)$;
+ \item $M$ and~$\tau M$ are~$\tau$-rigid;
+ \item $\Hom{\Lambda}(M,\tau^2 M)=0$;
+ \item $\tau M$ is a brick.
+\end{enumerate}
+Then~$\tau X\infl E\defl X$ is a mutation conflation.
+\end{lemma}
+
+\begin{proof}
+First note that the results~\cite[Lemmas 3.4 and 3.5]{AdachiIyamaReiten}, even though stated for finite dimensional algebras, hold with the same proofs for any Artin algebra.
+For convenience of the reader, we recall those two results: Let~$Y, Z \in K^{[-1,0]}(\proj\Lambda)$ be indecomposable and not in~$\add(\susp\Lambda)$, and let~$P\in\proj\Lambda$. Then~$\Hom{K^b}(Y,\susp Z)=0$ if and only if~$\Hom{\Lambda}(FZ,\tau FY)=0$ and~$\Hom{K^b}(P,Y)=0$ if and only if~$\Hom{\Lambda}(P,FY)=0$.
+
+Note also that Lemma~\ref{lemm::AR-conflations-and-sequences} implies that~$F\tau X$ is isomorphic to $\tau M$.
+
+By assumption,~$X$ is not in~$\add(\susp\Lambda)$.
+The same is true of~$\tau X$ since objects in~$\add(\susp\Lambda)$ are injective in~$K^{[-1,0]}(\proj\Lambda)$ and an Auslander--Reiten conflation does not split.
+It thus follows from~\cite[Lemma 3.4 ]{AdachiIyamaReiten} that~$X$ and~$\tau X$ are rigid in $K^{[-1,0]}(\proj\Lambda)$.
+We have to prove that both~$E\oplus X$ and~$E\oplus\tau X$ are rigid.
+
+\vspace{7pt}
+\noindent (1) $\Hom{K^b}(E,\susp X) = 0$.
+\vspace{4pt}
+
+The Auslander--Reiten conflation induces an exact sequence
+\[
+\Hom{K^b}(X,\susp X) \to \Hom{K^b}(E,\susp X) \to \Hom{K^b}(\tau X,\susp X).
+\]
+As already remarked,~$X$ is rigid so that the left-most term vanishes.
+By assumption
+\[
+\Hom{\Lambda}(FX,\tau F\tau X) = \Hom{\Lambda}(M,\tau^2 M)=0,
+\]
+so that the right-most term also vanishes by~\cite[Lemma 3.4 ]{AdachiIyamaReiten}.
+
+\vspace{7pt}
+\noindent (2) $\Hom{K^b}(\tau X,\susp E) = 0$.
+\vspace{4pt}
+
+Since~$\Lambda$ is projective in~$K^{[-1,0]}(\proj\Lambda)$, the sequence~$\tau M \to FE \to M$ is short exact.
+It induces a sequence
+\[
+\Hom{\Lambda}(M,\tau^2 M) \to \Hom{\Lambda}(FE,\tau^2 M) \to \Hom{\Lambda}(\tau M,\tau^2 M)
+\]
+from which we deduce that~$\Hom{\Lambda}(FE,\tau^2 M)=0$.
+This implies~$\Hom{K^b}(\tau X,\susp E) = 0$ by~\cite[Lemma 3.4 ]{AdachiIyamaReiten}.
+
+\vspace{7pt}
+\noindent (3) $\Hom{K^b}(X,\susp E) = 0$.
+\vspace{4pt}
+
+Let us show that~$\Hom{\Lambda}(FE,\tau M)=0$.
+Let~$FE \xrightarrow{f} \tau M$ be any morphism, and consider the short exact sequence~$0\to \tau M \xrightarrow{a} FE \xrightarrow{b} M \to 0$ induced by the Auslander--Reiten conflation.
+Since~$\tau M$ is a brick, the composition~$fa$ is zero.
+The morphism~$f$ then factors through the cokernel~$b$, which implies~$f=0$ since~$M$ is~$\tau$-rigid.
+
+\vspace{7pt}
+\noindent (4) $\Hom{K^b}(E,\susp E) = 0$.
+\vspace{4pt}
+
+The Auslander--Reiten conflation induces an exact sequence
+\[
+\Hom{K^b}(X,\susp E) \to \Hom{K^b}(E,\susp E) \to \Hom{K^b}(\tau X,\susp E).
+\]
+We can conclude by (2) and (3).
+
+\vspace{7pt}
+\noindent (5) $\Hom{K^b}(E,\susp \tau X) = 0$.
+\vspace{4pt}
+
+We have an exact sequence
+\[
+\Hom{K^b}(E,E) \to \Hom{K^b}(E,X) \to \Hom{K^b}(E,\susp \tau X) \to \Hom{K^b}(E,\susp E).
+\]
+The first map is surjective since~$E\to X$ is right almost split.
+We can conclude by (4).
+\end{proof}
+
 
 \begin{lemma}
 \label{lemm::if-AR-sequences-are-mutation}
