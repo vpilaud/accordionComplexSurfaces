@@ -3360,6 +3360,12 @@ The cluster category also contains enough information to detect positive mutatio
 \subsection{Setting}
 \label{setting::extricat}
 
+The main definitions and first properties on extriangulated categories are recalled after the statements of the main results of this section.
+See Section~\ref{sect::recollections extricats} below.
+The reader that does not want to dwell into details can safely skip Section~\ref{sect::recollections extricats} and focus on any of the first three examples given in Remark~\ref{remark::examples extricats}: triangulated categories, exact categories (that are small or have enough projectives or injectives) and extension-closed subcategories of triangulated categories, such as the category~$K^{[-1,0]}(\proj \Lambda)$, are examples of extriangulated categories.
+
+We indifferently call \emph{conflations}, written~$X\infl Y\defl Z$, or \emph{extriangles}, written~$X\infl Y\defl Z \overset{\delta}{\dashrightarrow}$, the analogues of short exact sequences or triangles in an extriangulated category.
+
 \vspace{.4cm}
 \noindent {\bf Setting for Section~\ref{sect::prelim on extricats}}
 In that section, we let~$\cat$ be an extriangulated category with a fixed full additive \yann{additive contains strictly full + stable under taking summands} subcategory~$\tc$ satisfying the following three properties:
@@ -3372,7 +3378,7 @@ In that section, we let~$\cat$ be an extriangulated category with a fixed full a
 \noindent {\bf Setting for Section~\ref{sect::Statment extricats}}
 In that section, we keep the previous setting, but assume moreover that~$\cat$ is Krull--Schmidt, $\field$-linear, Ext-finite, and has Auslander--Reiten--Serre duality, and that the subcategory~$\tc$ is of the form~$\add T$, where~$T=T_1\oplus\cdots\oplus T_n$ is a basic object.
 
-\begin{remark}
+\begin{remark}\label{remark::examples extricats}
  Examples of categories satisfying the properties above are
  \begin{itemize}
   \item $2$-Calabi--Yau triangulated categories admitting a cluster-tilting object (see Section~\ref{sect::2CYTriangulated});
@@ -3382,7 +3388,6 @@ In that section, we keep the previous setting, but assume moreover that~$\cat$ i
  \end{itemize}
 \end{remark}
 
-\yann{Rappels sur les categories extriangulees}
 
 %%%%%%%%%%%
 
@@ -3521,8 +3526,253 @@ Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linea
 %%%%%%%%%%%
 
 \subsection{Recollections on extriangulated categories}
-
+\label{sect::recollections extricats}
 %%%%%%%%%%%
+
+Extriangulated categories, recently introduced in~\cite{NakaokaPalu}, axiomatize extension-closed subcategories of triangulated categories in a (moderately) similar way that Quillen's exact categories axiomatize extension-closed subcategories of abelian categories.
+They appear in representation theory in relation with cotorsion pairs~\cite{ChangZhouZhu-ClusterSubalgebras,ZhaoHuang-Phantom,LiuNakaoka-Hearts,Liu-LocalizationsHearts}, with Auslander--Reiten theory~\cite{IyamaNakaokaPalu}, with cluster algebras, mutations, or cluster-tilting theory~\cite{ChangZhouZhu-ClusterSubalgebras,Pressland,ZhouZhu-TriangulatedQuotient,LiuZhou-Abelian,LiuZhou-AbelianII}, with Cohen--Macaulay dg-modules in the remarkable~\cite{Jin}.
+We also note the generalization, called~$n$-exangulated categories~\cite{HerschendLiuNakaoka}, to a version suited for higher homological algebra.
+
+An extriangulated category is the data of an additive category~$\cat$, an additive bifunctor~$\mathbb{E}:\cat^\mathrm{op}\times\cat\to \mathit{Ab}$ modelling the~$\operatorname{Ext}^1$-bifunctor, and an additive realization~$\mathfrak{s}$ sending each element~$\delta\in\mathbb{E}(Z,X)$ to some (equivalence classe of) diagram~$X\to Y\to Z$ modelling the short exact sequences or triangles.
+Some axioms, inspired from the case of extension-closed subcategories of triangulated categories have to be satisfied.
+
+More specifically: fix an additive category~$\cat$, and an additive bifunctor~$\mathbb{E}: \cat^\mathrm{op}\times\cat\to\mathit{Ab}$.
+
+\begin{definition}
+For any~$X,Z\in\cat$, an element~$\delta\in\mathbb{E}(Z,X)$ is called an~$\mathbb{E}$-extension.
+A split~$\mathbb{E}$-extension is a zero element~$0\in\mathbb{E}(Z,X)$, for some objects~$X,Z\in\cat$.
+For any two~$\mathbb{E}$-extensions~$\delta\in\mathbb{E}(Z,X)$,~$\delta'\in\mathbb{E}(Z',X')$, the additivity of~$\cat$,~$\mathbb{E}$ permits to define the~$\mathbb{E}$-extension
+\[
+\delta\oplus\delta'\in\mathbb{E}(Z\oplus Z',X\oplus X').
+\]
+\end{definition}
+
+\begin{remark}
+Let~$\delta\in\mathbb{E}(Z,X)$ be an~$\mathbb{E}$-extension. By functoriality, any morphisms~$f\in\cat(X,X')$ and~$h\in\cat(Z',Z)$ induce~$\mathbb{E}$-extensions~$\mathbb{E}(Z,f)(\delta)\in\mathbb{E}(Z,X')\ \ \text{and}\ \ \mathbb{E}(h,X)(\delta)\in\mathbb{E}(Z',X)$.
+For short, we write~$f_\ast\delta$ and~$h^\ast\delta$ instead.
+Using those notations, we have, in~$\mathbb{E}(Z',X')$
+\[ \mathbb{E}(h,f)(\delta)=h^\ast f_\ast\delta=f_\ast h^\ast\delta. \]
+\end{remark}
+
+\begin{definition}
+A morphism~$(f,h):\delta\to\delta'$ of~$\mathbb{E}$-extensions~$\delta\in\mathbb{E}(Z,X)$,~$\delta'\in\mathbb{E}(Z',X')$ is a pair of morphisms~$f\in\cat(X,X')$ and~$h\in\cat(Z,Z')$ in~$\cat$, such that~$f_\ast\delta=h^\ast\delta'.$
+\end{definition}
+
+\begin{definition}\label{DefSqEquiv}
+Let~$X,Z\in\cat$ be any two objects. Two sequences of morphisms in~$\cat$
+\[ X \overset{x}{\longrightarrow}Y\overset{y}{\longrightarrow}Z \ \text{ and } \ X\overset{x'}{\longrightarrow}Y'\overset{y'}{\longrightarrow}Z \]
+are said to be equivalent if there exists an isomorphism~$g\in\cat(Y,Y')$ such that the following diagram commutes.
+\[
+\xy
+(-20,0)*+{X}="X";
+(5,0)*+{}="1";
+(0,6)*+{Y}="Y";
+(0,-6)*+{Y'}="Y'";
+(-5,0)*+{}="2";
+(20,0)*+{Z}="Z";
+%
+{\ar^{x} "X";"Y"};
+{\ar^{y} "Y";"Z"};
+{\ar_{x^{\prime}} "X";"Y'"};
+{\ar_{y^{\prime}} "Y'";"Z"};
+%
+{\ar^{g}_{\cong} "Y";"Y'"};
+%
+{\ar@{}|{} "X";"1"};
+{\ar@{}|{} "2";"Z"};
+\endxy
+\]
+The equivalence class of~$X \xrightarrow{x} Y \xrightarrow{y} Z$ is denoted by~$[X \xrightarrow{x} Y \xrightarrow{y} Z]$.
+\end{definition}
+
+\begin{notation}
+For any~$X,Y,Z,A,B,C\in\cat$, and any~$[X \xrightarrow{x} Y \xrightarrow{y} Z]$,~$[A \xrightarrow{a} B \xrightarrow{b} C]$, we let
+\[ 0=[X\overset{\left[\bsm1\\0\esm\right]}{\longrightarrow} X\oplus Y \overset{\left[\bsm0\;1\esm\right]}{\longrightarrow} Y]
+\]
+and
+\[
+[X \xrightarrow{x} Y \xrightarrow{y} Z]\oplus [A \xrightarrow{a} B \xrightarrow{b} C] = [X\oplus A \overset{\left[\bsm x \; 0 \\ 0\; a\esm\right]}{\longrightarrow} Y\oplus B \overset{\left[\bsm y\;0\\0\;b \esm\right]}{\longrightarrow} Z\oplus C].
+\]
+\end{notation}
+
+\begin{definition}
+An additive realization~$\mathfrak{s}$ is a correspondence associating, with~$\mathbb{E}$-extension~$\delta\in\mathbb{E}(Z,X)$, an equivalence class~$\mathfrak{s}(\delta)=[X\xrightarrow{x}Y\xrightarrow{y}Z]$ and satisfying the following condition: 
+\begin{itemize}
+\item[$(\ast)$] Let~$\delta\in\mathbb{E}(Z,X)$ and~$\delta'\in\mathbb{E}(Z',X')$ be any pair of~$\mathbb{E}$-extensions, with
+\[\mathfrak{s}(\delta)=[X\xrightarrow{x}Y\xrightarrow{y}Z] \text{ and } \mathfrak{s}(\delta')=[X'\xrightarrow{x'}Y'\xrightarrow{y'}Z'].\]
+Then, for any morphism~$(f,h):\delta\to\delta'$, there exists~$g\in\cat(Y,Y')$ such that the following diagram commutes:
+\[
+\xy
+(-12,6)*+{X}="0";
+(0,6)*+{Y}="2";
+(12,6)*+{Z}="4";
+%
+(-12,-6)*+{X'}="10";
+(0,-6)*+{Y'}="12";
+(12,-6)*+{Z'}="14";
+%
+{\ar^{x} "0";"2"};
+{\ar^{y} "2";"4"};
+%
+{\ar_{f} "0";"10"};
+{\ar^{g} "2";"12"};
+{\ar^{h} "4";"14"};
+%
+{\ar_{x'} "10";"12"};
+{\ar_{y'} "12";"14"};
+%
+{\ar@{}|{} "0";"12"};
+{\ar@{}|{} "2";"14"};
+%
+{\ar@{}|\circlearrowright "0";"12"};
+{\ar@{}|\circlearrowright "2";"14"};
+\endxy
+\]
+\end{itemize}
+
+The sequence~$X\xrightarrow{x}Y\xrightarrow{y}Z$ is said to realize~$\delta$ if~$\mathfrak{s}(\delta)=[X\xrightarrow{x}Y\xrightarrow{y}Z]$, and the triple~$(f,g,h)$ is said to realize~$(f,h)$ if the diagram in~$(\ast)$ commutes.
+\end{definition}
+
+
+\begin{definition}
+A realization of~$\mathbb{E}$ is called additive if the following conditions are satisfied:
+\begin{enumerate}
+\item For any~$X,Z\in\cat$, the realization of the split~$\mathbb{E}$-extension~$0\in\mathbb{E}(Z,X)$ is given bys~$\mathfrak{s}(0)=0$.
+\item For any two~$\mathbb{E}$-extensions~$\delta\in\mathbb{E}(Z,X)$ and~$\delta'\in\mathbb{E}(Z',X')$, the realization of~$\delta\oplus\delta'$ is given by~$\mathfrak{s}(\delta\oplus\delta')=\mathfrak{s}(\delta)\oplus\mathfrak{s}(\delta')$.
+\end{enumerate}
+\end{definition}
+
+
+\begin{definition}(\cite[Definition 2.12]{NakaokaPalu})
+A triple~$(\cat,\mathbb{E},\mathfrak{s})$ is called an extriangulated category if the following holds:
+\begin{itemize}
+\item[{\rm (ET1)}] $\mathbb{E}:\cat^{\mathrm{op}}\times\cat\to\mathit{Ab}$ is an additive bifunctor;
+\item[{\rm (ET2)}] $\mathfrak{s}$ is an additive realization of~$\mathbb{E}$;
+\item[{\rm (ET3)}] Let~$\delta\in\mathbb{E}(Z,X)$ and~$\delta'\in\mathbb{E}(Z',X')$ be~$\mathbb{E}$-extensions, respectively realized by~$X\xrightarrow{x}Y\xrightarrow{y}Z$ and~$X'\xrightarrow{x'}Y'\xrightarrow{y'}Z'$. Then, for any commutative square
+\[
+\xy
+(-12,6)*+{X}="0";
+(0,6)*+{Y}="2";
+(12,6)*+{Z}="4";
+%
+(-12,-6)*+{X'}="10";
+(0,-6)*+{Y'}="12";
+(12,-6)*+{Z'}="14";
+%
+{\ar^{x} "0";"2"};
+{\ar^{y} "2";"4"};
+%
+{\ar_{f} "0";"10"};
+{\ar^{g} "2";"12"};
+%
+{\ar_{x'} "10";"12"};
+{\ar_{y'} "12";"14"};
+%
+{\ar@{}|{} "0";"12"};
+%
+{\ar@{}|\circlearrowright "0";"12"};
+\endxy 
+\]
+in~$\cat$, there exists a morphism~$(f,h):\delta\to\delta'$ satisfying~$h\circ y=y'\circ g$.
+\item[{\rm (ET3)$^{\mathrm{op}}$}] Dual of {\rm (ET3)}.
+\item[{\rm (ET4)}] Let~$\delta\in\mathbb{E}(Z',X)$ and~$\delta'\in\mathbb{E}(X',Y)$ be~$\mathbb{E}$-extensions realized respectively by
+\[
+X\overset{f}{\longrightarrow}Y\overset{f'}{\longrightarrow}Z'\ \text{ and } \ Y\overset{g}{\longrightarrow}Z\overset{g'}{\longrightarrow}X'.
+\]
+Then there exist an object~$Y'\in\cat$, a commutative diagram in~$\cat$
+\[
+\xy
+(-18,6)*+{X}="0";
+(-6,6)*+{Y}="2";
+(6,6)*+{Z'}="4";
+(18,6)="6";
+%
+(-18,-6)*+{X}="10";
+(-6,-6)*+{Z}="12";
+(6,-6)*+{Y'}="14";
+(18,-6)="16";
+%
+(-6,-18)*+{X'}="22";
+(6,-18)*+{X'}="24";
+%
+(-6,-28)="32";
+(6,-28)="34";
+%
+%
+{\ar^{f} "0";"2"};
+{\ar^{f'} "2";"4"};
+%
+{\ar@{=} "0";"10"};
+{\ar_{g} "2";"12"};
+{\ar^{d} "4";"14"};
+%
+{\ar_{h} "10";"12"};
+{\ar_{h'} "12";"14"};
+%
+{\ar_{g'} "12";"22"};
+{\ar^{e} "14";"24"};
+%
+{\ar@{=} "22";"24"};
+%
+{\ar@{}|{} "0";"12"};
+{\ar@{}|{} "2";"14"};
+{\ar@{}|{} "12";"24"};
+%
+{\ar@{-->}^\delta "4";"6"};
+{\ar@{-->}^{\delta''} "14";"16"};
+{\ar@{-->}^{\delta'} "22";"32"};
+{\ar@{-->}^{f'_\ast \delta'} "24";"34"};
+\endxy
+\]
+and an~$\mathbb{E}$-extension~$\delta''\in\mathbb{E}(Y',X)$ realized by~$X\overset{h}{\longrightarrow}Z\overset{h'}{\longrightarrow}Y'$, which satisfy the following compatibilities.
+  \begin{enumerate}[(i)]
+    \item $Z'\overset{d}{\longrightarrow}Y'\overset{e}{\longrightarrow}X'$ realizes~$f'_\ast\delta'$,
+    \item $d^\ast\delta''=\delta$,
+    \item $f_\ast\delta''=e^\ast\delta'$. 
+  \end{enumerate}
+\item[{\rm (ET4)$^{\mathrm{op}}$}] Dual of {\rm (ET4)}.
+\end{itemize}
+\end{definition}
+
+We use the following terminology.
+\begin{notation}
+Let~$(\cat,\mathbb{E},\mathfrak{s})$ be an extriangulated category.
+\begin{enumerate}
+\item A sequence~$X\xrightarrow{x}Y\xrightarrow{y}Z$ is called a conflation if it realizes some~$\mathbb{E}$-extension in~$\mathbb{E}(Z,X)$. In which case the morphism~$X\xrightarrow{x}Y$ is called an inflation, written~$X\infl Y$, and the morphism~$Y\xrightarrow{y}Z$ is called a deflation, witten~$Y\defl Z$.
+\item An extriangle is a diagram~$X\overset{x}{\infl} Y\overset{y}{\defl} Z\overset{\delta}{\dashrightarrow}$ where~$X\overset{x}{\infl} Y\overset{y}{\defl} Z$ is a conflation realizing the~$\mathbb{E}$-extension~$\delta\in\mathbb{E}(Z,X)$.
+\item Similarly, we call morphism of extriangles any diagram
+\[
+\xy
+(-12,6)*+{X}="0";
+(0,6)*+{Y}="2";
+(12,6)*+{Z}="4";
+(24,6)*+{}="6";
+%
+(-12,-6)*+{X'}="10";
+(0,-6)*+{Y'}="12";
+(12,-6)*+{Z'}="14";
+(24,-6)*+{}="16";
+%
+{\ar^{x} "0";"2"};
+{\ar^{y} "2";"4"};
+{\ar@{-->}^{\delta} "4";"6"};
+%
+{\ar_{f} "0";"10"};
+{\ar^{g} "2";"12"};
+{\ar^{h} "4";"14"};
+%
+{\ar_{x'} "10";"12"};
+{\ar_{y'} "12";"14"};
+{\ar@{-->}_{\delta'} "14";"16"};
+%
+{\ar@{}|{} "0";"12"};
+{\ar@{}|{} "2";"14"};
+\endxy
+\]
+where~$(f,h):\delta\to\delta'$ is a morphism of~$\mathbb{E}$-extensions realized by~$(f,g,h)$.
+\end{enumerate}
+\end{notation}
+
 
 \subsection{Proofs of preliminary results and of Theorem~\ref{theorem::extricats}}
 \label{sect::proofs extricats}
@@ -3614,7 +3864,7 @@ Every morphism with domain in~$\tc$ is an inflation.
 \end{lemma}
 
 \begin{proof}
-Let~$T \overset{t}{\to} X$ be a morphism with $T\in \tc$.
+Let~$T \overset{t}{\to} X$ be a morphism with~$T\in \tc$.
 Using the notation of Remark~\ref{remark::equivalence Sigma}, there is an extriangle~$T\infl 0\defl \susp T \overset{\eps_T}{\dashrightarrow}$.
 Consider the extriangle~$X\overset{g}{\infl} Y \overset{h}{\defl} \susp T \overset{t_\ast\eps_T}{\dashrightarrow}$.
 By~\cite[Proposition 3.17]{NakaokaPalu}, there is a commutative diagram of extriangles
