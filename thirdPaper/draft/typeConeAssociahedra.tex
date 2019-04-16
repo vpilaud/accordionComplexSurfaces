@@ -3706,8 +3706,8 @@ Then there exist an object~$Y'\in\cat$, a commutative diagram in~$\cat$
 {\ar_{g} "2";"12"};
 {\ar^{d} "4";"14"};
 %
-{\ar_{h} "10";"12"};
-{\ar_{h'} "12";"14"};
+{\ar^{h} "10";"12"};
+{\ar^{h'} "12";"14"};
 %
 {\ar_{g'} "12";"22"};
 {\ar^{e} "14";"24"};
@@ -3722,6 +3722,10 @@ Then there exist an object~$Y'\in\cat$, a commutative diagram in~$\cat$
 {\ar@{-->}^{\delta''} "14";"16"};
 {\ar@{-->}^{\delta'} "22";"32"};
 {\ar@{-->}^{f'_\ast \delta'} "24";"34"};
+%
+{\ar@{}|\circlearrowright "0";"12"};
+{\ar@{}|\circlearrowright "2";"14"};
+{\ar@{}|\circlearrowright "12";"24"};
 \endxy
 \]
 and an~$\mathbb{E}$-extension~$\delta''\in\mathbb{E}(Y',X)$ realized by~$X\overset{h}{\longrightarrow}Z\overset{h'}{\longrightarrow}Y'$, which satisfy the following compatibilities.
@@ -3772,6 +3776,52 @@ Let~$(\cat,\mathbb{E},\mathfrak{s})$ be an extriangulated category.
 where~$(f,h):\delta\to\delta'$ is a morphism of~$\mathbb{E}$-extensions realized by~$(f,g,h)$.
 \end{enumerate}
 \end{notation}
+
+The axioms above ensure that any extriangle induce long-ish exact sequences after application of some covariant or contravariant Hom-functor.
+In particular in any conflation, the inflation is a weak kernel of the deflation, and the deflation is a weak cokernel of the inflation.
+
+\begin{proposition}\emph{(}\cite[Propositions 3.3, 3.11]{NakaokaPalu}\emph{)}
+Assume that $(\cat,\mathbb{E},\mathfrak{s})$ is an extriangulated category, and let $X\xrightarrow{x}Y\xrightarrow{y}Z\overset{\delta}{\dashrightarrow}$ be an extriangle.
+Then the following sequences of natural transformations are exact:
+\[ \cat(Z,-)\overset{-\circ y}{\longrightarrow}\cat(Y,-)\overset{-\circ x}{\longrightarrow}\cat(X,-)\overset{\delta^\sharp}{\longrightarrow}\mathbb{E}(Z,-)\overset{y^\ast}{\longrightarrow}\mathbb{E}(Y,-)\overset{x^\ast}{\longrightarrow}\mathbb{E}(X,-), \]
+\[ \cat(-,X)\overset{x\circ-}{\longrightarrow}\cat(-,Y)\overset{y\circ-}{\longrightarrow}\cat(-,Z)\overset{\delta_\sharp}{\longrightarrow}\mathbb{E}(-,X)\overset{x_\ast}{\longrightarrow}\mathbb{E}(-,Y)\overset{y_\ast}{\longrightarrow}\mathbb{E}(-,Z), \]
+where~$\delta^\sharp(f)=f_\ast\delta$ and~$\delta_\sharp(g)=g^\ast\delta$.
+\end{proposition}
+
+Any variant of the axiom (ET4) that would hold in an extension-closed subcategory of a triangulated category by applying the octahedron axiom also holds in any extriangulated category.
+See~\cite[Section 3.2]{NakaokaPalu} for more details.
+
+
+\begin{definition}
+An almost-split~$\mathbb{E}$-extension~$\delta\in\mathbb{E}(Z,X)$ is a non-split~$\mathbb{E}$-extension such that:
+\begin{itemize}
+\item[{\rm (AS1)}] $f_\ast\delta=0$ for any non-section $f\in\cat(X,X')$.
+\item[{\rm (AS2)}] $g^\ast\delta=0$ for any non-retraction $g\in\cat(Z',Z)$.
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+A non-zero object $X\in\cat$ is said to be endo-local if $\cat(X,X)$ is local.
+\end{definition}
+
+\begin{proposition}\emph{(}\cite[Proposition 2.5]{IyamaNakaokaPalu}\emph{)}
+For any non-split $\mathbb{E}$-extension $\delta\in\mathbb{E}(Z,X)$, the following holds.
+\begin{enumerate}[{\rm (1)}]
+\item If $\delta$ satisfies {\rm (AS1)}, then $X$ is endo-local.
+\item If $\delta$ satisfies {\rm (AS2)}, then $Z$ is endo-local.
+\end{enumerate}
+\end{proposition}
+
+\begin{definition}
+ An object~$P\in\cat$ is called projective if, for any~$X\in\cat$, we have~$\mathbb{E}(P,X)=0$.
+ Dually, an object~$I\in\cat$ is called injective if for any~$X\in\cat$, we have~$\mathbb{E}(X,I)=0$.
+\end{definition}
+
+\begin{proposition}\emph{(}\cite[Proposition 8.1]{IyamaNakaokaPalu}\emph{)}
+Let~$\Lambda$ be an Artin algebra and let~$K^{[-1,0]}(\proj\Lambda)$ be the full subcategory of the homotopy category~$K^b(\proj\Lambda)$ consisting of complexes concentrated in degrees~$-1$ and~$0$ (using cohomological conventions).
+Then any endo-local non-projective object~$X\in\cat$ permits an almost-split conflation~$\tau X\infl E\defl X$ and any endo-local non-injective object~$Y\in\cat$ permits an almost-split conflation~$Y\infl E'\defl \tau^- Y$.
+\end{proposition}
+
 
 
 \subsection{Proofs of preliminary results and of Theorem~\ref{theorem::extricats}}
