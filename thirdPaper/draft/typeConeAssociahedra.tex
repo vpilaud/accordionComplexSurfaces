@@ -207,6 +207,9 @@
 \newcommand{\coker}{\operatorname{coker}}
 \newcommand{\CC}{\phi}
 \newcommand{\proj}{\operatorname{proj}}
+\newcommand{\bsm}{\begin{smallmatrix}}
+\newcommand{\esm}{\end{smallmatrix}}
+
 
 % extriangulated
 \newcommand{\tc}{\mathcal{T}}
@@ -3906,8 +3909,14 @@ Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to ap
 
 \begin{theorem}
 \label{theo::brick-algebra-condition}
- Let~$\Lambda$ be a brick algebra which is finite-dimensional over a field~$\field$\pg{True for any Artin algebra?}.  Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+ Let~$\Lambda$ be an Artin algebra all of whose non-injective indecomposable objects are bricks and all of whose indecomposable objects are~$\tau$-rigid\yann{Are there examples of representation-infinite algebras which satisfy those assumptions?}. Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any non-projective indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 \end{theorem}
+
+\begin{remark}
+Assume that~$\Lambda$ is a finite-dimensional brick algebra which is representation-finite.
+Then~\cite[Theorem 6.2]{DemonetIyamaJasso} implies that the assumptions of Theorem~\ref{theo::brick-algebra-condition} are satisfied.
+\end{remark}
+
 
 \begin{lemma}
 \label{lemm::AR-conflations-and-sequences}
@@ -4012,18 +4021,96 @@ We have an exact sequence
 \[
 \Hom{K^b}(E,E) \to \Hom{K^b}(E,X) \to \Hom{K^b}(E,\susp \tau X) \to \Hom{K^b}(E,\susp E).
 \]
-The first map is surjective since~$E\to X$ is right almost split.
+The first map is surjective since~$E\to X$ is right almost-split.
 We can conclude by (4).
 \end{proof}
 
 
 \begin{lemma}
-\label{lemm::if-AR-sequences-are-mutation}
- Let~$\Lambda$ be an Artin algebra.  Assume that for any almost-split conflation~$\tau X \infl E \defl X$ of~$K^{[-1,0]}(\proj\Lambda)$, we have that~$\Hom{K^b}(X, \susp E) = \Hom{K^b}(E, \susp X) = 0$ and~$\Hom{K^b}(\tau X, \susp E) = \Hom{K^b}(E, \susp \tau X) = 0$.  Then for any indecomposable~$\Lambda$-module~$M$, we have that~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+Let~$\Lambda$ be an Artin algebra, and let~$Y\infl E\defl X$ be a conflation in~$K^{[-1,0]}(\proj\Lambda)$. Then:
+\begin{enumerate}
+ \item If~$\Hom{K^b}(Y,\susp E)=0$, we have~$\Hom{\Lambda}(FX,\tau FY)=0$.
+ \item If moreover~$Z\notin\add(\susp\Lambda)$ and the conflation is almost-split, then~$\Hom{\Lambda}(FX,\tau^2 FX)=0$.
+\end{enumerate}
 \end{lemma}
+
 \begin{proof}
- 
+By Lemma~\ref{lemm::AR-conflations-and-sequences}, \emph{(2)} follows from \emph{(1)}.
+Let us prove \emph{(1)}.
+The conflation induces an exact sequence~$\Hom{K^b}(Y,\susp E) \to \Hom{K^b}(Y,\susp X) \to \Hom{K^b}(Y,\susp^2,Y)$.
+The complex~$Y$ being two-term, we have~$\Hom{K^b}(Y,\susp^2,Y)=0$.
+Assuming that~$\Hom{K^b}(Y,\susp E)=0$, we deduce that~$\Hom{K^b}(Y,\susp X)=0$, and hence that~$\Hom{\Lambda}(FX,\tau FY) = 0$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.
 \end{proof}
+
+\begin{lemma}
+Let~$\Lambda$ be an Artin algebra, and let~$P$ be an indecomposable projective~$\Lambda$-module which is a brick.
+Let~$I$ be indecomposable injective with socle~$P/\operatorname{rad}P$, and~$\alpha$ be the composition~$P\to\operatorname{soc} I \to I$.
+Then, composition with~$\alpha$ induces a surjection~$\Hom{\Lambda}(P,I)\to\Hom{\Lambda}(P,I)$.
+\end{lemma}
+
+\begin{proof}
+{\bf Small gap}
+\end{proof}
+
+\begin{lemma}\label{lemm::initial meshes}
+Let~$\Lambda$ be an Artin algebra, and let~$P$ be an indecomposable projective~$\Lambda$-module which is a brick.
+Let~$I$ be indecomposable injective with socle~$P/\operatorname{rad}P$, and~$\alpha$ be the composition~$P\to\operatorname{soc} I \to I$.
+Complete the morphism~$\alpha$ to a triangle~$P\to Y\to E\to \susp P$ in~$K^{[-1,0]}(\proj\Lambda)$, where~$Y$ is a minimal projective presentation of~$I$.
+Then~$Y\infl E\defl \susp P$ is an Auslander--Reiten conflation in~$K^{[-1,0]}(\proj\Lambda)$, which is also a mutation conflation.
+\end{lemma}
+
+\begin{proof}
+In this proof, we implicitely identify the projective indecomposable~$\Lambda$-module~$P$ with the complex~$P$ concentrated in degree~$0$.
+
+We first show that the conflation is almost-split.
+
+blahblahblah
+
+We now check that the conflation~$Y\infl E\defl\susp P$ is a mutation conflation.
+
+(0) Since~$P$ is concentrated in only one degree, it is rigid in~~$K^{[-1,0]}(\proj\Lambda)$ and so is~$\susp P$.
+Moreover,~$FY=I$ is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.
+
+(1) We have~$\Hom{K^b}(E,\susp^2 P)=0$ since~$E$ is concentrated in degrees~$-1$ and~$0$.
+
+(2) $\Hom{K^b}(Y,\susp E)=0$: There is an exact sequence
+\[
+\Hom{K^b}(Y,\susp Y) \to \Hom{K^b}(Y,\susp E) \to \Hom{K^b}(Y,\susp^2 P),
+\]
+where the first term vanishes by (0) and the last term vanishes since~$Y$ is in degrees~$-1, 0$ while~$\susp^2 P$ is concentrated in degree~$-2$.
+
+(3) $\Hom{K^b}(E,\susp E)=0$: There is an exact sequence
+\[
+ \Hom{K^b}(\susp Y,\susp E) \to \Hom{K^b}(\susp P, \susp E) \to \Hom{K^b}(E,\susp E) \to \Hom{K^b}(Y,\susp E)
+\]
+in which the last term is zero by (2).
+The first morphism is isomorphic to~$\Hom{K^b}(Y,E) \to \Hom{K^b}(P,E)$, which is surjective by the previous lemma.
+
+(4) $\Hom{K^b}(E,\susp Y) = 0$: Consider the exact sequence
+\[
+ \Hom{K^b}(E,E) \to \Hom{K^b}(E,\susp P) \to \Hom{K^b}(E,\susp Y) \to \Hom{K^b}(E,\susp E).
+\]
+Its last term vanishes by (3) and its first morphism is surjective because~$E\to \susp P$ is right almost-split.
+
+(5) $\Hom{K^b}(\susp P,\susp E= 0$:
+Let~$P\xrightarrow{f} E$ be any morphism.
+Since~$P$ is rigid,~$f$ factors through the inflation~$\beta$ in the conflation~$Y\infl E\defl \susp P$, and there is some morphism~$g$ such that~$f=\beta g$.
+By the previous lemma, or by (4), the morphism~$g$ factors through~$\alpha$: there is some~$h$ such that~$g= h \alpha$.
+
+{\bf Small gap:} There is an~$h'$ such that~$h \alpha = \alpha h'$ and we deduce that~$f=\beta h \alpha = \beta \alpha h' = 0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{theo::brick-algebra-condition}]
+ The theorem follows from the slightly more general statements of Lemma~\ref{lemm::then-AR-seq-are-mutation} and Lemma~\ref{lemm::initial meshes}.
+\end{proof}
+
+% \begin{lemma}
+% \label{lemm::if-AR-sequences-are-mutation}
+%  Let~$\Lambda$ be an Artin algebra.  Assume that for any almost-split conflation~$\tau X \infl E \defl X$ of~$K^{[-1,0]}(\proj\Lambda)$, we have that~$\Hom{K^b}(X, \susp E) = \Hom{K^b}(E, \susp X) = 0$ and~$\Hom{K^b}(\tau X, \susp E) = \Hom{K^b}(E, \susp \tau X) = 0$.  Then for any indecomposable~$\Lambda$-module~$M$, we have that~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+% \end{lemma}
+% \begin{proof}
+%  
+% \end{proof}
 
 \vincent{Here should be explained that the gentle algebra result is a special case of this.}
 
@@ -4032,7 +4119,7 @@ We can conclude by (4).
 \subsubsection{Objects presented by a subcategory}
 \label{sect::prT}
 
-We know describe a setup satisfying the assumptions of Section~\ref{setting::extricat} that, at the same time, subsumes all examples given so far, while being easily checked in practice.\yann{A reformuler...}
+We now describe a setup satisfying the assumptions of Section~\ref{setting::extricat} that, at the same time, subsumes all examples given so far, while being easily checked in practice.\yann{A reformuler...}
 
 Let~$(\ec,\mathbb{E},\mathfrak{s})$ be an extriangulated category (for example, a small exact category or a triangulated category), and let~$\tc$ be an essentially small \yann{Cette hypoth\`ese n'appara\^it pas dans [HLN], mais me semble n\'ecessaire...} subcategory of~$\ec$.
 
@@ -4156,7 +4243,8 @@ Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is e
   }
  \]
  
-One can check directly that the condition of Theorem~\ref{theo::brick-algebra-condition} is not satisfied. 
+One can check directly that the condition of Theorem~\ref{theo::brick-algebra-condition} is not satisfied.
+For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm) = \bsm3\\1\esm$, while~$\Hom{\Lambda}\left(\bsm2\\1\esm,\tau^2(\bsm2\\1\esm)\right) = \Hom{\Lambda}(\bsm2\\1\esm,\bsm1\\2\esm) \neq 0$.
 \end{example}
 
 %%%
