@@ -4269,6 +4269,7 @@ Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to ap
 \label{theo::brick-algebra-condition}
  Let~$\Lambda$ be an Artin algebra all of whose non-injective indecomposable objects are bricks and all of whose indecomposable objects are~$\tau$-rigid\yann{Are there examples of representation-infinite algebras which satisfy those assumptions?}. Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any non-projective indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 \end{theorem}
+\pg{Should define mutation conflations}
 
 \begin{remark}
 Assume that~$\Lambda$ is a finite-dimensional brick algebra which is representation-finite.
@@ -4304,7 +4305,7 @@ Because~$\MOD\Lambda$ and~$K^b(\proj \Lambda)$ are Krull--Schmidt, it is immedia
 \begin{lemma}
 \label{lemm::then-AR-seq-are-mutation}
 Let~$\Lambda$ be an Artin algebra, let~$\tau X\infl E\defl X$ be an Auslander--Reiten conflation in~$K^{[-1,0]}(\proj\Lambda)$ and denote~$FX=M$.
-Assume that:\yann{There might be some redundancies in the assumptions}
+Assume that:\yann{There might be some redundancies in the assumptions}\pg{If so, it's not obvious to me.}
 \begin{enumerate}
  \item $X\notin\add(\susp\Lambda)$;
  \item $M$ and~$\tau M$ are~$\tau$-rigid;
@@ -4420,7 +4421,7 @@ Then the Auslander--Reiten conflation~$Y\infl E\defl \susp P$ in~$K^{[-1,0]}(\pr
 \end{lemma}
 
 \begin{proof}
-In this proof, we implicitely identify the projective indecomposable~$\Lambda$-module~$P$ with the complex~$P$ concentrated in degree~$0$.
+In this proof, we implicitly identify the projective indecomposable~$\Lambda$-module~$P$ with the complex~$P$ concentrated in degree~$0$.
 
 % We first show that the conflation is almost-split.
 % 
@@ -4429,7 +4430,7 @@ In this proof, we implicitely identify the projective indecomposable~$\Lambda$-m
 We check that the conflation~$Y\infl E\defl\susp P$ is a mutation conflation.
 
 (0) Since~$P$ is concentrated in only one degree, it is rigid in~~$K^{[-1,0]}(\proj\Lambda)$ and so is~$\susp P$.
-Moreover,~$FY=I$ is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.
+Moreover,~$FY=I$ is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.\pg{Injectives are not necessarily tau-rigid. Need that Lambda is a brick algebra?}
 
 (1) We have~$\Hom{K^b}(E,\susp^2 P)=0$ since~$E$ is concentrated in degrees~$-1$ and~$0$.
 
@@ -4455,7 +4456,7 @@ Its last term vanishes by (3) and its first morphism is surjective because~$E\to
 (5) $\Hom{K^b}(\susp P,\susp E)= 0$:
 Let~$P\xrightarrow{f} E$ be any morphism.
 Since~$P$ is rigid,~$f$ factors through the inflation~$\beta$ in the conflation~$Y\infl E\defl \susp P$, and there is some morphism~$g$ such that~$f=\beta g$.
-By the previous lemma, or by (4), the morphism~$g$ factors through~$\alpha$: there is some~$h$ such that~$g= h \alpha$.
+By the previous lemma, or by (4), the morphism~$g$ factors through~$\alpha$: there is some~$h$ such that~$g= h \alpha$.\pg{What is alpha?}
 
 We then have~$f = \beta g = \beta (g-\alpha) = \beta (h-1) \alpha$.
 Since~$Y$ is endo-local, the morphism~$h-1$ is an automorphism.
