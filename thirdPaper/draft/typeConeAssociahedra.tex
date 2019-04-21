@@ -273,7 +273,7 @@
 \begin{abstract}
 We show that the mesh mutations are the minimal relations among the $\b{g}$-vectors with respect to any initial seed in any finite type cluster algebra.
 We then use this algebraic result to derive geometric properties of the $\b{g}$-vector fan: we show that the space of all its polytopal realizations is a simplicial cone, and we then observe that this property implies that all its realizations can be described as the intersection of a high dimensional positive orthant with well-chosen affine spaces.
-This explains and extends earlier results of N.~Arkani-Hamed, Y.~Bai, S.~He, and G.~Yan in type~$A$ and of V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Yildirim for acyclic initial seeds.
+This sheds a new light on and extends earlier results of N.~Arkani-Hamed, Y.~Bai, S.~He, and G.~Yan in type~$A$ and of V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Y\i ld\i r\i m for acyclic initial seeds.
 
 Finally, we use a similar approach to study the space of polytopal realizations of the $\b{g}$-vector fans of other generalizations of the associahedron.
 For non-kissing complexes of gentle algebras, we show that the space of realizations of the non-kissing fan is simplicial when the gentle bound quiver is brick and $2$-acyclic, and we describe in this case its facet-defining inequalities in terms of mesh mutations.
@@ -295,9 +295,9 @@ In particular, we prove, in those two setups, an analogue of a result of M. Ausl
 
 \newpage
 \section*{Introduction}
-\pg{Could we replace ``explains'' with ``sheds a new light on'' in abstract?}
+
 The associahedron is a ``mythical polytope'' \cite{Haiman} whose facial structure encodes Catalan families: its vertices correspond to parenthesizations of a non-associative product, triangulations of a convex polygon, or binary trees; its edges correspond to applications of the associativity rule, diagonal flips, or edge rotations; and in general its faces correspond to partial parenthesizations, diagonal dissections, or Schr\"oder trees.
-Its combinatorial and topological structure was introduced in early works of D.~Tamari~\cite{Tamari} and J.~Stasheff~\cite{Stasheff}, and a first polytopal model was realized by J.~Milnor for the PhD defense of the latter. \pg{Of whose PhD thesis?}
+Its combinatorial and topological structure was introduced in early works of D.~Tamari~\cite{Tamari} and J.~Stasheff~\cite{Stasheff}, and a first polytopal model was realized by J.~Milnor for the PhD defense of J.~Stasheff.
 The first systematic polytopal realizations were constructed by M.~Haiman~\cite{Haiman} and C.~Lee~\cite{Lee}.
 Since then, the associahedron has been largely ``demystified'' with several polytopal constructions and generalizations (some are discussed below).
 Its realizations can be classified into three species: the secondary polytopes~\cite{GelfandKapranovZelevinsky, BilleraFillimanSturmfels}, the $\b{g}$-vectors realizations~\cite{Loday, HohlwegLange, LangePilaud, HohlwegLangeThomas, HohlwegPilaudStella, Postnikov, PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and the $\b{d}$-vector realizations~\cite{ChapotonFominZelevinsky, CeballosSantosZiegler}. See~\cite{CeballosSantosZiegler} for a discussion of these realizations and their connections.
@@ -374,7 +374,7 @@ So as to overcome this difficulty, we replace the triangulated structure of clus
 This explains why we consider projective objects rather than cluster-tilting objects for extriangulated categories.
 
 \smallskip
-\item \textbf{Graph associahedra} were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}. As illustrated in~\cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra. The graph associahedra were extended to the \defn{nestohedra}, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}. Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}. All these realizations have the same normal fan, called nested fan. We study the type cones of these nested fans (see \cref{subsec:typeConeGA}): we describe describe their facet-defining inequalities in terms of certain specific pairs of neighboring tubings and count them for the specific families of graph associahedra described earlier. For instance the type cone of the permutahedron coincides with the classical submodular functions on~$2^{[n]}$, described by~$2^{n-2} \binom{n}{2}$ inequalities. In fact, we observe that the type cone of a graphical nested fan is never simplicial except in the case of the classical associahedron (when the graph is the path). Our results describe nevertheless all polytopal realizations of the graphical nested fans.
+\item \textbf{Graph associahedra} were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}. As illustrated in~\cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra. The graph associahedra were extended to the \defn{nestohedra}, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}. Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}. All these realizations have the same normal fan, called nested fan. We study the type cones of these nested fans (see \cref{subsec:typeConeGA}): we describe their facet-defining inequalities in terms of certain specific pairs of neighboring tubings and count them for the specific families of graph associahedra described earlier. For instance the type cone of the permutahedron coincides with the classical submodular functions on~$2^{[n]}$, described by~$2^{n-2} \binom{n}{2}$ inequalities. In fact, we observe that the type cone of a graphical nested fan is never simplicial except in the case of the classical associahedron (when the graph is the path). Our results describe nevertheless all polytopal realizations of the graphical nested fans.
 \end{itemize}
 
 \smallskip
@@ -388,7 +388,7 @@ Tempting candidates are quotientopes for hyperplane arrangements beyond type~$A$
 \medskip
 Last but not least, the type cone approach naturally opens many research questions.
 First, it raised the fundamental problem of describing the minimal relations among $\b{g}$-vectors in $2$-Calabi--Yau and extriangulated categories that we treat in \cref{part:algebra}.
-It is also motivates the study of relevant objects revealed by the type cone dictionary between geometry and algebra:
+It also motivates the study of relevant objects revealed by the type cone dictionary between geometry and algebra:
 
 \smallskip
 \begin{itemize}
@@ -407,6 +407,7 @@ Some of these questions are explicitly indicated throughout the paper.
 To conclude, we observe that the associahedra constructed in~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} and the present paper describe all polytopal realizations of the $\b{g}$-vector fan.
 This motivates the following question: Is it possible to similarly understand the complete realization space of the cluster complex, including all realizations not having the~$\b{g}$-vector fan as their normal fan?
 \pg{AWESOME introduction.}
+\vincent{:-)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1059,7 +1060,7 @@ Moreover, the polytopes~$R_\b{\ell}(n)$ for~$\b{\ell} \in \R_{>0}^{Y(n)}$ descri
 Cluster algebras were introduced by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasI} with motivation coming from total positivity and canonical bases.
 Here, we will focus on finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasII} and more specifically on properties of their $\b{g}$-vectors~\cite{FominZelevinsky-ClusterAlgebrasIV}.
 These $\b{g}$-vectors support a complete simplicial fan, which is called \defn{$\b{g}$-vector fan} or \defn{cluster fan}. It is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, and revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
-More recently in~\cite{BazierMatteDouvilleMousavandThomasYildirim}, V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Yildirim extended the construction of associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to acyclic seeds of simply-laced finite type cluster algebras.
+More recently in~\cite{BazierMatteDouvilleMousavandThomasYildirim}, V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Y\i ld\i r\i m extended the construction of associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to acyclic seeds of simply-laced finite type cluster algebras.
 Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply-laced or not) cluster algebra with respect to any seed (acyclic or not) by providing a direct proof that the type cone of the cluster fan of any finite type cluster algebra is simplicial.
 
 %%%
