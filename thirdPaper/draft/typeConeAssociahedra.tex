@@ -280,7 +280,7 @@ For non-kissing complexes of gentle algebras, we show that the space of realizat
 For graphical nested complexes, we show that the space of realizations of the nested fan is simplicial only in the case of the associahedron, and we describe its facet-defining inequalities in general.
 
 Along the way, we prove algebraic results on~$2$-Calabi--Yau triangulated categories, and on extriangulated categories that are of independent interest.
-In particular, we prove, in those two setups, an analogue of a result of M. Auslander on minimal relations for Grothendieck groups.
+In particular, we prove, in those two setups, an analogue of a result of M. Auslander on minimal relations for Grothendieck groups of module categories.
 \end{abstract}
 
 \maketitle
@@ -295,9 +295,9 @@ In particular, we prove, in those two setups, an analogue of a result of M. Ausl
 
 \newpage
 \section*{Introduction}
-
+\pg{Could we replace ``explains'' with ``sheds a new light on'' in abstract?}
 The associahedron is a ``mythical polytope'' \cite{Haiman} whose facial structure encodes Catalan families: its vertices correspond to parenthesizations of a non-associative product, triangulations of a convex polygon, or binary trees; its edges correspond to applications of the associativity rule, diagonal flips, or edge rotations; and in general its faces correspond to partial parenthesizations, diagonal dissections, or Schr\"oder trees.
-Its combinatorial and topological structure was introduced in early works of D.~Tamari~\cite{Tamari} and J.~Stasheff~\cite{Stasheff}, and a first polytopal model was realized by J.~Milnor for the PhD defense of the latter.
+Its combinatorial and topological structure was introduced in early works of D.~Tamari~\cite{Tamari} and J.~Stasheff~\cite{Stasheff}, and a first polytopal model was realized by J.~Milnor for the PhD defense of the latter. \pg{Of whose PhD thesis?}
 The first systematic polytopal realizations were constructed by M.~Haiman~\cite{Haiman} and C.~Lee~\cite{Lee}.
 Since then, the associahedron has been largely ``demystified'' with several polytopal constructions and generalizations (some are discussed below).
 Its realizations can be classified into three species: the secondary polytopes~\cite{GelfandKapranovZelevinsky, BilleraFillimanSturmfels}, the $\b{g}$-vectors realizations~\cite{Loday, HohlwegLange, LangePilaud, HohlwegLangeThomas, HohlwegPilaudStella, Postnikov, PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and the $\b{d}$-vector realizations~\cite{ChapotonFominZelevinsky, CeballosSantosZiegler}. See~\cite{CeballosSantosZiegler} for a discussion of these realizations and their connections.
@@ -313,9 +313,9 @@ This paper focuses on a surprising construction of the associahedron that recent
 Motivated by the prediction of the behavior of scattering particules, N.~Arkani-Hamed, Y.~Bai, S.~He, and G.~Yan recently described in~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} the kinetic associahedron.
 It is a class of polytopal realizations of the classical associahedron obtained as sections of a high-dimensional positive orthant with well-chosen affine subspaces.
 This construction provides a large degree of freedom in the choice of the parameters defining these affine subspaces and produces all polytopes whose normal fan is affinely equivalent to that of J.-L.~Loday's associahedron~\cite{Loday} (see \cref{subsec:typeConeAsso}).
-These realizations were then extended by V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Yildirim~\cite{BazierMatteDouvilleMousavandThomasYildirim} in the context of finite type cluster algebras using tools from representation theory of quivers.
+These realizations were then extended by V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Y\i ld\i r\i m~\cite{BazierMatteDouvilleMousavandThomasYildirim} in the context of finite type cluster algebras using tools from representation theory of quivers.
 More precisely, they fix a finite type cluster algebra~$\c{A}$ and consider the real euclidean space~$\R^\c{V}$ indexed by the set~$\c{V}$ of cluster variables of~$\c{A}$.
-Starting from an acyclic initial seed~$\seed_\circ$, they consider a set~$\c{M}$ of mesh mutations and compute the corresponding linear dependences between the $\b{g}$-vectors, that can be interpreted as linear spaces in~$\R^\c{V}$.
+Starting from an acyclic initial seed~$\seed_\circ$, they consider a set~$\c{M}$ of mesh mutations and compute the corresponding linear dependences between the $\b{g}$-vectors, which can be interpreted as linear spaces in~$\R^\c{V}$.
 Finally, they perturb these mesh linear spaces by a collection~$\b{\ell} \in \R^{\c{M}}$ of positive parameters and intersect the resulting perturbed mesh affine spaces with the positive orthant of~$\R^\c{V}$ (see \cref{subsec:typeConeCA}).
 They show that the resulting polytope is always a generalized associahedron, and that its normal fan is the $\b{g}$-vector fan of~$\c{A}$ with respect to the initial acyclic seed~$\seed_\circ$.
 A by-product of their construction is that the space of all polytopal realizations of the $\b{g}$-vector fan of~$\c{A}$ with respect to the initial acyclic seed~$\seed_\circ$ is a simplicial cone.
@@ -337,7 +337,7 @@ This new perspective has several advantages, as our proof uniformly applies to:
 \item \textbf{all finite type cluster algebras}, regardless of whether it is simply-laced or not (see \cref{exm:typeConeCA} for an example in type~$C_3$). In contrast, even with the acyclicity restriction, the result of~\cite{BazierMatteDouvilleMousavandThomasYildirim} is first proved in simply-laced cases ($A$, $D$ and~$E$) using representation theory of quivers. Extension to the non simply-laced cases is then argued by a folding argument. Although not presented in detail, this argument is subtle and technical.
 
 \smallskip
-\item \textbf{any positive real valued parameters}, regardless of whether they are rational or not. In contrast, the proof of~\cite{BazierMatteDouvilleMousavandThomasYildirim} naturally applies to rational parameters and then requires to apply an approximation argument.
+\item \textbf{any positive real-valued parameters}, regardless of whether they are rational or not. In contrast, the proof of~\cite{BazierMatteDouvilleMousavandThomasYildirim} naturally applies to rational parameters and then requires an approximation argument.
 \end{itemize}
 
 \smallskip
@@ -367,8 +367,8 @@ In the present paper, we explore specifically two families of such generalizatio
 \begin{itemize}
 \item \textbf{Gentle associahedra} were constructed in~\cite{PaluPilaudPlamondon-nonkissing} as polytopal realizations of finite non-kissing complexes of gentle bound quivers.  These complexes encompass two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied by Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}. It was shown in~\cite{PaluPilaudPlamondon-nonkissing, BrustleDouvilleMousavandThomasYildirim} that the non-kissing complex of a gentle bound quiver provides a combinatorial model for the support $\tau$-tilting complex~\cite{AdachiIyamaReiten} of the associated gentle algebra. Even for finite non-kissing complexes, it turns out that the type cone of the non-kissing fan is not always simplicial (see \cref{exm:nonSimplicialTypeConeNKC}). We prove however that the type cone is always simplicial when the gentle bound quiver is brick (at least $2$ relations in any cycle) and $2$-acyclic (no oriented cycle of length~$2$). Moreover, we precisely describe the facet-defining inequalities of the type cone in terms of linear dependences of $\b{g}$-vectors involved in certain mesh relations. We thus automatically derive a construction similar to that of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} describing all polytopal realizations of the $\b{g}$-vector fans of these brick $2$-acyclic bound quivers as sections of a positive orthant by well-chosen affine spaces (see \cref{subsec:typeConeCA}). Again, this result mainly relies on finding which relations minimally generate the relations between the $\b{g}$-vectors in the non-kissing complex. We present both a purely combinatorial proof (see \cref{subsec:typeConeCA}) and a purely algebraic proof for (non-necessarily gentle) brick algebras making use of extriangulated categories (see \cref{sec:extricats}).
 Our algebraic proof is based on an analogue of a result of M. Auslander~\cite{Auslander1984} relating to minimal generators of Grothendieck groups.
-Along the way, we need to generalise, for extriangulated categories, several results from cluster-tilting theory on indices~\cite{DehyKeller} and on abelian quotients~\cite{BuanMarshReiten, KellerReiten} that were known for triangulated categories.
-We note however, that our assumptions are not quite the expected ones.
+Along the way, we need to generalize, for extriangulated categories, several results from cluster-tilting theory on indices~\cite{DehyKeller} and on abelian quotients~\cite{BuanMarshReiten, KellerReiten} that were known for triangulated categories.
+We note, however, that our assumptions are not quite the expected ones.
 This is related to the fact that the Grothendieck groups of cluster categories are badly behaved (\eg the Grothendieck group of a cluster category of type~$A_2$ is trivial).
 So as to overcome this difficulty, we replace the triangulated structure of cluster categories by some relative extriangulated structure, before considering Grothendieck groups.
 This explains why we consider projective objects rather than cluster-tilting objects for extriangulated categories.
@@ -406,6 +406,7 @@ It is also motivates the study of relevant objects revealed by the type cone dic
 Some of these questions are explicitly indicated throughout the paper.
 To conclude, we observe that the associahedra constructed in~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} and the present paper describe all polytopal realizations of the $\b{g}$-vector fan.
 This motivates the following question: Is it possible to similarly understand the complete realization space of the cluster complex, including all realizations not having the~$\b{g}$-vector fan as their normal fan?
+\pg{AWESOME introduction.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4451,7 +4452,7 @@ The first morphism is isomorphic to~$\Hom{K^b}(Y,E) \to \Hom{K^b}(P,E)$, which i
 \]
 Its last term vanishes by (3) and its first morphism is surjective because~$E\to \susp P$ is right almost-split.
 
-(5) $\Hom{K^b}(\susp P,\susp E= 0$:
+(5) $\Hom{K^b}(\susp P,\susp E)= 0$:
 Let~$P\xrightarrow{f} E$ be any morphism.
 Since~$P$ is rigid,~$f$ factors through the inflation~$\beta$ in the conflation~$Y\infl E\defl \susp P$, and there is some morphism~$g$ such that~$f=\beta g$.
 By the previous lemma, or by (4), the morphism~$g$ factors through~$\alpha$: there is some~$h$ such that~$g= h \alpha$.
