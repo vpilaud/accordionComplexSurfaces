@@ -4413,7 +4413,7 @@ Assuming that~$\Hom{K^b}(Y,\susp E)=0$, we deduce that~$\Hom{K^b}(Y,\susp X)=0$,
 % \end{proof}
 
 \begin{lemma}\label{lemm::initial meshes}
-Let~$\Lambda$ be an Artin algebra, and let~$P$ be an indecomposable projective~$\Lambda$-module.
+Let~$\Lambda$ be an Artin algebra whose indecomposable injective modules are~$\tau$-rigid\yann{harmless assumption added}, and let~$P$ be an indecomposable projective~$\Lambda$-module.
 %which is a brick.
 % Let~$I$ be indecomposable injective with socle~$P/\operatorname{rad}P$, and~$\alpha$ be the composition~$P\to\operatorname{soc} I \to I$.
 % Complete the morphism~$\alpha$ to a triangle~$P\to Y\to E\to \susp P$ in~$K^{[-1,0]}(\proj\Lambda)$, where~$Y$ is a minimal projective presentation of~$I$.
@@ -4431,7 +4431,7 @@ In this proof, we implicitly identify the projective indecomposable~$\Lambda$-mo
 We check that the conflation~$Y\infl E\defl\susp P$ is a mutation conflation.
 
 (0) Since~$P$ is concentrated in only one degree, it is rigid in~~$K^{[-1,0]}(\proj\Lambda)$ and so is~$\susp P$.
-Moreover,~$FY=I$ is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.\pg{Injectives are not necessarily tau-rigid. Need that Lambda is a brick algebra?}
+Moreover,~$FY=I$ is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.\pg{Injectives are not necessarily tau-rigid. Need that Lambda is a brick algebra?}\yann{You are right, they are $\tau^-$-rigid. Not a problem because we assume all indecomposables to be $\tau$-rigid in our theorem.}
 
 (1) We have~$\Hom{K^b}(E,\susp^2 P)=0$ since~$E$ is concentrated in degrees~$-1$ and~$0$.
 
@@ -4457,7 +4457,7 @@ Its last term vanishes by (3) and its first morphism is surjective because~$E\to
 (5) $\Hom{K^b}(\susp P,\susp E)= 0$:
 Let~$P\xrightarrow{f} E$ be any morphism.
 Since~$P$ is rigid,~$f$ factors through the inflation~$\beta$ in the conflation~$Y\infl E\defl \susp P$, and there is some morphism~$g$ such that~$f=\beta g$.
-By the previous lemma, or by (4), the morphism~$g$ factors through~$\alpha$: there is some~$h$ such that~$g= h \alpha$.\pg{What is alpha?}
+By the previous lemma, or by (4), the morphism~$g$ factors through~$P \xrightarrow{\alpha} Y$: there is some~$h$ such that~$g= h \alpha$.\pg{What is alpha?}
 
 We then have~$f = \beta g = \beta (g-\alpha) = \beta (h-1) \alpha$.
 Since~$Y$ is endo-local, the morphism~$h-1$ is an automorphism.
