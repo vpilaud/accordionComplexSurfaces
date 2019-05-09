@@ -398,7 +398,7 @@ It also motivates the study of relevant objects revealed by the type cone dictio
 \item The rays of the type cone of~$\Fan$ correspond to specific polytopes which form a positive Minkowski basis of all realizations of~$\Fan$ (see \cref{subsec:MinkowskiSums}). In particular, when the type cone is simplicial, any polytopal realization of~$\Fan$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of these polytopes. For cluster algebras, it follows from~\cite[Sect.~6]{BazierMatteDouvilleMousavandThomasYildirim} that these polytopes are Newton polytopes of the $F$-polynomials. It would be interesting to obtain similar algebraic interpretations for the rays of the type cones of the non-kissing fans of gentle~algebras.
 
 \smallskip
-\item Once we get a representation of a polytope~$P$ as a signed Minkowski sum~$P = \sum_{i \in [k]}\alpha_i Q_i$, we get a formula for the volume of $P$ as a multivariate polynomial in $\alpha_1,\dots,\alpha_k$ whose coefficients are the mixed volumes of $Q_1,\dots, Q_k$~\cite{ArdilaBenedettiDoker,McMullen-Valuations}. These encode rich combinatorial information when representing generalized permuahedra as positive Minkowski sum of coordinate simplices or hypersimplices~\cite{Postnikov}, and in particular for matroid polytopes~\cite{ArdilaBenedettiDoker}. It would be interesting to get such volume formulas for polytopal realizations of $\b{g}$-vector fans of cluster algebras and gentle algebras, and combinatorial interpretations for their coefficients.
+\item Once we get a representation of a polytope~$P$ as a signed Minkowski sum~$P = \sum_{i \in [k]}\alpha_i Q_i$, we get a formula for the volume of $P$ as a multivariate polynomial in $\alpha_1,\dots,\alpha_k$ whose coefficients are the mixed volumes of $Q_1,\dots, Q_k$~\cite{ArdilaBenedettiDoker,McMullen-Valuations}. These encode rich combinatorial information when representing generalized permutahedra as positive Minkowski sums of coordinate simplices or hypersimplices~\cite{Postnikov}, and in particular for matroid polytopes~\cite{ArdilaBenedettiDoker}. It would be interesting to get such volume formulas for polytopal realizations of $\b{g}$-vector fans of cluster algebras and gentle algebras, and combinatorial interpretations for their coefficients.
 \end{itemize}
 
 \smallskip
@@ -1027,6 +1027,8 @@ This shows that any exchange relation is a positive linear combination of the ex
 
 Conversely, since~$\gvectorFan[n]$ has dimension~$n$ and~$n(n+3)/2$ rays (corresponding to the internal diagonals of the $(n+3)$-gon), we know from \cref{rem:dimTypeCone} that there are at least~$n(n+1)/2$ extremal exchangeable pairs. We thus conclude that all exchangeable pairs of diagonals~$\{(a,b-1), (a+1,b)\}$ for~$1 \le a < b-2 \le n$ are extremal.
 \end{proof}
+
+\arnau{Change $\b{f}_{(a,b)}$ to $\b{h}_{(a,b)}$? (To homogenize with previous sections)}
 
 Our next statement follows from the end of the previous proof.
 
@@ -2603,7 +2605,7 @@ The following statement follows from~\cite{MannevillePilaud-compatibilityFans, Z
 Let~$\tube, \tube'$ be two tubes of~$\graphG$. Then
 \begin{enumerate}[(i)]
 \item The tubes~$\tube$ and~$\tube'$ are exchangeable if and only if $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
-\item For any maximal tubings~$\tubing, \tubing$ on~$\graphG$ with $\tubing \ssm \{\tube\} = \tubing' \ssm \{\tube'\}$, both~$\tubing \cup \connectedComponents(\graphG)$ and~$\tubing' \cup \connectedComponents(\graphG)$ contain the tube~$\tube \cup \tube'$ and the connected components of~$\tube \cap \tube'$.
+\item For any maximal tubings~$\tubing, \tubing'$ on~$\graphG$ with $\tubing \ssm \{\tube\} = \tubing' \ssm \{\tube'\}$, both~$\tubing \cup \connectedComponents(\graphG)$ and~$\tubing' \cup \connectedComponents(\graphG)$ contain the tube~$\tube \cup \tube'$ and the connected components of~$\tube \cap \tube'$.
 \item The linear dependence between the $\b{g}$-vectors of~$\tubing \cup \tubing'$ is given by
 \[
 \gvector{\tube} + \gvector{\tube'} = \gvector{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \gvector{\tube[s]}.
@@ -2837,41 +2839,47 @@ Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair f
 \end{proposition}
 
 \begin{proof}
-Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$ and let~$p = |\tube \cup \tube'|$.
-By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
-Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected.
-We can thus label the elements of~$\tube \cup \tube'$ by~$\{v_1, \dots, v_p\}$ such that~$\{v_k, \dots, v_\ell\}$ induces a tube~$\tube_{k,\ell}$ of~$\graphG$ for any~$1 \le k \le \ell \le p$. 
-The map~$[k,\ell] \mapsto \tube_{k,\ell}$ is thus an injection from the tubes of the path~$\graphG[P]_p$ to that of~$\graphG$ that fulfills
-\begin{itemize}
-\item $\tube_{k,\ell-1} \ssm \{v_k\} = \tube_{k+1,\ell} \ssm \{v_\ell\}$ for any~$1 \le k \le \ell \le p$, and
-\item $\gvector{\tube_{k,\ell}} = M\gvector{[k,\ell]}$ for any~$1 \le k \le \ell \le p$, where~$M$ is the matrix sending~$\b{e}_m$ to~$\b{e}_{v_m}$.
-\end{itemize}
-Therefore, this map transports the linear combinations of \cref{prop:extremalExchangeablePairsA}.
-We conclude that the exchange relation corresponding to the exchangeable pair~$\{\tube, \tube'\}$ is a positive linear combination of the exchange relations corresponding to the pairs~$\{\tube_{k,\ell-1}, \tube_{k+1,\ell}\}$ for all~${(k,\ell) \in {[1, p-|\tube'|+1[} \times {]|\tube|, p]}}$.
-
-We now need to show that all these pairs are extremal.
+% Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$ and let~$p = |\tube \cup \tube'|$.
+% By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
+% Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected.
+% We can thus label the elements of~$\tube \cup \tube'$ by~$\{v_1, \dots, v_p\}$ such that~$\{v_k, \dots, v_\ell\}$ induces a tube~$\tube_{k,\ell}$ of~$\graphG$ for any~$1 \le k \le \ell \le p$. 
+% The map~$[k,\ell] \mapsto \tube_{k,\ell}$ is thus an injection from the tubes of the path~$\graphG[P]_p$ to that of~$\graphG$ that fulfills
+% \begin{itemize}
+% \item $\tube_{k,\ell-1} \ssm \{v_k\} = \tube_{k+1,\ell} \ssm \{v_\ell\}$ for any~$1 \le k \le \ell \le p$, and
+% \item $\gvector{\tube_{k,\ell}} = M\gvector{[k,\ell]}$ for any~$1 \le k \le \ell \le p$, where~$M$ is the matrix sending~$\b{e}_m$ to~$\b{e}_{v_m}$.
+% \end{itemize}
+% Therefore, this map transports the linear combinations of \cref{prop:extremalExchangeablePairsA}.
+% We conclude that the exchange relation corresponding to the exchangeable pair~$\{\tube, \tube'\}$ is a positive linear combination of the exchange relations corresponding to the pairs~$\{\tube_{k,\ell-1}, \tube_{k+1,\ell}\}$ for all~${(k,\ell) \in {[1, p-|\tube'|+1[} \times {]|\tube|, p]}}$.
+% 
+% We now need to show that all these pairs are extremal.
 \vincent{TODO}
+\arnau{The proof had a bug. TODO.}
 \end{proof}
 
 The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
 
 \begin{corollary}
 \label{coro:extremalExchangeablePairsGA}
-The extremal exchangeable pairs for the nested fan of~$\graphG$ are equivalently
-\begin{enumerate}[(i)]
-\item the pairs of tubes~$\tube[r] \cup \{v\}$ and~$\tube[r] \cup \{v'\}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
-\item the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$,
-\end{enumerate}
+The extremal exchangeable pairs for the nested fan of~$\graphG$ are the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
+% equivalently
+% \begin{enumerate}[(i)]
+% \item the pairs of tubes~$\tube[r] \cup \{v\}$ and~$\tube[r] \cup \{v'\}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
+% \item the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$,
+% \end{enumerate}
 \end{corollary}
+\arnau{The two conditions were not equivalent. I removed the wrong one.}
 
 We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan, which we can explicitly express using one of the following two equivalent conditions.
 
 \begin{corollary}
-Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying one of the two following equivalent conditions:
-\begin{enumerate}[(i)]
-\item $\b{h}_{\tube[r] \cup \{v\}} + \b{h}_{\tube[r] \cup \{v'\}} > \b{h}_{\tube[r] \cup \{v, v'\}} + \b{h}_{\tube[r]}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
-\item $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
-\end{enumerate}
+Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying 
+ $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$. 
+% one of the two following equivalent conditions:
+% \begin{enumerate}[(i)]
+% \item $\b{h}_{\tube[r] \cup \{v\}} + \b{h}_{\tube[r] \cup \{v'\}} > \b{h}_{\tube[r] \cup \{v, v'\}} + \b{h}_{\tube[r]}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
+% \item $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
+% \end{enumerate}
+
 Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 \[
 \set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}.
