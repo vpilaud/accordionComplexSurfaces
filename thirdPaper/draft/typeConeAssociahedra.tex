@@ -869,13 +869,16 @@ It has $3$ facet-defining inequalities (given below), which correspond to the fl
 \[
 \begin{array}{r|cccccc}
 \text{diagonals} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA1}}  & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA2}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA3}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA4}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalA5}} \\[.3cm]
-\text{$\b{g}$-vectors} & \compactVectorD{1}{0} & \compactVectorD{0}{1} & \compactVectorD{1}{-1} & \compactVectorD{-1}{0} & \compactVectorD{0}{-1} \\[.6cm]
+\text{$\b{g}$-vectors} & \compactVectorD{1}{0} & \compactVectorD{0}{1} & \compactVectorD{-1}{1} & \compactVectorD{-1}{0} & \compactVectorD{0}{-1} \\[.6cm]
 \text{facet}		& 1 & -1 & 1 & 0 & 0 & \red \circled{A} \\
 \text{defining} 	& 0 & 1 & -1 & 1 & 0 & \red \circled{B} \\
 \text{inequalities}	& 0 & 0 & 1 & -1 & 1 & \red \circled{C} \\[.2cm]
 \end{array}
 \]
 
+\arnau{I think the coordinates of the g-vector corresponding to {diagonalA3} were wrong, and I swapped them. }
+
+\arnau{When writing the coordinates of the g's, we cannot follow \cref{thm:normalFanLoday}, because we don't say which basis have we chosen for the hyperplane.}
 \medskip
 \noindent
 In all our tables, we just record the coefficients of the inequalities, which are then easily reconstructed.
@@ -2839,21 +2842,39 @@ Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair f
 \end{proposition}
 
 \begin{proof}
-% Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$ and let~$p = |\tube \cup \tube'|$.
-% By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
-% Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected.
-% We can thus label the elements of~$\tube \cup \tube'$ by~$\{v_1, \dots, v_p\}$ such that~$\{v_k, \dots, v_\ell\}$ induces a tube~$\tube_{k,\ell}$ of~$\graphG$ for any~$1 \le k \le \ell \le p$. 
-% The map~$[k,\ell] \mapsto \tube_{k,\ell}$ is thus an injection from the tubes of the path~$\graphG[P]_p$ to that of~$\graphG$ that fulfills
-% \begin{itemize}
-% \item $\tube_{k,\ell-1} \ssm \{v_k\} = \tube_{k+1,\ell} \ssm \{v_\ell\}$ for any~$1 \le k \le \ell \le p$, and
-% \item $\gvector{\tube_{k,\ell}} = M\gvector{[k,\ell]}$ for any~$1 \le k \le \ell \le p$, where~$M$ is the matrix sending~$\b{e}_m$ to~$\b{e}_{v_m}$.
-% \end{itemize}
-% Therefore, this map transports the linear combinations of \cref{prop:extremalExchangeablePairsA}.
-% We conclude that the exchange relation corresponding to the exchangeable pair~$\{\tube, \tube'\}$ is a positive linear combination of the exchange relations corresponding to the pairs~$\{\tube_{k,\ell-1}, \tube_{k+1,\ell}\}$ for all~${(k,\ell) \in {[1, p-|\tube'|+1[} \times {]|\tube|, p]}}$.
-% 
-% We now need to show that all these pairs are extremal.
-\vincent{TODO}
-\arnau{The proof had a bug. TODO.}
+Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$.
+The outer normal vector of the corresponding inequality of the type cone is
+\[
+\b{n}(\tube, \tube') \eqdef \b{f}_{\tube} + \b{f}_{\tube'} - \b{f}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{f}_{\tube[s]}.
+\]
+
+
+By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
+Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected. Assume that $\tube \ssm \tube'\neq \{v\}$, and let $w\neq v$ be a non-disconnecting node of $\tube \ssm \tube'$. Then $\tilde \tube:=\tube \ssm \{w\}$ and $\tube'$ are exchangeable, and $\tilde \tube':=(\tube \cup \tube')\ssm \{w\}$ and $\tube$ are exchangeable as well. We have
+\begin{align*}
+\b{n}(\tilde \tube, \tube')+\b{n}( \tube, \tilde \tube') &=\b{f}_{\tilde \tube} + \b{f}_{\tube'} - \b{f}_{\tilde \tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tilde \tube \cap \tube')} \b{f}_{\tube[s]} 
++ \b{f}_{\tube} + \b{f}_{\tilde \tube'} - \b{f}_{\tube\cup \tilde \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tilde \tube')} \b{f}_{\tube[s]} \\
+&= \b{f}_{\tube} + \b{f}_{\tube'} - \b{f}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{f}_{\tube[s]} =\b{n}(\tube, \tube'),
+\end{align*}
+as $\tube \cup \tilde \tube'=\tube \cup \tube'$, $\tilde \tube \cap \tube'=\tube \cap \tube'$, $\tilde \tube \cup \tube '=\tilde \tube '$,  and $\tube \cap \tilde \tube '=\tilde \tube$.
+% \[\b{n}(\tube, \tube')=\b{n}(\tilde \tube, \tube')+\b{n}( \tube, \tilde \tube'),\] 
+Therefore $\b{n}(\tube, \tube')$ defines a redundant inequality and $\{\tube, \tube'\}$ is not an extremal exchangeable pair.
+
+We have seen that $\{\tube, \tube'\}$ do not form an extremal pair unless both $\tube\ssm \tube'$ and $\tube'\ssm \tube$ are singletons. We now need to show that all these pairs are extremal.
+
+Assume that~$\tube=\tube[s] \ssm \{v'\}$ and~$\tube'=\tube[s] \ssm \{v\}$ for some tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$. 
+To prove that this pair is extremal, consider the vector $\b{z}\in\R^{\tubes}$ with 
+\[\b{z}_{\tube[u]}=\big|\set{\tube[u]'\in \tubes\}}{\tube[u]'\not\subseteq \tube[u]\text{ and } \{v,v'\}\not\subseteq\tube[u]'}\big|\]
+for each tube~$\tube[u]\in\tubes$.
+
+Notice that $\b{z}$ verifies 
+\[\b{z}_{\tube} + \b{z}_{\tube'} - \b{z}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{z}_{\tube[s]}= 0\]
+but \[\b{z}_{\tilde \tube} + \b{z}_{\tilde \tube'} - \b{z}_{\tilde \tube\cup \tilde \tube'} - \sum_{\tube[s] \in \connectedComponents(\tilde \tube \cap \tilde \tube')} \b{z}_{\tube[s]}> 0\]
+for any other exchangeable pair~$\{\tilde\tube,\tilde \tube '\}$. 
+\arnau{Verify and write more details}
+
+
+Thus, $\b{z}$ lies in the relative interior of the facet of the closed type cone defined by~$\{\tube, \tube'\}$, and hence the inequality is not redundant.
 \end{proof}
 
 The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
