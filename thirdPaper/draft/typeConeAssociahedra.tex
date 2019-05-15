@@ -2836,10 +2836,10 @@ Two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ form an extremal exchangeable pai
 We now consider an arbitrary graph~$\graphG$ and describe the type cone of its nested fan.
 \cref{prop:extremalExchangeablePairsA} extends as follows.
 
-\begin{proposition}
-\label{prop:extremalExchangeablePairsGA}
-Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$ if and only if~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
-\end{proposition}
+\begin{lemma}
+\label{lem:extremalExchangeablePairsGAonlyif}
+Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$ only if~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
+\end{lemma}
 
 \begin{proof}
 Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$.
@@ -2859,22 +2859,57 @@ Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected. Assum
 as $\tube \cup \tilde \tube'=\tube \cup \tube'$, $\tilde \tube \cap \tube'=\tube \cap \tube'$, $\tilde \tube \cup \tube '=\tilde \tube '$,  and $\tube \cap \tilde \tube '=\tilde \tube$.
 % \[\b{n}(\tube, \tube')=\b{n}(\tilde \tube, \tube')+\b{n}( \tube, \tilde \tube'),\] 
 Therefore $\b{n}(\tube, \tube')$ defines a redundant inequality and $\{\tube, \tube'\}$ is not an extremal exchangeable pair.
+\end{proof}
+
+\begin{example}
+Let $\graphG$ be a graph. Consider the vectors $\b{a}, \b{b}, \b{c}\in\R^{\tubes}$ whose entries for $\tube[s]\in\tubes$ are given by 
+$\b{a}_{\tube[s]}=-\big| \set{\tube[u]\in\tubes}{\tube[u]\subseteq \tube[s]}\big| $, $\b{b}_{\tube[s]}=-3^{\big| \tube[s]\big| -2}$, and $\b{c}_{\tube[s]}=-\big| \set{\tube[u]\in\tubes}{\tube[u]\supseteq \tube[s]}\big| $, respectively.
+
+Now, let $\tube$ and~$\tube'$ be tubes such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, and let 
+$\b{n}(\tube, \tube')$ be as in~\cref{lem:extremalExchangeablePairsGAonlyif}.
+
+We have
+\[\dotprod{\b{n}(\tube, \tube')}{\b{a}}=\big|\set{\tube[u]\in\tubes}{\tube[u]\subseteq\tube[t]\cup\tube[t']\text{ and }v,v'\in\tube[u]}|,\]
+which is positive since at least $\tube[u]=\tube[t]\cup\tube[t']$ fulfills this condition. Hence $\b{a}\in\typeCone(\gvectorFan[\graphG])$. This gives Postnikov's realization of the graph associahedron from~\cite{Postnikov}.
+
+Setting $x=|\tube \cap \tube'|$, we get
+\[\dotprod{\b{n}(\tube, \tube')}{\b{b}}=3^{|\tube[t]\cup\tube[t']| -2}- 3^{|\tube[t]| -2}- 3^{|\tube[t']| -2} +\sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} 3^{|\tube[s]|-2 }\geq 3^{x}- 2\cdot 3^{x-1}>0.\]
+This shows that $\b{b}\in\typeCone(\gvectorFan[\graphG])$, and we recover Devadoss' realization of graph-associahedra~\cite{Devadoss}.
+
+Finally, 
+\[\dotprod{\b{n}(\tube, \tube')}{\b{c}}=\big| \set{(\tube[u], \tube[s])\in\tubes\times \connectedComponents(\tube[t]\cap\tube[t'])}{\tube[s]\subseteq\tube[u]\text{ and }\tube,\tube'\not\subseteq u}\big| +(\big| \connectedComponents(\tube[t]\cap\tube[t'])\big| -1)\big| \set{\tube[u]\in\tubes}{\tube\text{ or }\tube'\subseteq \tube[u]}\big| .\]
+Any connected component of $\tube\cap \tube'$ certifies the positivity of this evaluation, showing that $\b{c}\in\typeCone(\gvectorFan[\graphG])$. This realization of 
+the graph-associahedron is new, to the best of our knowledge. 
+\arnau{Is it worth to add it?}
+\arnau{recheck details}
+
+\end{example}
+
+
+\begin{proposition}
+\label{prop:extremalExchangeablePairsGA}
+Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$ if and only if~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
+\end{proposition}
+
+\begin{proof}
 
 We have seen that $\{\tube, \tube'\}$ do not form an extremal pair unless both $\tube\ssm \tube'$ and $\tube'\ssm \tube$ are singletons. We now need to show that all these pairs are extremal.
 
-Assume that~$\tube=\tube[s] \ssm \{v'\}$ and~$\tube'=\tube[s] \ssm \{v\}$ for some tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$. 
-To prove that this pair is extremal, consider the vector $\b{z}\in\R^{\tubes}$ with 
-\[\b{z}_{\tube[u]}=\big|\set{\tube[u]'\in \tubes\}}{\tube[u]'\not\subseteq \tube[u]\text{ and } \{v,v'\}\not\subseteq\tube[u]'}\big|\]
-for each tube~$\tube[u]\in\tubes$.
+Assume that~$\tube=\tube[s] \ssm \{v'\}$ and~$\tube'=\tube[s] \ssm \{v\}$ for some tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$. To prove that this pair is extremal, we will construct a vector $\b{z}\in\R^{\tubes}$ such that \[\dotprod{\b{n}(\tube, \tube')}{\b{z}}=0,\]
+but \[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}>0\] for any other pair $\{\tilde \tube, \tilde \tube'\}$ verifying the conditions. This will show that $\b{z}$ lies in the relative interior of the facet of the closed type cone defined by~$\{\tube, \tube'\}$, and hence that the inequality is not redundant.
 
-Notice that $\b{z}$ verifies 
-\[\b{z}_{\tube} + \b{z}_{\tube'} - \b{z}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{z}_{\tube[s]}= 0\]
-but \[\b{z}_{\tilde \tube} + \b{z}_{\tilde \tube'} - \b{z}_{\tilde \tube\cup \tilde \tube'} - \sum_{\tube[s] \in \connectedComponents(\tilde \tube \cap \tilde \tube')} \b{z}_{\tube[s]}> 0\]
-for any other exchangeable pair~$\{\tilde\tube,\tilde \tube '\}$. 
-\arnau{Verify and write more details}
+\arnau{TODO! I have a partial construction, but there are still some undesired $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}=0$}
 
+Define $\alpha(\tube,\tube')=\set{\tube[u]\in\tubes}{\tube[u]\subseteq \tube \cup \tube'\text{ and } v,v'\in \tube[u]}$, and set 
+\[\b{z}_{\tube[s]}=-\big|\set{\tube[u]\in \tubes\ssm \alpha(\tube,\tube')\}}{\tube[u]\subseteq \tube[s]}\big|\]
+for each tube~$\tube[s]\in\tubes$.
 
-Thus, $\b{z}$ lies in the relative interior of the facet of the closed type cone defined by~$\{\tube, \tube'\}$, and hence the inequality is not redundant.
+Notice that $\dotprod{\b{n}(\tube, \tube')}{\b{z}}=0$, and that 
+\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}= \big|\set{\tube[u]\in\tubes}{\tube[u]\subseteq\tube[t]\cup\tube[t']\text{ and }\tilde v,\tilde v'\in\tube[u]}\ssm \alpha(\tube,\tube')|\geq0,\]
+where $\tilde v=\tilde \tube\ssm \tilde \tube'$  and $\tilde v'=\tilde \tube'\ssm \tilde \tube$. In particular, if $\tilde \tube\cup \tilde \tube'\notin\alpha(\tube,\tube')$ then $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}>0$.
+
+\arnau{To finish. How to separate the remaining cases?}
+
 \end{proof}
 
 The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
@@ -2918,12 +2953,18 @@ Consider a $\b{c}$-vector~$\b{e}_v - \b{e}_{v'}$ for two distinct vertices~$v, v
 \end{proof}
 
 We derive from~\cref{coro:extremalExchangeablePairsGA} the number of extremal exchangeable pairs of the nested fan.
-For a tube~$\tube$ of~$\graphG$, we denote by~$\neighbors(\tube)$ the number of neighbors of~$\tube$ and by~$\nonDisconnecting(\tube)$ the number of non-disconnecting vertices of~$\tube$.
-In other words, it $\neighbors(\tube)$ (resp.~$\nonDisconnecting(\tube)$) is the number of tubes covering~$\tube$ (resp.~covered by~$\tube$) in the inclusion poset of all tubes of~$\graphG$.
+For a tube~$\tube$ of~$\graphG$, we denote 
+%by~$\neighbors(\tube)$ the number of neighbors of~$\tube$ and
+ by~$\nonDisconnecting(\tube)$ the number of non-disconnecting vertices of~$\tube$.
+% In other words, it $\neighbors(\tube)$ (resp.~$\nonDisconnecting(\tube)$) is the number of tubes covering~$\tube$ (resp.~covered by~$\tube$) in the inclusion poset of all tubes of~$\graphG$.
+In other words, $\nonDisconnecting(\tube)$ is the number of tubes covered by~$\tube$ in the inclusion poset of all tubes of~$\graphG$.
 
 \begin{corollary}
 \label{coro:numberExtremalExchangeablePairsGA}
-The nested fan~$\gvectorFan[\graphG]$ has~$\!\!\!\! \sum\limits_{\tube[r] \in \tubes} \!\! \binom{\neighbors(\tube[r])}{2} = \!\!\!\! \sum\limits_{\tube[s] \in \tubes} \!\! \binom{\nonDisconnecting(\tube[s])}{2}$ extremal exchangeable pairs.
+The nested fan~$\gvectorFan[\graphG]$ 
+has~$\!\!\!\! \sum\limits_{\tube[s] \in \tubes} \!\! \binom{\nonDisconnecting(\tube[s])}{2}$ 
+% $\!\!\!\! \sum\limits_{\tube[r] \in \tubes} \!\! \binom{\neighbors(\tube[r])}{2} = \!\!\!\! \sum\limits_{\tube[s] \in \tubes} \!\! \binom{\nonDisconnecting(\tube[s])}{2}$ 
+extremal exchangeable pairs.
 \end{corollary}
 
 %\begin{proof}
