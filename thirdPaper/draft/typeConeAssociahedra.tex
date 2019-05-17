@@ -2893,24 +2893,44 @@ Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair f
 
 \begin{proof}
 
-We have seen that $\{\tube, \tube'\}$ do not form an extremal pair unless both $\tube\ssm \tube'$ and $\tube'\ssm \tube$ are singletons. We now need to show that all these pairs are extremal.
+We have seen that an exchangeable pair $\{\tube, \tube'\}$ is not extremal unless both $\tube\ssm \tube'$ and $\tube'\ssm \tube$ are singletons. We now need to show that all these pairs are extremal. Until we finish the proof, we will call such a pair a \defn{suspected extremal pair}.
 
-Assume that~$\tube=\tube[s] \ssm \{v'\}$ and~$\tube'=\tube[s] \ssm \{v\}$ for some tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$. To prove that this pair is extremal, we will construct a vector $\b{z}\in\R^{\tubes}$ such that \[\dotprod{\b{n}(\tube, \tube')}{\b{z}}=0,\]
-but \[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}>0\] for any other pair $\{\tilde \tube, \tilde \tube'\}$ verifying the conditions. This will show that $\b{z}$ lies in the relative interior of the facet of the closed type cone defined by~$\{\tube, \tube'\}$, and hence that the inequality is not redundant.
+Let $\{\tube, \tube'\}$ be a suspected extremal pair.
+To prove that it is extremal, we will construct a vector $\b{w}\in\R^{\tubes}$ such that $\dotprod{\b{n}(\tube, \tube')}{\b{w}}< 0,$
+but $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}>0$ for any other suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$. This will show that the inequality induced by~$\{\tube, \tube'\}$ is not redundant.
 
-\arnau{TODO! I have a partial construction, but there are still some undesired $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}=0$}
-
-Define $\alpha(\tube,\tube')=\set{\tube[u]\in\tubes}{\tube[u]\subseteq \tube \cup \tube'\text{ and } v,v'\in \tube[u]}$, and set 
-\[\b{z}_{\tube[s]}=-\big|\set{\tube[u]\in \tubes\ssm \alpha(\tube,\tube')\}}{\tube[u]\subseteq \tube[s]}\big|\]
+Define $\alpha(\tube,\tube')=\set{\tube[u]\in\tubes}{\tube[u]\subseteq \tube \cup \tube'\text{ and } \tube\triangle\tube'\subseteq \tube[u]}$, where $\tube\triangle\tube'$ denotes the symmetric difference, and let $\b{x}\in\R^{\tubes}$ be such that
+\[\b{x}_{\tube[s]}=-\big|\set{\tube[u]\in \tubes\ssm \alpha(\tube,\tube')}{\tube[u]\subseteq \tube[s]}\big|\]
 for each tube~$\tube[s]\in\tubes$.
 
-Notice that $\dotprod{\b{n}(\tube, \tube')}{\b{z}}=0$, and that 
-\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}= \big|\set{\tube[u]\in\tubes}{\tube[u]\subseteq\tube[t]\cup\tube[t']\text{ and }\tilde v,\tilde v'\in\tube[u]}\ssm \alpha(\tube,\tube')|\geq0,\]
-where $\tilde v=\tilde \tube\ssm \tilde \tube'$  and $\tilde v'=\tilde \tube'\ssm \tilde \tube$. In particular, if $\tilde \tube\cup \tilde \tube'\notin\alpha(\tube,\tube')$ then $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}>0$.
+For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have
+\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}= \big|\alpha(\tilde \tube, \tilde \tube ')\ssm \alpha(\tube,\tube')|\geq0.\]
+Notice that $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}=0$ if $\alpha(\tilde \tube, \tilde \tube ')\subseteq \alpha(\tube,\tube')$ and
+$\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}\geq 1$ otherwise.
+In particular, if $\{\tilde \tube, \tilde \tube'\}\neq \{\tube, \tube'\}$ then
+$\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}\geq 1$ unless $\tilde \tube\cup \tilde \tube'\subsetneq \tube\cup \tube'$ because 
+ $\tilde \tube\cup \tilde \tube'\in\alpha(\tilde \tube, \tilde \tube ')$, and if $\tilde \tube\cup \tilde \tube'=\tube\cup \tube'$ but $\{\tilde \tube, \tilde \tube'\}\neq \{\tube, \tube'\}$, then either $\tube$ or $\tube'$ will belong to $\alpha(\tilde \tube, \tilde \tube ')$. 
 
-\arnau{To finish. How to separate the remaining cases?}
+Now, define $\b{y}\in\R^{\tubes}$ by \[\b{y}_{\tube[s]}=\begin{cases}
+                             -1&\text{ if }|\tube[s]|\geq |\tube|\\
+                             0&\text{ otherwise.}
+                            \end{cases}\]
+We have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}=-1$. For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}\geq -1$. If moreover $\tilde \tube\cup \tilde \tube'\subsetneq \tube\cup \tube'$, then we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}\geq 0$. 
+
+Finally, consider $\b{z}\in\R^{\tubes}$ given by
+\[\b{z}_{\tube[s]}=-\big|\set{\tube[u]\in \alpha(\tube,\tube')}{\tube[u]\subseteq \tube[s]}\big|. \]
+It verifies $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}\geq0$ for any suspected extremal pair~$\{\tilde \tube, \tilde \tube'\}$, and $\dotprod{\b{n}(\tube, \tube')}{\b{z}}=|\alpha(\tilde \tube, \tilde \tube ')|>0$ if $\alpha(\tilde \tube, \tilde \tube ')\subseteq \alpha(\tube,\tube')$.
+
+For $0<\varepsilon<1$, and $0<\delta<\frac{\varepsilon}{|\alpha(\tube,\tube')|}$, the vector $\b{w}=\b{x}+\varepsilon \b{y}+\delta \b{z}$ fulfills the desired properties.
+Indeed, if $\{\tilde \tube, \tilde \tube'\}\neq \{\tube,\tube '\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube ')\not \subseteq \alpha(\tube,\tube')$, then 
+\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}=\underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{\geq 1}+\underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{> -1}+\underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{\geq 0}> 0.\]
+ If $\{\tilde \tube, \tilde \tube'\}\neq \{\tube,\tube '\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube ')\subseteq \alpha(\tube,\tube')$, then $\tilde \tube\cup \tilde \tube'\subsetneq \tube\cup \tube'$ and 
+\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}=\underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{=0}+\underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{\geq 0}+\underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{>0}> 0.\]
+However,
+\[\dotprod{\b{n}(\tube, \tube')}{\b{w}}=\underbrace{\dotprod{\b{n}(\tube, \tube')}{\b{x}}}_{=0}+\underbrace{\varepsilon \dotprod{\b{n}(\tube, \tube')}{\b{y}}}_{=-\varepsilon}+\underbrace{\delta \dotprod{\b{n}( \tube,  \tube')}{\b{z}}}_{=\delta|\alpha(\tube ,\tube')|<\varepsilon}< 0.\]
 
 \end{proof}
+
 
 The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
 
@@ -2925,7 +2945,8 @@ The extremal exchangeable pairs for the nested fan of~$\graphG$ are the pairs of
 \end{corollary}
 \arnau{The two conditions were not equivalent. I removed the wrong one.}
 
-We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan, which we can explicitly express using one of the following two equivalent conditions.
+We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan, which we can explicitly express.
+% using one of the following two equivalent conditions.
 
 \begin{corollary}
 Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying 
@@ -2998,8 +3019,8 @@ The type cone~$\typeCone(\gvectorFan[\graphG])$ is simplicial if and only if~$\g
 \end{proposition}
 
 \begin{proof}
-Note that any tube~$\tube$ with~$|\tube| \ge 2$ has two non-disconnecting vertices when it is a path, and at least three non-disconnecting vertices otherwise (the leaves of an arbitrary spanning tree of~$\tube$).
-Therefore, each tube of~$\tubes$ which is not a singleton contributes to at least one extremal exchangeable pairs.
+Note that any tube~$\tube$ with~$|\tube| \ge 2$ has two non-disconnecting vertices when it is a path, and at least three non-disconnecting vertices otherwise (the leaves of an arbitrary spanning tree of~$\tube$, or any vertex if it is a cycle).
+Therefore, each tube of~$\tubes$ which is not a singleton contributes to at least one extremal exchangeable pair.
 We conclude that the number of extremal exchangeable pairs is at least:
 \[
 |\tubes| - |V| = |\tubes \ssm \{\varnothing, \graphG\}| - (|V|-1) = N - n,
