@@ -4356,12 +4356,24 @@ Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the h
 \end{proof}
 
 Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
+Before stating our next theorem, we first recall some definitions
+
+\begin{definition}
+Recall that a two-term silting object is a complex~$T$ in~$K^{[-1,0]}(\proj \Lambda)$ such that~$\Hom{K^b}(T,\susp T)=0$ and the number of isomorphism classes of indecomposable summands of~$T$ is the same as that of~$\Lambda$.
+\end{definition}
+
+\begin{remark}
+ The definition given above is only equivalent to the usual definition of a silting object for two-term complexes of projectives.
+\end{remark}
+
+\begin{definition}\label{defn::mutation conflation}
+A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$ such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
+\end{definition}
 
 \begin{theorem}
 \label{theo::brick-algebra-condition}
- Let~$\Lambda$ be an Artin algebra all of whose non-injective indecomposable objects are bricks and all of whose indecomposable objects are~$\tau$-rigid\yann{Are there examples of representation-infinite algebras which satisfy those assumptions?}\pg{Don't think so, but can't find a proof}. Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any non-projective indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+ Let~$\Lambda$ be an Artin algebra all of whose indecomposable objects are ~$\tau$-rigid bricks. Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any non-projective indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 \end{theorem}
-\pg{Should define mutation conflations}
 
 \begin{remark}
 Assume that~$\Lambda$ is a finite-dimensional brick algebra which is representation-finite.
@@ -4509,7 +4521,7 @@ Let~$\Lambda$ be an Artin algebra whose indecomposable injective modules are~$\t
 % Let~$I$ be indecomposable injective with socle~$P/\operatorname{rad}P$, and~$\alpha$ be the composition~$P\to\operatorname{soc} I \to I$.
 % Complete the morphism~$\alpha$ to a triangle~$P\to Y\to E\to \susp P$ in~$K^{[-1,0]}(\proj\Lambda)$, where~$Y$ is a minimal projective presentation of~$I$.
 % Then~$Y\infl E\defl \susp P$ is an Auslander--Reiten conflation in~$K^{[-1,0]}(\proj\Lambda)$, which is also a mutation conflation.
-Then the Auslander--Reiten conflation~$Y\infl E\defl \susp P$ in~$K^{[-1,0]}(\proj\Lambda)$ is a mutation conflation.
+Then the Auslander--Reiten conflation~$Y\infl E\defl \susp P$ in~$K^{[-1,0]}(\proj\Lambda)$ is a mutation conflation if~$FY$ is a brick.
 \end{lemma}
 \pg{This seems false for~$\Lambda = k[x]/(x^2)$: AR sequence~$\Lambda\to (\Lambda\to \Lambda) \to \Sigma\Lambda$.  Probably need brick algebra.}
 
@@ -4552,7 +4564,7 @@ Since~$P$ is rigid,~$f$ factors through the inflation~$\beta$ in the conflation~
 By the previous lemma, or by (4), the morphism~$g$ factors through~$P \xrightarrow{\alpha} Y$: there is some~$h:Y\to Y$ such that~$g= h \alpha$.\pg{Fixable if~$\Lambda$ is brick? Will think more...}
 
 We then have~$f = \beta g = \beta (g-\alpha) = \beta (h-1) \alpha$.
-Since~$Y$ is endo-local, the morphism~$h-1$ is an automorphism.
+Since~$Y$ is endo-local, the morphism~$h$ or~$h-1$ is an automorphism.
 
 {\bf Small gap:} There is an~$h'$ such that~$h \alpha = \alpha h'$ and we deduce that~$f=\beta h \alpha = \beta \alpha h' = 0$.
 \end{proof}
