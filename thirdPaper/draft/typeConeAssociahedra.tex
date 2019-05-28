@@ -4395,7 +4395,7 @@ The almost-split conflation induces an exact sequence
 \[
 F\susp^{-1}Y\to F\susp^{-1}Z \to FX \to FY\to FZ\to F\susp X.
 \]
-Because~$X$ is concentrated in non-positive degrees,~$FX=0$.
+Because~$X$ is concentrated in non-positive degrees,~$F\susp X=0$.
 Let us verify that the map~$F\susp^{-1}Y\to F\susp^{-1}Z$ is surjective.
 Let~$\Lambda \xrightarrow{f} \susp^{-1} Z$ be a morphism in~$K^b(\proj \Lambda)$.
 Since~$Y\overset{b}{\to} Z$ is right almost-split, and~$Z$ is indecomposable not in~$\add(\susp\Lambda)$, the morphism~$\susp f$ factors through~$b$.
@@ -4489,11 +4489,11 @@ We can conclude by (4).
 \end{proof}
 
 
-\begin{lemma}
+\begin{lemma}\label{lemm::if AR are mutations}
 Let~$\Lambda$ be an Artin algebra, and let~$Y\infl E\defl X$ be a conflation in~$K^{[-1,0]}(\proj\Lambda)$. Then:
 \begin{enumerate}
  \item If~$\Hom{K^b}(Y,\susp E)=0$, we have~$\Hom{\Lambda}(FX,\tau FY)=0$.
- \item If moreover~$Z\notin\add(\susp\Lambda)$ and the conflation is almost-split, then~$\Hom{\Lambda}(FX,\tau^2 FX)=0$.
+ \item If moreover~$X\notin\add(\susp\Lambda)$ and the conflation is almost-split, then~$\Hom{\Lambda}(FX,\tau^2 FX)=0$.
 \end{enumerate}
 \end{lemma}
 
@@ -4523,19 +4523,15 @@ Let~$\Lambda$ be an Artin algebra whose indecomposable injective modules are~$\t
 % Then~$Y\infl E\defl \susp P$ is an Auslander--Reiten conflation in~$K^{[-1,0]}(\proj\Lambda)$, which is also a mutation conflation.
 Then the Auslander--Reiten conflation~$Y\infl E\defl \susp P$ in~$K^{[-1,0]}(\proj\Lambda)$ is a mutation conflation if~$FY$ is a brick.
 \end{lemma}
-\pg{This seems false for~$\Lambda = k[x]/(x^2)$: AR sequence~$\Lambda\to (\Lambda\to \Lambda) \to \Sigma\Lambda$.  Probably need brick algebra.}
 
 \begin{proof}
 In this proof, we implicitly identify the projective indecomposable~$\Lambda$-module~$P$ with the complex~$P$ concentrated in degree~$0$.
 
-% We first show that the conflation is almost-split.
-% 
-% blahblahblah
-
 We check that the conflation~$Y\infl E\defl\susp P$ is a mutation conflation.
 
 (0) Since~$P$ is concentrated in only one degree, it is rigid in~~$K^{[-1,0]}(\proj\Lambda)$ and so is~$\susp P$.
-Moreover,~$FY=I$ is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.
+Moreover,~$FY$ is indecomposable and injective.
+By assumption, it is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.
 
 (1) We have~$\Hom{K^b}(E,\susp^2 P)=0$ since~$E$ is concentrated in degrees~$-1$ and~$0$.
 
@@ -4545,32 +4541,85 @@ Moreover,~$FY=I$ is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda
 \]
 where the first term vanishes by (0) and the last term vanishes since~$Y$ is in degrees~$-1, 0$ while~$\susp^2 P$ is concentrated in degree~$-2$.
 
-(3) $\Hom{K^b}(E,\susp E)=0$: There is an exact sequence
+(3) $\Hom{K^b}(E,\susp Y) = 0$: Consider the exact sequence
 \[
- \Hom{K^b}(\susp Y,\susp E) \to \Hom{K^b}(\susp P, \susp E) \to \Hom{K^b}(E,\susp E) \to \Hom{K^b}(Y,\susp E)
+ \Hom{K^b}(\susp Y,\susp Y) \to \Hom{K^b}(\susp P,\susp Y) \to \Hom{K^b}(E,\susp Y) \to \Hom{K^b}(Y,\susp Y).
 \]
-in which the last term is zero by (2).
-The first morphism is isomorphic to~$\Hom{K^b}(Y,E) \to \Hom{K^b}(P,E)$, which is surjective by the previous lemma.
+Its last term vanishes by (0).
+Let us prove that its first morphism is surjective.
+Composition with~$\alpha$ and~$F\alpha$ yields a commutative square
+\[
+\xy
+%
+(-20,7)*+{\Hom{K^b}(Y,Y)}="0";
+(20,7)*+{\Hom{K^b}(P,Y)}="2";
+(-20,-7)*+{\Hom{\Lambda}(FY,FY)}="10";
+(20,-7)*+{\Hom{\Lambda}(FP,FY)}="12";
+%
+{\ar@{->>} "0";"10"};
+{\ar^{\alpha^\ast} "0";"2"};
+{\ar@{->>} "2";"12"};
+{\ar_{(F\alpha)^\ast} "10";"12"};
+%
+{\ar@{}|\circlearrowright "0";"12"};
+\endxy
+\]
+where the vertical maps are surjective.
+Since~$\Lambda$ is rigid and~$Y$ is two-term, we can apply~\cite[Proposition 6.2]{IyamaYoshino} to the triangulated category~$K^b(\proj\Lambda)$ (or Proposition~\ref{prop::KRextricat} to the extriangulated~$K^{[-1,0]}(\proj\Lambda)$).
+As a consequence, the right-most vertical map is bijective.
+Because~$FY$ is a brick,~$\End{\Lambda}(FY)$ is a division ring.
+Moreover,~$FY$ is the indecomposable injective with simple socle the simple top of~$P$, so that the~$\End{\Lambda}(FY)$-module~$\Hom{\Lambda}(FP,FY)$ is one-dimensional over~$\End{\Lambda}(FY)$.
+It follows that the vertical map~$(F\alpha)^\ast$ is either zero or bijective.
+But~$\alpha$ is non-zero with domain in~$\add\Lambda$ so that~$F\alpha$ is non-zero ; and~$(F\alpha)^\ast(1_{FY})=F\alpha$ so that~$(F\alpha)^\ast$ is non-zero.
+By commutativity, this implies the surjectivity of the top vertical morphism~$\alpha^\ast$.
+Since the shift functor is an automorphism, the morphism~$\Hom{K^b}(\susp Y,\susp Y) \to \Hom{K^b}(\susp P,\susp Y)$ is also surjective, and~$\Hom{K^b}(E,\susp Y) = 0$.
 
-(4) $\Hom{K^b}(E,\susp Y) = 0$: Consider the exact sequence
+(4) $\Hom{K^b}(E,\susp E)=0$: In the exact sequence
 \[
- \Hom{K^b}(E,E) \to \Hom{K^b}(E,\susp P) \to \Hom{K^b}(E,\susp Y) \to \Hom{K^b}(E,\susp E).
+ \Hom{K^b}(E,\susp Y) \to \Hom{K^b}(E, \susp E) \to \Hom{K^b}(E,\susp^2 P),
 \]
-Its last term vanishes by (3) and its first morphism is surjective because~$E\to \susp P$ is right almost-split.
+the first term is zero by (3) and the last term vanishes since~$P$ is concentrated in degree zero.
 
 (5) $\Hom{K^b}(\susp P,\susp E)= 0$:
 Let~$P\xrightarrow{f} E$ be any morphism.
+\[
+\xy
+%
+(7,14)*+{P}="P";
+%
+(-21,0)*+{P}="0";
+(-7,0)*+{Y}="2";
+(7,0)*+{E}="4";
+(21,0)*+{\susp P}="6";
+%
+(-21,-14)*+{Y}="Y";
+(-7,-14)*+{E}="E";
+%
+{\ar^f "P";"4"};
+{\ar^0 "P";"6"};
+{\ar@{-->}_g "P";"2"};
+%
+{\ar^\alpha "0";"2"};
+{\ar^\beta "2";"4"};
+{\ar "4";"6"};
+%
+{\ar_g "0";"Y"};
+{\ar@{-->}_h "2";"Y"};
+{\ar_\beta "Y";"E"};
+{\ar_{\beta h\!} "2";"E"};
+{\ar@{-->}^{h'} "4";"E"};
+\endxy
+\]
 Since~$P$ is rigid,~$f$ factors through the inflation~$\beta$ in the conflation~$Y\infl E\defl \susp P$, and there is some morphism~$g$ such that~$f=\beta g$.
-By the previous lemma, or by (4), the morphism~$g$ factors through~$P \xrightarrow{\alpha} Y$: there is some~$h:Y\to Y$ such that~$g= h \alpha$.\pg{Fixable if~$\Lambda$ is brick? Will think more...}
-
+By (3), the morphism~$g$ factors through~$P \xrightarrow{\alpha} Y$: there is some~$h:Y\to Y$ such that~$g= h \alpha$.
 We then have~$f = \beta g = \beta (g-\alpha) = \beta (h-1) \alpha$.
-Since~$Y$ is endo-local, the morphism~$h$ or~$h-1$ is an automorphism.
-
-{\bf Small gap:} There is an~$h'$ such that~$h \alpha = \alpha h'$ and we deduce that~$f=\beta h \alpha = \beta \alpha h' = 0$.
+Since~$Y$ is endo-local, the morphism~$h$ or~$h-1$ is an automorphism, and we may assume that~$h$ is an automorphism.
+The morphism~$\beta h$ is not a section (otherwise~$\beta$ would be a section) and~$\beta$ is left-almost split: there is an endomorphism~$h'$ of~$E$ such that~$\beta h = h'\beta$.
+Therefore, we have~$f=\beta h \alpha = h'\beta\alpha = 0$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{theo::brick-algebra-condition}]
- The theorem follows from the slightly more general statements of Lemma~\ref{lemm::then-AR-seq-are-mutation} and Lemma~\ref{lemm::initial meshes}.
+ The theorem follows from the slightly more general statements of Lemma~\ref{lemm::then-AR-seq-are-mutation},~\ref{lemm::if AR are mutations} and Lemma~\ref{lemm::initial meshes}.
 \end{proof}
 
 % \begin{lemma}
