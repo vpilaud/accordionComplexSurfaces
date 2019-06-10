@@ -2856,25 +2856,26 @@ We now exploit \cref{lem:extremalExchangeablePairsGAonlyif} to show that certain
 \item Consider the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef -|\bigset{\tube[s] \in \tubes}{\tube[s] \subseteq \tube}|$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
 \[
 \qquad\qquad
-\dotprod{\b{n}(\tube, \tube')}{\b{h}} = |\bigset{\tube[s]\in\tubes}{\tube[s] \subseteq \tube[t] \cup \tube' \text{ and } v, v' \in \tube[s]}|,
+\dotprod{\b{n}(\tube, \tube')}{\b{h}} = |\bigset{\tube[s]\in\tubes}{\tube \symdif \tube' \subseteq \tube[s] \subseteq \tube \cup \tube'}|,
 \]
-which is positive since at least~$\tube \cup \tube'$ fulfills the condition.
-Thus, $\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
+where~$\tube \symdif \tube' = \{v,v'\}$ denotes the symmetric difference.
+This quantity is positive since at least~$\tube \cup \tube'$ fulfills the condition.
+Thus, the height function~$\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
 The polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}$ is the graph associahedron constructed by A.~Postnikov's in~\cite{Postnikov}.
 \item Consider now the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef -3^{|\tube|-2}$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
 \[
 \qquad\qquad
 \dotprod{\b{n}(\tube, \tube')}{\b{h}} = - 3^{|\tube|-2} - 3^{|\tube'|-2} + 3^{|\tube \cup \tube'|-2} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} 3^{|\tube[s]|-2 } \ge - 2 \cdot 3^{|\tube \cup \tube'|-1} + 3^{|\tube \cup \tube'|} > 0.
 \]
-Thus, $\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
+Thus, the height function~$\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
 The corresponding polytope~$P_\b{h}$ is the graph associahedron constructed by S.~Devadoss's in~\cite{Devadoss}.
 \item Finally, consider the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef |\bigset{\tube[s] \in \tubes}{\tube[s] \supseteq \tube}|$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
 \begin{align*}
 \qquad\qquad
-\dotprod{\b{n}(\tube, \tube')}{\b{h}} = \; & |\bigset{\tube[r] \in \tubes, \tube[s] \in \connectedComponents(\tube \cap \tube')}{\tube[s] \subseteq \tube[r] \text{ and } \tube, \tube' \not\subseteq \tube[r]}| \\
+\dotprod{\b{n}(\tube, \tube')}{\b{h}} = \; & |\bigset{(\tube[r], \tube[s]) \in \tubes \times \connectedComponents(\tube \cap \tube')}{\tube[s] \subseteq \tube[r] \text{ and } \tube, \tube' \not\subseteq \tube[r]}| \\
 & + \big( |\connectedComponents(\tube \cap \tube')|-1 \big) \cdot | \bigset{\tube[r] \in \tubes}{\tube \text{ or } \tube'\subseteq \tube[r]}\big|.
 \end{align*}
-Any connected component of~$\tube \cap \tube'$ certifies the positivity of this evaluation, showing that $\b{h}$ belongs to~$\typeCone \big( \gvectorFan[\graphG] \big)$. The corresponding realization~$P_\b{h}$ of the graph associahedron is new, to the best of our knowledge. 
+Any connected component of~$\tube \cap \tube'$ certifies the positivity of this evaluation, showing that the height function~$\b{h}$ belongs to~$\typeCone \big( \gvectorFan[\graphG] \big)$. The corresponding realization~$P_\b{h}$ of the graph associahedron is new, to the best of our knowledge. 
 \end{enumerate}
 \end{example}
 
@@ -2892,12 +2893,11 @@ Let $\{\tube, \tube'\}$ be a suspected extremal pair.
 To prove that it is extremal, we will construct a vector $\b{w} \in \R^{\tubes}$ such that $\dotprod{\b{n}(\tube, \tube')}{\b{w}}< 0,$
 but $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}>0$ for any other suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$. This will show that the inequality induced by~$\{\tube, \tube'\}$ is not redundant.
 
-Define $\alpha(\tube,\tube') \eqdef \set{\tube[u] \in \tubes}{\tube[u] \subseteq \tube \cup \tube' \text{ and } \tube \symdif \tube' \subseteq \tube[u]}$, where $\symdif$ denotes the symmetric difference, and let $\b{x} \in \R^{\tubes}$ be such that
+Define $\alpha(\tube,\tube') \eqdef \set{\tube[u] \in \tubes}{\tube \symdif \tube' \subseteq \tube[u] \subseteq \tube \cup \tube'}$, where $\symdif$ denotes the symmetric difference, and define $\b{x} \in \R^{\tubes}$ be such that
 \[
 \b{x}_{\tube[s]} = -|\bigset{\tube[u] \in \tubes \ssm \alpha(\tube, \tube')}{\tube[u] \subseteq \tube[s]}|
 \]
 for each tube~$\tube[s] \in \tubes$.
-
 For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have
 \[
 \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} = |\alpha(\tilde \tube, \tilde \tube')\ssm \alpha(\tube, \tube')| \ge 0.
@@ -2907,20 +2907,22 @@ In particular, if $\{\tilde \tube, \tilde \tube'\} \ne \{\tube, \tube'\}$ then $
 
 Now, define $\b{y}\in\R^{\tubes}$ by
 \[
-\b{y}_{\tube[s]} \eqdef \begin{cases}
-	-1 & \text{ if } |\tube[s]| \ge |\tube| \\
-	0 & \text{ otherwise.}
+\b{y}_{\tube[s]} = \begin{cases}
+	-1 & \text{ if } |\tube[s]| \ge |\tube|, \\
+	0 & \text{ otherwise},
 \end{cases}
 \]
-We have $\dotprod{\b{n}(\tube, \tube')}{\b{y}} = -1$. For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}\ge -1$. If moreover $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$, then we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}} \ge 0$. 
+for each tube~$\tube[s] \in \tubes$.
+We have $\dotprod{\b{n}(\tube, \tube')}{\b{y}} = -1$. For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}} \ge -1$. If moreover $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$, then we have $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}} \ge 0$. 
 
 Finally, consider $\b{z} \in \R^{\tubes}$ given by
 \[
-\b{z}_{\tube[s]} = -|\bigset{\tube[u] \in \alpha(\tube, \tube')}{\tube[u] \subseteq \tube[s]}|.
+\b{z}_{\tube[s]} = -|\bigset{\tube[u] \in \alpha(\tube, \tube')}{\tube[u] \subseteq \tube[s]}|,
 \]
-It verifies $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} \ge 0$ for any suspected extremal pair~$\{\tilde \tube, \tilde \tube'\}$, and $\dotprod{\b{n}(\tube, \tube')}{\b{z}} = |\alpha(\tilde \tube, \tilde \tube')| > 0$ if $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube, \tube')$.
+for each tube~$\tube[s] \in \tubes$.
+It verifies $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} \ge 0$ for any suspected extremal pair~$\{\tilde \tube, \tilde \tube'\}$, and $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} = |\alpha(\tilde \tube, \tilde \tube')| > 0$ if $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube, \tube')$.
 
-For $0 < \varepsilon < 1$, and $0 < \delta < \frac{\varepsilon}{|\alpha(\tube, \tube')|}$, the vector $\b{w} \eqdef \b{x} + \varepsilon \b{y} + \delta \b{z}$ fulfills the desired properties.
+For $0 < \varepsilon < 1$, and $0 < \delta < \frac{\varepsilon}{|\alpha(\tube, \tube')|}$, we claim that the vector $\b{w} \eqdef \b{x} + \varepsilon \b{y} + \delta \b{z}$ fulfills the desired properties.
 Indeed, if $\{\tilde \tube, \tilde \tube'\} \ne \{\tube,\tube'\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube') \not \subseteq \alpha(\tube,\tube')$, then 
 \[
 \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}} = \underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{\ge 1} + \underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{> -1} + \underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{\ge 0} > 0.
