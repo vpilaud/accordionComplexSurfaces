@@ -1869,7 +1869,7 @@ The notations are illustrated in \cref{fig:flip}.
 Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then
 \begin{enumerate}[(i)]
 \item For any non-kissing facets~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, the distinguished substrings of~$\omega$ in~$F$ and of~$\omega'$ in~$F'$ coincide to a string~$\sigma$. Moreover, if we decompose~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$, then the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
-\item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ actually depend on the exchangeable walks~$\omega$ and~$\omega'$, not on the adjacent non-kissing facet~$F $ and~$F'$.
+\item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ only depend on the exchangeable walks~$\omega$ and~$\omega'$, and not on the adjacent non-kissing facets~$F $ and~$F'$.
 \item Moreover, the linear dependence between the $\b{g}$-vectors of~$F \cup F'$ is given by
 \[
 \gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
@@ -3673,6 +3673,9 @@ Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linea
 
 \vincent{Here should come the proof of \cref{prop:exchangeablePairsNKC}.}
 
+
+
+
 %%%%%%%%%%%
 
 \subsection{Recollections on extriangulated categories}
@@ -4354,6 +4357,26 @@ Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the h
  
  Finally, assume that~$\Lambda$ is finite-dimensional over a field~$\field$.  Then~$K^{[-1,0]}(\proj\Lambda)$ is Krull--Schmidt,~$\field$-linear and Ext-finite, since this is true for~$K^b(\proj\Lambda)$ for any finite-dimensional algebra~$\Lambda$.  Moreover, it has Auslander--Reiten--Serre duality by~\cite[Proposition 6.1]{IyamaNakaokaPalu}.
 \end{proof}
+
+The extriangulated category~$K^{[-1,0]}(\proj \Lambda)$ is the setting in which we can finally prove point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC}, using results of~\cite{DemonetIyamaJasso} on~$\b g$-vectors.
+
+\begin{proposition}
+ Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field.  Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$.  Assume that~ 
+ Then~$E$ and~$E'$ are isomorphic.
+\end{proposition}
+\begin{proof}
+ By~\cite[Theorem 6.5]{DemonetIyamaJasso} (based on~\cite[Theorem 2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b g$-vector.  The datum of the~$\b g$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0(K^{[-1,0]}(\proj \Lambda))$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see Proposition~\ref{2kbproj-is-extriangulated}).  In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$.  Thus~$E$ and~$E'$ are isomorphic.
+\end{proof}
+
+\begin{corollary}\label{coro::exchangeablePairsNKC}
+ Point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC} holds.
+\end{corollary}
+\begin{proof}
+ 
+\end{proof}
+
+
+
 
 Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
 
