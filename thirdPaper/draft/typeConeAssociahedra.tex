@@ -4351,12 +4351,26 @@ Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the h
  Finally, assume that~$\Lambda$ is finite-dimensional over a field~$\field$.  Then~$K^{[-1,0]}(\proj\Lambda)$ is Krull--Schmidt,~$\field$-linear and Ext-finite, since this is true for~$K^b(\proj\Lambda)$ for any finite-dimensional algebra~$\Lambda$.  Moreover, it has Auslander--Reiten--Serre duality by~\cite[Prop.~6.1]{IyamaNakaokaPalu}.
 \end{proof}
 
-The extriangulated category~$K^{[-1,0]}(\proj \Lambda)$ is the setting in which we can finally prove point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC}, using results of~\cite{DemonetIyamaJasso} on~$\b g$-vectors.
+The extriangulated category~$K^{[-1,0]}(\proj \Lambda)$ is the setting in which we can finally prove point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC}, using results of~\cite{DemonetIyamaJasso} on~$\b g$-vectors.  
+% Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
+Before doind so, we introduce the notion of mutation conflation for two-term silting objects.
+
+\begin{definition}
+Recall that a two-term silting object is a complex~$T$ in~$K^{[-1,0]}(\proj \Lambda)$ such that~$\Hom{K^b}(T,\susp T)=0$ and the number of isomorphism classes of indecomposable summands of~$T$ is the same as that of~$\Lambda$.
+\end{definition}
+
+\begin{remark}
+ The definition given above is only equivalent to the usual definition of a silting object for two-term complexes of projectives.
+\end{remark}
+
+\begin{definition}\label{defn::mutation conflation}
+A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$ such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
+\end{definition}
 
 \begin{proposition}
 \label{prop::exchange conflations are unique}
- Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field.  Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$.  Assume that~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ are two mutation conflations (see Definition~\ref{defn::mutation conflation}.  
- Then~$E$ and~$E'$ are isomorphic. \pg{Is is possible that~$X$ and~$Y$ are permuted in one of the exchange conflations?}
+ Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field.  Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$.  Assume that~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ (or~$Y\infl E'\defl X$) are two mutation conflations (see Definition~\ref{defn::mutation conflation}.  
+ Then~$E$ and~$E'$ are isomorphic. \pg{Is it possible that~$X$ and~$Y$ are permuted in one of the exchange conflations?}
 \end{proposition}
 \begin{proof}
  By~\cite[Theorem 6.5]{DemonetIyamaJasso} (based on~\cite[Theorem 2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b g$-vector.  The datum of the~$\b g$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0(K^{[-1,0]}(\proj \Lambda))$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see Proposition~\ref{prop::2kbproj-is-extriangulated}).  In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$.  Thus~$E$ and~$E'$ are isomorphic.
@@ -4377,23 +4391,7 @@ The extriangulated category~$K^{[-1,0]}(\proj \Lambda)$ is the setting in which 
  By Proposition~\ref{prop::exchange conflations are unique}, we get that~$P(\mu)\oplus P(\nu)$ and~$P(\mu')\oplus P(\nu')$ are isomorphic.  This implies that~$\{\mu,\nu\}$ and~$\{\mu',\nu'\}$ are the same sets.  This determines~$\sigma$, and point (ii) of Proposition~\ref{prop:exchangeablePairsNKC} is proved.
 \end{proof}
 
-
-
-
-% Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
-Before stating our next theorem, we first recall some definitions
-
-\begin{definition}
-Recall that a two-term silting object is a complex~$T$ in~$K^{[-1,0]}(\proj \Lambda)$ such that~$\Hom{K^b}(T,\susp T)=0$ and the number of isomorphism classes of indecomposable summands of~$T$ is the same as that of~$\Lambda$.
-\end{definition}
-
-\begin{remark}
- The definition given above is only equivalent to the usual definition of a silting object for two-term complexes of projectives.
-\end{remark}
-
-\begin{definition}\label{defn::mutation conflation}
-A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$ such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
-\end{definition}
+We now come to the main result of this section.
 
 \begin{theorem}
 \label{theo::brick-algebra-condition}
