@@ -115,7 +115,7 @@
 % geometry
 \newcommandx{\Asso}[2][1=n,2={}]{\mathsf{Asso}^{#2}(#1)} % associahedron
 \newcommandx{\Zono}[2][1=n,2={}]{\mathsf{Zono}^{#2}(#1)} % zonotope
-\newcommand{\Fan}{\mathcal{F}} % fan
+\newcommandx{\Fan}[1][1=F]{\mathcal{#1}} % fan
 \newcommand{\multiplicityVector}{\b{m}} % multiplicity vector
 \newcommandx{\ray}[1][1=r]{\b{#1}} % ray
 \newcommandx{\rays}[1][1=R]{\b{#1}} % rays
@@ -285,7 +285,7 @@ In particular, we prove, in those two setups, an analogue of a result of M. Ausl
 
 \maketitle
 
-\vspace{2cm}
+\vspace{1.5cm}
 \centerline{\includegraphics[scale=.8]{typeConeCoarsenings}}
 \vspace{.5cm}
 \centerline{The type cone of the cluster fan of type~$A_2$.}
@@ -398,7 +398,7 @@ It also motivates the study of relevant objects revealed by the type cone dictio
 \item The rays of the type cone of~$\Fan$ correspond to specific polytopes which form a positive Minkowski basis of all realizations of~$\Fan$ (see \cref{subsec:MinkowskiSums}). In particular, when the type cone is simplicial, any polytopal realization of~$\Fan$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of these polytopes. For cluster algebras, it follows from~\cite[Sect.~6]{BazierMatteDouvilleMousavandThomasYildirim} that these polytopes are Newton polytopes of the $F$-polynomials. It would be interesting to obtain similar algebraic interpretations for the rays of the type cones of the non-kissing fans of gentle~algebras.
 
 \smallskip
-\item Once we get a representation of a polytope~$P$ as a signed Minkowski sum~$P = \sum_{i \in [k]}\alpha_i Q_i$, we get a formula for the volume of $P$ as a multivariate polynomial in $\alpha_1,\dots,\alpha_k$ whose coefficients are the mixed volumes of $Q_1,\dots, Q_k$~\cite{ArdilaBenedettiDoker,McMullen-Valuations}. These encode rich combinatorial information when representing generalized permutahedra as positive Minkowski sums of coordinate simplices or hypersimplices~\cite{Postnikov}, and in particular for matroid polytopes~\cite{ArdilaBenedettiDoker}. It would be interesting to get such volume formulas for polytopal realizations of $\b{g}$-vector fans of cluster algebras and gentle algebras, and combinatorial interpretations for their coefficients.
+\item Once we get a representation of a polytope~$P$ as a signed Minkowski sum~$P = \sum_{i \in [k]} \alpha_i Q_i$, we get a formula for the volume of $P$ as a multivariate polynomial in $\alpha_1, \dots, \alpha_k$ whose coefficients are the mixed volumes of $Q_1, \dots, Q_k$~\cite{ArdilaBenedettiDoker, McMullen-Valuations}. These encode rich combinatorial information when representing generalized permutahedra as positive Minkowski sums of coordinate simplices or hypersimplices~\cite{Postnikov}, and in particular for matroid polytopes~\cite{ArdilaBenedettiDoker}. It would be interesting to get such volume formulas for polytopal realizations of $\b{g}$-vector fans of cluster algebras and gentle algebras, and combinatorial interpretations for their coefficients.
 \end{itemize}
 
 \smallskip
@@ -406,8 +406,6 @@ It also motivates the study of relevant objects revealed by the type cone dictio
 Some of these questions are explicitly indicated throughout the paper.
 To conclude, we observe that the associahedra constructed in~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} and the present paper describe all polytopal realizations of the $\b{g}$-vector fan.
 This motivates the following question: Is it possible to similarly understand the complete realization space of the cluster complex, including all realizations not having the~$\b{g}$-vector fan as their normal fan?
-\pg{AWESOME introduction.}
-\vincent{:-)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -485,7 +483,7 @@ is the unique (up to rescaling) linear dependence with~$\alpha, \alpha' > 0$ bet
 \end{proposition}
 
 \begin{notation}
-For any two adjacent cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, we denote by~$\coefficient[{\ray[s]}][\rays][\rays']$ the coefficient of~$\ray[s]$ in the unique linear dependence between the rays of~$\rays \cup \rays'$, \ie such that
+For any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$, we denote by~$\coefficient[{\ray[s]}][\rays][\rays']$ the coefficient of~$\ray[s]$ in the unique linear dependence between the rays of~$\rays \cup \rays'$, \ie such that
 \[
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0.
 \]
@@ -496,7 +494,7 @@ In this paper, we are interested in the set of all possible realizations of~$\Fa
 
 \begin{definition}
 \label{def:typeCone}
-The \defn{type cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admissible height vectors~$\b{h}$:
+The \defn{type cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admissible height vectors~$\b{h} \in \R^N$:
 \begin{align*}
 \typeCone(\Fan) & \eqdef \set{\b{h} \in \R^N}{\Fan \text{ is the normal fan of } P_\b{h}} \\
 & = \Bigset{\b{h} \in \R^N}{\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0 \; \begin{array}{l} \text{for any adjacent maximal} \\ \text{cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$} \end{array}}.
@@ -506,7 +504,7 @@ The \defn{type cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admis
 Note that the type cone is an open cone and contains a linearity subspace of dimension~$n$ (it is invariant by translation in~$\b{G} \R^n$). 
 It is sometimes useful to get rid of the linearity space by considering the projection~$\b{K}\typeCone(\Fan)$. 
 
-We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it the \defn{closed type cone} of~$\Fan$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ for adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}.
+We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it the \defn{closed type cone} of~$\Fan$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \ge 0$ for any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}, see also~\cite{PostnikovReinerWilliams}.
 
 \begin{example}
 \label{exm:typeCone}
@@ -542,7 +540,7 @@ This is the red triangle depicted in \cref{fig:typeCone} (right).
 \end{example}
 
 \begin{definition}
-An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent maximal cones~$\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ such that the corresponding inequality $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \geq 0$ in the definition of the type cone~$\ctypeCone(\Fan)$ actually defines a facet of~$\ctypeCone(\Fan)$.
+An \defn{extremal adjacent pair} of~$\Fan$ is a pair of adjacent maximal cones~$\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ such that the corresponding inequality $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \ge 0$ in the definition of the type cone~$\ctypeCone(\Fan)$ actually defines a facet of~$\ctypeCone(\Fan)$.
 \end{definition}
 
 In other words, extremal adjacent pairs define the extremal rays of the polar of the closed type cone~$\ctypeCone(\Fan)$.
@@ -551,7 +549,7 @@ For instance, for the $2$-dimensional fan of \cref{exm:typeCone}, the extremal a
 
 \begin{remark}
 \label{rem:dimTypeCone}
-Since the type cone is an~$N$ dimensional cone with a linearity subspace of dimension~$n$, it has at least~$N-n$ facets.
+Since the type cone is an~$N$ dimensional cone with a linearity subspace of dimension~$n$, it has at least~$N-n$ facets (thus~$N-n$ extremal adjacent pairs).
 We say that the type cone is \defn{simplicial} when it has precisely $N-n$ facets.
 \end{remark}
 
@@ -559,17 +557,17 @@ Although we will only deal with simplicial fans, note for completeness that \cre
 
 \begin{proposition}
 \label{prop:non-simplicial}
-Let $\c{G}$ be a complete fan that coarsens the essential complete simplicial fan~$\Fan$.
-The \defn{type cone}~$\typeCone(\c{G})$ of all $\c{G}$-admissible height vectors~$\b{h}$ is
+Let $\Fan$ be a complete fan that coarsens the essential complete simplicial fan~$\Fan[G]$.
+The \defn{type cone}~$\typeCone(\Fan)$ of all $\Fan$-admissible height vectors~$\b{h} \in \R^N$ is
 \begin{align*}
-\typeCone(\c{G}) 
+\typeCone(\Fan) 
 & = \left\{\b{h} \in \R^N\;\middle|\;
 \begin{array}{ll}
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} = 0
-& \begin{array}{l} \text{for any adjacent maximal cones} \\ \text{$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ belonging}\\\text{to \textbf{the same} maximal cone of $\c{G}$,}\end{array}
+& \begin{array}{l} \text{for any adjacent maximal cones} \\ \text{$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan[G]$ belonging}\\\text{to \textbf{the same} maximal cone of $\Fan$,}\end{array}
 \\[.7cm]
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} > 0
-& \begin{array}{l} \text{for any adjacent maximal cones} \\ \text{$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ belonging}\\\text{to \textbf{distinct} maximal cones of $\c{G}$}\end{array}
+& \begin{array}{l} \text{for any adjacent maximal cones} \\ \text{$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan[G]$ belonging}\\\text{to \textbf{distinct} maximal cones of $\Fan$}\end{array}
 \end{array}
 \right\}.
 \end{align*}
@@ -588,8 +586,8 @@ We say that two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a \defn{unique e
 \[
 \sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0.
 \]
-does not depend on the pair~$\{\rays, \rays'\}$ of adjacent maximal cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\ray, \ray'$.
-This implies in particular that the rays~$\ray[s]$ for which~$\coefficient[{\ray[s]}][\rays][\rays'] \ne 0$ belong to~$\rays \cup \rays'$ for any pair~$\{\rays, \rays'\}$ of adjacent cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$. 
+does not depend on the pair~$\{\rays, \rays'\}$ of adjacent maximal cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\{\ray, \ray'\}$.
+This implies in particular that the rays~$\ray[s]$ for which~$\coefficient[{\ray[s]}][\rays][\rays'] \ne 0$ belong to~$\rays \cup \rays'$ for any pair~$\{\rays, \rays'\}$ of adjacent maximal cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$. 
 
 We say that the fan~$\Fan$ has the \defn{unique exchange property} if any two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a unique exchange relation.
 \end{definition}
@@ -600,7 +598,7 @@ When~$\Fan$ has the unique exchange relation property, we change the notation~$\
 \]
 
 \begin{definition}
-In a fan~$\Fan$ with the unique exchange relation property, an \defn{extremal exchangeable pair} is a pair of exchangeable rays~$\{\ray,\ray'\}$ such that the corresponding inequality~${\sum_{\ray[s]} \coefficient \, \b{h}_{\ray[s]} \geq  0}$ defines a facet of the closed type cone~$\ctypeCone(\Fan)$.
+In a fan~$\Fan$ with the unique exchange relation property, an \defn{extremal exchangeable pair} is a pair of exchangeable rays~$\{\ray,\ray'\}$ such that the corresponding inequality~${\sum_{\ray[s]} \coefficient \, \b{h}_{\ray[s]} \ge  0}$ defines a facet of the closed type cone~$\ctypeCone(\Fan)$.
 \end{definition}
 
 In this paper, we will only consider fans with the unique exchange relation property, and our objective will be to describe their extremal exchangeable pairs.
@@ -612,7 +610,7 @@ In this paper, we will only consider fans with the unique exchange relation prop
 In this section, we provide alternative polytopal realizations of the fan~$\Fan$.
 We also discuss the behavior of these realizations in the situation when the type cone~$\typeCone(\Fan)$ is simplicial.
 
-We still consider an essential complete simplicial fan~$\Fan$ in~$\R^n$, the $N \times n$-matrix~$\b{G}$ whose rows are the rays of~$\Fan$, and the $(N-n) \times N$-matrix~$\b{K}$ which spans the left kernel of~$\b{G}$.
+We still consider an essential complete simplicial fan~$\Fan$ in~$\R^n$, the $N \times n$-matrix~$\b{G}$ whose rows are the rays of~$\Fan$, and the $(N-n) \times N$-matrix~$\b{K}$ which spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$).
 
 \begin{proposition}
 \label{prop:alternativePolytopalRealization}
@@ -639,7 +637,7 @@ Moreover, the map~$\Psi : P_\b{h} \to Q_\b{h}$ is:
 
 \begin{corollary}
 \label{coro:simplicialTypeCone}
-Assume that the type cone~$\typeCone(\Fan)$ is simplicial and let~$\b{K}$ be the $(N-n) \times N$-matrix whose rows are the outer normal vectors of the facets of~$\typeCone(\Fan)$. Then the polytope
+Assume that the type cone~$\typeCone(\Fan)$ is simplicial and let~$\b{K}$ be the $(N-n) \times N$-matrix whose rows are the inner normal vectors of the facets of~$\typeCone(\Fan)$. Then the polytope
 \[
 R_\b{\ell} \eqdef \set{\b{z} \in \R^N}{K\b{z} = \b{\ell} \text{ and } \b{z} \ge 0}
 \]
@@ -650,9 +648,9 @@ Moreover, the polytopes~$R_\b{\ell}$ for~$\b{\ell} \in \R_{>0}^{N-n}$ describe a
 \begin{proof}
 Let~$\b{\ell} \in \R_{>0}^{N-n}$.
 Since~$\b{K}$ has full rank there exists~$\b{h} \in \R^N$ such that~$\b{K}\b{h} = \b{\ell}$.
-Since~$\b{K}\b{h} \ge 0$ and the rows of~$\b{K}$ are precisely all outer normal vectors of the facets of the type cone~$\typeCone(\Fan)$, we obtain that~$\b{h}$ belongs to~$\typeCone(\Fan)$.
+Since~$\b{K}\b{h} \ge 0$ and the rows of~$\b{K}$ are precisely all inner normal vectors of the facets of the type cone~$\typeCone(\Fan)$, we obtain that~$\b{h}$ belongs to~$\typeCone(\Fan)$.
 Since $R_\b{\ell} = Q_\b{h} \sim P_\b{h}$ by \cref{prop:alternativePolytopalRealization}, we conclude that~$R_\b{\ell}$ is a polytopal realization of~$\Fan$.
-Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{N-n}$, so that we obtain all polytopal realizations of~$\Fan$ this way.
+Since~$\typeCone(\Fan)$ is simplicial, we have~$\b{K}\typeCone(\Fan) = \R_{>0}^{N-n}$, so that we obtain all polytopal realizations of~$\Fan$ in this way.
 \end{proof}
 
 %%%%%%%%%%%
@@ -720,7 +718,7 @@ P_\b{h} + P_{\b{h}'} & = \set{\b{x} + \b{x}'}{\b{x} \in P_\b{h} \text{ and } \b{
 \end{align*}
 \end{proof}
 
-We say that~$P$ is a \defn{Minkowski summand} of~$R$ if there is a polytope~$Q$ such that $R=P+Q$, and a \defn{weak Minkowski summand} if there is a $\lambda \ge 0$ and a polytope~$Q$ such that ${\lambda R = P + Q}$. 
+We say that~$P$ is a \defn{Minkowski summand} of~$R$ if there is a polytope~$Q$ such that $P+Q = R$, and a \defn{weak Minkowski summand} if there is a $\lambda \ge 0$ and a polytope~$Q$ such that ${P + Q = \lambda R}$. 
 \cref{lem:MinkowskiSum} ensures that convex combinations in the type cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type cone~$\ctypeCone(\Fan)$ modulo linearity (the cone of weak Minkowski summands was studied by W.~Meyer in~\cite{Meyer}, to see that it is equivalent to the type cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
 
 This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the closed type cone. These correspond to indecomposable polytopes, see~\cite{Meyer} or \cite{McMullen-typeCone}. A polytope $P \subseteq \R^n$ is called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda \ge 0$ and $t \in \R^n$.
@@ -730,8 +728,10 @@ Any polytope in~$\ctypeCone(\Fan)$ is the Minkowski sum of at most~$N-n$ indecom
 \end{corollary}
 
 If $P = Q + R$, then we say that~$R$ is the \defn{Minkowski difference} of~$P$ and~$Q$, denoted~${R = P - Q}$. Note that this is only defined when~$Q$ is a Minkowski summand of~$P$.
-There are two natural ways this construction generalizes to arbitrary pairs of polyhedra. On the one hand, we have $P - Q = \set{x \in \R^n}{x + Q \subseteq P}$. 
-Notice that $P_\b{h} - P_{\b{h}'} = P_{\b{h} - \b{h'}}$ when $P_{\b{h}'}$ is a Minkowski summand of $P_\b{h}$. Considering arbitrary differences of support functions gives rise to \defn{virtual polyhedra}, which is the Grothendieck group of the semigroup of polytopes with Minkowski sums~\cite{PukhlikovKhovanskii}.
+For instance, we have ${P_\b{h} - P_{\b{h}'} = P_{\b{h} - \b{h'}}}$ when $P_{\b{h}'}$ is a Minkowski summand of $P_\b{h}$.
+There are two natural ways this construction generalizes to arbitrary pairs of polyhedra.
+On the one hand, one can consider that ${P - Q = \set{x \in \R^n}{x + Q \subseteq P}}$.
+On the other hand, considering arbitrary differences of support functions gives rise to \defn{virtual polyhedra}, which is the Grothendieck group of the semigroup of polytopes with Minkowski sums~\cite{PukhlikovKhovanskii}.
 
 \begin{corollary}
 Let $\b{h}^{(1)},\dots, \b{h}^{(N-n)}\in \ctypeCone(\Fan)$ form a basis of the left kernel of~$\b{G}$. Then for any~$\b{h} \in \ctypeCone(\Fan)$, the polytope~$P_\b{h}$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$.
@@ -744,18 +744,13 @@ This is used in~\cite{ArdilaBenedettiDoker} to show that every generalized permu
 In the particular case when the type cone is simplicial, then we can get rid of the Minkowski differences.
 
 \begin{corollary}
-If the type cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then the $N-n$ idecomposable polytopes $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$ arising from the rays of $\ctypeCone(\Fan)$ verify that 
-\begin{enumerate}[(i)]
-\item  every $P_\b{h}$ with $\b{h}\in \typeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$; and
-\item  every $P_\b{h}$ with $\b{h}\in \ctypeCone(\Fan)$ has a unique representation (up to translation) as a Minkowski sum of non-negative dilates of $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$.
-\end{enumerate} 
+If the type cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then every $P_\b{h}$ with $\b{h}\in \typeCone(\Fan)$ (resp.~with $\b{h}\in \ctypeCone(\Fan)$) has a unique representation, up to translation, as a Minkowski sum of positive (resp.~non-negative) dilates of the $N-n$ indecomposable polytopes $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$ arising from the rays~$\b{h}^{(1)}, \dots, \b{h}^{(N-n)}$ of $\ctypeCone(\Fan)$.
 \end{corollary}
 
 Note that such a family of polytopes giving rise to unique positive/non-negative representations only exists when the type cone is simplicial. We get unicity with any basis, but in general we cannot guarantee non-negativity unless we are in the simplicial cone they span. If we take all rays of the type cone, we get non-negativity, but the representation is not unique unless the cone is simplicial.
 
 \begin{example}
 \label{exm:typeConeMinkowskiSum}
-\enlargethispage{.4cm}
 Consider the $2$-dimensional fan~$\Fan$ of \cref{fig:typeCone}\,(left) whose type cone has been described in \cref{exm:typeCone} and represented in \cref{fig:typeCone}\,(right).
 As illustrated in \cref{fig:typeConeCoarsenings}, the rays of the closed type cone~$\ctypeCone(\Fan)$ are directed by the height vectors~$(1,2,1,2,1)$ (corresponding to a triangle), $(0,1,1,0,1)$ (corresponding to a vertical segment) and~$(1,0,1,1,0)$ (corresponding to a horizontal segment).
 Therefore, any polytope in~$\ctypeCone(\Fan)$ is (up to translation) a positive Minkowski combination of a triangle and two edges.
@@ -806,8 +801,8 @@ The following statement provides three equivalent geometric constructions of~$\A
 The associahedron~$\Asso[n]$ can be described equivalently as:
 \begin{itemize}
 \item the convex hull of the points~$L(T) \in \R^{n+1}$ for all rooted binary trees~$T$ with~$n+1$ internal nodes, where the $i$th coordinate of~$L(T)$ is the product of the number of leaves in the left subtree by the number of leaves in the right subtree of the $i$th node of~$T$ in inorder~\cite{Loday},
-\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{a < \ell < b} x_\ell \ge \binom{b-a+2}{2}}$ for all internal diagonal~$(a,b)$ of \mbox{the $(n+3)$-gon~\cite{ShniderSternberg}},
-\item the Minkowski sum of the faces~$\simplex_{[i,j]}$ of the standard $n$-dimensional simplex~$\simplex$ corresponding to all proper intervals~$[i,j]$ of~$[n+1]$,~\cite{Postnikov}.
+\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{a < \ell < b} x_\ell \ge \binom{b-a+2}{2}}$ for all internal diagonals~$(a,b)$ of \mbox{the $(n+3)$-gon~\cite{ShniderSternberg}},
+\item the Minkowski sum of the faces~$\simplex_{[i,j]}$ of the standard $n$-dimensional simplex~$\simplex_{[n+1]}$ corresponding to all proper intervals~$[i,j]$ of~$[n+1]$,~\cite{Postnikov}.
 \end{itemize}
 \end{theorem}
 
@@ -856,7 +851,7 @@ From the linear dependencies of \cref{prop:exchangeablePairsAsso}, we obtain a r
 \label{coro:typeConeAsso}
 Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type cone of the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$ is given by
 \[
-\typeCone(\gvectorFan[n]) = \set{\b{h} \in \R^{X(n)}}{\begin{array}{l} \b{h}_{(0,n+2)} = 0, \qquad\text{and}\qquad \b{h}_{(a,a+1)} = 0 \text{ for all } 0 \le a \le n+1 \\ \b{h}_{(a,b)} + \b{h}_{(a',b')} > \b{h}_{(a,b')} + \b{h}_{(a',b)} \text{ for all } 0 \le a < a' < b < b' \le n+2 \end{array}}.
+\typeCone \big( \gvectorFan[n] \big) = \set{\b{h} \in \R^{X(n)}}{\begin{array}{@{}l@{}} \b{h}_{(0,n+2)} = 0, \qquad\text{and}\qquad \b{h}_{(a,a+1)} = 0 \text{ for all } 0 \le a \le n+1 \\ \b{h}_{(a,b)} + \b{h}_{(a',b')} > \b{h}_{(a,b')} + \b{h}_{(a',b)} \text{ for all } 0 \le a < a' < b < b' \le n+2 \end{array}} \!.
 \]
 \end{corollary}
 
@@ -876,16 +871,13 @@ It has $3$ facet-defining inequalities (given below), which correspond to the fl
 \end{array}
 \]
 
-\arnau{I think the coordinates of the g-vector corresponding to {diagonalA3} were wrong, and I swapped them. }
-
-\arnau{When writing the coordinates of the g's, we cannot follow \cref{thm:normalFanLoday}, because we don't say which basis have we chosen for the hyperplane.}
 \medskip
 \noindent
 In all our tables, we just record the coefficients of the inequalities, which are then easily reconstructed.
 For instance, the inequality~$\red \circled{A}$ above is given by~$\b{h}_{\includegraphics[scale=.3]{diagonalA1}} + \b{h}_{\includegraphics[scale=.3]{diagonalA3}} > \b{h}_{\includegraphics[scale=.3]{diagonalA2}}$.
 
 The type cone of~$\gvectorFan[2]$ lives in~$\R^9$ and has a linearity space of dimension~$3$.
-It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(left).
+It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(right).
 
 \[
 \begin{array}{r|cccccccccc}
@@ -993,12 +985,12 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
         	\draw[red] (f) -- (m-2-6);
         \end{tikzpicture}
     \end{adjustbox}
-	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[n])$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[n] \big)$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
 	\label{fig:labelFacetDefiningInequalititiesAsso}
 \end{figure}
 \end{example}
 
-Motivated by \cref{exm:typeConeAsso}, we now describe the facets of this type cone~$\typeCone(\gvectorFan[n])$.
+Motivated by \cref{exm:typeConeAsso}, we now describe the facets of this type cone~$\typeCone \big( \gvectorFan[n] \big)$.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsAsso}
@@ -1012,7 +1004,7 @@ By \cref{prop:exchangeablePairsAsso}, the linear dependence between the correspo
 \[
 \gvector{a,b} + \gvector{a',b'} = \gvector{a,b'} + \gvector{a',b}.
 \]
-Therefore, the outer normal vector of the corresponding inequality of the type cone~$\typeCone(\gvectorFan[n])$ is
+Therefore, the inner normal vector of the corresponding inequality of the type cone~$\typeCone \big( \gvectorFan[n] \big)$ is
 \[
 \b{n}(a,b,a',b') \eqdef \b{f}_{(a,b)} + \b{f}_{(a',b')} - \b{f}_{(a,b')} - \b{f}_{(a',b)}.
 \]
@@ -1031,13 +1023,11 @@ This shows that any exchange relation is a positive linear combination of the ex
 Conversely, since~$\gvectorFan[n]$ has dimension~$n$ and~$n(n+3)/2$ rays (corresponding to the internal diagonals of the $(n+3)$-gon), we know from \cref{rem:dimTypeCone} that there are at least~$n(n+1)/2$ extremal exchangeable pairs. We thus conclude that all exchangeable pairs of diagonals~$\{(a,b-1), (a+1,b)\}$ for~$1 \le a < b-2 \le n$ are extremal.
 \end{proof}
 
-\arnau{Change $\b{f}_{(a,b)}$ to $\b{h}_{(a,b)}$? (To homogenize with previous sections)}
-
 Our next statement follows from the end of the previous proof.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeAsso}
-The type cone~$\typeCone(\gvectorFan[n])$ is simplicial.
+The type cone~$\typeCone \big( \gvectorFan[n] \big)$ is simplicial.
 \end{corollary}
 
 \enlargethispage{.2cm}
@@ -1064,9 +1054,9 @@ Moreover, the polytopes~$R_\b{\ell}(n)$ for~$\b{\ell} \in \R_{>0}^{Y(n)}$ descri
 
 Cluster algebras were introduced by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasI} with motivation coming from total positivity and canonical bases.
 Here, we will focus on finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasII} and more specifically on properties of their $\b{g}$-vectors~\cite{FominZelevinsky-ClusterAlgebrasIV}.
-These $\b{g}$-vectors support a complete simplicial fan, which is called \defn{$\b{g}$-vector fan} or \defn{cluster fan}. It is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, and revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
+These $\b{g}$-vectors support a complete simplicial fan, which is called \defn{$\b{g}$-vector fan} or \defn{cluster fan}. It is known to be the normal fan of a polytope called generalized associahedron. These polytopal realizations were first constructed for bipartite initial seeds by F.~Chapoton, S.~Fomin and A.~Zelevinsky~\cite{ChapotonFominZelevinsky} using the $\b{d}$-vector fans of~\cite{FominZelevinsky-YSystems}, then for acyclic initial seeds by C.~Hohlweg, C.~Lange and H.~Thomas~\cite{HohlwegLangeThomas} using Cambrian lattices and fans of N.~Reading and D.~Speyer~\cite{Reading-CambrianLattices, ReadingSpeyer}, then revisited by S.~Stella~\cite{Stella}, and by V.~Pilaud and C.~Stump~\cite{PilaudStump-brickPolytope} via brick polytopes, and finally for arbitrary initial seeds by C.~Hohlweg, V.~Pilaud and S.~Stella~\cite{HohlwegPilaudStella}.
 More recently in~\cite{BazierMatteDouvilleMousavandThomasYildirim}, V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Y\i ld\i r\i m extended the construction of associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to acyclic seeds of simply-laced finite type cluster algebras.
-Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply-laced or not) cluster algebra with respect to any seed (acyclic or not) by providing a direct proof that the type cone of the cluster fan of any finite type cluster algebra is simplicial.
+Here, we extend the construction of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} to any finite type (simply-laced or not) cluster algebra with respect to any seed (acyclic or not) by providing a direct proof that the type cone of the cluster fan of any finite type cluster algebra with respect to any initial seed is simplicial.
 
 %%%
 
@@ -1113,8 +1103,8 @@ b'_{yz} = b_{yz} + \frac{1}{2}\big(|b_{yx}| b_{xz} + b_{yx}|b_{xz}|\big),
 p'_y =
 \begin{cases}
 	p_x^{-1}  & \text{if } y = x', \\
-	p_y\negativeExponents{p_x}^{b_{xy}}  & \text{if } y \neq x' \text{ and } b_{xy} \leq 0, \\
-	p_y\positiveExponents{p_x}^{b_{xy}}  & \text{if } y \neq x' \text{ and } b_{xy} > 0.
+	p_y\negativeExponents{p_x}^{b_{xy}}  & \text{if } y \ne x' \text{ and } b_{xy} \leq 0, \\
+	p_y\positiveExponents{p_x}^{b_{xy}}  & \text{if } y \ne x' \text{ and } b_{xy} > 0.
 \end{cases}
 \]
 \end{itemize}
@@ -1155,7 +1145,7 @@ Moreover, for~$\B_\circ^\vee \eqdef -\transpose{\B_\circ}$, then the map sending
 We now consider principal coefficients to define the $\b{g}$- and $\b{c}$-vectors.
 As defined in~\cite[Def.~3.1]{FominZelevinsky-ClusterAlgebrasIV}, the cluster algebra with \defn{principal coefficients} at~$\B_\circ$ is the cluster algebra~$\clusterAlgebra[\B_\circ][\coefficients_\circ]$ in~$\Q(x_1, \dots, x_n, p_1, \dots, p_n)$, where~$\coefficients_\circ = \{p_x\}_{x \in \cluster_\circ}$ are precisely the generators~$p_1, \dots, p_n$ of~$\Trop{n}$ relabeled by~$\cluster_\circ$.
 For simplicity, we drop the mention of the coefficients for principal cluster algebras in the notations for seeds~$\seed = (\B, \cluster)$, for cluster algebras~$\principalClusterAlgebra$ and for variables~$\principalVariables$.
-Principal coefficients cluster algebras are $\Z^n$-graded (in the fundamental weight basis~$\{\omega_x\}_{x \in \cluster_\circ}$ of~$V$) for the degree function~$\deg(\B_\circ,\cdot)$ on $\principalClusterAlgebra$ is obtained by setting
+Principal coefficients cluster algebras are $\Z^n$-graded (in the fundamental weight basis~$\{\omega_x\}_{x \in \cluster_\circ}$ of~$V$) for the degree function~$\deg(\B_\circ,\cdot)$ on $\principalClusterAlgebra$ obtained by setting
 \(
 \deg(\B_\circ,  x) \eqdef \fundamentalWeight_x
 \)
@@ -1216,9 +1206,9 @@ Examples are illustrated in \cref{fig:clusterFans}.
 \label{thm:gvectorFanCA}
 For any finite type exchange matrix~$\B_\circ$, the collection of cones
 \[
-\gvectorFan[\B_\circ] \eqdef \bigset{\R_{\ge0} \, \gvectorsFull{\B_\circ}{\seed}}{\seed \text{ seed of } \principalClusterAlgebra},
+\bigset{\R_{\ge0} \, \gvectorsFull{\B_\circ}{\seed}}{\seed \text{ seed of } \principalClusterAlgebra},
 \]
-together with all their faces, forms a complete simplicial fan, called the \defn{$\b{g}$-vector fan} or \defn{cluster fan} of~$\B_\circ$.
+together with all their faces, forms a complete simplicial fan~$\gvectorFan[\B_\circ]$, called the \defn{$\b{g}$-vector fan} or \defn{cluster fan} of~$\B_\circ$.
 \end{theorem}
 
 Moreover, this fan is known to be polytopal.
@@ -1241,7 +1231,7 @@ For any finite type exchange matrix~$\B_\circ$, the cluster fan~$\gvectorFan[\B_
 \para{Mutations in the cluster fan}
 %
 We now discuss the linear dependences between $\b{g}$-vectors of adjacent seeds.
-The following proposition was stated in~\cite[Lem.~19]{HohlwegPilaudStella}.
+The following lemma was stated in~\cite[Lem.~19]{HohlwegPilaudStella}.
 
 \begin{lemma}
 \label{lem:linearDependencegvectorsCA}
@@ -1253,7 +1243,7 @@ For any finite type~exchange matrix~$\B_\circ$ and any adjacent seeds~${(\B, \cl
 \]
 \end{lemma}
 
-Note that \cref{lem:linearDependencegvectorsCA} implies \cref{thm:generalizedAsso} since it ensures that the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the cluster fan contains the cone of~${\b{h} \in \R^{\principalVariables}}$ such that
+Note that \cref{lem:linearDependencegvectorsCA} implies \cref{thm:generalizedAsso} since it ensures that the type cone~$\typeCone \big( \gvectorFan[\B_\circ] \big)$~of~the cluster fan contains the cone of height vectors~${\b{h} \in \R^{\principalVariables}}$ such that
 \(
 \b{h}_x + \b{h}_{x'} > \sum_{{y \in \cluster \cap \cluster', \; b_{xy} < 0}} -b_{xy}
 \)
@@ -1267,7 +1257,7 @@ Unfortunately, \cref{lem:linearDependencegvectorsCA} is less precise than \cref{
 % We will prove however that it is independent of the seeds containing~$x$ and~$x'$.
 % \vincent{Link to \cref{sec:clusterCategories}.}
 However, for cluster algebras of finite type, this linear dependence is independent of the choice of a seed containing~$x$ and~$x'$.
-As explained in Corollary~\ref{corollary:UERPforCAproof}, this statement follows from~\cite[Theorem 7.5]{BuanMarshReinekeReitenTodorov}.
+As explained in ~\cref{corollary:UERPforCAproof}, this statement follows from~\cite[Theorem 7.5]{BuanMarshReinekeReitenTodorov}.
 We state it here for future reference.
 Note that the corresponding statement for cluster variables, instead of~$\b{g}$-vectors, holds by~\cite[Theorem 1.11]{FominZelevinsky-ClusterAlgebrasII}.
 
@@ -1295,7 +1285,7 @@ We obtain the following statement.
 \label{coro:typeConeCA}
 For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan~$\gvectorFan[\B_\circ]$ is given by
 \[
-\typeCone(\gvectorFan[\B_\circ]) = \set{\b{h} \in \R^{\principalVariables}}{\dotprod{\b{n}(\B_\circ, x, x')}{\b{h}} > 0 \text{ for all exchangeable cluster variables } x, x'}.
+\typeCone \big( \gvectorFan[\B_\circ] \big) = \set{\b{h} \in \R^{\principalVariables}}{\dotprod{\b{n}(\B_\circ, x, x')}{\b{h}} > 0 \text{ for all exchangeable cluster variables } x, x'}.
 \]
 \end{corollary}
 
@@ -1413,7 +1403,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the me
         	\draw[red] (f2) -- (m-3-9);
         \end{tikzpicture}
     \end{adjustbox}
-	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the cluster fan correspond to the mesh mutations described in \cref{thm:extremalExchangeablePairsCA}. See \cref{sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[\B_\circ] \big)$ of the cluster fan correspond to the mesh mutations described in \cref{thm:extremalExchangeablePairsCA}. See \cref{sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
 	\label{fig:labelFacetDefiningInequalititiesCA1}
 \end{figure}
 
@@ -1547,7 +1537,7 @@ $}
         	\draw[red] (i2) -- (m-3-10);
         \end{tikzpicture}
     \end{adjustbox}
-	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[\B_\circ])$ of the cluster fan correspond to the mesh mutations described in \cref{thm:extremalExchangeablePairsCA}. See \cref{sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
+	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[\B_\circ] \big)$ of the cluster fan correspond to the mesh mutations described in \cref{thm:extremalExchangeablePairsCA}. See \cref{sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
 	\label{fig:labelFacetDefiningInequalititiesCA2}
 \end{figure}
 \end{example}
@@ -1585,8 +1575,7 @@ Otherwise, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_
 \end{lemma}
 
 For~$\{x,x'\} \in \meshes$ and~$y \in \principalVariables$, we denote by~$\alpha_{x,x',y}$ the coefficient of~$\gvectorFull{\B_\circ}{y}$ in the linear dependence between the $\b{g}$-vectors~$\gvectorFull{\B_\circ}{x}$ and~$\gvectorFull{\B_\circ}{x'}$. In other words, according to \cref{lem:dependenceMesh}, if~${(\B, \cluster)}$ and~${(\B', \cluster')}$ are two adjacent seeds with~$\cluster \ssm \{x\} = \cluster' \ssm \{x'\}$, we have~$\alpha_{x,x',y} = |b_{xy}|$ for~$y \in \cluster \cap \cluster'$ and~$\alpha_{x,x',y} = 0$ otherwise.
-
-The following will be shown in \cref{sec:clusterCategories}, Corollary~\ref{corollary:proof of prop meshMutations}.
+The following statement will be shown in \cref{corollary:proof of prop meshMutations}.
 
 \begin{proposition}
 \label{prop:meshMutations}
@@ -1610,7 +1599,7 @@ Our next statement follows from the end of the previous proof.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeCA}
-The type cone~$\typeCone(\gvectorFan[n])$ is simplicial.
+The type cone~$\typeCone \big( \gvectorFan[n] \big)$ is simplicial.
 \end{corollary}
 
 We also obtain from \cref{thm:extremalExchangeablePairsCA} the following surprising property.
@@ -1653,7 +1642,6 @@ Moreover, the polytopes~$R_\b{\ell}(T)$ for~$\b{\ell} \in \R_{>0}^{\Delta(n) \ss
 \subsection{Non-kissing complexes and gentle associahedra}
 \label{subsec:typeConeNKC}
 
-\enlargethispage{-.4cm}
 Gentle associahedra were constructed by Y.~Palu, V.~Pilaud and P.-G.~Plamondon~\cite{PaluPilaudPlamondon-nonkissing} in the context of support $\tau$-tilting for gentle algebras.
 For a given $\tau$-tilting finite gentle quiver~$\quiver$ (defined in the next section), the $\quiver$-associahedron~$\Asso[\quiver]$ is a simple polytope which encodes certain representations of~$\quiver$ and their $\tau$-tilting relations.
 Combinatorially, the $\quiver$-associahedron is a polytopal realization of the non-kissing complex of~$\quiver$, defined as the simplicial complex of all collections of walks on the blossoming quiver~$\quiver\blossom$ which are pairwise non-kissing.
@@ -1701,16 +1689,16 @@ where
 	\end{enumerate}
 The integer~$\ell$ is called the \defn{length} of the string~$\rho$.
 For each vertex~$a \in Q_0$, there is also a \defn{string of length zero}, denoted by~$\varepsilon_a$, that starts and ends at~$a$.
-We often implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and call it an \defn{undirected string} of~$\quiver$.
+We implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$, and call it an \defn{undirected string} of~$\quiver$.
 Let~$\strings$ denote the set of strings of~$\quiver$.
 
-A \defn{walk} of~$\quiver$ is a maximal maximal string of its blossoming quiver~$\quiver\blossom$ (meaning that each endpoint is a blossom).
+A \defn{walk} of~$\quiver$ is a maximal string of its blossoming quiver~$\quiver\blossom$ (meaning that each endpoint is a blossom).
 As for strings, we implicitly identify the two inverse walks~$\omega$ and~$\omega^{-1}$, and call it an \defn{undirected walk} of~$\quiver$.
 Let~$\walks$ denote the set of walks of~$\quiver$.
 
 A \defn{substring} of a walk~$\omega = \alpha_1^{\varepsilon_1} \cdots \alpha_\ell^{\varepsilon_\ell}$ of~$\quiver$ is a string~$\sigma = \alpha_{i+1}^{\varepsilon_{i+1}} \cdots \alpha_{j-1}^{\varepsilon_{j-1}}$ of~$\quiver$ for some indices~$1 \le i < j \le \ell$. Note that by definition,
 \begin{itemize}
-\item the endpoints of~$\sigma$ are not allowed to blossom endpoints of~$\omega$,
+\item the endpoints of~$\sigma$ are not allowed to be blossom endpoints of~$\omega$,
 \item the position of~$\sigma$ as a factor of~$\omega$ matters (the same string at a different position is considered a different substring).
 \item the string~$\varepsilon_a$ is a substring of~$\omega$ for each occurence of~$a$ as a vertex of~$\omega$ (take~$j = i+1$).
 \end{itemize}
@@ -1735,7 +1723,7 @@ We denote by~$\peaks{\omega}$ (resp.~$\deeps{\omega}$) the multisets of vertices
 %
 Let~$\omega$ and~$\omega'$ be two undirected walks on~$\quiver$.
 We say that~$\omega$ \defn{kisses}~$\omega'$ if ${\Sigma_\top(\omega) \cap \Sigma_\bottom(\omega')} \ne \varnothing$.
-In other words, $\omega$ and~$\omega'$ share a common substring~$\sigma$, and both arrows of~$\omega$ (resp.~of~$\omega'$) not in~$\sigma$ are outgoing (resp.~incoming) at the endpoints of~$\sigma$.
+In other words, $\omega$ and~$\omega'$ share a common substring~$\sigma$, and both arrows of~$\omega$ (resp.~of~$\omega'$) incident to the endpoints of~$\sigma$ but not in~$\sigma$ are outgoing (resp.~incoming) at the endpoints of~$\sigma$.
 See \cref{fig:kissingCrossing} for a schematic representation and \cref{fig:exmNonkissing}\,(middle) where the three walks are pairwise kissing.
 We say that~$\omega$ and~$\omega'$ are \defn{kissing} if~$\omega$ kisses~$\omega'$ or~$\omega'$ kisses~$\omega$ (or both).
 Note that we authorize the situation where the common finite substring is reduced to a vertex~$a$, that~$\omega$ can kiss~$\omega'$ several times, that~$\omega$ and~$\omega'$ can mutually kiss, and that~$\omega$ can kiss itself.
@@ -1754,32 +1742,6 @@ The (reduced) \defn{non-kissing complex} of~$\quiver$ is the simplicial complex~
 For example, \cref{fig:exmNonkissing}\,(right) represents a non-kissing facet.
 As shown in~\cite[Thm.~2.46]{PaluPilaudPlamondon-nonkissing}, the non-kissing complex is a combinatorial model for the support $\tau$-tilting complex on $\tau$-rigid modules over~$kQ/I$.
 The quiver~$\quiver$ is called \defn{$\tau$-tilting finite} or \defn{non-kissing finite} when this complex is finite (in other words, $\quiver$ has finitely may non-kissing walks).
-
-\para{Two families of examples: gentle grid and dissection quivers}
-%
-The initial motivation for non-kissing complexes came from two families of examples, illustrated in \cref{fig:dissectionGridQuivers}:
-\begin{enumerate}[(1)]
-\item \textbf{Grid quivers}: Consider the infinite grid quiver~$\quiver_{Z^2}$, whose vertices are all integer points of~$\Z^2$, whose arrows connect between~$(i,j) \longrightarrow (i,j+1)$ and~$(i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$, and whose relations forbid~$(i-1,j) \longrightarrow (i,j) \longrightarrow (i,j+1)$ and~$(i,j-1) \longrightarrow (i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$. A \defn{gentle grid quiver} is any subquiver~$\quiver_A$ of~$\quiver_{Z^2}$ induced by a finite subset~$A \subset \Z^2$ of the integer grid. See \cref{fig:dissectionGridQuivers}. The non-kissing complex of gentle grid quivers were introduced in~\cite{McConville} with motivation coming from~\cite{PetersenPylyavskyySpeyer} and~\cite{SantosStumpWelker}. 
-
-\smallskip
-\item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. See \cref{fig:dissectionGridQuivers}. The non-kissing complex of~$\quiver_D$ then corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
-\end{enumerate}
-
-\begin{figure}[h]
-	\capstart
-	\centerline{\includegraphics[scale=.35]{gridQuiver} \quad \includegraphics[scale=.8]{dissectionQuiver} \quad \includegraphics[scale=1.2]{bijectionAssociahedronGrid} \quad \includegraphics[scale=1.2]{bijectionAssociahedronDissection}}
-	\caption{A gentle grid quiver (left), a gentle dissection quiver (middle left), and a path quiver which is both the gentle grid quiver of a ribbon (middle right) and the dissection quiver of a triangulation (right). Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
-	\label{fig:dissectionGridQuivers}
-\end{figure}
-
-These two families of non-kissing complexes are well-behaved as they avoid all pathologies of \cref{rem:exchangeablePairsNKC}.
-However, they still provide good examples of non-kissing complexes.
-In particular, both families contain the classical associahedron.
-Namely, the gentle associahedron~$\Asso[\quiver]$ is the classical associahedron of~\cite{ShniderSternberg, Loday} presented in \cref{thm:associahedronLoday} when~${\quiver = \quiver_A}$ for the path~${A = \set{(0,j)}{j \in [n]}}$ or equivalently~$\quiver = \quiver_D$ for the fan triangulation~$D$ (where all internal diagonals incident to the same point).
-More generally, $\Asso[\quiver]$ is an associahedron of~\cite{HohlwegLange} when~$\quiver = \quiver_A$ for a ribbon~$A$ or equivalently~$\quiver = \quiver_D$ for a triangulation~$D$.
-See \cref{fig:dissectionGridQuivers}.
-
-Note that, it was shown in~\cite{PaluPilaudPlamondon-surfaces} that the accordion complexes can be extended to dissections of arbitrary orientable surfaces with marked points and then provide a geometric model for all non-kissing complexes of gentle quivers.
 
 \para{$\b{g}$- and $\b{c}$-vectors}
 %
@@ -1800,11 +1762,10 @@ Consider an arrow~$\alpha \in Q_1$ contained in two distinct walks~$\omega, \ome
 We write~$\omega \prec_\alpha \omega'$ if $\omega$ enters and/or exits~$\sigma$ with arrows in the direction pointed by~$\alpha$, while $\omega'$ enters and/or exits~$\sigma$ with arrows in the direction opposite to~$\alpha$.
 For example, in \cref{fig:kissingCrossing}, we have~$\mu \prec_\gamma \nu$ but~$\nu \prec_\delta \mu$.
 The \defn{distinguished walk} of the non-kissing facet~$F \in \NKC$ at the arrow~$\alpha$ is the maximum walk of~$F$ for~$\prec_\alpha$.
-The \defn{distinguished arrows} of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ are the arrow where~$\omega$ is the distinguished walk.
+The \defn{distinguished arrows} of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ are the arrows where~$\omega$ is the distinguished walk.
 It is shown in~\cite[Prop.~2.28]{PaluPilaudPlamondon-nonkissing} that each bending walk in a non-kissing facet has precisely two distinguished arrows, pointing in opposite directions.
 For example, we have marked in \cref{fig:exmNonkissing}\,(right) the two distinguished arrows on each walk by triple arrows.
 The \defn{distinguished substring}~$\distinguishedString{\omega}{F}$ of the walk~$\omega$ in the non-kissing facet~$F \in \NKC$ is the substring located between its two distinguished arrows.
-We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished string of a walk in a non-kissing facet, and we denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
 
 \begin{definition}[{\cite[Def.~{4.11}]{PaluPilaudPlamondon-nonkissing}}]
 The \defn{$\b{c}$-vector} of a walk~$\omega$ in a non-kissing facet~${F \in \NKC}$ is~${\cvector{F}{\omega} \eqdef \distinguishedSign{\omega}{F} \, \multiplicityVector_{\distinguishedString{\omega}{F}}}$, where~$\distinguishedSign{\omega}{F} \in \{-1,1\}$ is positive if~${\distinguishedString{\omega}{F} \in \Sigma_\top(\omega)}$ and negative if~${\distinguishedString{\omega}{F} \in \Sigma_\bottom(\omega)}$.
@@ -1823,10 +1784,21 @@ For any non-kissing facet~$F \in \NKC$, the set of $\b{g}$-vectors~$\gvectors{F}
 for any two walks~$\omega, \omega' \in F$.
 \end{proposition}
 
+The following result will also be essential in our discussion.
+We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished substring of a walk in a non-kissing facet, and we denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
+
+\begin{proposition}[{\cite[3.68]{PaluPilaudPlamondon-nonkissing}}]
+\label{prop:bijectionStringsWalks}
+The number of distinguishable strings~$\distinguishableStrings$ and proper walks~$\properWalks$ of the quiver~$\quiver$ are related by
+\[
+|\distinguishableStrings| + |Q_0| = |\properWalks|.
+\]
+\end{proposition}
+
 \para{Non-kissing fan and gentle associahedron}
 %
-\enlargethispage{.2cm}
-The $\b{g}$-vectors support a complete simplicial fan realization of the non-kissing complex complex.
+\enlargethispage{.1cm}
+The $\b{g}$-vectors support a complete simplicial fan realization of the non-kissing complex~$\NKC$.
 Examples are illustrated in \cref{fig:nonkissingFans}.
 
 \begin{theorem}[{\cite[Thm.~4.17]{PaluPilaudPlamondon-nonkissing}}]
@@ -1838,7 +1810,7 @@ For any non-kissing finite gentle quiver~$\quiver$, the set of cones
 is a complete simplicial fan of~$\R^{Q_0}$, called \defn{non-kissing fan} of~$\quiver$, which realizes the non-kissing complex~$\NKC$.
 \end{theorem}
 
-\begin{figure}[b]
+\begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.45]{nonkissingFans}}
 	\caption{Two non-kissing fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
@@ -1859,18 +1831,17 @@ For any non-kissing finite gentle quiver~$\quiver$, the non-kissing fan~$\gvecto
 
 \para{Flips in the non-kissing fan}
 %
-\enlargethispage{-.4cm}
 Although we lack a characterization of the exchangeable pairs of the non-kissing complex (see \cref{rem:exchangeablePairsNKC}), we can still describe the linear dependence among the $\b{g}$-vectors involved in a flip.
 The following statement is partially proved in~\cite[Thm.~4.17]{PaluPilaudPlamondon-nonkissing}.
 The notations are illustrated in \cref{fig:flip}.
 
 \begin{proposition}
 \label{prop:exchangeablePairsNKC}
-Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then
+Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then:
 \begin{enumerate}[(i)]
-\item For any non-kissing facets~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, the distinguished substrings of~$\omega$ in~$F$ and of~$\omega'$ in~$F'$ coincide to a string~$\sigma$. Moreover, if we decompose~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$, then the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
+\item For any non-kissing facets~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, the distinguished substrings of~$\omega$ in~$F$ and of~$\omega'$ in~$F'$ coincide to a string~$\sigma$. Moreover, if we decompose~${\omega = \rho \sigma \tau}$ and~${\omega' = \rho' \sigma \tau'}$, then the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
 \item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ actually depend on the exchangeable walks~$\omega$ and~$\omega'$, not on the adjacent non-kissing facet~$F $ and~$F'$.
-\item Moreover, the linear dependence between the $\b{g}$-vectors of~$F \cup F'$ is given by
+\item The linear dependence between the $\b{g}$-vectors of~$F \cup F'$ is given by
 \[
 \gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
 \]
@@ -1878,7 +1849,7 @@ In other words, the non-kissing fan of~$\quiver$ has the unique exchange relatio
 \item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\lambda}$ for~$\lambda \in F \cap F'$ is the multiplicity vector~$\multiplicityVector_{\sigma}$ of the vertices of the substring~$\sigma$ of~$\omega$ and~$\omega'$.
 \end{enumerate}
 %
-\begin{figure}[t]
+\begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=1]{flip}}
 	\caption{A schematic representation of a flip. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
@@ -1895,7 +1866,7 @@ Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.
 \label{rem:exchangeablePairsNKC}
 In view of \cref{prop:exchangeablePairsNKC}, it is tempting to look for a characterization of the exchangeable pairs~$\omega, \omega'$ using the kisses between~$\omega$ and~$\omega'$.
 This question was discussed in \cite[Sect.~9]{BrustleDouvilleMousavandThomasYildirim}.
-However, as illustrated in \cref{fig:nonkissingFans}\,(right), note that
+However, as illustrated for instance in the non-kissing complex of \cref{fig:nonkissingFans}\,(right),
 \begin{itemize}
 \item two exchangeable walks may kiss along more than one string (only one is distinguished),
 \item two non-exchangeable walks can kiss along more than one distinguishable string,
@@ -1906,28 +1877,45 @@ In \cref{subsubsec:simplicialTypeConeNKC}, we will restrict to a situation that 
 %\vincent{Do we still have these problems when the gentle algebra is brick and/or without oriented $2$-cycle?}
 \end{remark}
 
-\para{Numerology}
+\para{Two families of examples: gentle grid and dissection quivers}
 %
-The following result will also be essential in our discussion.
+The initial motivation for non-kissing complexes came from two families of examples, illustrated in \cref{fig:dissectionGridQuivers}:
 
-\begin{proposition}[{\cite[3.68]{PaluPilaudPlamondon-nonkissing}}]
-\label{prop:bijectionStringsWalks}
-The number of distinguishable strings~$\distinguishableStrings$ and proper walks~$\properWalks$ of the quiver~$\quiver$ are related by
-\[
-|\distinguishableStrings| + |Q_0| = |\properWalks|.
-\]
-\end{proposition}
+\medskip
+\begin{enumerate}[(1)]
+\item \textbf{Grid quivers}: Consider the infinite grid quiver~$\quiver_{Z^2}$, whose vertices are all integer points of~$\Z^2$, whose arrows are~$(i,j) \longrightarrow (i,j+1)$ and~$(i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$, and whose relations are~$(i-1,j) \longrightarrow (i,j) \longrightarrow (i,j+1)$ and~$(i,j-1) \longrightarrow (i,j) \longrightarrow (i+1,j)$ for any~$(i,j) \in \Z^2$. A \defn{gentle grid quiver} is any subquiver~$\quiver_A$ of~$\quiver_{Z^2}$ induced by a finite subset~$A \subset \Z^2$ of the integer grid. See \cref{fig:dissectionGridQuivers}. The non-kissing complex of gentle grid quivers were introduced in~\cite{McConville} with motivation coming from~\cite{PetersenPylyavskyySpeyer} and~\cite{SantosStumpWelker}. 
+
+\medskip
+\item \textbf{Dissection quivers}: Consider a dissection~$D$ of a convex polygon~$P$ (that is a crossing-free set of diagonals of~$P$) and its \defn{gentle dissection quiver}~$\quiver_D$, whose vertices are the internal diagonals of~$D$, whose arrows connect pairs of consecutive internal diagonals along the boundary of a face of~$D$, and whose relations correspond to triples of consecutive internal diagonals along the boundary of a face of~$D$. See \cref{fig:dissectionGridQuivers}. The non-kissing complex of~$\quiver_D$ then corresponds to non-crossing sets of accordions of~$D$, where an accordion is a segment connecting the middles of two boundary edges of~$P$ and crossing a connected set of diagonals of~$D$. This accordion complex was studied in~\cite{GarverMcConville} and~\cite{MannevillePilaud-accordion} with motivation coming from~\cite{Baryshnikov}, and~\cite{Chapoton-quadrangulations}.
+\end{enumerate}
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.35]{gridQuiver} \quad \includegraphics[scale=.8]{dissectionQuiver} \quad \includegraphics[scale=1.2]{bijectionAssociahedronGrid} \quad \includegraphics[scale=1.2]{bijectionAssociahedronDissection}}
+	\caption{A gentle grid quiver (left), a gentle dissection quiver (middle left), and a path quiver which is both the gentle grid quiver of a ribbon (middle right) and the dissection quiver of a triangulation (right). Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
+	\label{fig:dissectionGridQuivers}
+\end{figure}
+
+These two families of non-kissing complexes are well-behaved as they avoid all pathologies of \cref{rem:exchangeablePairsNKC}.
+However, they still provide good examples of non-kissing complexes.
+In particular, both families contain the classical associahedron.
+Namely, the gentle associahedron~$\Asso[\quiver]$ is the classical associahedron of~\cite{ShniderSternberg, Loday} presented in \cref{thm:associahedronLoday} when~${\quiver = \quiver_A}$ for the path~${A = \set{(0,j)}{j \in [n]}}$ or equivalently~$\quiver = \quiver_D$ for the fan triangulation~$D$ (where all internal diagonals are incident to the same point).
+More generally, $\Asso[\quiver]$ is an associahedron of~\cite{HohlwegLange} when~$\quiver = \quiver_A$ for a ribbon~$A$ or equivalently~$\quiver = \quiver_D$ for a triangulation~$D$.
+See \cref{fig:dissectionGridQuivers}.
+
+Note that, it was shown in~\cite{PaluPilaudPlamondon-surfaces} that the accordion complexes can be extended to dissections of arbitrary orientable surfaces with marked points and then provide a geometric model for all non-kissing complexes of gentle quivers.
 
 %%%
 
 \subsubsection{Type cones of non-kissing fans}
 
+\enlargethispage{-.3cm}
 We now discuss the type cones of the non-kissing fans defined in \cref{thm:nonkissingFan}. We obtain from \cref{prop:exchangeablePairsNKC} the following redundant description.
 
 \begin{corollary}
 For any non-kissing finite gentle quiver~$\quiver$, the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ is given by
 \[
-\typeCone(\gvectorFan[\quiver]) = \set{\b{h} \in \R^{\walks}}{\begin{array}{l} \b{h}_\omega = 0 \text{ for any improper walk } \omega \\ \b{h}_\omega + \b{h}_{\omega'} > \b{h}_\mu + \b{h}_\nu \text{ for any exchangeable walks } \omega, \omega' \end{array}},
+\typeCone \big( \gvectorFan[\quiver] \big) = \set{\b{h} \in \R^{\walks}}{\begin{array}{l} \b{h}_\omega = 0 \text{ for any improper walk } \omega \\ \b{h}_\omega + \b{h}_{\omega'} > \b{h}_\mu + \b{h}_\nu \text{ for any exchangeable walks } \omega, \omega' \end{array}},
 \]
 where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are defined in \cref{prop:exchangeablePairsNKC}.
 \end{corollary}
@@ -1936,8 +1924,8 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 \label{exm:typeConeNKC}
 \enlargethispage{.4cm}
 Consider the non-kissing fans illustrated in \cref{fig:nonkissingFans}.
-The type cone of the left fan of \cref{fig:nonkissingFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
-It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(left).
+The type cone of the left fan of \cref{fig:nonkissingFans} lives in~$\R^8$ and has a linearity space of dimension~$3$.
+It has $5$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(left).
 
 \[
 \begin{array}{r|ccccccccc}
@@ -2187,14 +2175,14 @@ In particular, it is not simplicial.
         	\draw[red, densely dotted, thick] (k2.south) -- ([yshift=-.3cm]k2.south);
         \end{tikzpicture}
     \end{adjustbox}
-	\caption{The facet-defining inequalities of the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan, represented on the Auslander Reiten quiver of the gentle algebra of~$\quiver$. While they correspond to meshes on the left, they are not as clear in the general case as on the right. See also \cref{sec:extricats}.}
+	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[\quiver] \big)$ of the non-kissing fan, represented on the Auslander Reiten quiver of the gentle algebra of~$\quiver$. While they correspond to meshes on the left, they are not as clear in the general case as on the right. See also \cref{sec:extricats}.}
 	\label{fig:labelFacetDefiningInequalititiesNKC}
 \end{figure}
 \end{example}
 
-As illustrated in \cref{exm:typeConeNKC}, the type cone of the non-kissing fan is not simplicial and we do not always understand its extremal exchangeable pairs.
+As illustrated in \cref{exm:typeConeNKC}, the type cone of the non-kissing fan is not always simplicial and we do not always understand its extremal exchangeable pairs.
 In the next section section, we will explore a special family of gentle quivers for which we can completely describe the type cone.
-The combination of this special family with computer experiments in the general case support the following conjecture.
+The combination of this special family with computer experiments in the general case supports the following conjecture.
 
 \begin{conjecture}
 Consider a distinguishable string~$\sigma \in \distinguishableStrings$, and let~$\omega$ (resp.~$\omega'$) be the walk obtained from~$\sigma$ by adding two hooks (resp.~two cohooks) at the endpoints of~$\sigma$. Then
@@ -2227,19 +2215,19 @@ In this section, we will restrict our attention to the following family of quive
 \label{def:brick2acyclic}
 A gentle quiver~$\quiver$ is called:
 \begin{itemize}
-\item \defn{brick}: it satisfies the three equivalent conditions of \cref{prop:noSelfKissing},
-\item \defn{$2$-acyclic}: it contains no cycle of length~$2$.
+\item \defn{brick} if it satisfies the three equivalent conditions of \cref{prop:noSelfKissing},
+\item \defn{$2$-acyclic} if it contains no cycle of length~$2$.
 \end{itemize}
 \end{definition}
 
-Note that this family already contains a lot of relevant examples, including the gentle grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
+Note that the family of brick $2$-acyclic gentle quivers already contains a lot of relevant examples, including the gentle grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
 In particular, the classical associahedron is the gentle associahedron of a brick $2$-acyclic gentle quiver.
 We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
 
 For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
-These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~\defn{cohook}) to~$\sigma$.
+These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~a \defn{cohook}) to~$\sigma$.
 We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
-The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply be denoted~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
+The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply denoted by~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
 
 \begin{proposition}
 \label{prop:interestingExchangeablePairsNKC}
@@ -2260,15 +2248,15 @@ We first show that~$\mu$ and~$\nu$ are compatible.
 Let~$\tau$ be a maximal common substring of~$\mu$ and~$\nu$.
 If~$\sigma$ and~$\tau$ are not disjoint, then~$\sigma = \tau$ and $\mu$ and~$\nu$ are not kissing at~$\tau$.
 We can therefore assume that $\tau$ appears completely before or completely after~$\sigma$ in both~$\mu$ and~$\nu$.
-We distinguish the different cases:
+We distinguish two different cases:
 \begin{itemize}
-\item If~$\tau$ appears before~$\sigma$ in both~$\mu$ and~$\nu$, then~$\alpha \tau \alpha'$ form a cycle in~$\quiver$. If~$\tau$ is reduced to a vertex, then we have a $2$-cycle. Otherwise, since~$\alpha\tau$ is a substring of~$\nu$ and~$\alpha'\tau$ is a substring of~$\nu$, the cycle~$\alpha \tau \alpha'$ contains a unique relation~$\alpha'\alpha$. This rules out this case under the assumption that~$\quiver$ is brick $2$-acyclic. The case when~$\tau$ appears after~$\sigma$ in both~$\mu$ and~$\nu$ is symmetric.
-\item If~$\tau$ appears before~$\sigma$ in~$\mu$ and after~$\sigma$ in~$\nu$, then~$\omega$, $\mu$ and~$\nu$ finish at the same blossom so that~$\mu$ and~$\nu$ are not kissing at~$\tau$. The case when~$\tau$ appears after~$\sigma$ in~$\mu$ and before~$\sigma$ in~$\nu$ is identical.
+\item If~$\tau$ appears before~$\sigma$ in both~$\mu$ and~$\nu$, then~$\alpha \tau \alpha'$ forms a cycle in~$\quiver$. If~$\tau$ is reduced to a vertex, then we have a $2$-cycle. Otherwise, since~$\alpha\tau$ is a substring of~$\nu$ and~$\alpha'\tau$ is a substring of~$\nu$, the cycle~$\alpha \tau \alpha'$ contains a unique relation~$\alpha'\alpha$. This rules out this case under the assumption that~$\quiver$ is brick $2$-acyclic. The case when~$\tau$ appears after~$\sigma$ in both~$\mu$ and~$\nu$ is symmetric.
+\item If~$\tau$ appears before~$\sigma$ in~$\mu$ and after~$\sigma$ in~$\nu$, then~$\omega$, $\mu$ and~$\nu$ finish at the same blossom so that~$\mu$ and~$\nu$ are not kissing at~$\tau$. The case when~$\tau$ appears after~$\sigma$ in~$\mu$ and before~$\sigma$ in~$\nu$ is symmetric.
 \end{itemize}
 We conclude that~$\mu$ and~$\nu$ are non-kissing, which also implies that~$\{\mu, \nu, \omega\}$ and~$\{\mu, \nu, \omega'\}$ are non-kissing faces of~$\NKC$.
 We can therefore consider a non-kissing facet~$F$ containing~$\{\mu, \nu, \omega\}$.
 
-We claim that~$\omega$ is distinguished at~$\alpha$ and~$\beta$ in the facet~$F$, that~$\mu$ is distinguished at~$\alpha'$ and that~$\nu$ is distinguished at~$\beta'$.
+We claim that~$\omega$ is distinguished at~$\alpha$ and~$\beta$ in~$F$, that~$\mu$ is distinguished at~$\alpha'$ in~$F$ and that~$\nu$ is distinguished at~$\beta'$ in~$F$.
 Let us just prove that~$\mu$ is distinguished at~$\alpha'$, the other statements being similar.
 Consider any walk~$\lambda$ of~$F$ containing~$\alpha'$, and let~$\tau$ be the maximal common substring of~$\omega$ and~$\lambda$.
 Note that~$\omega$ has the outgoing arrow~$\alpha$ while~$\lambda$ has the incoming arrow~$\alpha'$ at one end of~$\tau$.
@@ -2279,7 +2267,7 @@ Since this precisely coincides with the description of the flip in the non-kissi
 Therefore, $\omega$ and~$\omega'$ are exchangeable with distinguished substring~$\sigma$.
 \end{proof}
 
-The following statement describes the type cone of the non-kissing fan of a gentle quiver with no self-kissing walks.
+The following statement describes the type cone of the non-kissing fan of a brick $2$-acyclic gentle quiver.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsNKC}
@@ -2293,11 +2281,11 @@ Decompose~$\omega = \rho \sigma \tau$ and~$\omega' = \rho' \sigma \tau'$ and def
 \[
 \gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
 \]
-Therefore, the outer normal vector of the corresponding inequality of the type cone~$\typeCone(\gvectorFan[\quiver])$ is
+Therefore, the inner normal vector of the corresponding inequality of the type cone~$\typeCone \big( \gvectorFan[\quiver] \big)$ is
 \[
 \b{n}(\omega, \omega') \eqdef \b{f}_\omega + \b{f}_{\omega'} - \b{f}_\mu - \b{f}_\nu.
 \]
-We claim that this normal vector is always a positive linear combination of the normal vectors~$\b{m}(\sigma) \eqdef \b{n}(\cc{\sigma}, \hh{\sigma}) = \b{f}_{\cc{\sigma}} + \b{f}_{\hh{\sigma}} - \b{f}_{\hc{\sigma}} - \b{f}_{\ch{\sigma}}$ for all string~$\sigma \in \strings$.
+We claim that this normal vector is always a positive linear combination of the normal vectors~$\b{m}(\sigma) \eqdef \b{n}(\cc{\sigma}, \hh{\sigma}) = \b{f}_{\cc{\sigma}} + \b{f}_{\hh{\sigma}} - \b{f}_{\hc{\sigma}} - \b{f}_{\ch{\sigma}}$ for all strings~$\sigma \in \strings$.
 Our proof works by descending induction on the length~$\lambda(\omega,\omega') \eqdef \ell(\sigma)$ of the common substring of~$\omega$ and~$\omega'$.
 If~$\lambda(\omega, \omega')$ is big enough, then the walk~$\omega$ (resp.~$\omega'$) is just obtained by adding two outgoing (resp.~incoming) blossoms at the end of~$\sigma$, thus $\omega = \cc{\sigma}$ (resp.~$\omega' = \hh{\sigma}$), and there is nothing to prove.
 Assume now that~$\omega \ne \hh{\sigma}$ (the situation where~$\omega' \ne \cc{\sigma}$ is symmetric).
@@ -2374,7 +2362,7 @@ Our next statement follows from the end of the previous proof.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeNKC}
-For any brick $2$-acyclic gentle quiver~$\quiver$, the type cone~$\typeCone(\gvectorFan[\quiver])$ of the non-kissing fan~$\quiver$ is simplicial.
+For any brick $2$-acyclic gentle quiver~$\quiver$, the type cone~$\typeCone \big( \gvectorFan[\quiver] \big)$ of the non-kissing fan~$\quiver$ is simplicial.
 \end{corollary}
 
 Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeNKC,prop:extremalExchangeablePairsNKC}, we derive the following description of all polytopal realizations of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick $2$-acyclic quiver~$\quiver$.
@@ -2388,11 +2376,6 @@ R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \g
 is a realization of the non-kissing fan~$\gvectorFan[\quiver]$.
 Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\strings}$ describe all polytopal realizations of~$\gvectorFan[\quiver]$.
 \end{corollary}
-
-\begin{proof}
-\cref{prop:extremalExchangeablePairsNKC} asserts that the type cone~$\typeCone(\gvectorFan[\quiver])$ has one facet for each string of~$\quiver$.
-Since all strings are distinguishable by \cref{prop:noSelfKissing}, the number of facets of~$\typeCone(\gvectorFan[\quiver])$ is $|\strings| = |\distinguishableStrings| = |\properWalks| - |Q_0|$ by~\cref{prop:bijectionStringsWalks}, so that~$\typeCone(\gvectorFan[\quiver])$ is simplicial. We then conclude by a simple application of \cref{coro:simplicialTypeCone}.
-\end{proof}
 
 We also obtain from \cref{prop:extremalExchangeablePairsNKC} the following surprising property.
 
@@ -2409,10 +2392,10 @@ Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we
 
 \begin{remark}
 \label{exm:nonSimplicialTypeConeNKC}
-Note that \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and therefore~\cref{coro:simplicialTypeConeNKC,coro:allPolytopalRealizationsNKC} fail when the quiver is not brick or not $2$-acyclic.
+Note that \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and therefore~\cref{coro:simplicialTypeConeNKC,coro:allPolytopalRealizationsNKC} fail when the quiver is not brick or $2$-cyclic.
 The smallest exemples are the $2$-cycles whose non-kissing fans are represented in \cref{fig:nonkissingFans2}.
 The left one is not brick: it has a non-distinguishable string and a self-kissing walk.
-The right one is brick but is not $2$-acyclic.
+The right one is brick but is $2$-cyclic.
 
 
 \begin{figure}[h]
@@ -2441,8 +2424,7 @@ In both cases, \cref{prop:interestingExchangeablePairsNKC} fails for the string~
 \medskip
 \noindent
 (since the fans are the same, the type cones are the same and we therefore present them together).
-
-Note that both assumptions of \cref{def:brick2acyclic} are needed for \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC}. Indeed, these statements fail for the quiver of \cref{fig:nonkissingFans}\,(left) which is $2$-acyclic but not brick and for the quiver of \cref{fig:nonkissingFans2} which is brick but $2$-cyclic.
+\cref{fig:nonkissingFans}\,(right) gives another example of brick but $2$-cyclic gentle quiver for which \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} fail.
 
 %sage: Q = GentleQuiver({'e1':{'e2':['a']}, 'e2':{'e1':['b']}}, [('b','a')])
 
@@ -2596,7 +2578,12 @@ It is proved in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zel
 For any subset~$U \subseteq \ground$, denote by~$\triangle_U \eqdef \conv\set{\b{e}_u}{u \in U}$ the face of the standard simplex~$\triangle_\ground$ corresponding to~$U$.
 
 \begin{theorem}[\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}]
-For any graph~$\graphG$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron~$\Asso[\graphG]$, defined as the Minkowski sum~$\sum_{\tube \in \tubes} \triangle_{\tube}$ of the faces of the standard simplex corresponding to all tubes of~$\graphG$.
+For any graph~$\graphG$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron~$\Asso[\graphG]$.
+It can be constructed as
+\begin{itemize}
+\item the intersection of~$\HH$ with the hyperplanes~$\dotprod{\gvector{\tube}}{\b{x}} \le 3^{|\tube|-2}$ for all tubes~$\tube \in \tubes$~\cite{Devadoss},
+\item the Minkowski sum~$\sum_{\tube \in \tubes} \triangle_{\tube}$ of the faces of the standard simplex corresponding to all tubes of~$\graphG$~\cite{Postnikov}.
+\end{itemize}
 \end{theorem}
 
 \para{Flips in the nested fan}
@@ -2637,7 +2624,7 @@ We first obtain from \cref{prop:exchangeablePairsGA} the following redundant des
 \label{coro:typeConeGA}
 For any graph~$\graphG$, the type cone of the nested fan~$\gvectorFan[\graphG]$ is given by
 \[
-\typeCone(\gvectorFan[\graphG]) = \set{\b{h} \in \R^{\tubes}}{\begin{array}{l} \b{h}_{\tube} = 0 \text{ for any improper tube } \tube \\ \b{h}_{\tube} + \b{h}_{\tube'} > \b{h}_{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{h}_{\tube[s]} \text{ for any exchangeable tubes } \tube, \tube' \end{array}}.
+\typeCone \big( \gvectorFan[\graphG] \big) = \set{\b{h} \in \R^{\tubes}}{\begin{array}{l} \b{h}_{\tube} = 0 \text{ for any improper tube } \tube \\ \b{h}_{\tube} + \b{h}_{\tube'} > \b{h}_{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{h}_{\tube[s]} \text{ for any exchangeable tubes } \tube, \tube' \end{array}}.
 \]
 \end{corollary}
 
@@ -2834,57 +2821,64 @@ Two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ form an extremal exchangeable pai
 \end{proposition}
 
 We now consider an arbitrary graph~$\graphG$ and describe the type cone of its nested fan.
-\cref{prop:extremalExchangeablePairsA} extends as follows.
+We give a necessary condition for an exchangeable pair to be extremal in \cref{lem:extremalExchangeablePairsGAonlyif}, exploit it in \cref{exm:constructionsGA}, and prove that it is actually a sufficient condition in \cref{prop:extremalExchangeablePairsGA}
 
 \begin{lemma}
 \label{lem:extremalExchangeablePairsGAonlyif}
-Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$ only if~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
+If two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$, then~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
 \end{lemma}
 
 \begin{proof}
 Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$.
-The outer normal vector of the corresponding inequality of the type cone is
+The inner normal vector of the corresponding inequality of the type cone is
 \[
 \b{n}(\tube, \tube') \eqdef \b{f}_{\tube} + \b{f}_{\tube'} - \b{f}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{f}_{\tube[s]}.
 \]
 
-
 By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
-Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected. Assume that $\tube \ssm \tube'\neq \{v\}$, and let $w\neq v$ be a non-disconnecting node of $\tube \ssm \tube'$. Then $\tilde \tube:=\tube \ssm \{w\}$ and $\tube'$ are exchangeable, and $\tilde \tube':=(\tube \cup \tube')\ssm \{w\}$ and $\tube$ are exchangeable as well. We have
+Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected. Assume that $\tube \ssm \tube'\ne \{v\}$, and let $w\ne v$ be a non-disconnecting node of $\tube \ssm \tube'$. By \cref{prop:exchangeablePairsGA}, $\tilde \tube \eqdef \tube \ssm \{w\}$ and $\tube'$ are exchangeable, and $\tilde \tube' \eqdef (\tube \cup \tube') \ssm \{w\}$ and $\tube$ are exchangeable as well. Moreover, we have
 \begin{align*}
-\b{n}(\tilde \tube, \tube')+\b{n}( \tube, \tilde \tube') &=\b{f}_{\tilde \tube} + \b{f}_{\tube'} - \b{f}_{\tilde \tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tilde \tube \cap \tube')} \b{f}_{\tube[s]} 
-+ \b{f}_{\tube} + \b{f}_{\tilde \tube'} - \b{f}_{\tube\cup \tilde \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tilde \tube')} \b{f}_{\tube[s]} \\
-&= \b{f}_{\tube} + \b{f}_{\tube'} - \b{f}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{f}_{\tube[s]} =\b{n}(\tube, \tube'),
+\b{n}(\tilde \tube, \tube') + \b{n}( \tube, \tilde \tube')
+& = \Big( \b{f}_{\tilde \tube} + \b{f}_{\tube'} - \b{f}_{\tilde \tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tilde \tube \cap \tube')} \b{f}_{\tube[s]} \Big)
++ \Big( \b{f}_{\tube} + \b{f}_{\tilde \tube'} - \b{f}_{\tube\cup \tilde \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tilde \tube')} \b{f}_{\tube[s]} \Big) \\
+& = \b{f}_{\tube} + \b{f}_{\tube'} - \b{f}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{f}_{\tube[s]} =\b{n}(\tube, \tube'),
 \end{align*}
-as $\tube \cup \tilde \tube'=\tube \cup \tube'$, $\tilde \tube \cap \tube'=\tube \cap \tube'$, $\tilde \tube \cup \tube '=\tilde \tube '$,  and $\tube \cap \tilde \tube '=\tilde \tube$.
-% \[\b{n}(\tube, \tube')=\b{n}(\tilde \tube, \tube')+\b{n}( \tube, \tilde \tube'),\] 
+as $\tilde \tube \cup \tube' = \tilde \tube'$, $\tilde \tube \cap \tube' = \tube \cap \tube'$, $\tube \cup \tilde \tube' = \tube \cup \tube'$ and $\connectedComponents(\tube \cap \tilde \tube') = \connectedComponents(\tilde \tube) = \tilde \tube$.
 Therefore $\b{n}(\tube, \tube')$ defines a redundant inequality and $\{\tube, \tube'\}$ is not an extremal exchangeable pair.
+The proof is symmetric if~$\tube' \ssm \tube \ne \{v'\}$.
 \end{proof}
 
 \begin{example}
-Let $\graphG$ be a graph. Consider the vectors $\b{a}, \b{b}, \b{c}\in\R^{\tubes}$ whose entries for $\tube[s]\in\tubes$ are given by 
-$\b{a}_{\tube[s]}=-\big| \set{\tube[u]\in\tubes}{\tube[u]\subseteq \tube[s]}\big| $, $\b{b}_{\tube[s]}=-3^{\big| \tube[s]\big| -2}$, and $\b{c}_{\tube[s]}=-\big| \set{\tube[u]\in\tubes}{\tube[u]\supseteq \tube[s]}\big| $, respectively.
+\label{exm:constructionsGA}
+We now exploit \cref{lem:extremalExchangeablePairsGAonlyif} to show that certain height functions belong to the type cone of~$\gvectorFan[\graphG]$ and recover the classical constructions of the graph associahedron.
 
-Now, let $\tube$ and~$\tube'$ be tubes such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, and let 
-$\b{n}(\tube, \tube')$ be as in~\cref{lem:extremalExchangeablePairsGAonlyif}.
-
-We have
-\[\dotprod{\b{n}(\tube, \tube')}{\b{a}}=\big|\set{\tube[u]\in\tubes}{\tube[u]\subseteq\tube[t]\cup\tube[t']\text{ and }v,v'\in\tube[u]}|,\]
-which is positive since at least $\tube[u]=\tube[t]\cup\tube[t']$ fulfills this condition. Hence $\b{a}\in\typeCone(\gvectorFan[\graphG])$. This gives Postnikov's realization of the graph associahedron from~\cite{Postnikov}.
-
-Setting $x=|\tube \cap \tube'|$, we get
-\[\dotprod{\b{n}(\tube, \tube')}{\b{b}}=3^{|\tube[t]\cup\tube[t']| -2}- 3^{|\tube[t]| -2}- 3^{|\tube[t']| -2} +\sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} 3^{|\tube[s]|-2 }\geq 3^{x}- 2\cdot 3^{x-1}>0.\]
-This shows that $\b{b}\in\typeCone(\gvectorFan[\graphG])$, and we recover Devadoss' realization of graph-associahedra~\cite{Devadoss}.
-
-Finally, 
-\[\dotprod{\b{n}(\tube, \tube')}{\b{c}}=\big| \set{(\tube[u], \tube[s])\in\tubes\times \connectedComponents(\tube[t]\cap\tube[t'])}{\tube[s]\subseteq\tube[u]\text{ and }\tube,\tube'\not\subseteq u}\big| +(\big| \connectedComponents(\tube[t]\cap\tube[t'])\big| -1)\big| \set{\tube[u]\in\tubes}{\tube\text{ or }\tube'\subseteq \tube[u]}\big| .\]
-Any connected component of $\tube\cap \tube'$ certifies the positivity of this evaluation, showing that $\b{c}\in\typeCone(\gvectorFan[\graphG])$. This realization of 
-the graph-associahedron is new, to the best of our knowledge. 
-\arnau{Is it worth to add it?}
-\arnau{recheck details}
-
+\begin{enumerate}
+\item Consider the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef -|\bigset{\tube[s] \in \tubes}{\tube[s] \subseteq \tube}|$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
+\[
+\qquad\qquad
+\dotprod{\b{n}(\tube, \tube')}{\b{h}} = |\bigset{\tube[s]\in\tubes}{\tube[s] \subseteq \tube[t] \cup \tube' \text{ and } v, v' \in \tube[s]}|,
+\]
+which is positive since at least~$\tube \cup \tube'$ fulfills the condition.
+Thus, $\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
+The polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}$ is the graph associahedron constructed by A.~Postnikov's in~\cite{Postnikov}.
+\item Consider now the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef -3^{|\tube|-2}$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
+\[
+\qquad\qquad
+\dotprod{\b{n}(\tube, \tube')}{\b{h}} = - 3^{|\tube|-2} - 3^{|\tube'|-2} + 3^{|\tube \cup \tube'|-2} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} 3^{|\tube[s]|-2 } \ge - 2 \cdot 3^{|\tube \cup \tube'|-1} + 3^{|\tube \cup \tube'|} > 0.
+\]
+Thus, $\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
+The corresponding polytope~$P_\b{h}$ is the graph associahedron constructed by S.~Devadoss's in~\cite{Devadoss}.
+\item Finally, consider the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef |\bigset{\tube[s] \in \tubes}{\tube[s] \supseteq \tube}|$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
+\begin{align*}
+\qquad\qquad
+\dotprod{\b{n}(\tube, \tube')}{\b{h}} = \; & |\bigset{\tube[r] \in \tubes, \tube[s] \in \connectedComponents(\tube \cap \tube')}{\tube[s] \subseteq \tube[r] \text{ and } \tube, \tube' \not\subseteq \tube[r]}| \\
+& + \big( |\connectedComponents(\tube \cap \tube')|-1 \big) \cdot | \bigset{\tube[r] \in \tubes}{\tube \text{ or } \tube'\subseteq \tube[r]}\big|.
+\end{align*}
+Any connected component of~$\tube \cap \tube'$ certifies the positivity of this evaluation, showing that $\b{h}$ belongs to~$\typeCone \big( \gvectorFan[\graphG] \big)$. The corresponding realization~$P_\b{h}$ of the graph associahedron is new, to the best of our knowledge. 
+\end{enumerate}
 \end{example}
 
+We now show that the condition of \cref{lem:extremalExchangeablePairsGAonlyif} actually characterizes the extremal exchangeable pairs of the nested fan~$\gvectorFan[\graphG]$.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsGA}
@@ -2892,71 +2886,68 @@ Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair f
 \end{proposition}
 
 \begin{proof}
-
-We have seen that an exchangeable pair $\{\tube, \tube'\}$ is not extremal unless both $\tube\ssm \tube'$ and $\tube'\ssm \tube$ are singletons. We now need to show that all these pairs are extremal. Until we finish the proof, we will call such a pair a \defn{suspected extremal pair}.
+By \cref{lem:extremalExchangeablePairsGAonlyif}, an exchangeable pair $\{\tube, \tube'\}$ is not extremal unless both $\tube \ssm \tube'$ and $\tube' \ssm \tube$ are singletons. We now need to show that all these pairs are extremal. Until we finish the proof, we will call such a pair a \defn{suspected extremal pair}.
 
 Let $\{\tube, \tube'\}$ be a suspected extremal pair.
-To prove that it is extremal, we will construct a vector $\b{w}\in\R^{\tubes}$ such that $\dotprod{\b{n}(\tube, \tube')}{\b{w}}< 0,$
+To prove that it is extremal, we will construct a vector $\b{w} \in \R^{\tubes}$ such that $\dotprod{\b{n}(\tube, \tube')}{\b{w}}< 0,$
 but $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}>0$ for any other suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$. This will show that the inequality induced by~$\{\tube, \tube'\}$ is not redundant.
 
-Define $\alpha(\tube,\tube')=\set{\tube[u]\in\tubes}{\tube[u]\subseteq \tube \cup \tube'\text{ and } \tube\triangle\tube'\subseteq \tube[u]}$, where $\tube\triangle\tube'$ denotes the symmetric difference, and let $\b{x}\in\R^{\tubes}$ be such that
-\[\b{x}_{\tube[s]}=-\big|\set{\tube[u]\in \tubes\ssm \alpha(\tube,\tube')}{\tube[u]\subseteq \tube[s]}\big|\]
-for each tube~$\tube[s]\in\tubes$.
+Define $\alpha(\tube,\tube') \eqdef \set{\tube[u] \in \tubes}{\tube[u] \subseteq \tube \cup \tube' \text{ and } \tube \symdif \tube' \subseteq \tube[u]}$, where $\symdif$ denotes the symmetric difference, and let $\b{x} \in \R^{\tubes}$ be such that
+\[
+\b{x}_{\tube[s]} = -|\bigset{\tube[u] \in \tubes \ssm \alpha(\tube, \tube')}{\tube[u] \subseteq \tube[s]}|
+\]
+for each tube~$\tube[s] \in \tubes$.
 
 For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have
-\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}= \big|\alpha(\tilde \tube, \tilde \tube ')\ssm \alpha(\tube,\tube')|\geq0.\]
-Notice that $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}=0$ if $\alpha(\tilde \tube, \tilde \tube ')\subseteq \alpha(\tube,\tube')$ and
-$\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}\geq 1$ otherwise.
-In particular, if $\{\tilde \tube, \tilde \tube'\}\neq \{\tube, \tube'\}$ then
-$\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}\geq 1$ unless $\tilde \tube\cup \tilde \tube'\subsetneq \tube\cup \tube'$ because 
- $\tilde \tube\cup \tilde \tube'\in\alpha(\tilde \tube, \tilde \tube ')$, and if $\tilde \tube\cup \tilde \tube'=\tube\cup \tube'$ but $\{\tilde \tube, \tilde \tube'\}\neq \{\tube, \tube'\}$, then either $\tube$ or $\tube'$ will belong to $\alpha(\tilde \tube, \tilde \tube ')$. 
+\[
+\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} = |\alpha(\tilde \tube, \tilde \tube')\ssm \alpha(\tube, \tube')| \ge 0.
+\]
+Notice that $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} = 0$ if $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube,\tube')$ and $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} \ge 1$ otherwise.
+In particular, if $\{\tilde \tube, \tilde \tube'\} \ne \{\tube, \tube'\}$ then $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} \ge 1$ unless $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$ because $\tilde \tube \cup \tilde \tube' \in \alpha(\tilde \tube, \tilde \tube')$, and if $\tilde \tube \cup \tilde \tube' = \tube \cup \tube'$ but $\{\tilde \tube, \tilde \tube'\} \ne \{\tube, \tube'\}$, then either $\tube$ or $\tube'$ will belong to $\alpha(\tilde \tube, \tilde \tube')$. 
 
-Now, define $\b{y}\in\R^{\tubes}$ by \[\b{y}_{\tube[s]}=\begin{cases}
-                             -1&\text{ if }|\tube[s]|\geq |\tube|\\
-                             0&\text{ otherwise.}
-                            \end{cases}\]
-We have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}=-1$. For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}\geq -1$. If moreover $\tilde \tube\cup \tilde \tube'\subsetneq \tube\cup \tube'$, then we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}\geq 0$. 
+Now, define $\b{y}\in\R^{\tubes}$ by
+\[
+\b{y}_{\tube[s]} \eqdef \begin{cases}
+	-1 & \text{ if } |\tube[s]| \ge |\tube| \\
+	0 & \text{ otherwise.}
+\end{cases}
+\]
+We have $\dotprod{\b{n}(\tube, \tube')}{\b{y}} = -1$. For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}}\ge -1$. If moreover $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$, then we have $\dotprod{\b{n}(\tube, \tube')}{\b{y}} \ge 0$. 
 
-Finally, consider $\b{z}\in\R^{\tubes}$ given by
-\[\b{z}_{\tube[s]}=-\big|\set{\tube[u]\in \alpha(\tube,\tube')}{\tube[u]\subseteq \tube[s]}\big|. \]
-It verifies $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}\geq0$ for any suspected extremal pair~$\{\tilde \tube, \tilde \tube'\}$, and $\dotprod{\b{n}(\tube, \tube')}{\b{z}}=|\alpha(\tilde \tube, \tilde \tube ')|>0$ if $\alpha(\tilde \tube, \tilde \tube ')\subseteq \alpha(\tube,\tube')$.
+Finally, consider $\b{z} \in \R^{\tubes}$ given by
+\[
+\b{z}_{\tube[s]} = -|\bigset{\tube[u] \in \alpha(\tube, \tube')}{\tube[u] \subseteq \tube[s]}|.
+\]
+It verifies $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} \ge 0$ for any suspected extremal pair~$\{\tilde \tube, \tilde \tube'\}$, and $\dotprod{\b{n}(\tube, \tube')}{\b{z}} = |\alpha(\tilde \tube, \tilde \tube')| > 0$ if $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube, \tube')$.
 
-For $0<\varepsilon<1$, and $0<\delta<\frac{\varepsilon}{|\alpha(\tube,\tube')|}$, the vector $\b{w}=\b{x}+\varepsilon \b{y}+\delta \b{z}$ fulfills the desired properties.
-Indeed, if $\{\tilde \tube, \tilde \tube'\}\neq \{\tube,\tube '\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube ')\not \subseteq \alpha(\tube,\tube')$, then 
-\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}=\underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{\geq 1}+\underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{> -1}+\underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{\geq 0}> 0.\]
- If $\{\tilde \tube, \tilde \tube'\}\neq \{\tube,\tube '\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube ')\subseteq \alpha(\tube,\tube')$, then $\tilde \tube\cup \tilde \tube'\subsetneq \tube\cup \tube'$ and 
-\[\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}=\underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{=0}+\underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{\geq 0}+\underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{>0}> 0.\]
+For $0 < \varepsilon < 1$, and $0 < \delta < \frac{\varepsilon}{|\alpha(\tube, \tube')|}$, the vector $\b{w} \eqdef \b{x} + \varepsilon \b{y} + \delta \b{z}$ fulfills the desired properties.
+Indeed, if $\{\tilde \tube, \tilde \tube'\} \ne \{\tube,\tube'\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube') \not \subseteq \alpha(\tube,\tube')$, then 
+\[
+\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}} = \underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{\ge 1} + \underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{> -1} + \underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{\ge 0} > 0.
+\]
+If $\{\tilde \tube, \tilde \tube'\} \ne \{\tube,\tube'\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube,\tube')$, then $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$ and 
+\[
+\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}} = \underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{= 0} + \underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{\ge 0} + \underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{> 0} > 0.
+\]
 However,
-\[\dotprod{\b{n}(\tube, \tube')}{\b{w}}=\underbrace{\dotprod{\b{n}(\tube, \tube')}{\b{x}}}_{=0}+\underbrace{\varepsilon \dotprod{\b{n}(\tube, \tube')}{\b{y}}}_{=-\varepsilon}+\underbrace{\delta \dotprod{\b{n}( \tube,  \tube')}{\b{z}}}_{=\delta|\alpha(\tube ,\tube')|<\varepsilon}< 0.\]
-
+\[
+\dotprod{\b{n}(\tube, \tube')}{\b{w}} = \underbrace{\dotprod{\b{n}(\tube, \tube')}{\b{x}}}_{= 0} + \underbrace{\varepsilon \dotprod{\b{n}(\tube, \tube')}{\b{y}}}_{= -\varepsilon} + \underbrace{\delta \dotprod{\b{n}( \tube,  \tube')}{\b{z}}}_{= \delta |\alpha(\tube ,\tube')| < \varepsilon} < 0.
+\qedhere
+\]
 \end{proof}
-
 
 The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
 
 \begin{corollary}
 \label{coro:extremalExchangeablePairsGA}
-The extremal exchangeable pairs for the nested fan of~$\graphG$ are the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
-% equivalently
-% \begin{enumerate}[(i)]
-% \item the pairs of tubes~$\tube[r] \cup \{v\}$ and~$\tube[r] \cup \{v'\}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
-% \item the pairs of tubes~$\tube[s] \ssm \{v'\}$ and~$\tube[s] \ssm \{v\}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$,
-% \end{enumerate}
+The extremal exchangeable pairs for the nested fan of~$\graphG$ are precisely the pairs of tubes~${\tube[s] \ssm \{v'\}}$ and~${\tube[s] \ssm \{v\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$~of~$\tube[s]$.
 \end{corollary}
-\arnau{The two conditions were not equivalent. I removed the wrong one.}
 
 We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan, which we can explicitly express.
-% using one of the following two equivalent conditions.
 
 \begin{corollary}
 Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying 
  $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$. 
-% one of the two following equivalent conditions:
-% \begin{enumerate}[(i)]
-% \item $\b{h}_{\tube[r] \cup \{v\}} + \b{h}_{\tube[r] \cup \{v'\}} > \b{h}_{\tube[r] \cup \{v, v'\}} + \b{h}_{\tube[r]}$ for any tube~$\tube[r] \in \tubes$ and distinct neighbors~$v,v'$ of~$\tube[r]$,
-% \item $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
-% \end{enumerate}
-
 Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 \[
 \set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}.
@@ -2989,7 +2980,7 @@ extremal exchangeable pairs.
 \end{corollary}
 
 %\begin{proof}
-%By \cref{prop:extremalExchangeablePairsGA}, extremal exchangeable pairs are in bijection with quadruples~$(\tube[r], \tube[t], \tube[t'], \tube[s])$ of tubes of~$\graphG$ where~$\tube[t]$ and~$\tube[t']$ are distinct tubes covering~$\tube[r]$ and covered by~$\tube[s]$ in the inclusion poset of all tubes of~$\graphG$.
+%By \cref{prop:extremalExchangeablePairsGA}, extremal exchangeable pairs are in bijection with quadruples~$(\tube[r], \tube[t], \tube', \tube[s])$ of tubes of~$\graphG$ where~$\tube[t]$ and~$\tube'$ are distinct tubes covering~$\tube[r]$ and covered by~$\tube[s]$ in the inclusion poset of all tubes of~$\graphG$.
 %The result immediately follows.
 %\end{proof}
 
@@ -3015,7 +3006,7 @@ For the stellohedron, choose either~$v$ as the center of the star and~$v'$ as on
 To conclude on graph associahedra, we characterize the graphs~$\graphG$ whose nested fan has a simplicial type cone.
 
 \begin{proposition}
-The type cone~$\typeCone(\gvectorFan[\graphG])$ is simplicial if and only if~$\graphG$ is a path.
+The type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$ is simplicial if and only if~$\graphG$ is a path.
 \end{proposition}
 
 \begin{proof}
@@ -3188,7 +3179,7 @@ We can finally state the main theorem of this section, which is an analogue of t
  \[
   0\to \Hom{\Lambda}(FY, FA) \to \Hom{\Lambda}(FE, FA) \xrightarrow{f} \Hom{\Lambda}(FX, FA) \to \coker(f) \to 0.
  \]
- Therefore~$\langle x, [A] \rangle = \dim_{\field} \coker(f) \geq 0$.
+ Therefore~$\langle x, [A] \rangle = \dim_{\field} \coker(f) \ge 0$.
 \end{proof}
 
 %%%%%%%%%%%
@@ -4762,7 +4753,7 @@ Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is e
  \]
  
 One can check directly that the condition of Theorem~\ref{theo::brick-algebra-condition} is not satisfied.
-For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm) = \bsm3\\1\esm$, while~$\Hom{\Lambda}\left(\bsm2\\1\esm,\tau^2(\bsm2\\1\esm)\right) = \Hom{\Lambda}(\bsm2\\1\esm,\bsm1\\2\esm) \neq 0$.
+For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm) = \bsm3\\1\esm$, while~$\Hom{\Lambda}\left(\bsm2\\1\esm,\tau^2(\bsm2\\1\esm)\right) = \Hom{\Lambda}(\bsm2\\1\esm,\bsm1\\2\esm) \ne 0$.
 \end{example}
 
 %%%
