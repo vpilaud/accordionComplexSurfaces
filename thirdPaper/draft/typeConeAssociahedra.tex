@@ -1121,7 +1121,7 @@ In this paper, we only consider \defn{finite type} cluster algebras, \ie those w
 It turns out that these finite type cluster algebras were classified by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasII} using the Cartan-killing classification for crystallographic root systems.
 Define the \defn{Cartan companion} of an exchange matrix $\B$ as the matrix~$\A{\B}$ given by~$a_{xy} = 2$ if~$x = y$ and~$a_{xy} = -|b_{xy}|$ otherwise.
 
-\begin{theorem}[{\cite[Theorem~1.4]{FominZelevinsky-ClusterAlgebrasII}}]
+\begin{theorem}[{\cite[Thm.~1.4]{FominZelevinsky-ClusterAlgebrasII}}]
 \label{thm:finiteTypeClassification}
 The cluster algebra~$\clusterAlgebra$ is of finite type if and only~if $\B_\circ$ is mutationally equivalent to a matrix~$\B$ whose Cartan companion~$\A{\B}$ is a Cartan matrix of finite type. Moreover the type of $\A{\B}$ is determined~by~$B_\circ$.
 \end{theorem}
@@ -1257,9 +1257,9 @@ Unfortunately, \cref{lem:linearDependencegvectorsCA} is less precise than \cref{
 % We will prove however that it is independent of the seeds containing~$x$ and~$x'$.
 % \vincent{Link to \cref{sec:clusterCategories}.}
 However, for cluster algebras of finite type, this linear dependence is independent of the choice of a seed containing~$x$ and~$x'$.
-As explained in ~\cref{corollary:UERPforCAproof}, this statement follows from~\cite[Theorem 7.5]{BuanMarshReinekeReitenTodorov}.
+As explained in ~\cref{corollary:UERPforCAproof}, this statement follows from~\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov}.
 We state it here for future reference.
-Note that the corresponding statement for cluster variables, instead of~$\b{g}$-vectors, holds by~\cite[Theorem 1.11]{FominZelevinsky-ClusterAlgebrasII}.
+Note that the corresponding statement for cluster variables, instead of~$\b{g}$-vectors, holds by~\cite[Thm.~1.11]{FominZelevinsky-ClusterAlgebrasII}.
 
 \begin{proposition}
 \label{prop:uniqueExchangePropertyCA}
@@ -1787,7 +1787,7 @@ for any two walks~$\omega, \omega' \in F$.
 The following result will also be essential in our discussion.
 We say that a string~$\sigma$ is \defn{distinguishable} if it is the distinguished substring of a walk in a non-kissing facet, and we denote by~$\distinguishableStrings$ the set of distinguishable strings of~$\quiver$.
 
-\begin{proposition}[{\cite[3.68]{PaluPilaudPlamondon-nonkissing}}]
+\begin{proposition}[{\cite[Prop.~3.68]{PaluPilaudPlamondon-nonkissing}}]
 \label{prop:bijectionStringsWalks}
 The number of distinguishable strings~$\distinguishableStrings$ and proper walks~$\properWalks$ of the quiver~$\quiver$ are related by
 \[
@@ -3412,9 +3412,9 @@ We first recall the results on categorification of cluster algebras that we will
  \]
  expressing cluster variables as Laurent polynomials in the variables of the cluster~$\CC(T)$ and which has the follwing properties.
  \begin{itemize}
-  \item[(i)] \emph{(}\cite[Proposition 3.2]{BuanMarshReinekeReitenTodorov} and~\cite[]{×} \emph{)} For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
-  \item[(ii)] \emph{(}\cite[Proposition 4.3]{FuKeller} and \emph{)} For any~$X\in \ind(\cat)$, the~$\b g$-vector of~$\CC(X)$ is~$\b g([X])$, where we identify~$\Z^n$ and~$\Kg(\cat)$ via the isomorphism sending~$(a_1, \ldots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
-  \item[(iii)] \emph{(}\cite[Theorem 7.5]{BuanMarshReinekeReitenTodorov} and~\cite[]{×} \emph{)} For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
+  \item[(i)] \emph{(}\cite[Prop.~3.2]{BuanMarshReinekeReitenTodorov} and~\cite[]{???} \emph{)} For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
+  \item[(ii)] \emph{(}\cite[Prop.~4.3]{FuKeller} and \emph{)} For any~$X\in \ind(\cat)$, the~$\b g$-vector of~$\CC(X)$ is~$\b g([X])$, where we identify~$\Z^n$ and~$\Kg(\cat)$ via the isomorphism sending~$(a_1, \ldots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
+  \item[(iii)] \emph{(}\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov} and~\cite[]{???�} \emph{)} For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
   \item[(iv)]\emph{(}\cite[???]{BuanMarshReinekeReitenTodorov} and~\cite[???]{BuanIyamaReitenScott} and ???\emph{)} Let~$T'$ be any basic cluster-tilting object of~$\cat$. Then the matrix~$B'$ of the associated seed~$(\CC(T'),B')$ is given by the multiplicities of the middle terms of the exchange triangles. More explicitely,
  \end{itemize}
 \end{theorem}
@@ -3438,7 +3438,7 @@ Then precisely one of the two mutations~$\mu_x(\cluster)$ and~$\mu_{x'}(\cluster
 \end{lemma}
 
 \begin{proof}
-In view of Theorem~\ref{thm::categorification} (iii), it follows from~\cite[Lemma 3.3]{Palu}
+In view of Theorem~\ref{thm::categorification} (iii), it follows from~\cite[Lem.~3.3]{Palu}
 \end{proof}
 
 \begin{corollary}\emph{(Proposition~\ref{prop:meshMutations})}
@@ -3624,7 +3624,7 @@ Let~$\cat$ be as in Setting~\ref{setting::extricat}.
 
 \begin{remark}
 Assume moreover that~$\cat$ is $\field$-linear and Ext-finite.
-By the preliminary results of Section~\ref{subsection: prelim on extricats}, we can apply~\cite[Proposition 4.2]{IyamaNakaokaPalu} to obtain that~$\modt$ is Hom-finite.
+By the preliminary results of Section~\ref{subsection: prelim on extricats}, we can apply~\cite[Prop.~4.2]{IyamaNakaokaPalu} to obtain that~$\modt$ is Hom-finite.
 In particular, if $\tc=\add T$, then $\End{\cat}(T)$ is a finite-dimensional~$\field$-algebra.
 It thus also follows that Definition~\ref{defi::bilinear form} still makes sense in this more general setup: For any~$X,Y\in\cat$,
 \[
@@ -3784,7 +3784,7 @@ A realization of~$\mathbb{E}$ is called an \defn{additive realization} if the fo
 \end{definition}
 
 
-\begin{definition}(\cite[Definition 2.12]{NakaokaPalu})
+\begin{definition}(\cite[Def.~2.12]{NakaokaPalu})
 A triple~$(\cat,\mathbb{E},\mathfrak{s})$ is called an \defn{extriangulated category} if the following holds:
 \begin{itemize}
 \item[{\rm (ET1)}] $\mathbb{E}:\cat^{\mathrm{op}}\times\cat\to\mathit{Ab}$ is an additive bifunctor;
@@ -3921,7 +3921,7 @@ where~$(f,h):\delta\to\delta'$ is a morphism of~$\mathbb{E}$-extensions realized
 The axioms above ensure that any extriangle induce long-ish exact sequences after application of some covariant or contravariant Hom-functor.
 In particular in any conflation, the inflation is a weak kernel of the deflation, and the deflation is a weak cokernel of the inflation.
 
-\begin{proposition}\emph{(}\cite[Propositions 3.3, 3.11]{NakaokaPalu}\emph{)}
+\begin{proposition}\emph{(}\cite[Props.~3.3~\&~3.11]{NakaokaPalu}\emph{)}
 Assume that $(\cat,\mathbb{E},\mathfrak{s})$ is an extriangulated category, and let $X\xrightarrow{x}Y\xrightarrow{y}Z\overset{\delta}{\dashrightarrow}$ be an extriangle.
 Then the following sequences of natural transformations are exact:
 \[ \cat(Z,-)\overset{-\circ y}{\longrightarrow}\cat(Y,-)\overset{-\circ x}{\longrightarrow}\cat(X,-)\overset{\delta^\sharp}{\longrightarrow}\mathbb{E}(Z,-)\overset{y^\ast}{\longrightarrow}\mathbb{E}(Y,-)\overset{x^\ast}{\longrightarrow}\mathbb{E}(X,-), \]
@@ -3930,7 +3930,7 @@ where~$\delta^\sharp(f)=f_\ast\delta$ and~$\delta_\sharp(g)=g^\ast\delta$.
 \end{proposition}
 
 Any variant of the axiom (ET4) that would hold in an extension-closed subcategory of a triangulated category by applying the octahedron axiom also holds in any extriangulated category.
-See~\cite[Section 3.2]{NakaokaPalu} for more details.
+See~\cite[Sect.~3.2]{NakaokaPalu} for more details.
 
 
 \begin{definition}
@@ -3945,7 +3945,7 @@ An \defn{almost-split}~$\mathbb{E}$-extension~$\delta\in\mathbb{E}(Z,X)$ is a no
 A non-zero object $X\in\cat$ is said to be \defn{endo-local} if $\cat(X,X)$ is local.
 \end{definition}
 
-\begin{proposition}\emph{(}\cite[Proposition 2.5]{IyamaNakaokaPalu}\emph{)}
+\begin{proposition}\emph{(}\cite[Prop.~2.5]{IyamaNakaokaPalu}\emph{)}
 For any non-split $\mathbb{E}$-extension $\delta\in\mathbb{E}(Z,X)$, the following holds.
 \begin{enumerate}[{\rm (1)}]
 \item If $\delta$ satisfies {\rm (AS1)}, then $X$ is endo-local.
@@ -3958,7 +3958,7 @@ For any non-split $\mathbb{E}$-extension $\delta\in\mathbb{E}(Z,X)$, the followi
  Dually, an object~$I\in\cat$ is called \defn{injective} if for any~$X\in\cat$, we have~$\mathbb{E}(X,I)=0$.
 \end{definition}
 
-\begin{proposition}\emph{(}\cite[Proposition 8.1]{IyamaNakaokaPalu}\emph{)}
+\begin{proposition}\emph{(}\cite[Prop.~8.1]{IyamaNakaokaPalu}\emph{)}
 Let~$\Lambda$ be an Artin algebra and let~$K^{[-1,0]}(\proj\Lambda)$ be the full subcategory of the homotopy category~$K^b(\proj\Lambda)$ consisting of complexes concentrated in degrees~$-1$ and~$0$ (using cohomological conventions).
 Then any endo-local non-projective object~$X\in\cat$ permits an almost-split conflation~$\tau X\infl E\defl X$ and any endo-local non-injective object~$Y\in\cat$ permits an almost-split conflation~$Y\infl E'\defl \tau^- Y$.
 \end{proposition}
@@ -4010,7 +4010,7 @@ where~$h_X$ is the unique morphism in~$\cat(X,\susp T_1^X)$ satisfying~$(h_X)^\a
 \end{lemma}
 
 \begin{proof}
-The first extriangle is obtained by applying the dual of~\cite[Proposition 3.15]{NakaokaPalu} to~$\delta_X$ and~$\delta_1$, and the second one is obtained similarly from~$\delta_0$ and ~$(f_X)_\ast \delta_1$.
+The first extriangle is obtained by applying the dual of~\cite[Prop.~3.15]{NakaokaPalu} to~$\delta_X$ and~$\delta_1$, and the second one is obtained similarly from~$\delta_0$ and ~$(f_X)_\ast \delta_1$.
 \end{proof}
 
 \begin{remark}
@@ -4058,7 +4058,7 @@ Every morphism with domain in~$\tc$ is an inflation.
 Let~$T \overset{t}{\to} X$ be a morphism with~$T\in \tc$.
 Using the notation of Remark~\ref{remark::equivalence Sigma}, there is an extriangle~$T\infl 0\defl \susp T \overset{\eps_T}{\dashrightarrow}$.
 Consider the extriangle~$X\overset{g}{\infl} Y \overset{h}{\defl} \susp T \overset{t_\ast\eps_T}{\dashrightarrow}$.
-By~\cite[Proposition 3.17]{NakaokaPalu}, there is a commutative diagram of extriangles
+By~\cite[Prop.~3.17]{NakaokaPalu}, there is a commutative diagram of extriangles
 \[
 \xy
 (-7,7)*+{T}="2";
@@ -4121,7 +4121,7 @@ Conversely, let~$X\xrightarrow{f}Y$ be such that~$Ff=0$.
 By Lemma~\ref{lemma::shifts of extriangles}, there is a conflation~$T_0\overset{g}{\infl} X\overset{h}{\defl} \susp T_1$ with~$T_0,T_1\in\tc$.
 By assumption, the composition~$f\circ g$ vanishes, which implies that~$f$ factors through~$\susp T_1$.
 The functor~$F$ thus induces a faithful functor, still denoted~$F$, from~$\cat/(\susp\tc)$ to~$\modt$.
-It is well-known (see for instance~\cite[Lemma 3.1]{AssemSimsonSkowronski}) that~$F$ restricts to an equivalence of categories~$\tc\to\proj\tc$.
+It is well-known (see for instance~\cite[Lem.~3.1]{AssemSimsonSkowronski}) that~$F$ restricts to an equivalence of categories~$\tc\to\proj\tc$.
 Because~$\tc$ consists of projective objects in~$\cat$, the image under~$F$ of every conflation is a right exact sequence.
 The fact that~$F$ is full and dense can thus be proven as in the case of triangulated categories, by using Lemma~\ref{lemma:: mphs in T are inflations}.
 \end{proof}
@@ -4150,7 +4150,7 @@ We thus have~$f(s-kh)=id_Y$, showing that the extriangle splits.
 \end{lemma}
 
 \begin{proof}
-Applying~\cite[Proposition 3.15]{NakaokaPalu} gives a commutative diagram made of conflations
+Applying~\cite[Prop.~3.15]{NakaokaPalu} gives a commutative diagram made of conflations
 \[
 \xy
 %
@@ -4202,7 +4202,7 @@ However, this stronger assumption is used in the proof of Lemma~\ref{lemma::inde
 \begin{proof}
 Let~$X\infl Y\defl Z$ be a conflation in~$\cat$.
 Fix conflations~$T_1^X \infl T_0^X \defl X$,~$T_1^Z\infl T_0^Z \defl Z$ with~$T_0^X, T_1^X, T_0^Z, T_1^Z\in\tc$.
-By~\cite[Proposition 3.15]{NakaokaPalu} and axiom (ET4)$^{\mathrm{op}}$, there are commutative diagrams of conflations
+By~\cite[Prop.~3.15]{NakaokaPalu} and axiom (ET4)$^{\mathrm{op}}$, there are commutative diagrams of conflations
 \[
 \xy
 %
@@ -4306,7 +4306,7 @@ Then~$\cat$ satisfies all the assumptions of Setting~\ref{setting::extricat} for
 
 We fix this issue by considering a relative extriangulated structure.
 Let~$\mathbb{E}_T$ be the additive sub-bifunctor of~$\cat(-,\susp -)$ formed by those morphisms that factor through~$\add\susp T$.
-Then~$(\cat,\mathbb{E}_T)$ becomes extriangulated by~\cite[Proposition 3.14]{HerschendLiuNakaoka} (this can also be checked directly).
+Then~$(\cat,\mathbb{E}_T)$ becomes extriangulated by~\cite[Prop.~3.14]{HerschendLiuNakaoka} (this can also be checked directly).
 The extriangles of~$\cat$ are precisely the triangles~$X\overset{f}{\rightarrow}Y\overset{g}{\rightarrow} Z \overset{h}{\dashrightarrow}$, for which the morphism~$h$ factors through~$\add\susp T$.
 By construction, Condition (1) is now satisfied.
 Moreover, the triangles appearing in Conditions (2) and (3) are extriangles for this relative structure, which shows that those two conditions are still satisfied for the extriangulated structure~$(\cat,\mathbb{E}_T)$.
@@ -4335,7 +4335,7 @@ Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the h
  Let~$\Lambda$ be any Artin algebra.  Then the category~$K^{[-1,0]}(\proj \Lambda)$ is an extriangulated category satisfying the assumptions (1) to (3) of Section~\ref{setting::extricat}, wiht~$\tc = \add(\Lambda)$.  If, moreover,~$\Lambda$ is finite-dimensional over a field~$\field$, then~$K^{[-1,0]}(\proj \Lambda)$ satisfies all assumptions of Section~\ref{setting::extricat}. 
 \end{proposition}
 \begin{proof}
- The category~$K^{[-1,0]}(\proj \Lambda)$ is closed under extensions in~$K^b(\proj \Lambda)$, so it is an extriangulated category whose conflations are induced by triangles in~$K^b(\proj\Lambda)$ by~\cite[Remark 2.18]{NakaokaPalu}.  Now, the object~$\Lambda$ is projective in~$K^{[-1,0]}(\proj \Lambda)$, since if~$X\infl Y\defl Z$ is a conflation, then we get a long exact sequence
+ The category~$K^{[-1,0]}(\proj \Lambda)$ is closed under extensions in~$K^b(\proj \Lambda)$, so it is an extriangulated category whose conflations are induced by triangles in~$K^b(\proj\Lambda)$ by~\cite[Rem.~2.18]{NakaokaPalu}.  Now, the object~$\Lambda$ is projective in~$K^{[-1,0]}(\proj \Lambda)$, since if~$X\infl Y\defl Z$ is a conflation, then we get a long exact sequence
  \[
   \Hom{K^b}(\Lambda,Y)\to \Hom{K^b}(\Lambda,Z) \to  \Hom{K^b}(\Lambda, \susp X),
  \]
@@ -4343,7 +4343,7 @@ Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the h
  
  The morphism~$\Lambda \to 0$ is an inflation, since~$\Lambda\infl 0 \defl \susp \Lambda$ is a conflation.  Moreover, if~$X= P_1\xrightarrow{f}P_0$ is an object of~$K^{[-1,0]}(\proj\Lambda)$, then it lies in a conflation~$P_1\stackrel{f}{\infl} P_0 \defl X$ by definition.  We have proved that properties~(1) to (3) of Section~\ref{setting::extricat} are satisfied.
  
- Finally, assume that~$\Lambda$ is finite-dimensional over a field~$\field$.  Then~$K^{[-1,0]}(\proj\Lambda)$ is Krull--Schmidt,~$\field$-linear and Ext-finite, since this is true for~$K^b(\proj\Lambda)$ for any finite-dimensional algebra~$\Lambda$.  Moreover, it has Auslander--Reiten--Serre duality by~\cite[Proposition 6.1]{IyamaNakaokaPalu}.
+ Finally, assume that~$\Lambda$ is finite-dimensional over a field~$\field$.  Then~$K^{[-1,0]}(\proj\Lambda)$ is Krull--Schmidt,~$\field$-linear and Ext-finite, since this is true for~$K^b(\proj\Lambda)$ for any finite-dimensional algebra~$\Lambda$.  Moreover, it has Auslander--Reiten--Serre duality by~\cite[Prop.~6.1]{IyamaNakaokaPalu}.
 \end{proof}
 
 Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
@@ -4368,7 +4368,7 @@ A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{
 
 \begin{remark}
 Assume that~$\Lambda$ is a finite-dimensional brick algebra which is representation-finite.
-Then~\cite[Theorem 6.2]{DemonetIyamaJasso} implies that the assumptions of Theorem~\ref{theo::brick-algebra-condition} are satisfied.
+Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of Theorem~\ref{theo::brick-algebra-condition} are satisfied.
 \end{remark}
 
 
@@ -4411,14 +4411,14 @@ Then~$\tau X\infl E\defl X$ is a mutation conflation.
 \end{lemma}
 
 \begin{proof}
-First note that the results~\cite[Lemmas 3.4 and 3.5]{AdachiIyamaReiten}, even though stated for finite dimensional algebras, hold with the same proofs for any Artin algebra.
+First note that the results~\cite[Lems.~3.4~\&~3.5]{AdachiIyamaReiten}, even though stated for finite dimensional algebras, hold with the same proofs for any Artin algebra.
 For convenience of the reader, we recall those two results: Let~$Y, Z \in K^{[-1,0]}(\proj\Lambda)$ be indecomposable and not in~$\add(\susp\Lambda)$, and let~$P\in\proj\Lambda$. Then~$\Hom{K^b}(Y,\susp Z)=0$ if and only if~$\Hom{\Lambda}(FZ,\tau FY)=0$ and~$\Hom{K^b}(P,Y)=0$ if and only if~$\Hom{\Lambda}(P,FY)=0$.
 
 Note also that Lemma~\ref{lemm::AR-conflations-and-sequences} implies that~$F\tau X$ is isomorphic to $\tau M$.
 
 By assumption,~$X$ is not in~$\add(\susp\Lambda)$.
 The same is true of~$\tau X$ since objects in~$\add(\susp\Lambda)$ are injective in~$K^{[-1,0]}(\proj\Lambda)$ and an Auslander--Reiten conflation does not split.
-It thus follows from~\cite[Lemma 3.4 ]{AdachiIyamaReiten} that~$X$ and~$\tau X$ are rigid in $K^{[-1,0]}(\proj\Lambda)$.
+It thus follows from~\cite[Lem.~3.4 ]{AdachiIyamaReiten} that~$X$ and~$\tau X$ are rigid in $K^{[-1,0]}(\proj\Lambda)$.
 We have to prove that both~$E\oplus X$ and~$E\oplus\tau X$ are rigid.
 
 \vspace{7pt}
@@ -4434,7 +4434,7 @@ By assumption
 \[
 \Hom{\Lambda}(FX,\tau F\tau X) = \Hom{\Lambda}(M,\tau^2 M)=0,
 \]
-so that the right-most term also vanishes by~\cite[Lemma 3.4 ]{AdachiIyamaReiten}.
+so that the right-most term also vanishes by~\cite[Lem.~3.4 ]{AdachiIyamaReiten}.
 
 \vspace{7pt}
 \noindent (2) $\Hom{K^b}(\tau X,\susp E) = 0$.
@@ -4446,7 +4446,7 @@ It induces a sequence
 \Hom{\Lambda}(M,\tau^2 M) \to \Hom{\Lambda}(FE,\tau^2 M) \to \Hom{\Lambda}(\tau M,\tau^2 M)
 \]
 from which we deduce that~$\Hom{\Lambda}(FE,\tau^2 M)=0$.
-This implies~$\Hom{K^b}(\tau X,\susp E) = 0$ by~\cite[Lemma 3.4 ]{AdachiIyamaReiten}.
+This implies~$\Hom{K^b}(\tau X,\susp E) = 0$ by~\cite[Lem.~3.4 ]{AdachiIyamaReiten}.
 
 \vspace{7pt}
 \noindent (3) $\Hom{K^b}(X,\susp E) = 0$.
@@ -4493,7 +4493,7 @@ By Lemma~\ref{lemm::AR-conflations-and-sequences}, \emph{(2)} follows from \emph
 Let us prove \emph{(1)}.
 The conflation induces an exact sequence~$\Hom{K^b}(Y,\susp E) \to \Hom{K^b}(Y,\susp X) \to \Hom{K^b}(Y,\susp^2,Y)$.
 The complex~$Y$ being two-term, we have~$\Hom{K^b}(Y,\susp^2,Y)=0$.
-Assuming that~$\Hom{K^b}(Y,\susp E)=0$, we deduce that~$\Hom{K^b}(Y,\susp X)=0$, and hence that~$\Hom{\Lambda}(FX,\tau FY) = 0$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.
+Assuming that~$\Hom{K^b}(Y,\susp E)=0$, we deduce that~$\Hom{K^b}(Y,\susp X)=0$, and hence that~$\Hom{\Lambda}(FX,\tau FY) = 0$ by~\cite[Lem.~3.4]{AdachiIyamaReiten}.
 \end{proof}
 
 % \begin{lemma}
@@ -4522,7 +4522,7 @@ We check that the conflation~$Y\infl E\defl\susp P$ is a mutation conflation.
 
 (0) Since~$P$ is concentrated in only one degree, it is rigid in~~$K^{[-1,0]}(\proj\Lambda)$ and so is~$\susp P$.
 Moreover,~$FY$ is indecomposable and injective.
-By assumption, it is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lemma 3.4]{AdachiIyamaReiten}.
+By assumption, it is~$\tau$-rigid, hence~$Y$ is rigid in~$K^{[-1,0]}(\proj\Lambda)$ by~\cite[Lem.~3.4]{AdachiIyamaReiten}.
 
 (1) We have~$\Hom{K^b}(E,\susp^2 P)=0$ since~$E$ is concentrated in degrees~$-1$ and~$0$.
 
@@ -4556,7 +4556,7 @@ Composition with~$\alpha$ and~$F\alpha$ yields a commutative square
 \endxy
 \]
 where the vertical maps are surjective.
-Since~$\Lambda$ is rigid and~$Y$ is two-term, we can apply~\cite[Proposition 6.2]{IyamaYoshino} to the triangulated category~$K^b(\proj\Lambda)$ (or Proposition~\ref{prop::KRextricat} to the extriangulated~$K^{[-1,0]}(\proj\Lambda)$).
+Since~$\Lambda$ is rigid and~$Y$ is two-term, we can apply~\cite[Prop.~6.2]{IyamaYoshino} to the triangulated category~$K^b(\proj\Lambda)$ (or Proposition~\ref{prop::KRextricat} to the extriangulated~$K^{[-1,0]}(\proj\Lambda)$).
 As a consequence, the right-most vertical map is bijective.
 Because~$FY$ is a brick,~$\End{\Lambda}(FY)$ is a division ring.
 Moreover,~$FY$ is the indecomposable injective with simple socle the simple top of~$P$, so that the~$\End{\Lambda}(FY)$-module~$\Hom{\Lambda}(FP,FY)$ is one-dimensional over~$\End{\Lambda}(FY)$.
@@ -4636,7 +4636,7 @@ For any~$X,Y\in\ec$, let~$\mathbb{E}_\tc(X,Y)$ be the subset of~$\mathbb{E}(X,Y)
 It is easily seen that~$\mathbb{E}_\tc$ is an additive subfunctor of~$\mathbb{E}$.
 Consider $(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ endowed with the resctriction of the additive realisation~$\mathfrak{s}$.
 Since the deflations in~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ are precisely the deflations in~$(\ec,\mathbb{E},\mathfrak{s})$ that are~$\tc$-epic, they are closed under composition.
-We can thus apply~\cite[Proposition 3.14]{HerschendLiuNakaoka} to obtain that~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ is an extriangulated category.
+We can thus apply~\cite[Prop.~3.14]{HerschendLiuNakaoka} to obtain that~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ is an extriangulated category.
 With that relative structure, the objects in~$\tc$ become projective.
 Define~$\cat$ to be the full subcategory of~$\ec$ whose objects~$X$ admit an~$\mathfrak{s}_\tc$-conflation~$T_1\infl T_0\defl X$.
 
