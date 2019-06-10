@@ -1859,8 +1859,7 @@ In other words, the non-kissing fan of~$\quiver$ has the unique exchange relatio
 \end{proposition}
 
 \begin{proof}
-Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}.
-\vincent{Point~(ii) to prove.}
+Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}.  We postpone the proof of point~(ii) until Corollary~\ref{coro::exchangeablePairsNKC}.
 \end{proof}
 
 \begin{remark}
@@ -4355,24 +4354,33 @@ Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the h
 The extriangulated category~$K^{[-1,0]}(\proj \Lambda)$ is the setting in which we can finally prove point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC}, using results of~\cite{DemonetIyamaJasso} on~$\b g$-vectors.
 
 \begin{proposition}
- Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field.  Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$.  Assume that~ \pg{Finish this} 
- Then~$E$ and~$E'$ are isomorphic.
+\label{prop::exchange conflations are unique}
+ Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field.  Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$.  Assume that~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ are two mutation conflations (see Definition~\ref{defn::mutation conflation}.  
+ Then~$E$ and~$E'$ are isomorphic. \pg{Is is possible that~$X$ and~$Y$ are permuted in one of the exchange conflations?}
 \end{proposition}
 \begin{proof}
- By~\cite[Theorem 6.5]{DemonetIyamaJasso} (based on~\cite[Theorem 2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b g$-vector.  The datum of the~$\b g$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0(K^{[-1,0]}(\proj \Lambda))$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see Proposition~\ref{2kbproj-is-extriangulated}).  In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$.  Thus~$E$ and~$E'$ are isomorphic.
+ By~\cite[Theorem 6.5]{DemonetIyamaJasso} (based on~\cite[Theorem 2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b g$-vector.  The datum of the~$\b g$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0(K^{[-1,0]}(\proj \Lambda))$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see Proposition~\ref{prop::2kbproj-is-extriangulated}).  In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$.  Thus~$E$ and~$E'$ are isomorphic.
 \end{proof}
 
 \begin{corollary}\label{coro::exchangeablePairsNKC}
  Point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC} holds.
 \end{corollary}
 \begin{proof}
- 
+ Let~$\omega$ and~$\omega'$ be in facets~$F$ and~$F'$ as in the statement of Proposition~\ref{prop:exchangeablePairsNKC}.  For every walk~$\omega''$, let~$P(\omega'')$ be the object of~$K^{[-1,0]}(\proj \Lambda)$ corresponding to~$\omega''$.  Then the walks~$\mu$ and~$\nu$ defined in the same statement yield an exchange conflation
+ \[
+  P(\omega) \infl P(\mu) \oplus P(\nu) \defl P(\omega') \quad \textrm{or} \quad P(\omega') \infl P(\mu) \oplus P(\nu) \defl P(\omega).
+ \]
+ Assume that there are other facets~$F_0$ and~$F_0'$ also satisfying the hypotheses of Proposition~\ref{prop:exchangeablePairsNKC}.  Then they give rise to walks~$\mu'$ and~$\nu'$ and an exchange conflation
+ \[
+  P(\omega) \infl P(\mu') \oplus P(\nu') \defl P(\omega') \quad \textrm{or} \quad P(\omega') \infl P(\mu') \oplus P(\nu') \defl P(\omega).
+ \]
+ By Proposition~\ref{prop::exchange conflations are unique}, we get that~$P(\mu)\oplus P(\nu)$ and~$P(\mu')\oplus P(\nu')$ are isomorphic.  This implies that~$\{\mu,\nu\}$ and~$\{\mu',\nu'\}$ are the same sets.  This determines~$\sigma$, and point (ii) of Proposition~\ref{prop:exchangeablePairsNKC} is proved.
 \end{proof}
 
 
 
 
-Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
+% Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
 Before stating our next theorem, we first recall some definitions
 
 \begin{definition}
