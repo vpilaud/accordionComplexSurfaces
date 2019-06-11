@@ -240,7 +240,7 @@
   % Eye Catcher
   {Toto}
   % Title
-  {{\fontsize{24}{25}\selectfont {\color{green} Non-kissing} \; --- \; {\color{red} vs} \; --- \; {\color{blue} Non-crossing}} \\ {\Large \rm Yann Palu} {\normalsize (UPJV) jtw} {\Large \rm Vincent Piland} {\normalsize (LIX, CNRS) and} {\Large \rm Pierre-Guy Plamondon} {\normalsize (Orsay)} \vspace*{-.5cm}}
+  {{\fontsize{24}{25}\selectfont {\color{green} Non-kissing} \; --- \; {\color{red} vs} \; --- \; {\color{blue} Non-crossing}} \\ {\Large \rm Yann Palu} {\normalsize (UPJV) jtw} {\Large \rm Vincent Pilaud} {\normalsize (LIX, CNRS) and} {\Large \rm Pierre-Guy Plamondon} {\normalsize (Orsay)} \vspace*{-.5cm}}
   % Authors
   {}
   % University logo
@@ -258,7 +258,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{From walks on a grid [T. McConville]...}{name=walks,column=0,span=3,row=0,borderColor=green,headerColorOne=green}{
+\headerbox{From walks on a grid [McConville]...}{name=walks,column=0,span=3,row=0,borderColor=green,headerColorOne=green}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hspace*{.1cm}\includegraphics[scale=.3]{StraightWalks}
@@ -301,7 +301,7 @@ A walk $\omega$ {\color{green} kisses} a walk $\omega'$ if
 
 % \end{minipage}
 \medskip
-{\color{green} \bf Theorem} [McC]: {\it The reduced non-kissing complex is pure and thin.}
+{\color{green} \bf Thm} [McC]: {\it The reduced non-kissing complex is pure and thin.}
 
 % 
 % {\color{red} Insertion algorithm} \\
@@ -385,8 +385,8 @@ A {\color{green} walk} on $Q$ is a maximal string of $Q\blossom$.
 
 % \end{minipage}
 \medskip
-{\color{green} \bf Theorem} [PPP]: {\it The reduced non-kissing complex of any gentle}
-\hspace*{2.7cm}{\it bound quiver is pure and thin.}
+{\color{green} \bf Thm} [PPP]: {\it The reduced non-kissing complex of any gentle bound} 
+\hspace*{1.95cm}{\it quiver is pure and thin.}
 
 \hspace*{3cm}\includegraphics[scale=.3]{exmFlip}
 
@@ -396,7 +396,7 @@ A {\color{green} walk} on $Q$ is a maximal string of $Q\blossom$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Accordions on a disk [Manneville--Pilaud]}{name=accordions,column=0,span=3,below=walks,borderColor=blue,headerColorOne=blue}{
+\headerbox{From accordions on a disk...[Garver--McC]}{name=accordions,column=0,span=3,below=walks,borderColor=blue,headerColorOne=blue}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hspace*{6cm}\includegraphics[scale=.17]{DissectionAccordions}
@@ -422,6 +422,10 @@ Accordions not crossing any other accordion are dotted blue.
 {\color{blue} \rule{10.02cm}{1pt}}
 \vspace{-.35cm}
 
+(In the language of [Manneville--Pilaud])
+
+\smallskip
+
 Vertices of alternating colour green-blue-red-blue.
 
 \smallskip
@@ -442,13 +446,13 @@ Vertices of alternating colour green-blue-red-blue.
 
 \smallskip
 
-{\color{blue} \bf Theorem} [MP]: {\it The reduced non-crossing complex is pure and thin.}
+{\color{blue} \bf Thm} [GMcC]: {\it The reduced non-crossing complex is pure and thin.}
 
 
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Accordions on a Riemann surface [PPP]}{name=PPP2,column=3,span=3,below=PPP1,borderColor=blue,headerColorOne=blue}{
+\headerbox{... to accordions on a Riemann surface}{name=PPP2,column=3,span=3,below=PPP1,borderColor=blue,headerColorOne=blue}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \hspace*{6cm}
@@ -479,7 +483,7 @@ Vertices of alternating colour green-blue-red-blue.
 \vspace{-.35cm}
 
 
-{\color{blue} \bf Theorem:} {\it The reduced non-crossing complex is pure and thin.}
+{\color{blue} \bf Thm} [PPP]: {\it The reduced non-crossing complex is pure and thin.}
 
 }
 
@@ -513,7 +517,8 @@ Take boundary segments into account to obtain the blossoming.
 {\color{red} \rule{10.02cm}{1pt}}
 \vspace{-.35cm}
 
-{\color{red} \bf Proposition:} {\it The bound quiver associated with any dualizable} \hspace*{2.3cm}{\it dissection of a marked surface is gentle.}
+{\color{red} \bf Prop:} {\it The bound quiver associated with any dualizable dissection of}
+\hspace*{1cm}{\it a marked surface is gentle.}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -534,9 +539,9 @@ Take boundary segments into account to obtain the blossoming.
 Given a gentle bound quiver $(Q,I)$, take its blossoming, then glue a green triangle to the left of each arrow, and a red triangle to the right of each arrow.
 Glue two consecutive red (resp. green) triangles if the corresponding arrows (resp. do not) form a relation.
 
-\vspace*{-.45cm}
+\vspace*{-.6cm}
 \begin{center}
- \includegraphics[scale=.35]{GlueTriangles}
+ \includegraphics[scale=.3]{TrianglesArrow}\hspace*{1cm}\includegraphics[scale=.35]{GlueTriangles}
 \end{center}
 
 
@@ -545,26 +550,31 @@ Glue two consecutive red (resp. green) triangles if the corresponding arrows (re
 {\color{red} \rule{10.02cm}{1pt}}
 \vspace{-.35cm}
 
-{\color{red} \bf Proposition:} {\it The construction above yields a marked surface endowed with a pair of dual dissections; given by green arcs / red arcs.}
+{\color{red} \bf Prop:} {\it The construction above yields a marked surface endowed with}
+\hspace*{1cm}{\it a pair of dual dissections; given by green arcs / red arcs.}
 
 }
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Main Results}{name=polytopes,column=0,span=3,below=Dissection2Gentle,borderColor=red,headerColorOne=red}{
+\headerbox{Main Results [PPP]}{name=polytopes,column=0,span=3,below=Dissection2Gentle,borderColor=red,headerColorOne=red}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{red} \bf Theorem:} {\it The two constructions above induce bijections between (isomorphism classes of) gentle bound quivers and (homeomorphism classes of) marked oriented surfaces with boundary endowed with a pair of dual dissections.}
+{\color{red} \bf Thm:} {\it gentle bound quivers $\longleftrightarrow$ marked oriented surfaces with}
+\hspace*{1.05cm}{\it boundary endowed with a pair of dual dissections.}
 
 \vspace{-.15cm}
 \hspace{-.25cm}
 {\color{red} \rule{10.02cm}{1pt}}
 \vspace{-.35cm}
 
-{\color{red} \bf Theorem:} {\it
-There is an expicit bijection between walks on $(Q,I)$ and accordions on the associated surface $S$, such that two walks kiss if and only if the associated accordions cross.
-In particular, the non-kissing complex of $(Q,I)$ is isomorphic to the non-crossing complex of $S$.
+{\color{red} \bf Thm:} {\it
+Walks on $(Q,I)$ $\longleftrightarrow$ accordions on the associated surface $S$
+
+\hspace*{2.25cm}kissing $\longleftrightarrow$ crossing
+
+non-kissing complex of $(Q,I)$ $\cong$ non-crossing complex of $S$.
 }
 }
 

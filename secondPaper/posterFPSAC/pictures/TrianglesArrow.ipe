@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.10">
-<info created="D:20190604135958" modified="D:20190611165711"/>
+<info created="D:20190611170606" modified="D:20190611170606"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -254,121 +254,37 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" stroke="red" pen="fat">
-416 512 m
-32 0 0 -32 384 512 352 512 a
-</path>
-<path stroke="red" pen="ultrafat">
-388 452 m
-464 512 l
-</path>
-<path stroke="red" pen="ultrafat">
-384 456 m
-384 512 l
-</path>
-<path stroke="red" pen="ultrafat">
-304 512 m
-380 452 l
-</path>
-<path stroke="red" pen="ultrafat">
-212 452 m
-248 512 l
-</path>
-<path stroke="red" pen="ultrafat">
-168 512 m
-204 452 l
-</path>
-<path stroke="red" pen="ultrafat">
-132 452 m
-168 512 l
-</path>
-<path stroke="red" pen="ultrafat">
-88 512 m
-124 452 l
-</path>
-<path stroke="green" fill="green" pen="ultrafat">
-424 576 m
-464 512 l
-</path>
-<path stroke="green" fill="green" pen="ultrafat">
-384 512 m
-424 576 l
-</path>
-<path stroke="green" fill="green" pen="ultrafat">
-344 576 m
-384 512 l
-</path>
-<path stroke="green" fill="green" pen="ultrafat">
-344 576 m
-304 512 l
-</path>
-<path stroke="green" fill="green" pen="ultrafat">
-168 576 m
-248 512 l
-</path>
-<path stroke="green" fill="green" pen="ultrafat">
-168 576 m
-168 512 l
-</path>
-<path stroke="green" fill="green" pen="ultrafat">
-168 576 m
-88 512 l
-</path>
-<path stroke="blue" pen="ultrafat" arrow="normal/normal">
-96 512 m
-160 512 l
-</path>
-<path stroke="blue" fill="black" pen="ultrafat" arrow="normal/normal">
-176 512 m
-240 512 l
+<path layer="alpha" stroke="blue" pen="ultrafat" arrow="normal/normal">
+192 448 m
+320 448 l
 </path>
 <path stroke="blue" fill="blue" pen="ultrafat">
-4 0 0 4 168 512 e
+4 0 0 4 184 448 e
 </path>
 <path stroke="blue" fill="blue" pen="ultrafat">
-4 0 0 4 88 512 e
-</path>
-<path stroke="blue" fill="blue" pen="ultrafat">
-4 0 0 4 248 512 e
-</path>
-<path stroke="blue" fill="blue" pen="ultrafat">
-4 0 0 4 304 512 e
-</path>
-<path stroke="blue" fill="black" pen="ultrafat" arrow="normal/normal">
-312 512 m
-376 512 l
-</path>
-<path stroke="blue" fill="black" pen="ultrafat" arrow="normal/normal">
-392 512 m
-456 512 l
-</path>
-<path stroke="blue" fill="blue" pen="ultrafat">
-4 0 0 4 384 512 e
-</path>
-<path stroke="blue" fill="blue" pen="ultrafat">
-4 0 0 4 464 512 e
-</path>
-<path stroke="red" pen="ultrafat">
-4 0 0 4 384 448 e
-</path>
-<path stroke="red" pen="ultrafat">
-4 0 0 4 128 448 e
-</path>
-<path stroke="red" pen="ultrafat">
-4 0 0 4 208 448 e
+4 0 0 4 328 448 e
 </path>
 <path stroke="green" fill="green" pen="ultrafat">
-4 0 0 4 168 576 e
+4 0 0 4 256 512 e
 </path>
-<path stroke="green" fill="green" pen="ultrafat">
-4 0 0 4 344 576 e
+<path stroke="green" pen="ultrafat">
+256 512 m
+188 456 l
 </path>
-<path stroke="green" fill="green" pen="ultrafat">
-4 0 0 4 424 576 e
+<path stroke="green" pen="ultrafat">
+256 512 m
+324 456 l
 </path>
 <path stroke="red" pen="ultrafat">
-384 456 m
-384 452 l
+4 0 0 4 256 384 e
+</path>
+<path stroke="red" pen="ultrafat">
+252 388 m
+188 440 l
+</path>
+<path stroke="red" pen="ultrafat">
+260 388 m
+324 440 l
 </path>
 </page>
 </ipe>
