@@ -322,9 +322,10 @@ A by-product of their construction is that the space of all polytopal realizatio
 
 \medskip
 In this paper, we revisit, extend and explore further this construction using a reversed approach.
-Given a complete simplicial fan~$\Fan$, we consider the space~$\typeCone(\Fan)$ of all its polytopal realizations, called type cone of~$\Fan$ in~\cite{McMullen-typeCone}.
-This type cone is known to be a polyhedral cone defined by a collection of inequalities corresponding to the linear dependences among the rays of~$\Fan$ contained in pairs of adjacent maximal cones of~$\Fan$ (see \cref{def:typeCone}).
-Our approach is based on an elementary but powerful observation: if the type cone~$\typeCone(\Fan)$ is a simplicial cone, then all polytopal realizations of~$\Fan$ can be described as sections of a high dimensional positive orthant with a collection of affine subspaces corresponding to the facets of~$\typeCone(\Fan)$ (see \cref{coro:simplicialTypeCone}).
+Given a complete simplicial fan~$\Fan$, we consider the space~$\typeCone(\Fan)$ of all its polytopal realizations.
+This space was called type cone of~$\Fan$ in~\cite{McMullen-typeCone} and deformation cone of~$\Fan$ in~\cite{Postnikov, PostnikovReinerWilliams}, who studied the case when~$\Fan$ is the braid arrangement leading to the rich theory of generalized permutahedra (recently extended to all finite Coxeter arrangements in~\cite{ACEP-DeformationsCoxeterPermutahedra}).
+The type cone is known to be a polyhedral cone defined by a collection of inequalities corresponding to the linear dependences among the rays of~$\Fan$ contained in pairs of adjacent maximal cones of~$\Fan$ (see \cref{def:typeCone}).
+Our approach is based on an elementary but powerful observation: for any fan~$\Fan$, all polytopal realizations of~$\Fan$ can be described as sections of a high dimensional positive orthant with a collection of affine subspaces parametrized by the type cone~$\typeCone(\Fan)$ (see \cref{prop:alternativePolytopalRealization}); if moreover the type cone~$\typeCone(\Fan)$ is a simplicial cone, it leads to a simple parametrization of all polytopal realizations of~$\Fan$ by a positive orthant (see \cref{coro:simplicialTypeCone}).
 To prove that the type cone~$\typeCone(\Fan)$ is simplicial, we just need to identify which pairs of adjacent maximal cones of~$\Fan$ correspond to the facets of~$\typeCone(\Fan)$ and to show that the corresponding linear dependences among their rays positively span the linear dependence among the rays of any pair of adjacent maximal cones of~$\Fan$.
 When applied to the $\b{g}$-vector fans of cluster algebras (see \cref{subsec:typeConeCA}), this reversed approach enables us to efficiently revisit and extend the construction of~\cite{BazierMatteDouvilleMousavandThomasYildirim}.
 This new perspective has several advantages, as our proof uniformly applies to:
@@ -2893,9 +2894,9 @@ Let $\{\tube, \tube'\}$ be a suspected extremal pair.
 To prove that it is extremal, we will construct a vector $\b{w} \in \R^{\tubes}$ such that $\dotprod{\b{n}(\tube, \tube')}{\b{w}}< 0,$
 but $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}>0$ for any other suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$. This will show that the inequality induced by~$\{\tube, \tube'\}$ is not redundant.
 
-Define $\alpha(\tube,\tube') \eqdef \set{\tube[u] \in \tubes}{\tube \symdif \tube' \subseteq \tube[u] \subseteq \tube \cup \tube'}$, where $\symdif$ denotes the symmetric difference, and define $\b{x} \in \R^{\tubes}$ be such that
+Define $\alpha(\tube,\tube') \eqdef \set{\tube[r] \in \tubes}{\tube \symdif \tube' \subseteq \tube[r] \subseteq \tube \cup \tube'}$, where $\symdif$ denotes the symmetric difference, and define $\b{x} \in \R^{\tubes}$ be such that
 \[
-\b{x}_{\tube[s]} = -|\bigset{\tube[u] \in \tubes \ssm \alpha(\tube, \tube')}{\tube[u] \subseteq \tube[s]}|
+\b{x}_{\tube[s]} = -|\bigset{\tube[r] \in \tubes \ssm \alpha(\tube, \tube')}{\tube[r] \subseteq \tube[s]}|
 \]
 for each tube~$\tube[s] \in \tubes$.
 For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have
@@ -2917,7 +2918,7 @@ We have $\dotprod{\b{n}(\tube, \tube')}{\b{y}} = -1$. For any suspected extremal
 
 Finally, consider $\b{z} \in \R^{\tubes}$ given by
 \[
-\b{z}_{\tube[s]} = -|\bigset{\tube[u] \in \alpha(\tube, \tube')}{\tube[u] \subseteq \tube[s]}|,
+\b{z}_{\tube[s]} = -|\bigset{\tube[r] \in \alpha(\tube, \tube')}{\tube[r] \subseteq \tube[s]}|,
 \]
 for each tube~$\tube[s] \in \tubes$.
 It verifies $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} \ge 0$ for any suspected extremal pair~$\{\tilde \tube, \tilde \tube'\}$, and $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} = |\alpha(\tilde \tube, \tilde \tube')| > 0$ if $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube, \tube')$.
