@@ -4353,7 +4353,7 @@ Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$.  Then the h
 
 The extriangulated category~$K^{[-1,0]}(\proj \Lambda)$ is the setting in which we can finally prove point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC}, using results of~\cite{DemonetIyamaJasso} on~$\b g$-vectors.  
 % Proposition~\ref{prop::2kbproj-is-extriangulated} gives a setting in which to apply Theorem~\ref{}.
-Before doind so, we introduce the notion of mutation conflation for two-term silting objects.
+Before doing so, we introduce the notion of mutation conflation for two-term silting objects.
 
 \begin{definition}
 Recall that a two-term silting object is a complex~$T$ in~$K^{[-1,0]}(\proj \Lambda)$ such that~$\Hom{K^b}(T,\susp T)=0$ and the number of isomorphism classes of indecomposable summands of~$T$ is the same as that of~$\Lambda$.
@@ -4364,23 +4364,37 @@ Recall that a two-term silting object is a complex~$T$ in~$K^{[-1,0]}(\proj \Lam
 \end{remark}
 
 \begin{definition}\label{defn::mutation conflation}
-A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$ such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
+A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$ such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$). \pg{To simplify, we should perhaps ask for the approximations to be minimal.}
 \end{definition}
 
 \begin{proposition}
 \label{prop::exchange conflations are unique}
- Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field.  Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$.  Assume that~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ (or~$Y\infl E'\defl X$) are two mutation conflations (see Definition~\ref{defn::mutation conflation}.  
- Then~$E$ and~$E'$ are isomorphic. \pg{Is it possible that~$X$ and~$Y$ are permuted in one of the exchange conflations?}
+ Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field.  Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$.  
+ \begin{enumerate}
+  \item If there is a mutation conflation (see Definition~\ref{defn::mutation conflation}) of the form~$X\infl E\defl Y$, then there can be no mutation conflation of the form~$Y\infl E'\defl X$.
+  
+  \item Assume that~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ are two mutation conflations.  
+ Then~$E$ and~$E'$ are isomorphic. 
+ \end{enumerate} 
 \end{proposition}
 \begin{proof}
- By~\cite[Theorem 6.5]{DemonetIyamaJasso} (based on~\cite[Theorem 2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b g$-vector.  The datum of the~$\b g$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0(K^{[-1,0]}(\proj \Lambda))$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see Proposition~\ref{prop::2kbproj-is-extriangulated}).  In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$.  Thus~$E$ and~$E'$ are isomorphic.
+ We first prove~(1).  Assume that~$X\infl E\defl Y$ and~$Y\infl E'\defl X$ are two mutation conflations.  Applying the functor~$\Hom{K^b}(\susp^{-1} Y, -)$ to the second sequence, we get an exact sequence of abelian groups
+ \[
+  \Hom{K^b}(\susp^{-1} Y, E') \to \Hom{K^b}(\susp^{-1} Y, X) \Hom{K^b}(\susp^{-1} Y, \susp Y).
+ \]
+ By definition of a mutation conflation, we have that~$\Hom{K^b}(\susp^{-1} Y, E') = 0$.  Moreover, since~$Y$ is concentrated in homological degrees~$-1$ and~$0$, we get that~$\Hom{K^b}(\susp^{-1} Y, \susp Y) = 0$.  Therefore,~$\Hom{K^b}(\susp^{-1} Y, X) = 0$. 
+ However, since the conflation~$X\infl E\defl Y$ is not split, we have that~$\Hom{K^b}(\susp^{-1} Y, X) \neq 0$, a contradiction.  This proves~(1). 
+
+ \smallskip
+
+ We now prove~(2).  Let~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ be two mutation conflations.  By~\cite[Theorem 6.5]{DemonetIyamaJasso} (based on~\cite[Theorem 2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b g$-vector.  The datum of the~$\b g$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0(K^{[-1,0]}(\proj \Lambda))$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see Proposition~\ref{prop::2kbproj-is-extriangulated}).  In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$.  Thus~$E$ and~$E'$ are isomorphic.
 \end{proof}
 
 \begin{corollary}\label{coro::exchangeablePairsNKC}
  Point~(ii) of Proposition~\ref{prop:exchangeablePairsNKC} holds.
 \end{corollary}
 \begin{proof}
- Let~$\omega$ and~$\omega'$ be in facets~$F$ and~$F'$ as in the statement of Proposition~\ref{prop:exchangeablePairsNKC}.  For every walk~$\omega''$, let~$P(\omega'')$ be the object of~$K^{[-1,0]}(\proj \Lambda)$ corresponding to~$\omega''$.  Then the walks~$\mu$ and~$\nu$ defined in the same statement yield an exchange conflation
+ Let~$\omega$ and~$\omega'$ be in facets~$F$ and~$F'$ as in the statement of Proposition~\ref{prop:exchangeablePairsNKC}.  For every walk~$\omega''$, let~$P(\omega'')$ be the object of~$K^{[-1,0]}(\proj \Lambda)$ corresponding to~$\omega''$.  Then the walks~$\mu$ and~$\nu$ defined in the same statement yield a mutation conflation
  \[
   P(\omega) \infl P(\mu) \oplus P(\nu) \defl P(\omega') \quad \textrm{or} \quad P(\omega') \infl P(\mu) \oplus P(\nu) \defl P(\omega).
  \]
@@ -4388,7 +4402,9 @@ A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{
  \[
   P(\omega) \infl P(\mu') \oplus P(\nu') \defl P(\omega') \quad \textrm{or} \quad P(\omega') \infl P(\mu') \oplus P(\nu') \defl P(\omega).
  \]
- By Proposition~\ref{prop::exchange conflations are unique}, we get that~$P(\mu)\oplus P(\nu)$ and~$P(\mu')\oplus P(\nu')$ are isomorphic.  This implies that~$\{\mu,\nu\}$ and~$\{\mu',\nu'\}$ are the same sets.  This determines~$\sigma$, and point (ii) of Proposition~\ref{prop:exchangeablePairsNKC} is proved.
+ By Proposition~\ref{prop::exchange conflations are unique}, we get that~$P(\mu)\oplus P(\nu)$ and~$P(\mu')\oplus P(\nu')$ are isomorphic, and that the mutation conflations either both have the form~$P(\omega) \infl P(\mu) \oplus P(\nu) \defl P(\omega')$ or both have the form~$P(\omega') \infl P(\mu) \oplus P(\nu) \defl P(\omega)$.  Without loss of generality, assume that they have the first form.
+ 
+ In particular, the leftmost morphisms of both mutation conflations are both minimal~$\add(P(\mu) \oplus P(\nu))$-approximations of~$P(\omega)$.  As such, they are isomorphic as morphisms.  They determine common substrings of~$\omega$ and~$\mu$ and of~$\omega$ and~$\nu$, which in turn determine~$\sigma$.  Point (ii) of Proposition~\ref{prop:exchangeablePairsNKC} is proved.
 \end{proof}
 
 We now come to the main result of this section.
@@ -4807,6 +4823,7 @@ For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm)
   \end{tikzcd}
   }
  \]
+ \pg{To finish}
 \end{example}
 
 
