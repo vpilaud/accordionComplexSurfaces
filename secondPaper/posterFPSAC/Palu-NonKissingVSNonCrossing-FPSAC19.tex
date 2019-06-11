@@ -279,14 +279,14 @@
 \vspace{-.35cm}
 
 % \begin{minipage}{9.5cm}
-{\color{green} walk} $=$ NW to SE maximal walks in a grid of any (fixed) given shape %\\[.2cm]
+{\color{green} Walk} $=$ NW to SE maximal walks in a grid of any (fixed) shape. %\\[.2cm]
 
 \medskip
 
 A walk $\omega$ {\color{green} kisses} a walk $\omega'$ if 
 \begin{compactitem}
-\item $\omega$ and $\omega'$ share a common subpath $\rho$ and
-\item $\omega$ enters $\rho$ from W and leaves it towards S while
+\item $\omega$ and $\omega'$ share a common subpath $\rho$,
+\item $\omega$ enters $\rho$ from W and leaves it towards S,
 \item $\omega'$ enters $\rho$ from N and leaves it towards E.
 \end{compactitem}
 % \end{minipage}
@@ -297,7 +297,7 @@ A walk $\omega$ {\color{green} kisses} a walk $\omega'$ if
 \vspace{-.35cm}
 
 % \begin{minipage}{9.5cm}
-{\color{green} (reduced) non-kissing complex} $=$ clique complex of (non-straight) walks for the compatibility relation of non-kissing.
+{\color{green} (Reduced) non-kissing complex} $=$ clique complex of (non-straight) walks for the compatibility relation of non-kissing.
 
 % \end{minipage}
 \medskip
@@ -313,37 +313,36 @@ A walk $\omega$ {\color{green} kisses} a walk $\omega'$ if
 
 \vspace*{-1cm}
 \begin{minipage}{7.2cm}
-{\color{green} Gentle bound quiver} $Q =$ oriented graph with relations (forbidden paths) of lenght 2; obtained by glueings of the local configuration:
+{\color{green} Gentle bound quiver} $Q =$ oriented graph with relations (forbidden paths) of lenght 2; obtained by glueings of a local configuration.
 Moreover, any vertex must have out-degree at most 2 and in-degree at most 2.
 %  \item For any arrow $\alpha$, there is at most one arrow $\beta$ such that $\alpha\beta$ (resp. $\beta\alpha$) is not a relation and at most one arrow $\gamma$ such that $\alpha\gamma$ (resp. $\gamma\alpha$) is a relation.
 % \end{compactitem}
 
-\medskip
-
-Its {\color{green} blossoming bound quiver} $Q\blossom$ is obtained by making each (old) vertex 4-valent:
+\vspace{.2cm}
+{\color{green} Blossoming bound quiver} $Q\blossom$ $=$ obtained \\ by making each (old) vertex 4-valent.
 \end{minipage}
 
-\vspace*{-2.1cm}\hspace*{7.5cm}\includegraphics[scale=.3]{BlossomingQuiverGentle}
-
-\vspace{-.35cm}
-\hspace{-.25cm}
-{\color{green} \rule{10.02cm}{1pt}}
-\vspace{-.4cm}
-
-A {\color{green} string} of $Q$ is a word on arrows and their inverses not containing any $\alpha\alpha^{-1}$, $\alpha^{-1}\alpha$ nor any $\alpha\beta$, $\beta^{-1}\alpha^{-1}$ if $\alpha\beta$ is a relation.
-
-\medskip
-
-A {\color{green} walk} on $Q$ is a maximal string of $Q\blossom$.
+\vspace*{-2.2cm}\hspace*{7.5cm}\includegraphics[scale=.3]{BlossomingQuiverGentle}
 
 \vspace*{-.6cm}\hspace*{6cm}\includegraphics[scale=.4]{BlossomingQuiverGrid}
 
 \vspace*{-1cm}
 \begin{minipage}{5.5cm}
- The gentle bound quiver of a grid, and its blossoming: 
+Exm. The gentle bound quiver of a grid, and its blossoming quiver: 
 \end{minipage}
 
 \vspace{.15cm}
+\hspace{-.25cm}
+{\color{green} \rule{10.02cm}{1pt}}
+\vspace{-.4cm}
+
+{\color{green} String} of $Q$ $=$ word on arrows and their inverses not containing any $\alpha\alpha^{-1}$, $\alpha^{-1}\alpha$ nor any $\alpha\beta$, $\beta^{-1}\alpha^{-1}$ if $\alpha\beta$ is a relation.
+
+\medskip
+
+{\color{green} Walk} on $Q$ $=$ maximal string of $Q\blossom$.
+
+\vspace{-.15cm}
 \hspace{-.25cm}
 {\color{green} \rule{10.02cm}{1pt}}
 \vspace{-.35cm}
@@ -354,7 +353,7 @@ A {\color{green} walk} on $Q$ is a maximal string of $Q\blossom$.
 
 \hspace*{3cm}\includegraphics[scale=.3]{exmFlip}
 
-\vspace*{-1.5cm} Example of a flip:
+\vspace*{-1.5cm} Exm of flip:
 \vspace{.9cm}
 }
 
@@ -363,17 +362,17 @@ A {\color{green} walk} on $Q$ is a maximal string of $Q\blossom$.
 \headerbox{From accordions on a disk {\large [Garver--McC]} ...}{name=accordions,column=0,span=3,below=walks,borderColor=blue,headerColorOne=blue}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hspace*{6cm}\includegraphics[scale=.18]{DissectionAccordions}
+\hspace*{6cm}\includegraphics[scale=.20]{DissectionAccordions}
 
-\vspace*{-3cm}
+\vspace*{-3.3cm}
 \begin{minipage}{5.7cm}
-Example:
+Exm:
 
 \smallskip
 \begin{compactitem}
- \item A dissection (green)
- \item Some accordions (blue)
- \item Some non-accordions (red)
+ \item a dissection (green),
+ \item some accordions (blue),
+ \item some non-accordions (red).
 \end{compactitem}
 
 \medskip
@@ -381,7 +380,7 @@ Accordions not crossing any other accordion are dotted blue.
 \end{minipage}
 
 
-\vspace{.4cm}
+\vspace{.7cm}
 \hspace{-.25cm}
 {\color{blue} \rule{10.02cm}{1pt}}
 \vspace{-.35cm}
@@ -406,7 +405,7 @@ Vertices of alternating colour green-blue-red-blue.
 {\color{blue} \rule{10.02cm}{1pt}}
 \vspace{-.35cm}
 
-{\color{blue} (reduced) non-crossing complex} $=$ clique complex of (non-dotted) accordions of a fixed dissection for the compatibility relation of non-crossing.
+{\color{blue} (Reduced) non-crossing complex} $=$ clique complex of (non-dotted) accordions of a fixed dissection for the compatibility relation of non-crossing.
 
 \smallskip
 
