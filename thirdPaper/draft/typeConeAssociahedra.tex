@@ -740,7 +740,7 @@ On the one hand, one can consider that ${P - Q = \set{x \in \R^n}{x + Q \subsete
 On the other hand, considering arbitrary differences of support functions gives rise to \defn{virtual polyhedra}, which is the Grothendieck group of the semigroup of polytopes with Minkowski sums~\cite{PukhlikovKhovanskii}.
 
 \begin{corollary}
-Let $\b{h}^{(1)},\dots, \b{h}^{(N-n)}\in \ctypeCone(\Fan)$ form a basis of the left kernel of~$\b{G}$. Then for any~$\b{h} \in \ctypeCone(\Fan)$, the polytope~$P_\b{h}$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$.
+Let $\b{h}^{(1)},\dots, \b{h}^{(N-n)} \in \ctypeCone(\Fan)$ form a basis of the left kernel of~$\b{G}$. Then for any~$\b{h} \in \ctypeCone(\Fan)$, the polytope~$P_\b{h}$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$.
 \end{corollary}
 \begin{proof}
 It suffices to express the projection of $\b{h}$ onto the left kernel of~$\b{G}$ in terms of $\b{h}^{(1)}, \dots, \b{h}^{(N-n)}$, and to separate those terms with positive and negative coefficients to express Minkowski sums and differences.
@@ -750,7 +750,7 @@ This is used in~\cite{ArdilaBenedettiDoker} to show that every generalized permu
 In the particular case when the type cone is simplicial, then we can get rid of the Minkowski differences.
 
 \begin{corollary}
-If the type cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then every $P_\b{h}$ with $\b{h}\in \typeCone(\Fan)$ (resp.~with $\b{h}\in \ctypeCone(\Fan)$) has a unique representation, up to translation, as a Minkowski sum of positive (resp.~non-negative) dilates of the $N-n$ indecomposable polytopes $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$ arising from the rays~$\b{h}^{(1)}, \dots, \b{h}^{(N-n)}$ of $\ctypeCone(\Fan)$.
+If the type cone~$\typeCone(\Fan)$ of $\Fan$ is simplicial, then every $P_\b{h}$ with $\b{h} \in \typeCone(\Fan)$ (resp.~with $\b{h} \in \ctypeCone(\Fan)$) has a unique representation, up to translation, as a Minkowski sum of positive (resp.~non-negative) dilates of the $N-n$ indecomposable polytopes $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$ arising from the rays~$\b{h}^{(1)}, \dots, \b{h}^{(N-n)}$ of $\ctypeCone(\Fan)$.
 \end{corollary}
 
 Note that such a family of polytopes giving rise to unique positive/non-negative representations only exists when the type cone is simplicial. We get unicity with any basis, but in general we cannot guarantee non-negativity unless we are in the simplicial cone they span. If we take all rays of the type cone, we get non-negativity, but the representation is not unique unless the cone is simplicial.
@@ -3062,7 +3062,7 @@ Let~$\field$ be a field. Let~$\cat$ be a~$\field$-linear triangulated category w
 where~$D = \Hom{\field}(-,\field)$ is the usual duality of vector spaces;
 \item $\cat$ contains a basic cluster-tilting object~$T = \bigoplus_{i=1}^n T_i$:
 \[
-\textrm{for any object~$X$,} \quad \cat(T, \susp X) = 0 \quad \textrm{if and only if} \quad X\in \add(T),
+\textrm{for any object~$X$,} \quad \cat(T, \susp X) = 0 \quad \textrm{if and only if} \quad X \in \add(T),
 \]
 where~$\add(T)$ is the smallest additive full subcategory of~$\cat$ containing the~$T_i$'s and closed under isomorphisms.
 \end{itemize}
@@ -3119,7 +3119,7 @@ Any triangulated category admitting a Serre functor has almost-split triangles. 
 \[
 X\xrightarrow{} Y \xrightarrow{} Z \xrightarrow{h} \susp X
 \]
-with~$h\in (\susp T)$. Denote by~$\b{g}:\Ksp(\cat) \to K_0(\cat ; T)$ the canonical projection.
+with~$h \in (\susp T)$. Denote by~$\b{g}:\Ksp(\cat) \to K_0(\cat ; T)$ the canonical projection.
 \end{enumerate}
 \end{definition}
 
@@ -3166,22 +3166,22 @@ We can finally state the main theorem of this section, which is an analogue of t
 \label{theo::relations-g-vecteurs}
 Let~$\cat$ be a category satisying the hypotheses of \cref{sect::setting}. Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
 \[
-L \eqdef \bigset{\ell_X}{X\in \ind(\cat) \ssm \add(\susp T)}
+L \eqdef \bigset{\ell_X}{X \in \ind(\cat) \ssm \add(\susp T)}
 \]
 generates the kernel of~$\b{g}:\Ksp(\cat) \to K_0(\cat ; T)$. 
-In this case, the set~$L$ is a basis of the kernel of~$\b{g}$, and for any $x\in \ker(\b{g})$, we have that
+In this case, the set~$L$ is a basis of the kernel of~$\b{g}$, and for any $x \in \ker(\b{g})$, we have that
 \[
-x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
 \end{theorem}
 
 \begin{corollary}
 \label{corollary::meshes positively generate cluster cats}
-Assume that~$\ind(\cat)$ is finite. Let~$X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X$ be a triangle with~$h\in (\susp T)$. Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b{g}$ is a non-negative linear combination of the~$\ell_A$, with~$A\in \ind(\cat)\ssm \add(\susp T)$.
+Assume that~$\ind(\cat)$ is finite. Let~$X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X$ be a triangle with~$h \in (\susp T)$. Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b{g}$ is a non-negative linear combination of the~$\ell_A$, with~$A \in \ind(\cat)\ssm \add(\susp T)$.
 \end{corollary}
 
 \begin{proof}
-We know that~$x=\sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, [A] \rangle}{\langle \ell_A, [A] \rangle} \ell_A$; since~$\langle \ell_A, [A] \rangle$ is positive by \cref{lemm::bilinear-form}, we only need to show that each~$\langle x, [A] \rangle$ is non-negative. 
+We know that~$x=\sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, [A] \rangle}{\langle \ell_A, [A] \rangle} \ell_A$; since~$\langle \ell_A, [A] \rangle$ is positive by \cref{lemm::bilinear-form}, we only need to show that each~$\langle x, [A] \rangle$ is non-negative. 
 The functor~$F=\cat(T,-)$ induces an exact sequence
 \[
 FX \to FE \to FY \to 0,
@@ -3210,7 +3210,7 @@ with~$T_1^X$ and~$T_0^X$ in~$\add(T)$.
 \begin{definition}
 The \defn{index} of an object~$X$ is the element
 \[
-\ind_T(X) \eqdef [T_0^X] - [T_1^X] \in \Ksp(\add(T)).
+\ind_T(X) \eqdef [T_0^X] - [T_1^X] \in \Ksp \big( \add(T) \big).
 \]
 \end{definition}
 
@@ -3222,12 +3222,12 @@ Then
 \[
 \ind_T(X) + \ind_T(Z) - \ind_T(Y) = 0
 \]
-if and only if~$h\in (\susp T)$.
+if and only if~$h \in (\susp T)$.
 \end{proposition}
 
 \begin{corollary}
 \label{coro::grothendieck-g-vectors}
-There is an isomorphism~$\phi:K_0(\cat ; T) \to \Ksp(\add(T))$ such that~$\ind_T = \phi\circ \b{g}$. In particular,~$K_0(\cat ; T)$ is a free abelian group generated by the~$[T_i]$.
+There is an isomorphism~$\phi:K_0(\cat ; T) \to \Ksp \big( \add(T) \big)$ such that~$\ind_T = \phi\circ \b{g}$. In particular,~$K_0(\cat ; T)$ is a free abelian group generated by the~$[T_i]$.
 \end{corollary}
 
 We can now begin the proof of \cref{theo::relations-g-vecteurs}
@@ -3243,11 +3243,11 @@ This is because~$F\susp T = 0$.
 
 \begin{lemma}
 \label{lemm::almost-split}
-Let~$X\xrightarrow{} Y \xrightarrow{} \susp^{-1} X \xrightarrow{h} \susp X$ be an almost-split triangle. Then~$X\notin \add(\susp T)$ if and only if~$h\in (\susp T)$.
+Let~$X\xrightarrow{} Y \xrightarrow{} \susp^{-1} X \xrightarrow{h} \susp X$ be an almost-split triangle. Then~$X\notin \add(\susp T)$ if and only if~$h \in (\susp T)$.
 \end{lemma}
 
 \begin{proof}
-If~$X\in \add(\susp T)$, then~$h$ cannot be in~$(\susp T)$, otherwise it would be zero since~$\cat(T, \susp T) =0$. 
+If~$X \in \add(\susp T)$, then~$h$ cannot be in~$(\susp T)$, otherwise it would be zero since~$\cat(T, \susp T) =0$. 
  
 Assume now that~$X\notin \add(\susp T)$. Let~$\field_X$ be the residue field of the algebra~$\End{\cat}(X)$. 
 By definition of an almost-split triangle,~$h$ is in the socle of the right~$\End{\cat}(X)$-module~$\cat(\susp^{-1} X, \susp X)$. Moreover, this socle is a one-dimensional~$\field_X$-vector space; indeed, the~$2$-Calabi--Yau condition gives an isomorphism
@@ -3261,7 +3261,7 @@ By~\cite{Palu},
 \[
 (\susp T)\cat(\susp^{-1} X, \susp X) \cong D\cat(X, X)/(\susp T). 
 \]
-The identity morphism of~$X$ is not in~$(\susp T)$, since~$X$ is not in~$\add(\susp T)$. Thus the right-hand side is non-zero, and so neither is the left-hand side. By the above, this implies that~$h\in (\susp T)\cat(\susp^{-1} X, \susp X)$, which finishes the proof.
+The identity morphism of~$X$ is not in~$(\susp T)$, since~$X$ is not in~$\add(\susp T)$. Thus the right-hand side is non-zero, and so neither is the left-hand side. By the above, this implies that~$h \in (\susp T)\cat(\susp^{-1} X, \susp X)$, which finishes the proof.
 \end{proof}
 
 \begin{lemma}
@@ -3311,27 +3311,27 @@ If~$B\cong A$, then~$\coker(f^*)$ is isomorphic to the residue field~$\field_A$ 
 
 \begin{lemma}
 \label{lemm::coefficients}
-Let~$x\in \Ksp(\cat)$, and write~\[x=\sum_{A\in \ind(\cat)} \lambda_A [A].\]  Then for any~$A\in\ind(\cat) \ssm \add(\susp T)$, we have that
+Let~$x \in \Ksp(\cat)$, and write~\[x=\sum_{A \in \ind(\cat)} \lambda_A [A].\]  Then for any~$A\in\ind(\cat) \ssm \add(\susp T)$, we have that
 \[
 \lambda_A = \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle} = \frac{\langle x, r_A \rangle}{\langle A, r_A \rangle}.
 \]
 \end{lemma}
 
 \begin{proof}
-Let~$B\in \ind(\cat) \ssm \add(\susp T)$. Applying \cref{lemm::bilinear-form}, we get that
+Let~$B \in \ind(\cat) \ssm \add(\susp T)$. Applying \cref{lemm::bilinear-form}, we get that
 \[
-\langle \ell_B, x \rangle = \langle \ell_B, \sum_{A\in \ind(\cat)} \lambda_A [A] \rangle = \sum_{A\in \ind{\cat}} \lambda_A \langle \ell_B, [A] \rangle = \lambda_B \langle \ell_B, [B] \rangle.
+\langle \ell_B, x \rangle = \langle \ell_B, \sum_{A \in \ind(\cat)} \lambda_A [A] \rangle = \sum_{A \in \ind{\cat}} \lambda_A \langle \ell_B, [A] \rangle = \lambda_B \langle \ell_B, [B] \rangle.
 \]
 The equality~$\lambda_A = \frac{\langle x, r_A \rangle}{\langle A, r_A \rangle}$ is proved in a similar way.
 \end{proof}
 
 \begin{corollary}
 \label{lemm::test-susp-T}
-Let~$x\in \Ksp(\cat)$. Then the following are equivalent.
+Let~$x \in \Ksp(\cat)$. Then the following are equivalent.
 \begin{enumerate}
-\item $x\in \Ksp(\add(\susp T))$;
-\item $\langle x, [A]\rangle = 0$ for all~$A\in \ind(\cat)$;
-\item $\langle [A], x \rangle = 0$ for all~$A\in \ind(\cat)$.
+\item $x \in \Ksp \big( \add(\susp T) \big)$;
+\item $\langle x, [A]\rangle = 0$ for all~$A \in \ind(\cat)$;
+\item $\langle [A], x \rangle = 0$ for all~$A \in \ind(\cat)$.
 \end{enumerate}
 \end{corollary}
 
@@ -3340,9 +3340,9 @@ We will only proove that (1) is equivalent to (2); the proof that (1) is equival
  
 Assume that (2) holds. Then, by \cref{lemm::coefficients}, we have that
 \[
-x = \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle}[A] + \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i] = \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i].
+x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle}[A] + \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i] = \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i].
 \]
-Thus~$x\in \Ksp(\add(\susp T))$, and (1) holds.
+Thus~$x \in \Ksp \big( \add(\susp T) \big)$, and (1) holds.
  
 Assume now that (1) holds. Then~$\langle x, [A]\rangle = 0$ for any~$A$ by \cref{lemm::bilinear-form-suspention-T}. Thus (2) holds.
 \end{proof}
@@ -3350,68 +3350,68 @@ Assume now that (1) holds. Then~$\langle x, [A]\rangle = 0$ for any~$A$ by \cref
 \begin{proposition}
 \label{prop::free-set}
 \begin{enumerate}
-\item The set~$\set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \dots, n}$ is free in~$\Ksp(\cat)$.
-\item The set~$\set{[r_A]}{A\in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \dots, n}$ is free in~$\Ksp(\cat)$.
+\item The set~$\set{[\ell_A]}{A \in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \dots, n}$ is free in~$\Ksp(\cat)$.
+\item The set~$\set{[r_A]}{A \in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \dots, n}$ is free in~$\Ksp(\cat)$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
 We only prove (1); the proof of (2) is similar. Assume that~
 \[
-x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \lambda_A \ell_A + \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
+x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \lambda_A \ell_A + \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
 \]
 Then~$\langle x, [A] \rangle = 0$ for all~$A\in\ind(\cat) \ssm \add(\susp T)$. But~$\langle x, [A] \rangle = \lambda_A$ by \cref{lemm::bilinear-form}. Thus~
 \[
 x = \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
 \]
-But the~$[\susp T_i]$ are linearly independent in~$\Ksp(\cat)$. Thus~$\lambda_i = 0$ for all~$i\in \{1, \ldots, n\}$. This finishes the proof.
+But the~$[\susp T_i]$ are linearly independent in~$\Ksp(\cat)$. Thus~$\lambda_i = 0$ for all~$i \in \{1, \ldots, n\}$. This finishes the proof.
 \end{proof}
 
 \begin{proposition}
-Assume that~$\ind(\cat)$ is finite. Then the set~$\set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b{g} : \Ksp(\cat) \to K_0(\cat ; T)$. Moreover, for any~$x\in \ker \b{g}$, we have that
+Assume that~$\ind(\cat)$ is finite. Then the set~$\set{[\ell_A]}{A \in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b{g} : \Ksp(\cat) \to K_0(\cat ; T)$. Moreover, for any~$x \in \ker \b{g}$, we have that
 \[
-x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
 \end{proposition}
 
 \begin{proof}
-By \cref{prop::free-set}, the set is free. Let~$x\in \ker \b{g}$. Consider the element
+By \cref{prop::free-set}, the set is free. Let~$x \in \ker \b{g}$. Consider the element
 \[
-z = x- \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+z = x- \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
-Then for any~$B\in \ind{\cat}$, we have that
+Then for any~$B \in \ind{\cat}$, we have that
 \[
-\langle  z, [B] \rangle = \Big\langle x- \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A, [B] \Big\rangle = \langle x, [B] \rangle - \langle x, [B] \rangle = 0, 
+\langle  z, [B] \rangle = \Big\langle x- \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A, [B] \Big\rangle = \langle x, [B] \rangle - \langle x, [B] \rangle = 0, 
 \]
-where the second equality is obtained by using \cref{lemm::bilinear-form}. By \cref{lemm::test-susp-T}, this implies that~$z\in \Ksp(\add(\susp T))$. Since~$z\in \ker(\b{g})$ and since~$\b{g}$ is injective on~$\Ksp(\add (\susp T))$ by \cref{coro::grothendieck-g-vectors}, we get that~$z=0$. This finishes the proof.
+where the second equality is obtained by using \cref{lemm::bilinear-form}. By \cref{lemm::test-susp-T}, this implies that~$z \in \Ksp \big( \add(\susp T) \big)$. Since~$z \in \ker(\b{g})$ and since~$\b{g}$ is injective on~$\Ksp \big( \add (\susp T) \big)$ by \cref{coro::grothendieck-g-vectors}, we get that~$z=0$. This finishes the proof.
 \end{proof}
 
 \begin{corollary}
 If~$\ind(\cat)$ is finite, then the set
 \[
-\set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \ldots, n}
+\set{[\ell_A]}{A \in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i=1, \ldots, n}
 \]
 is a basis of~$\Ksp(\cat)$.
 \end{corollary}
 
 \begin{proof}
-By \cref{prop::free-set}, the set is free. It suffices to prove that it generates~$\Ksp(\cat)$. Let~$x\in \Ksp(\cat)$. Consider
+By \cref{prop::free-set}, the set is free. It suffices to prove that it generates~$\Ksp(\cat)$. Let~${x \in \Ksp(\cat)}$. Consider
 \[
-z = x - \sum_{A\in \ind{\cat}} \frac{\langle x, A \rangle}{\langle \ell_A, A\rangle} \ell_A.
+z = x - \sum_{A \in \ind{\cat}} \frac{\langle x, A \rangle}{\langle \ell_A, A\rangle} \ell_A.
 \]
-Then for any~$B\in \ind(\cat)$, we have that~$\langle z, [B] \rangle = 0$. By \cref{lemm::test-susp-T}, this implies that~$z\in \Ksp(\add(\susp T))$, and finishes the proof.
+Then for any~$B \in \ind(\cat)$, we have that~$\langle z, [B] \rangle = 0$. By \cref{lemm::test-susp-T}, this implies that~${z \in \Ksp \big( \add(\susp T) \big)}$, and finishes the proof.
 \end{proof}
 
 All that remains is to prove the converse in the statement of \cref{theo::relations-g-vecteurs}.
 
 \begin{proposition}
-Assume that the set~$\set{[\ell_A]}{A\in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b{g}$. Then~$\ind(\cat)$ is finite.
+Assume that the set~$\set{[\ell_A]}{A \in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b{g}$. Then~$\ind(\cat)$ is finite.
 \end{proposition}
 
 \begin{proof}
-Let~$x\in \ker \b{g}$, and write~$x = \sum_{[A]\in \ind(\cat)} \lambda_A[A]$, where the sum has finite support. For any~$B$ not in the support of the sum, we have that~$\langle x, [B] \rangle = 0$.
+Let~$x \in \ker \b{g}$, and write~$x = \sum_{[A] \in \ind(\cat)} \lambda_A[A]$, where the sum has finite support. For any~$B$ not in the support of the sum, we have that~$\langle x, [B] \rangle = 0$.
  
-Now,~$[T]+[\susp T]$ is in the kernel of~$\b{g}$, but~$\langle [T] + [\susp T], [B] \rangle = \langle [T], [B] \rangle = 0$ if and only if~$B\in \add(\susp T)$. Thus~$\ind(\cat)$ has to be finite.
+Now,~$[T]+[\susp T]$ is in the kernel of~$\b{g}$, but~$\langle [T] + [\susp T], [B] \rangle = \langle [T], [B] \rangle = 0$ if and only if~$B \in \add(\susp T)$. Thus~$\ind(\cat)$ has to be finite.
 \end{proof}
 
 %%%%%%%%%%%
@@ -3430,27 +3430,27 @@ Let~$\cat$ be the cluster category of a valued quiver of Dynkin type~$A,B,C,D,E,
 \]
 expressing cluster variables as Laurent polynomials in the variables of the cluster~$\CC(T)$ and which has the follwing properties.
 \begin{itemize}
-\item[(i)] \emph{(}\cite[Prop.~3.2]{BuanMarshReinekeReitenTodorov} and~\cite[]{???} \emph{)} For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
-\item[(ii)] \emph{(}\cite[Prop.~4.3]{FuKeller} and \emph{)} For any~$X\in \ind(\cat)$, the~$\b{g}$-vector of~$\CC(X)$ is~$\b{g}([X])$, where we identify~$\Z^n$ and~$K_0(\cat ; T)$ via the isomorphism sending~$(a_1, \ldots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
-\item[(iii)] \emph{(}\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov} and~\cite[]{???—} \emph{)} For any~$X,Y\in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
+\item[(i)] \emph{(}\cite[Prop.~3.2]{BuanMarshReinekeReitenTodorov} and~\cite[]{???} \emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
+\item[(ii)] \emph{(}\cite[Prop.~4.3]{FuKeller} and \emph{)} For any~$X \in \ind(\cat)$, the~$\b{g}$-vector of~$\CC(X)$ is~$\b{g}([X])$, where we identify~$\Z^n$ and~$K_0(\cat ; T)$ via the isomorphism sending~$(a_1, \ldots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
+\item[(iii)] \emph{(}\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov} and~\cite[]{???—} \emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
 \item[(iv)]\emph{(}\cite[???]{BuanMarshReinekeReitenTodorov} and~\cite[???]{BuanIyamaReitenScott} and ???\emph{)} Let~$T'$ be any basic cluster-tilting object of~$\cat$. Then the matrix~$B'$ of the associated seed~$(\CC(T'),B')$ is given by the multiplicities of the middle terms of the exchange triangles. More explicitely,
 \end{itemize}
 \end{theorem}
 
 The following definition is a cluster-tilting version of the positive mutation for~$\tau$-tilting modules, or for~$2$-term silting complexes.
 \begin{definition}
-Let~$x\in\cluster$ be a cluster variable in a given cluster and let~$x'\in \cluster'$ be obtained by mutating~$\cluster$ at~$x$.
-The mutation is said to be a \defn{positive mutation} with respect to some initial cluster~$\cluster_\circ$ if there are~$X,Y\in \ind(\cat)$ such that~$\CC(X)=x$,~$\CC(Y)=x'$,~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$ and, for any non-split triangle
+Let~$x\in\cluster$ be a cluster variable in a given cluster and let~$x' \in \cluster'$ be obtained by mutating~$\cluster$ at~$x$.
+The mutation is said to be a \defn{positive mutation} with respect to some initial cluster~$\cluster_\circ$ if there are~$X,Y \in \ind(\cat)$ such that~$\CC(X)=x$,~$\CC(Y)=x'$,~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$ and, for any non-split triangle
 \[
 X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X 
 \]
-(this triangle is unique up to isomorphism) we have~$h\in (\susp T)$, where~$T\in\cat$ is any basic cluster-tilting object such that~$\CC(T)=\cluster_\circ$.
+(this triangle is unique up to isomorphism) we have~$h \in (\susp T)$, where~$T\in\cat$ is any basic cluster-tilting object such that~$\CC(T)=\cluster_\circ$.
 \end{definition}
 
 \begin{lemma}
 \label{lemma:positive mutation triangles}
 Let~$\mathcal{A}$ be any cluster algebra admitting a categorification by a Hom-finite,~$2$-Calabi--Yau, Krull--Schmidt, triangulated category with cluster-tilting objects.
-Let~$x\in\cluster$ be a cluster variable in a given cluster and let~$x'\in \cluster'$ be obtained by mutating~$\cluster$ at~$x$.
+Let~$x\in\cluster$ be a cluster variable in a given cluster and let~$x' \in \cluster'$ be obtained by mutating~$\cluster$ at~$x$.
 Then precisely one of the two mutations~$\mu_x(\cluster)$ and~$\mu_{x'}(\cluster')$ is a positive mutation.
 \end{lemma}
 
@@ -3484,7 +3484,7 @@ By the results in additive categorification of cluster algebras recalled in \cre
 
 \begin{lemma}
 \label{lemma::uerp categorified}
-Let~$\cat$ be a cluster category of Dynkin type~$A,B,C,D,E,F$ or~$G$, and let~$X,Y\in \cat$ be such~$\CC(Y)$ is obtained by performing a positive mutation at~$\CC(X)$ in some cluster containing it.
+Let~$\cat$ be a cluster category of Dynkin type~$A,B,C,D,E,F$ or~$G$, and let~$X,Y \in \cat$ be such~$\CC(Y)$ is obtained by performing a positive mutation at~$\CC(X)$ in some cluster containing it.
 Then the linear dependence between the~$\b{g}$-vectors given by the positive mutation is
 \[
 \b{g}_{\CC(X)} + \b{g}_{\CC(Y)} = \sum_i\b{g}_{\CC(E_i)}, 
@@ -3660,12 +3660,12 @@ is an almost-split sequence (see~\cite{IyamaNakaokaPalu} for a definition in thi
 Assume that~$\cat$ is a~$\field$-linear, Ext-finite, Krull--Schmidt, extriangulated category with Auslander--Reiten--Serre duality.
 Assume that~$T$ is a projective object of~$\cat$ such that any~$X\in\cat$ admits a conflation~$T_1^X\infl T_0^X\defl X$ with~$T_0^X, T_1^X\in\add(T)$, and the morphism~$T\to 0$ is an inflation. Fix a conflation~$T\to 0 \to \susp T$. Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
 \[
-L \eqdef \bigset{\ell_X}{X\in \ind(\cat) \ssm \add(\susp T)}
+L \eqdef \bigset{\ell_X}{X \in \ind(\cat) \ssm \add(\susp T)}
 \]
 generates the kernel of the canonical projection~$\b{g}:\Ksp(\cat) \to \kzero{\cat}$. 
-In this case, the set~$L$ is a basis of the kernel of~$\b{g}$, and for any $x\in \ker(\b{g})$, we have that
+In this case, the set~$L$ is a basis of the kernel of~$\b{g}$, and for any $x \in \ker(\b{g})$, we have that
 \[
-x= \sum_{A\in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
 \end{theorem}
 
@@ -4068,7 +4068,7 @@ Every morphism with domain in~$\tc$ is an inflation.
 \end{lemma}
 
 \begin{proof}
-Let~$T \overset{t}{\to} X$ be a morphism with~$T\in \tc$.
+Let~$T \overset{t}{\to} X$ be a morphism with~$T \in \tc$.
 Using the notation of \cref{remark::equivalence Sigma}, there is an extriangle~$T\infl 0\defl \susp T \overset{\eps_T}{\dashrightarrow}$.
 Consider the extriangle~$X\overset{g}{\infl} Y \overset{h}{\defl} \susp T \overset{t_\ast\eps_T}{\dashrightarrow}$.
 By~\cite[Prop.~3.17]{NakaokaPalu}, there is a commutative diagram of extriangles
@@ -4403,7 +4403,7 @@ By definition of a mutation conflation, we have that~$\Hom{K^b}(\susp^{-1} Y, E'
 However, since the conflation~$X\infl E\defl Y$ is not split, we have that~$\Hom{K^b}(\susp^{-1} Y, X) \neq 0$, a contradiction. This proves~(1). 
 
 \smallskip
-We now prove~(2). Let~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ be two mutation conflations. By~\cite[Thm.~6.5]{DemonetIyamaJasso} (based on~\cite[Thm~2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b{g}$-vector. The datum of the~$\b{g}$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0(K^{[-1,0]}(\proj \Lambda))$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see \cref{prop::2kbproj-is-extriangulated}). In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$. Thus~$E$ and~$E'$ are isomorphic.
+We now prove~(2). Let~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ be two mutation conflations. By~\cite[Thm.~6.5]{DemonetIyamaJasso} (based on~\cite[Thm~2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b{g}$-vector. The datum of the~$\b{g}$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0 \big( K^{[-1,0]}(\proj \Lambda) \big)$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see \cref{prop::2kbproj-is-extriangulated}). In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$. Thus~$E$ and~$E'$ are isomorphic.
 \end{proof}
 
 \begin{corollary}
@@ -4422,7 +4422,7 @@ P(\omega) \infl P(\mu') \oplus P(\nu') \defl P(\omega') \quad \textrm{or} \quad 
 \]
 By \cref{prop::exchange conflations are unique}, we get that~$P(\mu)\oplus P(\nu)$ and~$P(\mu')\oplus P(\nu')$ are isomorphic, and that the mutation conflations either both have the form~$P(\omega) \infl P(\mu) \oplus P(\nu) \defl P(\omega')$ or both have the form~$P(\omega') \infl P(\mu) \oplus P(\nu) \defl P(\omega)$. Without loss of generality, assume that they have the first form.
  
-In particular, the leftmost morphisms of both mutation conflations are both minimal~$\add(P(\mu) \oplus P(\nu))$-approximations of~$P(\omega)$. As such, they are isomorphic as morphisms. They determine common substrings of~$\omega$ and~$\mu$ and of~$\omega$ and~$\nu$, which in turn determine~$\sigma$. Point (ii) of \cref{prop:exchangeablePairsNKC} is proved.
+In particular, the leftmost morphisms of both mutation conflations are both minimal~$\add \big( P(\mu) \oplus P(\nu) \big)$-approximations of~$P(\omega)$. As such, they are isomorphic as morphisms. They determine common substrings of~$\omega$ and~$\mu$ and of~$\omega$ and~$\nu$, which in turn determine~$\sigma$. Point (ii) of \cref{prop:exchangeablePairsNKC} is proved.
 \end{proof}
 
 We now come to the main result of this section.
