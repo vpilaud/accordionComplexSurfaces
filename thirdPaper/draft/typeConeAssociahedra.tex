@@ -1557,19 +1557,14 @@ A mesh mutation is \defn{initial} if it ends at a cluster variable of an initial
 We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are two cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a non-initial mesh mutation.
 \end{definition}
 
-\vincent{Link to \cref{sec:clusterCategories}.}
-\vincent{\cref{lem:bijectionMeshMutations} might become a conjecture.}
+The following statement is proved in \cref{coro::number of positive meshes}.
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
 We have that~$|\principalVariables| = |\meshes| + n$.
 \end{lemma}
-\begin{proof}
- We postpone the proof until Corollary~\ref{coro::number of positive meshes}.
-\end{proof}
 
-
-The following statement describes the linear dependence in the mesh mutations.
+The following statement describes the linear dependence in the mesh mutations. It follows from \cref{lem:linearDependencegvectorsCA,def:meshMutation}.
 
 \begin{lemma}
 \label{lem:dependenceMesh}
@@ -3439,7 +3434,8 @@ expressing cluster variables as Laurent polynomials in the variables of the clus
 
 The following definition is a cluster-tilting version of the positive mutation for~$\tau$-tilting modules, or for~$2$-term silting complexes.
 
-\begin{definition}\label{defn::positive mutation}
+\begin{definition}
+\label{defn::positive mutation}
 Let~$x\in\cluster$ be a cluster variable in a given cluster and let~$x' \in \cluster'$ be obtained by mutating~$\cluster$ at~$x$.
 The pair~$(x,x')$ is said to be a \defn{positive mutation} with respect to some initial cluster~$\cluster_\circ$ if there are~$X,Y\in \ind(\cat)$ such that~$\CC(X)=x$,~$\CC(Y)=x'$,~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$ and, for any non-split triangle
 \[
@@ -3450,16 +3446,18 @@ X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X
 The mutation is a \defn{mesh mutation} if the triangle can be chosen to be an almost-split triangle (with no assumption on~$h$).
 \end{definition}
 
-\begin{lemma}\label{lemm::exaclty one mesh mutation}
- For every non-initial cluster variable, there exists precisely one pair~$(x,x')$ such that there exists a positive mesh mutation changing~$x$ into~$x'$.
+\begin{lemma}
+\label{lemm::exaclty one mesh mutation}
+For every non-initial cluster variable, there exists precisely one pair~$(x,x')$ such that there exists a positive mesh mutation changing~$x$ into~$x'$.
 \end{lemma}
+
 \begin{proof}
- Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starting in~$X$, where~$X$ is the object such that~$\phi(X) = x$.  Thus there is precisely one mesh relation By Lemma~\ref{lemm::almost-split}, the pair~$(x,x')$ is a positive mutation if and only~$X\notin \add(\susp T)$, that is, if and only if~$x$ is not an initial variable.
+Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starting in~$X$, where~$X$ is the object such that~$\phi(X) = x$.  Thus there is precisely one mesh relation By \cref{lemm::almost-split}, the pair~$(x,x')$ is a positive mutation if and only~$X\notin \add(\susp T)$, that is, if and only if~$x$ is not an initial variable.
 \end{proof}
 
 \begin{lemma}
 \label{lemm::mesh mutations and meshes}
-The set of positive mesh mutations~$(x,x')$ of Definition~\ref{defn::positive mutation} is in bijection with the set~$\meshes$ from~\ref{defn::positive mutation}.
+The set of positive mesh mutations~$(x,x')$ of \cref{defn::positive mutation} is in bijection with the set~$\meshes$ of~\cref{defn::positive mutation}.
 \end{lemma}
 
 \begin{proof}
@@ -3477,17 +3475,14 @@ X\to E\to X' \to \susp X \quad \textrm{and} \quad  X' \to 0 \to X \to \susp X'.
 Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$.  Since the pair~$\{x,x'\}$ is not initial, the mutation is a positive mesh mutation.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
 \end{proof}
 
-\begin{corollary}[Lemma~\ref{lem:bijectionMeshMutations}]
+\begin{corollary}[\cref{lem:bijectionMeshMutations}]
 \label{coro::number of positive meshes}
- We have that~$|\meshes|$ is the number of non-initial variables.
+We have that~$|\meshes|$ is the number of non-initial variables.
 \end{corollary}
+
 \begin{proof}
- This is a direct consequence of Lemmas~\ref{lemm::exaclty one mesh mutation} and~\ref{lemm::mesh mutations and meshes}.
+This is a direct consequence of \cref{lemm::exaclty one mesh mutation,lemm::mesh mutations and meshes}.
 \end{proof}
-
-
-
-
 
 \begin{lemma}
 \label{lemma:positive mutation triangles}
