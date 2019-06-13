@@ -1557,8 +1557,7 @@ A mesh mutation is \defn{initial} if it ends at a cluster variable of an initial
 We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are two cluster variables of~$\principalClusterAlgebra$ which are exchangeable via a non-initial mesh mutation.
 \end{definition}
 
-\vincent{Link to \cref{sec:clusterCategories}.}
-\vincent{\cref{lem:bijectionMeshMutations} might become a conjecture.}
+%\vincent{Link to \cref{sec:clusterCategories}.}
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
@@ -3266,7 +3265,7 @@ The identity morphism of~$X$ is not in~$(\susp T)$, since~$X$ is not in~$\add(\s
 
 \begin{lemma}
 \label{lemm::bilinear-form}
-Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. \pg{introduce general notation for redisue field}
+Let~$A$ and~$B$ be two indecomposable objects of~$\cat$. %\pg{introduce general notation for redisue field}
 \begin{enumerate}
 \item If~$A \notin \add(\susp T)$, then
 \[
@@ -3451,34 +3450,34 @@ The mutation is a \defn{mesh mutation} if the triangle can be chosen to be an al
 \end{definition}
 
 \begin{lemma}\label{lemm::exaclty one mesh mutation}
- For every non-initial cluster variable, there exists precisely one pair~$(x,x')$ such that there exists a positive mesh mutation changing~$x$ into~$x'$.
+ For every non-initial cluster variable~$x$, there exists precisely one pair~$(x,x')$ such that there exists a positive mesh mutation changing~$x$ into~$x'$.
 \end{lemma}
 \begin{proof}
- Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starting in~$X$, where~$X$ is the object such that~$\phi(X) = x$.  Thus there is precisely one mesh relation By Lemma~\ref{lemm::almost-split}, the pair~$(x,x')$ is a positive mutation if and only~$X\notin \add(\susp T)$, that is, if and only if~$x$ is not an initial variable.
+ Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starting in~$X$, where~$X$ is the object such that~$\phi(X) = x$.  Thus there is precisely one mesh mutation. By Lemma~\ref{lemm::almost-split}, the pair~$(x,x')$ is a positive mutation if and only~$X\notin \add(\susp T)$, that is, if and only if~$x$ is not an initial variable.
 \end{proof}
 
 \begin{lemma}\label{lemm::mesh mutations and meshes}
- The set of positive mesh mutations~$(x,x')$ of Definition~\ref{defn::positive mutation} is in bijection with the set~$\meshes$ from~\ref{defn::positive mutation}.
+ The set of positive mesh mutations~$(x,x')$ of Definition~\ref{defn::positive mutation} is in bijection with the set~$\meshes$ from Definition~\ref{def:meshMutation}.
 \end{lemma}
 \begin{proof}
- If~$(x,x')$ is a positive mesh mutation, then~$\{x,x'\}$ is in~$\meshes$.  Indeed, if~$X$ and~$X'$ are the the corresponding objects in~$\cat$.  Then there is an almost-split triangle
+ If~$(x,x')$ is a positive mesh mutation, then~$\{x,x'\}$ is in~$\meshes$.  Indeed, if~$X$ and~$X'$ are the corresponding objects in~$\cat$, then there is an almost-split triangle
  \[
   X\to E\to X' \to \susp E,
  \]
- so that~$X' = \tau^{-1}X$.  Moreover, there is a slice of the Auslander--Reiten quiver of~$\cat$ containing~$X$ and all indecomposable direct factors of~$E$.  The direct sum of indecomposable objects in this slice is a cluster-tilting object in which~$X$ is a sink, and mutation at~$X$ gives~$X'$.  Thus~$\{x,x'\}$ is in~$\meshes$.  This gives an injective map from the set of positive mutations to~$\meshes$.
+ so that~$X' = \tau^{-1}X$.  Moreover, there is a slice of the Auslander--Reiten quiver of~$\cat$ containing~$X$ and all indecomposable direct factors of~$E$.  The direct sum of indecomposable objects in this slice is a cluster-tilting object in which~$X$ is a source, and mutation at~$X$ gives~$X'$.  Thus~$\{x,x'\}$ is in~$\meshes$.  This gives an injective map from the set of positive mesh mutations to~$\meshes$.
  
  \smallskip
  
- Next, assume that~$\{x,x'\}\in \meshes$ starts in~$x$.  Then there is a cluster-tilting object~$T$ in~$\cat$ having~$X$ as a direct factor, and such that~$X$ is a sink in~$T$ and mutation at~$X$ yields~$X'$.  Since~$X$ is a sink, the mutation triangle starting and ending in~$X$ are
+ Next, assume that~$\{x,x'\}\in \meshes$ starts in~$x$.  Then there is a cluster-tilting object~$T$ in~$\cat$ having~$X$ as a direct factor, and such that~$X$ is a source in~$T$ and mutation at~$X$ yields~$X'$.  Since~$X$ is a source, the mutation triangle starting and ending in~$X$ are
  \[
   X\to E\to X' \to \susp X \quad \textrm{and} \quad  X' \to 0 \to X \to \susp X'.
  \]
-  Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$.  Since the pair~$\{x,x'\}$ is not initial, the mutation is a positive mesh mutation.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
+  Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$, since the dimension of~$\cat(X',\susp X)$ is~$1$ over~$\field_{X'}$.  Since the pair~$\{x,x'\}$ is not initial,~$\phi(X')$ is not an initial variable; in other words,~$X'$ is not in~$\add(T)$.  Therefore,~$X = \tau X' = \susp X'$ is not in~$\add\susp T$, so the mutation is a positive mesh mutation by Lemma~\ref{lemm::almost-split}.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
 \end{proof}
 
 \begin{corollary}[Lemma~\ref{lem:bijectionMeshMutations}]
 \label{coro::number of positive meshes}
- We have that~$|\meshes|$ is the number of non-initial variables.
+ We have that~$|\meshes|$ is the number of non-initial cluster variables.
 \end{corollary}
 \begin{proof}
  This is a direct consequence of Lemmas~\ref{lemm::exaclty one mesh mutation} and~\ref{lemm::mesh mutations and meshes}.
