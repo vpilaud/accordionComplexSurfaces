@@ -234,7 +234,7 @@
 % formating the table of contents
 \setcounter{tocdepth}{4}
 \makeatletter
-\def\l@section{\@tocline{1}{2pt}{0pc}{}{}}
+\def\l@section{\@tocline{1}{5pt}{0pc}{}{}}
 \makeatother
 \let\oldtocpart=\tocpart
 \renewcommand{\tocpart}[2]{\bf\large\oldtocpart{#1}{#2}}
@@ -3323,6 +3323,7 @@ FA\xrightarrow{Ff} FE \xrightarrow{} F\susp^{-1} A \xrightarrow{} 0.
 \]
 Applying now the functors~$\cat(-, B)$ and~$\Hom{\Lambda}(-, FB)$, we get a commutative diagram whose rows are exact sequences and whose vertical maps are surjective by \cref{prop::functor-F}.
 \[
+\hspace{-.3cm}
 \xymatrix{ & \cat(\susp^{-1} A, B)\ar[r]\ar@{->>}[d] & \cat(E, B)\ar[r]^{f^*}\ar@{->>}[d] & \cat(A,B)\ar[r]\ar@{->>}[d] & \coker(f^*)\ar[r]\ar@{->>}[d] & 0 \\
 0 \ar[r] & \Hom{\Lambda}(F\susp^{-1} A, FB)\ar[r] & \Hom{\Lambda}(FE, FB)\ar[r]^{Ff^*} & \Hom{\Lambda}(FA, FB)\ar[r] & \coker(Ff^*)\ar[r] & 0.
 }
@@ -3965,7 +3966,9 @@ and an~$\mathbb{E}$-extension~$\delta''\in\mathbb{E}(Y',X)$ realized by~$X\overs
 \end{itemize}
 \end{definition}
 
+\enlargethispage{-.8cm}
 We use the following terminology.
+
 \begin{notation}
 Let~$(\cat,\mathbb{E},\mathfrak{s})$ be an extriangulated category.
 \begin{enumerate}
@@ -4062,6 +4065,7 @@ Then any endo-local non-projective object~$X\in\cat$ permits an almost-split con
 We let~$\cat$ and~$\tc$ satisfy the assumptions (1), (2) and (3) of \cref{setting::extricat}.
 We will make it explicit when more assumptions are needed.
 
+\enlargethispage{-.1cm}
 We start by stating some immediate implications of the existence of conflations~$T\infl 0 \defl \susp T$, for~$T\in\tc$.
 
 \begin{lemma}
