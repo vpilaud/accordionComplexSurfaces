@@ -3442,9 +3442,9 @@ The following definition is a cluster-tilting version of the positive mutation f
 \begin{definition}\label{defn::positive mutation}
 Let~$x\in\cluster$ be a cluster variable in a given cluster and let~$x' \in \cluster'$ be obtained by mutating~$\cluster$ at~$x$.
 The pair~$(x,x')$ is said to be a \defn{positive mutation} with respect to some initial cluster~$\cluster_\circ$ if there are~$X,Y\in \ind(\cat)$ such that~$\CC(X)=x$,~$\CC(Y)=x'$,~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$ and, for any non-split triangle
- \[
-  X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X 
- \]
+\[
+X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X 
+\]
 (this triangle is unique up to isomorphism) we have~$h\in (\susp T)$, where~$T\in\cat$ is any basic cluster-tilting object such that~$\CC(T)=\cluster_\circ$.
 
 The mutation is a \defn{mesh mutation} if the triangle can be chosen to be an almost-split triangle (with no assumption on~$h$).
@@ -3457,23 +3457,24 @@ The mutation is a \defn{mesh mutation} if the triangle can be chosen to be an al
  Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starting in~$X$, where~$X$ is the object such that~$\phi(X) = x$.  Thus there is precisely one mesh relation By Lemma~\ref{lemm::almost-split}, the pair~$(x,x')$ is a positive mutation if and only~$X\notin \add(\susp T)$, that is, if and only if~$x$ is not an initial variable.
 \end{proof}
 
-\begin{lemma}\label{lemm::mesh mutations and meshes}
- The set of positive mesh mutations~$(x,x')$ of Definition~\ref{defn::positive mutation} is in bijection with the set~$\meshes$ from~\ref{defn::positive mutation}.
+\begin{lemma}
+\label{lemm::mesh mutations and meshes}
+The set of positive mesh mutations~$(x,x')$ of Definition~\ref{defn::positive mutation} is in bijection with the set~$\meshes$ from~\ref{defn::positive mutation}.
 \end{lemma}
+
 \begin{proof}
- If~$(x,x')$ is a positive mesh mutation, then~$\{x,x'\}$ is in~$\meshes$.  Indeed, if~$X$ and~$X'$ are the the corresponding objects in~$\cat$.  Then there is an almost-split triangle
- \[
-  X\to E\to X' \to \susp E,
- \]
- so that~$X' = \tau^{-1}X$.  Moreover, there is a slice of the Auslander--Reiten quiver of~$\cat$ containing~$X$ and all indecomposable direct factors of~$E$.  The direct sum of indecomposable objects in this slice is a cluster-tilting object in which~$X$ is a sink, and mutation at~$X$ gives~$X'$.  Thus~$\{x,x'\}$ is in~$\meshes$.  This gives an injective map from the set of positive mutations to~$\meshes$.
+If~$(x,x')$ is a positive mesh mutation, then~$\{x,x'\}$ is in~$\meshes$.  Indeed, if~$X$ and~$X'$ are the the corresponding objects in~$\cat$.  Then there is an almost-split triangle
+\[
+X\to E\to X' \to \susp E,
+\]
+so that~$X' = \tau^{-1}X$.  Moreover, there is a slice of the Auslander--Reiten quiver of~$\cat$ containing~$X$ and all indecomposable direct factors of~$E$.  The direct sum of indecomposable objects in this slice is a cluster-tilting object in which~$X$ is a sink, and mutation at~$X$ gives~$X'$.  Thus~$\{x,x'\}$ is in~$\meshes$.  This gives an injective map from the set of positive mutations to~$\meshes$.
  
- \smallskip
- 
- Next, assume that~$\{x,x'\}\in \meshes$ starts in~$x$.  Then there is a cluster-tilting object~$T$ in~$\cat$ having~$X$ as a direct factor, and such that~$X$ is a sink in~$T$ and mutation at~$X$ yields~$X'$.  Since~$X$ is a sink, the mutation triangle starting and ending in~$X$ are
- \[
-  X\to E\to X' \to \susp X \quad \textrm{and} \quad  X' \to 0 \to X \to \susp X'.
- \]
-  Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$.  Since the pair~$\{x,x'\}$ is not initial, the mutation is a positive mesh mutation.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
+\smallskip
+Next, assume that~$\{x,x'\}\in \meshes$ starts in~$x$.  Then there is a cluster-tilting object~$T$ in~$\cat$ having~$X$ as a direct factor, and such that~$X$ is a sink in~$T$ and mutation at~$X$ yields~$X'$.  Since~$X$ is a sink, the mutation triangle starting and ending in~$X$ are
+\[
+X\to E\to X' \to \susp X \quad \textrm{and} \quad  X' \to 0 \to X \to \susp X'.
+\]
+Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$.  Since the pair~$\{x,x'\}$ is not initial, the mutation is a positive mesh mutation.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
 \end{proof}
 
 \begin{corollary}[Lemma~\ref{lem:bijectionMeshMutations}]
@@ -3741,10 +3742,12 @@ For any two~$\mathbb{E}$-exten\-sions~${\delta\in\mathbb{E}(Z,X)}$, $\delta'\in\
 \end{definition}
 
 \begin{remark}
-Let~$\delta\in\mathbb{E}(Z,X)$ be an~$\mathbb{E}$-extension. By functoriality, any morphisms~$f\in\cat(X,X')$ and~$h\in\cat(Z',Z)$ induce~$\mathbb{E}$-extensions~$\mathbb{E}(Z,f)(\delta)\in\mathbb{E}(Z,X')\ \ \text{and}\ \ \mathbb{E}(h,X)(\delta)\in\mathbb{E}(Z',X)$.
+Let~$\delta\in\mathbb{E}(Z,X)$ be an~$\mathbb{E}$-extension. By functoriality, any morphisms~$f\in\cat(X,X')$ and~$h\in\cat(Z',Z)$ induce~$\mathbb{E}$-extensions~$\mathbb{E}(Z,f)(\delta)\in\mathbb{E}(Z,X') \text{ and } \mathbb{E}(h,X)(\delta)\in\mathbb{E}(Z',X)$.
 For short, we write~$f_\ast\delta$ and~$h^\ast\delta$ instead.
 Using those notations, we have, in~$\mathbb{E}(Z',X')$
-\[ \mathbb{E}(h,f)(\delta)=h^\ast f_\ast\delta=f_\ast h^\ast\delta. \]
+\[
+\mathbb{E}(h,f)(\delta)=h^\ast f_\ast\delta=f_\ast h^\ast\delta.
+\]
 \end{remark}
 
 \begin{definition}
@@ -3754,7 +3757,9 @@ A \defn{morphism}~$(f,h):\delta\to\delta'$ of~$\mathbb{E}$-extensions~$\delta\in
 \begin{definition}
 \label{DefSqEquiv}
 Let~$X,Z\in\cat$ be any two objects. Two sequences of morphisms in~$\cat$
-\[ X \overset{x}{\longrightarrow}Y\overset{y}{\longrightarrow}Z \ \text{ and } \ X\overset{x'}{\longrightarrow}Y'\overset{y'}{\longrightarrow}Z \]
+\[
+X \overset{x}{\longrightarrow}Y\overset{y}{\longrightarrow}Z \text{ and } X\overset{x'}{\longrightarrow}Y'\overset{y'}{\longrightarrow}Z
+\]
 are said to be \defn{equivalent} if there exists an isomorphism~$g\in\cat(Y,Y')$ such that the following diagram commutes.
 \[
 \xy
@@ -3871,7 +3876,7 @@ in~$\cat$, there exists a morphism~$(f,h):\delta\to\delta'$ satisfying~$h\circ y
 \item[{\rm (ET3)$^{\mathrm{op}}$}] Dual of {\rm (ET3)}.
 \item[{\rm (ET4)}] Let~$\delta\in\mathbb{E}(Z',X)$ and~$\delta'\in\mathbb{E}(X',Y)$ be~$\mathbb{E}$-extensions realized respectively by
 \[
-X\overset{f}{\longrightarrow}Y\overset{f'}{\longrightarrow}Z'\ \text{ and } \ Y\overset{g}{\longrightarrow}Z\overset{g'}{\longrightarrow}X'.
+X\overset{f}{\longrightarrow}Y\overset{f'}{\longrightarrow}Z' \quad\text{and}\quad Y\overset{g}{\longrightarrow}Z\overset{g'}{\longrightarrow}X'.
 \]
 Then there exist an object~$Y'\in\cat$, a commutative diagram in~$\cat$
 \[
@@ -3978,8 +3983,12 @@ In particular in any conflation, the inflation is a weak kernel of the deflation
 \label{proposition::extricat long exact sequences}
 Assume that $(\cat,\mathbb{E},\mathfrak{s})$ is an extriangulated category, and let $X\xrightarrow{x}Y\xrightarrow{y}Z\overset{\delta}{\dashrightarrow}$ be an extriangle.
 Then the following sequences of natural transformations are exact:
-\[ \cat(Z,-)\overset{-\circ y}{\longrightarrow}\cat(Y,-)\overset{-\circ x}{\longrightarrow}\cat(X,-)\overset{\delta^\sharp}{\longrightarrow}\mathbb{E}(Z,-)\overset{y^\ast}{\longrightarrow}\mathbb{E}(Y,-)\overset{x^\ast}{\longrightarrow}\mathbb{E}(X,-), \]
-\[ \cat(-,X)\overset{x\circ-}{\longrightarrow}\cat(-,Y)\overset{y\circ-}{\longrightarrow}\cat(-,Z)\overset{\delta_\sharp}{\longrightarrow}\mathbb{E}(-,X)\overset{x_\ast}{\longrightarrow}\mathbb{E}(-,Y)\overset{y_\ast}{\longrightarrow}\mathbb{E}(-,Z), \]
+\[
+\cat(Z,-)\overset{-\circ y}{\longrightarrow}\cat(Y,-)\overset{-\circ x}{\longrightarrow}\cat(X,-)\overset{\delta^\sharp}{\longrightarrow}\mathbb{E}(Z,-)\overset{y^\ast}{\longrightarrow}\mathbb{E}(Y,-)\overset{x^\ast}{\longrightarrow}\mathbb{E}(X,-),
+\]
+\[
+\cat(-,X)\overset{x\circ-}{\longrightarrow}\cat(-,Y)\overset{y\circ-}{\longrightarrow}\cat(-,Z)\overset{\delta_\sharp}{\longrightarrow}\mathbb{E}(-,X)\overset{x_\ast}{\longrightarrow}\mathbb{E}(-,Y)\overset{y_\ast}{\longrightarrow}\mathbb{E}(-,Z),
+\]
 where~$\delta^\sharp(f)=f_\ast\delta$ and~$\delta_\sharp(g)=g^\ast\delta$.
 \end{proposition}
 
@@ -4053,12 +4062,12 @@ The following holds:
 \label{lemma::shifts of extriangles}
 Let~$X\in\cat$ and let
 \[
-T_1^X\overset{f_X}{\infl} T_0^X\overset{g_X}{\defl} X \overset{\delta_X}{\dashrightarrow}, \ \ \ T_0^X\infl 0\defl \susp T_0^X\overset{\delta_0}{\dashrightarrow}, \ \ \ T_1^X\infl 0\defl \susp T_1^X\overset{\delta_1}{\dashrightarrow}
+T_1^X\overset{f_X}{\infl} T_0^X\overset{g_X}{\defl} X \overset{\delta_X}{\dashrightarrow}, \quad T_0^X\infl 0\defl \susp T_0^X\overset{\delta_0}{\dashrightarrow}, \quad T_1^X\infl 0\defl \susp T_1^X\overset{\delta_1}{\dashrightarrow}
 \]
 be extriangles with~$T_0^X,T_1^X\in\tc$.
 Then there are extriangles
 \[
-T_0^X\overset{g_X}{\infl} X \overset{h_X}{\defl} \susp T_1^X \overset{(f_X)_\ast\delta_1}{\dashrightarrow}, \ \ \ X \overset{h_X}{\infl} \susp T_1^X \overset{\susp f_X}{\defl} \susp T_0^X \overset{(g_X)_\ast\delta_0}{\dashrightarrow}
+T_0^X\overset{g_X}{\infl} X \overset{h_X}{\defl} \susp T_1^X \overset{(f_X)_\ast\delta_1}{\dashrightarrow}, \quad X \overset{h_X}{\infl} \susp T_1^X \overset{\susp f_X}{\defl} \susp T_0^X \overset{(g_X)_\ast\delta_0}{\dashrightarrow}
 \]
 where~$h_X$ is the unique morphism in~$\cat(X,\susp T_1^X)$ satisfying~$(h_X)^\ast\delta_1=\delta_X$ and~$\susp f_X$ is the unique morphism in~$\cat(\susp T_1^X,\susp T_0^X)$ satisfying~$(\susp f_X)^\ast\delta_0 = (f_X)_\ast\delta_1$.
 \end{lemma}
@@ -4163,7 +4172,7 @@ We thus have~$t'=t$.
 \begin{remark}
 It follows from the proof of \cref{lemma:: mphs in T are inflations} that conditions (1), (2), (3) in \cref{setting::extricat} are equivalent to conditions (1), (2), (3'), where
 \[
-{\rm (3')} \ \ \ \cat = \tc\ast\susp\tc.
+{\rm (3')} \quad \cat = \tc\ast\susp\tc.
 \]
 \end{remark}
 
@@ -4294,7 +4303,7 @@ By~\cite[Prop.~3.15]{NakaokaPalu} and axiom (ET4)$^{\mathrm{op}}$, there are com
 {\ar@{}|\circlearrowright "0";"12"};
 {\ar@{}|\circlearrowright "2";"14"};
 \endxy
-\ \ \ \ \ \ \ \
+\quad \quad \ \
 \xy
 (-24,21)*+{T^X_1}="0";
 (-7,21)*+{B}="2";
