@@ -3417,7 +3417,7 @@ Now,~$[T]+[\susp T]$ is in the kernel of~$\b{g}$, but~$\langle [T] + [\susp T], 
 In this section, we apply the results of \cref{subsect::Statement cluster cats} in order to prove \cref{prop:uniqueExchangePropertyCA} and \cref{prop:meshMutations} of \cref{subsec:typeConeCA}.
 
 We first recall the results on categorification of cluster algebras that we will make use of in the proofs.
-\begin{theorem}[]\pg{cite???}
+\begin{theorem}
 \label{thm::categorification}
 Let~$\cat$ be the cluster category of a valued quiver of Dynkin type~$A,B,C,D,E,F$ or~$G$. Let~$T$ be a basic cluster-tilting object in~$\cat$, and let~$Q$ be the valued Gabriel quiver of~$\End{\cat}(T)$. Then there is a bijection
 \[
@@ -3425,10 +3425,10 @@ Let~$\cat$ be the cluster category of a valued quiver of Dynkin type~$A,B,C,D,E,
 \]
 expressing cluster variables as Laurent polynomials in the variables of the cluster~$\CC(T)$ and which has the follwing properties.
 \begin{itemize}
-\item[(i)] \emph{(}\cite[Prop.~3.2]{BuanMarshReinekeReitenTodorov} and~\cite[]{???} \emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
-\item[(ii)] \emph{(}\cite[Prop.~4.3]{FuKeller} and \emph{)} For any~$X \in \ind(\cat)$, the~$\b{g}$-vector of~$\CC(X)$ is~$\b{g}([X])$, where we identify~$\Z^n$ and~$K_0(\cat ; T)$ via the isomorphism sending~$(a_1, \dots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
-\item[(iii)] \emph{(}\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov} and~\cite[]{???—} \emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
-\item[(iv)]\emph{(}\cite[???]{BuanMarshReinekeReitenTodorov} and~\cite[???]{BuanIyamaReitenScott} and ???\emph{)} Let~$T'$ be any basic cluster-tilting object of~$\cat$. Then the matrix~$B'$ of the associated seed~$(\CC(T'),B')$ is given by the multiplicities of the middle terms of the exchange triangles. More explicitely,
+\item[(i)] \emph{(}\cite[Prop.~3.2]{BuanMarshReinekeReitenTodorov}\emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
+\item[(ii)] \emph{(}\cite[Prop.~4.3]{FuKeller} and \cite[Prop.~2.2]{Palu}, where the proofs also work over an arbitrary base field\emph{)} For any~$X \in \ind(\cat)$, the~$\b{g}$-vector of~$\CC(X)$ is~$\b{g}([X])$, where we identify~$\Z^n$ and~$K_0(\cat ; T)$ via the isomorphism sending~$(a_1, \dots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
+\item[(iii)] \emph{(}\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov}\emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
+\item[(iv)]\emph{(}\cite{BuanIyamaReitenScott} and \cite[Thm.~5.1]{BuanMarshReiten-mutation}, adapted to the cluster categories of species of Dynkin type\emph{)} Let~$T'$ be any basic cluster-tilting object of~$\cat$. Then the matrix~$B'$ of the associated seed~$(\CC(T'),B')$ is given by the multiplicities of the middle terms of the exchange triangles. 
 \end{itemize}
 \end{theorem}
 
@@ -3540,9 +3540,9 @@ By \cref{thm::categorification} (iii), the middle term of the triangle is unique
 By \cref{thm::categorification} (iv) this equality is one of the two equalities in \cref{lem:linearDependencegvectorsCA}.
 \end{proof}
 
-\vincent{Careful. There is a convention change with \cref{subsec:typeConeCA} and \cref{fig:labelFacetDefiningInequalititiesCA1,fig:labelFacetDefiningInequalititiesCA2}. Justify this change by the fact that we followed the convention of~\cite{BazierMatteDouvilleMousavandThomasYildirim} in \cref{subsec:typeConeCA}.}
+% \vincent{Careful. There is a convention change with \cref{subsec:typeConeCA} and \cref{fig:labelFacetDefiningInequalititiesCA1,fig:labelFacetDefiningInequalititiesCA2}. Justify this change by the fact that we followed the convention of~\cite{BazierMatteDouvilleMousavandThomasYildirim} in \cref{subsec:typeConeCA}.}
 
-\yann{I think that our conventions coincide. With the choice of the Hom functor, $\susp T$ is sent to the initial seed so that the AR triangles ending in $\add(\susp T)$ are precisely the meshes ending in an initial variable}
+% \yann{I think that our conventions coincide. With the choice of the Hom functor, $\susp T$ is sent to the initial seed so that the AR triangles ending in $\add(\susp T)$ are precisely the meshes ending in an initial variable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3561,7 +3561,7 @@ The reader that does not want to dwell into details can safely skip \cref{sect::
 We indifferently call \emph{conflations}, written~$X\infl Y\defl Z$, or \emph{extriangles}, written ${X\infl Y\defl Z \overset{\delta}{\dashrightarrow}}$, the analogues of short exact sequences or triangles in an extriangulated category.
 
 \para{Setting for Section~\ref{sect::prelim on extricats}}
-In that section, we let~$\cat$ be an extriangulated category with a fixed full additive \yann{additive contains strictly full + stable under taking summands} subcategory~$\tc$ satisfying the following three properties:
+In that section, we let~$\cat$ be an extriangulated category with a fixed full additive subcategory~$\tc$, stable under isomorphisms, under taking direct summands, and satisfying the following three properties:
 \begin{enumerate}
 \item Every~$T\in\tc$ is projective in~$\cat$;
 \item For each~$T\in\tc$, the morphism~$T\to 0$ is an inflation for the extriangulated structure of~$\cat$;
@@ -3634,7 +3634,6 @@ However, in all our applications, the subcategory~$\tc$ is of the form~$\add(T)$
 In that case,~$\modt$ is equivalent to~$\MOD\End{\cat}(T)$ and thus abelian.
 \end{remark}
 
-\yann{Applying $X\mapsto\mathbb{E}(-,X)|_{\susp\tc}$ might solve this issue?}
 
 \begin{definition}
 We let~$\kzero{\cat}$ denote the \defn{Grothendieck group} of~$\cat$, that is, the quotient of the free abelian group generated by symbols~$[X]$, for each $X\in\cat$, by the relations~$[X]-[Y]+[Z]$, for each conflation~$X\infl Y\defl Z$ in~$\cat$.
@@ -3646,7 +3645,7 @@ Because~$\tc$ is made of projective objects in~$\cat$, its extriangulated struct
 \end{remark}
 
 
-The notion of index from~\cite{DehyKeller,Palu} \yann{ref RVdB ou BB ou ?, also studied in ....} generalises to our current setting.
+The notion of index from~\cite{DehyKeller,Palu} generalises to our current setting.
 
 \begin{definition}
 For any object~$X\in\cat$, fix some extriangle
@@ -4732,16 +4731,16 @@ The theorem follows from the slightly more general statements of \cref{lemm::the
 %  
 % \end{proof}
 
-\vincent{Here should be explained that the gentle algebra result is a special case of this.}
+% \vincent{Here should be explained that the gentle algebra result is a special case of this.}
 
 %%%
 
 \subsubsection{Objects presented by a subcategory}
 \label{sect::prT}
 
-We now describe a setup satisfying the assumptions of \cref{setting::extricat} that, at the same time, subsumes all examples given so far, while being easily checked in practice.\yann{A reformuler...}
+We now describe a setup satisfying the assumptions of \cref{setting::extricat} that, at the same time, subsumes all examples given so far, while being easily checked in practice.
 
-Let~$(\ec,\mathbb{E},\mathfrak{s})$ be an extriangulated category (for example, a small exact category or a triangulated category), and let~$\tc$ be an essentially small \yann{Cette hypoth\`ese n'appara\^it pas dans [HLN], mais me semble n\'ecessaire...} subcategory of~$\ec$.
+Let~$(\ec,\mathbb{E},\mathfrak{s})$ be an extriangulated category (for example, a small exact category or a triangulated category), and let~$\tc$ be an essentially small subcategory of~$\ec$.
 
 For any~$X,Y\in\ec$, let~$\mathbb{E}_\tc(X,Y)$ be the subset of~$\mathbb{E}(X,Y)$ consisting of those~$\delta$ that satisfy~$f^\ast\delta = 0$, for any~$T\in\tc$ and any~$T\xrightarrow{f}X$.
 It is easily seen that~$\mathbb{E}_\tc$ is an additive subfunctor of~$\mathbb{E}$.
