@@ -302,7 +302,7 @@ The associahedron is a ``mythical polytope''~\cite{Haiman} whose facial structur
 Its combinatorial and topological structure was introduced in early works of D.~Tamari~\cite{Tamari} and J.~Stasheff~\cite{Stasheff}, and a first $3$-dimensional polytopal model was realized by J.~Milnor for the PhD defense of J.~Stasheff.
 The first systematic polytopal realizations were constructed by M.~Haiman~\cite{Haiman} and C.~Lee~\cite{Lee}.
 Since then, the associahedron has been largely ``demystified'' with several polytopal constructions and generalizations (some are discussed below).
-Its realizations can be classified into three species: the secondary polytopes~\cite{GelfandKapranovZelevinsky, BilleraFillimanSturmfels}, the $\b{g}$-vectors realizations~\cite{Loday, HohlwegLange, LangePilaud, HohlwegLangeThomas, HohlwegPilaudStella, Postnikov, PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and the $\b{d}$-vector realizations~\cite{ChapotonFominZelevinsky, CeballosSantosZiegler}. See~\cite{CeballosSantosZiegler} for a discussion of these realizations and their connections.
+Its realizations can be classified into three species: the secondary polytopes~\cite{GelfandKapranovZelevinsky, BilleraFillimanSturmfels}, the $\b{g}$-vectors realizations~\cite{Loday, HohlwegLange, LangePilaud, HohlwegLangeThomas, HohlwegPilaudStella, Postnikov, PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and the $\b{d}$-vector realizations~\cite{ChapotonFominZelevinsky, CeballosSantosZiegler}. See~\cite{CeballosSantosZiegler} for a discussion of some of these realizations and their connections.
 
 The associahedron appears as a fundamental structure in several mathematical theories, such as moduli spaces and topology~\cite{Stasheff, Keller-AinfinityAlgebras}, operads and rewriting theory~\cite{Street, MasudaThomasTonksVallette}, combinatorial Hopf algebras~\cite{LodayRonco, ChatelPilaud, Pilaud-brickAlgebra}, diagonal harmonics~\cite{BergeronPrevilleRatelle, PrevilleRatelleViennot}, mathematical physics~\cite{ArkaniHamedBaiHeYan, BanerjeeLaddhaRaman-StokesPolytopes, Raman-PositiveGeometry}, etc.
 Another striking illustration of the ubiquity of the associahedron lies in the theory of cluster algebras introduced by S.~Fomin and A.~Zelevinsky in~\cite{FominZelevinsky-ClusterAlgebrasI} with motivation coming from total positivity and canonical bases.
@@ -318,14 +318,14 @@ This construction provides a large degree of freedom in the choice of the parame
 These realizations were then extended by V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Y\i ld\i r\i m~\cite{BazierMatteDouvilleMousavandThomasYildirim} in the context of finite type cluster algebras using tools from representation theory of quivers.
 More precisely, they fix a finite type cluster algebra~$\cal{A}$ and consider the real euclidean space~$\R^\cal{V}$ indexed by the set~$\cal{V}$ of cluster variables of~$\cal{A}$.
 Starting from an acyclic initial seed~$\seed_\circ$, they consider a set~$\cal{M}$ of mesh mutations and compute the corresponding linear dependences between the $\b{g}$-vectors, which can be interpreted as linear spaces in~$\R^\cal{V}$.
-Finally, they perturb these mesh linear spaces by a collection~$\b{\ell} \in \R^{\cal{M}}$ of positive parameters and intersect the resulting perturbed mesh affine spaces with the positive orthant of~$\R^\cal{V}$ (see \cref{subsec:typeConeCA}).
+Finally, they perturb these mesh linear spaces by a collection~$\b{\ell} \in \R_{>0}^{\cal{M}}$ of positive parameters and intersect the resulting perturbed mesh affine spaces with the positive orthant~$\R_{\ge 0}^\cal{V}$ (see \cref{subsec:typeConeCA}).
 They show that the resulting polytope is always a generalized associahedron, and that its normal fan is the $\b{g}$-vector fan of~$\cal{A}$ with respect to the initial acyclic seed~$\seed_\circ$.
 An implicit by-product of their construction is that the space of all polytopal realizations of the $\b{g}$-vector fan of~$\cal{A}$ with respect to the initial acyclic seed~$\seed_\circ$ is a simplicial cone.
 
 \medskip
 In this paper, we revisit, extend and explore further this construction using a reversed approach.
 Given a complete simplicial fan~$\Fan$, we consider the space~$\typeCone(\Fan)$ of all its polytopal realizations.
-This space was called type cone of~$\Fan$ in~\cite{McMullen-typeCone} and deformation cone of~$\Fan$ in~\cite{Postnikov, PostnikovReinerWilliams}, who studied the case when~$\Fan$ is the braid arrangement leading to the rich theory of generalized permutahedra (recently extended to all finite Coxeter arrangements in~\cite{ACEP-DeformationsCoxeterPermutahedra}).
+This space was called type cone in~\cite{McMullen-typeCone} and deformation cone in~\cite{Postnikov, PostnikovReinerWilliams}, who studied the case when~$\Fan$ is the braid arrangement leading to the rich theory of generalized permutahedra (recently extended to all finite Coxeter arrangements in~\cite{ACEP-DeformationsCoxeterPermutahedra}).
 The type cone is known to be a polyhedral cone defined by a collection of inequalities corresponding to the linear dependences among the rays of~$\Fan$ contained in pairs of adjacent maximal cones of~$\Fan$ (see \cref{def:typeCone}).
 Our approach is based on an elementary but powerful observation: for any fan~$\Fan$, all polytopal realizations of~$\Fan$ can be described as sections of a high dimensional positive orthant with a collection of affine subspaces parametrized by the type cone~$\typeCone(\Fan)$ (see \cref{prop:alternativePolytopalRealization}); if moreover the type cone~$\typeCone(\Fan)$ is a simplicial cone, it leads to a simple parametrization of all polytopal realizations of~$\Fan$ by a positive orthant corresponding to the facets of the type cone~$\typeCone(\Fan)$ (see \cref{coro:simplicialTypeCone}).
 To prove that the type cone~$\typeCone(\Fan)$ is simplicial, we just need to identify which pairs of adjacent maximal cones of~$\Fan$ correspond to the facets of~$\typeCone(\Fan)$ and to show that the corresponding linear dependences among their rays positively span the linear dependence among the rays of any pair of adjacent maximal cones of~$\Fan$.
@@ -3414,9 +3414,9 @@ Now,~$[T]+[\susp T]$ is in the kernel of~$\b{g}$, but~$\langle [T] + [\susp T], 
 \subsection{Application to~$\b{g}$-vectors of cluster algebras of finite type}
 \label{sect::applications-g-vectors}
 
-In this section, we apply the results of \cref{subsect::Statement cluster cats} in order to prove \cref{prop:uniqueExchangePropertyCA} and \cref{prop:meshMutations} of \cref{subsec:typeConeCA}.
+In this section, we apply the results of \cref{subsect::Statement cluster cats} in order to prove \cref{prop:uniqueExchangePropertyCA,prop:meshMutations} of \cref{subsec:typeConeCA}.
 
-We first recall the results on categorification of cluster algebras that we will make use of in the proofs.
+We first recall the results on categorification of cluster algebras that we will use in the proofs.
 \begin{theorem}
 \label{thm::categorification}
 Let~$\cat$ be the cluster category of a valued quiver of Dynkin type~$A,B,C,D,E,F$ or~$G$. Let~$T$ be a basic cluster-tilting object in~$\cat$, and let~$Q$ be the valued Gabriel quiver of~$\End{\cat}(T)$. Then there is a bijection
@@ -3462,24 +3462,24 @@ The set of positive mesh mutations~$(x,x')$ of \cref{defn::positive mutation} is
 \end{lemma}
 
 \begin{proof}
- If~$(x,x')$ is a positive mesh mutation, then~$\{x,x'\}$ is in~$\meshes$.  Indeed, if~$X$ and~$X'$ are the corresponding objects in~$\cat$, then there is an almost-split triangle
- \[
-  X\to E\to X' \to \susp E,
- \]
- so that~$X' = \tau^{-1}X$.  Moreover, there is a slice of the Auslander--Reiten quiver of~$\cat$ containing~$X$ and all indecomposable direct factors of~$E$.  The direct sum of indecomposable objects in this slice is a cluster-tilting object in which~$X$ is a source, and mutation at~$X$ gives~$X'$.  Thus~$\{x,x'\}$ is in~$\meshes$.  This gives an injective map from the set of positive mesh mutations to~$\meshes$.
+\enlargethispage{.3cm}
+If~$(x,x')$ is a positive mesh mutation, then~$\{x,x'\}$ is in~$\meshes$.  Indeed, if~$X$ and~$X'$ are the corresponding objects in~$\cat$, then there is an almost-split triangle
+\[
+X\to E\to X' \to \susp E,
+\]
+so that~$X' = \tau^{-1}X$.  Moreover, there is a slice of the Auslander--Reiten quiver of~$\cat$ containing~$X$ and all indecomposable direct factors of~$E$.  The direct sum of indecomposable objects in this slice is a cluster-tilting object in which~$X$ is a source, and mutation at~$X$ gives~$X'$.  Thus~$\{x,x'\}$ is in~$\meshes$.  This gives an injective map from the set of positive mesh mutations to~$\meshes$.
  
- \smallskip
- 
- Next, assume that~$\{x,x'\}\in \meshes$ starts in~$x$.  Then there is a cluster-tilting object~$T$ in~$\cat$ having~$X$ as a direct factor, and such that~$X$ is a source in~$T$ and mutation at~$X$ yields~$X'$.  Since~$X$ is a source, the mutation triangle starting and ending in~$X$ are
- \[
-  X\to E\to X' \to \susp X \quad \textrm{and} \quad  X' \to 0 \to X \to \susp X'.
- \]
-  Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$, since the dimension of~$\cat(X',\susp X)$ is~$1$ over~$\field_{X'}$.  Since the pair~$\{x,x'\}$ is not initial,~$\phi(X')$ is not an initial variable; in other words,~$X'$ is not in~$\add(T)$.  Therefore,~$X = \tau X' = \susp X'$ is not in~$\add\susp T$, so the mutation is a positive mesh mutation by Lemma~\ref{lemm::almost-split}.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
+\smallskip
+Next, assume that~$\{x,x'\}\in \meshes$ starts in~$x$.  Then there is a cluster-tilting object~$T$ in~$\cat$ having~$X$ as a direct factor, and such that~$X$ is a source in~$T$ and mutation at~$X$ yields~$X'$.  Since~$X$ is a source, the mutation triangle starting and ending in~$X$ are
+\[
+X\to E\to X' \to \susp X \quad \textrm{and} \quad  X' \to 0 \to X \to \susp X'.
+\]
+Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$, since the dimension of~$\cat(X',\susp X)$ is~$1$ over~$\field_{X'}$.  Since the pair~$\{x,x'\}$ is not initial,~$\phi(X')$ is not an initial variable; in other words,~$X'$ is not in~$\add(T)$.  Therefore,~$X = \tau X' = \susp X'$ is not in~$\add\susp T$, so the mutation is a positive mesh mutation by \cref{lemm::almost-split}.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
 \end{proof}
 
 \begin{corollary}[\cref{lem:bijectionMeshMutations}]
 \label{coro::number of positive meshes}
- We have that~$|\meshes|$ is the number of non-initial cluster variables.
+We have that~$|\meshes|$ is the number~$|\variables[\B_\circ]|-n$ of non-initial cluster variables.
 \end{corollary}
 
 \begin{proof}
@@ -3494,7 +3494,7 @@ Then precisely one of the two mutations~$\mu_x(\cluster)$ and~$\mu_{x'}(\cluster
 \end{lemma}
 
 \begin{proof}
-In view of \cref{thm::categorification} (iii), it follows from~\cite[Lem.~3.3]{Palu}.
+In view of \cref{thm::categorification}\,(iii), it follows from~\cite[Lem.~3.3]{Palu}.
 \end{proof}
 
 \begin{corollary}\emph{(\cref{prop:meshMutations})}
@@ -3505,11 +3505,12 @@ For any initial exchange matrix~$\B_\circ$ of mutation type~$A, B, C, D$, $E, F$
 \begin{proof}
 Let~$\cat$ be a cluster category of Dynkin type~$A,B,C,D,E,F$ or~$G$, and let $T\in\cat$ be some basic cluster-tilting object categorifying the given initial exchange matrix~$\B_\circ$. 
 By \cref{lemma:positive mutation triangles}, we may assume that the mutation under consideration is a positive mutation.
-In view of \cref{thm::categorification} (ii) and (iv) it is enough to show that the relation in~$K_0(\cat ; T)$ given by any triangle ${X\to E\to Y\xrightarrow{h} \susp X}$ with~$h\in(\susp T)$ is a positive linear combination of relations coming from Auslander--Reiten triangles with third term not in~$\add(\susp T)$.
+In view of \cref{thm::categorification}\,(ii) and (iv) it is enough to show that the relation in~$K_0(\cat ; T)$ given by any triangle ${X\to E\to Y\xrightarrow{h} \susp X}$ with~$h\in(\susp T)$ is a positive linear combination of relations coming from Auslander--Reiten triangles with third term not in~$\add(\susp T)$.
 This categorified statement is precisely \cref{corollary::meshes positively generate cluster cats}.
 \end{proof}
 
-It also follows form \cref{thm::categorification} above that any cluster algebra of finite type has the unique exchange relation property (see \cref{def:uerp}):
+It also follows from \cref{thm::categorification} above that any cluster algebra of finite type has the unique exchange relation property (see \cref{def:uerp}).
+
 \begin{corollary}
 \label{corollary:UERPforCAproof}
 \emph{(\cref{prop:uniqueExchangePropertyCA})}
@@ -3533,11 +3534,11 @@ where~$X\to \bigoplus_i E_i \to Y \xrightarrow{h} \susp X$ is a non-split triang
 
 \begin{proof}
 Let~$T\in\cat$ be a basic cluster tilting object such that~$\CC(T)$ is the initial cluster.
-By~\cref{lemma:positive mutation triangles}, the morphism~$h$ belongs to the ideal~$(\susp T)$.
+According to~\cref{lemma:positive mutation triangles}, the morphism~$h$ belongs to the ideal~$(\susp T)$.
 Therefore, the triangle ${X\to \bigoplus_i E_i \to Y \xrightarrow{h} \susp X}$ induces the relation~$[X]+[Y]=\sum_i [E_i]$ in~$K_0(\cat ; T)$.
-\cref{thm::categorification} (ii) gives the equality~$\b{g}_{\CC(X)} + \b{g}_{\CC(Y)} = \sum_i\b{g}_{\CC(E_i)}$, where the~$\b{g}$-vectors are computed with respect to the initial seed~$\CC(T)$.
-By \cref{thm::categorification} (iii), the middle term of the triangle is uniquely defined, up to isomorphism, by~$X$, and~$Y$, and the triangle is therefore an exchange triangle, with respect to any mutation at~$X$: it does not depend on the choice of a cluster tilting object containing~$X$.
-By \cref{thm::categorification} (iv) this equality is one of the two equalities in \cref{lem:linearDependencegvectorsCA}.
+\cref{thm::categorification}\,(ii) gives the equality ${\b{g}_{\CC(X)} + \b{g}_{\CC(Y)} = \sum_i\b{g}_{\CC(E_i)}}$, where the~$\b{g}$-vectors are computed with respect to the initial seed~$\CC(T)$.
+By \cref{thm::categorification}\,(iii), the middle term of the triangle is uniquely defined, up to isomorphism, by~$X$, and~$Y$, and the triangle is therefore an exchange triangle, with respect to any mutation at~$X$: it does not depend on the choice of a cluster tilting object containing~$X$.
+By \cref{thm::categorification}\,(iv) this equality is one of the two equalities in \cref{lem:linearDependencegvectorsCA}.
 \end{proof}
 
 % \vincent{Careful. There is a convention change with \cref{subsec:typeConeCA} and \cref{fig:labelFacetDefiningInequalititiesCA1,fig:labelFacetDefiningInequalititiesCA2}. Justify this change by the fact that we followed the convention of~\cite{BazierMatteDouvilleMousavandThomasYildirim} in \cref{subsec:typeConeCA}.}
@@ -3560,6 +3561,7 @@ The reader that does not want to dwell into details can safely skip \cref{sect::
 
 We indifferently call \emph{conflations}, written~$X\infl Y\defl Z$, or \emph{extriangles}, written ${X\infl Y\defl Z \overset{\delta}{\dashrightarrow}}$, the analogues of short exact sequences or triangles in an extriangulated category.
 
+\smallskip
 \para{Setting for Section~\ref{sect::prelim on extricats}}
 In that section, we let~$\cat$ be an extriangulated category with a fixed full additive subcategory~$\tc$, stable under isomorphisms, under taking direct summands, and satisfying the following three properties:
 \begin{enumerate}
@@ -3568,6 +3570,7 @@ In that section, we let~$\cat$ be an extriangulated category with a fixed full a
 \item For each~$X\in\cat$, there is an extriangle~$T_1^X\infl T_0^X \defl X \overset{\delta_X}{\dashrightarrow}$ in~$\cat$ with~$T_0^X, T_1^X$ in~$\tc$.
 \end{enumerate}
 
+\smallskip
 \para{Setting for Section~\ref{sect::Statment extricats}}
 In that section, we keep the previous setting, but assume moreover that~$\cat$ is Krull--Schmidt, $\field$-linear, Ext-finite, and has Auslander--Reiten--Serre duality, and that the subcategory~$\tc$ is of the form~$\add T$, where~$T=T_1\oplus\cdots\oplus T_n$ is a basic object.
 
@@ -3723,7 +3726,7 @@ Extriangulated categories, recently introduced in~\cite{NakaokaPalu}, axiomatize
 They appear in representation theory in relation with cotorsion pairs~\cite{ChangZhouZhu-ClusterSubalgebras,ZhaoHuang-Phantom,LiuNakaoka-Hearts,Liu-LocalizationsHearts}, with Auslander--Reiten theory~\cite{IyamaNakaokaPalu}, with cluster algebras, mutations, or cluster-tilting theory~\cite{ChangZhouZhu-ClusterSubalgebras,Pressland,ZhouZhu-TriangulatedQuotient,LiuZhou-Abelian,LiuZhou-AbelianII,LiuZhou-Gorenstein}, with Cohen--Macaulay dg-modules in the remarkable~\cite{Jin}.
 We also note the generalization, called~$n$-exangulated categories~\cite{HerschendLiuNakaoka}, to a version suited for higher homological algebra.
 
-An extriangulated category is the data of an additive category~$\cat$, an additive bifunctor~$\mathbb{E}:\cat^\mathrm{op}\times\cat\to \mathit{Ab}$ modelling the~$\operatorname{Ext}^1$-bifunctor, and an additive realization~$\mathfrak{s}$ sending each element~$\delta\in\mathbb{E}(Z,X)$ to some (equivalence classe of) diagram~$X\to Y\to Z$ modelling the short exact sequences or triangles.
+An extriangulated category is the data of an additive category~$\cat$, of an additive bifunctor ${\mathbb{E}:\cat^\mathrm{op}\times\cat\to \mathit{Ab}}$ modelling the~$\operatorname{Ext}^1$-bifunctor, and of an additive realization~$\mathfrak{s}$ sending each element~$\delta\in\mathbb{E}(Z,X)$ to some (equivalence classe of) diagram~$X\to Y\to Z$ modelling the short exact sequences or triangles.
 Some axioms, inspired from the case of extension-closed subcategories of triangulated categories have to be satisfied.
 
 More specifically: fix an additive category~$\cat$, and an additive bifunctor~$\mathbb{E}: \cat^\mathrm{op}\times\cat\to\mathit{Ab}$.
@@ -4006,7 +4009,7 @@ A non-zero object $X\in\cat$ is said to be \defn{endo-local} if $\cat(X,X)$ is l
 
 \begin{proposition}[{\cite[Prop.~2.5]{IyamaNakaokaPalu}}]
 For any non-split $\mathbb{E}$-extension $\delta\in\mathbb{E}(Z,X)$, the following holds.
-\begin{enumerate}[{\rm (1)}]
+\begin{enumerate}
 \item If $\delta$ satisfies {\rm (AS1)}, then $X$ is endo-local.
 \item If $\delta$ satisfies {\rm (AS2)}, then $Z$ is endo-local.
 \end{enumerate}
@@ -4035,7 +4038,7 @@ We start by stating some immediate implications of the existence of conflations~
 \begin{lemma}
 \label{lemma::first consequences}
 The following holds:
-\begin{enumerate}[{\rm (a)}]
+\begin{enumerate}[(i)]
 \item An object belongs to~$\tc$ if and only if it is projective in~$\cat$.
 \item For any~$T,T'\in\tc$, we have~$\cat(T,\susp T')=0$.
 \item For any~$X\in\cat$ and~$T\in\tc$,~$\cat(X,\susp T)\cong\mathbb{E}(X,T)$.
@@ -4045,13 +4048,14 @@ The following holds:
 \end{lemma}
 
 \begin{proof}
-(a) If~$X$ is projective in~$\cat$, then the deflation~$T_0^X\defl X$ splits and~$X$ is a summand of~$T_0^X$.
-
-(b) This follows from the fact that~$T$ is projective and~$0\defl\susp T'$ is a deflation.
-
-(c) and (d) are obtained from the exact sequences of \cref{proposition::extricat long exact sequences} associated with the extriangle~$T\infl 0\defl \susp T\dashrightarrow$.
-
-(e) For any~$T,T'\in\tc$, we have~$\mathbb{E}(\susp T,\susp T') \cong \cat(T,\susp T')=0$.
+\begin{enumerate}[(i)]
+\item If~$X$ is projective in~$\cat$, then the deflation~$T_0^X\defl X$ splits and~$X$ is a summand of~$T_0^X$.
+\item This follows from the fact that~$T$ is projective and~$0\defl\susp T'$ is a deflation.
+\item and (iv) are obtained from the exact sequences of \cref{proposition::extricat long exact sequences} associated with the extriangle~$T\infl 0\defl \susp T\dashrightarrow$.
+\addtocounter{enumi}{1}
+\item For any~$T,T'\in\tc$, we have~$\mathbb{E}(\susp T,\susp T') \cong \cat(T,\susp T')=0$.
+\qedhere
+\end{enumerate}
 \end{proof}
 
 \begin{lemma}
@@ -4178,7 +4182,7 @@ Applying the functor~$F$ to the extriangle~$T_1^X\infl T_0^X\defl X\overset{\del
 
 \begin{proof}[Proof of \cref{prop::KRextricat}]
 Recall that~$F:\cat\to\modt$ denotes the functor sending an object~$X$ to the module~$\cat(-,X)|_\tc$.
-By \cref{lemma::first consequences} (e), the ideal~$(\susp\tc)$ of morphisms factoring through an object in~$\susp\tc$ is included in the kernel of~$F$.
+By \cref{lemma::first consequences}\,(v), the ideal~$(\susp\tc)$ of morphisms factoring through an object in~$\susp\tc$ is included in the kernel of~$F$.
 Conversely, let~$X\xrightarrow{f}Y$ be such that~$Ff=0$.
 By \cref{lemma::shifts of extriangles}, there is a conflation~$T_0\overset{g}{\infl} X\overset{h}{\defl} \susp T_1$ with~$T_0,T_1\in\tc$.
 By assumption, the composition~$f\circ g$ vanishes, which implies that~$f$ factors through~$\susp T_1$.
@@ -4202,7 +4206,7 @@ By \cref{prop::KRextricat}, there are morphisms~$Y\overset{s}{\to} X$,~$Y\xright
 \[
 fs = id_Y + th.
 \]
-By \cref{lemma::first consequences} (e)~$\susp\tc$ is a rigid subcategory, so that~$t^\ast\delta=0$.
+By \cref{lemma::first consequences}\,(v), $\susp\tc$ is a rigid subcategory, so that~$t^\ast\delta=0$.
 Equivalently, there is a morphism~$\susp T'\xrightarrow{k} X$ such that~$t=fk$.
 We thus have~$f(s-kh)=id_Y$, showing that the extriangle splits.
 \end{proof}
@@ -4783,9 +4787,11 @@ Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is e
 
 \subsection{Examples}
 
+We conclude with a couple of examples for two associative algebras.
+
 %%%
 
-\subsubsection{Associative algebras}
+%\subsubsection{Associative algebras}
 
 \begin{example}[A gentle algebra]
 Consider the algebra~$\Lambda$ given the the path algebra of the quiver
@@ -4862,6 +4868,7 @@ For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm)
 %%%
 
 % \subsubsection{A quotient of a Frobenius category}
+%
 % \begin{example}
 %  Consider the preprojective algebra of type~$A_3$, as in \cref{exam::preprojective silting objects}. It is a self-injective algebra, so its module category is a Frobenius category. Its projective-injective objects are the modules 
 %  \[
@@ -4878,12 +4885,11 @@ For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm)
 %   \end{tikzcd}
 %   }
 %  \]
-%  
-%  \pg{Not sure why we wanted this example anymore.}
 % \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
 \addtocontents{toc}{\vspace{.2cm}}
 \bibliographystyle{alpha}
 \bibliography{typeConeAssociahedra}
