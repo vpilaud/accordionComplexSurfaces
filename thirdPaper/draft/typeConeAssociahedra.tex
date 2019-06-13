@@ -3668,9 +3668,6 @@ Let~$X\infl E\defl Y\dashrightarrow$ be any extriangle.
 Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b g$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\ssm \add(\susp T)$.
 \end{corollary}
 
-\vincent{Here should come the proof of \cref{prop:exchangeablePairsNKC}.}
-\pg{It is done in Coro~\ref{coro::exchangeablePairsNKC}.}
-
 
 
 
@@ -4373,8 +4370,11 @@ Recall that a two-term silting object is a complex~$T$ in~$K^{[-1,0]}(\proj \Lam
 \end{remark}
 
 \begin{definition}\label{defn::mutation conflation}
-A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$, with~$X$ and~$Y$ indecomposable, such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$). \pg{To simplify, we should perhaps ask for the approximations to be minimal.}\yann{added missing  ``indecomposable'' which fixes this issue}
+A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$, with~$X$ and~$Y$ indecomposable, such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
 \end{definition}
+\begin{remark}
+In Definition~\ref{defn::mutation conflation}, the requirement that~$X$ and~$Y$ are indecomposable implies the map~$E\defl Y$ is a right~($\add R$)-approximation, and that both approximations are minimal.
+\end{remark}
 
 \begin{proposition}
 \label{prop::exchange conflations are unique}
@@ -4457,7 +4457,6 @@ Because~$\MOD\Lambda$ and~$K^b(\proj \Lambda)$ are Krull--Schmidt, it is immedia
 \begin{lemma}
 \label{lemm::then-AR-seq-are-mutation}
 Let~$\Lambda$ be an Artin algebra, let~$\tau X\infl E\defl X$ be an Auslander--Reiten conflation in~$K^{[-1,0]}(\proj\Lambda)$ and denote~$FX=M$.
-Assume that:\yann{There might be some redundancies in the assumptions}\pg{If so, it's not obvious to me.}
 \begin{enumerate}
  \item $X\notin\add(\susp\Lambda)$;
  \item $M$ and~$\tau M$ are~$\tau$-rigid;
