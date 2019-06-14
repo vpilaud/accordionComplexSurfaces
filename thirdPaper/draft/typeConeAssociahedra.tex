@@ -232,13 +232,16 @@
 %\renewcommand{\thesection}{\arabic{part}.\arabic{section}}
 
 % formating the table of contents
+\setcounter{tocdepth}{4}
 \makeatletter
-\def\l@section{\@tocline{1}{2pt}{0pc}{}{}}
+\def\l@section{\@tocline{1}{5pt}{0pc}{}{}}
 \makeatother
 \let\oldtocpart=\tocpart
 \renewcommand{\tocpart}[2]{\bf\large\oldtocpart{#1}{#2}}
 \let\oldtocsection=\tocsection
 \renewcommand{\tocsection}[2]{\bf\oldtocsection{#1}{#2}}
+\let\oldtocsubsubsection=\tocsubsubsection
+\renewcommand{\tocsubsubsection}[2]{\quad\oldtocsubsubsection{#1}{#2}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -280,7 +283,7 @@ For non-kissing complexes (a.k.a. support $\tau$-tilting complexes) of gentle al
 For graphical nested complexes, we show that the space of realizations of the nested fan is simplicial only in the case of the associahedron, and we describe its facet-defining inequalities in general.
 
 Along the way, we prove algebraic results on~$2$-Calabi--Yau triangulated categories, and on extriangulated categories that are of independent interest.
-In particular, we prove, in those two setups, an analogue of a result of M. Auslander on minimal relations for Grothendieck groups of module categories.
+In particular, we prove, in those two setups, an analogue of a result of M.~Auslander on minimal relations for Grothendieck groups of module categories.
 \end{abstract}
 
 \maketitle
@@ -320,7 +323,7 @@ More precisely, they fix a finite type cluster algebra~$\cal{A}$ and consider th
 Starting from an acyclic initial seed~$\seed_\circ$, they consider a set~$\cal{M}$ of mesh mutations and compute the corresponding linear dependences between the $\b{g}$-vectors, which can be interpreted as linear spaces in~$\R^\cal{V}$.
 Finally, they perturb these mesh linear spaces by a collection~$\b{\ell} \in \R_{>0}^{\cal{M}}$ of positive parameters and intersect the resulting perturbed mesh affine spaces with the positive orthant~$\R_{\ge 0}^\cal{V}$ (see \cref{subsec:typeConeCA}).
 They show that the resulting polytope is always a generalized associahedron, and that its normal fan is the $\b{g}$-vector fan of~$\cal{A}$ with respect to the initial acyclic seed~$\seed_\circ$.
-An implicit by-product of their construction is that the space of all polytopal realizations of the $\b{g}$-vector fan of~$\cal{A}$ with respect to the initial acyclic seed~$\seed_\circ$ is a simplicial cone.
+An implicit by-product of their construction is that the space of all polytopal realizations of the $\b{g}$-vector fan of~$\cal{A}$ with respect to the initial acyclic \mbox{seed~$\seed_\circ$ is a simplicial cone}.
 
 \medskip
 In this paper, we revisit, extend and explore further this construction using a reversed approach.
@@ -370,7 +373,7 @@ In the present paper, we explore specifically two families of such generalizatio
 \smallskip
 \begin{itemize}
 \item \textbf{Gentle associahedra} were constructed in~\cite{PaluPilaudPlamondon-nonkissing} as polytopal realizations of finite non-kissing complexes of gentle bound quivers. These complexes encompass two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied by Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}. The latter, sometimes called accordiohedra, have also~recently appeared in the mathematical physics litterature concerning scattering amplitudes~\cite{BanerjeeLaddhaRaman-StokesPolytopes, Raman-PositiveGeometry}, with realizations inspired by those in~\cite{ArkaniHamedBaiHeYan}. It was shown in~\cite{PaluPilaudPlamondon-nonkissing, BrustleDouvilleMousavandThomasYildirim} that the non-kissing complex of a gentle bound quiver provides a combinatorial model for the support $\tau$-tilting complex~\cite{AdachiIyamaReiten} of the associated gentle algebra. Even for finite non-kissing complexes, it turns out that the type cone of the non-kissing fan is not always simplicial (see \cref{exm:nonSimplicialTypeConeNKC}). We prove however that the type cone is always simplicial when the gentle bound quiver is brick (at least $2$ relations in any cycle) and $2$-acyclic (no oriented cycle of length~$2$). Moreover, we precisely describe the facet-defining inequalities of the type cone in terms of linear dependences of $\b{g}$-vectors involved in certain mesh relations. We thus automatically derive a construction similar to that of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} describing all polytopal realizations of the $\b{g}$-vector fans of these brick $2$-acyclic bound quivers as sections of a positive orthant by well-chosen affine spaces (see \cref{subsec:typeConeCA}). Again, this result mainly relies on finding which relations minimally generate the relations between the $\b{g}$-vectors in the non-kissing complex. We present both a purely combinatorial proof (see \cref{subsec:typeConeCA}) and a purely algebraic proof for (non-necessarily gentle) brick algebras making use of extriangulated categories (see \cref{sec:extricats}).
-Our algebraic proof is based on an analogue of a result of M. Auslander~\cite{Auslander1984} relating to minimal generators of Grothendieck groups.
+Our algebraic proof is based on an analogue of a result of M.~Auslander~\cite{Auslander1984} relating to minimal generators of Grothendieck groups.
 Along the way, we need to generalize, for extriangulated categories, several results from cluster-tilting theory on indices~\cite{DehyKeller} and on abelian quotients~\cite{BuanMarshReiten, KellerReiten} that were known for triangulated categories. We note, however, that our assumptions are not quite the expected ones. This is related to the fact that the Grothendieck groups of cluster categories are badly behaved (\eg the Grothendieck group of a cluster category of type~$A_2$ is trivial). So as to overcome this difficulty, we replace the triangulated structure of cluster categories by some relative extriangulated structure, before considering Grothendieck groups. This explains why we consider projective objects rather than cluster-tilting objects for extriangulated categories.
 
 \smallskip
@@ -1869,6 +1872,7 @@ Points~(i), (iii) and~(iv) where shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.
 
 \begin{remark}
 \label{rem:exchangeablePairsNKC}
+\enlargethispage{.3cm}
 In view of \cref{prop:exchangeablePairsNKC}, it is tempting to look for a characterization of the exchangeable pairs~$\omega, \omega'$ using the kisses between~$\omega$ and~$\omega'$.
 This question was discussed in~\cite[Sect.~9]{BrustleDouvilleMousavandThomasYildirim}.
 However, as illustrated for instance in the non-kissing complex of \cref{fig:nonkissingFans}\,(right),
@@ -2497,34 +2501,59 @@ Graph associahedra and nestohedra have been geometrically realized in different 
 For a given graph~$\graphG$, the resulting polytopes all have the same normal fan, called nested fan of~$\graphG$: its rays are the characteristic vectors of the tubes, and its cones are generated by characteristic vectors of compatible tubes.
 In this section, we describe the type cone of the nested fan of any graph~$\graphG$.
 
-\begin{figure}[t]
-	\capstart
-	\begin{adjustbox}{center}
+\hvFloat[floatPos=p, capWidth=h, capPos=r, capAngle=90, objectAngle=90, capVPos=c, objectPos=c]{figure}
+{
 		\begin{tabular}{c@{\;}c@{\;}c@{\;}c}
 			permutahedron &
 			associahedron &
 			cyclohedron &
-			stellohedron \\
-			\includegraphics[scale=.6]{permutahedron} &
-			\includegraphics[scale=.6]{associahedron} &
-			\includegraphics[scale=.6]{cyclohedron} &
-			\includegraphics[scale=.6]{stellohedron} \\
-			\includegraphics[scale=.6]{permutahedronTubings} &
-			\includegraphics[scale=.6]{associahedronTubings} &
-			\includegraphics[scale=.6]{cyclohedronTubings} &
-			\includegraphics[scale=.6]{stellohedronTubings} \\[.1cm]
+			stellohedron \\[.2cm]
+			\includegraphics[scale=.93]{permutahedron} &
+			\includegraphics[scale=.93]{associahedron} &
+			\includegraphics[scale=.93]{cyclohedron} &
+			\includegraphics[scale=.93]{stellohedron} \\[.1cm]
+			\includegraphics[scale=.93]{permutahedronTubings} &
+			\includegraphics[scale=.93]{associahedronTubings} &
+			\includegraphics[scale=.93]{cyclohedronTubings} &
+			\includegraphics[scale=.93]{stellohedronTubings} \\[.2cm]
 			complete graph &
 			path &
 			cycle &
-			star
+			star \\[.3cm]
 		\end{tabular}
-	\end{adjustbox}
-	\caption{Some classical families of polytopes as graph associahedra. Illustration from~\cite{MannevillePilaud-compatibilityFans}.}
-	\label{fig:specialGraphAssociahedra}
-\end{figure}
+}
+{Some classical families of polytopes as graph associahedra. Illustration from~\cite{MannevillePilaud-compatibilityFans}.}
+{fig:specialGraphAssociahedra}
+
+%\begin{figure}[t]
+%	\capstart
+%	\begin{adjustbox}{center}
+%		\begin{tabular}{c@{\;}c@{\;}c@{\;}c}
+%			permutahedron &
+%			associahedron &
+%			cyclohedron &
+%			stellohedron \\
+%			\includegraphics[scale=.6]{permutahedron} &
+%			\includegraphics[scale=.6]{associahedron} &
+%			\includegraphics[scale=.6]{cyclohedron} &
+%			\includegraphics[scale=.6]{stellohedron} \\
+%			\includegraphics[scale=.6]{permutahedronTubings} &
+%			\includegraphics[scale=.6]{associahedronTubings} &
+%			\includegraphics[scale=.6]{cyclohedronTubings} &
+%			\includegraphics[scale=.6]{stellohedronTubings} \\[.1cm]
+%			complete graph &
+%			path &
+%			cycle &
+%			star
+%		\end{tabular}
+%	\end{adjustbox}
+%	\caption{Some classical families of polytopes as graph associahedra. Illustration from~\cite{MannevillePilaud-compatibilityFans}.}
+%	\label{fig:specialGraphAssociahedra}
+%\end{figure}
 
 %%%
 
+\clearpage
 \subsubsection{Nested complex and nested fan of a graph}
 
 We present the definitions and properties of the nested complex of a graph, following ideas from~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}.
@@ -2542,7 +2571,7 @@ A \defn{tubing} on~$\graphG$ is a set~$\tubing$ of pairwise compatible proper tu
 See \cref{fig:exmNested}.
 The \defn{nested complex} of~$\graphG$ is the simplicial complex~$\nestedComplex(\graphG)$ of all tubings~on~$\graphG$.
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\capstart
 	\centerline{\includegraphics[width=\textwidth]{exmNested}}
 	\caption{Some incompatible tubes (left and middle), and a maximal tubing (right).}
@@ -2563,7 +2592,7 @@ Note that by definition, $\gvector{\varnothing} = 0$ and $\gvector{W} = 0$ for a
 These vectors support a complete simplicial fan realization of the nested complex.
 Examples are illustrated in \cref{fig:nestedFans}.
 
-\begin{figure}[t]
+\begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=.55]{nestedFans}}
 	\caption{Two nested fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$.}
@@ -3294,6 +3323,7 @@ FA\xrightarrow{Ff} FE \xrightarrow{} F\susp^{-1} A \xrightarrow{} 0.
 \]
 Applying now the functors~$\cat(-, B)$ and~$\Hom{\Lambda}(-, FB)$, we get a commutative diagram whose rows are exact sequences and whose vertical maps are surjective by \cref{prop::functor-F}.
 \[
+\hspace{-.3cm}
 \xymatrix{ & \cat(\susp^{-1} A, B)\ar[r]\ar@{->>}[d] & \cat(E, B)\ar[r]^{f^*}\ar@{->>}[d] & \cat(A,B)\ar[r]\ar@{->>}[d] & \coker(f^*)\ar[r]\ar@{->>}[d] & 0 \\
 0 \ar[r] & \Hom{\Lambda}(F\susp^{-1} A, FB)\ar[r] & \Hom{\Lambda}(FE, FB)\ar[r]^{Ff^*} & \Hom{\Lambda}(FA, FB)\ar[r] & \coker(Ff^*)\ar[r] & 0.
 }
@@ -3515,7 +3545,7 @@ It also follows from \cref{thm::categorification} above that any cluster algebra
 \label{corollary:UERPforCAproof}
 \emph{(\cref{prop:uniqueExchangePropertyCA})}
 Let~$\B_\circ$ be any finite type exchange matrix, and let~$\mathcal{A}(\B_\circ)$ be the associated cluster algebra without coefficients.
-Then, for any exchangeable cluster variables~$x$ and~$x'$, the linear dependence $\sum_{y \in \cluster \cup \cluster'} \coefficient[{\b{g}_y}][\cluster][\cluster'] \, \b{g}_y = 0$ only depends on the pair~$(x,x')$ and not on the specific choice of clusters~$\cluster$ and~$\cluster'$ containing~$x$ and~$x'$ respectively and such that~${\cluster\setminus\{x\}=\cluster'\setminus\{x'\}}$.
+Then, for any exchangeable cluster variables~$x$ and~$x'$, the linear dependence $\sum_{y \in \cluster \cup \cluster'} \coefficient[{\b{g}_y}][\cluster][\cluster'] \, \b{g}_y = 0$ only depends on the pair~$(x,x')$ and not on the specific choice of clusters~$\cluster$ and~$\cluster'$ containing~$x$ and~$x'$ respectively and such that~${\cluster \ssm \{x\} = \cluster' \ssm \{x'\}}$.
 \end{corollary}
 
 \begin{proof}
@@ -3936,7 +3966,9 @@ and an~$\mathbb{E}$-extension~$\delta''\in\mathbb{E}(Y',X)$ realized by~$X\overs
 \end{itemize}
 \end{definition}
 
+\enlargethispage{-.8cm}
 We use the following terminology.
+
 \begin{notation}
 Let~$(\cat,\mathbb{E},\mathfrak{s})$ be an extriangulated category.
 \begin{enumerate}
@@ -4033,6 +4065,7 @@ Then any endo-local non-projective object~$X\in\cat$ permits an almost-split con
 We let~$\cat$ and~$\tc$ satisfy the assumptions (1), (2) and (3) of \cref{setting::extricat}.
 We will make it explicit when more assumptions are needed.
 
+\enlargethispage{-.1cm}
 We start by stating some immediate implications of the existence of conflations~$T\infl 0 \defl \susp T$, for~$T\in\tc$.
 
 \begin{lemma}
@@ -4848,6 +4881,7 @@ The Auslander--Reiten quiver of the extriangulated category~$K^{[-1,0]}(\proj \L
 }
 \]
 
+\medskip
 The Auslander--Reiten quiver of the module category~$\MOD(\Lambda)$ can be obtained by applying the functor~$\Hom{}(\Lambda, -)$.
  
 \[
@@ -4861,7 +4895,8 @@ The Auslander--Reiten quiver of the module category~$\MOD(\Lambda)$ can be obtai
 }
 \]
  
-One can check directly that the condition of \cref{theo::brick-algebra-condition} is not satisfied.
+\medskip
+One can check directly that the conditions of \cref{theo::brick-algebra-condition} is not satisfied.
 For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm) = \bsm3\\1\esm$, while~$\Hom{\Lambda}\left(\bsm2\\1\esm,\tau^2(\bsm2\\1\esm)\right) = \Hom{\Lambda}(\bsm2\\1\esm,\bsm1\\2\esm) \ne 0$.
 \end{example}
 
