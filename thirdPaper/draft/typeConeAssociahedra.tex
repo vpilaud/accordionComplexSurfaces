@@ -1262,8 +1262,6 @@ and
 for any seeds~$(\B, \cluster)$ and~$(\B', \cluster')$ with~${\cluster \ssm \{x\} = \cluster' \ssm \{x'\}}$.
 
 Unfortunately, \cref{lem:linearDependencegvectorsCA} is less precise than \cref{prop:exchangeablePairsAsso}. Indeed, which of the two possible linear dependences is satisfied by the $\b{g}$-vectors of~$\cluster \cup \cluster'$ depends on the initial exchange matrix~$\B_\circ$.
-% We will prove however that it is independent of the seeds containing~$x$ and~$x'$.
-% \vincent{Link to \cref{sec:clusterCategories}.}
 However, for cluster algebras of finite type, this linear dependence is independent of the choice of a seed containing~$x$ and~$x'$.
 As explained in ~\cref{corollary:UERPforCAproof}, this statement follows from~\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov}.
 We state it here for future reference.
@@ -1883,7 +1881,6 @@ However, as illustrated for instance in the non-kissing complex of \cref{fig:non
 \item not all strings are distinguishable.
 \end{itemize}
 In \cref{subsubsec:simplicialTypeConeNKC}, we will restrict to a situation that avoids all these patologies.
-%\vincent{Do we still have these problems when the gentle algebra is brick and/or without oriented $2$-cycle?}
 \end{remark}
 
 \para{Two families of examples: gentle grid and dissection quivers}
@@ -2238,8 +2235,6 @@ These notations are motivated by the representation of strings used in~\cite{But
 We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
 The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply denoted by~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
 
-\vincent{Connect as well to Yann}
-
 \begin{proposition}
 \label{prop:interestingExchangeablePairsNKC}
 For any brick and $2$-acyclic gentle quiver~$\quiver$ and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
@@ -2248,8 +2243,6 @@ For any brick and $2$-acyclic gentle quiver~$\quiver$ and any string~$\sigma \in
 \begin{proof}
 We fix some notations similar to that of \cref{fig:flip}.
 Let~$\omega \eqdef \cc{\sigma}$, $\omega' \eqdef \hh{\sigma}$, $\mu \eqdef \hc{\sigma}$ and~$\nu \eqdef \ch{\sigma}$.
-%Let~$v,y$ be the two endpoints of~$\sigma$, and let~$u$ (resp.~$w$, resp.~$x$, resp.~$z$) be the only peak of~$\mu$ (resp.~deep of~$\mu$, resp.~peak of~$\nu$, resp.~deep of~$\nu$) that is not a substring of~$\sigma$.
-%Finally, let~$\alpha = v \to w$, $\alpha' = u \to v$, $\beta = y \to z$ and $\beta' = x \to y$.
 See \cref{fig:flip}.
 
 Since~$\quiver$ is brick, these walks are not self-kissing by \cref{prop:noSelfKissing} and since they are bending, they are proper walks.
@@ -2279,6 +2272,7 @@ Therefore, $\omega$ and~$\omega'$ are exchangeable with distinguished substring~
 \end{proof}
 
 The following statement describes the type cone of the non-kissing fan of a brick and $2$-acyclic gentle quiver.
+We provide here an elementary combinatorial proof, a deeper and more general reason is discussed in \cref{coro::simplicialTypeConeNKCalgebraic}.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsNKC}
@@ -3573,10 +3567,6 @@ By \cref{thm::categorification}\,(iii), the middle term of the triangle is uniqu
 By \cref{thm::categorification}\,(iv) this equality is one of the two equalities in \cref{lem:linearDependencegvectorsCA}.
 \end{proof}
 
-% \vincent{Careful. There is a convention change with \cref{subsec:typeConeCA} and \cref{fig:labelFacetDefiningInequalititiesCA1,fig:labelFacetDefiningInequalititiesCA2}. Justify this change by the fact that we followed the convention of~\cite{BazierMatteDouvilleMousavandThomasYildirim} in \cref{subsec:typeConeCA}.}
-
-% \yann{I think that our conventions coincide. With the choice of the Hom functor, $\susp T$ is sent to the initial seed so that the AR triangles ending in $\add(\susp T)$ are precisely the meshes ending in an initial variable}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Relations for~$\b{g}$-vectors in brick algebras via extriangulated categories}
@@ -4758,8 +4748,6 @@ The theorem follows from the slightly more general statements of \cref{lemm::the
 % \begin{proof}
 %  
 % \end{proof}
-
-% \vincent{Here should be explained that the gentle algebra result is a special case of this.}
 
 %%%
 
