@@ -397,7 +397,7 @@ It also motivates the study of relevant objects revealed by the type cone dictio
 
 \smallskip
 \begin{itemize}
-\item The facet-defining inequalities of the type cone of~$\Fan$ correspond to very specific pairs of adjacent maximal cones of~$\Fan$ whose corresponding linear dependences minimally generate all such dependences. While they correspond to mesh mutations for cluster algebras and brick $2$-acyclic gentle algebras, they are not understood in general (see for instance \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right)). It would be particularly interesting to fully understand these specific mutations for arbitrary (non-kissing finite) gentle algebras.
+\item The facet-defining inequalities of the type cone of~$\Fan$ correspond to very specific pairs of adjacent maximal cones of~$\Fan$ whose corresponding linear dependences minimally generate all such dependences. While they correspond to mesh mutations for cluster algebras and $2$-acyclic gentle brick algebras, they are not understood in general (see for instance \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right)). It would be particularly interesting to fully understand these specific mutations for arbitrary (non-kissing finite) gentle algebras.
 
 \smallskip
 \item The rays of the type cone of~$\Fan$ correspond to specific polytopes which form a positive Minkowski basis of all realizations of~$\Fan$ (see \cref{subsec:MinkowskiSums}). In particular, when the type cone is simplicial, any polytopal realization of~$\Fan$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of these polytopes. For cluster algebras, it follows from~\cite[Sect.~6]{BazierMatteDouvilleMousavandThomasYildirim} that these polytopes are Newton polytopes of the $F$-polynomials. It would be interesting to obtain similar algebraic interpretations for the rays of the type cones of the non-kissing fans of gentle~algebras.
@@ -2229,9 +2229,9 @@ A gentle quiver~$\quiver$ is called:
 \end{itemize}
 \end{definition}
 
-Note that the family of brick $2$-acyclic gentle quivers already contains a lot of relevant examples, including the gentle grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
-In particular, the classical associahedron is the gentle associahedron of a brick $2$-acyclic gentle quiver.
-We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
+Note that the family of brick and $2$-acyclic gentle quivers already contains a lot of relevant examples, including the gentle grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
+In particular, the classical associahedron is the gentle associahedron of a brick and $2$-acyclic gentle quiver.
+We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
 
 For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~a \defn{cohook}) to~$\sigma$.
@@ -2240,7 +2240,7 @@ The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply denoted by~$\h
 
 \begin{proposition}
 \label{prop:interestingExchangeablePairsNKC}
-For any brick $2$-acyclic gentle quiver~$\quiver$ and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
+For any brick and $2$-acyclic gentle quiver~$\quiver$ and any string~$\sigma \in \strings$, the walks~$\cc{\sigma}$ and~$\hh{\sigma}$ are exchangeable with distinguished substring~$\sigma$.
 \end{proposition}
 
 \begin{proof}
@@ -2259,7 +2259,7 @@ If~$\sigma$ and~$\tau$ are not disjoint, then~$\sigma = \tau$ and $\mu$ and~$\nu
 We can therefore assume that $\tau$ appears completely before or completely after~$\sigma$ in both~$\mu$ and~$\nu$.
 We distinguish two different cases:
 \begin{itemize}
-\item If~$\tau$ appears before~$\sigma$ in both~$\mu$ and~$\nu$, then~$\alpha \tau \alpha'$ forms a cycle in~$\quiver$. If~$\tau$ is reduced to a vertex, then we have a $2$-cycle. Otherwise, since~$\alpha\tau$ is a substring of~$\nu$ and~$\alpha'\tau$ is a substring of~$\nu$, the cycle~$\alpha \tau \alpha'$ contains a unique relation~$\alpha'\alpha$. This rules out this case under the assumption that~$\quiver$ is brick $2$-acyclic. The case when~$\tau$ appears after~$\sigma$ in both~$\mu$ and~$\nu$ is symmetric.
+\item If~$\tau$ appears before~$\sigma$ in both~$\mu$ and~$\nu$, then~$\alpha \tau \alpha'$ forms a cycle in~$\quiver$. If~$\tau$ is reduced to a vertex, then we have a $2$-cycle. Otherwise, since~$\alpha\tau$ is a substring of~$\nu$ and~$\alpha'\tau$ is a substring of~$\nu$, the cycle~$\alpha \tau \alpha'$ contains a unique relation~$\alpha'\alpha$. This rules out this case under the assumption that~$\quiver$ is brick and $2$-acyclic. The case when~$\tau$ appears after~$\sigma$ in both~$\mu$ and~$\nu$ is symmetric.
 \item If~$\tau$ appears before~$\sigma$ in~$\mu$ and after~$\sigma$ in~$\nu$, then~$\omega$, $\mu$ and~$\nu$ finish at the same blossom so that~$\mu$ and~$\nu$ are not kissing at~$\tau$. The case when~$\tau$ appears after~$\sigma$ in~$\mu$ and before~$\sigma$ in~$\nu$ is symmetric.
 \end{itemize}
 We conclude that~$\mu$ and~$\nu$ are non-kissing, which also implies that~$\{\mu, \nu, \omega\}$ and~$\{\mu, \nu, \omega'\}$ are non-kissing faces of~$\NKC$.
@@ -2276,11 +2276,11 @@ Since this precisely coincides with the description of the flip in the non-kissi
 Therefore, $\omega$ and~$\omega'$ are exchangeable with distinguished substring~$\sigma$.
 \end{proof}
 
-The following statement describes the type cone of the non-kissing fan of a brick $2$-acyclic gentle quiver.
+The following statement describes the type cone of the non-kissing fan of a brick and $2$-acyclic gentle quiver.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsNKC}
-For any brick $2$-acyclic gentle quiver~$\quiver$, the extremal exchangeable pairs for the non-kissing fan of~$\quiver$ are precisely the pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for all strings~$\sigma \in \strings$.
+For any brick and $2$-acyclic gentle quiver~$\quiver$, the extremal exchangeable pairs for the non-kissing fan of~$\quiver$ are precisely the pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for all strings~$\sigma \in \strings$.
 \end{proposition}
 
 \begin{proof}
@@ -2371,14 +2371,14 @@ Our next statement follows from the end of the previous proof.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeNKC}
-For any brick $2$-acyclic gentle quiver~$\quiver$, the type cone~$\typeCone \big( \gvectorFan[\quiver] \big)$ of the non-kissing fan~$\quiver$ is simplicial.
+For any brick and $2$-acyclic gentle quiver~$\quiver$, the type cone~$\typeCone \big( \gvectorFan[\quiver] \big)$ of the non-kissing fan~$\quiver$ is simplicial.
 \end{corollary}
 
-Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeNKC,prop:extremalExchangeablePairsNKC}, we derive the following description of all polytopal realizations of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick $2$-acyclic quiver~$\quiver$.
+Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeNKC,prop:extremalExchangeablePairsNKC}, we derive the following description of all polytopal realizations of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic quiver~$\quiver$.
 
 \begin{corollary}
 \label{coro:allPolytopalRealizationsNKC}
-For any brick $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
+For any brick and $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
 \[
 R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any improper walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
 \]
@@ -4392,42 +4392,13 @@ The proof is similar to that of \cref{corollary::meshes positively generate clus
 
 %%%%%%%%%%%
 
-\subsection{Application to certain categories}
-
-%%%
-
-\subsubsection{$2$-Calabi--Yau triangulated categories}
-\label{sect::2CYTriangulated}
-
-Let~$\cat$ be a triangulated category with shift functor~$\susp$.
-We assume moreover that~$\cat$ is~$\field$-linear, Krull--Schmidt, Hom-finite, 2-Calabi--Yau, with a cluster-tilting object~$T$.
-Then~$\cat$ satisfies all the assumptions of \cref{setting::extricat} for \cref{sect::Statment extricats} but assumption (1).
-
-We fix this issue by considering a relative extriangulated structure.
-Let~$\mathbb{E}_T$ be the additive sub-bifunctor of~$\cat(-,\susp -)$ formed by those morphisms that factor through~$\add\susp T$.
-Then~$(\cat,\mathbb{E}_T)$ becomes extriangulated by~\cite[Prop.~3.14]{HerschendLiuNakaoka} (this can also be checked directly).
-The extriangles of~$\cat$ are precisely the triangles~$X\overset{f}{\rightarrow}Y\overset{g}{\rightarrow} Z \overset{h}{\dashrightarrow}$, for which the morphism~$h$ factors through~$\add\susp T$.
-By construction, Condition (1) is now satisfied.
-Moreover, the triangles appearing in Conditions (2) and (3) are extriangles for this relative structure, which shows that those two conditions are still satisfied for the extriangulated structure~$(\cat,\mathbb{E}_T)$.
-
-\begin{remark}
-The index of an object~$X$ in the triangulated category~$\cat$, coincide with its class in the Grothendieck group of~$\cat$ for the relative extriangulated structure given by~$\mathbb{E}_T$.
-\end{remark}
-
-\begin{remark}
-The main results of \cref{subsect::Statement cluster cats} can thus be viewed as specific cases of the results of \cref{sec:extricats}: \cref{theo::relations-g-vecteurs} and \cref{corollary::meshes positively generate cluster cats} are consequences of \cref{theorem::extricats} and \cref{corollary::meshes positively generate extricats}.
-\end{remark}
-
-%%%
-
-\subsubsection{$2$-Calabi--Yau Frobenius exact categories}
-\label{sect::2CYexact}
-
-%%%
-
-\subsubsection{$2$-term complexes of projective modules}
+\subsection{Application to 2-term complexes of projectives and to gentle algebras}
 \label{sect::Kbproj}
-Let~$\Lambda$ be a finite-dimensional algebra over a field~$\field$. Then the homotopy category~$K^b(\proj \Lambda)$ is a triangulated category, and we consider its full subcategory~$K^{[-1,0]}(\proj \Lambda)$ of complexes concentrated in degrees~$-1$ and~$0$ (with cohomological conventions).
+
+%%%
+
+Let~$\Lambda$ be an Artin algebra.
+Then the homotopy category~$K^b(\proj \Lambda)$ is a triangulated category, and we consider its full subcategory~$K^{[-1,0]}(\proj \Lambda)$ of complexes concentrated in degrees~$-1$ and~$0$ (with cohomological conventions).
 
 \begin{proposition}
 \label{prop::2kbproj-is-extriangulated}
@@ -4519,6 +4490,22 @@ Let~$\Lambda$ be an Artin algebra all of whose indecomposable objects are ~$\tau
 Assume that~$\Lambda$ is a finite-dimensional brick algebra which is representation-finite.
 Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of \cref{theo::brick-algebra-condition} are satisfied.
 \end{remark}
+
+\begin{corollary}\label{coro::silting simplicial}
+ Let~$\Lambda$ be a finite dimensional brick algebra of finite representation type.
+ Assume moreover that, for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+ Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange property and its type cone is simplicial.
+\end{corollary}
+
+As a consequence of Corollary~\ref{coro::silting simplicial}, the method of Part~\ref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
+
+Another consequence is an algebraic proof of Corollary~\ref{coro:simplicialTypeConeNKC}, that we restate below.
+
+\begin{corollary}\label{coro::simplicialTypeConeNKCalgebraic}
+ For any~$2$-acyclic gentle brick algebra, the type cone of its support~$\tau$-tilting fan is simplicial.
+\end{corollary}
+
+The remaining part of this section is devoted to proving Theorem~\ref{theo::brick-algebra-condition} and Corollary~\ref{coro::simplicialTypeConeNKCalgebraic}.
 
 \begin{lemma}
 \label{lemm::AR-conflations-and-sequences}
@@ -4771,6 +4758,71 @@ The theorem follows from the slightly more general statements of \cref{lemm::the
 % \vincent{Here should be explained that the gentle algebra result is a special case of this.}
 
 %%%
+
+\begin{lemma}\label{lemma::characterization Gentle 2-acyclic}
+ Let~$\Lambda$ be a~$2$-acyclic gentle brick algebra.
+ Then, for any indecomposable~$\Lambda$-module~$M$ we have~$\Hom{\Lambda}(M,\tau^2 M)=0$.
+\end{lemma}
+
+\begin{proof}
+ Let~$\Lambda=\field Q / I$ be any gentle algebra of finite representation type, and let~$M$ be an indecomposable~$\Lambda$-module.
+ Write~$\sigma$ for the string corresponding to~$\tau M$.
+ Then the walks (i.e. the maximal strings in the blossoming bound quiver of~$(Q,I)$) associated with~$M$ and~$\tau M$ are respectively~$\omega_M = \hh\sigma = p^{-1}\alpha\sigma\beta^{-1}q$ and~$\omega_{\tau M}=\cc\sigma=p'\alpha'^{-1}\sigma\beta'q'^{-1}$, where~$p,p',q,q'$ are paths and~$\alpha,\alpha',\beta,\beta'$ are arrows in the blossoming quiver.
+
+ Assume that~$\Hom{\Lambda}(M,\tau^2 M)\neq0$.
+ By~\cite[]{PaluPilaudPlamondon-nonkissing} or~\cite[]{BrustleDouvilleMousavandThomasYildirim}, the walk~$\omega_M$ kisses the walk~$\omega_{\tau M}$: there is a substring~$\rho$ of~$\omega_M$ and~$\omega_{\tau M}$ that is strictly on top of~$\omega_M$ and strictly at the bottom of~$\omega_{\tau M}$. Remark that~$\rho$ cannot start nor end at some endpoint of~$\sigma$ (because~$\rho$ is a top substring of~$\omega_M$).
+ 
+ If the substring~$\rho$ of~$\omega_M$ is contained in~$\sigma$, by the previous remark it is strictly below~$\sigma$. This implies that~$\omega_M$ kisses itself, hence that~$M$ is not~$\tau$-rigid. Similarly, if~$\rho$ is contained in~$\sigma$ as a substring of~$\omega_{\tau M}$, then~$\tau M$ is not~$\tau$-rigid. In both cases, the brick-$\tau$-rigid correspondence of~\cite{DemonetIyamaJasso} implies that~$\Lambda$ is not a brick algebra.
+ 
+ Note that~$\rho$ cannot contain~$\sigma$, because~$\sigma$ is the only common substring of~$\omega_M$ and~$\omega_{\tau M}$ that contains~$\sigma$.
+%  We split the remaining of the proof into two cases:
+%  
+%  \noindent {\it Case 1:} As a substring of~$\omega_M$,~$\rho$ contains~$\alpha\in\hL$ and the first letter (i.e. arrow or inverse of an arrow) of~$\sigma$.
+%  
+%  \noindent {\it Case 2:} As a substring of~$\omega_M$,~$\rho$ does not intersect~$\sigma$.
+Assume now that~$\rho$, viewed either as a substring of~$\omega_M$ or of~$\omega_{\tau M}$ is not contained in~$\sigma$.
+Since~$\rho$ is strictly on top of~$\omega_M$, it contains the source of~$\alpha$ or the source of~$\beta$.
+Similarly,~$\rho$ contains the target of~$\alpha'$ or the target of~$\beta'$.
+Because the target of~$\alpha$ is the source of~$\alpha'$ (and the target of~$\beta$ is the source of~$\beta'$), this implies that~$Q$ contains either a non-oriented cycle with at most one relation, in which case~$\Lambda$ is not a brick algebra, or a~$2$-cycle, in which case~$\Lambda$ is not~$2$-acyclic.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{coro::simplicialTypeConeNKCalgebraic}]
+ The unique exchange property follows from Proposition~\ref{prop::exchange conflations are unique} (2).
+ By Lemma~\ref{lemma::characterization Gentle 2-acyclic}, the assumptions of Theorem~\ref{theo::brick-algebra-condition} are satisfied.
+ We can thus apply Theorem~\ref{theorem::extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
+ Hence the type cone of the support~$\tau$-tilting fan is simplicial.
+\end{proof}
+
+
+%%%%%%%%%%%
+
+\subsection{Application to other examples of categories}
+
+%%%
+
+
+\subsubsection{$2$-Calabi--Yau triangulated categories}
+\label{sect::2CYTriangulated}
+
+Let~$\cat$ be a triangulated category with shift functor~$\susp$.
+We assume moreover that~$\cat$ is~$\field$-linear, Krull--Schmidt, Hom-finite, 2-Calabi--Yau, with a cluster-tilting object~$T$.
+Then~$\cat$ satisfies all the assumptions of \cref{setting::extricat} for \cref{sect::Statment extricats} but, possibly, assumption (1).
+
+We fix this issue by considering a relative extriangulated structure.
+Let~$\mathbb{E}_T$ be the additive sub-bifunctor of~$\cat(-,\susp -)$ formed by those morphisms that factor through~$\add\susp T$.
+Then~$(\cat,\mathbb{E}_T)$ becomes extriangulated by~\cite[Prop.~3.14]{HerschendLiuNakaoka} (this can also be checked directly).
+The extriangles of~$\cat$ are precisely the triangles~$X\overset{f}{\rightarrow}Y\overset{g}{\rightarrow} Z \overset{h}{\dashrightarrow}$, for which the morphism~$h$ factors through~$\add\susp T$.
+By construction, Condition (1) is now satisfied.
+Moreover, the triangles appearing in Conditions (2) and (3) are extriangles for this relative structure, which shows that those two conditions are still satisfied for the extriangulated structure~$(\cat,\mathbb{E}_T)$.
+
+\begin{remark}
+The index of an object~$X$ in the triangulated category~$\cat$, coincide with its class in the Grothendieck group of~$\cat$ for the relative extriangulated structure given by~$\mathbb{E}_T$.
+\end{remark}
+
+\begin{remark}
+The main results of \cref{subsect::Statement cluster cats} can thus be viewed as specific cases of the results of \cref{sec:extricats}: \cref{theo::relations-g-vecteurs} and \cref{corollary::meshes positively generate cluster cats} are consequences of \cref{theorem::extricats} and \cref{corollary::meshes positively generate extricats}.
+\end{remark}
+
 
 \subsubsection{Objects presented by a subcategory}
 \label{sect::prT}
