@@ -3609,9 +3609,8 @@ In that section, we keep the previous setting, but assume moreover that~$\cat$ i
 Examples of categories satisfying the properties above are
 \begin{itemize}
 \item $2$-Calabi--Yau triangulated categories admitting a cluster-tilting object (see \cref{sect::2CYTriangulated});
-\item $2$-Calabi--Yau Frobenius exact categories (see \cref{sect::2CYexact});
 \item for any Artin algebra~$\Lambda$, the category~$K^{[-1,0]}(\proj \Lambda)$ of complexes of finitely generated projective~$\Lambda$-modules concentrated in degrees~$-1$ and~$0$, with morphisms considered up to homotopy (see \cref{sect::Kbproj});
-\item more generally, extriangulated categories~$\cat$ constructed as follows: if~$\tc$ is a rigid subcategory of an extriangulated category~$\ec$, we let~$\cat$ be the full subcategory of~$\ec$ whose objects satisfy condition (3), equipped with the extriangulated structure obtained from that of~$\ec$ by considering those extriangles in~$\ec$ all whose terms belong to~$\cat$ and whose deflation is~$\tc$-epi (see \cref{sect::prT}).
+\item more generally, extriangulated categories~$\cat$ constructed as follows: if~$\tc$ is a rigid subcategory of an extriangulated category~$\ec$ (with some assumption ensuring that condition (2) holds) we let~$\cat$ be the full subcategory of~$\ec$ whose objects satisfy condition (3), equipped with the extriangulated structure obtained from that of~$\ec$ by considering those extriangles in~$\ec$ all whose terms belong to~$\cat$ and whose deflation is~$\tc$-epi (see \cref{sect::prT}).
 \end{itemize}
 \end{remark}
 
@@ -4497,15 +4496,15 @@ Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of \cref{th
  Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange property and its type cone is simplicial.
 \end{corollary}
 
-As a consequence of Corollary~\ref{coro::silting simplicial}, the method of Part~\ref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
+As a consequence of Corollary~\cref{coro::silting simplicial}, the method of Part~\cref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
 
-Another consequence is an algebraic proof of Corollary~\ref{coro:simplicialTypeConeNKC}, that we restate below.
+Another consequence is an algebraic proof of Corollary~\cref{coro:simplicialTypeConeNKC}, that we restate below.
 
 \begin{corollary}\label{coro::simplicialTypeConeNKCalgebraic}
  For any~$2$-acyclic gentle brick algebra, the type cone of its support~$\tau$-tilting fan is simplicial.
 \end{corollary}
 
-The remaining part of this section is devoted to proving Theorem~\ref{theo::brick-algebra-condition} and Corollary~\ref{coro::simplicialTypeConeNKCalgebraic}.
+The remaining part of this section is devoted to proving Theorem~\cref{theo::brick-algebra-condition} and Corollary~\cref{coro::simplicialTypeConeNKCalgebraic}.
 
 \begin{lemma}
 \label{lemm::AR-conflations-and-sequences}
@@ -4770,7 +4769,7 @@ The theorem follows from the slightly more general statements of \cref{lemm::the
  Then the walks (i.e. the maximal strings in the blossoming bound quiver of~$(Q,I)$) associated with~$M$ and~$\tau M$ are respectively~$\omega_M = \hh\sigma = p^{-1}\alpha\sigma\beta^{-1}q$ and~$\omega_{\tau M}=\cc\sigma=p'\alpha'^{-1}\sigma\beta'q'^{-1}$, where~$p,p',q,q'$ are paths and~$\alpha,\alpha',\beta,\beta'$ are arrows in the blossoming quiver.
 
  Assume that~$\Hom{\Lambda}(M,\tau^2 M)\neq0$.
- By~\cite[]{PaluPilaudPlamondon-nonkissing} or~\cite[]{BrustleDouvilleMousavandThomasYildirim}, the walk~$\omega_M$ kisses the walk~$\omega_{\tau M}$: there is a substring~$\rho$ of~$\omega_M$ and~$\omega_{\tau M}$ that is strictly on top of~$\omega_M$ and strictly at the bottom of~$\omega_{\tau M}$. Remark that~$\rho$ cannot start nor end at some endpoint of~$\sigma$ (because~$\rho$ is a top substring of~$\omega_M$).
+ By~\cite[Theorem 2.46]{PaluPilaudPlamondon-nonkissing} or~\cite[Theorem 5.1]{BrustleDouvilleMousavandThomasYildirim}, the walk~$\omega_M$ kisses the walk~$\omega_{\tau M}$: there is a substring~$\rho$ of~$\omega_M$ and~$\omega_{\tau M}$ that is strictly on top of~$\omega_M$ and strictly at the bottom of~$\omega_{\tau M}$. Remark that~$\rho$ cannot start nor end at some endpoint of~$\sigma$ (because~$\rho$ is a top substring of~$\omega_M$).
  
  If the substring~$\rho$ of~$\omega_M$ is contained in~$\sigma$, by the previous remark it is strictly below~$\sigma$. This implies that~$\omega_M$ kisses itself, hence that~$M$ is not~$\tau$-rigid. Similarly, if~$\rho$ is contained in~$\sigma$ as a substring of~$\omega_{\tau M}$, then~$\tau M$ is not~$\tau$-rigid. In both cases, the brick-$\tau$-rigid correspondence of~\cite{DemonetIyamaJasso} implies that~$\Lambda$ is not a brick algebra.
  
@@ -4786,10 +4785,10 @@ Similarly,~$\rho$ contains the target of~$\alpha'$ or the target of~$\beta'$.
 Because the target of~$\alpha$ is the source of~$\alpha'$ (and the target of~$\beta$ is the source of~$\beta'$), this implies that~$Q$ contains either a non-oriented cycle with at most one relation, in which case~$\Lambda$ is not a brick algebra, or a~$2$-cycle, in which case~$\Lambda$ is not~$2$-acyclic.
 \end{proof}
 
-\begin{proof}[Proof of Corollary~\ref{coro::simplicialTypeConeNKCalgebraic}]
- The unique exchange property follows from Proposition~\ref{prop::exchange conflations are unique} (2).
- By Lemma~\ref{lemma::characterization Gentle 2-acyclic}, the assumptions of Theorem~\ref{theo::brick-algebra-condition} are satisfied.
- We can thus apply Theorem~\ref{theorem::extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
+\begin{proof}[Proof of Corollary~\cref{coro::simplicialTypeConeNKCalgebraic}]
+ The unique exchange property follows from Proposition~\cref{prop::exchange conflations are unique} (2).
+ By Lemma~\cref{lemma::characterization Gentle 2-acyclic}, the assumptions of Theorem~\cref{theo::brick-algebra-condition} are satisfied.
+ We can thus apply Theorem~\cref{theorem::extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
  Hence the type cone of the support~$\tau$-tilting fan is simplicial.
 \end{proof}
 
@@ -4865,7 +4864,7 @@ Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is e
 \end{proof}
 
 \begin{remark}
- The categories considered in \cref{sect::2CYTriangulated,sect::2CYexact,sect::Kbproj} all fall into the setting of \cref{prop::prT}.
+ The categories considered in \cref{sect::2CYTriangulated,sect::Kbproj} all fall into the setting of \cref{prop::prT}.
 \end{remark}
 
 %%%%%%%%%%%
