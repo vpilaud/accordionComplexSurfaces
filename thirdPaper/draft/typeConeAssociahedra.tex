@@ -397,7 +397,7 @@ It also motivates the study of relevant objects revealed by the type cone dictio
 
 \smallskip
 \begin{itemize}
-\item The facet-defining inequalities of the type cone of~$\Fan$ correspond to very specific pairs of adjacent maximal cones of~$\Fan$ whose corresponding linear dependences minimally generate all such dependences. While they correspond to mesh mutations for cluster algebras and $2$-acyclic gentle brick algebras, they are not understood in general (see for instance \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right)). It would be particularly interesting to fully understand these specific mutations for arbitrary (non-kissing finite) gentle algebras.
+\item The facet-defining inequalities of the type cone of~$\Fan$ correspond to very specific pairs of adjacent maximal cones of~$\Fan$ whose corresponding linear dependences minimally generate all such dependences. While they correspond to mesh mutations for cluster algebras and brick and $2$-acyclic gentle algebras, they are not understood in general (see for instance \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right)). It would be particularly interesting to fully understand these specific mutations for arbitrary (non-kissing finite) gentle algebras.
 
 \smallskip
 \item The rays of the type cone of~$\Fan$ correspond to specific polytopes which form a positive Minkowski basis of all realizations of~$\Fan$ (see \cref{subsec:MinkowskiSums}). In particular, when the type cone is simplicial, any polytopal realization of~$\Fan$ has a unique representation (up to translation) as a Minkowski sum of positive dilates of these polytopes. For cluster algebras, it follows from~\cite[Sect.~6]{BazierMatteDouvilleMousavandThomasYildirim} that these polytopes are Newton polytopes of the $F$-polynomials. It would be interesting to obtain similar algebraic interpretations for the rays of the type cones of the non-kissing fans of gentle~algebras.
@@ -2237,6 +2237,8 @@ For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$)
 These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~a \defn{cohook}) to~$\sigma$.
 We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
 The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply denoted by~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
+
+\vincent{Connect as well to Yann}
 
 \begin{proposition}
 \label{prop:interestingExchangeablePairsNKC}
@@ -4491,7 +4493,8 @@ Assume that~$\Lambda$ is a finite-dimensional brick algebra which is representat
 Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of \cref{theo::brick-algebra-condition} are satisfied.
 \end{remark}
 
-\begin{corollary}\label{coro::silting simplicial}
+\begin{corollary}
+\label{coro::silting simplicial}
 Let~$\Lambda$ be a finite dimensional brick algebra of finite representation type.
 Assume moreover that, for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange property and its type cone is simplicial.
@@ -4501,8 +4504,9 @@ As a consequence of \cref{coro::silting simplicial}, the method of \cref{part:ge
 
 Another consequence is an algebraic proof of \cref{coro:simplicialTypeConeNKC}, that we restate below.
 
-\begin{corollary}\label{coro::simplicialTypeConeNKCalgebraic}
-For any~$2$-acyclic gentle brick algebra, the type cone of its support~$\tau$-tilting fan is simplicial.
+\begin{corollary}[\cref{coro:simplicialTypeConeNKC}]
+\label{coro::simplicialTypeConeNKCalgebraic}
+For any brick and $2$-acyclic gentle algebra, the type cone of its support~$\tau$-tilting fan is simplicial.
 \end{corollary}
 
 The remaining part of this section is devoted to proving \cref{theo::brick-algebra-condition,coro::simplicialTypeConeNKCalgebraic}.
@@ -4761,7 +4765,7 @@ The theorem follows from the slightly more general statements of \cref{lemm::the
 
 \begin{lemma}
 \label{lemma::characterization Gentle 2-acyclic}
-Let~$\Lambda$ be a~$2$-acyclic gentle brick algebra.
+Let~$\Lambda$ be a brick and $2$-acyclic gentle algebra.
 Then, for any indecomposable~$\Lambda$-module~$M$ we have~$\Hom{\Lambda}(M,\tau^2 M)=0$.
 \end{lemma}
 
