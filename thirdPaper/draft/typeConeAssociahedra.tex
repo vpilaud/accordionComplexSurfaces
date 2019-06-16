@@ -237,7 +237,7 @@
 \def\l@section{\@tocline{1}{5pt}{0pc}{}{}}
 \makeatother
 \let\oldtocpart=\tocpart
-\renewcommand{\tocpart}[2]{\bf\large\oldtocpart{#1}{#2}}
+\renewcommand{\tocpart}[2]{\sc\large\oldtocpart{#1}{#2}}
 \let\oldtocsection=\tocsection
 \renewcommand{\tocsection}[2]{\bf\oldtocsection{#1}{#2}}
 \let\oldtocsubsubsection=\tocsubsubsection
@@ -378,7 +378,7 @@ Along the way, we need to generalize, for extriangulated categories, several res
 
 \smallskip
 \enlargethispage{.2cm}
-\item \textbf{Graph associahedra} were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}. As illustrated in~\cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra. The graph associahedra were extended to the nestohedra, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}. Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}. All these realizations have the same normal fan, called nested fan. We study the type cones of these nested fans (see \cref{subsec:typeConeGA}): we describe their facet-defining inequalities in terms of certain specific pairs of neighboring tubings and count them for the specific families of graph associahedra described earlier. For instance the type cone of the permutahedron coincides with the classical submodular functions on~$2^{[n]}$, described by~$2^{n-2} \binom{n}{2}$ inequalities. In fact, we observe that the type cone of a graphical nested fan is never simplicial except in the case of the classical associahedron (when the graph is the path). Our results describe nevertheless all polytopal realizations of the graphical nested fans.
+\item \textbf{Graph associahedra} were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}. As illustrated in \cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra. The graph associahedra were extended to the nestohedra, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}. Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}. All these realizations have the same normal fan, called nested fan. We study the type cones of these nested fans (see \cref{subsec:typeConeGA}): we describe their facet-defining inequalities in terms of certain specific pairs of neighboring tubings and count them for the specific families of graph associahedra described earlier. For instance the type cone of the permutahedron coincides with the classical submodular functions on~$2^{[n]}$, described by~$2^{n-2} \binom{n}{2}$ inequalities. In fact, we observe that the type cone of a graphical nested fan is never simplicial except in the case of the classical associahedron (when the graph is the path). Our results describe nevertheless all polytopal realizations of the graphical nested fans.
 \end{itemize}
 
 \smallskip
@@ -673,7 +673,7 @@ Let $\Fan$ be a polytopal fan. Then the relatively open faces of the closed type
 \end{theorem}
 
 \begin{proof}
-Let $\cal{G}$ be a simplicial refinement of $\Fan$. By~\cref{prop:non-simplicial}, the type cone of any coarsening of $\Fan$ is a relatively open cell of the hyperplane arrangement defined by adjacent pairs of~$\cal{G}$. The type cone of the coarsening is not empty whenever it is polytopal. When non-empty, distinct coarsenings give rise to distinct cells (one will have an equality that is a strict inequality in the other), and all lie in the closure of~$\typeCone(\Fan)$ (since they are all in the closure of all the defining half-spaces).
+Let $\cal{G}$ be a simplicial refinement of $\Fan$. By \cref{prop:non-simplicial}, the type cone of any coarsening of $\Fan$ is a relatively open cell of the hyperplane arrangement defined by adjacent pairs of~$\cal{G}$. The type cone of the coarsening is not empty whenever it is polytopal. When non-empty, distinct coarsenings give rise to distinct cells (one will have an equality that is a strict inequality in the other), and all lie in the closure of~$\typeCone(\Fan)$ (since they are all in the closure of all the defining half-spaces).
 Thus every coarsening describes a relatively open face of~$\ctypeCone(\Fan)$.
  
 For the converse, observe that for $\b{h}\in\ctypeCone(\Fan)$, the normal fan of $P_{\b{h}}$ is the polytopal complete fan obtained by merging all pairs of adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ such that $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} = 0$.
@@ -1263,7 +1263,7 @@ for any seeds~$(\B, \cluster)$ and~$(\B', \cluster')$ with~${\cluster \ssm \{x\}
 
 Unfortunately, \cref{lem:linearDependencegvectorsCA} is less precise than \cref{prop:exchangeablePairsAsso}. Indeed, which of the two possible linear dependences is satisfied by the $\b{g}$-vectors of~$\cluster \cup \cluster'$ depends on the initial exchange matrix~$\B_\circ$.
 However, for cluster algebras of finite type, this linear dependence is independent of the choice of a seed containing~$x$ and~$x'$.
-As explained in ~\cref{corollary:UERPforCAproof}, this statement follows from~\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov}.
+As explained in \cref{corollary:UERPforCAproof}, this statement follows from~\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov}.
 We state it here for future reference.
 Note that the corresponding statement for cluster variables, instead of~$\b{g}$-vectors, holds by~\cite[Thm.~1.11]{FominZelevinsky-ClusterAlgebrasII}.
 
@@ -2228,7 +2228,7 @@ A gentle quiver~$\quiver$ is called:
 
 Note that the family of brick and $2$-acyclic gentle quivers already contains a lot of relevant examples, including the gentle grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
 In particular, the classical associahedron is the gentle associahedron of a brick and $2$-acyclic gentle quiver.
-We will see in~\cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in~\cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
+We will see in \cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in \cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
 
 For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~a \defn{cohook}) to~$\sigma$.
@@ -2360,7 +2360,7 @@ where we fix the convention~$\b{n}(\lambda, \lambda) = 0$ in case~$\rho = \hL$, 
 We conclude that~$\b{n}(\omega, \omega')$ is a positive combination of~$\b{m}(\sigma)$ for~$\sigma \in \strings$, since~$\b{n}(\omega, \cL \sigma \tau')$, $\b{n}(\cL \sigma \tau, \hL \sigma \cR)$, $\b{n}(\cL \sigma \hR, \hL \sigma \tau')$ and~$\b{n}(\hL \sigma \tau, \omega')$ are.
 This shows that all extremal exchangeable pairs are of the form~$\{\cc{\sigma}, \hh{\sigma}\}$ for~$\sigma \in \strings$.
 
-Conversely, we know from \cref{rem:dimTypeCone} that there are at least~$|\properWalks|-|Q_0|$ extremal exchangeable pairs. Since~$|\strings| = |\distinguishableStrings| = |\properWalks| - |Q_0|$ by~\cref{prop:bijectionStringsWalks}, we conclude that all exchangeable pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for~$\sigma \in \strings$ are extremal.
+Conversely, we know from \cref{rem:dimTypeCone} that there are at least~$|\properWalks|-|Q_0|$ extremal exchangeable pairs. Since~$|\strings| = |\distinguishableStrings| = |\properWalks| - |Q_0|$ by \cref{prop:bijectionStringsWalks}, we conclude that all exchangeable pairs~$\{\cc{\sigma}, \hh{\sigma}\}$ for~$\sigma \in \strings$ are extremal.
 \end{proof}
 
 Our next statement follows from the end of the previous proof.
@@ -2398,7 +2398,7 @@ Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we
 
 \begin{remark}
 \label{exm:nonSimplicialTypeConeNKC}
-Note that \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and therefore~\cref{coro:simplicialTypeConeNKC,coro:allPolytopalRealizationsNKC} fail when the quiver is not brick or $2$-cyclic.
+Note that \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and therefore \cref{coro:simplicialTypeConeNKC,coro:allPolytopalRealizationsNKC} fail when the quiver is not brick or $2$-cyclic.
 The smallest exemples are the $2$-cycles whose non-kissing fans are represented in \cref{fig:nonkissingFans2}.
 The left one is not brick: it has a non-distinguishable string and a self-kissing walk.
 The right one is brick but is $2$-cyclic.
@@ -2492,7 +2492,7 @@ In both cases, \cref{prop:interestingExchangeablePairsNKC} fails for the string~
 Graph associahedra were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}.
 For a given graph~$\graphG$, the $\graphG$-associahedron~$\Asso[\graphG]$ is a simple polytope whose combinatorial structure encodes the connected subgraphs of~$\graphG$ and their nested structure.
 More precisely, the $\graphG$-associahedron is a polytopal realization of the nested complex of~$\graphG$, defined as the simplicial complex of all collections of tubes (connected induced subgraphs) of~$\graphG$ which are pairwise compatible (either nested, or disjoint and non-adjacent).
-As illustrated in~\cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra.
+As illustrated in \cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra.
 The graph associahedra were extended to the \defn{nestohedra}, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}.
 Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}.
 For a given graph~$\graphG$, the resulting polytopes all have the same normal fan, called nested fan of~$\graphG$: its rays are the characteristic vectors of the tubes, and its cones are generated by characteristic vectors of compatible tubes.
@@ -2997,7 +2997,7 @@ Any $\b{c}$-vector supports at least one extremal exchangeable pair.
 Consider a $\b{c}$-vector~$\b{e}_v - \b{e}_{v'}$ for two distinct vertices~$v, v'$ in a common connected component of~$\graphG$. Let~$\tube[r]$ be a path from~$v$ to~$v'$ in~$\graphG$ and let~$\tube \eqdef \tube[r] \cup \{v\}$ and~$\tube' \eqdef \tube[r] \cup \{v'\}$. Then $\{\tube, \tube'\}$ is an extremal exchangeable pair with $\b{c}$-vector~$\b{e}_v - \b{e}_{v'}$.
 \end{proof}
 
-We derive from~\cref{coro:extremalExchangeablePairsGA} the number of extremal exchangeable pairs of the nested fan.
+We derive from \cref{coro:extremalExchangeablePairsGA} the number of extremal exchangeable pairs of the nested fan.
 For a tube~$\tube$ of~$\graphG$, we denote 
 %by~$\neighbors(\tube)$ the number of neighbors of~$\tube$ and
  by~$\nonDisconnecting(\tube)$ the number of non-disconnecting vertices of~$\tube$.
@@ -3485,7 +3485,7 @@ Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starti
 
 \begin{lemma}
 \label{lemm::mesh mutations and meshes}
-The set of positive mesh mutations~$(x,x')$ of \cref{defn::positive mutation} is in bijection with the set~$\meshes$ of~\cref{defn::positive mutation}.
+The set of positive mesh mutations~$(x,x')$ of \cref{defn::positive mutation} is in bijection with the set~$\meshes$ of \cref{defn::positive mutation}.
 \end{lemma}
 
 \begin{proof}
@@ -3561,7 +3561,7 @@ where~$X\to \bigoplus_i E_i \to Y \xrightarrow{h} \susp X$ is a non-split triang
 
 \begin{proof}
 Let~$T\in\cat$ be a basic cluster tilting object such that~$\CC(T)$ is the initial cluster.
-According to~\cref{lemma:positive mutation triangles}, the morphism~$h$ belongs to the ideal~$(\susp T)$.
+According to \cref{lemma:positive mutation triangles}, the morphism~$h$ belongs to the ideal~$(\susp T)$.
 Therefore, the triangle ${X\to \bigoplus_i E_i \to Y \xrightarrow{h} \susp X}$ induces the relation~$[X]+[Y]=\sum_i [E_i]$ in~$K_0(\cat ; T)$.
 \cref{thm::categorification}\,(ii) gives the equality ${\b{g}_{\CC(X)} + \b{g}_{\CC(Y)} = \sum_i\b{g}_{\CC(E_i)}}$, where the~$\b{g}$-vectors are computed with respect to the initial seed~$\CC(T)$.
 By \cref{thm::categorification}\,(iii), the middle term of the triangle is uniquely defined, up to isomorphism, by~$X$, and~$Y$, and the triangle is therefore an exchange triangle, with respect to any mutation at~$X$: it does not depend on the choice of a cluster tilting object containing~$X$.
@@ -4387,8 +4387,6 @@ The proof is similar to that of \cref{corollary::meshes positively generate clus
 \subsection{Application to 2-term complexes of projectives and to gentle algebras}
 \label{sect::Kbproj}
 
-%%%
-
 Let~$\Lambda$ be an Artin algebra.
 Then the homotopy category~$K^b(\proj \Lambda)$ is a triangulated category, and we consider its full subcategory~$K^{[-1,0]}(\proj \Lambda)$ of complexes concentrated in degrees~$-1$ and~$0$ (with cohomological conventions).
 
@@ -4491,7 +4489,6 @@ Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange propert
 \end{corollary}
 
 As a consequence of \cref{coro::silting simplicial}, the method of \cref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
-
 Another consequence is an algebraic proof of \cref{coro:simplicialTypeConeNKC}, that we restate below.
 
 \begin{corollary}[\cref{coro:simplicialTypeConeNKC}]
@@ -4791,10 +4788,9 @@ Hence the type cone of the support~$\tau$-tilting fan is simplicial.
 
 \subsection{Application to other examples of categories}
 
-%%%
-
 In this section, we give two more examples of families of categories to which \cref{theorem::extricats,corollary::meshes positively generate extricats} apply.
 
+%%%
 
 \subsubsection{$2$-Calabi--Yau triangulated categories}
 \label{sect::2CYTriangulated}
@@ -4971,7 +4967,7 @@ For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\addtocontents{toc}{\vspace{.2cm}}
+\addtocontents{toc}{\vspace{.1cm}}
 \section*{Acknowledgments}
 
 We thank H.~Thomas for comments on a preliminary version of the paper and for informing us about the upcoming extended version of~\cite{BazierMatteDouvilleMousavandThomasYildirim}.
