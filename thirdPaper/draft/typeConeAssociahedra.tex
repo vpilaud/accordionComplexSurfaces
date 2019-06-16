@@ -4433,6 +4433,7 @@ The definition given above is only equivalent to the usual definition of a silti
 \label{defn::mutation conflation}
 A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$, with~$X$ and~$Y$ indecomposable, such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
 \end{definition}
+
 \begin{remark}
 In \cref{defn::mutation conflation}, the requirement that~$X$ and~$Y$ are indecomposable implies the map~$E\defl Y$ is a right~($\add R$)-approximation, and that both approximations are minimal.
 \end{remark}
@@ -4442,7 +4443,6 @@ In \cref{defn::mutation conflation}, the requirement that~$X$ and~$Y$ are indeco
 Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field. Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$. 
 \begin{enumerate}
 \item If there is a mutation conflation (see \cref{defn::mutation conflation}) of the form~$X\infl E\defl Y$, then there can be no mutation conflation of the form~$Y\infl E'\defl X$.
-  
 \item Assume that~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ are two mutation conflations. 
 Then~$E$ and~$E'$ are isomorphic. 
 \end{enumerate} 
@@ -4492,9 +4492,9 @@ Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of \cref{th
 \end{remark}
 
 \begin{corollary}\label{coro::silting simplicial}
- Let~$\Lambda$ be a finite dimensional brick algebra of finite representation type.
- Assume moreover that, for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
- Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange property and its type cone is simplicial.
+Let~$\Lambda$ be a finite dimensional brick algebra of finite representation type.
+Assume moreover that, for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
+Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange property and its type cone is simplicial.
 \end{corollary}
 
 As a consequence of \cref{coro::silting simplicial}, the method of \cref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
@@ -4502,7 +4502,7 @@ As a consequence of \cref{coro::silting simplicial}, the method of \cref{part:ge
 Another consequence is an algebraic proof of \cref{coro:simplicialTypeConeNKC}, that we restate below.
 
 \begin{corollary}\label{coro::simplicialTypeConeNKCalgebraic}
- For any~$2$-acyclic gentle brick algebra, the type cone of its support~$\tau$-tilting fan is simplicial.
+For any~$2$-acyclic gentle brick algebra, the type cone of its support~$\tau$-tilting fan is simplicial.
 \end{corollary}
 
 The remaining part of this section is devoted to proving \cref{theo::brick-algebra-condition,coro::simplicialTypeConeNKCalgebraic}.
@@ -4759,22 +4759,23 @@ The theorem follows from the slightly more general statements of \cref{lemm::the
 
 %%%
 
-\begin{lemma}\label{lemma::characterization Gentle 2-acyclic}
- Let~$\Lambda$ be a~$2$-acyclic gentle brick algebra.
- Then, for any indecomposable~$\Lambda$-module~$M$ we have~$\Hom{\Lambda}(M,\tau^2 M)=0$.
+\begin{lemma}
+\label{lemma::characterization Gentle 2-acyclic}
+Let~$\Lambda$ be a~$2$-acyclic gentle brick algebra.
+Then, for any indecomposable~$\Lambda$-module~$M$ we have~$\Hom{\Lambda}(M,\tau^2 M)=0$.
 \end{lemma}
 
 \begin{proof}
- Let~$\Lambda=\field Q / I$ be any gentle algebra of finite representation type, and let~$M$ be an indecomposable~$\Lambda$-module.
- Write~$\sigma$ for the string corresponding to~$\tau M$.
- Then the walks (i.e. the maximal strings in the blossoming bound quiver of~$(Q,I)$) associated with~$M$ and~$\tau M$ are respectively~$\omega_M = \hh\sigma = p^{-1}\alpha\sigma\beta^{-1}q$ and~$\omega_{\tau M}=\cc\sigma=p'\alpha'^{-1}\sigma\beta'q'^{-1}$, where~$p,p',q,q'$ are paths and~$\alpha,\alpha',\beta,\beta'$ are arrows in the blossoming quiver.
+Let~$\Lambda=\field Q / I$ be any gentle algebra of finite representation type, and let~$M$ be an indecomposable~$\Lambda$-module.
+Write~$\sigma$ for the string corresponding to~$\tau M$.
+Then the walks (i.e. the maximal strings in the blossoming bound quiver of~$(Q,I)$) associated with~$M$ and~$\tau M$ are respectively~$\omega_M = \hh\sigma = p^{-1}\alpha\sigma\beta^{-1}q$ and~$\omega_{\tau M}=\cc\sigma=p'\alpha'^{-1}\sigma\beta'q'^{-1}$, where~$p,p',q,q'$ are paths and~$\alpha,\alpha',\beta,\beta'$ are arrows in the blossoming quiver.
 
- Assume that~$\Hom{\Lambda}(M,\tau^2 M)\neq0$.
- By~\cite[]{PaluPilaudPlamondon-nonkissing} or~\cite[]{BrustleDouvilleMousavandThomasYildirim}, the walk~$\omega_M$ kisses the walk~$\omega_{\tau M}$: there is a substring~$\rho$ of~$\omega_M$ and~$\omega_{\tau M}$ that is strictly on top of~$\omega_M$ and strictly at the bottom of~$\omega_{\tau M}$. Remark that~$\rho$ cannot start nor end at some endpoint of~$\sigma$ (because~$\rho$ is a top substring of~$\omega_M$).
+Assume that~$\Hom{\Lambda}(M,\tau^2 M)\neq0$.
+By~\cite[]{PaluPilaudPlamondon-nonkissing} or~\cite[]{BrustleDouvilleMousavandThomasYildirim}, the walk~$\omega_M$ kisses the walk~$\omega_{\tau M}$: there is a substring~$\rho$ of~$\omega_M$ and~$\omega_{\tau M}$ that is strictly on top of~$\omega_M$ and strictly at the bottom of~$\omega_{\tau M}$. Remark that~$\rho$ cannot start nor end at some endpoint of~$\sigma$ (because~$\rho$ is a top substring of~$\omega_M$).
  
- If the substring~$\rho$ of~$\omega_M$ is contained in~$\sigma$, by the previous remark it is strictly below~$\sigma$. This implies that~$\omega_M$ kisses itself, hence that~$M$ is not~$\tau$-rigid. Similarly, if~$\rho$ is contained in~$\sigma$ as a substring of~$\omega_{\tau M}$, then~$\tau M$ is not~$\tau$-rigid. In both cases, the brick-$\tau$-rigid correspondence of~\cite{DemonetIyamaJasso} implies that~$\Lambda$ is not a brick algebra.
+If the substring~$\rho$ of~$\omega_M$ is contained in~$\sigma$, by the previous remark it is strictly below~$\sigma$. This implies that~$\omega_M$ kisses itself, hence that~$M$ is not~$\tau$-rigid. Similarly, if~$\rho$ is contained in~$\sigma$ as a substring of~$\omega_{\tau M}$, then~$\tau M$ is not~$\tau$-rigid. In both cases, the brick-$\tau$-rigid correspondence of~\cite{DemonetIyamaJasso} implies that~$\Lambda$ is not a brick algebra.
  
- Note that~$\rho$ cannot contain~$\sigma$, because~$\sigma$ is the only common substring of~$\omega_M$ and~$\omega_{\tau M}$ that contains~$\sigma$.
+Note that~$\rho$ cannot contain~$\sigma$, because~$\sigma$ is the only common substring of~$\omega_M$ and~$\omega_{\tau M}$ that contains~$\sigma$.
 %  We split the remaining of the proof into two cases:
 %  
 %  \noindent {\it Case 1:} As a substring of~$\omega_M$,~$\rho$ contains~$\alpha\in\hL$ and the first letter (i.e. arrow or inverse of an arrow) of~$\sigma$.
@@ -4787,10 +4788,10 @@ Because the target of~$\alpha$ is the source of~$\alpha'$ (and the target of~$\b
 \end{proof}
 
 \begin{proof}[Proof of \cref{coro::simplicialTypeConeNKCalgebraic}]
- The unique exchange property follows from \cref{prop::exchange conflations are unique} (2).
- By \cref{lemma::characterization Gentle 2-acyclic}, the assumptions of \cref{theo::brick-algebra-condition} are satisfied.
- We can thus apply \cref{theorem::extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
- Hence the type cone of the support~$\tau$-tilting fan is simplicial.
+The unique exchange property follows from \cref{prop::exchange conflations are unique} (2).
+By \cref{lemma::characterization Gentle 2-acyclic}, the assumptions of \cref{theo::brick-algebra-condition} are satisfied.
+We can thus apply \cref{theorem::extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
+Hence the type cone of the support~$\tau$-tilting fan is simplicial.
 \end{proof}
 
 %%%%%%%%%%%
