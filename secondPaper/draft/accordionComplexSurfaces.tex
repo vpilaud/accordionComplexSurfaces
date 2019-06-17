@@ -552,7 +552,15 @@ For~$V \subseteq M$, a \defn{$V$-dissection} is a dissection with only $V$-arcs.
 
 \begin{definition}
 Consider a marked surface~$\bar\surface = (\surface, V \sqcup V\dual)$, where~$V$ and~$V\dual$ are two disjoint sets of marked points so that the points of~$V$ and~$V\dual$ that are on the boundary of~$\surface$ alternate.
-A cellular $V$-dissection~$\dissection$ of~$\bar\surface$ and a cellular $V\dual$-dissection~$\dissection\dual$ of~$\bar\surface$ are \defn{dual cellular dissections} if there are pairs of mutually inverse bijections~$V\dual \leftrightarrow \faces(\dissection)$ and~$V \leftrightarrow \faces(\dissection\dual)$, both denoted~$\dual$ in both directions, such that~$\dissection$ has an edge joining its vertices~$u,v \in V$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an edge joining its vertices~$f\dual, g\dual \in V\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
+A cellular $V$-dissection~$\dissection$ of~$\bar\surface$ and a cellular $V\dual$-dissection~$\dissection\dual$ of~$\bar\surface$ are \defn{dual cellular dissections} if there are mutually inverse bijections~$V\dual \leftrightarrow \faces(\dissection)$,~$V \leftrightarrow \faces(\dissection\dual)$, and~$\edges(\dissection) \leftrightarrow \edges(\dissection\dual)$,  all denoted by~$\dual$ in both directions, such that
+\begin{enumerate}
+ \item for each vertex~$v\in V$, the closure of the face~$v\dual$ of~$\dissection\dual$ contains~$v$;
+ \item for each vertex~$w\in V\dual$, the closure of the face~$w\dual$ of~$\dissection$ contains~$w$;
+ \item for each edge~$e\in \edges(\dissection)$, the edges~$e$ and~$e\dual$ intersect exactly once in their interior; moreover,~$e$ intersects (in their interior) no other edge of~$\dissection\dual$, and~$e\dual$ intersects (in their interior) no other edge of~$\dissection$.
+\end{enumerate}
+
+
+% ~$\dissection$ has an edge joining its vertices~$u,v \in V$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an edge joining its vertices~$f\dual, g\dual \in V\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
 \end{definition}
 
 Some examples of dual cellular dissections on different surfaces are represented in \fref{fig:dissections}.
