@@ -1,7 +1,9 @@
 We thank the referee for their careful reading of the paper.  Here is our reply to their comments.
 
-(ii)That is a good point.  At most one of c_1 and c_2 is allowed to be of length 0.  This has been fixed.
+(i) 
 
-(iii)We do not wish to require that V is contained in M.  This will allow us, for instance, to work with "B-curves" in Section 3.2, even though B is not contained in M.
+(ii) That is a good point.  At most one of c_1 and c_2 is allowed to be of length 0.  This has been fixed.
 
-(iv)
+(iii) We do not wish to require that V is contained in M.  This will allow us, for instance, to work with "B-curves" in Section 3.2, even though B is not contained in M.
+
+(iv) This is a very good point.  We have changed the definition so that the situation described by the referee is avoided.  The new definition is more "down-to-earth".
