@@ -516,7 +516,6 @@ In the general case of arbitrary orientable surfaces, the correspondence between
 
 \subsection{Dual dissections of a surface}
 
-\enlargethispage{.1cm}
 Before defining accordions and slaloms, we need a strong notion of pairs of dual dissections of an orientable surface.
 We first review classical definitions of curves, arcs and dissections of a surface adapting it to our setting.
 
@@ -558,9 +557,6 @@ A cellular $V$-dissection~$\dissection$ of~$\bar\surface$ and a cellular $V\dual
  \item for each vertex~$w\in V\dual$, the closure of the face~$w\dual$ of~$\dissection$ contains~$w$;
  \item for each edge~$e\in \edges(\dissection)$, the edges~$e$ and~$e\dual$ intersect exactly once in their interior; moreover,~$e$ intersects (in their interior) no other edge of~$\dissection\dual$, and~$e\dual$ intersects (in their interior) no other edge of~$\dissection$.
 \end{enumerate}
-
-
-% ~$\dissection$ has an edge joining its vertices~$u,v \in V$ and separating its faces~$f,g \in  \faces(\dissection)$ if and only if~$\dissection\dual$ has an edge joining its vertices~$f\dual, g\dual \in V\dual$ and separating its faces~$u\dual, v\dual \in \faces(\dissection\dual)$.
 \end{definition}
 
 Some examples of dual cellular dissections on different surfaces are represented in \fref{fig:dissections}.
@@ -607,7 +603,7 @@ See \eg Figures~\ref{fig:accordions} and~\ref{fig:slaloms} where the blossom poi
 
 \subsection{Accordion complex and slalom complex}
 
-\enlargethispage{.1cm}
+\enlargethispage{.4cm}
 Let~$\bar\surface = (\surface, V \sqcup V\dual)$ be a surface with two disjoint sets~$V$ and~$V\dual$ of marked points, and let~$B$ be the corresponding blossom points on the boundary of~$\surface$.
 We say that a $B$-curve is \defn{external} if it is homotopic to a boundary arc of~$\surface \ssm B$, and \defn{internal} otherwise.
 Note that no $B$-curve can cross an external $B$-curve.
@@ -652,7 +648,6 @@ In contrast, no external accordion can cross another accordion, so that they app
 The \defn{reduced $\dissection$-accordion complex}~$\RAC$ is the simplicial complex whose faces are the collections of pairwise non-crossing internal $\dissection$-accordions.
 \end{definition}
 
-\enlargethispage{.3cm}
 The following definition generalizes the one from~\cite{GarverMcConville} for the case where~$\bar\surface$ is a disk.
 
 \begin{definition}
@@ -745,6 +740,7 @@ See \cite[Prop.~2.4]{MannevillePilaud-accordion} for a detailed statement in the
 
 \section{Non-kissing versus non-crossing}
 
+\enlargethispage{-.2cm}
 In this section, we show that non-kissing and non-crossing complexes actually coincide.
 Namely, any pair of dual cellular dissections~$(\dissection, \dissection\dual)$ defines a locally gentle bound quiver~$\bar Q_{\dissection}$ (see Section~\ref{subsec:D2Q}) such that the non-crossing complex~$\NCC$ is isomorphic to the non-kissing complex~$\NKC[\bar Q_{\dissection}]$.
 Conversely, any locally gentle bound quiver~$\bar Q$ gives rise to a surface~$\surface_{\bar Q}$ equipped with a pair of dual cellular dissections~$\dissection_{\bar Q}$ and~${{\dissection\dual}\!\!_{\bar Q}}$ (see Section~\ref{subsec:Q2D}) such that the non-kissing complex~$\NKC$ is isomorphic to the non-crossing complex~$\NCC[\dissection_{\bar Q}, {\dissection\dual\!\!_{\bar Q}}]$.
@@ -875,6 +871,7 @@ placed as follows:
 The orientations on the edges are only used to perform the identifications and can be immediately forgotten.
 \end{definition}
 
+\enlargethispage{-.5cm}
 Definition~\ref{def:surfaceQuiver} constructs an orientable surface~$\surface_{\bar Q}$ with boundaries.
 \fref{fig:surfaces} illustrates this construction for the quivers of \fref{fig:quivers}.
 
@@ -893,7 +890,6 @@ We could equivalently construct the surface~$\surface_{\bar Q}$ as follows:
 \end{itemize}
 \end{remark}
 
-\enlargethispage{-.4cm}
 The advantage of Definition~\ref{def:surfaceQuiver} is that it automatically endows~$\surface_{\bar Q}$ with two disjoint sets~$V_{\bar Q}$ and~${{V\dual}\!\!_{\bar Q}}$ of marked points and two dual cellular dissections~$\dissection_{\bar Q}$ and~${\dissection\dual\!\!_{\bar Q}}$ defined as follows.
 
 \begin{definition}
@@ -983,6 +979,7 @@ Another minor difference is that the construction in \cite{OpperPlamondonSchroll
 The major difference with \cite{OpperPlamondonSchroll} is the application of the surface of a (locally) gentle algebra: there, it is used as a model for the derived category of the gentle algebra (graded arcs correspond to indecomposable objects in that category), while here, it will be used as a model for walks in~$\bar Q$ ($\dissection_{\bar Q}$-accordions will correspond to walks in~$\bar{Q}$, see Proposition \ref{prop:walks=arcs}).
 \end{remark}
 
+\enlargethispage{.4cm}
 We conclude this section with five families of examples that illustrate the computation of~$\surface_{\bar Q}$.
 
 \begin{example}
@@ -998,25 +995,31 @@ Note that we can choose to position the blossom vertices in such a way that for 
 	\label{fig:CambrianPathsQuivers}
 \end{figure}
 
-We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
-The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) form a cycle with green and red arrows alternating.
-Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
-Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces are disks ($1$ boundary component, no puncture and genus~$0$).
-Two examples are represented in \fref{fig:CambrianPathsSurfaces}.
-Note that the dissection~$\dissection_{\bar Q}$ is a triangulation with no internal triangles, and the orientation of~$\bar Q$ indicates how to glue these triangles.
-For instance, the Cambrian quiver completely oriented in one direction yields a fan triangulation, were all internal edges are incident to the same vertex, as in \fref{fig:CambrianPathsSurfaces}\,(left).
-
 \begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{CambrianPathsSurfaces}}
 	\caption{The surface~$\surface_{\bar Q}$ for two Cambrian paths on~$5$ vertices.}
 	\label{fig:CambrianPathsSurfaces}
 \end{figure}
+
+We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) form a cycle with green and red arrows alternating.
+Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
+Since~$|Q_1| = |Q_0|-1$, the corresponding surfaces are disks ($1$ boundary component, no puncture and genus~$0$).
+Two examples are represented in \fref{fig:CambrianPathsSurfaces}.
+The dissection~$\dissection_{\bar Q}$ is a triangulation with no internal triangles, and the orientation of~$\bar Q$ indicates how to glue these triangles.
+For instance, the Cambrian quiver completely oriented in one direction yields a fan triangulation, with all internal edges incident to the same vertex, as in \fref{fig:CambrianPathsSurfaces}\,(left).
 \end{example}
 
 \begin{example}
 \label{exm:reversedPath}
 Consider the family of \defn{reversed path quivers} indicated in \fref{fig:reversedPathsQuivers}.
+
+We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
+The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{reversedPathsPM}}.
+Moreover, $\bar Q$ has no infinite straight walk, while~$\bar Q\koszul$ has~$|Q_0|-1$ infinite straight walks.
+Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have $1$ boundary component and genus~$0$.
+The first few corresponding surfaces are represented in \fref{fig:reversedPathsSurfaces}.
 
 \begin{figure}[h]
 	\capstart
@@ -1024,12 +1027,6 @@ Consider the family of \defn{reversed path quivers} indicated in \fref{fig:rever
 	\caption{The reversed path quivers with~$1, 2, 3, 4$ vertices.}
 	\label{fig:reversedPathsQuivers}
 \end{figure}
-
-We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
-The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{reversedPathsPM}}.
-Moreover, $\bar Q$ has no infinite straight walk, while~$\bar Q\koszul$ has~$|Q_0|-1$ infinite straight walks.
-Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have $1$ boundary component and genus~$0$.
-The first few corresponding surfaces are represented in \fref{fig:reversedPathsSurfaces}.
 
 \begin{figure}[h]
 	\capstart
@@ -1043,13 +1040,6 @@ The first few corresponding surfaces are represented in \fref{fig:reversedPathsS
 \label{exm:doublePath}
 Consider the family of \defn{double path quivers} indicated in \fref{fig:doublePathsQuivers}.
 
-\begin{figure}[h]
-	\capstart
-	\centerline{\includegraphics[scale=.45]{doublePathsQuivers}}
-	\caption{The double path quivers with~$1, 2, 3, 4$ vertices.}
-	\label{fig:doublePathsQuivers}
-\end{figure}
-
 We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) look like~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPModd}} when~$|Q_0|$ is odd and~\raisebox{-.1cm}{\includegraphics[scale=.3]{doublePathsPMeven}} when~$|Q_0|$ is even.
 Moreover, $\bar Q$ and~$\bar Q\koszul$ have no infinite straight walks.
@@ -1060,7 +1050,14 @@ Since~$|Q_1| = 2|Q_0|-2$, the corresponding surfaces have no punctures and
 \end{itemize}
 The first few corresponding surfaces are represented in \fref{fig:doublePathsSurfaces}.
 
-\begin{figure}[H]
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{doublePathsQuivers}}
+	\caption{The double path quivers with~$1, 2, 3, 4$ vertices.}
+	\label{fig:doublePathsQuivers}
+\end{figure}
+
+\begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=.7]{doublePathsSurfaces}}
 	\caption{The surface~$\surface_{\bar Q}$ for the double path quivers with~$1, 2, 3, 4$ vertices.}
@@ -1070,20 +1067,21 @@ The first few corresponding surfaces are represented in \fref{fig:doublePathsSur
 
 \begin{example}
 \label{exm:cycle}
+\enlargethispage{1cm}
 Consider the family of \defn{cycle quivers} indicated in \fref{fig:cyclesQuivers}.
-
-\begin{figure}[H]
-	\capstart
-	\centerline{\includegraphics[scale=.45]{cyclesQuivers}}
-	\caption{The cycle quivers with~$1, 2, 3, 4, 5$ vertices.}
-	\label{fig:cyclesQuivers}
-\end{figure}
 
 We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) form a cycle with green and red arrows alternating.
 Moreover, $\bar Q$ has~$1$ infinite straight walk, while~$\bar Q\koszul$ has none.
 Since~$|Q_1| = |Q_0|$, the corresponding surfaces are punctured disks ($1$ boundary component, $1$ puncture and genus~$0$).
 The first few corresponding surfaces are represented in \fref{fig:cyclesSurfaces} (see Figures~\ref{fig:surfaces} and~\ref{fig:reversedPathsSurfaces} for the cycles with $1$ or~$2$ vertices, recalling that~$\bar Q$ and~$\bar Q\koszul$ yield the same surface).
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{cyclesQuivers}}
+	\caption{The cycle quivers with~$1, 2, 3, 4, 5$ vertices.}
+	\label{fig:cyclesQuivers}
+\end{figure}
 
 \begin{figure}[h]
 	\capstart
@@ -1097,13 +1095,6 @@ The first few corresponding surfaces are represented in \fref{fig:cyclesSurfaces
 \label{exm:doubleCycle}
 Consider the family of \defn{double cycle quivers} indicated in \fref{fig:doubleCyclesQuivers}.
 
-\begin{figure}[H]
-	\capstart
-	\centerline{\includegraphics[scale=.45]{doubleCyclesQuivers}}
-	\caption{The double cycle quivers with~$1, 2, 3, 4, 5$ vertices.}
-	\label{fig:doubleCyclesQuivers}
-\end{figure}
-
 We apply Remark~\ref{rem:propertiesSurface} to understand the corresponding surfaces.
 The corresponding perfect matchings (see Remark~\ref{rem:propertiesSurface}\,\eqref{item:boundary}) are empty since there are no blossom vertices.
 Moreover, $\bar Q$ has~$1$ infinite straight walk when~$|Q_0|$ is odd and~$2$ when~$|Q_0|$ is even, and~$\bar Q\koszul$ always has~$2$ infinite straight walks.
@@ -1113,6 +1104,13 @@ Since~$|Q_1| = 2|Q_0|$, the corresponding surfaces have no boundary component an
 \item $4$ punctures and genus~$(|Q_0|-2)/2$ when~$|Q_0|$ is even.
 \end{itemize}
 The first few corresponding surfaces are represented in \fref{fig:doubleCyclesSurfaces}.
+
+\begin{figure}[h]
+	\capstart
+	\centerline{\includegraphics[scale=.45]{doubleCyclesQuivers}}
+	\caption{The double cycle quivers with~$1, 2, 3, 4, 5$ vertices.}
+	\label{fig:doubleCyclesQuivers}
+\end{figure}
 
 \begin{figure}[h]
 	\capstart
