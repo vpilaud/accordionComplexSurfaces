@@ -477,7 +477,7 @@ We identify two conditions, called brick and 2-acyclicity (\cref{def:brick2acycl
 We note that the~$\tau$-tilting theory of gentle algebras is the algebraic counterpart of the combinatorics of accordions on surfaces~\cite{PaluPilaudPlamondon-nonkissing,BrustleDouvilleMousavandThomasYildirim,PaluPilaudPlamondon-surfaces}.
 
 Let~$\quiver = (Q,I)$ be a gentle bound quiver, and let~$\Fan(\quiver)$ be the fan of its~$\b{g}$-vectors (\cref{subsubsec:nonkissingComplex}), also called its non-kissing fan.
-In \cref{sect::Kbproj}, we make use of representation theory in order to prove:
+We prove in \cref{sect::Kbproj}, by making use of representation theory:
 
 \medskip
 
@@ -515,6 +515,27 @@ Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\string
 
 \medskip
 
+In \cref{sec:clusterCategories}, we prove an analogue for cluster categories of M. Auslander's result~\cite{Auslander1984}.
+We are mainly motivated by the fact that itt has for a consequence that the type cones of the cluster fans of finite type are simplicial.
+However, this result is of independent interest and sheds new lights on the Grothendieck groups of cluster categories.
+
+Let~$\cat$ be a cluster category with finitely many isomorphism classes of indecomposable objects (see \cref{sect::setting} for the precise and more general setting in which the theorem is proven).
+Let~$\Ksp(\cat)$ be the split Grothendieck group of~$\cat$.
+Fix a cluster-tilting object~$T\in\cat$, and let~$K_0(\cat ; T)$ be the quotient of~$\Ksp(\cat)$ by the relations~$[X]+[Z]-[Y]$ for all triangles
+$
+X\xrightarrow{} Y \xrightarrow{} Z \xrightarrow{h} \susp X
+$
+with~$h \in (\susp T)$.
+Denote by~$\b{g}:\Ksp(\cat) \to K_0(\cat ; T)$ the canonical projection.
+For any indecomposable~$X\in\cat$, write~$\ell_X = [X]+[\susp^{-1}X]-[E]$, where~$E$ is the middle term of an almost split triangle starting at~$X$.
+For any objects~$X,Y\in\cat$, we write~$\langle X, Y \rangle$ for~$\dim_\field\Hom{\Lambda}(FX,FY)$, where~$\Lambda$ is the cluster-tilted algebra~$\End{\cat}(T)$ and~$F$ is the equivalence of categories~$\cat(T,-):\cat/(\susp T) \to \MOD \Lambda$.
+
+\medskip
+
+\noindent Theorem (see \cref{theo::relations-g-vecteurs}): \emph{The set~$L_\cat=\{\ell_X\,|\, X\in\ind(\cat)\setminus\add(\susp T)\}$ is a basis of the kernel of~$\b{g}$ and, for any~$x\in\ker(\b{g})$, we have:}
+\[
+x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+\]
 
 
 \bigskip
@@ -522,6 +543,41 @@ Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\string
 \noindent {\bf Extriangulated categories}
 
 \medskip
+
+In \cref{sec:extricats} we prove a more general version of \cref{theo::relations-g-vecteurs} that not only applies to cluster fans, but also to non-kissing fans.
+Once more, our main motivation is to prove that the type cone of the non-kissing fan of a brick and 2-acyclic gentle algebra is simplicial, but the results are of independent interest, and might be useful for studying the type cones of other families of simplicial fans.
+
+Let~$\cat$ be an extriangulated category (\cref{sect::recollections extricats}) with a fixed projective object~$T$ such that the morphism~$T\to 0$ is an inflation and, for each~$X\in\cat$, there is an extriangle~$T_1^X\infl T_0^X\defl X\overset{\delta_X}{\dashrightarrow}$.
+Let~$\susp T$ be the cone of the inflation~$T\infl 0$.
+
+\medskip
+
+\noindent \cref{prop::KRextricat}: \emph{The functor~$\cat(T,-)$ induces an equivalence~$F:\cat/(\susp T) \to \MOD \End{\cat}(T)$.}
+
+\medskip
+
+Our assumptions allow for a well-defined notion of index:~$\ind_T(X)=[T_0^X]-[T_1^X]\in\kzero{\add T}$.
+
+\medskip
+
+\noindent \cref{prop::index iso extricat}: \emph{The index induces an isomorphism of abelian groups from~$\kzero{\cat}$ to~$\kzero{\add T}$.}
+
+\medskip
+
+The previous two statements also hold when~$T$ is an additive subcategory rather than a mere object.
+Assume moreover that~$\cat$ is~$\field$-linear, Ext-finite, Krull--Schmidt and has Auslander--Reiten--Serre duality.
+Then, with notations analoguous to those used for cluster categories above, we obtain the following:
+
+\medskip
+
+\noindent \cref{theorem::extricats}: \emph{The extriangulated category~$\cat$ has only finitely many ismorphism classes of indecomposable objects if and only if the set~$L_\cat$ generates the kernel of the canonical projection~$\b{g}:\Ksp(\cat)\to\kzero{\cat}$.
+In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g})$ decomposes as}
+\[
+ x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
+\]
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
