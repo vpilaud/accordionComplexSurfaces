@@ -413,6 +413,53 @@ Is it possible to similarly understand the complete realization space of the clu
 \medskip
 To conclude, it is our hope that the present paper will participate to the interactions between combinatorial geometry, representation theory, and mathematical physics; in particular through further developments of the geometric approach to scattering amplitudes that has flourished during the last years~\cite{ArkaniHamedTrnka-Amplituhedron,ArkaniHamedBourjailyCachazoGoncharovPostnikovTrnka-GrassmannianGeometryScatteringAmplitudes}. The kinematic associahedron from~\cite{ArkaniHamedBaiHeYan} is one of the most recent ``positive geometries''~\cite{ArkaniHamedBaiLam-PositiveGeometries} that has emerged in the study of scattering amplitudes.
 
+\section*{Main results and logical dependencies}
+
+We give a brief overview of our main results.
+Their logical dependencies are recalled in a schematic diagram at the end of this section.
+
+Let~$\Fan$ be an essential, complete, simplicial, polyhedral fan in~$\R^n$ (all definitions are recalled in \cref{ssec:polytopes and fans}).
+The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen, is a device that encodes the information about all possible polytopal realizations of~$\Fan$.
+If the simplicial fan~$\Fan$ has the unique exchange relation property (\cref{def:uerp}), then its type cone is easier to describe and study.
+In particular, if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimTypeCone}), then all possible polytopal realizations of~$\Fan$ can be described explicitely in~$\R^N_{>0}$, where~$N$ is the number of rays of~$\typeCone(\Fan)$, in terms of~$N-n$ positive real parameters (\cref{coro:simplicialTypeCone}).
+This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: The~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra), and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra).
+We also describe the type cone for graph associahedra (\cref{subsec:typeConeGA}), to which our strategy does not apply.
+
+\subsection*{Cluster algebras of finite type} (\cref{subsec:typeConeCA})
+
+We first consider the~$\b{g}$-vector fan~$\Fan(\B_\circ)$ of a skew-symmetrizable cluster algebra of finite type, with respect to any initial exchange matrix of finite type~$\B_\circ$.
+A reformulation of~\cite[Thm 7.5]{BuanMarshReinekeReitenTodorov}
+\medskip
+
+\noindent \ref{prop:uniqueExchangePropertyCA}: The cluster fan~$\Fan(\B_\circ)$ has the unique exchange relation property.
+
+\medskip
+
+We consider the set~$\meshes$ of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and we denote by~$\principalVariables$ the set of cluster variables.
+Let~$\{x,x'\}\in\meshes$, and let~$X,X'$ be two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$.
+For any~$y\in\principalVariables$, define~$\alpha_{x,x',y}$ to be~$|b_{xy}|$ if~$y\in X\cap X'$ and 0 otherwise.
+By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the choice of the clusters~$X,X'$.
+
+\medskip
+
+\noindent \cref{thm:allPolytopalRealizationsCA}: 
+\emph{For any~$\b{\ell} \in \R_{>0}^{\meshes}$, the polytope
+\[
+R_{\b{\ell}}(\B_\circ) \eqdef \Bigset{\b{z} \in \R^{\principalVariables}}{\b{z} \ge 0 \text{ and } \b{z}_x + \b{z}_{x'} - \sum_{y \in \principalVariables} \alpha_{x,x',y} \, \b{z}_{y} = \b{\ell}_{\{x,x'\}} \text{ for all } \{x,x'\} \in \meshes}
+\]
+is a generalized associahedron, whose normal fan is the cluster fan~$\gvectorFan[\B_\circ]$.
+Moreover, the polytopes~$R_\b{\ell}(\B_\circ)$ for~$\b{\ell} \in \R_{>0}^{\meshes}$ describe all polytopal realizations of~$\gvectorFan[\B_\circ]$.}
+
+
+
+
+\subsection*{Gentle algebras}
+
+\subsection*{Cluster categories}
+
+\subsection*{Extriangulated categories}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
@@ -428,6 +475,7 @@ To conclude, it is our hope that the present paper will participate to the inter
 %%%%%%%%%%%
 
 \subsection{Polytopes and fans}
+\label{ssec:polytopes and fans}
 
 We briefly recall basic definitions and properties of polyhedral fans and polytopes, and refer to~\cite{Ziegler-polytopes} for a classical textbook on this topic.
 
@@ -461,6 +509,7 @@ We say that a complete polyhedral fan~$\Fan$ in~$\R^d$ is \defn{polytopal} when 
 %%%%%%%%%%%
 
 \subsection{Type cone}
+\label{ssec:type cone}
 
 Fix an essential complete simplicial fan~$\Fan$ in~$\R^n$. Let~$\b{G}$ the $N \times n$-matrix whose rows are the rays of~$\Fan$ and let~$\b{K}$ be a $(N-n) \times N$-matrix that spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$). For any height vector~$\b{h} \in \R^N$, we define the polytope
 \[
