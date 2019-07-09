@@ -413,17 +413,18 @@ Is it possible to similarly understand the complete realization space of the clu
 \medskip
 To conclude, it is our hope that the present paper will participate to the interactions between combinatorial geometry, representation theory, and mathematical physics; in particular through further developments of the geometric approach to scattering amplitudes that has flourished during the last years~\cite{ArkaniHamedTrnka-Amplituhedron,ArkaniHamedBourjailyCachazoGoncharovPostnikovTrnka-GrassmannianGeometryScatteringAmplitudes}. The kinematic associahedron from~\cite{ArkaniHamedBaiHeYan} is one of the most recent ``positive geometries''~\cite{ArkaniHamedBaiLam-PositiveGeometries} that has emerged in the study of scattering amplitudes.
 
-\section*{Main results and logical dependencies}
+% \section*{Main results and logical dependencies}
+\subsection*{Structure of the paper: main results and logical dependencies}
 
-We give a brief overview of our main results.
-Their logical dependencies are recalled in a schematic diagram at the end of this section.
+We give a brief overview of our main results and the structure of the article. In particular, some of the geometric realizations in~\cref{part:geometry} depend on algebraic results whose proof is delayed until~\cref{part:algebra}. The goal of this section is to clarify their logical dependencies. 
+% Their logical dependencies are recalled in a schematic diagram at the end of this section.
 
-Let~$\Fan$ be an essential, complete, simplicial, polyhedral fan in~$\R^n$ (all definitions are recalled in \cref{ssec:polytopes and fans}).
-The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen, is a device that encodes the information about all possible polytopal realizations of~$\Fan$.
-If the simplicial fan~$\Fan$ has the unique exchange relation property (\cref{def:uerp}), then its type cone is easier to describe and study.
-In particular, if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimTypeCone}), then all possible polytopal realizations of~$\Fan$ can be described explicitely in~$\R^N_{>0}$, where~$N$ is the number of rays of~$\typeCone(\Fan)$, in terms of~$N-n$ positive real parameters (\cref{coro:simplicialTypeCone}).
-This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: The~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra), and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra).
-We also describe the type cone for graph associahedra (\cref{subsec:typeConeGA}), to which our strategy does not apply.
+Let~$\Fan$ be an essential complete polyhedral fan in~$\R^n$ (all definitions are recalled in~\cref{ssec:polytopes and fans}).
+The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen~\cite{McMullen-typeCone}, is a polyhedral cone that parametrizes the set of all possible polytopal realizations of~$\Fan$. These realizations can be described explicitly as affine sections of the nonnegative orthant~$\R^N_{\geq0}$, where~$N$ is the number of rays of~$\Fan$ (\cref{prop:alternativePolytopalRealization}).  
+If $\Fan$ is a simplicial fan and has the unique exchange relation property (\cref{def:uerp}), then its type cone is easier to describe and study.
+And if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimTypeCone}), then all possible polytopal realizations of~$\Fan$ can be described explicitely in terms of~$N-n$ positive real parameters (\cref{coro:simplicialTypeCone}).
+This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: The~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra) in~\cref{subsec:typeConeCA}, and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra) in~\cref{subsec:typeConeNKC}.
+We also completely describe the facets of the type cone for graph associahedra in~\cref{subsec:typeConeGA}, to which our strategy does not apply, as only the classical associahedron has a simplicial type cone.
 
 \medskip
 
@@ -431,28 +432,11 @@ We also describe the type cone for graph associahedra (\cref{subsec:typeConeGA})
 
 \medskip
 
-We first consider the~$\b{g}$-vector fan~$\Fan(\B_\circ)$ of a skew-symmetrizable cluster algebra of finite type, with respect to any initial exchange matrix of finite type~$\B_\circ$.
-A reformulation of~\cite[Thm 7.5]{BuanMarshReinekeReitenTodorov} gives the first step towards applying our type cone strategy.
-
-\medskip
-
-\noindent \cref{prop:uniqueExchangePropertyCA}: \emph{The cluster fan~$\Fan(\B_\circ)$ has the unique exchange relation property.}
-
-\medskip
-
-The second step follows from our main result in \cref{sec:clusterCategories}, which makes use of representation theory of finite dimensional algebras and additive categorification of cluster algebras.
-
-\medskip
-
-\noindent \cref{coro:simplicialTypeConeCA}: \emph{The type cone~$\typeCone(\Fan(\B_\circ))$ is simplicial.}
-
-\medskip
-
-
-We consider the set~$\meshes$ of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and we denote by~$\principalVariables$ the set of cluster variables.
-Let~$\{x,x'\}\in\meshes$, and let~$X,X'$ be two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$.
-For any~$y\in\principalVariables$, define~$\alpha_{x,x',y}$ to be~$|b_{xy}|$ if~$y\in X\cap X'$ and 0 otherwise.
-By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
+We first consider the~$\b{g}$-vector fan~$\Fan(\B_\circ)$ of a skew-symmetrizable cluster algebra of finite type, with respect to any initial exchange matrix of finite type~$\B_\circ$. We provide the following polytopal realizations of~$\Fan(\B_\circ)$:
+% We consider the set~$\meshes$ of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and we denote by~$\principalVariables$ the set of cluster variables.
+% Let~$\{x,x'\}\in\meshes$, and let~$X,X'$ be two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$.
+% For any~$y\in\principalVariables$, define~$\alpha_{x,x',y}$ to be~$|b_{xy}|$ if~$y\in X\cap X'$ and 0 otherwise.
+% By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
 
 \medskip
 
@@ -464,8 +448,31 @@ R_{\b{\ell}}(\B_\circ) \eqdef \Bigset{\b{z} \in \R^{\principalVariables}}{\b{z} 
 is a generalized associahedron, whose normal fan is the cluster fan~$\gvectorFan[\B_\circ]$.
 Moreover, the polytopes~$R_\b{\ell}(\B_\circ)$ for~$\b{\ell} \in \R_{>0}^{\meshes}$ describe all polytopal realizations of~$\gvectorFan[\B_\circ]$.}
 
+\medskip
 
+Here, $\meshes$ represents the set of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and~$\principalVariables$ the set of cluster variables.
+For $\{x,x'\} \in \meshes$ and $y \in \principalVariables$, the coefficient $\alpha_{x,x',y}$ is defined as follows: $\alpha_{x,x',y}$ is set to be~$|b_{xy}|$ if~$y\in X\cap X'$ and $0$ otherwise, where~$X,X'$ are any two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$. By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
+
+\medskip
+
+Some crucial pieces of the proof of~\cref{thm:allPolytopalRealizationsCA} use cluster categories (2-Calabi--Yau triangulated categories) and are deferred to~\cref{sec:clusterCategories}. Namely, a reformulation of~\cite[Thm 7.5]{BuanMarshReinekeReitenTodorov}, proved in~\cref{sec:clusterCategories}, gives the first step towards applying our type cone strategy.
+
+\medskip
+
+\noindent \cref{prop:uniqueExchangePropertyCA}: \emph{The cluster fan~$\Fan(\B_\circ)$ has the unique exchange relation property.}
+
+\medskip
+
+And the second step follows from our main result in \cref{sec:clusterCategories}, which makes use of representation theory of finite dimensional algebras and additive categorification of cluster algebras.
+
+\medskip
+
+\noindent \cref{coro:simplicialTypeConeCA}: \emph{The type cone~$\typeCone(\Fan(\B_\circ))$ is simplicial.}
+
+\medskip
 \bigskip
+
+
 
 \noindent {\bf Gentle algebras, non-kissing complex, generalized accordiohedra} (\cref{subsec:typeConeNKC})
 
@@ -482,7 +489,7 @@ We prove in \cref{sect::Kbproj}, by making use of representation theory:
 \medskip
 
 \noindent \cref{prop:exchangeablePairsNKC} (ii): \emph{The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.}
-
+\arnau{In the proof of \cref{prop:exchangeablePairsNKC} it says that the UERP follows from PPP17}
 \medskip
 
 \cref{subsubsec:simplicialTypeConeNKC} is dedicated to giving a purely combinatorial proof of:
@@ -496,9 +503,8 @@ Then the type cone~$\typeCone(\Fan(\quiver))$ is simplicial.}
 
 An alternative algebraic proof, using the main result of \cref{sec:extricats}, is given in \cref{sect::Kbproj}.
 
-Write~$\strings$ for the set of all strings of~$\quiver$, and~$\walks$ for the set of all walks on~$\quiver$ (i.e. of all strings of the blossoming bound quiver of~$\quiver$ that join two blossom vertices).
-If~$\sigma$ is a string of~$\quiver$, we make use of the evocative notations~$\cc{\sigma}, \hh{\sigma}, \hc{\sigma}, \ch{\sigma}$ for the walks obtained by adding, in the blossoming bound quiver, hooks or cohooks at each end of~$\sigma$.
-We make use of our type cone approach to deduce:
+
+Combining these pieces, we make use of our type cone approach to deduce:
 
 \medskip
 
@@ -509,14 +515,40 @@ R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \g
 is a realization of the non-kissing fan~$\gvectorFan[\quiver]$.
 Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\strings}$ describe all polytopal realizations of~$\gvectorFan[\quiver]$.}
 
+\medskip
+
+Here, $\strings$ is the set of all strings of~$\quiver$, and~$\walks$ the set of all walks on~$\quiver$ (i.e. of all strings of the blossoming bound quiver of~$\quiver$ that join two blossom vertices). If~$\sigma$ is a string of~$\quiver$, we make use of the evocative notations~$\cc{\sigma}, \hh{\sigma}, \hc{\sigma}, \ch{\sigma}$ for the walks obtained by adding, in the blossoming bound quiver, hooks or cohooks at each end of~$\sigma$.
+
+\bigskip
+
+\noindent {\bf Graphical nested complexes} (\cref{subsec:typeConeGA})
+
+\medskip
+
+Even though graph associahedra do not have simplicial type cones except for the path (\cref{prop:simplicialnestedfan}), we provide a non-redundant characterization of the type cones of graphical nested fans:
+
+\medskip
+
+\noindent \cref{cor:typeconenestedfan}:\emph{
+Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$. 
+Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
+\[
+\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}
+\]
+if and only if~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and
+ $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
+}
+
+
+
 \bigskip
 
 \noindent {\bf Cluster categories}
 
 \medskip
 
-In \cref{sec:clusterCategories}, we prove an analogue for cluster categories of M. Auslander's result~\cite{Auslander1984}.
-We are mainly motivated by the fact that itt has for a consequence that the type cones of the cluster fans of finite type are simplicial.
+In \cref{sec:clusterCategories}, we prove an analogue for cluster categories of M. Auslander's result~\cite{Auslander1984}. \arnau{Which result? Is it famous? Should we say something like Auslaunder's famous result from...? }
+We are mainly motivated by the fact that it has for a consequence that the type cones of the cluster fans of finite type are simplicial.
 However, this result is of independent interest and sheds new lights on the Grothendieck groups of cluster categories.
 
 Let~$\cat$ be a cluster category with finitely many isomorphism classes of indecomposable objects (see \cref{sect::setting} for the precise and more general setting in which the theorem is proven).
@@ -577,15 +609,15 @@ In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g
 \]
 
 
-Schematic diagram:\yann{Vincent, Arnau, je suis certain que vous feriez bien mieux que moi. Puis-je vous demander de le représenter ?}
-
-I.1 explains the type cone approach to the problem
-
-This strategy is used in I.2.2 for cluster algebras and in I.2.3 for gentle algebras.
-
-II.3 cluster categories (2-Calabi--Yau triangulated categories) is used in 1.2.2 for proving U.E.R.P. and simpliciality of the type cone.
-
-II.4 generalises II.3, is used in I.2.3 for proving the U.E.R.P. and offers a different proof of simpliciality of the type cone .
+% Schematic diagram:\yann{Vincent, Arnau, je suis certain que vous feriez bien mieux que moi. Puis-je vous demander de le représenter ?}
+% 
+% I.1 explains the type cone approach to the problem
+% 
+% This strategy is used in I.2.2 for cluster algebras and in I.2.3 for gentle algebras.
+% 
+% II.3 cluster categories (2-Calabi--Yau triangulated categories) is used in 1.2.2 for proving U.E.R.P. and simpliciality of the type cone.
+% 
+% II.4 generalises II.3, is used in I.2.3 for proving the U.E.R.P. and offers a different proof of simpliciality of the type cone .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3145,13 +3177,14 @@ The extremal exchangeable pairs for the nested fan of~$\graphG$ are precisely th
 
 We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan.
 
-\begin{corollary}
-Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$ and a height vector~$\b{h} \in \R^{\tubes}$ such that~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and satisfying 
- $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$. 
-Then the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
+\begin{corollary}\label{cor:typeconenestedfan}
+Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$. 
+Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 \[
-\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}.
+\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}
 \]
+if and only if~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and
+ $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
 \end{corollary}
 
 We also obtain from \cref{prop:extremalExchangeablePairsGA} the following surprising property.
@@ -3194,7 +3227,7 @@ For the stellohedron, choose either~$v$ as the center of the star and~$v'$ as on
 
 To conclude on graph associahedra, we characterize the graphs~$\graphG$ whose nested fan has a simplicial type cone.
 
-\begin{proposition}
+\begin{proposition}\label{prop:simplicialnestedfan}
 The type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$ is simplicial if and only if~$\graphG$ is a path.
 \end{proposition}
 
