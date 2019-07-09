@@ -693,7 +693,7 @@ The \defn{type cone}~$\typeCone(\Fan)$ of all $\Fan$-admissible height vectors~$
 
 %%%%%%%%%%%
 
-\subsection{Unique exchange property}
+\subsection{Unique exchange relation property}
 \label{subsec:uniqueExchangeProperty}
 
 Two rays~$\ray$ and~$\ray'$ of~$\Fan$ are \defn{exchangeable} if there are two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with ${\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}}$.
@@ -707,7 +707,7 @@ We say that two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a \defn{unique e
 does not depend on the pair~$\{\rays, \rays'\}$ of adjacent maximal cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$, but only on the pair of rays~$\{\ray, \ray'\}$.
 This implies in particular that the rays~$\ray[s]$ for which~$\coefficient[{\ray[s]}][\rays][\rays'] \ne 0$ belong to~$\rays \cup \rays'$ for any pair~$\{\rays, \rays'\}$ of adjacent maximal cones of~$\Fan$ with $\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$. 
 
-We say that the fan~$\Fan$ has the \defn{unique exchange property} if any two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a unique exchange relation.
+We say that the fan~$\Fan$ has the \defn{unique exchange relation property} if any two exchangeable rays~$\ray, \ray'$ of~$\Fan$ admit a unique exchange relation.
 \end{definition}
 
 When~$\Fan$ has the unique exchange relation property, we change the notation~$\coefficient[{\ray[s]}][\rays][\rays']$ to~$\coefficient$ and we obtain that the type cone of~$\Fan$ is expressed as
@@ -793,7 +793,7 @@ For the converse, observe that for $\b{h}\in\ctypeCone(\Fan)$, the normal fan of
 Some observations are in place:
 
 \begin{itemize}
-\item Note that any extremal adjacent pair $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ gives rise to a facet of $\ctypeCone(\Fan)$, but that this pair might not be unique for this facet. There might be several extremal adjacent pairs giving rise to the same facet. This happens often when we have the unique exchange property and there are many pairs of maximal cones separating the same exchangeable rays.
+\item Note that any extremal adjacent pair $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ of~$\Fan$ gives rise to a facet of $\ctypeCone(\Fan)$, but that this pair might not be unique for this facet. There might be several extremal adjacent pairs giving rise to the same facet. This happens often when we have the unique exchange relation property and there are many pairs of maximal cones separating the same exchangeable rays.
  
 \item Mergings induced by extremal adjacent pairs are not the only ones that can take place in the boundary of~$\ctypeCone(\Fan)$. Indeed, if $\cal{G}$ is the coarsening defining a lower-dimensional face~$\typeCone(\cal{G})$ of~$\ctypeCone(\Fan)$, then to get $\Fan$ we have to perform all the coarsenings given by facets of~$\ctypeCone(\Fan)$ containing~$\typeCone(\cal{G})$. But we might have to perform more coarsenings arising from exchangeable pairs  $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ whose inequality is redundant for~$\ctypeCone(\Fan)$ but tight for all points in~$\typeCone(\cal{G})$. This situation arises when, in order to have a polytopal polyhedral fan, more pairs of adjacent cones must be merged.
 
@@ -946,7 +946,7 @@ In the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$,
 	\label{fig:lodayFans}
 \end{figure}
 
-Let us also recall the linear dependencies in this fan and observe that it has the unique exchange property discussed in \cref{subsec:uniqueExchangeProperty}.
+Let us also recall the linear dependencies in this fan and observe that it has the unique exchange relation property discussed in \cref{subsec:uniqueExchangeProperty}.
 From now on, we use the convention that~$\gvector{a,b} = 0$ when~$(a,b)$ is a boundary edge of the $(n+3)$-gon.
 
 \begin{proposition}
@@ -956,7 +956,7 @@ Then both triangulations~$T$ and~$T'$ contain the square $aa'bb'$, and the linea
 \[
 \gvector{a,b} + \gvector{a',b'} = \gvector{a,b'} + \gvector{a',b}.
 \]
-In particular, the fan~$\gvectorFan[n]$ has the unique exchange property.
+In particular, the fan~$\gvectorFan[n]$ has the unique exchange relation property.
 \end{proposition}
 
 %%%
@@ -4573,7 +4573,7 @@ Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of \cref{th
 \label{coro::silting simplicial}
 Let~$\Lambda$ be a finite dimensional brick algebra of finite representation type.
 Assume moreover that, for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
-Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange property and its type cone is simplicial.
+Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange relation property and its type cone is simplicial.
 \end{corollary}
 
 As a consequence of \cref{coro::silting simplicial}, the method of \cref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
@@ -4849,7 +4849,7 @@ Because the target of~$\alpha$ is the source of~$\alpha'$ (and the target of~$\b
 \end{proof}
 
 \begin{proof}[Proof of \cref{coro::simplicialTypeConeNKCalgebraic}]
-The unique exchange property follows from \cref{prop::exchange conflations are unique} (2).
+The unique exchange relation property follows from \cref{prop::exchange conflations are unique} (2).
 By \cref{lemma::characterization Gentle 2-acyclic}, the assumptions of \cref{theo::brick-algebra-condition} are satisfied.
 We can thus apply \cref{theorem::extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
 Hence the type cone of the support~$\tau$-tilting fan is simplicial.
