@@ -484,11 +484,11 @@ We identify two conditions, called brick and 2-acyclicity (\cref{def:brick2acycl
 We note that the~$\tau$-tilting theory of gentle algebras is the algebraic counterpart of the combinatorics of accordions on surfaces~\cite{PaluPilaudPlamondon-nonkissing,BrustleDouvilleMousavandThomasYildirim,PaluPilaudPlamondon-surfaces}.
 
 Let~$\quiver = (Q,I)$ be a gentle bound quiver, and let~$\Fan(\quiver)$ be the fan of its~$\b{g}$-vectors (\cref{subsubsec:nonkissingComplex}), also called its non-kissing fan.
-We prove in \cref{sect::Kbproj}, by making use of representation theory:
+We prove \cref{prop:exchangeablePairsNKC} (ii) in \cref{sect::Kbproj}, by making use of representation theory, and state here the following consequence:
 
 \medskip
 
-\noindent \cref{prop:exchangeablePairsNKC} (ii): \emph{The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.}
+\noindent \cref{corollary: uerp gentle}: \emph{The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.}
 \arnau{In the proof of \cref{prop:exchangeablePairsNKC} it says that the UERP follows from PPP17}\pg{Not for point (ii), which uses results of Section 4}
 \medskip
 
@@ -2057,21 +2057,29 @@ Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then:
 \[
 \gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
 \]
-In other words, the non-kissing fan of~$\quiver$ has the unique exchange relation property.
+% In other words, the non-kissing fan of~$\quiver$ has the unique exchange relation property.
 \item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\lambda}$ for~$\lambda \in F \cap F'$ is the multiplicity vector~$\multiplicityVector_{\sigma}$ of the vertices of the substring~$\sigma$ of~$\omega$ and~$\omega'$.
 \end{enumerate}
 %
-\begin{figure}[b]
+
+
+\begin{proof}
+Points~(i), (iii) and~(iv) were shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}. We postpone the proof of point~(ii) until \cref{coro::exchangeablePairsNKC}.
+\end{proof}
+
+As a consequence of points $(ii)$ and $(iii)$ in \cref{prop:exchangeablePairsNKC}, we obtain the:
+\begin{corollary}
+\label{corollary: uerp gentle}
+For any non-kissing finite gentle bound quiver~$\quiver$, the non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.
+\end{corollary}
+
+\begin{figure}[h]
 	\capstart
 	\centerline{\includegraphics[scale=1]{flip}}
 	\caption{A schematic representation of a flip. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
 	\label{fig:flip}
 \end{figure}
 \end{proposition}
-
-\begin{proof}
-Points~(i), (iii) and~(iv) were shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}. We postpone the proof of point~(ii) until \cref{coro::exchangeablePairsNKC}.
-\end{proof}
 
 \begin{remark}
 \label{rem:exchangeablePairsNKC}
