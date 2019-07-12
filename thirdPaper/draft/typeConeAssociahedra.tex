@@ -418,11 +418,11 @@ To conclude, it is our hope that the present paper will participate to the inter
 \section*{Structure of the paper: main results and logical dependencies}
 
 We give a brief overview of our main results and the structure of the article. In particular, some of the geometric realizations in~\cref{part:geometry} depend on algebraic results whose proof is delayed until~\cref{part:algebra}. The goal of this section is to clarify their logical dependencies. 
-% Their logical dependencies are recalled in a schematic diagram at the end of this section.
 
 \para{Type cone approach}
 (\cref{sec:typeCone})
 
+\noindent
 Let~$\Fan$ be an essential complete polyhedral fan in~$\R^n$ (all definitions are recalled in~\cref{ssec:polytopes and fans}).
 The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen~\cite{McMullen-typeCone}, is a polyhedral cone that parametrizes the set of all possible polytopal realizations of~$\Fan$. These realizations can be described explicitly as affine sections of the nonnegative orthant~$\R^N_{\geq0}$, where~$N$ is the number of rays of~$\Fan$ (\cref{prop:alternativePolytopalRealization}).  
 If $\Fan$ is a simplicial fan and has the unique exchange relation property (\cref{def:uerp}), then its type cone is easier to describe and study.
@@ -435,10 +435,6 @@ We also completely describe the facets of the type cone for graph associahedra i
 
 \noindent
 We first consider the~$\b{g}$-vector fan~$\Fan(\B_\circ)$ of a skew-symmetrizable cluster algebra of finite type, with respect to any initial exchange matrix of finite type~$\B_\circ$. We provide the following polytopal realizations of~$\Fan(\B_\circ)$:
-% We consider the set~$\meshes$ of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and we denote by~$\principalVariables$ the set of cluster variables.
-% Let~$\{x,x'\}\in\meshes$, and let~$X,X'$ be two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$.
-% For any~$y\in\principalVariables$, define~$\alpha_{x,x',y}$ to be~$|b_{xy}|$ if~$y\in X\cap X'$ and 0 otherwise.
-% By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
 
 \newtheorem*{thm:allPolytopalRealizationsCA}{\cref{thm:allPolytopalRealizationsCA}}
 \begin{thm:allPolytopalRealizationsCA}
@@ -451,7 +447,7 @@ Moreover, the polytopes~$R_\b{\ell}(\B_\circ)$ for~$\b{\ell} \in \R_{>0}^{\meshe
 \end{thm:allPolytopalRealizationsCA}
 
 Here, $\meshes$ represents the set of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and~$\principalVariables$ the set of cluster variables.
-For $\{x,x'\} \in \meshes$ and $y \in \principalVariables$, the coefficient $\alpha_{x,x',y}$ is defined as follows: $\alpha_{x,x',y}$ is set to be~$|b_{xy}|$ if~$y\in X\cap X'$ and $0$ otherwise, where~$X,X'$ are any two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$. By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
+For $\{x,x'\} \in \meshes$ and $y \in \principalVariables$, the coefficient $\alpha_{x,x',y}$ is defined as follows: $\alpha_{x,x',y}$ is set to be~$|b_{xy}|$ if~$y\in X\cap X'$ and $0$ otherwise, where~$X,X'$ are any two clusters such that~$X \ssm \{x\} = X' \ssm \{x'\}$. By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
 
 \medskip
 
@@ -480,10 +476,10 @@ We note that the~$\tau$-tilting theory of gentle algebras is the algebraic count
 Let~$\quiver = (Q,I)$ be a gentle bound quiver, and let~$\Fan(\quiver)$ be the fan of its~$\b{g}$-vectors (\cref{subsubsec:nonkissingComplex}), also called its non-kissing fan.
 We prove \cref{prop:exchangeablePairsNKC} (ii) in \cref{sec:Kbproj}, by making use of representation theory, and state here the following consequence.
 
-\newtheorem*{corollary: uerp gentle}{\cref{corollary: uerp gentle}}
-\begin{corollary: uerp gentle}
+\newtheorem*{prop:exchangeablePairsNKC}{\cref{prop:exchangeablePairsNKC}\,(iv)}
+\begin{prop:exchangeablePairsNKC}
 The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.
-\end{corollary: uerp gentle}
+\end{prop:exchangeablePairsNKC}
 
 \cref{subsubsec:simplicialTypeConeNKC} is dedicated to giving a purely combinatorial proof of the following statement.
 
@@ -495,7 +491,7 @@ Then the type cone~$\typeCone(\Fan(\quiver))$ is simplicial.
 
 An alternative algebraic proof, using the main result of \cref{sec:extricats}, is given in \cref{sec:Kbproj}.
 
-Combining these pieces, we make use of our type cone approach to deduce the following statement.
+Combining these pieces, we make use of our type cone approach to deduce the following.
 
 \newtheorem*{coro:allPolytopalRealizationsNKC}{\cref{coro:allPolytopalRealizationsNKC}}
 \begin{coro:allPolytopalRealizationsNKC}
@@ -512,10 +508,11 @@ Here, $\strings$ is the set of all strings of~$\quiver$, and~$\walks$ the set of
 \para{Graphical nested complexes}
 (\cref{subsec:typeConeGA})
 
-Even though graph associahedra do not have simplicial type cones except for the path (\cref{prop:simplicialnestedfan}), we provide a non-redundant characterization of the type cones of all graphical nested fans:
+\noindent
+Even though graph associahedra do not have simplicial type cones except for the path (\cref{prop:simplicialnestedfan}), we provide the following non-redundant characterization of the type cones of all graphical nested fans.
 
-\newtheorem*{cor:typeconenestedfan}{\cref{cor:typeconenestedfan}}
-\begin{cor:typeconenestedfan}
+\newtheorem*{coro:typeconenestedfan}{\cref{coro:typeconenestedfan}}
+\begin{coro:typeconenestedfan}
 Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$. 
 Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 \[
@@ -523,12 +520,13 @@ Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\
 \]
 if and only if~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and
  $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
-\end{cor:typeconenestedfan}
+\end{coro:typeconenestedfan}
 
 \para{Cluster categories}
 (\cref{sec:clusterCategories})
 
-In \cref{sec:clusterCategories}, we prove an analogue for cluster categories of a result of M. Auslander for module categories of Artin algebras~\cite{Auslander1984}. 
+\noindent
+We prove an analogue for cluster categories of a result of M. Auslander for module categories of Artin algebras~\cite{Auslander1984}. 
 We are mainly motivated by the fact that it has for a consequence that the type cones of the cluster fans of finite type are simplicial.
 However, this result is of independent interest and sheds new lights on the Grothendieck groups of cluster categories.
 
@@ -545,7 +543,7 @@ For any objects~$X,Y\in\cat$, we write~$\langle X, Y \rangle$ for~$\dim_\field\H
 
 \newtheorem*{thm:relations-g-vecteurs}{\cref{thm:relations-g-vecteurs}}
 \begin{thm:relations-g-vecteurs}
-The set~$L_\cat \eqdef \set{\ell_X}{X \in \ind(\cat) \setminus \add(\susp T)}$ is a basis of the kernel of~$\b{g}$ and, for any~$x \in \ker(\b{g})$, we have:
+The set~$L_\cat \eqdef \set{\ell_X}{X \in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b{g}$ and, for any~$x \in \ker(\b{g})$, we have
 \[
 x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
@@ -554,7 +552,8 @@ x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\lang
 \para{Extriangulated categories}
 (\cref{sec:extricats})
 
-In \cref{sec:extricats} we prove a more general version of \cref{thm:relations-g-vecteurs} that not only applies to cluster fans, but also to non-kissing fans.
+\noindent
+We prove a more general version of \cref{thm:relations-g-vecteurs} that not only applies to cluster fans, but also to non-kissing fans.
 Once more, our main motivation is to prove that the type cone of the non-kissing fan of a brick and 2-acyclic gentle algebra is simplicial, but the results are of independent interest, and might be useful for studying the type cones of other families of simplicial fans.
 
 Let~$\cat$ be an extriangulated category (\cref{sec:recollections extricats}) with a fixed projective object~$T$ such that the morphism~$T\to 0$ is an inflation and, for each~$X\in\cat$, there is an extriangle~$T_1^X\infl T_0^X\defl X\overset{\delta_X}{\dashrightarrow}$.
@@ -578,8 +577,8 @@ Then, with notations analogous to those used for cluster categories above, we ob
 
 \newtheorem*{thm:extricats}{\cref{thm:extricats}}
 \begin{thm:extricats}
-The extriangulated category~$\cat$ has only finitely many ismorphism classes of indecomposable objects if and only if the set~$L_\cat$ generates the kernel of the canonical projection~$\b{g}:\Ksp(\cat)\to\kzero{\cat}$.
-In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g})$ decomposes as
+The extriangulated category~$\cat$ has only finitely many ismorphism classes of indecomposable objects if and only if the set~$L_\cat$ generates the kernel of the canonical projection ${\b{g}:\Ksp(\cat)\to\kzero{\cat}}$.
+In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g})$ decomposes~as
 \[
  x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
@@ -2030,23 +2029,11 @@ Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then:
 \[
 \gvector{\omega} + \gvector{\omega'} = \gvector{\mu} + \gvector{\nu}.
 \]
-% In other words, the non-kissing fan of~$\quiver$ has the unique exchange relation property.
+\item The non-kissing fan of~$\quiver$ has the unique exchange relation property.
 \item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\lambda}$ for~$\lambda \in F \cap F'$ is the multiplicity vector~$\multiplicityVector_{\sigma}$ of the vertices of the substring~$\sigma$ of~$\omega$ and~$\omega'$.
 \end{enumerate}
-%
 
-
-\begin{proof}
-Points~(i), (iii) and~(iv) were shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}. We postpone the proof of point~(ii) until \cref{coro:exchangeablePairsNKC}.
-\end{proof}
-
-As a consequence of points $(ii)$ and $(iii)$ in \cref{prop:exchangeablePairsNKC}, we obtain the:
-\begin{corollary}
-\label{corollary: uerp gentle}
-For any non-kissing finite gentle bound quiver~$\quiver$, the non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.
-\end{corollary}
-
-\begin{figure}[h]
+\begin{figure}[b]
 	\capstart
 	\centerline{\includegraphics[scale=1]{flip}}
 	\caption{A schematic representation of a flip. Illustration from~\cite{PaluPilaudPlamondon-nonkissing}.}
@@ -2054,9 +2041,13 @@ For any non-kissing finite gentle bound quiver~$\quiver$, the non-kissing fan~$\
 \end{figure}
 \end{proposition}
 
+\begin{proof}
+Points~(i), (iii) and~(v) were shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}. We postpone the proof of point~(ii) until \cref{coro:exchangeablePairsNKC}. Finally, point~(iv) follows directly from points~(ii) and~(iii).
+\end{proof}
+
 \begin{remark}
 \label{rem:exchangeablePairsNKC}
-\enlargethispage{.3cm}
+\enlargethispage{.7cm}
 In view of \cref{prop:exchangeablePairsNKC}, it is tempting to look for a characterization of the exchangeable pairs~$\omega, \omega'$ using the kisses between~$\omega$ and~$\omega'$.
 This question was discussed in~\cite[Sect.~9]{BrustleDouvilleMousavandThomasYildirim}.
 However, as illustrated for instance in the non-kissing complex of \cref{fig:nonkissingFans}\,(right),
@@ -2813,7 +2804,7 @@ Let~$\tube, \tube'$ be two tubes of~$\graphG$. Then
 \[
 \gvector{\tube} + \gvector{\tube'} = \gvector{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \gvector{\tube[s]}.
 \]
-In other words, the nested fan of~$\graphG$ has the unique exchange relation property.
+\item The nested fan of~$\graphG$ has the unique exchange relation property.
 \item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\tube[s]}$ for~$\tube[s] \in \tubing \cap \tubing'$ is~$\b{e}_v - \b{e}_{v'}$.
 \end{enumerate}
 \end{proposition}
@@ -2823,7 +2814,8 @@ Points~(i) and~(ii) was proved in~\cite{MannevillePilaud-compatibilityFans}. Poi
 \[
 \sum_{v \in \tube} \b{e}_v + \sum_{v \in \tube'} \b{e}_v = \sum_{v \in \tube \cup \tube'} \b{e}_v + \sum_{v \in \tube \cap \tube'} \b{e}_v = \sum_{v \in \tube \cup \tube'} \b{e}_v + \sum_{\substack{\tube[s] \in \connectedComponents(\tube \cap \tube') \\ v \in \tube[s]}} \b{e}_v.
 \]
-Finally for~(iv), any tube~$\tube[s] \in \tubing \cap \tubing'$ that contains~$v$ or~$v'$ actually contains both (to be compatible with~$\tube$ and~$\tube'$). Therefore, $\gvector{\tube[s]}$ is orthogonal to~$\b{e}_v - \b{e}_{v'}$ for any tube~$\tube[s] \in \tubing \cap \tubing'$.
+Point~(iv) is obtained by combining~(ii) and~(iii).
+Finally for~(v), any tube~$\tube[s] \in \tubing \cap \tubing'$ that contains~$v$ or~$v'$ actually contains both (to be compatible with~$\tube$ and~$\tube'$). Therefore, $\gvector{\tube[s]}$ is orthogonal to~$\b{e}_v - \b{e}_{v'}$ for any tube~$\tube[s] \in \tubing \cap \tubing'$.
 \end{proof}
 
 %%%
@@ -3158,9 +3150,11 @@ The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
 The extremal exchangeable pairs for the nested fan of~$\graphG$ are precisely the pairs of tubes~${\tube[s] \ssm \{v'\}}$ and~${\tube[s] \ssm \{v\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$~of~$\tube[s]$.
 \end{corollary}
 
+\enlargethispage{-.1cm}
 We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan.
 
-\begin{corollary}\label{cor:typeconenestedfan}
+\begin{corollary}
+\label{coro:typeconenestedfan}
 Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$. 
 Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 \[
