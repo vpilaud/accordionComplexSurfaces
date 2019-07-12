@@ -424,17 +424,17 @@ We give a brief overview of our main results and the structure of the article. I
 
 \noindent
 Let~$\Fan$ be an essential complete polyhedral fan in~$\R^n$ (all definitions are recalled in~\cref{ssec:polytopes and fans}).
-The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen~\cite{McMullen-typeCone}, is a polyhedral cone that parametrizes the set of all possible polytopal realizations of~$\Fan$. These realizations can be described explicitly as affine sections of the nonnegative orthant~$\R^N_{\geq0}$, where~$N$ is the number of rays of~$\Fan$ (\cref{prop:alternativePolytopalRealization}).  
+The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen~\cite{McMullen-typeCone}, is a polyhedral cone that parametrizes the set of all possible polytopal realizations of~$\Fan$. These realizations can be described explicitly as affine sections of the non-negative orthant~$\R^N_{\geq0}$, where~$N$ is the number of rays of~$\Fan$ (\cref{prop:alternativePolytopalRealization}).  
 If $\Fan$ is a simplicial fan and has the unique exchange relation property (\cref{def:uerp}), then its type cone is easier to describe and study.
 And if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimTypeCone}), then all possible polytopal realizations of~$\Fan$ can be described explicitely in terms of~$N-n$ positive real parameters (\cref{coro:simplicialTypeCone}).
-This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: The~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra) in~\cref{subsec:typeConeCA}, and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra) in~\cref{subsec:typeConeNKC}.
+This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: the~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra) in~\cref{subsec:typeConeCA}, and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra) in~\cref{subsec:typeConeNKC}.
 We also completely describe the facets of the type cone for graph associahedra in~\cref{subsec:typeConeGA}, to which our strategy does not apply, as only the classical associahedron has a simplicial type cone.
 
 \para{Cluster algebras of finite type}
 (\cref{subsec:typeConeCA})
 
 \noindent
-We first consider the~$\b{g}$-vector fan~$\Fan(\B_\circ)$ of a skew-symmetrizable cluster algebra of finite type, with respect to any initial exchange matrix of finite type~$\B_\circ$. We provide the following polytopal realizations of~$\Fan(\B_\circ)$:
+We first consider the~$\b{g}$-vector fan~$\Fan(\B_\circ)$ of a skew-symmetrizable cluster algebra of finite type, with respect to any initial exchange matrix~$\B_\circ$ (acyclic or not). We provide the following polytopal realizations of~$\Fan(\B_\circ)$.
 
 \newtheorem*{thm:allPolytopalRealizationsCA}{\cref{thm:allPolytopalRealizationsCA}}
 \begin{thm:allPolytopalRealizationsCA}
@@ -446,8 +446,8 @@ is a generalized associahedron, whose normal fan is the cluster fan~$\gvectorFan
 Moreover, the polytopes~$R_\b{\ell}(\B_\circ)$ for~$\b{\ell} \in \R_{>0}^{\meshes}$ describe all polytopal realizations of~$\gvectorFan[\B_\circ]$.
 \end{thm:allPolytopalRealizationsCA}
 
-Here, $\meshes$ represents the set of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and~$\principalVariables$ the set of cluster variables.
-For $\{x,x'\} \in \meshes$ and $y \in \principalVariables$, the coefficient $\alpha_{x,x',y}$ is defined as follows: $\alpha_{x,x',y}$ is set to be~$|b_{xy}|$ if~$y\in X\cap X'$ and $0$ otherwise, where~$X,X'$ are any two clusters such that~$X \ssm \{x\} = X' \ssm \{x'\}$. By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
+Here, $\meshes$ denotes the set of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and~$\principalVariables$ the set of cluster variables.
+For $\{x,x'\} \in \meshes$ and $y \in \principalVariables$, the coefficient $\alpha_{x,x',y}$ is defined as follows: $\alpha_{x,x',y}$ is set to be~$|b_{xy}|$ if~$y\in X\cap X'$ and $0$ otherwise, where~$X,X'$ are any two clusters such that~$X \ssm \{x\} = X' \ssm \{x'\}$. By the unique exchange relation property, the coefficients~$\alpha_{x,x',y}$ do not depend on the specific choice of clusters~$X,X'$.
 
 \medskip
 
@@ -462,10 +462,10 @@ And the second step follows from our main result in \cref{sec:clusterCategories}
 
 \newtheorem*{coro:simplicialTypeConeCA}{\cref{coro:simplicialTypeConeCA}}
 \begin{coro:simplicialTypeConeCA}
-The type cone~$\typeCone(\Fan(\B_\circ))$ is simplicial.
+The type cone~$\typeCone \big( \Fan(\B_\circ) \big)$ is simplicial.
 \end{coro:simplicialTypeConeCA}
 
-\para{Gentle algebras, non-kissing complex, generalized accordiohedra}
+\para{Gentle algebras, non-kissing complexes, and generalized accordiohedra}
 (\cref{subsec:typeConeNKC})
 
 \noindent
@@ -473,37 +473,38 @@ The same strategy is applied to a class of finite dimensional algebras, called g
 We identify two conditions, called brick and 2-acyclicity (\cref{def:brick2acyclic}), that enable us to make use of the type cone approach.
 We note that the~$\tau$-tilting theory of gentle algebras is the algebraic counterpart of the combinatorics of accordions on surfaces~\cite{PaluPilaudPlamondon-nonkissing,BrustleDouvilleMousavandThomasYildirim,PaluPilaudPlamondon-surfaces}.
 
-Let~$\quiver = (Q,I)$ be a gentle bound quiver, and let~$\Fan(\quiver)$ be the fan of its~$\b{g}$-vectors (\cref{subsubsec:nonkissingComplex}), also called its non-kissing fan.
-We prove \cref{prop:exchangeablePairsNKC} (ii) in \cref{sec:Kbproj}, by making use of representation theory, and state here the following consequence.
+Let~$\quiver = (Q,I)$ be a gentle bound quiver, and let~$\Fan(\quiver)$ be the fan of its~$\b{g}$-vectors (\cref{subsubsec:nonkissingComplex}), also called non-kissing fan.
+We provide the following polytopal realizations of~$\Fan(\quiver)$.
 
-\newtheorem*{prop:exchangeablePairsNKC}{\cref{prop:exchangeablePairsNKC}\,(iv)}
-\begin{prop:exchangeablePairsNKC}
-The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.
-\end{prop:exchangeablePairsNKC}
-
-\cref{subsubsec:simplicialTypeConeNKC} is dedicated to giving a purely combinatorial proof of the following statement.
-
-\newtheorem*{coro:simplicialTypeConeNKC}{\cref{coro:simplicialTypeConeNKC}}
-\begin{coro:simplicialTypeConeNKC}
-Assume that the gentle bound quiver~$\quiver$ is brick and 2-acyclic.
-Then the type cone~$\typeCone(\Fan(\quiver))$ is simplicial.
-\end{coro:simplicialTypeConeNKC}
-
-An alternative algebraic proof, using the main result of \cref{sec:extricats}, is given in \cref{sec:Kbproj}.
-
-Combining these pieces, we make use of our type cone approach to deduce the following.
-
-\newtheorem*{coro:allPolytopalRealizationsNKC}{\cref{coro:allPolytopalRealizationsNKC}}
-\begin{coro:allPolytopalRealizationsNKC}
+\newtheorem*{thm:allPolytopalRealizationsNKC}{\cref{thm:allPolytopalRealizationsNKC}}
+\begin{thm:allPolytopalRealizationsNKC}
 For any brick and $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
 \[
 R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any improper walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
 \]
 is a realization of the non-kissing fan~$\gvectorFan[\quiver]$.
 Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\strings}$ describe all polytopal realizations of~$\gvectorFan[\quiver]$.
-\end{coro:allPolytopalRealizationsNKC}
+\end{thm:allPolytopalRealizationsNKC}
 
-Here, $\strings$ is the set of all strings of~$\quiver$, and~$\walks$ the set of all walks on~$\quiver$ (i.e. of all strings of the blossoming bound quiver of~$\quiver$ that join two blossom vertices). If~$\sigma$ is a string of~$\quiver$, we make use of the evocative notations~$\cc{\sigma}, \hh{\sigma}, \hc{\sigma}, \ch{\sigma}$ for the walks obtained by adding, in the blossoming bound quiver, hooks or cohooks at each end of~$\sigma$.
+Here, $\strings$ is the set of all strings of~$\quiver$, and~$\walks$ the set of all walks on~$\quiver$ (\ie of all strings of the blossoming bound quiver of~$\quiver$ that join two blossom vertices).
+If~$\sigma$ is a string of~$\quiver$, we make use of the evocative notations~$\cc{\sigma}, \hh{\sigma}, \hc{\sigma}, \ch{\sigma}$ for the walks obtained by adding, in the blossoming bound quiver, hooks or cohooks at each end of~$\sigma$.
+
+\medskip
+
+The two main ingredients are similar to those for cluster algebras.
+As a first step, we obtain the following consequence of \cref{prop:exchangeablePairsNKC} (ii), which is proved in \cref{sec:Kbproj} by representation theory.
+
+\newtheorem*{prop:exchangeablePairsNKC}{\cref{prop:exchangeablePairsNKC}\,{\normalfont (iv)}}
+\begin{prop:exchangeablePairsNKC}
+The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.
+\end{prop:exchangeablePairsNKC}
+
+The second step is the following statement, for which we provide a purely combinatorial proof in \cref{subsubsec:simplicialTypeConeNKC} and an algebraic proof in \cref{sec:Kbproj}, using the main result of \cref{sec:extricats}.
+
+\newtheorem*{coro:simplicialTypeConeNKC}{\cref{coro:simplicialTypeConeNKC}}
+\begin{coro:simplicialTypeConeNKC}
+If the gentle bound quiver~$\quiver$ is brick and 2-acyclic, then the type cone~$\typeCone \big( \Fan(\quiver) \big)$ is simplicial.
+\end{coro:simplicialTypeConeNKC}
 
 \para{Graphical nested complexes}
 (\cref{subsec:typeConeGA})
@@ -532,11 +533,7 @@ However, this result is of independent interest and sheds new lights on the Grot
 
 Let~$\cat$ be a cluster category with finitely many isomorphism classes of indecomposable objects (see \cref{sec:setting} for the precise and more general setting in which the theorem is proven).
 Let~$\Ksp(\cat)$ be the split Grothendieck group of~$\cat$.
-Fix a cluster-tilting object~$T\in\cat$, and let~$K_0(\cat ; T)$ be the quotient of~$\Ksp(\cat)$ by the relations~$[X]+[Z]-[Y]$ for all triangles
-$
-X\xrightarrow{} Y \xrightarrow{} Z \xrightarrow{h} \susp X
-$
-with~$h \in (\susp T)$.
+Fix a cluster-tilting object~$T\in\cat$, and let $K_0(\cat ; T)$ be the quotient of~$\Ksp(\cat)$ by the relations~$[X]+[Z]-[Y]$ for all triangles ${X\xrightarrow{} Y \xrightarrow{} Z \xrightarrow{h} \susp X}$ with~$h \in (\susp T)$.
 Denote by~$\b{g}:\Ksp(\cat) \to K_0(\cat ; T)$ the canonical projection.
 For any indecomposable~$X\in\cat$, write~$\ell_X = [X]+[\susp^{-1}X]-[E]$, where~$E$ is the middle term of an almost split triangle starting at~$X$.
 For any objects~$X,Y\in\cat$, we write~$\langle X, Y \rangle$ for~$\dim_\field\Hom{\Lambda}(FX,FY)$, where~$\Lambda$ is the cluster-tilted algebra~$\End{\cat}(T)$ and~$F$ is the equivalence of categories~$\cat(T,-):\cat/(\susp T) \to \MOD \Lambda$.
@@ -573,7 +570,7 @@ The index induces an isomorphism of abelian groups from~$\kzero{\cat}$ to~$\kzer
 
 The previous two statements also hold when~$T$ is an additive subcategory rather than a mere object.
 Assume moreover that~$\cat$ is~$\field$-linear, Ext-finite, Krull--Schmidt and has Auslander--Reiten--Serre duality.
-Then, with notations analogous to those used for cluster categories above, we obtain the following:
+Then, with notations analogous to those used for cluster categories above, we obtain the following statement.
 
 \newtheorem*{thm:extricats}{\cref{thm:extricats}}
 \begin{thm:extricats}
@@ -2405,7 +2402,7 @@ A gentle quiver~$\quiver$ is called:
 
 Note that the family of brick and $2$-acyclic gentle quivers already contains a lot of relevant examples, including the gentle grid and dissection quivers discussed in \cref{subsubsec:nonkissingComplex}.
 In particular, the classical associahedron is the gentle associahedron of a brick and $2$-acyclic gentle quiver.
-We will see in \cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in \cref{coro:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
+We will see in \cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in \cref{thm:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
 
 For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~a \defn{cohook}) to~$\sigma$.
@@ -2547,7 +2544,7 @@ For any brick and $2$-acyclic gentle quiver~$\quiver$, the type cone~$\typeCone 
 Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeNKC,prop:extremalExchangeablePairsNKC}, we derive the following description of all polytopal realizations of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic quiver~$\quiver$.
 
 \begin{theorem}
-\label{coro:allPolytopalRealizationsNKC}
+\label{thm:allPolytopalRealizationsNKC}
 For any brick and $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
 \[
 R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any improper walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
@@ -2571,7 +2568,7 @@ Although not needed in the proof of \cref{prop:extremalExchangeablePairsNKC}, we
 
 \begin{remark}
 \label{exm:nonSimplicialTypeConeNKC}
-Note that \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and therefore \cref{coro:simplicialTypeConeNKC,coro:allPolytopalRealizationsNKC} fail when the quiver is not brick or $2$-cyclic.
+Note that \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and therefore \cref{coro:simplicialTypeConeNKC,thm:allPolytopalRealizationsNKC} fail when the quiver is not brick or $2$-cyclic.
 The smallest exemples are the $2$-cycles whose non-kissing fans are represented in \cref{fig:nonkissingFans2}.
 The left one is not brick: it has a non-distinguishable string and a self-kissing walk.
 The right one is brick but is $2$-cyclic.
@@ -3792,7 +3789,7 @@ As will be proven below (\cref{rem:equivalence Sigma} and \cref{coro:Sigma T inj
 
 
 \begin{notation}
-We let~$\Modt$ denote the category of additive functors from~$\tc$ to Abelian groups, and~$\modt$ its full subcategory of functors that are finitely presented, i.e. cokernels of morphisms between representable functors.
+We let~$\Modt$ denote the category of additive functors from~$\tc$ to Abelian groups, and~$\modt$ its full subcategory of functors that are finitely presented, \ie cokernels of morphisms between representable functors.
 We let~$F:\cat\to\Modt$ be the functor defined on objects by sending~$X\in\cat$ to~$\cat(-,X)|_\tc$.
 \end{notation}
 
@@ -4267,7 +4264,7 @@ The first extriangle is obtained by applying the dual of~\cite[Prop.~3.15]{Nakao
 \begin{remark}
 \label{rem:equivalence Sigma}
 For any~$T\in\tc$, fix an extriangle~$T\infl 0\defl\susp T\overset{\eps_T}{\dashrightarrow}$.
-As noticed in \cref{lem:shifts of extriangles}, for any morphism~$T\overset{f}{\to}T'$ in~$\tc$, there is a unique morphism~$\susp f\in\cat(\susp T,\susp T')$ such that~${f_\ast\eps_T=(\susp f)^\ast\eps_{T'}}$ (i.e. such that~$(f,\susp f)$ is a morphism from~$\eps_T$ to~$\eps_{T'}$), as illustrated below:
+As noticed in \cref{lem:shifts of extriangles}, for any morphism~$T\overset{f}{\to}T'$ in~$\tc$, there is a unique morphism~$\susp f\in\cat(\susp T,\susp T')$ such that~${f_\ast\eps_T=(\susp f)^\ast\eps_{T'}}$ (\ie such that~$(f,\susp f)$ is a morphism from~$\eps_T$ to~$\eps_{T'}$), as illustrated below:
 \[
 \xy
 (-12,6)*+{T}="0";
@@ -4583,7 +4580,7 @@ The definition given above is only equivalent to the usual definition of a silti
 
 \begin{definition}
 \label{def:mutation conflation}
-A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$, with~$X$ and~$Y$ indecomposable, such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
+A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$, with~$X$ and~$Y$ indecomposable, such that the inflation $X\infl E$ is a left ($\add R$)-approximation (\ie any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
 \end{definition}
 
 \begin{remark}
@@ -4907,7 +4904,7 @@ Then, for any indecomposable~$\Lambda$-module~$M$ we have~$\Hom{\Lambda}(M,\tau^
 \begin{proof}
 Let~$\Lambda=\field Q / I$ be any gentle algebra of finite representation type, and let~$M$ be an indecomposable~$\Lambda$-module.
 Write~$\sigma$ for the string corresponding to~$\tau M$.
-Then the walks (i.e. the maximal strings in the blossoming bound quiver of~$(Q,I)$) associated with~$M$ and~$\tau M$ are respectively~$\omega_M = \hh\sigma = p^{-1}\alpha\sigma\beta^{-1}q$ and~$\omega_{\tau M}=\cc\sigma=p'\alpha'^{-1}\sigma\beta'q'^{-1}$, where~$p,p',q,q'$ are paths and~$\alpha,\alpha',\beta,\beta'$ are arrows in the blossoming quiver.
+Then the walks (\ie the maximal strings in the blossoming bound quiver of~$(Q,I)$) associated with~$M$ and~$\tau M$ are respectively~$\omega_M = \hh\sigma = p^{-1}\alpha\sigma\beta^{-1}q$ and~$\omega_{\tau M}=\cc\sigma=p'\alpha'^{-1}\sigma\beta'q'^{-1}$, where~$p,p',q,q'$ are paths and~$\alpha,\alpha',\beta,\beta'$ are arrows in the blossoming quiver.
 
 
 Assume that~$\Hom{\Lambda}(M,\tau^2 M)\neq0$.
@@ -4925,7 +4922,7 @@ Because the target of~$\alpha$ is the source of~$\alpha'$ (and the target of~$\b
 \begin{proof}[Proof of \cref{coro:simplicialTypeConeNKCalgebraic}]
 The unique exchange relation property follows from \cref{prop:exchange conflations are unique} (2).
 By \cref{lem:characterization Gentle 2-acyclic}, the assumptions of \cref{thm:brick-algebra-condition} are satisfied.
-We can thus apply \cref{thm:extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
+We can thus apply \cref{thm:extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (\ie the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
 Hence the type cone of the support~$\tau$-tilting fan is simplicial.
 \end{proof}
 
