@@ -413,11 +413,15 @@ Is it possible to similarly understand the complete realization space of the clu
 \medskip
 To conclude, it is our hope that the present paper will participate to the interactions between combinatorial geometry, representation theory, and mathematical physics; in particular through further developments of the geometric approach to scattering amplitudes that has flourished during the last years~\cite{ArkaniHamedTrnka-Amplituhedron,ArkaniHamedBourjailyCachazoGoncharovPostnikovTrnka-GrassmannianGeometryScatteringAmplitudes}. The kinematic associahedron from~\cite{ArkaniHamedBaiHeYan} is one of the most recent ``positive geometries''~\cite{ArkaniHamedBaiLam-PositiveGeometries} that has emerged in the study of scattering amplitudes.
 
-% \section*{Main results and logical dependencies}
-\subsection*{Structure of the paper: main results and logical dependencies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Structure of the paper: main results and logical dependencies}
 
 We give a brief overview of our main results and the structure of the article. In particular, some of the geometric realizations in~\cref{part:geometry} depend on algebraic results whose proof is delayed until~\cref{part:algebra}. The goal of this section is to clarify their logical dependencies. 
 % Their logical dependencies are recalled in a schematic diagram at the end of this section.
+
+\para{Type cone approach}
+(\cref{sec:typeCone})
 
 Let~$\Fan$ be an essential complete polyhedral fan in~$\R^n$ (all definitions are recalled in~\cref{ssec:polytopes and fans}).
 The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen~\cite{McMullen-typeCone}, is a polyhedral cone that parametrizes the set of all possible polytopal realizations of~$\Fan$. These realizations can be described explicitly as affine sections of the nonnegative orthant~$\R^N_{\geq0}$, where~$N$ is the number of rays of~$\Fan$ (\cref{prop:alternativePolytopalRealization}).  
@@ -426,110 +430,92 @@ And if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimType
 This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: The~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra) in~\cref{subsec:typeConeCA}, and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra) in~\cref{subsec:typeConeNKC}.
 We also completely describe the facets of the type cone for graph associahedra in~\cref{subsec:typeConeGA}, to which our strategy does not apply, as only the classical associahedron has a simplicial type cone.
 
-\medskip
+\para{Cluster algebras of finite type}
+(\cref{subsec:typeConeCA})
 
-\noindent {\bf Cluster algebras of finite type} (\cref{subsec:typeConeCA})
-
-\medskip
-
+\noindent
 We first consider the~$\b{g}$-vector fan~$\Fan(\B_\circ)$ of a skew-symmetrizable cluster algebra of finite type, with respect to any initial exchange matrix of finite type~$\B_\circ$. We provide the following polytopal realizations of~$\Fan(\B_\circ)$:
 % We consider the set~$\meshes$ of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and we denote by~$\principalVariables$ the set of cluster variables.
 % Let~$\{x,x'\}\in\meshes$, and let~$X,X'$ be two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$.
 % For any~$y\in\principalVariables$, define~$\alpha_{x,x',y}$ to be~$|b_{xy}|$ if~$y\in X\cap X'$ and 0 otherwise.
 % By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
 
-\medskip
-
-\noindent \cref{thm:allPolytopalRealizationsCA}: 
-\emph{For any~$\b{\ell} \in \R_{>0}^{\meshes}$, the polytope
+\newtheorem*{thm:allPolytopalRealizationsCA}{\cref{thm:allPolytopalRealizationsCA}}
+\begin{thm:allPolytopalRealizationsCA}
+For any~$\b{\ell} \in \R_{>0}^{\meshes}$, the polytope
 \[
 R_{\b{\ell}}(\B_\circ) \eqdef \Bigset{\b{z} \in \R^{\principalVariables}}{\b{z} \ge 0 \text{ and } \b{z}_x + \b{z}_{x'} - \sum_{y \in \principalVariables} \alpha_{x,x',y} \, \b{z}_{y} = \b{\ell}_{\{x,x'\}} \text{ for all } \{x,x'\} \in \meshes}
 \]
 is a generalized associahedron, whose normal fan is the cluster fan~$\gvectorFan[\B_\circ]$.
-Moreover, the polytopes~$R_\b{\ell}(\B_\circ)$ for~$\b{\ell} \in \R_{>0}^{\meshes}$ describe all polytopal realizations of~$\gvectorFan[\B_\circ]$.}
-
-\medskip
+Moreover, the polytopes~$R_\b{\ell}(\B_\circ)$ for~$\b{\ell} \in \R_{>0}^{\meshes}$ describe all polytopal realizations of~$\gvectorFan[\B_\circ]$.
+\end{thm:allPolytopalRealizationsCA}
 
 Here, $\meshes$ represents the set of all pairs~$\{x,x'\}$ related by non-initial mesh mutations (\cref{def:meshMutation}), and~$\principalVariables$ the set of cluster variables.
 For $\{x,x'\} \in \meshes$ and $y \in \principalVariables$, the coefficient $\alpha_{x,x',y}$ is defined as follows: $\alpha_{x,x',y}$ is set to be~$|b_{xy}|$ if~$y\in X\cap X'$ and $0$ otherwise, where~$X,X'$ are any two clusters such that~$X\setminus\{x\}=X'\setminus\{x'\}$. By the unique exchange relation property, the~$\alpha_{x,x',y}$'s do not depend on the specific choice of the clusters~$X,X'$.
 
 \medskip
 
-Some crucial pieces of the proof of~\cref{thm:allPolytopalRealizationsCA} use cluster categories (2-Calabi--Yau triangulated categories) and are deferred to~\cref{sec:clusterCategories}. Namely, a reformulation of~\cite[Thm 7.5]{BuanMarshReinekeReitenTodorov}, proved in~\cref{sec:clusterCategories}, gives the first step towards applying our type cone strategy.
+Some crucial pieces of the proof of~\cref{thm:allPolytopalRealizationsCA} use cluster categories (2-Calabi--Yau triangulated categories) and are deferred to~\cref{sec:clusterCategories}. Namely, a reformulation of~\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov}, proved in~\cref{sec:clusterCategories}, gives the first step towards applying our type cone strategy.
 
-\medskip
-
-\noindent \cref{prop:uniqueExchangePropertyCA}: \emph{The cluster fan~$\Fan(\B_\circ)$ has the unique exchange relation property.}
-
-\medskip
+\newtheorem*{prop:uniqueExchangePropertyCA}{\cref{prop:uniqueExchangePropertyCA}}
+\begin{prop:uniqueExchangePropertyCA}
+The cluster fan~$\Fan(\B_\circ)$ has the unique exchange relation property.
+\end{prop:uniqueExchangePropertyCA}
 
 And the second step follows from our main result in \cref{sec:clusterCategories}, which makes use of representation theory of finite dimensional algebras and additive categorification of cluster algebras.
 
-\medskip
+\newtheorem*{coro:simplicialTypeConeCA}{\cref{coro:simplicialTypeConeCA}}
+\begin{coro:simplicialTypeConeCA}
+The type cone~$\typeCone(\Fan(\B_\circ))$ is simplicial.
+\end{coro:simplicialTypeConeCA}
 
-\noindent \cref{coro:simplicialTypeConeCA}: \emph{The type cone~$\typeCone(\Fan(\B_\circ))$ is simplicial.}
+\para{Gentle algebras, non-kissing complex, generalized accordiohedra}
+(\cref{subsec:typeConeNKC})
 
-\medskip
-\bigskip
-
-
-
-\noindent {\bf Gentle algebras, non-kissing complex, generalized accordiohedra} (\cref{subsec:typeConeNKC})
-
-\medskip
-
-
+\noindent
 The same strategy is applied to a class of finite dimensional algebras, called gentle algebras, whose representations are combinatorially well understood.
 We identify two conditions, called brick and 2-acyclicity (\cref{def:brick2acyclic}), that enable us to make use of the type cone approach.
 We note that the~$\tau$-tilting theory of gentle algebras is the algebraic counterpart of the combinatorics of accordions on surfaces~\cite{PaluPilaudPlamondon-nonkissing,BrustleDouvilleMousavandThomasYildirim,PaluPilaudPlamondon-surfaces}.
 
 Let~$\quiver = (Q,I)$ be a gentle bound quiver, and let~$\Fan(\quiver)$ be the fan of its~$\b{g}$-vectors (\cref{subsubsec:nonkissingComplex}), also called its non-kissing fan.
-We prove \cref{prop:exchangeablePairsNKC} (ii) in \cref{sect::Kbproj}, by making use of representation theory, and state here the following consequence:
+We prove \cref{prop:exchangeablePairsNKC} (ii) in \cref{sec:Kbproj}, by making use of representation theory, and state here the following consequence.
 
-\medskip
+\newtheorem*{corollary: uerp gentle}{\cref{corollary: uerp gentle}}
+\begin{corollary: uerp gentle}
+The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.
+\end{corollary: uerp gentle}
 
-\noindent \cref{corollary: uerp gentle}: \emph{The non-kissing fan~$\Fan(\quiver)$ has the unique exchange relation property.}
-\arnau{In the proof of \cref{prop:exchangeablePairsNKC} it says that the UERP follows from PPP17}\pg{Not for point (ii), which uses results of Section 4}
-\medskip
+\cref{subsubsec:simplicialTypeConeNKC} is dedicated to giving a purely combinatorial proof of the following statement.
 
-\cref{subsubsec:simplicialTypeConeNKC} is dedicated to giving a purely combinatorial proof of:
+\newtheorem*{coro:simplicialTypeConeNKC}{\cref{coro:simplicialTypeConeNKC}}
+\begin{coro:simplicialTypeConeNKC}
+Assume that the gentle bound quiver~$\quiver$ is brick and 2-acyclic.
+Then the type cone~$\typeCone(\Fan(\quiver))$ is simplicial.
+\end{coro:simplicialTypeConeNKC}
 
-\medskip
+An alternative algebraic proof, using the main result of \cref{sec:extricats}, is given in \cref{sec:Kbproj}.
 
-\noindent \cref{coro:simplicialTypeConeNKC}: \emph{Assume that the gentle bound quiver~$\quiver$ is brick and 2-acyclic.
-Then the type cone~$\typeCone(\Fan(\quiver))$ is simplicial.}
+Combining these pieces, we make use of our type cone approach to deduce the following statement.
 
-\medskip
-
-An alternative algebraic proof, using the main result of \cref{sec:extricats}, is given in \cref{sect::Kbproj}.
-
-
-Combining these pieces, we make use of our type cone approach to deduce:
-
-\medskip
-
-\noindent \cref{coro:allPolytopalRealizationsNKC}: \emph{For any brick and $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
+\newtheorem*{coro:allPolytopalRealizationsNKC}{\cref{coro:allPolytopalRealizationsNKC}}
+\begin{coro:allPolytopalRealizationsNKC}
+For any brick and $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
 \[
 R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any improper walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
 \]
 is a realization of the non-kissing fan~$\gvectorFan[\quiver]$.
-Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\strings}$ describe all polytopal realizations of~$\gvectorFan[\quiver]$.}
-
-\medskip
+Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\strings}$ describe all polytopal realizations of~$\gvectorFan[\quiver]$.
+\end{coro:allPolytopalRealizationsNKC}
 
 Here, $\strings$ is the set of all strings of~$\quiver$, and~$\walks$ the set of all walks on~$\quiver$ (i.e. of all strings of the blossoming bound quiver of~$\quiver$ that join two blossom vertices). If~$\sigma$ is a string of~$\quiver$, we make use of the evocative notations~$\cc{\sigma}, \hh{\sigma}, \hc{\sigma}, \ch{\sigma}$ for the walks obtained by adding, in the blossoming bound quiver, hooks or cohooks at each end of~$\sigma$.
 
-\bigskip
-
-\noindent {\bf Graphical nested complexes} (\cref{subsec:typeConeGA})
-
-\medskip
+\para{Graphical nested complexes}
+(\cref{subsec:typeConeGA})
 
 Even though graph associahedra do not have simplicial type cones except for the path (\cref{prop:simplicialnestedfan}), we provide a non-redundant characterization of the type cones of all graphical nested fans:
 
-\medskip
-
-\noindent \cref{cor:typeconenestedfan}:\emph{
+\newtheorem*{cor:typeconenestedfan}{\cref{cor:typeconenestedfan}}
+\begin{cor:typeconenestedfan}
 Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$. 
 Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
 \[
@@ -537,21 +523,16 @@ Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\
 \]
 if and only if~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and
  $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
-}
+\end{cor:typeconenestedfan}
 
-
-
-\bigskip
-
-\noindent {\bf Cluster categories}
-
-\medskip
+\para{Cluster categories}
+(\cref{sec:clusterCategories})
 
 In \cref{sec:clusterCategories}, we prove an analogue for cluster categories of a result of M. Auslander for module categories of Artin algebras~\cite{Auslander1984}. 
 We are mainly motivated by the fact that it has for a consequence that the type cones of the cluster fans of finite type are simplicial.
 However, this result is of independent interest and sheds new lights on the Grothendieck groups of cluster categories.
 
-Let~$\cat$ be a cluster category with finitely many isomorphism classes of indecomposable objects (see \cref{sect::setting} for the precise and more general setting in which the theorem is proven).
+Let~$\cat$ be a cluster category with finitely many isomorphism classes of indecomposable objects (see \cref{sec:setting} for the precise and more general setting in which the theorem is proven).
 Let~$\Ksp(\cat)$ be the split Grothendieck group of~$\cat$.
 Fix a cluster-tilting object~$T\in\cat$, and let~$K_0(\cat ; T)$ be the quotient of~$\Ksp(\cat)$ by the relations~$[X]+[Z]-[Y]$ for all triangles
 $
@@ -562,73 +543,55 @@ Denote by~$\b{g}:\Ksp(\cat) \to K_0(\cat ; T)$ the canonical projection.
 For any indecomposable~$X\in\cat$, write~$\ell_X = [X]+[\susp^{-1}X]-[E]$, where~$E$ is the middle term of an almost split triangle starting at~$X$.
 For any objects~$X,Y\in\cat$, we write~$\langle X, Y \rangle$ for~$\dim_\field\Hom{\Lambda}(FX,FY)$, where~$\Lambda$ is the cluster-tilted algebra~$\End{\cat}(T)$ and~$F$ is the equivalence of categories~$\cat(T,-):\cat/(\susp T) \to \MOD \Lambda$.
 
-\medskip
-
-\noindent Theorem (see \cref{theo::relations-g-vecteurs}): \emph{The set~$L_\cat=\{\ell_X\,|\, X\in\ind(\cat)\setminus\add(\susp T)\}$ is a basis of the kernel of~$\b{g}$ and, for any~$x\in\ker(\b{g})$, we have:}
+\newtheorem*{thm:relations-g-vecteurs}{\cref{thm:relations-g-vecteurs}}
+\begin{thm:relations-g-vecteurs}
+The set~$L_\cat \eqdef \set{\ell_X}{X \in \ind(\cat) \setminus \add(\susp T)}$ is a basis of the kernel of~$\b{g}$ and, for any~$x \in \ker(\b{g})$, we have:
 \[
 x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
+\end{thm:relations-g-vecteurs}
 
+\para{Extriangulated categories}
+(\cref{sec:extricats})
 
-\bigskip
-
-\noindent {\bf Extriangulated categories}
-
-\medskip
-
-In \cref{sec:extricats} we prove a more general version of \cref{theo::relations-g-vecteurs} that not only applies to cluster fans, but also to non-kissing fans.
+In \cref{sec:extricats} we prove a more general version of \cref{thm:relations-g-vecteurs} that not only applies to cluster fans, but also to non-kissing fans.
 Once more, our main motivation is to prove that the type cone of the non-kissing fan of a brick and 2-acyclic gentle algebra is simplicial, but the results are of independent interest, and might be useful for studying the type cones of other families of simplicial fans.
 
-Let~$\cat$ be an extriangulated category (\cref{sect::recollections extricats}) with a fixed projective object~$T$ such that the morphism~$T\to 0$ is an inflation and, for each~$X\in\cat$, there is an extriangle~$T_1^X\infl T_0^X\defl X\overset{\delta_X}{\dashrightarrow}$.
+Let~$\cat$ be an extriangulated category (\cref{sec:recollections extricats}) with a fixed projective object~$T$ such that the morphism~$T\to 0$ is an inflation and, for each~$X\in\cat$, there is an extriangle~$T_1^X\infl T_0^X\defl X\overset{\delta_X}{\dashrightarrow}$.
 Let~$\susp T$ be the cone of the inflation~$T\infl 0$.
 
-\medskip
-
-\noindent \cref{prop::KRextricat}: \emph{The functor~$\cat(T,-)$ induces an equivalence~$F:\cat/(\susp T) \to \MOD \End{\cat}(T)$.}
-
-\medskip
+\newtheorem*{prop:KRextricat}{\cref{prop:KRextricat}}
+\begin{prop:KRextricat}
+The functor~$\cat(T,-)$ induces an equivalence~$F:\cat/(\susp T) \to \MOD \End{\cat}(T)$.
+\end{prop:KRextricat}
 
 Our assumptions allow for a well-defined notion of index:~$\ind_T(X)=[T_0^X]-[T_1^X]\in\kzero{\add T}$.
 
-\medskip
-
-\noindent \cref{prop::index iso extricat}: \emph{The index induces an isomorphism of abelian groups from~$\kzero{\cat}$ to~$\kzero{\add T}$.}
-
-\medskip
+\newtheorem*{prop:index iso extricat}{\cref{prop:index iso extricat}}
+\begin{prop:index iso extricat}
+The index induces an isomorphism of abelian groups from~$\kzero{\cat}$ to~$\kzero{\add T}$.
+\end{prop:index iso extricat}
 
 The previous two statements also hold when~$T$ is an additive subcategory rather than a mere object.
 Assume moreover that~$\cat$ is~$\field$-linear, Ext-finite, Krull--Schmidt and has Auslander--Reiten--Serre duality.
 Then, with notations analogous to those used for cluster categories above, we obtain the following:
 
-\medskip
-
-\noindent \cref{theorem::extricats}: \emph{The extriangulated category~$\cat$ has only finitely many ismorphism classes of indecomposable objects if and only if the set~$L_\cat$ generates the kernel of the canonical projection~$\b{g}:\Ksp(\cat)\to\kzero{\cat}$.
-In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g})$ decomposes as}
+\newtheorem*{thm:extricats}{\cref{thm:extricats}}
+\begin{thm:extricats}
+The extriangulated category~$\cat$ has only finitely many ismorphism classes of indecomposable objects if and only if the set~$L_\cat$ generates the kernel of the canonical projection~$\b{g}:\Ksp(\cat)\to\kzero{\cat}$.
+In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g})$ decomposes as
 \[
  x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
+\end{thm:extricats}
 
-\bigskip
-
-\noindent {\bf Schematic diagram of logical dependencies:}
+\para{Schematic diagram of logical dependencies}
 
 \medskip
 
 \begin{center}
 \includegraphics[scale=.9]{Schema}
 \end{center}
-
-% Schematic diagram:
-% \yann{Vincent, Arnau, je suis certain que vous feriez bien mieux que moi. Puis-je vous demander de le représenter ?}
-% \arnau{As tu une idée en tête de comment le répresenter? Je trouve que ce que t'as écrit est très clair et je ne vois pas comment faire une schema qui le ameillore}
-% 
-% I.1 explains the type cone approach to the problem
-% 
-% This strategy is used in I.2.2 for cluster algebras and in I.2.3 for gentle algebras.
-% 
-% II.3 cluster categories (2-Calabi--Yau triangulated categories) is used in 1.2.2 for proving U.E.R.P. and simpliciality of the type cone.
-% 
-% II.4 generalises II.3, is used in I.2.3 for proving the U.E.R.P. and offers a different proof of simpliciality of the type cone .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1773,7 +1736,7 @@ We denote by~$\meshes$ the set of all pairs~$\{x,x'\}$ where~$x$ and~$x'$ are tw
 \end{definition}
 
 
-The following statement is proved in \cref{coro::number of positive meshes}.
+The following statement is proved in \cref{coro:number of positive meshes}.
 
 \begin{lemma}
 \label{lem:bijectionMeshMutations}
@@ -2074,7 +2037,7 @@ Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then:
 
 
 \begin{proof}
-Points~(i), (iii) and~(iv) were shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}. We postpone the proof of point~(ii) until \cref{coro::exchangeablePairsNKC}.
+Points~(i), (iii) and~(iv) were shown in~\cite[Prop.~2.33, Thm.~4.17 \& Prop~4.16]{PaluPilaudPlamondon-nonkissing}. We postpone the proof of point~(ii) until \cref{coro:exchangeablePairsNKC}.
 \end{proof}
 
 As a consequence of points $(ii)$ and $(iii)$ in \cref{prop:exchangeablePairsNKC}, we obtain the:
@@ -2495,7 +2458,7 @@ Therefore, $\omega$ and~$\omega'$ are exchangeable with distinguished substring~
 \end{proof}
 
 The following statement describes the type cone of the non-kissing fan of a brick and $2$-acyclic gentle quiver.
-We provide here an elementary combinatorial proof, a more general representation theoretic perspective is discussed in \cref{theo::brick-algebra-condition}.
+We provide here an elementary combinatorial proof, a more general representation theoretic perspective is discussed in \cref{thm:brick-algebra-condition}.
 
 \begin{proposition}
 \label{prop:extremalExchangeablePairsNKC}
@@ -2583,7 +2546,7 @@ Conversely, we know from \cref{rem:dimTypeCone} that there are at least~$|\prope
 \end{proof}
 
 Our next statement follows from the end of the previous proof.
-See also \cref{coro::simplicialTypeConeNKCalgebraic}.
+See also \cref{coro:simplicialTypeConeNKCalgebraic}.
 
 \begin{corollary}
 \label{coro:simplicialTypeConeNKC}
@@ -3272,12 +3235,12 @@ with equality if and only if all tubes of~$\graphG$ are paths, \ie if and only i
 \section{Relations for~$\b{g}$-vectors in finite type cluster algebras \\ via~$2$-Calabi--Yau triangulated categories}
 \label{sec:clusterCategories}
 
-In~\cite{Auslander1984}, M.~Auslander showed that the relations in the Grothendieck group of an Artin algebra are generated by the ones given by almost-split sequences precisely when the algebra is of finite representation type. Inspired by this result, we will show that a similar statement holds (see \cref{theo::relations-g-vecteurs}) for the~$\b{g}$-vectors (or indices) of objects in a~$2$-Calabi--Yau triangulated category. 
+In~\cite{Auslander1984}, M.~Auslander showed that the relations in the Grothendieck group of an Artin algebra are generated by the ones given by almost-split sequences precisely when the algebra is of finite representation type. Inspired by this result, we will show that a similar statement holds (see \cref{thm:relations-g-vecteurs}) for the~$\b{g}$-vectors (or indices) of objects in a~$2$-Calabi--Yau triangulated category. 
 
 %%%%%%%%%%%
 
 \subsection{Setting}
-\label{sect::setting}
+\label{sec:setting}
 
 Let~$\field$ be a field. Let~$\cat$ be a~$\field$-linear triangulated category with suspension functor~$\susp$. We fix a collection~$\ind(\cat)$ of representatives of isomorphism classes of indecomposable objects of~$\cat$. We will assume the following:
 \begin{itemize}
@@ -3299,14 +3262,14 @@ where~$\add(T)$ is the smallest additive full subcategory of~$\cat$ containing t
 %%%%%%%%%%%
 
 \subsection{Statement of the theorem}
-\label{subsect::Statement cluster cats}
+\label{subsec:Statement cluster cats}
 
 We need to introduce some notations before stating the main result of this section. Let~$\Lambda\eqdef \End{\cat}(T)$, and let~$F$ be the functor
 \[
 F = \cat(T,-): \cat \xrightarrow{} \MOD \Lambda.
 \]
 
-\begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]\label{prop::functor-F}
+\begin{proposition}[\cite{BuanMarshReiten, KellerReiten}]\label{prop:functor-F}
 
 The functor~$F$ induces an equivalence of~$\field$-linear categories
 \[
@@ -3340,7 +3303,7 @@ Any triangulated category admitting a Serre functor has almost-split triangles. 
 \end{proposition}
 
 \begin{definition}
-\label{defi::grothendieck-group}
+\label{def:grothendieck-group}
 \begin{enumerate}
 \item Let~$\Ksp(\cat)$ be the \defn{split Grothendieck group} of~$\cat$, that is, the free abelian group generated by symbols~$[X]$, where~$[X]$ denotes the isomorphism class of~$X$ in~$\cat$, modulo the following relations: for any objects~$Y$ and~$Z$, we let~$[Y\oplus Z] = [Y] + [Z]$. 
   
@@ -3352,10 +3315,10 @@ with~$h \in (\susp T)$. Denote by~$\b{g}:\Ksp(\cat) \to K_0(\cat ; T)$ the canon
 \end{enumerate}
 \end{definition}
 
-In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$\ind(\cat)$. Considering the modified group~$K_0(\cat ; T)$ instead of the usual Grothendieck group is motivated by \cref{sect::applications-g-vectors}, where we study relations between~$\b{g}$-vectors.
+In particular,~$\Ksp(\cat)$ is isomorphic to a free abelian group over the set~$\ind(\cat)$. Considering the modified group~$K_0(\cat ; T)$ instead of the usual Grothendieck group is motivated by \cref{sec:applications-g-vectors}, where we study relations between~$\b{g}$-vectors.
 
 \begin{definition}
-\label{defi::bilinear form}
+\label{def:bilinear form}
 For any two objects~$X$ and~$Y$ of~$\cat$, define
 \[
 \langle X, Y \rangle \eqdef \dim_{\field} \Hom{\Lambda}(FX,FY).
@@ -3367,7 +3330,7 @@ This defines a bilinear form
 \end{definition}
 
 \begin{notation}
-\label{notation::ell_X}
+\label{notation:ell_X}
 \begin{enumerate}
 \item For any indecomposable object~$X$ of~$\cat$, let
 \[
@@ -3392,8 +3355,8 @@ r_Y \eqdef [Y] + [\susp Y]  - [E'] \in \Ksp(\cat).
 We can finally state the main theorem of this section, which is an analogue of the main result of~\cite{Auslander1984}.
 
 \begin{theorem}
-\label{theo::relations-g-vecteurs}
-Let~$\cat$ be a category satisying the hypotheses of \cref{sect::setting}. Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
+\label{thm:relations-g-vecteurs}
+Let~$\cat$ be a category satisying the hypotheses of \cref{sec:setting}. Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
 \[
 L \eqdef \bigset{\ell_X}{X \in \ind(\cat) \ssm \add(\susp T)}
 \]
@@ -3405,12 +3368,12 @@ x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langl
 \end{theorem}
 
 \begin{corollary}
-\label{corollary::meshes positively generate cluster cats}
+\label{coro:meshes positively generate cluster cats}
 Assume that~$\ind(\cat)$ is finite. Let~$X\xrightarrow{} E \xrightarrow{} Y \xrightarrow{h} \susp X$ be a triangle with~$h \in (\susp T)$. Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b{g}$ is a non-negative linear combination of the~$\ell_A$, with~$A \in \ind(\cat)\ssm \add(\susp T)$.
 \end{corollary}
 
 \begin{proof}
-We know that~$x=\sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, [A] \rangle}{\langle \ell_A, [A] \rangle} \ell_A$; since~$\langle \ell_A, [A] \rangle$ is positive by \cref{lemm::bilinear-form}, we only need to show that each~$\langle x, [A] \rangle$ is non-negative. 
+We know that~$x=\sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, [A] \rangle}{\langle \ell_A, [A] \rangle} \ell_A$; since~$\langle \ell_A, [A] \rangle$ is positive by \cref{lem:bilinear-form}, we only need to show that each~$\langle x, [A] \rangle$ is non-negative. 
 The functor~$F=\cat(T,-)$ induces an exact sequence
 \[
 FX \to FE \to FY \to 0,
@@ -3424,9 +3387,9 @@ Therefore~$\langle x, [A] \rangle = \dim_{\field} \coker(f) \ge 0$.
 
 %%%%%%%%%%%
 
-\subsection{Proof of \cref{theo::relations-g-vecteurs}}
+\subsection{Proof of \cref{thm:relations-g-vecteurs}}
 
-Before we can prove \cref{theo::relations-g-vecteurs}, we need to recall the following results and definition from~\cite{DehyKeller,Palu}.
+Before we can prove \cref{thm:relations-g-vecteurs}, we need to recall the following results and definition from~\cite{DehyKeller,Palu}.
 
 \begin{proposition}
 Let~$X$ be an object of~$\cat$. Then there exists a triangle
@@ -3443,7 +3406,7 @@ The \defn{index} of an object~$X$ is the element
 \]
 \end{definition}
 
-The notion of index is very close to the definition of the map~$\b{g}:\Ksp(\cat)\to K_0(\cat ; T)$ of \cref{defi::grothendieck-group}. The link is given by the following result.
+The notion of index is very close to the definition of the map~$\b{g}:\Ksp(\cat)\to K_0(\cat ; T)$ of \cref{def:grothendieck-group}. The link is given by the following result.
 
 \begin{proposition}[\cite{Palu}]
 Let~$X\xrightarrow{} Y \xrightarrow{} Z \xrightarrow{h} \susp X$ be a triangle.
@@ -3455,14 +3418,14 @@ if and only if~$h \in (\susp T)$.
 \end{proposition}
 
 \begin{corollary}
-\label{coro::grothendieck-g-vectors}
+\label{coro:grothendieck-g-vectors}
 There is an isomorphism~$\phi:K_0(\cat ; T) \to \Ksp \big( \add(T) \big)$ such that~$\ind_T = \phi\circ \b{g}$. In particular,~$K_0(\cat ; T)$ is a free abelian group generated by the~$[T_i]$.
 \end{corollary}
 
-We can now begin the proof of \cref{theo::relations-g-vecteurs}
+We can now begin the proof of \cref{thm:relations-g-vecteurs}
 
 \begin{lemma}
-\label{lemm::bilinear-form-suspention-T}
+\label{lem:bilinear-form-suspention-T}
 If~$X$ or~$Y$ lie in~$\add(\susp T)$, then~$\langle X, Y \rangle = 0$.
 \end{lemma}
 
@@ -3471,7 +3434,7 @@ This is because~$F\susp T = 0$.
 \end{proof}
 
 \begin{lemma}
-\label{lemm::almost-split}
+\label{lem:almost-split}
 Let~$X\xrightarrow{} Y \xrightarrow{} \susp^{-1} X \xrightarrow{h} \susp X$ be an almost-split triangle. Then~$X\notin \add(\susp T)$ if and only if~$h \in (\susp T)$.
 \end{lemma}
 
@@ -3494,7 +3457,7 @@ The identity morphism of~$X$ is not in~$(\susp T)$, since~$X$ is not in~$\add(\s
 \end{proof}
 
 \begin{lemma}
-\label{lemm::bilinear-form}
+\label{lem:bilinear-form}
 Let~$A$ and~$B$ be two indecomposable objects of~$\cat$.
 \begin{enumerate}
 \item If~$A \notin \add(\susp T)$, then
@@ -3522,11 +3485,11 @@ We only prove the first assertion; the second one is proved dually. Assume that 
 \[
 A \xrightarrow{f} E \xrightarrow{} \susp^{-1} A \xrightarrow{h} \susp A
 \]
-be an almost-split triangle. By \cref{lemm::almost-split}, the morphism~$h$ is in~$(\susp T)$. Applying the functor ${F=\cat(T,-)}$, we get an exact sequence
+be an almost-split triangle. By \cref{lem:almost-split}, the morphism~$h$ is in~$(\susp T)$. Applying the functor ${F=\cat(T,-)}$, we get an exact sequence
 \[
 FA\xrightarrow{Ff} FE \xrightarrow{} F\susp^{-1} A \xrightarrow{} 0.
 \]
-Applying now the functors~$\cat(-, B)$ and~$\Hom{\Lambda}(-, FB)$, we get a commutative diagram whose rows are exact sequences and whose vertical maps are surjective by \cref{prop::functor-F}.
+Applying now the functors~$\cat(-, B)$ and~$\Hom{\Lambda}(-, FB)$, we get a commutative diagram whose rows are exact sequences and whose vertical maps are surjective by \cref{prop:functor-F}.
 \[
 \hspace{-.3cm}
 \xymatrix{ & \cat(\susp^{-1} A, B)\ar[r]\ar@{->>}[d] & \cat(E, B)\ar[r]^{f^*}\ar@{->>}[d] & \cat(A,B)\ar[r]\ar@{->>}[d] & \coker(f^*)\ar[r]\ar@{->>}[d] & 0 \\
@@ -3540,7 +3503,7 @@ If~$B\cong A$, then~$\coker(f^*)$ is isomorphic to the residue field~$\field_A$ 
 \end{proof}
 
 \begin{lemma}
-\label{lemm::coefficients}
+\label{lem:coefficients}
 Let~$x \in \Ksp(\cat)$, and write~\[x=\sum_{A \in \ind(\cat)} \lambda_A [A].\]  Then for any~$A\in\ind(\cat) \ssm \add(\susp T)$, we have that
 \[
 \lambda_A = \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle} = \frac{\langle x, r_A \rangle}{\langle A, r_A \rangle}.
@@ -3548,7 +3511,7 @@ Let~$x \in \Ksp(\cat)$, and write~\[x=\sum_{A \in \ind(\cat)} \lambda_A [A].\]  
 \end{lemma}
 
 \begin{proof}
-Let~$B \in \ind(\cat) \ssm \add(\susp T)$. Applying \cref{lemm::bilinear-form}, we get that
+Let~$B \in \ind(\cat) \ssm \add(\susp T)$. Applying \cref{lem:bilinear-form}, we get that
 \[
 \langle \ell_B, x \rangle = \langle \ell_B, \sum_{A \in \ind(\cat)} \lambda_A [A] \rangle = \sum_{A \in \ind{\cat}} \lambda_A \langle \ell_B, [A] \rangle = \lambda_B \langle \ell_B, [B] \rangle.
 \]
@@ -3556,7 +3519,7 @@ The equality~$\lambda_A = \frac{\langle x, r_A \rangle}{\langle A, r_A \rangle}$
 \end{proof}
 
 \begin{corollary}
-\label{lemm::test-susp-T}
+\label{lem:test-susp-T}
 Let~$x \in \Ksp(\cat)$. Then the following are equivalent.
 \begin{enumerate}
 \item $x \in \Ksp \big( \add(\susp T) \big)$;
@@ -3568,17 +3531,17 @@ Let~$x \in \Ksp(\cat)$. Then the following are equivalent.
 \begin{proof}
 We will only proove that (1) is equivalent to (2); the proof that (1) is equivalent to (3) is similar. 
  
-Assume that (2) holds. Then, by \cref{lemm::coefficients}, we have that
+Assume that (2) holds. Then, by \cref{lem:coefficients}, we have that
 \[
 x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle \ell_A, x \rangle}{\langle \ell_A, A \rangle}[A] + \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i] = \sum_{i=1}^n \lambda_{\susp T_i} [\susp T_i].
 \]
 Thus~$x \in \Ksp \big( \add(\susp T) \big)$, and (1) holds.
  
-Assume now that (1) holds. Then~$\langle x, [A]\rangle = 0$ for any~$A$ by \cref{lemm::bilinear-form-suspention-T}. Thus (2) holds.
+Assume now that (1) holds. Then~$\langle x, [A]\rangle = 0$ for any~$A$ by \cref{lem:bilinear-form-suspention-T}. Thus (2) holds.
 \end{proof}
 
 \begin{proposition}
-\label{prop::free-set}
+\label{prop:free-set}
 \begin{enumerate}
 \item The set~$\set{[\ell_A]}{A \in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i \in [n]}$ is free in~$\Ksp(\cat)$.
 \item The set~$\set{[r_A]}{A \in \ind(\cat) \ssm \add(\susp T)} \cup \set{[\susp T_i]}{i \in [n]}$ is free in~$\Ksp(\cat)$.
@@ -3590,7 +3553,7 @@ We only prove (1); the proof of (2) is similar. Assume that~
 \[
 x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \lambda_A \ell_A + \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
 \]
-Then~$\langle x, [A] \rangle = 0$ for all~$A\in\ind(\cat) \ssm \add(\susp T)$. But~$\langle x, [A] \rangle = \lambda_A$ by \cref{lemm::bilinear-form}. Thus~
+Then~$\langle x, [A] \rangle = 0$ for all~$A\in\ind(\cat) \ssm \add(\susp T)$. But~$\langle x, [A] \rangle = \lambda_A$ by \cref{lem:bilinear-form}. Thus~
 \[
 x = \sum_{i=1}^n \lambda_i [\susp T_i] = 0.
 \]
@@ -3605,7 +3568,7 @@ x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langl
 \end{proposition}
 
 \begin{proof}
-By \cref{prop::free-set}, the set is free. Let~$x \in \ker \b{g}$. Consider the element
+By \cref{prop:free-set}, the set is free. Let~$x \in \ker \b{g}$. Consider the element
 \[
 z = x- \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A.
 \]
@@ -3613,7 +3576,7 @@ Then for any~$B \in \ind{\cat}$, we have that
 \[
 \langle  z, [B] \rangle = \Big\langle x- \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langle \ell_A, A \rangle} \ell_A, [B] \Big\rangle = \langle x, [B] \rangle - \langle x, [B] \rangle = 0, 
 \]
-where the second equality is obtained by using \cref{lemm::bilinear-form}. By \cref{lemm::test-susp-T}, this implies that~$z \in \Ksp \big( \add(\susp T) \big)$. Since~$z \in \ker(\b{g})$ and since~$\b{g}$ is injective on~$\Ksp \big( \add (\susp T) \big)$ by \cref{coro::grothendieck-g-vectors}, we get that~$z=0$. This finishes the proof.
+where the second equality is obtained by using \cref{lem:bilinear-form}. By \cref{lem:test-susp-T}, this implies that~$z \in \Ksp \big( \add(\susp T) \big)$. Since~$z \in \ker(\b{g})$ and since~$\b{g}$ is injective on~$\Ksp \big( \add (\susp T) \big)$ by \cref{coro:grothendieck-g-vectors}, we get that~$z=0$. This finishes the proof.
 \end{proof}
 
 \begin{corollary}
@@ -3625,14 +3588,14 @@ is a basis of~$\Ksp(\cat)$.
 \end{corollary}
 
 \begin{proof}
-By \cref{prop::free-set}, the set is free. It suffices to prove that it generates~$\Ksp(\cat)$. Let~${x \in \Ksp(\cat)}$. Consider
+By \cref{prop:free-set}, the set is free. It suffices to prove that it generates~$\Ksp(\cat)$. Let~${x \in \Ksp(\cat)}$. Consider
 \[
 z = x - \sum_{A \in \ind{\cat}} \frac{\langle x, A \rangle}{\langle \ell_A, A\rangle} \ell_A.
 \]
-Then for any~$B \in \ind(\cat)$, we have that~$\langle z, [B] \rangle = 0$. By \cref{lemm::test-susp-T}, this implies that ${z \in \Ksp \big( \add(\susp T) \big)}$, and finishes the proof.
+Then for any~$B \in \ind(\cat)$, we have that~$\langle z, [B] \rangle = 0$. By \cref{lem:test-susp-T}, this implies that ${z \in \Ksp \big( \add(\susp T) \big)}$, and finishes the proof.
 \end{proof}
 
-All that remains is to prove the converse in the statement of \cref{theo::relations-g-vecteurs}.
+All that remains is to prove the converse in the statement of \cref{thm:relations-g-vecteurs}.
 
 \begin{proposition}
 Assume that the set~$\set{[\ell_A]}{A \in \ind(\cat) \ssm \add(\susp T)}$ is a basis of the kernel of~$\b{g}$. Then~$\ind(\cat)$ is finite.
@@ -3647,13 +3610,13 @@ Now,~$[T]+[\susp T]$ is in the kernel of~$\b{g}$, but~$\langle [T] + [\susp T], 
 %%%%%%%%%%%
 
 \subsection{Application to~$\b{g}$-vectors of cluster algebras of finite type}
-\label{sect::applications-g-vectors}
+\label{sec:applications-g-vectors}
 
-In this section, we apply the results of \cref{subsect::Statement cluster cats} in order to prove \cref{prop:uniqueExchangePropertyCA,prop:meshMutations} of \cref{subsec:typeConeCA}.
+In this section, we apply the results of \cref{subsec:Statement cluster cats} in order to prove \cref{prop:uniqueExchangePropertyCA,prop:meshMutations} of \cref{subsec:typeConeCA}.
 
 We first recall the results on categorification of cluster algebras that we will use in the proofs.
 \begin{theorem}
-\label{thm::categorification}
+\label{thm:categorification}
 Let~$\cat$ be the cluster category of a valued quiver of Dynkin type~$A,B,C,D,E,F$ or~$G$. Let~$T$ be a basic cluster-tilting object in~$\cat$, and let~$Q$ be the valued Gabriel quiver of~$\End{\cat}(T)$. Then there is a bijection
 \[
 \CC: \ind(\cat) \xrightarrow{} \{\textrm{cluster variables in the cluster algebra of~$Q$}\},
@@ -3670,7 +3633,7 @@ expressing cluster variables as Laurent polynomials in the variables of the clus
 The following definition is a cluster-tilting version of the positive mutation for~$\tau$-tilting modules, or for~$2$-term silting complexes.
 
 \begin{definition}
-\label{defn::positive mutation}
+\label{def:positive mutation}
 Let~$x\in\cluster$ be a cluster variable in a given cluster and let~$x' \in \cluster'$ be obtained by mutating~$\cluster$ at~$x$.
 The pair~$(x,x')$ is said to be a \defn{positive mutation} with respect to some initial cluster~$\cluster_\circ$ if there are~$X,Y\in \ind(\cat)$ such that~$\CC(X)=x$,~$\CC(Y)=x'$,~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$ and, for any non-split triangle
 \[
@@ -3683,17 +3646,17 @@ The mutation is a \defn{mesh mutation} if the triangle can be chosen to be an al
 
 
 \begin{lemma}
-\label{lemm::exaclty one mesh mutation}
+\label{lem:exaclty one mesh mutation}
 For every non-initial cluster variable, there exists precisely one pair~$(x,x')$ such that there exists a positive mesh mutation changing~$x$ into~$x'$.
 \end{lemma}
 
 \begin{proof}
-Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starting in~$X$, where~$X$ is the object such that~$\phi(X) = x$.  Thus there is precisely one mesh relation By \cref{lemm::almost-split}, the pair~$(x,x')$ is a positive mutation if and only~$X\notin \add(\susp T)$, that is, if and only if~$x$ is not an initial variable.
+Up to isomorphism, there is precisely one almost-split triangle of~$\cat$ starting in~$X$, where~$X$ is the object such that~$\phi(X) = x$.  Thus there is precisely one mesh relation By \cref{lem:almost-split}, the pair~$(x,x')$ is a positive mutation if and only~$X\notin \add(\susp T)$, that is, if and only if~$x$ is not an initial variable.
 \end{proof}
 
 \begin{lemma}
-\label{lemm::mesh mutations and meshes}
-The set of positive mesh mutations~$(x,x')$ of \cref{defn::positive mutation} is in bijection with the set~$\meshes$ of \cref{defn::positive mutation}.
+\label{lem:mesh mutations and meshes}
+The set of positive mesh mutations~$(x,x')$ of \cref{def:positive mutation} is in bijection with the set~$\meshes$ of \cref{def:positive mutation}.
 \end{lemma}
 
 \begin{proof}
@@ -3709,16 +3672,16 @@ Next, assume that~$\{x,x'\}\in \meshes$ starts in~$x$.  Then there is a cluster-
 \[
 X\to E\to X' \to \susp X \quad \textrm{and} \quad  X' \to 0 \to X \to \susp X'.
 \]
-Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$, since the dimension of~$\cat(X',\susp X)$ is~$1$ over~$\field_{X'}$.  Since the pair~$\{x,x'\}$ is not initial,~$\phi(X')$ is not an initial variable; in other words,~$X'$ is not in~$\add(T)$.  Therefore,~$X = \tau X' = \susp X'$ is not in~$\add\susp T$, so the mutation is a positive mesh mutation by \cref{lemm::almost-split}.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
+Therefore~$X' = \susp^{-1}X = \tau^{-1}X$.  Thus the first triangle is the almost-split triangle starting in~$X$, since the dimension of~$\cat(X',\susp X)$ is~$1$ over~$\field_{X'}$.  Since the pair~$\{x,x'\}$ is not initial,~$\phi(X')$ is not an initial variable; in other words,~$X'$ is not in~$\add(T)$.  Therefore,~$X = \tau X' = \susp X'$ is not in~$\add\susp T$, so the mutation is a positive mesh mutation by \cref{lem:almost-split}.  This gives an injective map from~$\meshes$ to the set of positive mutations. 
 \end{proof}
 
 \begin{corollary}[\cref{lem:bijectionMeshMutations}]
-\label{coro::number of positive meshes}
+\label{coro:number of positive meshes}
 We have that~$|\meshes|$ is the number~$|\variables[\B_\circ]|-n$ of non-initial cluster variables.
 \end{corollary}
 
 \begin{proof}
-This is a direct consequence of \cref{lemm::exaclty one mesh mutation,lemm::mesh mutations and meshes}.
+This is a direct consequence of \cref{lem:exaclty one mesh mutation,lem:mesh mutations and meshes}.
 \end{proof}
 
 \begin{lemma}
@@ -3729,7 +3692,7 @@ Then precisely one of the two mutations~$\mu_x(\cluster)$ and~$\mu_{x'}(\cluster
 \end{lemma}
 
 \begin{proof}
-In view of \cref{thm::categorification}\,(iii), it follows from~\cite[Lem.~3.3]{Palu}.
+In view of \cref{thm:categorification}\,(iii), it follows from~\cite[Lem.~3.3]{Palu}.
 \end{proof}
 
 \begin{corollary}\emph{(\cref{prop:meshMutations})}
@@ -3740,11 +3703,11 @@ For any initial exchange matrix~$\B_\circ$ of mutation type~$A, B, C, D$, $E, F$
 \begin{proof}
 Let~$\cat$ be a cluster category of Dynkin type~$A,B,C,D,E,F$ or~$G$, and let $T\in\cat$ be some basic cluster-tilting object categorifying the given initial exchange matrix~$\B_\circ$. 
 By \cref{lemma:positive mutation triangles}, we may assume that the mutation under consideration is a positive mutation.
-In view of \cref{thm::categorification}\,(ii) and (iv) it is enough to show that the relation in~$K_0(\cat ; T)$ given by any triangle ${X\to E\to Y\xrightarrow{h} \susp X}$ with~$h\in(\susp T)$ is a positive linear combination of relations coming from Auslander--Reiten triangles with third term not in~$\add(\susp T)$.
-This categorified statement is precisely \cref{corollary::meshes positively generate cluster cats}.
+In view of \cref{thm:categorification}\,(ii) and (iv) it is enough to show that the relation in~$K_0(\cat ; T)$ given by any triangle ${X\to E\to Y\xrightarrow{h} \susp X}$ with~$h\in(\susp T)$ is a positive linear combination of relations coming from Auslander--Reiten triangles with third term not in~$\add(\susp T)$.
+This categorified statement is precisely \cref{coro:meshes positively generate cluster cats}.
 \end{proof}
 
-It also follows from \cref{thm::categorification} above that any cluster algebra of finite type has the unique exchange relation property (see \cref{def:uerp}).
+It also follows from \cref{thm:categorification} above that any cluster algebra of finite type has the unique exchange relation property (see \cref{def:uerp}).
 
 \begin{corollary}
 \label{corollary:UERPforCAproof}
@@ -3754,11 +3717,11 @@ Then, for any exchangeable cluster variables~$x$ and~$x'$, the linear dependence
 \end{corollary}
 
 \begin{proof}
-By the results in additive categorification of cluster algebras recalled in \cref{thm::categorification}, the statement follows from \cref{lemma::uerp categorified} below.
+By the results in additive categorification of cluster algebras recalled in \cref{thm:categorification}, the statement follows from \cref{lem:uerp categorified} below.
 \end{proof}
 
 \begin{lemma}
-\label{lemma::uerp categorified}
+\label{lem:uerp categorified}
 Let~$\cat$ be a cluster category of Dynkin type~$A,B,C,D,E,F$ or~$G$, and let~$X,Y \in \cat$ be such~$\CC(Y)$ is obtained by performing a positive mutation at~$\CC(X)$ in some cluster containing it.
 Then the linear dependence between the~$\b{g}$-vectors given by the positive mutation is
 \[
@@ -3771,9 +3734,9 @@ where~$X\to \bigoplus_i E_i \to Y \xrightarrow{h} \susp X$ is a non-split triang
 Let~$T\in\cat$ be a basic cluster tilting object such that~$\CC(T)$ is the initial cluster.
 According to \cref{lemma:positive mutation triangles}, the morphism~$h$ belongs to the ideal~$(\susp T)$.
 Therefore, the triangle ${X\to \bigoplus_i E_i \to Y \xrightarrow{h} \susp X}$ induces the relation~$[X]+[Y]=\sum_i [E_i]$ in~$K_0(\cat ; T)$.
-\cref{thm::categorification}\,(ii) gives the equality ${\b{g}_{\CC(X)} + \b{g}_{\CC(Y)} = \sum_i\b{g}_{\CC(E_i)}}$, where the~$\b{g}$-vectors are computed with respect to the initial seed~$\CC(T)$.
-By \cref{thm::categorification}\,(iii), the middle term of the triangle is uniquely defined, up to isomorphism, by~$X$, and~$Y$, and the triangle is therefore an exchange triangle, with respect to any mutation at~$X$: it does not depend on the choice of a cluster tilting object containing~$X$.
-By \cref{thm::categorification}\,(iv) this equality is one of the two equalities in \cref{lem:linearDependencegvectorsCA}.
+\cref{thm:categorification}\,(ii) gives the equality ${\b{g}_{\CC(X)} + \b{g}_{\CC(Y)} = \sum_i\b{g}_{\CC(E_i)}}$, where the~$\b{g}$-vectors are computed with respect to the initial seed~$\CC(T)$.
+By \cref{thm:categorification}\,(iii), the middle term of the triangle is uniquely defined, up to isomorphism, by~$X$, and~$Y$, and the triangle is therefore an exchange triangle, with respect to any mutation at~$X$: it does not depend on the choice of a cluster tilting object containing~$X$.
+By \cref{thm:categorification}\,(iv) this equality is one of the two equalities in \cref{lem:linearDependencegvectorsCA}.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3782,18 +3745,18 @@ By \cref{thm::categorification}\,(iv) this equality is one of the two equalities
 \label{sec:extricats}
 
 The main definitions and first properties on extriangulated categories are recalled after the statements of the main results of this section.
-See \cref{sect::recollections extricats} below.
-The reader that does not want to dwell into details can safely skip \cref{sect::recollections extricats} and focus on any of the first three examples given in \cref{remark::examples extricats}: triangulated categories, exact categories (that are small or have enough projectives or injectives) and extension-closed subcategories of triangulated categories, such as the category~$K^{[-1,0]}(\proj \Lambda)$, are examples of extriangulated categories.
+See \cref{sec:recollections extricats} below.
+The reader that does not want to dwell into details can safely skip \cref{sec:recollections extricats} and focus on any of the first three examples given in \cref{rem:examples extricats}: triangulated categories, exact categories (that are small or have enough projectives or injectives) and extension-closed subcategories of triangulated categories, such as the category~$K^{[-1,0]}(\proj \Lambda)$, are examples of extriangulated categories.
 
 %%%%%%%%%%%
 
 \subsection{Setting}
-\label{setting::extricat}
+\label{setting:extricat}
 
 We indifferently call \emph{conflations}, written~$X\infl Y\defl Z$, or \emph{extriangles}, written ${X\infl Y\defl Z \overset{\delta}{\dashrightarrow}}$, the analogues of short exact sequences or triangles in an extriangulated category.
 
 \smallskip
-\para{Setting for Section~\ref{sect::prelim on extricats}}
+\para{Setting for Section~\ref{sec:prelim on extricats}}
 In that section, we let~$\cat$ be an extriangulated category with a fixed full additive subcategory~$\tc$, stable under isomorphisms, under taking direct summands, and satisfying the following three properties:
 \begin{enumerate}
 \item Every~$T\in\tc$ is projective in~$\cat$;
@@ -3802,35 +3765,35 @@ In that section, we let~$\cat$ be an extriangulated category with a fixed full a
 \end{enumerate}
 
 \smallskip
-\para{Setting for Section~\ref{sect::Statment extricats}}
+\para{Setting for Section~\ref{sec:Statment extricats}}
 In that section, we keep the previous setting, but assume moreover that~$\cat$ is Krull--Schmidt, $\field$-linear, Ext-finite, and has Auslander--Reiten--Serre duality, and that the subcategory~$\tc$ is of the form~$\add T$, where~$T=T_1\oplus\cdots\oplus T_n$ is a basic object.
 
 \begin{remark}
-\label{remark::examples extricats}
+\label{rem:examples extricats}
 Examples of categories satisfying the properties above are
 \begin{itemize}
-\item $2$-Calabi--Yau triangulated categories admitting a cluster-tilting object (see \cref{sect::2CYTriangulated});
-\item for any Artin algebra~$\Lambda$, the category~$K^{[-1,0]}(\proj \Lambda)$ of complexes of finitely generated projective~$\Lambda$-modules concentrated in degrees~$-1$ and~$0$, with morphisms considered up to homotopy (see \cref{sect::Kbproj});
-\item more generally, extriangulated categories~$\cat$ constructed as follows: if~$\tc$ is a rigid subcategory of an extriangulated category~$\ec$ (with some assumption ensuring that condition (2) holds) we let~$\cat$ be the full subcategory of~$\ec$ whose objects satisfy condition (3), equipped with the extriangulated structure obtained from that of~$\ec$ by considering those extriangles in~$\ec$ all whose terms belong to~$\cat$ and whose deflation is~$\tc$-epi (see \cref{sect::prT}).
+\item $2$-Calabi--Yau triangulated categories admitting a cluster-tilting object (see \cref{sec:2CYTriangulated});
+\item for any Artin algebra~$\Lambda$, the category~$K^{[-1,0]}(\proj \Lambda)$ of complexes of finitely generated projective~$\Lambda$-modules concentrated in degrees~$-1$ and~$0$, with morphisms considered up to homotopy (see \cref{sec:Kbproj});
+\item more generally, extriangulated categories~$\cat$ constructed as follows: if~$\tc$ is a rigid subcategory of an extriangulated category~$\ec$ (with some assumption ensuring that condition (2) holds) we let~$\cat$ be the full subcategory of~$\ec$ whose objects satisfy condition (3), equipped with the extriangulated structure obtained from that of~$\ec$ by considering those extriangles in~$\ec$ all whose terms belong to~$\cat$ and whose deflation is~$\tc$-epi (see \cref{sec:prT}).
 \end{itemize}
 \end{remark}
 
 %%%%%%%%%%%
 
 \subsection{Statement of preliminary results on extriangulated categories}
-\label{sect::prelim on extricats}
+\label{sec:prelim on extricats}
 
 So as to be able to state the main theorem of \cref{sec:extricats}, we need a few results on extriangulated categories.
-However, all proofs are postponed to \cref{sect::proofs extricats}.
+However, all proofs are postponed to \cref{sec:proofs extricats}.
 
-We let~$\cat$ be as in \cref{setting::extricat}.
+We let~$\cat$ be as in \cref{setting:extricat}.
 
 \begin{notation}
 For any object~$T\in\tc$, we fix an extriangle~$T\infl 0 \defl \susp T \dashrightarrow$.
 \end{notation}
 
 \begin{remark}
-As will be proven below (\cref{remark::equivalence Sigma} and \cref{corollary::Sigma T injectives}), this notation extends to an equivalence of categories from the category~$\tc$ of projective objects in~$\cat$ to the category~$\susp\tc$ of injective objects in~$\cat$.
+As will be proven below (\cref{rem:equivalence Sigma} and \cref{coro:Sigma T injectives}), this notation extends to an equivalence of categories from the category~$\tc$ of projective objects in~$\cat$ to the category~$\susp\tc$ of injective objects in~$\cat$.
 \end{remark}
 
 
@@ -3840,7 +3803,7 @@ We let~$F:\cat\to\Modt$ be the functor defined on objects by sending~$X\in\cat$ 
 \end{notation}
 
 \begin{lemma}
-\label{lemma::finitely presented}
+\label{lem:finitely presented}
 For any~$X\in\cat$, the functor~$FX$ is finitely presented.
 We thus have a functor
 \[
@@ -3848,10 +3811,10 @@ F:\cat\to\modt.
 \]
 \end{lemma}
 
-\cref{prop::KRextricat} below extends similar results from~\cite{BuanMarshReiten,KellerReiten,KoenigZhu,IyamaYoshino} (see also \cref{prop::functor-F}) to the setting under consideration. We note that the proof requires minor modifications.
+\cref{prop:KRextricat} below extends similar results from~\cite{BuanMarshReiten,KellerReiten,KoenigZhu,IyamaYoshino} (see also \cref{prop:functor-F}) to the setting under consideration. We note that the proof requires minor modifications.
 
 \begin{proposition}
-\label{prop::KRextricat}
+\label{prop:KRextricat}
 The functor~$F$ induces an equivalence of categories
 \[
 F: \cat/(\susp\tc) \to \modt
@@ -3890,7 +3853,7 @@ and define the \defn{index} of~$X$ by
 \end{definition}
 
 \begin{proposition}
-\label{prop::index iso extricat}
+\label{prop:index iso extricat}
  The assignment~$X\mapsto\ind_\tc X$ is well-defined and induces an isomorphism
 \[
 \ind_\tc : \kzero{\cat} \overset{\cong}{\longrightarrow} \kzero{\tc}
@@ -3901,21 +3864,21 @@ of abelian groups.
 %%%%%%%%%%%
 
 \subsection{Statement of the theorem}
-\label{sect::Statment extricats}
+\label{sec:Statment extricats}
 
-Let~$\cat$ be as in \cref{setting::extricat}.
+Let~$\cat$ be as in \cref{setting:extricat}.
 
 \begin{remark}
 Assume moreover that~$\cat$ is $\field$-linear and Ext-finite.
-By the preliminary results of \cref{sect::recollections extricats}, we can apply~\cite[Prop.~4.2]{IyamaNakaokaPalu} to obtain that~$\modt$ is Hom-finite.
+By the preliminary results of \cref{sec:recollections extricats}, we can apply~\cite[Prop.~4.2]{IyamaNakaokaPalu} to obtain that~$\modt$ is Hom-finite.
 In particular, if $\tc=\add T$, then $\End{\cat}(T)$ is a finite-dimensional~$\field$-algebra.
-It thus also follows that \cref{defi::bilinear form} still makes sense in this more general setup: For any~$X,Y\in\cat$,
+It thus also follows that \cref{def:bilinear form} still makes sense in this more general setup: For any~$X,Y\in\cat$,
 \[
 \langle X,Y\rangle \eqdef \dim_\field \Hom{\tc}(FX,FY) = \dim_\field \cat/(\susp\tc)(X,Y).
 \]
 \end{remark}
 
-When this makes sense, we make use of \cref{notation::ell_X}: if
+When this makes sense, we make use of \cref{notation:ell_X}: if
 \[
 X \infl E \defl Y \dashrightarrow
 \]
@@ -3925,7 +3888,7 @@ is an almost-split sequence (see~\cite{IyamaNakaokaPalu} for a definition in thi
 \]
 
 \begin{theorem}
-\label{theorem::extricats}
+\label{thm:extricats}
 Assume that~$\cat$ is a~$\field$-linear, Ext-finite, Krull--Schmidt, extriangulated category with Auslander--Reiten--Serre duality.
 Assume that~$T$ is a projective object of~$\cat$ such that any~$X\in\cat$ admits a conflation~$T_1^X\infl T_0^X\defl X$ with~$T_0^X, T_1^X\in\add(T)$, and the morphism~$T\to 0$ is an inflation. Fix a conflation~$T\to 0 \to \susp T$. Then~$\cat$ has only finitely many isomorphism classes of indecomposable objects if and only if the set
 \[
@@ -3939,7 +3902,7 @@ x= \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\langl
 \end{theorem}
 
 \begin{corollary}
-\label{corollary::meshes positively generate extricats}
+\label{coro:meshes positively generate extricats}
 Assume that~$\ind(\cat)$ is finite.
 Let~$X\infl E\defl Y\dashrightarrow$ be any extriangle.
 Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b{g}$ is a non-negative linear combination of the~$\ell_A$, with~$A\in\ind(\cat)\ssm \add(\susp T)$.
@@ -3948,7 +3911,7 @@ Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b{g}$ is a non-negative line
 %%%%%%%%%%%
 
 \subsection{Recollections on extriangulated categories}
-\label{sect::recollections extricats}
+\label{sec:recollections extricats}
 
 Extriangulated categories, recently introduced in~\cite{NakaokaPalu}, axiomatize extension-closed subcategories of triangulated categories in a (moderately) similar way that Quillen's exact categories axiomatize extension-closed subcategories of abelian categories.
 They appear in representation theory in relation with cotorsion pairs~\cite{ChangZhouZhu-ClusterSubalgebras,ZhaoHuang-Phantom,LiuNakaoka-Hearts,Liu-LocalizationsHearts}, with Auslander--Reiten theory~\cite{IyamaNakaokaPalu}, with cluster algebras, mutations, or cluster-tilting theory~\cite{ChangZhouZhu-ClusterSubalgebras,Pressland,ZhouZhu-TriangulatedQuotient,LiuZhou-Abelian,LiuZhou-AbelianII,LiuZhou-Gorenstein}, with Cohen--Macaulay dg-modules in the remarkable~\cite{Jin}.
@@ -4209,7 +4172,7 @@ The axioms above ensure that any extriangle induce long-ish exact sequences afte
 In particular in any conflation, the inflation is a weak kernel of the deflation, and the deflation is a weak cokernel of the inflation.
 
 \begin{proposition}[{\cite[Props.~3.3~\&~3.11]{NakaokaPalu}}]
-\label{proposition::extricat long exact sequences}
+\label{prop:extricat long exact sequences}
 Assume that $(\cat,\mathbb{E},\mathfrak{s})$ is an extriangulated category, and let $X\xrightarrow{x}Y\xrightarrow{y}Z\overset{\delta}{\dashrightarrow}$ be an extriangle.
 Then the following sequences of natural transformations are exact:
 \[
@@ -4257,17 +4220,17 @@ Then any endo-local non-projective object~$X\in\cat$ permits an almost-split con
 
 %%%%%%%%%%%
 
-\subsection{Proofs of preliminary results and of \cref{theorem::extricats}}
-\label{sect::proofs extricats}
+\subsection{Proofs of preliminary results and of \cref{thm:extricats}}
+\label{sec:proofs extricats}
 
-We let~$\cat$ and~$\tc$ satisfy the assumptions (1), (2) and (3) of \cref{setting::extricat}.
+We let~$\cat$ and~$\tc$ satisfy the assumptions (1), (2) and (3) of \cref{setting:extricat}.
 We will make it explicit when more assumptions are needed.
 
 \enlargethispage{-.1cm}
 We start by stating some immediate implications of the existence of conflations~$T\infl 0 \defl \susp T$, for~$T\in\tc$.
 
 \begin{lemma}
-\label{lemma::first consequences}
+\label{lem:first consequences}
 The following holds:
 \begin{enumerate}[(i)]
 \item An object belongs to~$\tc$ if and only if it is projective in~$\cat$.
@@ -4282,7 +4245,7 @@ The following holds:
 \begin{enumerate}[(i)]
 \item If~$X$ is projective in~$\cat$, then the deflation~$T_0^X\defl X$ splits and~$X$ is a summand of~$T_0^X$.
 \item This follows from the fact that~$T$ is projective and~$0\defl\susp T'$ is a deflation.
-\item and (iv) are obtained from the exact sequences of \cref{proposition::extricat long exact sequences} associated with the extriangle~$T\infl 0\defl \susp T\dashrightarrow$.
+\item and (iv) are obtained from the exact sequences of \cref{prop:extricat long exact sequences} associated with the extriangle~$T\infl 0\defl \susp T\dashrightarrow$.
 \addtocounter{enumi}{1}
 \item For any~$T,T'\in\tc$, we have~$\mathbb{E}(\susp T,\susp T') \cong \cat(T,\susp T')=0$.
 \qedhere
@@ -4290,7 +4253,7 @@ The following holds:
 \end{proof}
 
 \begin{lemma}
-\label{lemma::shifts of extriangles}
+\label{lem:shifts of extriangles}
 Let~$X\in\cat$ and let
 \[
 T_1^X\overset{f_X}{\infl} T_0^X\overset{g_X}{\defl} X \overset{\delta_X}{\dashrightarrow}, \quad T_0^X\infl 0\defl \susp T_0^X\overset{\delta_0}{\dashrightarrow}, \quad T_1^X\infl 0\defl \susp T_1^X\overset{\delta_1}{\dashrightarrow}
@@ -4308,9 +4271,9 @@ The first extriangle is obtained by applying the dual of~\cite[Prop.~3.15]{Nakao
 \end{proof}
 
 \begin{remark}
-\label{remark::equivalence Sigma}
+\label{rem:equivalence Sigma}
 For any~$T\in\tc$, fix an extriangle~$T\infl 0\defl\susp T\overset{\eps_T}{\dashrightarrow}$.
-As noticed in \cref{lemma::shifts of extriangles}, for any morphism~$T\overset{f}{\to}T'$ in~$\tc$, there is a unique morphism~$\susp f\in\cat(\susp T,\susp T')$ such that~${f_\ast\eps_T=(\susp f)^\ast\eps_{T'}}$ (i.e. such that~$(f,\susp f)$ is a morphism from~$\eps_T$ to~$\eps_{T'}$), as illustrated below:
+As noticed in \cref{lem:shifts of extriangles}, for any morphism~$T\overset{f}{\to}T'$ in~$\tc$, there is a unique morphism~$\susp f\in\cat(\susp T,\susp T')$ such that~${f_\ast\eps_T=(\susp f)^\ast\eps_{T'}}$ (i.e. such that~$(f,\susp f)$ is a morphism from~$\eps_T$ to~$\eps_{T'}$), as illustrated below:
 \[
 \xy
 (-12,6)*+{T}="0";
@@ -4344,13 +4307,13 @@ where~$\susp\tc$ is the full subcategory of~$\cat$ whose objects are isomorphic 
 \end{remark}
 
 \begin{lemma}
-\label{lemma:: mphs in T are inflations}
+\label{lem: mphs in T are inflations}
 Every morphism with domain in~$\tc$ is an inflation.
 \end{lemma}
 
 \begin{proof}
 Let~$T \overset{t}{\to} X$ be a morphism with~$T \in \tc$.
-Using the notation of \cref{remark::equivalence Sigma}, there is an extriangle~$T\infl 0\defl \susp T \overset{\eps_T}{\dashrightarrow}$.
+Using the notation of \cref{rem:equivalence Sigma}, there is an extriangle~$T\infl 0\defl \susp T \overset{\eps_T}{\dashrightarrow}$.
 Consider the extriangle~$X\overset{g}{\infl} Y \overset{h}{\defl} \susp T \overset{t_\ast\eps_T}{\dashrightarrow}$.
 By~\cite[Prop.~3.17]{NakaokaPalu}, there is a commutative diagram of extriangles
 \[
@@ -4401,49 +4364,49 @@ We thus have~$t'=t$.
 \end{proof}
 
 \begin{remark}
-It follows from the proof of \cref{lemma:: mphs in T are inflations} that conditions (1), (2), (3) in \cref{setting::extricat} are equivalent to conditions (1), (2), (3'), where
+It follows from the proof of \cref{lem: mphs in T are inflations} that conditions (1), (2), (3) in \cref{setting:extricat} are equivalent to conditions (1), (2), (3'), where
 \[
 {\rm (3')} \quad \cat = \tc\ast\susp\tc.
 \]
 \end{remark}
 
-\begin{proof}[Proof of \cref{lemma::finitely presented}]
+\begin{proof}[Proof of \cref{lem:finitely presented}]
 Applying the functor~$F$ to the extriangle~$T_1^X\infl T_0^X\defl X\overset{\delta_X}{\dashrightarrow}$ induces an exact sequence~$FT_1^X \to FT_0^X \to FX \to \mathbb{E}(T,T_1^X)=0$, showing that~$FX$ is finitely presented.
 \end{proof}
 
-\begin{proof}[Proof of \cref{prop::KRextricat}]
+\begin{proof}[Proof of \cref{prop:KRextricat}]
 Recall that~$F:\cat\to\modt$ denotes the functor sending an object~$X$ to the module~$\cat(-,X)|_\tc$.
-By \cref{lemma::first consequences}\,(v), the ideal~$(\susp\tc)$ of morphisms factoring through an object in~$\susp\tc$ is included in the kernel of~$F$.
+By \cref{lem:first consequences}\,(v), the ideal~$(\susp\tc)$ of morphisms factoring through an object in~$\susp\tc$ is included in the kernel of~$F$.
 Conversely, let~$X\xrightarrow{f}Y$ be such that~$Ff=0$.
-By \cref{lemma::shifts of extriangles}, there is a conflation~$T_0\overset{g}{\infl} X\overset{h}{\defl} \susp T_1$ with~$T_0,T_1\in\tc$.
+By \cref{lem:shifts of extriangles}, there is a conflation~$T_0\overset{g}{\infl} X\overset{h}{\defl} \susp T_1$ with~$T_0,T_1\in\tc$.
 By assumption, the composition~$f\circ g$ vanishes, which implies that~$f$ factors through~$\susp T_1$.
 The functor~$F$ thus induces a faithful functor, still denoted~$F$, from~$\cat/(\susp\tc)$ to~$\modt$.
 It is well-known (see for instance~\cite[Lem.~3.1]{AssemSimsonSkowronski}) that~$F$ restricts to an equivalence of categories~$\tc\to\proj\tc$.
 Because~$\tc$ consists of projective objects in~$\cat$, the image under~$F$ of every conflation is a right exact sequence.
-The fact that~$F$ is full and dense can thus be proven as in the case of triangulated categories, by using \cref{lemma:: mphs in T are inflations}.
+The fact that~$F$ is full and dense can thus be proven as in the case of triangulated categories, by using \cref{lem: mphs in T are inflations}.
 \end{proof}
 
 \begin{corollary}
-\label{corollary::Sigma T injectives}
+\label{coro:Sigma T injectives}
 The objects in~$\susp\tc$ are precisely the injective objects in~$\cat$.
 \end{corollary}
 
 \begin{proof}
-First note that any injective object belongs to~$\susp \tc$, by \cref{lemma::shifts of extriangles}.
+First note that any injective object belongs to~$\susp \tc$, by \cref{lem:shifts of extriangles}.
 Let us prove that the converse holds.
 Let~$\susp T \infl X \overset{f}{\defl} Y\overset{\delta}{\dashrightarrow}$ be an extriangle with~$T\in\tc$.
 Since~$\cat(-,\susp T)|_\tc = 0$ and~$f$ is~$\tc$-epic, the morphism~$\cat(-,f)|_\tc$ is an isomorphism in~$\modt$.
-By \cref{prop::KRextricat}, there are morphisms~$Y\overset{s}{\to} X$,~$Y\xrightarrow{h}\susp T'$,~$\susp T'\xrightarrow{t} Y$, for some~$T'\in\tc$ satisfying
+By \cref{prop:KRextricat}, there are morphisms~$Y\overset{s}{\to} X$,~$Y\xrightarrow{h}\susp T'$,~$\susp T'\xrightarrow{t} Y$, for some~$T'\in\tc$ satisfying
 \[
 fs = id_Y + th.
 \]
-By \cref{lemma::first consequences}\,(v), $\susp\tc$ is a rigid subcategory, so that~$t^\ast\delta=0$.
+By \cref{lem:first consequences}\,(v), $\susp\tc$ is a rigid subcategory, so that~$t^\ast\delta=0$.
 Equivalently, there is a morphism~$\susp T'\xrightarrow{k} X$ such that~$t=fk$.
 We thus have~$f(s-kh)=id_Y$, showing that the extriangle splits.
 \end{proof}
 
 \begin{lemma}
-\label{lemma::index well-defined extricat}
+\label{lem:index well-defined extricat}
  The index is well-defined. More precisely, for any object~$X\in\cat$ and any two conflations~$T_1\overset{f}{\infl} T_0 \overset{g}{\defl} X$,~$T'_1\overset{f'}{\infl} T'_0 \overset{g'}{\defl} X$ with~$T_0,T_1,T'_0,T'_1\in\tc$, we have~$[T_0]-[T_1]=[T'_0]-[T'_1]$ in~$\kzero{\tc}$.
 \end{lemma}
 
@@ -4488,12 +4451,12 @@ The equality~$[T'_1]+[T_0]=[T_1]+[T'_0]$ thus holds in~$\kzero{\tc}$.
 \end{proof}
 
 \begin{remark}
-We note that \cref{lemma::index well-defined extricat} only requires the subcategory~$\tc$ to be rigid, and not made of projective objects.
-However, this stronger assumption is used in the proof of \cref{lemma::index kzero extricat} below.
+We note that \cref{lem:index well-defined extricat} only requires the subcategory~$\tc$ to be rigid, and not made of projective objects.
+However, this stronger assumption is used in the proof of \cref{lem:index kzero extricat} below.
 \end{remark}
 
 \begin{lemma}
-\label{lemma::index kzero extricat}
+\label{lem:index kzero extricat}
 The index descends to~$\kzero{\cat}$: For any conflation~$X\infl Y\defl Z$ in~$\cat$, we have~$\ind_\tc Y = \ind_\tc X + \ind_\tc Z$ in~$\kzero{\tc}$.
 \end{lemma}
 
@@ -4572,33 +4535,33 @@ where we have used the fact that~$T_0^Z$ is projective in~$\cat$.
 Moreover, the conflation with middle term~$B$ splits, which implies that~$B$ is isomorphic to~$T_1^X\oplus T_1^Z$.
 \end{proof}
 
-\begin{proof}[Proof of \cref{prop::index iso extricat}]
-By \cref{lemma::index well-defined extricat} and \cref{lemma::index kzero extricat}, the index induces an well-defined morphism of abelian groups~$\ind_\tc:\kzero{\cat}\to\kzero{\tc}$.
+\begin{proof}[Proof of \cref{prop:index iso extricat}]
+By \cref{lem:index well-defined extricat} and \cref{lem:index kzero extricat}, the index induces an well-defined morphism of abelian groups~$\ind_\tc:\kzero{\cat}\to\kzero{\tc}$.
 It remains to prove that it is an isomorphism.
 Let~$\pi:\kzero{\tc}\to\kzero{\cat}$ send a class~$[T]\in\kzero{\tc}$ to the class~$[T]\in\kzero{\cat}$.
 The existence, for any~$T\in\tc$, of a conflation~$0\infl T\defl T$ shows that~$\pi$ is right inverse to~$\ind_\tc$.
 To see that it is also a left inverse, note that if~$T_1\infl T_0\defl X$ is a conflation in~$\cat$, then the equality~$[X]=[T_0]-[T_1]$ holds in~$\kzero{\cat}$.
 \end{proof}
 
-\begin{proof}[Proof of \cref{theorem::extricats}]
-The proof is now similar to the proof of \cref{theo::relations-g-vecteurs}, by using \cref{prop::KRextricat} instead of \cref{prop::functor-F}, \cref{prop::index iso extricat} instead of \cref{coro::grothendieck-g-vectors}, and the fact that~$\tc$ is made of projective objects instead of \cref{lemm::almost-split}.
+\begin{proof}[Proof of \cref{thm:extricats}]
+The proof is now similar to the proof of \cref{thm:relations-g-vecteurs}, by using \cref{prop:KRextricat} instead of \cref{prop:functor-F}, \cref{prop:index iso extricat} instead of \cref{coro:grothendieck-g-vectors}, and the fact that~$\tc$ is made of projective objects instead of \cref{lem:almost-split}.
 \end{proof}
 
-\begin{proof}[Proof of \cref{corollary::meshes positively generate extricats}]
-The proof is similar to that of \cref{corollary::meshes positively generate cluster cats}.
+\begin{proof}[Proof of \cref{coro:meshes positively generate extricats}]
+The proof is similar to that of \cref{coro:meshes positively generate cluster cats}.
 \end{proof}
 
 %%%%%%%%%%%
 
 \subsection{Application to 2-term complexes of projectives and to gentle algebras}
-\label{sect::Kbproj}
+\label{sec:Kbproj}
 
 Let~$\Lambda$ be an Artin algebra.
 Then the homotopy category~$K^b(\proj \Lambda)$ is a triangulated category, and we consider its full subcategory~$K^{[-1,0]}(\proj \Lambda)$ of complexes concentrated in degrees~$-1$ and~$0$ (with cohomological conventions).
 
 \begin{proposition}
-\label{prop::2kbproj-is-extriangulated}
-Let~$\Lambda$ be any Artin algebra. Then the category~$K^{[-1,0]}(\proj \Lambda)$ is an extriangulated category satisfying the assumptions (1) to (3) of \cref{setting::extricat}, wiht~$\tc = \add(\Lambda)$. If, moreover,~$\Lambda$ is finite-dimensional over a field~$\field$, then~$K^{[-1,0]}(\proj \Lambda)$ satisfies all assumptions of \cref{setting::extricat}. 
+\label{prop:2kbproj-is-extriangulated}
+Let~$\Lambda$ be any Artin algebra. Then the category~$K^{[-1,0]}(\proj \Lambda)$ is an extriangulated category satisfying the assumptions (1) to (3) of \cref{setting:extricat}, wiht~$\tc = \add(\Lambda)$. If, moreover,~$\Lambda$ is finite-dimensional over a field~$\field$, then~$K^{[-1,0]}(\proj \Lambda)$ satisfies all assumptions of \cref{setting:extricat}. 
 \end{proposition}
 
 \begin{proof}
@@ -4608,7 +4571,7 @@ The category~$K^{[-1,0]}(\proj \Lambda)$ is closed under extensions in~$K^b(\pro
 \]
 and the last term vanishes, since~$\susp X$ is a complex concentrated in degrees~$-2$ and~$-1$, while~$\Lambda$ is in degree~$0$. This proves that~$\Lambda$ is projective.
  
-The morphism~$\Lambda \to 0$ is an inflation, since~$\Lambda\infl 0 \defl \susp \Lambda$ is a conflation. Moreover, if~$X= P_1\xrightarrow{f}P_0$ is an object of~$K^{[-1,0]}(\proj\Lambda)$, then it lies in a conflation~$P_1\stackrel{f}{\infl} P_0 \defl X$ by definition. We have proved that properties~(1) to (3) of \cref{setting::extricat} are satisfied.
+The morphism~$\Lambda \to 0$ is an inflation, since~$\Lambda\infl 0 \defl \susp \Lambda$ is a conflation. Moreover, if~$X= P_1\xrightarrow{f}P_0$ is an object of~$K^{[-1,0]}(\proj\Lambda)$, then it lies in a conflation~$P_1\stackrel{f}{\infl} P_0 \defl X$ by definition. We have proved that properties~(1) to (3) of \cref{setting:extricat} are satisfied.
  
 Finally, assume that~$\Lambda$ is finite-dimensional over a field~$\field$. Then~$K^{[-1,0]}(\proj\Lambda)$ is Krull--Schmidt,~$\field$-linear and Ext-finite, since this is true for~$K^b(\proj\Lambda)$ for any finite-dimensional algebra~$\Lambda$. Moreover, it has Auslander--Reiten--Serre duality by~\cite[Prop.~6.1]{IyamaNakaokaPalu}.
 \end{proof}
@@ -4625,19 +4588,19 @@ The definition given above is only equivalent to the usual definition of a silti
 \end{remark}
 
 \begin{definition}
-\label{defn::mutation conflation}
+\label{def:mutation conflation}
 A conflation $X\infl E\defl Y$ of~$K^{[-1,0]}(\proj \Lambda)$ is called a \defn{mutation conflation} if there are basic, two-term, silting objects $X\oplus R$, $Y\oplus R$, with~$X$ and~$Y$ indecomposable, such that the inflation $X\infl E$ is a left ($\add R$)-approximation (i.e. any morphism from~$X$ to an object in~$\add R$ factors through~$X\infl E$).
 \end{definition}
 
 \begin{remark}
-In \cref{defn::mutation conflation}, the requirement that~$X$ and~$Y$ are indecomposable implies the map~$E\defl Y$ is a right~($\add R$)-approximation, and that both approximations are minimal.
+In \cref{def:mutation conflation}, the requirement that~$X$ and~$Y$ are indecomposable implies the map~$E\defl Y$ is a right~($\add R$)-approximation, and that both approximations are minimal.
 \end{remark}
 
 \begin{proposition}
-\label{prop::exchange conflations are unique}
+\label{prop:exchange conflations are unique}
 Let~$\Lambda$ be a finite-dimensional~$\field$-algebra, where~$\field$ is a field. Let~$X$ and~$Y$ be objects of~$K^{[-1,0]}(\proj \Lambda)$. 
 \begin{enumerate}
-\item If there is a mutation conflation (see \cref{defn::mutation conflation}) of the form~$X\infl E\defl Y$, then there can be no mutation conflation of the form~$Y\infl E'\defl X$.
+\item If there is a mutation conflation (see \cref{def:mutation conflation}) of the form~$X\infl E\defl Y$, then there can be no mutation conflation of the form~$Y\infl E'\defl X$.
 \item Assume that~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ are two mutation conflations. 
 Then~$E$ and~$E'$ are isomorphic. 
 \end{enumerate} 
@@ -4652,11 +4615,11 @@ By definition of a mutation conflation, we have that~$\Hom{K^b}(\susp^{-1} Y, E'
 However, since the conflation~$X\infl E\defl Y$ is not split, we have that~$\Hom{K^b}(\susp^{-1} Y, X) \neq 0$, a contradiction. This proves~(1). 
 
 \smallskip
-We now prove~(2). Let~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ be two mutation conflations. By~\cite[Thm.~6.5]{DemonetIyamaJasso} (based on~\cite[Thm~2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b{g}$-vector. The datum of the~$\b{g}$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0 \big( K^{[-1,0]}(\proj \Lambda) \big)$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see \cref{prop::2kbproj-is-extriangulated}). In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$. Thus~$E$ and~$E'$ are isomorphic.
+We now prove~(2). Let~$X\infl E\defl Y$ and~$X\infl E'\defl Y$ be two mutation conflations. By~\cite[Thm.~6.5]{DemonetIyamaJasso} (based on~\cite[Thm~2.3]{DehyKeller}), rigid objects in~$K^{[-1,0]}(\proj \Lambda)$ are determined by their~$\b{g}$-vector. The datum of the~$\b{g}$-vector of an object of~$K^{[-1,0]}(\proj \Lambda)$ is equivalent to that of its class in the Grothendieck group~$K_0 \big( K^{[-1,0]}(\proj \Lambda) \big)$, where~$K^{[-1,0]}(\proj \Lambda)$ is viewed as an extriangulated category (see \cref{prop:2kbproj-is-extriangulated}). In this Grothendieck group, we have that~$[E] = [E'] = [X]+[Y]$. Thus~$E$ and~$E'$ are isomorphic.
 \end{proof}
 
 \begin{corollary}
-\label{coro::exchangeablePairsNKC}
+\label{coro:exchangeablePairsNKC}
 Point~(ii) of \cref{prop:exchangeablePairsNKC} holds.
 \end{corollary}
 
@@ -4669,7 +4632,7 @@ Assume that there are other facets~$F_0$ and~$F_0'$ also satisfying the hypothes
 \[
 P(\omega) \infl P(\mu') \oplus P(\nu') \defl P(\omega') \quad \textrm{or} \quad P(\omega') \infl P(\mu') \oplus P(\nu') \defl P(\omega).
 \]
-By \cref{prop::exchange conflations are unique}, we get that~$P(\mu)\oplus P(\nu)$ and~$P(\mu')\oplus P(\nu')$ are isomorphic, and that the mutation conflations either both have the form~$P(\omega) \infl P(\mu) \oplus P(\nu) \defl P(\omega')$ or both have the form~$P(\omega') \infl P(\mu) \oplus P(\nu) \defl P(\omega)$. Without loss of generality, assume that they have the first form.
+By \cref{prop:exchange conflations are unique}, we get that~$P(\mu)\oplus P(\nu)$ and~$P(\mu')\oplus P(\nu')$ are isomorphic, and that the mutation conflations either both have the form~$P(\omega) \infl P(\mu) \oplus P(\nu) \defl P(\omega')$ or both have the form~$P(\omega') \infl P(\mu) \oplus P(\nu) \defl P(\omega)$. Without loss of generality, assume that they have the first form.
  
 In particular, the leftmost morphisms of both mutation conflations are minimal ${\add \big( P(\mu) \oplus P(\nu) \big)}$-approximations of~$P(\omega)$. As such, they are isomorphic as morphisms. They determine common substrings of~$\omega$ and~$\mu$ and of~$\omega$ and~$\nu$, which in turn determine~$\sigma$. Point (ii) of \cref{prop:exchangeablePairsNKC} is proved.
 \end{proof}
@@ -4677,34 +4640,34 @@ In particular, the leftmost morphisms of both mutation conflations are minimal $
 We now come to the main result of this section.
 
 \begin{theorem}
-\label{theo::brick-algebra-condition}
+\label{thm:brick-algebra-condition}
 Let~$\Lambda$ be an Artin algebra all of whose indecomposable objects are ~$\tau$-rigid bricks. Then the almost-split conflations of~$K^{[-1,0]}(\proj \Lambda)$ are mutation conflations if and only if for any non-projective indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 \end{theorem}
 
 \begin{remark}
 Assume that~$\Lambda$ is a finite-dimensional brick algebra which is representation-finite.
-Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of \cref{theo::brick-algebra-condition} are satisfied.
+Then~\cite[Thm.~6.2]{DemonetIyamaJasso} implies that the assumptions of \cref{thm:brick-algebra-condition} are satisfied.
 \end{remark}
 
 \begin{corollary}
-\label{coro::silting simplicial}
+\label{coro:silting simplicial}
 Let~$\Lambda$ be a finite dimensional brick algebra of finite representation type.
 Assume moreover that, for any indecomposable~$\Lambda$-module~$M$, the space~$\Hom{\Lambda}(M, \tau^2 M)$ vanishes.
 Then the support~$\tau$-tilting fan of~$\Lambda$ has the unique exchange relation property and its type cone is simplicial.
 \end{corollary}
 
-As a consequence of \cref{coro::silting simplicial}, the method of \cref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
+As a consequence of \cref{coro:silting simplicial}, the method of \cref{part:geometry} apply and give an explicit description of all realizations of the support~$\tau$-tilting fan of~$\Lambda$.
 Another consequence is an algebraic proof of \cref{coro:simplicialTypeConeNKC}, that we restate below.
 
 \begin{corollary}[\cref{coro:simplicialTypeConeNKC}]
-\label{coro::simplicialTypeConeNKCalgebraic}
+\label{coro:simplicialTypeConeNKCalgebraic}
 For any brick and $2$-acyclic gentle algebra, the type cone of its support~$\tau$-tilting fan is simplicial.
 \end{corollary}
 
-The remaining part of this section is devoted to proving \cref{theo::brick-algebra-condition,coro::simplicialTypeConeNKCalgebraic}.
+The remaining part of this section is devoted to proving \cref{thm:brick-algebra-condition,coro:simplicialTypeConeNKCalgebraic}.
 
 \begin{lemma}
-\label{lemm::AR-conflations-and-sequences}
+\label{lem:AR-conflations-and-sequences}
 Let~$\Lambda$ be any Artin algebra. Let~$X\overset{a}{\infl} Y \overset{b}{\defl} Z$ be an almost-split conflation in~$K^{[-1,0]}(\proj \Lambda)$ such that~$Z$ is not in~$\add(\susp \Lambda)$. Denote by~$F$ the functor~$\Hom{K^b}(\Lambda, -):K^{[-1,0]}(\proj \Lambda) \to \MOD \Lambda$. Then there is an almost-split sequence in~$\MOD\Lambda$:
 \[
 0\to FX\to FY \to FZ \to 0
@@ -4728,7 +4691,7 @@ Because~$\MOD\Lambda$ and~$K^b(\proj \Lambda)$ are Krull--Schmidt, it is immedia
 \end{proof}
 
 \begin{lemma}
-\label{lemm::then-AR-seq-are-mutation}
+\label{lem:then-AR-seq-are-mutation}
 Let~$\Lambda$ be an Artin algebra, let~$\tau X\infl E\defl X$ be an Auslander--Reiten conflation in~$K^{[-1,0]}(\proj\Lambda)$ and denote~$FX=M$.
 \begin{enumerate}
 \item $X\notin\add(\susp\Lambda)$;
@@ -4743,7 +4706,7 @@ Then~$\tau X\infl E\defl X$ is a mutation conflation.
 First note that the results~\cite[Lems.~3.4~\&~3.5]{AdachiIyamaReiten}, even though stated for finite dimensional algebras, hold with the same proofs for any Artin algebra.
 For convenience of the reader, we recall those two results: Let~$Y, Z \in K^{[-1,0]}(\proj\Lambda)$ be indecomposable and not in~$\add(\susp\Lambda)$, and let~$P\in\proj\Lambda$. Then~$\Hom{K^b}(Y,\susp Z)=0$ if and only if~$\Hom{\Lambda}(FZ,\tau FY)=0$ and~${\Hom{K^b}(P,Y)=0}$ if and only if~$\Hom{\Lambda}(P,FY)=0$.
 
-Note also that \cref{lemm::AR-conflations-and-sequences} implies that~$F\tau X$ is isomorphic to $\tau M$.
+Note also that \cref{lem:AR-conflations-and-sequences} implies that~$F\tau X$ is isomorphic to $\tau M$.
 
 By assumption,~$X$ is not in~$\add(\susp\Lambda)$.
 The same is true of~$\tau X$ since objects in~$\add(\susp\Lambda)$ are injective in~$K^{[-1,0]}(\proj\Lambda)$ and an Auslander--Reiten conflation does not split.
@@ -4809,7 +4772,7 @@ We can conclude by (4).
 \end{proof}
 
 \begin{lemma}
-\label{lemm::if AR are mutations}
+\label{lem:if AR are mutations}
 Let~$\Lambda$ be an Artin algebra, and let~$Y\infl E\defl X$ be a conflation in~$K^{[-1,0]}(\proj\Lambda)$. Then:
 \begin{enumerate}
 \item If~$\Hom{K^b}(Y,\susp E)=0$, we have~$\Hom{\Lambda}(FX,\tau FY)=0$.
@@ -4818,7 +4781,7 @@ Let~$\Lambda$ be an Artin algebra, and let~$Y\infl E\defl X$ be a conflation in~
 \end{lemma}
 
 \begin{proof}
-By \cref{lemm::AR-conflations-and-sequences}, \emph{(2)} follows from \emph{(1)}.
+By \cref{lem:AR-conflations-and-sequences}, \emph{(2)} follows from \emph{(1)}.
 Let us prove \emph{(1)}.
 The conflation induces an exact sequence~$\Hom{K^b}(Y,\susp E) \to \Hom{K^b}(Y,\susp X) \to \Hom{K^b}(Y,\susp^2,Y)$.
 The complex~$Y$ being two-term, we have~$\Hom{K^b}(Y,\susp^2,Y)=0$.
@@ -4836,7 +4799,7 @@ Assuming that~$\Hom{K^b}(Y,\susp E)=0$, we deduce that~$\Hom{K^b}(Y,\susp X)=0$,
 % \end{proof}
 
 \begin{lemma}
-\label{lemm::initial meshes}
+\label{lem:initial meshes}
 Let~$\Lambda$ be an Artin algebra whose indecomposable injective modules are~$\tau$-rigid, and let~$P$ be an indecomposable projective~$\Lambda$-module.
 Then the Auslander--Reiten conflation~${Y\infl E\defl \susp P}$ in~$K^{[-1,0]}(\proj\Lambda)$ is a mutation conflation if~$FY$ is a brick.
 \end{lemma}
@@ -4882,7 +4845,7 @@ Composition with~$\alpha$ and~$F\alpha$ yields a commutative square
 \endxy
 \]
 where the vertical maps are surjective.
-Since~$\Lambda$ is rigid and~$Y$ is two-term, we can apply~\cite[Prop.~6.2]{IyamaYoshino} to the triangulated category~$K^b(\proj\Lambda)$ (or \cref{prop::KRextricat} to the extriangulated $K^{[-1,0]}(\proj\Lambda)$).
+Since~$\Lambda$ is rigid and~$Y$ is two-term, we can apply~\cite[Prop.~6.2]{IyamaYoshino} to the triangulated category~$K^b(\proj\Lambda)$ (or \cref{prop:KRextricat} to the extriangulated $K^{[-1,0]}(\proj\Lambda)$).
 As a consequence, the right-most vertical map is bijective.
 Because~$FY$ is a brick,~$\End{\Lambda}(FY)$ is a division ring.
 Moreover,~$FY$ is the indecomposable injective with simple socle the simple top of~$P$, so that the~$\End{\Lambda}(FY)$-module~$\Hom{\Lambda}(FP,FY)$ is one-dimensional over~$\End{\Lambda}(FY)$.
@@ -4935,14 +4898,14 @@ The morphism~$\beta h$ is not a section (otherwise~$\beta$ would be a section) a
 Therefore, we have~$f=\beta h \alpha = h'\beta\alpha = 0$.
 \end{proof}
 
-\begin{proof}[Proof of \cref{theo::brick-algebra-condition}]
-The theorem follows from the slightly more general statements of \cref{lemm::then-AR-seq-are-mutation,lemm::if AR are mutations,lemm::initial meshes}.
+\begin{proof}[Proof of \cref{thm:brick-algebra-condition}]
+The theorem follows from the slightly more general statements of \cref{lem:then-AR-seq-are-mutation,lem:if AR are mutations,lem:initial meshes}.
 \end{proof}
 
 %%%
 
 \begin{lemma}
-\label{lemma::characterization Gentle 2-acyclic}
+\label{lem:characterization Gentle 2-acyclic}
 Let~$\Lambda$ be a brick and $2$-acyclic gentle algebra.
 Then, for any indecomposable~$\Lambda$-module~$M$ we have~$\Hom{\Lambda}(M,\tau^2 M)=0$.
 \end{lemma}
@@ -4965,10 +4928,10 @@ Similarly,~$\rho$ contains the target of~$\alpha'$ or the target of~$\beta'$.
 Because the target of~$\alpha$ is the source of~$\alpha'$ (and the target of~$\beta$ is the source of~$\beta'$), this implies that~$Q$ contains either a non-oriented cycle with at most one relation, in which case~$\Lambda$ is not a brick algebra, or a~$2$-cycle, in which case~$\Lambda$ is not~$2$-acyclic.
 \end{proof}
 
-\begin{proof}[Proof of \cref{coro::simplicialTypeConeNKCalgebraic}]
-The unique exchange relation property follows from \cref{prop::exchange conflations are unique} (2).
-By \cref{lemma::characterization Gentle 2-acyclic}, the assumptions of \cref{theo::brick-algebra-condition} are satisfied.
-We can thus apply \cref{theorem::extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
+\begin{proof}[Proof of \cref{coro:simplicialTypeConeNKCalgebraic}]
+The unique exchange relation property follows from \cref{prop:exchange conflations are unique} (2).
+By \cref{lem:characterization Gentle 2-acyclic}, the assumptions of \cref{thm:brick-algebra-condition} are satisfied.
+We can thus apply \cref{thm:extricats} and its corollary, which shows that there is the same number of extremal exchange pairs of the support~$\tau$-tilting fan (i.e. the non-kissing fan) as there are meshes in the Auslander--Reiten quiver of~$\Lambda$.
 Hence the type cone of the support~$\tau$-tilting fan is simplicial.
 \end{proof}
 
@@ -4976,16 +4939,16 @@ Hence the type cone of the support~$\tau$-tilting fan is simplicial.
 
 \subsection{Application to other examples of categories}
 
-In this section, we give two more examples of families of categories to which \cref{theorem::extricats,corollary::meshes positively generate extricats} apply.
+In this section, we give two more examples of families of categories to which \cref{thm:extricats,coro:meshes positively generate extricats} apply.
 
 %%%
 
 \subsubsection{$2$-Calabi--Yau triangulated categories}
-\label{sect::2CYTriangulated}
+\label{sec:2CYTriangulated}
 
 Let~$\cat$ be a triangulated category with shift functor~$\susp$.
 We assume moreover that~$\cat$ is~$\field$-linear, Krull--Schmidt, Hom-finite, 2-Calabi--Yau, with a cluster-tilting object~$T$.
-Then~$\cat$ satisfies all the assumptions of \cref{setting::extricat} for \cref{sect::Statment extricats} but, possibly, assumption (1).
+Then~$\cat$ satisfies all the assumptions of \cref{setting:extricat} for \cref{sec:Statment extricats} but, possibly, assumption (1).
 
 We fix this issue by considering a relative extriangulated structure.
 Let~$\mathbb{E}_T$ be the additive sub-bifunctor of~$\cat(-,\susp -)$ formed by those morphisms that factor through~$\add\susp T$.
@@ -4999,14 +4962,14 @@ The index of an object~$X$ in the triangulated category~$\cat$, coincide with it
 \end{remark}
 
 \begin{remark}
-The main results of \cref{subsect::Statement cluster cats} can thus be viewed as specific cases of the results of \cref{sec:extricats}: \cref{theo::relations-g-vecteurs} and \cref{corollary::meshes positively generate cluster cats} are consequences of \cref{theorem::extricats} and \cref{corollary::meshes positively generate extricats}.
+The main results of \cref{subsec:Statement cluster cats} can thus be viewed as specific cases of the results of \cref{sec:extricats}: \cref{thm:relations-g-vecteurs} and \cref{coro:meshes positively generate cluster cats} are consequences of \cref{thm:extricats} and \cref{coro:meshes positively generate extricats}.
 \end{remark}
 
 
 \subsubsection{Objects presented by a subcategory}
-\label{sect::prT}
+\label{sec:prT}
 
-We now describe a setup satisfying the assumptions of \cref{setting::extricat} that, at the same time, subsumes all examples given so far, while being easily checked in practice.
+We now describe a setup satisfying the assumptions of \cref{setting:extricat} that, at the same time, subsumes all examples given so far, while being easily checked in practice.
 
 Let~$(\ec,\mathbb{E},\mathfrak{s})$ be an extriangulated category (for example, a small exact category or a triangulated category), and let~$\tc$ be an essentially small subcategory of~$\ec$.
 
@@ -5019,12 +4982,12 @@ With that relative structure, the objects in~$\tc$ become projective.
 Define~$\cat$ to be the full subcategory of~$\ec$ whose objects~$X$ admit an~$\mathfrak{s}_\tc$-conflation~$T_1\infl T_0\defl X$.
 
 \begin{lemma}
-\label{lemma:: prT is extriangulated}
+\label{lem: prT is extriangulated}
 The full subcategory~$\cat$ is extension-closed in~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$, and thus inherits an extriangulated structure.
 \end{lemma}
 
 \begin{proof}
-This follows from the proof of \cref{lemma::index kzero extricat}.
+This follows from the proof of \cref{lem:index kzero extricat}.
 \end{proof}
 
 \begin{notation}
@@ -5032,19 +4995,19 @@ Write~$\tc^\perp$ for the full subcategory of~$\ec$ whose objects are those obje
 \end{notation}
 
 \begin{proposition}
-\label{prop::prT}
+\label{prop:prT}
 Assume that, for any~$T\in\tc$, there is an~$\mathfrak{s}$-conflation~$T\infl 0\defl X_T$ in~$\ec$ with~$X_T\in\tc^\perp$.
-Then the extriangulated category~$\cat$ satisfies the assumptions (1) to (3) of \cref{setting::extricat}.
+Then the extriangulated category~$\cat$ satisfies the assumptions (1) to (3) of \cref{setting:extricat}.
 \end{proposition}
 
 \begin{proof}
 For any~$T\in\tc$ the existence of an extriangle~$0\infl T\defl T\overset{0}{\dashrightarrow}$ shows that~$\tc$ is a full subcategory of~$\cat$.
-By \cref{lemma:: prT is extriangulated}, the category~$\cat$ is extriangulated and, by definition of this extriangulated structure, the objects in~$\tc$ are projective in~$\cat$.
+By \cref{lem: prT is extriangulated}, the category~$\cat$ is extriangulated and, by definition of this extriangulated structure, the objects in~$\tc$ are projective in~$\cat$.
 Assumption (3) is satisfied by the definition of~$\cat$, and assumption (2) is equivalent to that of the proposition.
 \end{proof}
 
 \begin{remark}
- The categories considered in \cref{sect::2CYTriangulated,sect::Kbproj} all fall into the setting of \cref{prop::prT}.
+ The categories considered in \cref{sec:2CYTriangulated,sec:Kbproj} all fall into the setting of \cref{prop:prT}.
 \end{remark}
 
 %%%%%%%%%%%
@@ -5088,10 +5051,10 @@ The Auslander--Reiten quiver of the module category is obtained by taking the qu
 \end{tikzcd}
 }
 \]
-The conditions of \cref{theo::brick-algebra-condition} are satisfied.
+The conditions of \cref{thm:brick-algebra-condition} are satisfied.
 \end{example}
 
-\begin{example}[Preprojective algebra of type~$A_3$]\label{exam::preprojective silting objects}
+\begin{example}[Preprojective algebra of type~$A_3$]\label{exm:preprojective silting objects}
 Let~$\Lambda$ be the preprojective algebra of type~$A_3$: it is the path algebra of the quiver
 \[
 \begin{tikzcd}
@@ -5127,7 +5090,7 @@ The Auslander--Reiten quiver of the module category~$\MOD(\Lambda)$ can be obtai
 \]
  
 \medskip
-One can check directly that the conditions of \cref{theo::brick-algebra-condition} is not satisfied.
+One can check directly that the conditions of \cref{thm:brick-algebra-condition} is not satisfied.
 For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm) = \bsm3\\1\esm$, while~$\Hom{\Lambda}\left(\bsm2\\1\esm,\tau^2(\bsm2\\1\esm)\right) = \Hom{\Lambda}(\bsm2\\1\esm,\bsm1\\2\esm) \ne 0$.
 \end{example}
 
@@ -5136,7 +5099,7 @@ For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm)
 % \subsubsection{A quotient of a Frobenius category}
 %
 % \begin{example}
-%  Consider the preprojective algebra of type~$A_3$, as in \cref{exam::preprojective silting objects}. It is a self-injective algebra, so its module category is a Frobenius category. Its projective-injective objects are the modules 
+%  Consider the preprojective algebra of type~$A_3$, as in \cref{exm:preprojective silting objects}. It is a self-injective algebra, so its module category is a Frobenius category. Its projective-injective objects are the modules 
 %  \[
 %   \begin{matrix} 1 \\ 2 \\ 3 \end{matrix} \quad , \quad  \begin{matrix} 2 \\ 13 \\ 2 \end{matrix} \quad \textrm{and} \quad \begin{matrix} 3 \\ 2 \\ 1 \end{matrix}.
 %  \]
