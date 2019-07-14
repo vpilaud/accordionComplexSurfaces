@@ -426,7 +426,19 @@ We now give a more detailed overview of our main results and the structure of th
 Let~$\Fan$ be an essential complete polyhedral fan in~$\R^n$ (all definitions are recalled in~\cref{ssec:polytopes and fans}).
 The type cone~$\typeCone(\Fan)$ of~$\Fan$ (\cref{ssec:type cone}), introduced by P. McMullen~\cite{McMullen-typeCone}, is a polyhedral cone that parametrizes the set of all possible polytopal realizations of~$\Fan$. These realizations can be described explicitly as affine sections of the non-negative orthant~$\R^N_{\geq0}$, where~$N$ is the number of rays of~$\Fan$ (\cref{prop:alternativePolytopalRealization}).  
 If $\Fan$ is a simplicial fan and has the unique exchange relation property (\cref{def:uerp}), then its type cone is easier to describe and study.
-And if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimTypeCone}), then all possible polytopal realizations of~$\Fan$ can be described explicitely in terms of~$N-n$ positive real parameters (\cref{coro:simplicialTypeCone}).
+And if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimTypeCone}), then all possible polytopal realizations of~$\Fan$ can be described explicitely in terms of~$N-n$ positive real parameters as follows
+
+\newtheorem*{coro:simplicialTypeCone}{\cref{coro:simplicialTypeCone}}
+\begin{coro:simplicialTypeCone}
+\label{coro:simplicialTypeCone}
+Assume that the type cone~$\typeCone(\Fan)$ is simplicial and let~$\b{K}$ be the $(N-n) \times N$-matrix whose rows are the inner normal vectors of the facets of~$\typeCone(\Fan)$. Then the polytope
+\[
+R_\b{\ell} \eqdef \set{\b{z} \in \R^N}{K\b{z} = \b{\ell} \text{ and } \b{z} \ge 0}
+\]
+is a realization of the fan~$\Fan$ for any positive vector~$\b{\ell} \in \R_{>0}^{N-n}$.
+Moreover, the polytopes~$R_\b{\ell}$ for~$\b{\ell} \in \R_{>0}^{N-n}$ describe all polytopal realizations of~$\Fan$.
+\end{coro:simplicialTypeCone}
+
 This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: the~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra) in~\cref{subsec:typeConeCA}, and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra) in~\cref{subsec:typeConeNKC}.
 We also completely describe the facets of the type cone for graph associahedra in~\cref{subsec:typeConeGA}, to which our strategy does not apply, as only the classical associahedron has a simplicial type cone.
 
@@ -586,12 +598,6 @@ In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g
 \noindent
 We conclude with a schematic diagram representing the logical dependencies between the different sections of the paper.
 
-\medskip
-
-\begin{center}
-\includegraphics[scale=.9]{Schema}
-\end{center}
-
 \vspace{.5cm}
 \tikzset{
   double arrow/.style={
@@ -623,7 +629,11 @@ We conclude with a schematic diagram representing the logical dependencies betwe
 \end{tikzpicture}
 }
 
+\medskip
 
+\begin{center}
+\includegraphics[scale=.9]{Schema}
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
