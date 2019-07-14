@@ -10,7 +10,7 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{tkz-graph}
-\usetikzlibrary{trees, decorations, decorations.markings, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
+\usetikzlibrary{trees, decorations, decorations.pathmorphing, decorations.markings, decorations.shapes, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
 \graphicspath{{figures/}{figures/diagonals/}{figures/walks/}{figures/tubes/}}
 \makeatletter\def\input@path{{figures/}}\makeatother
 \usepackage{caption}
@@ -417,7 +417,7 @@ To conclude, it is our hope that the present paper will participate to the inter
 
 \section*{Structure of the paper: main results and logical dependencies}
 
-We give a brief overview of our main results and the structure of the article. In particular, some of the geometric realizations in~\cref{part:geometry} depend on algebraic results whose proof is delayed until~\cref{part:algebra}. The goal of this section is to clarify their logical dependencies. 
+We now give a more detailed overview of our main results and the structure of the article. In particular, some of the geometric realizations in~\cref{part:geometry} depend on algebraic results whose proof is delayed until~\cref{part:algebra}. The goal of this section is to clarify their logical dependencies. 
 
 \para{Type cone approach}
 (\cref{sec:typeCone})
@@ -430,7 +430,7 @@ And if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimType
 This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: the~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra) in~\cref{subsec:typeConeCA}, and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra) in~\cref{subsec:typeConeNKC}.
 We also completely describe the facets of the type cone for graph associahedra in~\cref{subsec:typeConeGA}, to which our strategy does not apply, as only the classical associahedron has a simplicial type cone.
 
-\para{Cluster algebras of finite type}
+\para{Cluster algebras of finite type and generalized associahedra}
 (\cref{subsec:typeConeCA})
 
 \noindent
@@ -470,8 +470,8 @@ The type cone~$\typeCone \big( \Fan(\B_\circ) \big)$ is simplicial.
 
 \noindent
 The same strategy is applied to a class of finite dimensional algebras, called gentle algebras, whose representations are combinatorially well understood.
-We identify two conditions, called brick and 2-acyclicity (\cref{def:brick2acyclic}), that enable us to make use of the type cone approach.
 We note that the~$\tau$-tilting theory of gentle algebras is the algebraic counterpart of the combinatorics of accordions on surfaces~\cite{PaluPilaudPlamondon-nonkissing,BrustleDouvilleMousavandThomasYildirim,PaluPilaudPlamondon-surfaces}.
+We identify two conditions, called brick and 2-acyclicity (\cref{def:brick2acyclic}), that enable us to make use of the type cone approach.
 
 Let~$\quiver = (Q,I)$ be a gentle bound quiver, and let~$\Fan(\quiver)$ be the fan of its~$\b{g}$-vectors (\cref{subsubsec:nonkissingComplex}), also called non-kissing fan.
 We provide the following polytopal realizations of~$\Fan(\quiver)$.
@@ -506,7 +506,7 @@ The second step is the following statement, for which we provide a purely combin
 If the gentle bound quiver~$\quiver$ is brick and 2-acyclic, then the type cone~$\typeCone \big( \Fan(\quiver) \big)$ is simplicial.
 \end{coro:simplicialTypeConeNKC}
 
-\para{Graphical nested complexes}
+\para{Graphical nested complexes and graph associahedra}
 (\cref{subsec:typeConeGA})
 
 \noindent
@@ -528,7 +528,7 @@ if and only if~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and
 
 \noindent
 We prove an analogue for cluster categories of a result of M. Auslander for module categories of Artin algebras~\cite{Auslander1984}. 
-We are mainly motivated by the fact that it has for a consequence that the type cones of the cluster fans of finite type are simplicial.
+We are mainly motivated by the fact that it implies that the type cones of the cluster fans of finite type are simplicial.
 However, this result is of independent interest and sheds new lights on the Grothendieck groups of cluster categories.
 
 Let~$\cat$ be a cluster category with finitely many isomorphism classes of indecomposable objects (see \cref{sec:setting} for the precise and more general setting in which the theorem is proven).
@@ -550,7 +550,7 @@ x = \sum_{A \in \ind(\cat) \ssm \add(\susp T)} \frac{\langle x, A \rangle}{\lang
 (\cref{sec:extricats})
 
 \noindent
-We prove a more general version of \cref{thm:relations-g-vecteurs} that not only applies to cluster fans, but also to non-kissing fans.
+We prove a more general version of \cref{thm:relations-g-vecteurs} that applies not only to cluster fans, but also to non-kissing fans.
 Once more, our main motivation is to prove that the type cone of the non-kissing fan of a brick and 2-acyclic gentle algebra is simplicial, but the results are of independent interest, and might be useful for studying the type cones of other families of simplicial fans.
 
 Let~$\cat$ be an extriangulated category (\cref{sec:recollections extricats}) with a fixed projective object~$T$ such that the morphism~$T\to 0$ is an inflation and, for each~$X\in\cat$, there is an extriangle~$T_1^X\infl T_0^X\defl X\overset{\delta_X}{\dashrightarrow}$.
@@ -583,11 +583,47 @@ In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g
 
 \para{Schematic diagram of logical dependencies}
 
+\noindent
+We conclude with a schematic diagram representing the logical dependencies between the different sections of the paper.
+
 \medskip
 
 \begin{center}
 \includegraphics[scale=.9]{Schema}
 \end{center}
+
+\vspace{.5cm}
+\tikzset{
+  double arrow/.style={
+    -latex, line width=3pt, black, % first arrow
+    postaction={draw,line width=2pt, white, shorten <= 1,shorten >= 2}, % second arrow
+  }
+}
+\centerline{
+\begin{tikzpicture}[every node/.style={inner sep=6, outer sep=8}]
+	\node[cloud, cloud puffs=25, cloud ignores aspect, minimum width=5cm, minimum height=1cm, align=center, draw=blue, fill=blue!25] (I1) at (0,1.5) {\ref{part:geometry}.\ref{sec:typeCone} -- Type cone strategy};
+	\node[rectangle, draw=black, fill=black!10, align=center] (I21) at (-6,0) {\ref{part:geometry}.\ref{subsec:typeConeAsso} -- Toy example \\ Classical associahedra};
+	\node[rectangle, draw=orange, fill=orange!10, align=center, text width=5cm] (I22) at (-3,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeCA} -- Cluster algebras \\ \& generalized associahedra};
+	\node[rectangle, draw=green, fill=green!10, align=center, text width=5cm] (I23) at (3,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeNKC} -- Gentle algebras \\ \& generalized accordiohedra};
+	\node[rectangle, draw=red, fill=red!10, align=center, text width=5.4cm] (I24) at (7,0) {\ref{part:geometry}.\ref{subsec:typeConeGA} -- Graphical nested complexes \\ \& graph associahedra};
+	\node[ellipse, draw=orange, fill=orange!10, align=center, text width=4.9cm, inner sep=2, minimum height=1cm] (II1) at (-4.5,-4.2) {\ref{part:algebra}.\ref{sec:clusterCategories} -- Cluster categories};
+	\node[ellipse, draw=green, fill=green!10, align=center, text width=4.9cm, inner sep=0, minimum height=1cm] (II2) at (4.5,-4.2) {\ref{part:algebra}.\ref{sec:extricats} -- Extriangulated categories};
+	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!25] (I1.180) to [bend right, looseness=1.1] node[label={[shift={(.6,-1.5)}]applied to}]{} (I21.90);
+	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!25] (I1.240) to [bend right, looseness=.6] node[label={[shift={(.6,-1.5)}]applied to}]{} (I22.90);
+	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!25] (I1.300) to [bend left, looseness=.6] node[label={[shift={(-.6,-1.5)}]applied to}]{} (I23.90);
+	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=10}, draw=blue, fill=blue!25] (I1.0) to [bend left, looseness=1.1] (I24.90);
+	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
+	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I22.270)+(0,.15);
+	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I23.270)+(0,.15);
+	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes} (II2.180);
+	\draw let \p{top}=(I1.90), \p{left}=(I21.180), \p{bottom}=(I22.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
+	\draw let \p{top}=([shift={(0,.2)}]II1.90), \p{left}=(I21.180), \p{bottom}=(II1.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
+	\path let \p{top}=(I1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-6.15, \y{top}) {\ref{part:geometry} -- Discrete geometry};
+	\path let \p{top}=([shift={(0,.2)}]II1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-5.8, \y{top}) {\ref{part:algebra} -- Representation theory};
+\end{tikzpicture}
+}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
