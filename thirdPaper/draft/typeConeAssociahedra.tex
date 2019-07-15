@@ -621,7 +621,7 @@ We conclude with a schematic diagram representing the logical dependencies betwe
 	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
 	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I22.270)+(0,.15);
 	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I23.270)+(0,.15);
-	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes} (II2.180);
+	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes to} (II2.180);
 	\draw let \p{top}=(I1.90), \p{left}=(I21.180), \p{bottom}=(I22.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
 	\draw let \p{top}=([shift={(0,.2)}]II1.90), \p{left}=(I21.180), \p{bottom}=(II1.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
 	\path let \p{top}=(I1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-6.15, \y{top}) {\ref{part:geometry} -- Discrete geometry};
@@ -645,7 +645,7 @@ We conclude with a schematic diagram representing the logical dependencies betwe
  	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
 	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I22.270)+(0,.15);
 	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I23.270)+(0,.15);
-	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes} (II2.180);
+	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes to} (II2.180);
 	\draw let \p{top}=(I1.90), \p{left}=(I21.180), \p{bottom}=(I22.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
 	\draw let \p{top}=([shift={(0,.2)}]II1.90), \p{left}=(I21.180), \p{bottom}=(II1.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
 	\path let \p{top}=(I1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-6.15, \y{top}) {\ref{part:geometry} -- Discrete geometry};
