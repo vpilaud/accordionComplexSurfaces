@@ -492,7 +492,7 @@ We provide the following polytopal realizations of~$\Fan(\quiver)$.
 \begin{thm:allPolytopalRealizationsNKC}
 For any brick and $2$-acyclic gentle quiver~$\quiver$ and any~$\b{\ell} \in \R_{>0}^{\strings}$, the polytope
 \[
-R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any improper walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
+R_\b{\ell}(\quiver) \eqdef \set{\b{z} \in \R^{\walks}}{\begin{array}{l} \b{z} \ge 0 \qquad\text{and}\qquad \b{z}_\omega = 0 \text{ for any straight or self-kissing walk } \omega \\ \b{z}_{\cc{\sigma}} + \b{z}_{\hh{\sigma}} - \b{z}_{\hc{\sigma}} - \b{z}_{\ch{\sigma}} = \b{\ell}_\sigma \text{ for all } \sigma \in \strings\end{array}}
 \]
 is a realization of the non-kissing fan~$\gvectorFan[\quiver]$.
 Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\strings}$ describe all polytopal realizations of~$\gvectorFan[\quiver]$.
@@ -1977,7 +1977,7 @@ See \cref{fig:kissingCrossing} for a schematic representation and \cref{fig:exmN
 We say that~$\omega$ and~$\omega'$ are \defn{kissing} if~$\omega$ kisses~$\omega'$ or~$\omega'$ kisses~$\omega$ (or both).
 Note that we authorize the situation where the common finite substring is reduced to a vertex~$a$, that~$\omega$ can kiss~$\omega'$ several times, that~$\omega$ and~$\omega'$ can mutually kiss, and that~$\omega$ can kiss itself.
 For example, the orange walk in \cref{fig:exmNonkissing}\,(middle) is self-kissing (at its self-intersection).
-We say that a walk is \defn{proper} if it is not straight nor self-kissing.
+We say that a walk is \defn{proper} if it is not straight nor self-kissing, and \defn{improper} otherwise.
 We denote by~$\properWalks$ the set of all proper walks of~$\quiver$.
 
 \begin{figure}[h]
