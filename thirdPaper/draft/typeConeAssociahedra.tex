@@ -1057,7 +1057,7 @@ The following statement provides three equivalent geometric constructions of~$\A
 The associahedron~$\Asso[n]$ can be described equivalently as:
 \begin{itemize}
 \item the convex hull of the points~$L(T) \in \R^{n+1}$ for all rooted binary trees~$T$ with~$n+1$ internal nodes, where the $i$th coordinate of~$L(T)$ is the product of the number of leaves in the left subtree by the number of leaves in the right subtree of the $i$th node of~$T$ in inorder~\cite{Loday},
-\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{a < \ell < b} x_\ell \ge \binom{b-a+2}{2}}$ for all internal diagonals~$(a,b)$ of \mbox{the $(n+3)$-gon~\cite{ShniderSternberg}},
+\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{a < \ell < b} x_\ell \ge \binom{b-a}{2}}$ for all internal diagonals~$(a,b)$ of \mbox{the $(n+3)$-gon~\cite{ShniderSternberg}},
 \item the Minkowski sum of the faces~$\simplex_{[i,j]}$ of the standard $n$-dimensional simplex~$\simplex_{[n+1]}$ corresponding to all proper intervals~$[i,j]$ of~$[n+1]$,~\cite{Postnikov}.
 \end{itemize}
 \end{theorem}
@@ -1072,7 +1072,7 @@ The following fans are illustrated in \cref{fig:lodayFans} in dimension~$2$ and~
 \label{thm:normalFanLoday}
 In the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$, 
 \begin{itemize}
-\item the normal vector of the facet corresponding to an internal diagonal~$(a,b)$ of the $(n+3)$-gon is the vector~$\gvector{a,b} \eqdef \pi\big( \sum_{a < \ell < b} \b{e}_\ell \big) = (n+1) \sum_{a < \ell < b} \b{e}_\ell - (b-a+1) \sum_{1 \le \ell \le n+1} \b{e}_\ell$.
+\item the normal vector of the facet corresponding to an internal diagonal~$(a,b)$ of the $(n+3)$-gon is the vector~$\gvector{a,b} \eqdef \pi\big( \sum_{a < \ell < b} \b{e}_\ell \big) = (n+1) \sum_{a < \ell < b} \b{e}_\ell - (b-a-1) \sum_{1 \le \ell \le n+1} \b{e}_\ell$.
 \item the normal cone of the vertex corresponding to a rooted binary tree~$T$ is the incidence cone~$\bigset{\b{x} \in \HH}{x_i \le x_j \text{ for all edges $i \to j$ in $T$}}$.
 \end{itemize}
 \end{theorem}
@@ -1132,7 +1132,7 @@ It has $3$ facet-defining inequalities (given below), which correspond to the fl
 In all our tables, we just record the coefficients of the inequalities, which are then easily reconstructed.
 For instance, the inequality~$\red \circled{A}$ above is given by~$\b{h}_{\includegraphics[scale=.3]{diagonalA1}} + \b{h}_{\includegraphics[scale=.3]{diagonalA3}} > \b{h}_{\includegraphics[scale=.3]{diagonalA2}}$.
 
-The type cone of~$\gvectorFan[2]$ lives in~$\R^9$ and has a linearity space of dimension~$3$.
+The type cone of~$\gvectorFan[3]$ lives in~$\R^9$ and has a linearity space of dimension~$3$.
 It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(right).
 
 \[
@@ -1287,7 +1287,7 @@ The type cone~$\typeCone \big( \gvectorFan[n] \big)$ is simplicial.
 \end{corollary}
 
 \enlargethispage{.2cm}
-Combining \cref{coro:simplicialTypeCone}, \cref{coro:simplicialTypeConeAsso} and \cref{prop:extremalExchangeablePairsAsso}, we derive the following description of all polytopal realizations of the fan~$\gvectorFan[n]$, recovering all associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}.
+Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeAsso} and \cref{prop:extremalExchangeablePairsAsso}, we derive the following description of all polytopal realizations of the fan~$\gvectorFan[n]$, recovering all associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}.
 Note that the arguments of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} were quite different from the present~approach.
 
 \begin{corollary}[{\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}}]
@@ -1921,7 +1921,7 @@ Following M.~Butler and C.~Ringel~\cite{ButlerRingel}, we say that~$\quiver$ is 
 \end{enumerate}
 The algebra~$kQ/I$ is called a \defn{gentle algebra}.
 
-The \defn{blossoming quiver}~$\quiver\blossom$ of a gentle quiver is the gentle quiver obtained by completing all vertices of~$\quiver$ with additional incoming or outgoing \defn{blossoms} such that all vertices of~$\quiver$ become $4$-valent.
+The \defn{blossoming quiver}~$\quiver\blossom$ of a gentle quiver~$\quiver$ is the gentle quiver obtained by completing all vertices of~$\quiver$ with additional incoming or outgoing \defn{blossoms} such that all vertices of~$\quiver$ become $4$-valent.
 For instance, \cref{fig:exmNonkissing},(left) shows a blossoming quiver: the vertices of~$\quiver$ appear in black, while the blossom vertices of~$\quiver\blossom$ appear in white.
 We now always assume that~$\quiver$ is a gentle quiver with blossoming quiver~$\quiver\blossom$.
 
@@ -1959,7 +1959,7 @@ In other words the two arrows of~$\omega$ incident to the endpoints of~$\sigma$ 
 We denote by~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ the sets of bottom and top substrings of~$\omega$ respectively.
 We use the same notation for undirected walks (of course, substrings of an undirected walk are undirected).
 
-A \defn{peak} (resp.~\defn{deep}) of a walk~$\omega$ is a substring of~$\omega$ of length zero which is on top (resp.~at the bottom of~$\omega$).
+A \defn{peak} (resp.~\defn{deep}) of a walk~$\omega$ is a substring of~$\omega$ of length zero which is on top (resp.~at the bottom) of~$\omega$.
 A walk~$\omega$ is \defn{straight} if it has no peak or deep (\ie if~$\omega$ or~$\omega^{-1}$ is a path in~$\quiver\blossom$), and \defn{bending} otherwise.
 We denote by~$\peaks{\omega}$ (resp.~$\deeps{\omega}$) the multisets of vertices of peaks (resp.~deeps) of~$\omega$.
 
@@ -2091,7 +2091,7 @@ The notations are illustrated in \cref{fig:flip}.
 Let~$\omega, \omega'$ be two exchangeable walks on~$\quiver$. Then:
 \begin{enumerate}[(i)]
 
-\item For any non-kissing facets~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = f' \ssm \{\omega'\}$, the distinguished substrings of~$\omega$ in~$F$ and of~$\omega'$ in~$F'$ coincide to a string~$\sigma$. Moreover, if we decompose~${\omega = \rho \sigma \tau}$ and~${\omega' = \rho' \sigma \tau'}$, then the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
+\item For any non-kissing facets~$F, F'$ of~$\NKC$ with~$F \ssm \{\omega\} = F' \ssm \{\omega'\}$, the distinguished substrings of~$\omega$ in~$F$ and of~$\omega'$ in~$F'$ coincide to a string~$\sigma$. Moreover, if we decompose~${\omega = \rho \sigma \tau}$ and~${\omega' = \rho' \sigma \tau'}$, then the facets~$F$ and~$F'$ both contain the walks~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$.
 \item The substring~$\sigma$ and thus the walks~$\mu$ and~$\nu$ only depend on the exchangeable walks~$\omega$ and~$\omega'$, and not on the adjacent non-kissing facet~$F $ and~$F'$.
 \item The linear dependence between the $\b{g}$-vectors of~$F \cup F'$ is given by
 \[
