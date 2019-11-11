@@ -122,7 +122,7 @@
 %% use \addressmark{1}, \addressmark{2} etc for the institutions, and use \thanks{} for contact details
 \author[Arnau Padrol, Yann Palu, Vincent Pilaud and Pierre-Guy Plamondon]{
 	Arnau Padrol\thanks{\href{mailto:arnau.padrol@imj-prg.fr}{arnau.padrol@imj-prg.fr}. Supp. by ANR grant CAPPS~(17\,CE40\,0018).}\addressmark{1},
-	\stepcounter{footnote}
+	\stepcounter{footnote}%
 	Yann Palu\thanks{\href{mailto:yann.palu@u-picardie.fr}{yann.palu@u-picardie.fr}. Supp. by ANR grant SC3A~(15\,CE40\,0004\,01).}\addressmark{2}, \\
 	Vincent Pilaud\thanks{\href{mailto:vincent.pilaud@lix.polytechnique.fr}{vincent.pilaud@lix.polytechnique.fr}. Supp. by ANR SC3A~15\,CE40\,0004\,01 and CAPPS~17\,CE40\,0018.}\addressmark{3}
 	\and
@@ -148,13 +148,13 @@
 %% please don't use custom commands in your abstract / resume, as these will be displayed online
 %% likewise for citations -- please don't use \cite, and instead write out your citation as something like (author year)
 \abstract{
-We study the type cone (\ie the space of all polytopal realizations) of $\b{g}$-vector fans of finite type cluster-like complexes (finite type cluster complexes, non-kissing complexes of gentle algebra, and graphical nested complexes). We show that this cone is often simplicial, which explains an elegant ``kinematic'' construction of the associahedron as a section of a high dimensional positive orthant by certain affine subspaces parametrized by a small dimensional positive orthant.
+We study the type cone (\ie the space of all polytopal realizations) of $\b{g}$-vector fans of finite type cluster-like complexes (finite type cluster complexes, non-kissing complexes of gentle algebra, and graphical nested complexes). We show that this cone is often simplicial, which explains an elegant ``kinematic'' construction of the associahedron as a section of a high dimensional positive orthant by certain affine subspaces parametrized by a low dimensional positive orthant.
 }
 
 %% put your French abstract here, or comment this out if you don't have one
 \resumetitle{R\'esum\'e}
 \resume{
-Nous \'etudions le type cone (\ie l'espace de toutes les r\'ealisations polytopales) des \'eventails de $\b{g}$-vecteurs de complexes de type amassés (complexes amassés de type fini, complexes platoniques d'alg\`ebres aimables, et complexes emboit\'es graphi\-ques). Nous montrons que ce cone est souvent simplicial, ce qui explique une \'el\'egante construction ``cin\'ematique'' de l'associa\`edre comme section d'un orthant positif de grande dimension par certains sous-espaces affines param\`etrés par un orthant positif de petite dimension.
+Nous \'etudions le type cone (\ie l'espace de toutes les r\'ealisations polytopales) des \'eventails de $\b{g}$-vecteurs de complexes de type amassés (complexes amassés de type fini, complexes platoniques d'alg\`ebres aimables, et complexes emboit\'es graphi\-ques). Nous montrons que ce cone est souvent simplicial, ce qui explique une \'el\'egante construction ``cin\'ematique'' de l'associa\`edre comme section d'un orthant positif de haute dimension par certains sous-espaces affines param\`etrés par un orthant positif de basse dimension.
 }
 
 %% put your keywords here, or comment this out if you don't have them yet
@@ -196,7 +196,7 @@ This new perspective has several advantages, as our proof uniformly applies to \
 These advantages of the type cone approach all follow from one essential feature: it enables to completely separate the algebraic aspects from the geometric aspects of the problem.
 
 Besides revisiting the construction of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} and extending it to any initial seed, our type cone approach is also successful when applied to the $\b{g}$-vector fans of other families of generalizations of the associahedron.
-In the present paper, we explore specifically the non-kissing complexes of gentle algebras introduced in~\cite{PaluPilaudPlamondon-nonkissing} (see \cref{subsec:gentleAssociahedra}) and the graphical nested complexes studied in~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky} (see \cref{subsec:graphAssociahedra}).
+In the present paper, we explore specifically the non-kissing complexes of gentle algebras introduced in~\cite{PaluPilaudPlamondon-nonkissing} (see \cref{subsec:gentleAssociahedra}) and the graphical nested complexes studied in~\cite{CarrDevadoss, FeichtnerSturmfels, Postnikov, Zelevinsky} (see \cref{subsec:graphAssociahedra}).
 
 Many details and all proofs are omitted in this extended abstract for space reason, but a complete treatment can be found in~\cite{PadrolPaluPilaudPlamondon}.
 In particular, the quiver representation theory is an iceberg in this abstract: while useful for intuition and essential for certain proofs (\eg \cref{thm:meshMutations}), it is mostly hidden and only appears in the Auslander-Reiten quivers used to represent the inequalities of the type cones (in \cref{fig:labelFacetDefiningInequalititiesAsso,fig:labelFacetDefiningInequalititiesCA,fig:labelFacetDefiningInequalititiesNKC}).
@@ -204,7 +204,7 @@ In particular, the quiver representation theory is an iceberg in this abstract: 
 \section{Type cone of a fan}
 \label{sec:typeCone}
 
-Fix an essential complete simplicial fan\footnote{A \defn{polyhedral cone} is the positive span of finitely many vectors or equivalently, the intersection of finitely many closed linear half-spaces. The \defn{faces} of a cone are its intersections with its supporting hyperplanes. A \defn{fan}~$\Fan$ is a set of polyhedral cones such that any face of a cone of~$\Fan$ belongs to~$\Fan$, and any two cones of~$\Fan$ intersect along a face of both. A fan is \defn{essential} if the intersection of its cones is the origin, \defn{complete} if the union of its cones covers~$\R^n$, and \defn{simplicial} if all its cones are generated by dimension many rays.}~$\Fan$ in~$\R^n$. Let~$\b{G}$ the $N \times n$-matrix whose rows are (representative vectors of) the rays of~$\Fan$ and let~$\b{K}$ be a $(N-n) \times N$-matrix that spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$). For any height vector~$\b{h} \in \R^N$, we define the polytope\footnote{A \defn{polytope} is the convex hull of finitely many points or equivalently, a bounded intersection of finitely many closed affine half-spaces.}
+Fix an essential complete simplicial fan\footnote{A \defn{polyhedral cone} is the positive span of finitely many vectors or equivalently, the intersection of finitely many closed linear half-spaces. The \defn{faces} of a cone are its intersections with its supporting hyperplanes. A \defn{fan}~$\Fan$ is a set of polyhedral cones such that any face of a cone of~$\Fan$ belongs to~$\Fan$, and any two cones of~$\Fan$ intersect along a face of both. A fan is \defn{essential} if the intersection of its cones is the origin, \defn{complete} if the union of its cones covers~$\R^n$, and \defn{simplicial} if all its cones are generated by dimension many rays.}~$\Fan$ in~$\R^n$. Let~$\b{G}$ be the $N \times n$-matrix whose rows are (representative vectors of) the rays of~$\Fan$ and let~$\b{K}$ be a $(N-n) \times N$-matrix that spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$). For any height vector~$\b{h} \in \R^N$, we define the polytope\footnote{A \defn{polytope} is the convex hull of finitely many points or equivalently, a bounded intersection of finitely many closed affine half-spaces.}
 \(
 P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}.
 \)
@@ -264,7 +264,7 @@ H^>_{de}: \; \b{h}_1 + \b{h}_4 > 0
 \qquad
 H^>_{ae}: \; \b{h}_2 + \b{h}_5 > 0,
 \end{gather*}
-where $H^>_{ij}$ denotes the halfspace defined by the inequality corresponding to the two adjacent maximal cones~$i$ and~$j$.
+where $H^>_{xy}$ denotes the halfspace defined by the inequality corresponding to the two adjacent maximal cones~$x$ and~$y$.
 %Note that the inequalities~$H^>_{ae}$ and~$H^>_{de}$ are redundant, while the other three define facets, so that the extremal adjacent pairs are~$(a,b)$, $(b,c)$ and~$(c,d)$.
 For example, the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, \nicefrac{5}{4}, 1, \nicefrac{5}{4})$ belongs to the type cone~$\typeCone(\Fan)$, and the corresponding polytope is represented in \cref{fig:typeCone} (middle).
 To represent this type cone, we slice it with a transversal $2$-dimensional affine space. This is the red triangle depicted in \cref{fig:typeCone} (right).
@@ -277,7 +277,7 @@ To represent this type cone, we slice it with a transversal $2$-dimensional affi
 \end{example}
 
 \begin{remark}
-All fans considered in \cref{sec:gvectorFans} have the \defn{unique exchange relation property}: the linear dependence ${\displaystyle\sum}_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0$ only depends on the exchanged rays~$\ray[r]$ and~$\ray[r]'$, not on the maximal adjacent cones~$\rays$ and~$\rays'$. We then write~$\coefficient[{\ray[s]}][\ray][\ray']$ instead of~$\coefficient[{\ray[s]}][\rays][\rays']$ and we call \defn{extremal adjacent pair} of~$\Fan$ the pairs of exchangeable rays~$\{\ray, \ray'\}$ of~$\Fan$ such that the corresponding inequality ${\displaystyle\sum}_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\ray][\ray'] \, \b{h}_{\ray[s]} > 0$ defines a facet of~$\typeCone(\Fan)$.
+All fans considered in \cref{sec:gvectorFans} have the \defn{unique exchange relation property}: the linear dependence ${\displaystyle\sum}_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \ray[s] = 0$ only depends on the exchanged rays~$\ray[r]$ and~$\ray[r]'$, not on the maximal adjacent cones~$\rays$ and~$\rays'$. We then write~$\coefficient[{\ray[s]}][\ray][\ray']$ instead of~$\coefficient[{\ray[s]}][\rays][\rays']$ and we call \defn{extremal exchangeable pairs} of~$\Fan$ the pairs of exchangeable rays~$\{\ray, \ray'\}$ of~$\Fan$ such that the corresponding inequality ${\displaystyle\sum}_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\ray][\ray'] \, \b{h}_{\ray[s]} > 0$ defines a facet of~$\typeCone(\Fan)$.
 
 \end{remark}
 
@@ -285,7 +285,7 @@ To conclude this section, we consider alternative polytopal realizations of the 
 
 \begin{proposition}
 \label{prop:alternativePolytopalRealization}
-The affine map~$\Psi: \R^n \to \R^N$ defined by~$\Psi(\b{x}) = \b{h} - G\b{x}$ sends the polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$ to the polytope~$Q_\b{h} \eqdef \set{\b{z} \in \R^N}{\b{K}\b{z} = \b{K}\b{h} \text{ and } \b{z} \ge 0}$.
+The map~$\b{x} \in \R^n \mapsto \b{h} - G\b{x} \in \R^N$ is an affine transformation of the polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$ to the polytope~$Q_\b{h} \eqdef \set{\b{z} \in \R^N}{\b{K}\b{z} = \b{K}\b{h} \text{ and } \b{z} \ge 0}$.
 \end{proposition}
 
 \begin{corollary}
@@ -301,17 +301,17 @@ Moreover, the polytopes~$R_\b{\ell}$ for~$\b{\ell} \in \R_{>0}^{N-n}$ describe a
 \section{Applications to $\b{g}$-vector fans}
 \label{sec:gvectorFans}
 
-We now study the type cones of the normal fans of three families generalizing the associahedron constructed in~\cite{Loday}: the generalized associahedra of finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasI, FominZelevinsky-ClusterAlgebrasII, FominZelevinsky-ClusterAlgebrasIV, HohlwegLangeThomas, HohlwegPilaudStella}, the gentle associahedra~\cite{PaluPilaudPlamondon-nonkissing}, and the graph associahedra~\mbox{\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}}.
+We now study the type cones of the normal fans of three families generalizing the associahedron constructed in~\cite{Loday}: the generalized associahedra of finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasI, FominZelevinsky-ClusterAlgebrasII, FominZelevinsky-ClusterAlgebrasIV, HohlwegLangeThomas, HohlwegPilaudStella}, the gentle associahedra~\cite{PaluPilaudPlamondon-nonkissing}, and the graph associahedra~\mbox{\cite{CarrDevadoss, FeichtnerSturmfels, Postnikov, Zelevinsky}}.
 %All these families contain the classical associahedra~$\Asso[n]$ constructed in~\cite{Loday}.
 
 \subsection{Classical associahedra}
 \label{subsec:associahedra}
 
 %We start with the classical associahedron.
-A $n$-dimensional \defn{associahedron} is a polytope whose face lattice is the reverse inclusion lattice of dissections (\ie sets of pairwise non-crossing diagonals) of a convex~$(n+3)$-gon.
+An $n$-dimensional \defn{associahedron} is a polytope whose face lattice is the reverse inclusion lattice of dissections (\ie sets of pairwise non-crossing diagonals) of a convex~$(n+3)$-gon.
 In particular, its vertices correspond to triangulations of the $(n+3)$-gon and its facets correspond to internal diagonals of the $(n+3)$-gon.
 Let~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$ (resp.~$Y(n) \eqdef \set{(a,b)}{0 \le a < b-2 \le n}$) denote all (resp.~the internal) diagonals.
-The \defn{$\b{g}$-vector} of a diagonal $(a,b) \in X(n)$ is ${\gvector{a,b} \eqdef (n+1) {\displaystyle\sum}_{\,a < \ell < b} \b{e}_\ell - (b-a-1) {\displaystyle\sum}_{\,1 \le \ell \le n+1} \b{e}_\ell}$.
+The \defn{$\b{g}$-vector} of a diagonal $(a,b) \in X(n)$ is ${\gvector{a,b} \eqdef {\displaystyle\sum}_{\,a < \ell < b} \b{e}_\ell - \frac{b-a-1}{n+1} {\displaystyle\sum}_{\,1 \le \ell \le n+1} \b{e}_\ell}$.
 %Note that~$\gvector{a,b} = 0$ if~$(a,b)$ is not internal.
 We set~$\gvector{D} \eqdef \set{\gvector{a,b}}{(a,b) \in D}$ for a dissection~$D$.
 Recall that:
@@ -446,6 +446,7 @@ Moreover, the polytopes~$R_\b{\ell}(n)$ for~$\b{\ell} \in \R_{>0}^{Y(n)}$ descri
 	\begin{overpic}[scale=.5]{lodayFan3} \put(-10,93){$\boxed{n=3}$} \end{overpic}
 	\hspace{.5cm}
 	\raisebox{.35cm}{\begin{overpic}[scale=.5]{clusterFanA}
+		\put(75,92){$\boxed{\B_\circ \! = \!\! {\tiny\left[\begin{array}{@{}r@{}r@{}r@{}} 0 & -1 & 1 \\ 1 & 0 & -1 \\ -1 & 1 & 0 \end{array}\right]}}$}
 		\put(35,33){${\scriptstyle x_1}$}
 		\put(47,54){${\scriptstyle x_2}$}
 		\put(59,33){${\scriptstyle x_3}$}
@@ -731,8 +732,8 @@ To describe the facets of this type cone, we need the following special mutation
     	\draw[red, ->] (f2) -- (m-3-9);
     \end{tikzpicture}
     }
-    \vspace{-.1cm}
-	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[\B_\circ] \big)$ for the cluster fan of \cref{fig:lodayFans}\,(right). See \cref{thm:extremalExchangeablePairsCA}. The conventions are similar as in \cref{fig:labelFacetDefiningInequalititiesAsso}.}
+    % \vspace{-.1cm}
+	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[\B_\circ] \big)$ for the cluster fan of \cref{fig:lodayFans}\,(right). See \cref{thm:extremalExchangeablePairsCA}. The conventions are similar to \cref{fig:labelFacetDefiningInequalititiesAsso}.}
 	\label{fig:labelFacetDefiningInequalititiesCA}
 \end{figure}
 
@@ -752,8 +753,9 @@ Then, the $\b{g}$-vectors of~$\cluster \cup \cluster'$ with respect to~$\B_\circ
 \)
 \end{lemma}
 
-For~$\{x,x'\} \in \meshes$ and~$y \in \variables$, we denote by~$\coefficient[y][x][x']$ the coefficient of~$\gvectorFull{\B_\circ}{y}$ in the linear dependence among the $\b{g}$-vectors~$\gvectorFull{\B_\circ}{x}$ and~$\gvectorFull{\B_\circ}{x'}$. In other words, by \cref{lem:dependenceMesh}, if~${(\B, \cluster)}$ and~${(\B', \cluster')}$ are for two adjacent seeds with~${\cluster \ssm \{x\} = \cluster' \ssm \{x'\}}$, we have~$\coefficient[y][x][x'] = |b_{xy}|$ for~$y \in \cluster \cap \cluster'$ and~$\coefficient[y][x][x'] = 0$ otherwise.
-The next statement is proved in~\cite[Sect.~3]{PadrolPaluPilaudPlamondon} using techniques from the quiver representation theory.
+For~$\{x,x'\} \in \meshes$ and~$y \in \variables$, we denote by~$\coefficient[y][x][x']$ the coefficient of~$\gvectorFull{\B_\circ}{y}$ in the linear dependence of \cref{lem:dependenceMesh}. % among the $\b{g}$-vectors~$\gvectorFull{\B_\circ}{x}$ and~$\gvectorFull{\B_\circ}{x'}$.
+%In other words, by \cref{lem:dependenceMesh}, if~${(\B, \cluster)}$ and~${(\B', \cluster')}$ are two adjacent seeds with~${\cluster \ssm \{x\} = \cluster' \ssm \{x'\}}$, we have~$\coefficient[y][x][x'] = |b_{xy}|$ for~$y \in \cluster \cap \cluster'$ and~$\coefficient[y][x][x'] = 0$ otherwise.
+The next statement is proved in~\cite[Sect.~3]{PadrolPaluPilaudPlamondon} using techniques from quiver representation theory.
 
 \begin{theorem}
 \label{thm:meshMutations}
@@ -761,11 +763,11 @@ For any finite type exchange matrix~$\B_\circ$ (acyclic or not, simply-laced or 
 \end{theorem}
 
 %We derive from \cref{thm:meshMutations} the following description of the facets of the type cone of the cluster fan.
-Using \cref{thm:meshMutations} as a blackbox, we describe the facets of the type cone. See \cref{fig:labelFacetDefiningInequalititiesAsso}. %, and thus all polytopal realizations, of the cluster fans of finite type cluster algebras.
+Using \cref{thm:meshMutations} as a blackbox, we describe the facets of the type cone. See \cref{fig:labelFacetDefiningInequalititiesCA}. %, and thus all polytopal realizations, of the cluster fans of finite type cluster algebras.
 
 \begin{theorem}
 \label{thm:extremalExchangeablePairsCA}
-For any finite type exchange matrix~$\B_\circ$, the type cone~$\typeCone \big( \gvectorFan[\B_\circ] \big)$ is simplicial and the non-initial mesh mutations are the extremal adjacent pairs of the cluster fan~$\gvectorFan[\B_\circ]$.
+For any finite type exchange matrix~$\B_\circ$, the type cone~$\typeCone \big( \gvectorFan[\B_\circ] \big)$ is simplicial and the non-initial mesh mutations are the extremal exchangeable pairs of the cluster fan~$\gvectorFan[\B_\circ]$.
 \end{theorem}
 
 Combining \cref{coro:simplicialTypeCone,thm:extremalExchangeablePairsCA}, we derive the following description of all polytopal realizations of the cluster fan~$\gvectorFan[\B_\circ]$.
@@ -807,9 +809,9 @@ We implicitly identify the two inverse strings~$\rho$ and~$\rho^{-1}$.
 A \defn{walk} of~$\quiver$ is a maximal string of its blossoming quiver~$\quiver\blossom$ (meaning that each endpoint is a blossom).
 
 A \defn{substring} of a walk~$\smash{\omega = \alpha_1^{\varepsilon_1} \cdots \alpha_\ell^{\varepsilon_\ell}}$ of~$\quiver$ is a string~$\smash{\sigma = \alpha_{i+1}^{\varepsilon_{i+1}} \cdots \alpha_{j-1}^{\varepsilon_{j-1}}}$ of~$\quiver$ for some indices~$1 \le i < j \le \ell$.
-We say that the substring~$\smash{\sigma = \alpha_{i+1}^{\varepsilon_{i+1}} \cdots \alpha_{j-1}^{\varepsilon_{j-1}}}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \alpha_1^{\varepsilon_1} \cdots \alpha_\ell^{\varepsilon_\ell}$ if~$\varepsilon_i = 1$ and~$\varepsilon_j = -1$ (resp.~if~$\varepsilon_i = -1$ and~$\varepsilon_j = 1$).
+The substring~$\smash{\sigma = \alpha_{i+1}^{\varepsilon_{i+1}} \cdots \alpha_{j-1}^{\varepsilon_{j-1}}}$ is \defn{at the bottom} (resp.~\defn{on top}) of the walk~$\omega = \alpha_1^{\varepsilon_1} \cdots \alpha_\ell^{\varepsilon_\ell}$ if~$\varepsilon_i = 1$ and~$\varepsilon_j = -1$ (resp.~if~$\varepsilon_i = -1$ and~$\varepsilon_j = 1$).
 In other words the two arrows of~$\omega$ incident to the endpoints of~$\sigma$ point towards~$\sigma$ (resp.~outwards from~$\sigma$).
-We denote by~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ the sets of bottom and top substrings of~$\omega$ respectively.
+We denote by~$\Sigma_\bottom(\omega)$ and~$\Sigma_\top(\omega)$ the sets of bottom and top substrings of~$\omega$.
 
 For a walk~$\omega$, we denote by~$\peaks{\omega}$ (resp.~$\deeps{\omega}$) the multiset of \defn{peaks} (resp.~\defn{deeps}) of~$\omega$, \ie vertices which are substrings on the top (resp.~at the bottom) of~$\omega$.
 A walk is \defn{straight} if it has no peak nor deep.
@@ -998,7 +1000,7 @@ where~$\mu \eqdef \rho' \sigma \tau$ and~$\nu \eqdef \rho \sigma \tau'$ if the w
 			\draw[red, densely dotted, thick] (k2.south) -- ([yshift=-.3cm]k2.south);
 	\end{tikzpicture}
 	}
-	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[\quiver] \big)$ for the non-kissing fan of \cref{fig:nonkissingFans}\,(right). The conventions are similar as in \cref{fig:labelFacetDefiningInequalititiesAsso}.}
+	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[\quiver] \big)$ for the non-kissing fan of \cref{fig:nonkissingFans}\,(right). The conventions are similar to \cref{fig:labelFacetDefiningInequalititiesAsso}.}
 	\label{fig:labelFacetDefiningInequalititiesNKC}
 \end{figure}
 %\end{example}
@@ -1012,7 +1014,7 @@ However, it turns out to be for the following family of quivers.
 \label{def:brick2acyclic}
 A gentle quiver~$\quiver$ is called:
 \begin{compactitem}
-\item \defn{brick} if any (non necessarily oriented) cycle of~$\quiver$ contains at least two relations in~$I$. %, or equivalently, no walk on~$\quiver$ is self-kissing.
+\item \defn{brick} if any (non necessarily oriented) cycle of~$\quiver$ contains at least two relations in~$I$, %, or equivalently, no walk on~$\quiver$ is self-kissing.
 \item \defn{$2$-acyclic} if it contains no cycle of length~$2$.
 \end{compactitem}
 \end{definition}
@@ -1054,13 +1056,13 @@ Moreover, the polytopes~$R_\b{\ell}(\quiver)$ for~$\b{\ell} \in \R_{>0}^{\string
 \subsection{Nested fans and graph associahedra}
 \label{subsec:graphAssociahedra}
 
-We now consider the graph associahedra studied in~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}.
+We finally consider the graph associahedra studied in~\cite{CarrDevadoss, FeichtnerSturmfels, Postnikov, Zelevinsky}.
 Again, we briefly recall all definitions needed here as they are purely combinatorial.
 
-Let~$\graphG$ be a graph on~$\ground$.
+Let~$\graphG$ be a graph with vertex set~$\ground$.
 %Let~$\connectedComponents(\graphG)$ be the set of connected components of~$\graphG$ and let $n \eqdef |\ground|-|\connectedComponents(\graphG)|$.
 A \defn{tube} of~$\graphG$ is a connected induced subgraph of~$\graphG$.
-Le~$\tubes$ denote the set of tubes of~$\graphG$.
+Let~$\tubes$ denote the set of tubes of~$\graphG$.
 The inclusion maximal tubes of~$\graphG$ are its connected components~$\connectedComponents(\graphG)$.
 The tubes which are neither empty nor maximal are called \defn{proper}.
 Two tubes~$\tube, \tube'$ of~$\graphG$ are \defn{compatible} if they are either nested (\ie $\tube \subseteq \tube'$ or~$\tube' \subseteq \tube$), or disjoint and non-adjacent (\ie $\tube \cup \tube'$ is not a tube of~$\graphG$).
@@ -1079,7 +1081,7 @@ Recall~that:
 \)
 forms a complete simplicial fan, called the \defn{nested fan} of~$\graphG$.
 
-\item the nested fan is the normal fan of a polytope~$\Asso[\graphG]$, called \defn{graph associahedron}, constructed in~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}.
+\item the nested fan is the normal fan of a polytope~$\Asso[\graphG]$, called \defn{graph associahedron}, constructed in~\cite{CarrDevadoss, FeichtnerSturmfels, Postnikov, Zelevinsky}.
 For instance, the permutahedra, associahedra and cyclohedra are graph associahedra of complete graphs, paths, and cycles respectively.
 %For instance, the permutahedron is the complete graph associahedron, the associahedron is the path associahedron, and the cyclohedron is the cycle associahedron.
 
