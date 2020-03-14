@@ -693,7 +693,7 @@ A \defn{polyhedral fan} is a collection~$\Fan$ of polyhedral cones such that
 \item if~$C \in \Fan$ and~$F$ is a face of~$C$, then~$F \in \Fan$,
 \item the intersection of any two cones of~$\Fan$ is a face of both.
 \end{itemize}
-A fan is \defn{simplicial} if all its cones are, \defn{complete} if the union of its cones covers the ambient space~$\R^d$, and \defn{essential} if it contains the cone~$\{\b{0}\}$. Note that every complete fan is the product of an essential fan with its linearity space.
+A fan is \defn{simplicial} if all its cones are, \defn{complete} if the union of its cones covers the ambient space~$\R^d$, and \defn{essential} if it contains the cone~$\{\b{0}\}$. Note that every complete fan is the product of an essential fan with its lineality space.
 For two fans~$\Fan, \cal{G}$ in~$\R^d$, we say that~$\Fan$ \defn{refines}~$\cal{G}$ (and that~$\cal{G}$ \defn{coarsens}~$\Fan$) if every cone of~$\Fan$ is contained in a cone of~$\cal{G}$.
 
 A \defn{polytope} is a subset~$P$ of~$\R^d$ defined equivalently as the convex hull of finitely many points or as a bounded intersection of finitely many closed affine halfspaces.
@@ -757,8 +757,8 @@ The \defn{type cone} of~$\Fan$ is the cone~$\typeCone(\Fan)$ of all $\Fan$-admis
 \end{align*}
 \end{definition}
 
-Note that the type cone is an open cone and contains a linearity subspace of dimension~$n$ (it is invariant by translation in~$\b{G} \R^n$). 
-It is sometimes useful to get rid of the linearity space by considering the projection~$\b{K}\typeCone(\Fan)$. 
+Note that the type cone is an open cone and contains a lineality subspace of dimension~$n$ (it is invariant by translation in~$\b{G} \R^n$). 
+It is sometimes useful to get rid of the lineality space by considering the projection~$\b{K}\typeCone(\Fan)$. 
 
 We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it the \defn{closed type cone} of~$\Fan$. It is the closed polyhedral cone defined by the inequalities $\sum_{\ray[s] \in \rays \cup \rays'} \coefficient[{\ray[s]}][\rays][\rays'] \, \b{h}_{\ray[s]} \ge 0$ for any adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$. If $\Fan$ is the normal fan of the polytope~$P$, then $\ctypeCone(\Fan)$ is called the \defn{deformation cone} of $P$ in~\cite{Postnikov}, see also~\cite{PostnikovReinerWilliams}.
 
@@ -767,7 +767,7 @@ We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it th
 \enlargethispage{.5cm}
 Consider the $2$-dimensional fan~$\Fan$ depicted in \cref{fig:typeCone} (left) (we will encounter this fan again in \cref{exm:typeConeCoarsenings,exm:typeConeMinkowskiSum,exm:typeConeAsso}).
 It has five rays labeled~$1, \dots, 5$ and five maximal cones labeled~$a,\dots, e$.
-Its type cone~$\typeCone(\Fan)$ lies in~$\R^5$, but has a $2$-dimensional linearity space.
+Its type cone~$\typeCone(\Fan)$ lies in~$\R^5$, but has a $2$-dimensional lineality space.
 The five pairs of adjacent maximal cones of~$\Fan$ give rise to following five defining inequalities for~$\typeCone(\Fan)$:
 \begin{gather*}
 H^>_{ab}: \; \b{h}_1 + \b{h}_3 - \b{h}_2 > 0
@@ -805,7 +805,7 @@ For instance, for the $2$-dimensional fan of \cref{exm:typeCone}, the extremal a
 
 \begin{remark}
 \label{rem:dimTypeCone}
-Since the type cone is an~$N$-dimensional cone with a linearity subspace of dimension~$n$, it has at least~$N-n$ facets (thus~$N-n$ extremal adjacent pairs).
+Since the type cone is an~$N$-dimensional cone with a lineality subspace of dimension~$n$, it has at least~$N-n$ facets (thus~$N-n$ extremal adjacent pairs).
 The type cone is \defn{simplicial} when it has precisely $N-n$ facets.
 \end{remark}
 
@@ -935,14 +935,14 @@ Some observations are in place:
  
 \item Mergings induced by extremal adjacent pairs are not the only ones that can take place in the boundary of~$\ctypeCone(\Fan)$. Indeed, if $\cal{G}$ is the coarsening defining a lower-dimensional face~$\typeCone(\cal{G})$ of~$\ctypeCone(\Fan)$, then to get $\Fan$ we have to perform all the coarsenings given by facets of~$\ctypeCone(\Fan)$ containing~$\typeCone(\cal{G})$. But we might have to perform more coarsenings arising from exchangeable pairs  $\{\R_{\ge0}\rays, \R_{\ge0}\rays'\}$ whose inequality is redundant for~$\ctypeCone(\Fan)$ but tight for all points in~$\typeCone(\cal{G})$. This situation arises when, in order to have a polytopal polyhedral fan, more pairs of adjacent cones must be merged.
 
-\item Even if $\Fan$ is essential, not all its polytopal coarsenings need to be. Indeed, it can happen that there is a certain polytopal coarsening $\cal{G}$ in which all the cells have a common linearity space. In this case, $\cal{G}$ is the normal fan of a lower dimensional polytope (whose codimension is the dimension of the linearity space of $\cal{G}$). For this to happen, it is necessary (but not sufficient) that there is a positive linear dependence between some rays of $\Fan$. 
+\item Even if $\Fan$ is essential, not all its polytopal coarsenings need to be. Indeed, it can happen that there is a certain polytopal coarsening $\cal{G}$ in which all the cells have a common lineality space. In this case, $\cal{G}$ is the normal fan of a lower dimensional polytope (whose codimension is the dimension of the lineality space of $\cal{G}$). For this to happen, it is necessary (but not sufficient) that there is a positive linear dependence between some rays of $\Fan$. 
 \end{itemize}
 \end{remark}
 
 \begin{example}
 \label{exm:typeConeCoarsenings}
 Consider the $2$-dimensional fan~$\Fan$ of \cref{fig:typeCone}\,(left) whose type cone has been described in \cref{exm:typeCone} and represented in \cref{fig:typeCone}\,(right).
-The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type cones of three coarsenings of~$\Fan$, obtained by merging certain adjacent maximal cones (those that are extremal). One of the rays generating~$\b{K}\ctypeCone(\Fan)$ corresponds to a triangle, and its normal fan is obtained by merging two pairs of extremal adjacent maximal cones. The two remaining rays lie not only in hyperplanes~$H_{ij}$ defining facets of the type cone, but also in one extra such hyperplane. Their normal fans have only two cones, one arising as a merging of three cones and one arising as a merging of two cones. These fans are not essential, they have a one-dimensional linearity. Hence, the corresponding polytopes are not full-dimensional, they are of codimension~$1$.
+The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type cones of three coarsenings of~$\Fan$, obtained by merging certain adjacent maximal cones (those that are extremal). One of the rays generating~$\b{K}\ctypeCone(\Fan)$ corresponds to a triangle, and its normal fan is obtained by merging two pairs of extremal adjacent maximal cones. The two remaining rays lie not only in hyperplanes~$H_{ij}$ defining facets of the type cone, but also in one extra such hyperplane. Their normal fans have only two cones, one arising as a merging of three cones and one arising as a merging of two cones. These fans are not essential, they have a one-dimensional lineality space. Hence, the corresponding polytopes are not full-dimensional, they are of codimension~$1$.
 
 \begin{figure}[htpb]
 	\capstart
@@ -975,7 +975,7 @@ P_\b{h} + P_{\b{h}'} & = \set{\b{x} + \b{x}'}{\b{x} \in P_\b{h} \text{ and } \b{
 \end{proof}
 
 We say that~$P$ is a \defn{Minkowski summand} of~$R$ if there is a polytope~$Q$ such that $P+Q = R$, and a \defn{weak Minkowski summand} if there is a $\lambda \ge 0$ and a polytope~$Q$ such that ${P + Q = \lambda R}$. 
-\cref{lem:MinkowskiSum} ensures that convex combinations in the type cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type cone~$\ctypeCone(\Fan)$ modulo linearity (the cone of weak Minkowski summands was studied by W.~Meyer in~\cite{Meyer}, to see that it is equivalent to the type cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
+\cref{lem:MinkowskiSum} ensures that convex combinations in the type cone correspond to Minkowski combinations of polytopes. Actually, the set of weak Minkowski summands of a polytope $P$ with normal fan~$\Fan$ is isomorphic to the closed type cone~$\ctypeCone(\Fan)$ modulo lineality (the cone of weak Minkowski summands was studied by W.~Meyer in~\cite{Meyer}, to see that it is equivalent to the type cone and other formulations, see for example the appendix of~\cite{PostnikovReinerWilliams}).
 
 This provides natural Minkowski summands for all polytopal realizations of~$\Fan$: the rays of the closed type cone. These correspond to indecomposable polytopes, see~\cite{Meyer} or~\cite{McMullen-typeCone}. A polytope $P \subseteq \R^n$ is called \defn{indecomposable} if all its weak Minkowski summands are of the form $\lambda P+t$ for some $\lambda \ge 0$ and $t \in \R^n$.
 
@@ -1114,7 +1114,7 @@ Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type
 \begin{example}
 \label{exm:typeConeAsso}
 Consider the fan~$\gvectorFan[2]$ and~$\gvectorFan[3]$ illustrated in \cref{fig:lodayFans}.
-The type cone of~$\gvectorFan[2]$ lives in~$\R^5$ and has a linearity space of dimension~$2$ (this is the type cone studied in \cref{exm:typeCone,exm:typeConeCoarsenings,exm:typeConeMinkowskiSum}).
+The type cone of~$\gvectorFan[2]$ lives in~$\R^5$ and has a lineality space of dimension~$2$ (this is the type cone studied in \cref{exm:typeCone,exm:typeConeCoarsenings,exm:typeConeMinkowskiSum}).
 It has $3$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(left).
 
 \[
@@ -1132,7 +1132,7 @@ It has $3$ facet-defining inequalities (given below), which correspond to the fl
 In all our tables, we just record the coefficients of the inequalities, which are then easily reconstructed.
 For instance, the inequality~$\red \circled{A}$ above is given by~$\b{h}_{\includegraphics[scale=.3]{diagonalA1}} + \b{h}_{\includegraphics[scale=.3]{diagonalA3}} > \b{h}_{\includegraphics[scale=.3]{diagonalA2}}$.
 
-The type cone of~$\gvectorFan[3]$ lives in~$\R^9$ and has a linearity space of dimension~$3$.
+The type cone of~$\gvectorFan[3]$ lives in~$\R^9$ and has a lineality space of dimension~$3$.
 It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(right).
 
 \[
@@ -1543,7 +1543,7 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan
 \begin{example}
 \label{exm:typeConeCA}
 Consider the cluster fans illustrated in \cref{fig:clusterFans}.
-The type cone of the left fan of \cref{fig:clusterFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
+The type cone of the left fan of \cref{fig:clusterFans} lives in~$\R^9$ and has a lineality space of dimension~$3$.
 It has $6$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA1}.
 
 \[
@@ -1659,7 +1659,7 @@ It has $6$ facet-defining inequalities (given below), which correspond to the me
 \end{figure}
 
 \noindent
-The type cone of the right fan of \cref{fig:clusterFans} lives in~$\R^{12}$ and has a linearity space of dimension~$3$.
+The type cone of the right fan of \cref{fig:clusterFans} lives in~$\R^{12}$ and has a lineality space of dimension~$3$.
 It has $9$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA2}.
 
 \centerline{$
@@ -2175,7 +2175,7 @@ where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are
 \label{exm:typeConeNKC}
 \enlargethispage{.4cm}
 Consider the non-kissing fans illustrated in \cref{fig:nonkissingFans}.
-The type cone of the left fan of \cref{fig:nonkissingFans} lives in~$\R^8$ and has a linearity space of dimension~$3$.
+The type cone of the left fan of \cref{fig:nonkissingFans} lives in~$\R^8$ and has a lineality space of dimension~$3$.
 It has $5$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:interestingExchangeablePairsNKC,prop:extremalExchangeablePairsNKC} and illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(left).
 
 \[
@@ -2219,7 +2219,7 @@ It has $5$ facet-defining inequalities (given below), which correspond to the fl
 
 \medskip
 \noindent
-The type cone of the right fan of \cref{fig:nonkissingFans} lives in~$\R^{11}$ and has a linearity space of dimension~$3$.
+The type cone of the right fan of \cref{fig:nonkissingFans} lives in~$\R^{11}$ and has a lineality space of dimension~$3$.
 It has $9$ facet-defining inequalities (given below), which correspond to the flips illustrated in \cref{fig:labelFacetDefiningInequalititiesNKC}\,(right).
 In particular, it is not simplicial.
 
@@ -2909,7 +2909,7 @@ This is precisely the description of the generalized permutahedra introduced by 
 \begin{example}
 \label{exm:typeConeGA}
 Consider the nested fans illustrated in \cref{fig:nestedFans}.
-The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimension~$3$ and $19$ facet-defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the left fan lives in~$\R^{13}$, has a lineality space of dimension~$3$ and $19$ facet-defining inequalities (given below). In particular, it is not simplicial.
 
 \medskip
 \centerline{$
@@ -3006,7 +3006,7 @@ $}
 
 \medskip
 \noindent
-The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ and $12$ facet-defining inequalities (given below). In particular, it is not simplicial.
+The type cone of the right fan lives in~$\R^{11}$, has a lineality space of dimension~$3$ and $12$ facet-defining inequalities (given below). In particular, it is not simplicial.
 
 \[
 \begin{array}{r|c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c}
