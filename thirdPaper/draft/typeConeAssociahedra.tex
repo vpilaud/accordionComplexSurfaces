@@ -276,9 +276,7 @@ We show that the mesh mutations are the minimal relations among the $\b{g}$-vect
 We then use this algebraic result to derive geometric properties of the $\b{g}$-vector fan: we show that the space of all its polytopal realizations is a simplicial cone, and we then observe that this property implies that all its realizations can be described as the intersection of a high dimensional positive orthant with well-chosen affine spaces.
 This sheds a new light on and extends earlier results of N.~Arkani-Hamed, Y.~Bai, S.~He, and G.~Yan in type~$A$ and of V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Y\i ld\i r\i m for acyclic initial seeds.
 
-Moreover, we use a similar approach to study the space of polytopal realizations of the $\b{g}$-vector fans of other generalizations of the associahedron.
-For non-kissing complexes (a.k.a. support $\tau$-tilting complexes) of gentle algebras, we show that the space of realizations of the non-kissing fan is simplicial when the gentle bound quiver is brick and $2$-acyclic, and we describe in this case its facet-defining inequalities in terms of mesh mutations.
-For graphical nested complexes, we show that the space of realizations of the nested fan is simplicial only in the case of the associahedron, and we describe its facet-defining inequalities in general.
+Moreover, we use a similar approach to study the space of polytopal realizations of the $\b{g}$-vector fans of another generalization of the associahedron: non-kissing complexes (a.k.a. support $\tau$-tilting complexes) of gentle algebras. We show that the space of realizations of the non-kissing fan is simplicial when the gentle bound quiver is brick and $2$-acyclic, and we describe in this case its facet-defining inequalities in terms of mesh mutations.
 
 Along the way, we prove algebraic results on~$2$-Calabi--Yau triangulated categories, and on extriangulated categories that are of independent interest.
 In particular, we prove, in those two setups, an analogue of a result of M.~Auslander on minimal relations for Grothendieck groups of module categories.
@@ -364,27 +362,17 @@ The geometric side, which uses elementary techniques, is presented in \cref{part
 The algebraic side, which is of independent interest, is presented in \cref{part:algebra}. 
 
 \medskip
-\enlargethispage{.1cm}
 Besides revisiting the construction of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} and extending it to any initial seed (acyclic or not) in any finite type cluster algebra (simply-laced or not), our type cone approach is also successful when applied to the $\b{g}$-vector fans of other families of generalizations of the associahedron.
-In the present paper, we explore specifically two families of such generalizations.
-
-\smallskip
-\begin{itemize}
-\item \textbf{Gentle associahedra} were constructed in~\cite{PaluPilaudPlamondon-nonkissing} as polytopal realizations of finite non-kissing complexes of gentle bound quivers. These complexes encompass two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied by Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}. The latter, sometimes called accordiohedra, have also~recently appeared in the mathematical physics litterature concerning scattering amplitudes~\cite{BanerjeeLaddhaRaman-StokesPolytopes, Raman-PositiveGeometry}, with realizations inspired by those in~\cite{ArkaniHamedBaiHeYan}. It was shown in~\cite{PaluPilaudPlamondon-nonkissing, BrustleDouvilleMousavandThomasYildirim} that the non-kissing complex of a gentle bound quiver provides a combinatorial model for the support $\tau$-tilting complex~\cite{AdachiIyamaReiten} of the associated gentle algebra. Even for finite non-kissing complexes, it turns out that the type cone of the non-kissing fan is not always simplicial (see \cref{exm:nonSimplicialTypeConeNKC}). We prove however that the type cone is always simplicial when the gentle bound quiver is brick (at least $2$ relations in any cycle) and $2$-acyclic (no oriented cycle of length~$2$). Moreover, we precisely describe the facet-defining inequalities of the type cone in terms of linear dependences of $\b{g}$-vectors involved in certain mesh relations. We thus automatically derive a construction similar to that of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} describing all polytopal realizations of the $\b{g}$-vector fans of these brick and $2$-acyclic gentle bound quivers as sections of a positive orthant by well-chosen affine spaces (see \cref{subsec:typeConeCA}). Again, this result mainly relies on finding which relations minimally generate the relations between the $\b{g}$-vectors in the non-kissing complex. We present both a purely combinatorial proof (see \cref{subsec:typeConeCA}) and a purely algebraic proof for (non-necessarily gentle) brick algebras making use of extriangulated categories (see \cref{sec:extricats}).
+In the present paper, we explore specifically \textbf{Gentle associahedra}. These complexes where constructed in~\cite{PaluPilaudPlamondon-nonkissing} as polytopal realizations of finite non-kissing complexes of gentle bound quivers. They encompass two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied by Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}. The latter, sometimes called accordiohedra, have also~recently appeared in the mathematical physics litterature concerning scattering amplitudes~\cite{BanerjeeLaddhaRaman-StokesPolytopes, Raman-PositiveGeometry}, with realizations inspired by those in~\cite{ArkaniHamedBaiHeYan}. It was shown in~\cite{PaluPilaudPlamondon-nonkissing, BrustleDouvilleMousavandThomasYildirim} that the non-kissing complex of a gentle bound quiver provides a combinatorial model for the support $\tau$-tilting complex~\cite{AdachiIyamaReiten} of the associated gentle algebra. Even for finite non-kissing complexes, it turns out that the type cone of the non-kissing fan is not always simplicial (see \cref{exm:nonSimplicialTypeConeNKC}). We prove however that the type cone is always simplicial when the gentle bound quiver is brick (at least $2$ relations in any cycle) and $2$-acyclic (no oriented cycle of length~$2$). Moreover, we precisely describe the facet-defining inequalities of the type cone in terms of linear dependences of $\b{g}$-vectors involved in certain mesh relations. We thus automatically derive a construction similar to that of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} describing all polytopal realizations of the $\b{g}$-vector fans of these brick and $2$-acyclic gentle bound quivers as sections of a positive orthant by well-chosen affine spaces (see \cref{subsec:typeConeCA}). Again, this result mainly relies on finding which relations minimally generate the relations between the $\b{g}$-vectors in the non-kissing complex. We present both a purely combinatorial proof (see \cref{subsec:typeConeCA}) and a purely algebraic proof for (non-necessarily gentle) brick algebras making use of extriangulated categories (see \cref{sec:extricats}).
 Our algebraic proof is based on an analogue of a result of M.~Auslander~\cite{Auslander1984} relating to minimal generators of Grothendieck groups.
 Along the way, we need to generalize, for extriangulated categories, several results from cluster-tilting theory on indices~\cite{DehyKeller} and on abelian quotients~\cite{BuanMarshReiten, KellerReiten} that were known for triangulated categories. We note, however, that our assumptions are not quite the expected ones. This is related to the fact that the Grothendieck groups of cluster categories are badly behaved (\eg the Grothendieck group of a cluster category of type~$A_2$ is trivial). So as to overcome this difficulty, we replace the triangulated structure of cluster categories by some relative extriangulated structure, before considering Grothendieck groups. This explains why we consider projective objects rather than cluster-tilting objects for extriangulated categories.
 
 \smallskip
-\enlargethispage{.2cm}
-\item \textbf{Graph associahedra} were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}. As illustrated in \cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra. The graph associahedra were extended to the nestohedra, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}. Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}. All these realizations have the same normal fan, called nested fan. We study the type cones of these nested fans (see \cref{subsec:typeConeGA}): we describe their facet-defining inequalities in terms of certain specific pairs of neighboring tubings and count them for the specific families of graph associahedra described earlier. For instance the type cone of the permutahedron coincides with the classical submodular functions on~$2^{[n]}$, described by~$2^{n-2} \binom{n}{2}$ inequalities. In fact, we observe that the type cone of a graphical nested fan is never simplicial except in the case of the classical associahedron (when the graph is the path). Nevertheless, our results give a non-redundant description of all polytopal realizations of the graphical nested fans.
-\end{itemize}
-
-\smallskip
 Further families of generalizations of the associahedron certainly deserve to be studied with our type cone approach.
-We are investigating in particular brick polytopes~\cite{PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and quotientopes~\cite{Reading-latticeCongruences, Reading-CambrianLattices, PilaudSantos-quotientopes}.
+We are investigating in particular graph associahedra~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}, brick polytopes~\cite{PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and quotientopes~\cite{Reading-latticeCongruences, Reading-CambrianLattices, PilaudSantos-quotientopes}.
 In fact, as already mentioned, it seems sometimes easier to find all polytopal realizations of a fan (by describing its type cone in terms of certain specific pairs of adjacent maximal cones) than to identify one specific explicit realization.
 This is clearly the case when the type cone is simplicial as illustrated by the results of this paper: we naturally obtained all polytopal realizations of the $\b{g}$-vector fans of cluster algebras from cyclic seeds and of gentle algebras whose polytopality was only established very recently~\cite{HohlwegPilaudStella, PaluPilaudPlamondon-nonkissing}.
-Even when the type cone is not simplicial, describing the type cone sometimes leads to relevant explicit realizations of the fan, as we illustrate on graph associahedra (see \cref{exm:constructionsGA}).
+% Even when the type cone is not simplicial, describing the type cone sometimes leads to relevant explicit realizations of the fan, as we illustrate on graph associahedra (see \cref{exm:constructionsGA}).
 We believe that this approach gives reasonable hope that the polytopality of further fans could in the future be established using our type cone approach.
 Tempting candidates are quotientopes for hyperplane arrangements beyond type~$A$, which are particularly interesting since the coarsenings of a fan essentially correspond to the faces of its type cone (see \cref{subsec:facesTypeCone}).
 
@@ -440,7 +428,6 @@ Moreover, the polytopes~$R_\b{\ell}$ for~$\b{\ell} \in \R_{>0}^{N-n}$ describe a
 \end{coro:simplicialTypeCone}
 
 This gives a new point of view on~\cite{ArkaniHamedBaiHeYan,BazierMatteDouvilleMousavandThomasYildirim}, illustrated in \cref{subsec:typeConeAsso} for classical associahedra, that we then apply to two families of~$\b{g}$-vector fans generalizing the~$\b{g}$-vector fans of classical associahedra: the~$\b{g}$-vector fans of cluster algebras of finite type (generalized associahedra) in~\cref{subsec:typeConeCA}, and the~$\b{g}$-vector fans of gentle algebras (non-kissing associahedra, non-crossing associahedra, generalized accordiohedra) in~\cref{subsec:typeConeNKC}.
-We also completely describe the facets of the type cone for graph associahedra in~\cref{subsec:typeConeGA}, to which our strategy does not apply, as only the classical associahedron has a simplicial type cone.
 
 \para{Cluster algebras of finite type and generalized associahedra}
 (\cref{subsec:typeConeCA})
@@ -518,22 +505,6 @@ The second step is the following statement, for which we provide a purely combin
 If the gentle bound quiver~$\quiver$ is brick and 2-acyclic, then the type cone~$\typeCone \big( \Fan(\quiver) \big)$ is simplicial.
 \end{coro:simplicialTypeConeNKC}
 
-\para{Graphical nested complexes and graph associahedra}
-(\cref{subsec:typeConeGA})
-
-\noindent
-Even though graph associahedra do not have simplicial type cones except for the path (\cref{prop:simplicialnestedfan}), we provide the following non-redundant characterization of the type cones of all graphical nested fans.
-
-\newtheorem*{coro:typeconenestedfan}{\cref{coro:typeconenestedfan}}
-\begin{coro:typeconenestedfan}
-Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$. 
-Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
-\[
-\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}
-\]
-if and only if~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and
- $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
-\end{coro:typeconenestedfan}
 
 \para{Cluster categories}
 (\cref{sec:clusterCategories})
@@ -608,22 +579,22 @@ We conclude with a schematic diagram representing the logical dependencies betwe
 \centerline{
 \begin{tikzpicture}[every node/.style={inner sep=6, outer sep=8}]
 	\node[diamond,aspect=3, text width=5cm, minimum height=1cm, align=center, draw=blue, fill=blue!10, inner sep=-2] (I1) at (0,1.5) {\ref{part:geometry}.\ref{sec:typeCone} -- Simplicial type cone strategy};
-	\node[rectangle, draw=black, fill=black!10, align=center] (I21) at (-6,0) {\ref{part:geometry}.\ref{subsec:typeConeAsso} -- Toy example \\ Classical associahedra};
-	\node[rectangle, draw=orange, fill=orange!10, align=center, text width=5cm] (I22) at (-3,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeCA} -- Cluster algebras \\ \& generalized associahedra};
-	\node[rectangle, draw=green, fill=green!10, align=center, text width=5cm] (I23) at (3,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeNKC} -- Gentle algebras \\ \& generalized accordiohedra};
-	\node[rectangle, draw=red, fill=red!10, align=center, text width=5.4cm] (I24) at (7,0) {\ref{part:geometry}.\ref{subsec:typeConeGA} -- Graphical nested complexes \\ \& graph associahedra};
+	\node[rectangle, draw=black, fill=black!10, align=center] (I21) at (-6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeAsso} -- Toy example \\ Classical associahedra};
+	\node[rectangle, draw=orange, fill=orange!10, align=center, text width=5cm] (I22) at (0,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeCA} -- Cluster algebras \\ \& generalized associahedra};
+	\node[rectangle, draw=green, fill=green!10, align=center, text width=5cm] (I23) at (6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeNKC} -- Gentle algebras \\ \& generalized accordiohedra};
+% 	\node[rectangle, draw=red, fill=red!10, align=center, text width=5.4cm] (I24) at (7,0) {\ref{part:geometry}.\ref{subsec:typeConeGA} -- Graphical nested complexes \\ \& graph associahedra};
 	\node[ellipse, draw=orange, fill=orange!10, align=center, text width=4.9cm, inner sep=2, minimum height=1cm] (II1) at (-4.5,-4.2) {\ref{part:algebra}.\ref{sec:clusterCategories} -- Cluster categories};
 	\node[ellipse, draw=green, fill=green!10, align=center, text width=4.9cm, inner sep=0, minimum height=1cm] (II2) at (4.5,-4.2) {\ref{part:algebra}.\ref{sec:extricats} -- Extriangulated categories};
-	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.180) to [bend right, looseness=1.1] node[label={[shift={(.6,-1.5)}]applied to}]{} (I21.90);
-	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.220) to [bend right, looseness=.6] node[label={[shift={(.6,-1.5)}]applied to}]{} (I22.90);
-	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.320) to [bend left, looseness=.6] node[label={[shift={(-.6,-1.5)}]applied to}]{} (I23.90);
-	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=10}, draw=blue, fill=blue!10] (I1.0) to [bend left, looseness=1.1] (I24.90);
-	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
+	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.180) to [bend right, looseness=1.1] node[label={[shift={(-1.6,-1.5)}]applied to}]{} (I21.90);
+	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=3}, draw=blue, fill=blue!10] (I1.270) to node[label={[shift={(1,-1.)}]applied to}]{} (I22.90);
+	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.360) to [bend left, looseness=1.1] node[label={[shift={(1.6,-1.5)}]applied to}]{} (I23.90);
+% 	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=10}, draw=blue, fill=blue!10] (I1.0) to [bend left, looseness=1.1] (I24.90);
+% 	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
 	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I22.270)+(0,.15);
 	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I23.270)+(0,.15);
 	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes to} (II2.180);
-	\draw let \p{top}=(I1.90), \p{left}=(I21.180), \p{bottom}=([shift={(0,-.15)}]I22.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
-	\draw let \p{top}=([shift={(0,.2)}]II1.90), \p{left}=(I21.180), \p{bottom}=(II1.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
+	\draw let \p{top}=(I1.90), \p{left}=(I21.180), \p{bottom}=([shift={(0,-.15)}]I22.270), \p{right}=(I23.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
+	\draw let \p{top}=([shift={(0,.2)}]II1.90), \p{left}=(I21.180), \p{bottom}=(II1.270), \p{right}=(I23.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
 	\path let \p{top}=(I1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-6.15, \y{top}) {\ref{part:geometry} -- Discrete geometry};
 	\path let \p{top}=([shift={(0,.2)}]II1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-5.8, \y{top}) {\ref{part:algebra} -- Representation theory};
 \end{tikzpicture}
@@ -864,7 +835,7 @@ In this paper, we will only consider fans with the unique exchange relation prop
 In this section, we provide alternative polytopal realizations of the fan~$\Fan$.
 We also discuss the behavior of these realizations in the situation when the type cone~$\typeCone(\Fan)$ is simplicial.
 
-We still consider an essential complete simplicial fan~$\Fan$ in~$\R^n$, the $N \times n$-matrix~$\b{G}$ whose rows are the rays of~$\Fan$, and the $(N-n) \times N$-matrix~$\b{K}$ which spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$).
+We still consider an essential complete simplicial fan~$\Fan$ in~$\R^n$, the $N \times n$-matrix~$\b{G}$ whose rows are the rays of~$\Fan$, and an $(N-n) \times N$-matrix~$\b{K}$ which spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$).
 
 \begin{proposition}
 \label{prop:alternativePolytopalRealization}
@@ -888,6 +859,9 @@ Moreover, the map~$\Psi : P_\b{h} \to Q_\b{h}$ is:
 \item surjective: Indeed, for~$\b{z} \in Q_\b{h}$, we have~$\b{K}(\b{h}-\b{z}) = 0$ so that~$\b{h}-\b{z}$ belongs to the right kernel of~$\b{K}$ which is the image of~$\b{G}$. Therefore, there exists~$\b{x} \in \R^n$ such that~$\b{h}-\b{z} = \b{G}\b{x}$. Therefore, $\b{z} = \Psi(\b{x})$ and~$\b{x} \in P_\b{h}$ since~$\b{h} - \b{G}\b{x} = \b{z} \ge 0$.\qedhere
 \end{itemize}
 \end{proof}
+
+Note that~$\b{K}$ is only defined up to linear transformation, as it depends on the choice of a basis of the left kernel of~$\b{G}$. Note also that, by construction, the coefficients of the normal vectors of the facets of~$\typeCone(\Fan)$ arise from a linear dependence among the $\b{g}$-vectors, and hence belong to this kernel. When~$\typeCone(\Fan)$ is simplicial, its $(N-n)$ facets are necessarily linearly independent, and hence form a basis. They provide a particularly interesting choice of~$\b{K}$.  
+
 
 \begin{corollary}
 \label{coro:simplicialTypeCone}
@@ -1026,11 +1000,11 @@ Note that~$\Fan$ is the normal fan of J.-L.~Loday's $2$-dimensional associahedro
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Applications to three generalizations of the associahedron}
+\section{Applications to two generalizations of the associahedron}
 \label{sec:applications}
 
-In this section, we study the type cones of complete simplicial fans arising as normal fans of three families of generalizations of the associahedron: the generalized associahedra of finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasI, FominZelevinsky-ClusterAlgebrasII, FominZelevinsky-ClusterAlgebrasIV, HohlwegLangeThomas, HohlwegPilaudStella}, the gentle associahedra~\cite{PaluPilaudPlamondon-nonkissing}, and the graph associahedra~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}. 
-All these families contain the classical associahedra~$\Asso[n]$ constructed in~\cite{ShniderSternberg, Loday}.
+In this section, we study the type cones of complete simplicial fans arising as normal fans of two families of generalizations of the associahedron: the generalized associahedra of finite type cluster algebras~\cite{FominZelevinsky-ClusterAlgebrasI, FominZelevinsky-ClusterAlgebrasII, FominZelevinsky-ClusterAlgebrasIV, HohlwegLangeThomas, HohlwegPilaudStella} and the gentle associahedra~\cite{PaluPilaudPlamondon-nonkissing}.
+Both families contain the classical associahedra~$\Asso[n]$ constructed in~\cite{ShniderSternberg, Loday}.
 
 %%%%%%%%%%%
 
@@ -1543,6 +1517,8 @@ For any finite type exchange matrix~$\B_\circ$, the type cone of the cluster fan
 Consider the cluster fans illustrated in \cref{fig:clusterFans}.
 The type cone of the left fan of \cref{fig:clusterFans} lives in~$\R^9$ and has a linearity space of dimension~$3$.
 It has $6$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA1}.
+
+\arnau{Vincent, can you please check the coordinates? C.\ Stump thought that two facets had some typo (a $\pm 1$ was in the wrong column)}
 
 \[
 \begin{array}{r|cccccccccc}
@@ -2722,569 +2698,6 @@ In both cases, \cref{prop:interestingExchangeablePairsNKC} fails for the string~
 % An inequality (1, 0, 0, 0, -1, 1) x + 0 >= 0)
 \end{remark}
 
-
-%%%%%%%%%%%
-
-\subsection{Graphical nested complexes and graph associahedra}
-\label{subsec:typeConeGA}
-
-Graph associahedra were defined by M.~Carr and S.~Devadoss~\cite{CarrDevadoss} in connection to C.~De Concini and C.~Procesi's wonderful arrangements~\cite{DeConciniProcesi}.
-For a given graph~$\graphG$, the $\graphG$-associahedron~$\Asso[\graphG]$ is a simple polytope whose combinatorial structure encodes the connected subgraphs of~$\graphG$ and their nested structure.
-More precisely, the $\graphG$-associahedron is a polytopal realization of the nested complex of~$\graphG$, defined as the simplicial complex of all collections of tubes (connected induced subgraphs) of~$\graphG$ which are pairwise compatible (either nested, or disjoint and non-adjacent).
-As illustrated in \cref{fig:specialGraphAssociahedra}, the graph associahedra of certain special families of graphs coincide with well-known families of polytopes: complete graph associahedra are permutahedra, path associahedra are classical associahedra, cycle associahedra are cyclohedra, and star associahedra are stellohedra.
-The graph associahedra were extended to the \defn{nestohedra}, which are simple polytopes realizing the nested complex of arbitrary building sets~\cite{Postnikov, FeichtnerSturmfels}.
-Graph associahedra and nestohedra have been geometrically realized in different ways: by successive truncations of faces of the standard simplex~\cite{CarrDevadoss}, as Minkowski sums of faces of the standard simplex~\cite{Postnikov, FeichtnerSturmfels}, or from their normal fans by exhibiting explicit inequality descriptions~\cite{Devadoss, Zelevinsky}.
-For a given graph~$\graphG$, the resulting polytopes all have the same normal fan, called nested fan of~$\graphG$: its rays are the characteristic vectors of the tubes, and its cones are generated by characteristic vectors of compatible tubes.
-In this section, we describe the type cone of the nested fan of any graph~$\graphG$.
-
-\hvFloat[floatPos=p, capWidth=h, capPos=r, capAngle=90, objectAngle=90, capVPos=c, objectPos=c]{figure}
-{
-		\begin{tabular}{c@{\;}c@{\;}c@{\;}c}
-			permutahedron &
-			associahedron &
-			cyclohedron &
-			stellohedron \\[.2cm]
-			\includegraphics[scale=.93]{permutahedron} &
-			\includegraphics[scale=.93]{associahedron} &
-			\includegraphics[scale=.93]{cyclohedron} &
-			\includegraphics[scale=.93]{stellohedron} \\[.1cm]
-			\includegraphics[scale=.93]{permutahedronTubings} &
-			\includegraphics[scale=.93]{associahedronTubings} &
-			\includegraphics[scale=.93]{cyclohedronTubings} &
-			\includegraphics[scale=.93]{stellohedronTubings} \\[.2cm]
-			complete graph &
-			path &
-			cycle &
-			star \\[.3cm]
-		\end{tabular}
-}
-{Some classical families of polytopes as graph associahedra. Illustration from~\cite{MannevillePilaud-compatibilityFans}.}
-{fig:specialGraphAssociahedra}
-
-%\begin{figure}[t]
-%	\capstart
-%	\begin{adjustbox}{center}
-%		\begin{tabular}{c@{\;}c@{\;}c@{\;}c}
-%			permutahedron &
-%			associahedron &
-%			cyclohedron &
-%			stellohedron \\
-%			\includegraphics[scale=.6]{permutahedron} &
-%			\includegraphics[scale=.6]{associahedron} &
-%			\includegraphics[scale=.6]{cyclohedron} &
-%			\includegraphics[scale=.6]{stellohedron} \\
-%			\includegraphics[scale=.6]{permutahedronTubings} &
-%			\includegraphics[scale=.6]{associahedronTubings} &
-%			\includegraphics[scale=.6]{cyclohedronTubings} &
-%			\includegraphics[scale=.6]{stellohedronTubings} \\[.1cm]
-%			complete graph &
-%			path &
-%			cycle &
-%			star
-%		\end{tabular}
-%	\end{adjustbox}
-%	\caption{Some classical families of polytopes as graph associahedra. Illustration from~\cite{MannevillePilaud-compatibilityFans}.}
-%	\label{fig:specialGraphAssociahedra}
-%\end{figure}
-
-%%%
-
-\clearpage
-\subsubsection{Nested complex and nested fan of a graph}
-
-We present the definitions and properties of the nested complex of a graph, following ideas from~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}.
-
-\para{Nested complex}
-%
-Let~$\graphG$ be a graph with vertex set~$\ground$.
-Let~$\connectedComponents(\graphG)$ denote the set of connected components of~$\graphG$ and define~$n \eqdef |\ground|-|\connectedComponents(\graphG)|$.
-A \defn{tube} of~$\graphG$ is a connected induced subgraph of~$\graphG$.
-The set of tubes of~$\graphG$ is denoted by~$\tubes$.
-The inclusion maximal tubes of~$\graphG$ are its connected components~$\connectedComponents(\graphG)$.
-The tubes which are neither empty nor maximal are called \defn{proper}.
-Two tubes~$\tube, \tube'$ of~$\graphG$ are \defn{compatible} if they are either nested (\ie $\tube \subseteq \tube'$ or~$\tube' \subseteq \tube$), or disjoint and non-adjacent (\ie $\tube \cup \tube'$ is not a tube of~$\graphG$).
-A \defn{tubing} on~$\graphG$ is a set~$\tubing$ of pairwise compatible proper tubes of~$\graphG$.
-See \cref{fig:exmNested}.
-The \defn{nested complex} of~$\graphG$ is the simplicial complex~$\nestedComplex(\graphG)$ of all tubings~on~$\graphG$.
-
-\begin{figure}[t]
-	\capstart
-	\centerline{\includegraphics[width=\textwidth]{exmNested}}
-	\caption{Some incompatible tubes (left and middle), and a maximal tubing (right).}
-	\label{fig:exmNested}
-\end{figure}
-
-\para{Nested fan and graph associahedron}
-%
-Let~$(\b{e}_v)_{v \in \ground}$ be the canonical basis of~$\R^\ground$.
-We consider the hyperplane~${\HH \eqdef \bigset{\b{x} \in \R^\ground}{\sum_{w \in W} x_w = 0 \text{ for all } W \in \connectedComponents(\graphG)}}$ and let~$\pi : \R^\ground \to \HH$ denote the orthogonal projection on~$\HH$.
-
-\begin{definition}
-The \defn{$\b{g}$-vector} of a tube~$\tube$ of~$\graphG$ is the projection~$\gvector{\tube} \eqdef \pi \big( \sum_{v \in \tube} \b{e}_v \big)$ of the characteristic vector of~$\tube$.
-We set~$\gvectors{\tubing} \eqdef \set{\gvector{\tube}}{\tube \in \tubing}$ for a tubing~$\tubing$ on~$\graphG$.
-\end{definition}
-
-Note that by definition, $\gvector{\varnothing} = 0$ and $\gvector{W} = 0$ for all connected components~$W \in \connectedComponents(\graphG)$.
-These vectors support a complete simplicial fan realization of the nested complex.
-Examples are illustrated in \cref{fig:nestedFans}.
-
-\begin{figure}[b]
-	\capstart
-	\centerline{\includegraphics[scale=.55]{nestedFans}}
-	\caption{Two nested fans. As the fans are $3$-dimensional, we intersect them with the sphere and stereographically project them from the direction~$(-1,-1,-1)$.}
-	\label{fig:nestedFans}
-\end{figure}
-
-\begin{theorem}[\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}]
-\label{thm:nestedFan}
-For any graph~$\graphG$, the set of cones
-\[
-\gvectorFan[\graphG] \eqdef \set{\R_{\ge 0} \, \gvectors{\tubing}}{\tubing \text{ tubing on } \graphG}
-\]
-is a complete simplicial fan of~$\HH$, called \defn{nested fan} of~$\graphG$, which realizes the nested complex~$\nestedComplex(\graphG)$.
-\end{theorem}
-
-It is proved in~\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky} that the nested fan comes from a polytope.
-For any subset~$U \subseteq \ground$, denote by~$\triangle_U \eqdef \conv\set{\b{e}_u}{u \in U}$ the face of the standard simplex~$\triangle_\ground$ corresponding to~$U$.
-
-\begin{theorem}[\cite{CarrDevadoss, Devadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}]
-For any graph~$\graphG$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron~$\Asso[\graphG]$.
-It can be constructed as
-\begin{itemize}
-\item the intersection of~$\HH$ with the hyperplanes~$\dotprod{\gvector{\tube}}{\b{x}} \le 3^{|\tube|-2}$ for all tubes~$\tube \in \tubes$~\cite{Devadoss},
-\item the Minkowski sum~$\sum_{\tube \in \tubes} \triangle_{\tube}$ of the faces of the standard simplex corresponding to all tubes of~$\graphG$~\cite{Postnikov}.
-\end{itemize}
-\end{theorem}
-
-\para{Flips in the nested fan}
-%
-The following statement follows from~\cite{MannevillePilaud-compatibilityFans, Zelevinsky}.
-
-\begin{proposition}
-\label{prop:exchangeablePairsGA}
-Let~$\tube, \tube'$ be two tubes of~$\graphG$. Then
-\begin{enumerate}[(i)]
-\item The tubes~$\tube$ and~$\tube'$ are exchangeable if and only if $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
-\item For any maximal tubings~$\tubing, \tubing'$ on~$\graphG$ with $\tubing \ssm \{\tube\} = \tubing' \ssm \{\tube'\}$, both~$\tubing \cup \connectedComponents(\graphG)$ and~$\tubing' \cup \connectedComponents(\graphG)$ contain the tube~$\tube \cup \tube'$ and the connected components of~$\tube \cap \tube'$.
-\item The linear dependence between the $\b{g}$-vectors of~$\tubing \cup \tubing'$ is given by
-\[
-\gvector{\tube} + \gvector{\tube'} = \gvector{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \gvector{\tube[s]}.
-\]
-\item The nested fan of~$\graphG$ has the unique exchange relation property.
-\item The $\b{c}$-vector orthogonal to all $\b{g}$-vectors~$\gvector{\tube[s]}$ for~$\tube[s] \in \tubing \cap \tubing'$ is~$\b{e}_v - \b{e}_{v'}$.
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
-Points~(i) and~(ii) was proved in~\cite{MannevillePilaud-compatibilityFans}. Point~(iii) follows from the fact that
-\[
-\sum_{v \in \tube} \b{e}_v + \sum_{v \in \tube'} \b{e}_v = \sum_{v \in \tube \cup \tube'} \b{e}_v + \sum_{v \in \tube \cap \tube'} \b{e}_v = \sum_{v \in \tube \cup \tube'} \b{e}_v + \sum_{\substack{\tube[s] \in \connectedComponents(\tube \cap \tube') \\ v \in \tube[s]}} \b{e}_v.
-\]
-Point~(iv) is obtained by combining~(ii) and~(iii).
-Finally for~(v), any tube~$\tube[s] \in \tubing \cap \tubing'$ that contains~$v$ or~$v'$ actually contains both (to be compatible with~$\tube$ and~$\tube'$). Therefore, $\gvector{\tube[s]}$ is orthogonal to~$\b{e}_v - \b{e}_{v'}$ for any tube~$\tube[s] \in \tubing \cap \tubing'$.
-\end{proof}
-
-%%%
-
-\subsubsection{Type cones of graphical nested fans}
-
-We now discuss the type cones of the graphical nested fans defined in \cref{thm:nestedFan}.
-We first obtain from \cref{prop:exchangeablePairsGA} the following redundant description.
-
-\begin{corollary}
-\label{coro:typeConeGA}
-For any graph~$\graphG$, the type cone of the nested fan~$\gvectorFan[\graphG]$ is given by
-\[
-\typeCone \big( \gvectorFan[\graphG] \big) = \set{\b{h} \in \R^{\tubes}}{\begin{array}{l} \b{h}_{\tube} = 0 \text{ for any improper tube } \tube \\ \b{h}_{\tube} + \b{h}_{\tube'} > \b{h}_{\tube \cup \tube'} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{h}_{\tube[s]} \text{ for any exchangeable tubes } \tube, \tube' \end{array}}.
-\]
-\end{corollary}
-
-\begin{example}
-For the complete graph~$\graphG[K]_n$, the admissible height vectors are precisely the submodular functions, \ie the functions~$\b{h} : 2^{[n]} \to \R$ such that~$\b{h}_{\varnothing} = 0$ and~$\b{h}_{A} + \b{h}_{B} > \b{h}_{A \cap B} + \b{h}_{A \cup B}$ for any~$A, B \subseteq [n]$.
-This is precisely the description of the generalized permutahedra introduced by A.~Postnikov in~\cite{Postnikov} and E.-M.~Feichtner and B.~Sturmfels in~\cite{FeichtnerSturmfels}.
-\end{example}
-
-\begin{example}
-\label{exm:typeConeGA}
-Consider the nested fans illustrated in \cref{fig:nestedFans}.
-The type cone of the left fan lives in~$\R^{13}$, has a linearity space of dimension~$3$ and $19$ facet-defining inequalities (given below). In particular, it is not simplicial.
-
-\medskip
-\centerline{$
-\begin{array}{r|c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c}
-\text{tubes} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA1}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA2}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA3}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA4}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA5}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA6}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA7}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA8}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA9}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA10}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA11}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA12}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeA13}}  \\[.6cm]
-\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{2}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{0}{2}{-1} & \compactVectorT{1}{-2}{1} & \compactVectorT{1}{-2}{0} & \compactVectorT{1}{0}{-1} & \compactVectorT{-1}{2}{0} & \compactVectorT{-1}{0}{1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-2}{1} & \compactVectorT{0}{-2}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
-\text{facet}		& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & 1 \\
-\text{defining}		& 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & -1 & 0 \\
-\text{inequalities}	& -1 & 1 & 0 & -1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & -1 & 1 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 & 0 & 1 & -1 \\
-					& -1 & 1 & -1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-					& -1 & 0 & 0 & 0 & 1 & -1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
-					& 0 & 1 & -1 & 0 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 & 0 \\
-					& 0 & 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & -1 & 0 & 0 \\
-					& 0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 0 & -1 & 1 & 0 \\
-					& 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 \\
-					& 0 & 0 & 1 & 0 & -1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 1 & 0 & 0 \\
-					& 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 & 0 & 1 \\
-					& 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-					& 1 & -1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-					& 0 & 0 & 0 & 1 & 0 & 0 & 0 & -1 & 0 & 1 & 0 & 0 & -1 \\
-					& 0 & 0 & 0 & 1 & 0 & 1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\
-					& 0 & -1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\[.2cm]
-\end{array}
-$}
-
-%sage: G = Graph([[1,2,3,4], [[1,2],[1,3],[1,4],[2,3],[3,4]]])
-%sage: M = Matrix([g_vector_GA(G, (1,)), g_vector_GA(G, (1,2)), g_vector_GA(G, (1,2,3)), [1,1,1,1]]).inverse()
-%sage: rays = {tuple(tube) : (g_vector_GA(G, tube)*M)[:-1] for tube in tubes(G)}
-%sage: rays
-%{(1,): (1, 0, 0),
-% (1, 2): (0, 1, 0),
-% (1, 2, 3): (0, 0, 1),
-% (1, 2, 3, 4): (0, 0, 0),
-% (1, 2, 4): (0, 2, -1),
-% (1, 3): (1/2, -1, 1/2),
-% (1, 3, 4): (1, -2, 0),
-% (1, 4): (1/2, 0, -1/2),
-% (2,): (-1, 2, 0),
-% (2, 3): (-1/2, 0, 1/2),
-% (2, 3, 4): (-1, 0, 0),
-% (3,): (0, -2, 1),
-% (3, 4): (0, -1, 0),
-% (4,): (0, 0, -1)}
-
-%sage: NF = Fan([Cone([rays[tuple(tube)] for tube in tubing]) for tubing in maximal_tubings(G)])
-%sage: NF.rays()
-%N( 0, -1,  0),
-%N( 0,  2, -1),
-%N( 1,  0,  0),
-%N(-1,  2,  0),
-%N( 0,  0,  1),
-%N( 1, -2,  0),
-%N( 0, -2,  1),
-%N( 0,  0, -1),
-%N(-1,  0,  1),
-%N( 1,  0, -1),
-%N(-1,  0,  0),
-%N( 0,  1,  0),
-%N( 1, -2,  1)
-%in 3-d lattice N
-
-%sage: TCNF = type_cone(NF)
-%sage: TCNF
-%A 13-dimensional polyhedron in QQ^13 defined as the convex hull of 1 vertex, 25 rays, 3 lines
-%sage: TCNF.lines()
-%(A line in the direction (0, 0, 1, -1, 0, 1, 0, 0, -1, 1, -1, 0, 1),
-% A line in the direction (1, -2, -2, 0, 0, 0, 2, 0, 2, -2, 2, -1, 0),
-% A line in the direction (0, 1, 0, 0, -1, 0, -1, 1, -1, 1, 0, 0, -1))
-%sage: TCNF.inequalities()
-%(An inequality (-2, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0) x + 0 >= 0,
-% An inequality (-2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0) x + 0 >= 0,
-% An inequality (0, -1, -1, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0) x + 0 >= 0,
-% An inequality (2, 0, 0, 0, 0, 0, -1, 0, 1, 0, -1, 0, 0) x + 0 >= 0,
-% An inequality (2, 0, 0, 0, 0, -1, 0, -1, 0, 1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 2, 1) x + 0 >= 0,
-% An inequality (0, 0, -1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 1) x + 0 >= 0,
-% An inequality (0, 0, 0, -1, -1, 0, 0, 0, 1, 0, 0, 2, 0) x + 0 >= 0,
-% An inequality (0, 0, 0, 0, -1, 0, -1, 0, 1, 0, 0, 0, 1) x + 0 >= 0,
-% An inequality (2, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 1) x + 0 >= 0,
-% An inequality (0, 0, 0, 0, 1, 0, 0, 0, -1, 0, 1, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, -1) x + 0 >= 0,
-% An inequality (0, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1) x + 0 >= 0,
-% An inequality (0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, -2, 0) x + 0 >= 0,
-% An inequality (0, 1, 0, -1, 0, 0, 0, -1, 0, 0, 1, 0, 0) x + 0 >= 0,
-% An inequality (0, 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, -2, 0) x + 0 >= 0)
-%sage: len(TCNF.inequalities())
-%12
-
-\medskip
-\noindent
-The type cone of the right fan lives in~$\R^{11}$, has a linearity space of dimension~$3$ and $12$ facet-defining inequalities (given below). In particular, it is not simplicial.
-
-\[
-\begin{array}{r|c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c@{\;\,}c}
-\text{tubes} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB1}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB2}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB3}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB4}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB5}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB6}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB7}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB8}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB9}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB10}} & \raisebox{-.4cm}{\includegraphics[scale=.6]{tubeB11}} \\[.6cm]
-\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{2}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{1}{-2}{1} & \compactVectorT{1}{-2}{0} & \compactVectorT{-1}{2}{0} & \compactVectorT{-1}{0}{1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-2}{1} & \compactVectorT{0}{-2}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
-\text{facet}		& -1 & 1 & -1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-\text{defining}		& 1 & -1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-\text{inequalities}	& 0 & 1 & -1 & 0 & 0 & -1 & 1 & 0 & 0 & 0 & 0 \\
-					& 1 & 0 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-					& 0 & 0 & -1 & 1 & 0 & 0 & 1 & 0 & -1 & 0 & 0 \\
-					& 0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & -1 & 1 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & -1 & 0 & 1 & 0 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & -1 & 1 & 0 \\
-					& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & 1 \\
-					& 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & -1 & 0 \\
-					& 0 & 0 & 1 & 0 & 0 & 0 & -1 & 1 & 0 & 0 & 0 \\
-					& 0 & 0 & 1 & -1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\[.2cm]
-\end{array}
-\]
-
-%sage: G = Graph([[1,2,3,4], [[1,2],[1,3],[2,3],[3,4]]])
-%sage: M = Matrix([g_vector_GA(G, (1,)), g_vector_GA(G, (1,2)), g_vector_GA(G, (1,2,3)), [1,1,1,1]]).inverse()
-%sage: rays = {tuple(tube) : (g_vector_GA(G, tube)*M)[:-1] for tube in tubes(G)}
-%sage: rays
-%{(1,): (1, 0, 0),
-% (1, 2): (0, 1, 0),
-% (1, 2, 3): (0, 0, 1),
-% (1, 2, 3, 4): (0, 0, 0),
-% (1, 3): (1/2, -1, 1/2),
-% (1, 3, 4): (1, -2, 0),
-% (2,): (-1, 2, 0),
-% (2, 3): (-1/2, 0, 1/2),
-% (2, 3, 4): (-1, 0, 0),
-% (3,): (0, -2, 1),
-% (3, 4): (0, -1, 0),
-% (4,): (0, 0, -1)}
-
-%sage: NF = Fan([Cone([rays[tuple(tube)] for tube in tubing]) for tubing in maximal_tubings(G)])
-%sage: NF.rays()
-%N( 1,  0,  0),
-%N(-1,  2,  0),
-%N( 0,  0,  1),
-%N( 1, -2,  0),
-%N( 0,  0, -1),
-%N(-1,  0,  1),
-%N( 1, -2,  1),
-%N( 0, -2,  1),
-%N(-1,  0,  0),
-%N( 0,  1,  0),
-%N( 0, -1,  0)
-%in 3-d lattice N
-
-%sage: TCNF = type_cone(NF)
-%sage: TCNF
-%A 11-dimensional polyhedron in QQ^11 defined as the convex hull of 1 vertex, 11 rays, 3 lines
-%sage: TCNF.lines()
-%(A line in the direction (0, 2, 0, -2, 0, 0, -2, -2, 0, 1, -1),
-% A line in the direction (1, -1, 0, 1, 0, -1, 1, 0, -1, 0, 0),
-% A line in the direction (1, -1, 1, 1, -1, 0, 2, 1, -1, 0, 0))
-%sage: TCNF.inequalities()
-%(An inequality (-1, 0, -1, 0, 0, 0, 1, 0, 0, 2, 0) x + 0 >= 0,
-% An inequality (1, 1, 0, 0, 0, 0, 0, 0, 0, -2, 0) x + 0 >= 0,
-% An inequality (0, -1, -1, 0, 0, 1, 0, 0, 0, 2, 0) x + 0 >= 0,
-% An inequality (1, 0, 0, 0, 0, 0, -1, 1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, -1, 0, 0, 1, 1, -1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 0, -1, 0, 0, 1, -1, 0, 0, 2) x + 0 >= 0,
-% An inequality (0, 1, 0, 0, 0, -1, 0, 1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 0, 0, 0, 1, 0, -1, -1, 0, 2) x + 0 >= 0,
-% An inequality (0, 0, 0, 0, 1, 0, 0, 1, 0, 0, -2) x + 0 >= 0,
-% An inequality (0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2) x + 0 >= 0,
-% An inequality (0, 0, 1, 0, 0, -1, 0, 0, 1, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 1, 1, 0, 0, -1, 0, 0, 0, 0) x + 0 >= 0)
-%sage: len(TCNF.inequalities())
-%12
-\medskip
-\end{example}
-
-In the remaining of this section, we describe the facet-defining inequalities of the type cone of the graphical nested fans.
-Observe first that we have already indirectly described this type cone when the graph is a path in \cref{prop:extremalExchangeablePairsAsso}.
-Recall that on the path with~$n+1$ vertices, the tubes of the path are the intervals of~$[n+1]$ and that two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ are exchangeable if either~${i < i' \le j+1 < j'+1}$ or~${i' < i \le j'+1 < j+1}$.
-
-\begin{proposition}
-\label{prop:extremalExchangeablePairsA}
-Two intervals~$[i,j]$ and~$[i',j']$ of~$[n+1]$ form an extremal exchangeable pair for the nested fan of the path if and only if~$i = i'+1$ and~$j = j'+1$, or the opposite.
-\end{proposition}
-
-We now consider an arbitrary graph~$\graphG$ and describe the type cone of its nested fan.
-We give a necessary condition for an exchangeable pair to be extremal in \cref{lem:extremalExchangeablePairsGAonlyif}, exploit it in \cref{exm:constructionsGA}, and prove that it is actually a sufficient condition in \cref{prop:extremalExchangeablePairsGA}
-
-\begin{lemma}
-\label{lem:extremalExchangeablePairsGAonlyif}
-If two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$, then~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
-\end{lemma}
-
-\begin{proof}
-Consider an exchangeable pair~$\{\tube, \tube'\}$ of tubes of~$\graphG$.
-The inner normal vector of the corresponding inequality of the type cone is
-\[
-\b{n}(\tube, \tube') \eqdef \b{f}_{\tube} + \b{f}_{\tube'} - \b{f}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{f}_{\tube[s]}.
-\]
-
-By \cref{prop:exchangeablePairsGA}, $\tube'$ has a unique neighbor~$v$ in~$\tube \ssm \tube'$ and $\tube$ has a unique neighbor~$v'$ in~$\tube' \ssm \tube$.
-Therefore, $\tube \ssm \tube'$ and~$\tube' \ssm \tube$ are both connected. Assume that $\tube \ssm \tube'\ne \{v\}$, and let $w\ne v$ be a non-disconnecting node of $\tube \ssm \tube'$. By \cref{prop:exchangeablePairsGA}, $\tilde \tube \eqdef \tube \ssm \{w\}$ and $\tube'$ are exchangeable, and $\tilde \tube' \eqdef (\tube \cup \tube') \ssm \{w\}$ and $\tube$ are exchangeable as well. Moreover, we have
-\begin{align*}
-\b{n}(\tilde \tube, \tube') + \b{n}( \tube, \tilde \tube')
-& = \Big( \b{f}_{\tilde \tube} + \b{f}_{\tube'} - \b{f}_{\tilde \tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tilde \tube \cap \tube')} \b{f}_{\tube[s]} \Big)
-+ \Big( \b{f}_{\tube} + \b{f}_{\tilde \tube'} - \b{f}_{\tube\cup \tilde \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tilde \tube')} \b{f}_{\tube[s]} \Big) \\
-& = \b{f}_{\tube} + \b{f}_{\tube'} - \b{f}_{\tube\cup \tube'} - \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} \b{f}_{\tube[s]} =\b{n}(\tube, \tube'),
-\end{align*}
-as $\tilde \tube \cup \tube' = \tilde \tube'$, $\tilde \tube \cap \tube' = \tube \cap \tube'$, $\tube \cup \tilde \tube' = \tube \cup \tube'$ and $\connectedComponents(\tube \cap \tilde \tube') = \connectedComponents(\tilde \tube) = \tilde \tube$.
-Therefore $\b{n}(\tube, \tube')$ defines a redundant inequality and $\{\tube, \tube'\}$ is not an extremal exchangeable pair.
-The proof is symmetric if~$\tube' \ssm \tube \ne \{v'\}$.
-\end{proof}
-
-\begin{example}
-\label{exm:constructionsGA}
-We now exploit \cref{lem:extremalExchangeablePairsGAonlyif} to show that certain height functions belong to the type cone of~$\gvectorFan[\graphG]$ and recover the classical constructions of the graph associahedron.
-
-\begin{enumerate}
-\item Consider the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef -|\bigset{\tube[s] \in \tubes}{\tube[s] \subseteq \tube}|$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
-\[
-\qquad\qquad
-\dotprod{\b{n}(\tube, \tube')}{\b{h}} = |\bigset{\tube[s]\in\tubes}{\tube \symdif \tube' \subseteq \tube[s] \subseteq \tube \cup \tube'}|,
-\]
-where~$\tube \symdif \tube' = \{v,v'\}$ denotes the symmetric difference.
-This quantity is positive since at least~$\tube \cup \tube'$ fulfills the condition.
-Thus, the height function~$\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
-The polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}$ is the graph associahedron constructed by A.~Postnikov's in~\cite{Postnikov}.
-\item Consider now the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef -3^{|\tube|-2}$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
-\[
-\qquad\qquad
-\dotprod{\b{n}(\tube, \tube')}{\b{h}} = - 3^{|\tube|-2} - 3^{|\tube'|-2} + 3^{|\tube \cup \tube'|-2} + \sum_{\tube[s] \in \connectedComponents(\tube \cap \tube')} 3^{|\tube[s]|-2 } \ge - 2 \cdot 3^{|\tube \cup \tube'|-1} + 3^{|\tube \cup \tube'|} > 0.
-\]
-Thus, the height function~$\b{h}$ belongs to the type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$.
-The corresponding polytope~$P_\b{h}$ is the graph associahedron constructed by S.~Devadoss's in~\cite{Devadoss}.
-\item Finally, consider the height function~$\b{h} \in \R^{\tubes}$ given by~$\b{h}_{\tube} \eqdef |\bigset{\tube[s] \in \tubes}{\tube[s] \supseteq \tube}|$. Then for any tubes~$\tube$ and~$\tube'$ such that ${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$, we have
-\begin{align*}
-\qquad\qquad
-\dotprod{\b{n}(\tube, \tube')}{\b{h}} = \; & |\bigset{(\tube[r], \tube[s]) \in \tubes \times \connectedComponents(\tube \cap \tube')}{\tube[s] \subseteq \tube[r] \text{ and } \tube, \tube' \not\subseteq \tube[r]}| \\
-& + \big( |\connectedComponents(\tube \cap \tube')|-1 \big) \cdot | \bigset{\tube[r] \in \tubes}{\tube \text{ or } \tube'\subseteq \tube[r]}\big|.
-\end{align*}
-Any connected component of~$\tube \cap \tube'$ certifies the positivity of this evaluation, showing that the height function~$\b{h}$ belongs to~$\typeCone \big( \gvectorFan[\graphG] \big)$. The corresponding realization~$P_\b{h}$ of the graph associahedron is new, to the best of our knowledge. 
-\end{enumerate}
-\end{example}
-
-We now show that the condition of \cref{lem:extremalExchangeablePairsGAonlyif} actually characterizes the extremal exchangeable pairs of the nested fan~$\gvectorFan[\graphG]$.
-
-\begin{proposition}
-\label{prop:extremalExchangeablePairsGA}
-Two tubes~$\tube$ and~$\tube'$ of~$\graphG$ form an extremal exchangeable pair for the nested fan of~$\graphG$ if and only if~${\tube \ssm \{v\} = \tube' \ssm \{v'\}}$ for some neighbor~$v$ of~$\tube'$ and some neighbor~$v'$ of~$\tube$.
-\end{proposition}
-
-\begin{proof}
-By \cref{lem:extremalExchangeablePairsGAonlyif}, an exchangeable pair $\{\tube, \tube'\}$ is not extremal unless both $\tube \ssm \tube'$ and $\tube' \ssm \tube$ are singletons. We now need to show that all these pairs are extremal. Until we finish the proof, we will call such a pair a \defn{suspected extremal pair}.
-
-Let $\{\tube, \tube'\}$ be a suspected extremal pair.
-To prove that it is extremal, we will construct a vector $\b{w} \in \R^{\tubes}$ such that $\dotprod{\b{n}(\tube, \tube')}{\b{w}}< 0,$
-but $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}}>0$ for any other suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$. This will show that the inequality induced by~$\{\tube, \tube'\}$ is not redundant.
-
-Define $\alpha(\tube,\tube') \eqdef \set{\tube[r] \in \tubes}{\tube \symdif \tube' \subseteq \tube[r] \subseteq \tube \cup \tube'}$, where $\symdif$ denotes the symmetric difference, and define $\b{x} \in \R^{\tubes}$ be such that
-\[
-\b{x}_{\tube[s]} = -|\bigset{\tube[r] \in \tubes \ssm \alpha(\tube, \tube')}{\tube[r] \subseteq \tube[s]}|
-\]
-for each tube~$\tube[s] \in \tubes$.
-For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have
-\[
-\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} = |\alpha(\tilde \tube, \tilde \tube')\ssm \alpha(\tube, \tube')| \ge 0.
-\]
-Notice that $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} = 0$ if $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube,\tube')$ and $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} \ge 1$ otherwise.
-In particular, if $\{\tilde \tube, \tilde \tube'\} \ne \{\tube, \tube'\}$ then $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}} \ge 1$ unless $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$ because $\tilde \tube \cup \tilde \tube' \in \alpha(\tilde \tube, \tilde \tube')$, and if $\tilde \tube \cup \tilde \tube' = \tube \cup \tube'$ but $\{\tilde \tube, \tilde \tube'\} \ne \{\tube, \tube'\}$, then either $\tube$ or $\tube'$ will belong to $\alpha(\tilde \tube, \tilde \tube')$. 
-
-Now, define $\b{y}\in\R^{\tubes}$ by
-\[
-\b{y}_{\tube[s]} = \begin{cases}
-	-1 & \text{ if } |\tube[s]| \ge |\tube|, \\
-	0 & \text{ otherwise},
-\end{cases}
-\]
-for each tube~$\tube[s] \in \tubes$.
-We have $\dotprod{\b{n}(\tube, \tube')}{\b{y}} = -1$. For any suspected extremal pair $\{\tilde \tube, \tilde \tube'\}$ we have $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}} \ge -1$. If moreover $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$, then we have $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}} \ge 0$. 
-
-Finally, consider $\b{z} \in \R^{\tubes}$ given by
-\[
-\b{z}_{\tube[s]} = -|\bigset{\tube[r] \in \alpha(\tube, \tube')}{\tube[r] \subseteq \tube[s]}|,
-\]
-for each tube~$\tube[s] \in \tubes$.
-It verifies $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} \ge 0$ for any suspected extremal pair~$\{\tilde \tube, \tilde \tube'\}$, and $\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}} = |\alpha(\tilde \tube, \tilde \tube')| > 0$ if $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube, \tube')$.
-
-For $0 < \varepsilon < 1$, and $0 < \delta < \frac{\varepsilon}{|\alpha(\tube, \tube')|}$, we claim that the vector $\b{w} \eqdef \b{x} + \varepsilon \b{y} + \delta \b{z}$ fulfills the desired properties.
-Indeed, if $\{\tilde \tube, \tilde \tube'\} \ne \{\tube,\tube'\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube') \not \subseteq \alpha(\tube,\tube')$, then 
-\[
-\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}} = \underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{\ge 1} + \underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{> -1} + \underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{\ge 0} > 0.
-\]
-If $\{\tilde \tube, \tilde \tube'\} \ne \{\tube,\tube'\}$ is a suspected extremal pair with $\alpha(\tilde \tube, \tilde \tube') \subseteq \alpha(\tube,\tube')$, then $\tilde \tube \cup \tilde \tube' \subsetneq \tube \cup \tube'$ and 
-\[
-\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{w}} = \underbrace{\dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{x}}}_{= 0} + \underbrace{\varepsilon \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{y}}}_{\ge 0} + \underbrace{\delta \dotprod{\b{n}(\tilde \tube, \tilde \tube')}{\b{z}}}_{> 0} > 0.
-\]
-However,
-\[
-\dotprod{\b{n}(\tube, \tube')}{\b{w}} = \underbrace{\dotprod{\b{n}(\tube, \tube')}{\b{x}}}_{= 0} + \underbrace{\varepsilon \dotprod{\b{n}(\tube, \tube')}{\b{y}}}_{= -\varepsilon} + \underbrace{\delta \dotprod{\b{n}( \tube,  \tube')}{\b{z}}}_{= \delta |\alpha(\tube ,\tube')| < \varepsilon} < 0.
-\qedhere
-\]
-\end{proof}
-
-The following statement reformulates \cref{prop:extremalExchangeablePairsGA}.
-
-\begin{corollary}
-\label{coro:extremalExchangeablePairsGA}
-The extremal exchangeable pairs for the nested fan of~$\graphG$ are precisely the pairs of tubes~${\tube[s] \ssm \{v'\}}$ and~${\tube[s] \ssm \{v\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$~of~$\tube[s]$.
-\end{corollary}
-
-\enlargethispage{-.1cm}
-We derive from \cref{prop:extremalExchangeablePairsGA} and \cref{coro:extremalExchangeablePairsGA} all polytopal realizations of the nested fan.
-
-\begin{corollary}
-\label{coro:typeconenestedfan}
-Consider a graph~$\graphG$ on~$\ground$ with tubes~$\tubes$. 
-Then, for a height vector~$\b{h} \in \R^{\tubes}$, the nested fan~$\gvectorFan[\graphG]$ is the normal fan of the graph associahedron
-\[
-\set{\b{x} \in \R^\ground}{\dotprod{\gvector{\tube}}{\b{x}} \le \b{h}_{\tube} \text{ for any tube } \tube \in \tubes}
-\]
-if and only if~$\b{h}_{\varnothing} = \b{h}_{\graphG} = 0$ and
- $\b{h}_{\tube[s] \ssm \{v'\}} + \b{h}_{\tube[s] \ssm \{v\}} > \b{h}_{\tube[s]} + \b{h}_{\tube[s] \ssm \{v, v'\}}$ for any tube~$\tube[s] \in \tubes$ and distinct non-disconnecting vertices~$v,v'$ of~$\tube[s]$.
-\end{corollary}
-
-We also obtain from \cref{prop:extremalExchangeablePairsGA} the following surprising property.
-
-\begin{corollary}
-Any $\b{c}$-vector supports at least one extremal exchangeable pair.
-\end{corollary}
-
-\begin{proof}
-Consider a $\b{c}$-vector~$\b{e}_v - \b{e}_{v'}$ for two distinct vertices~$v, v'$ in a common connected component of~$\graphG$. Let~$\tube[r]$ be a path from~$v$ to~$v'$ in~$\graphG$ and let~$\tube \eqdef \tube[r] \cup \{v\}$ and~$\tube' \eqdef \tube[r] \cup \{v'\}$. Then $\{\tube, \tube'\}$ is an extremal exchangeable pair with $\b{c}$-vector~$\b{e}_v - \b{e}_{v'}$.
-\end{proof}
-
-We derive from \cref{coro:extremalExchangeablePairsGA} the number of extremal exchangeable pairs of the nested fan.
-For a tube~$\tube$ of~$\graphG$, we denote by~$\nonDisconnecting(\tube)$ the number of non-disconnecting vertices of~$\tube$.
-In other words, $\nonDisconnecting(\tube)$ is the number of tubes covered by~$\tube$ in the inclusion poset of all tubes of~$\graphG$.
-
-\begin{corollary}
-\label{coro:numberExtremalExchangeablePairsGA}
-The nested fan~$\gvectorFan[\graphG]$ has~$\!\!\!\! \sum\limits_{\tube[s] \in \tubes} \!\! \binom{\nonDisconnecting(\tube[s])}{2}$ extremal exchangeable pairs.
-\end{corollary}
-
-The formula of \cref{coro:numberExtremalExchangeablePairsGA} can be made more explicit for specific families of graph associahedra discussed in the introduction and illustrated in \cref{fig:specialGraphAssociahedra}.
-
-\begin{proposition}
-The number of extremal exchangeable pairs of the nested fan~$\gvectorFan[\graphG]$ is:
-\begin{itemize}
-\item $2^{n-2}\binom{n}{2}$ for the permutahedron (complete graph associahedron),
-\item $\binom{n}{2}$ for the associahedron (path associahedron),
-\item $3\binom{n}{2} - n$ for the cyclohedron (cycle associahedron),
-\item $n-1+2^{n-3}\binom{n-1}{2}$ for the stellohedron (star associahedron).
-\end{itemize}
-\end{proposition}
-
-\begin{proof}
-For the permutahedron, choose any two vertices~$v,v'$, and complete them into a tube by selecting any subset of the~$n-2$ remaining vertices.
-For the associahedron, choose any two vertices~$v,v'$, and complete them into a tube by taking the path between them.
-For the cyclohedron, choose the two vertices~$v,v'$, and complete them into a tube by taking either all the cycle, or one of the two paths between~$v$ and~$v'$ (this gives three options in general, but only two when~$v,v'$ are neighbors).
-For the stellohedron, choose either~$v$ as the center of the star and~$v'$ as one of the $n-1$ leaves, or $v$~and~$v'$ as leaves of the star and complete them into a tube by taking the center and any subset of the $n-3$ remaining leaves.
-\end{proof}
-
-To conclude on graph associahedra, we characterize the graphs~$\graphG$ whose nested fan has a simplicial type cone.
-
-\begin{proposition}\label{prop:simplicialnestedfan}
-The type cone~$\typeCone \big( \gvectorFan[\graphG] \big)$ is simplicial if and only if~$\graphG$ is a path.
-\end{proposition}
-
-\begin{proof}
-Note that any tube~$\tube$ with~$|\tube| \ge 2$ has two non-disconnecting vertices when it is a path, and at least three non-disconnecting vertices otherwise (the leaves of an arbitrary spanning tree of~$\tube$, or any vertex if it is a cycle).
-Therefore, each tube of~$\tubes$ which is not a singleton contributes to at least one extremal exchangeable pair.
-We conclude that the number of extremal exchangeable pairs is at least:
-\[
-|\tubes| - |V| = |\tubes \ssm \{\varnothing, \graphG\}| - (|V|-1) = N - n,
-\]
-with equality if and only if all tubes of~$\graphG$ are paths, \ie if and only if~$\graphG$ is a path.
-\end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \part{Grothendieck group and relations between $\b{g}$-vectors}
