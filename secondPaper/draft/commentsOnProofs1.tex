@@ -1,0 +1,352 @@
+\documentclass{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{enumerate, amsmath, amsfonts, amssymb, amsthm, mathrsfs, graphics, graphicx, xcolor, url, hyperref, hypcap, xargs, multicol, pdflscape, multirow, hvfloat, array, ae, aecompl, pifont, mathtools, a4wide, float, blkarray}
+\usepackage{marginnote}
+\hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usetikzlibrary{trees, decorations, decorations.markings, shapes, arrows, matrix, calc, fit, intersections, patterns, angles}
+\graphicspath{{figures/}}
+\makeatletter\def\input@path{{figures/}}\makeatother
+\usepackage{caption}
+\captionsetup{width=\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{theorem*}{Theorem}%[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{convention}[theorem]{Convention}
+
+% math special letters
+\newcommand{\R}{\mathbb{R}} % reals
+\newcommand{\N}{\mathbb{N}} % naturals
+\newcommand{\Z}{\mathbb{Z}} % integers
+\newcommand{\C}{\mathbb{C}} % complex
+\newcommand{\I}{\mathbb{I}} % set of integers
+\newcommand{\HH}{\mathbb{H}} % hyperplane
+\newcommand{\K}{k} % field
+\newcommand{\fA}{\mathfrak{A}} % alternating group
+\newcommand{\fS}{\mathfrak{S}} % symmetric group
+\newcommand{\cA}{\mathcal{A}} % algebra
+\newcommand{\cC}{\mathcal{C}} % collection
+\newcommand{\cS}{\mathcal{S}} % ground set
+\newcommand{\uR}{\underline{R}} % underline set
+\newcommand{\uS}{\underline{S}} % underline set
+\newcommand{\uT}{\underline{T}} % underline set
+\newcommand{\oS}{\overline{S}} % overline set
+\newcommand{\ucS}{\underline{\cS}} % underline ground set
+\renewcommand{\b}[1]{\mathbf{#1}} % bold letters
+\newcommand{\h}{\widehat} % hat letters
+
+% math commands
+\newcommand{\set}[2]{\left\{ #1 \;\middle|\; #2 \right\}} % set notation
+\newcommand{\bigset}[2]{\big\{ #1 \;\big|\; #2 \big\}} % big set notation
+\newcommand{\Bigset}[2]{\Big\{ #1 \;\Big|\; #2 \Big\}} % Big set notation
+\newcommand{\setangle}[2]{\left\langle #1 \;\middle|\; #2 \right\rangle} % set notation
+\newcommand{\ssm}{\smallsetminus} % small set minus
+\newcommand{\dotprod}[2]{\left\langle \, #1 \; \middle| \; #2 \, \right\rangle} % dot product
+\newcommand{\symdif}{\,\triangle\,} % symmetric difference
+\newcommand{\one}{{1\!\!1}} % the all one vector
+\newcommand{\eqdef}{\mbox{\,\raisebox{0.2ex}{\scriptsize\ensuremath{\mathrm:}}\ensuremath{=}\,}} % :=
+\newcommand{\defeq}{\mbox{~\ensuremath{=}\raisebox{0.2ex}{\scriptsize\ensuremath{\mathrm:}} }} % =:
+\newcommand{\simplex}{\triangle} % simplex
+\renewcommand{\implies}{\Rightarrow} % imply sign
+\newcommand{\transpose}[1]{{#1}^t} % transpose matrix
+
+% operators
+\DeclareMathOperator{\conv}{conv} % convex hull
+\DeclareMathOperator{\vect}{vect} % linear span
+\DeclareMathOperator{\cone}{cone} % cone hull
+\DeclareMathOperator{\inv}{inv} % inversions
+\DeclareMathOperator{\ascents}{asc} % ascents
+\DeclareMathOperator{\descents}{des} % descents
+
+% others
+\newcommand{\fref}[1]{Figure~\ref{#1}} % reference figures
+\newcommand{\ie}{\textit{i.e.}~} % id est
+\newcommand{\eg}{\textit{e.g.}~} % exempli gratia
+\newcommand{\Eg}{\textit{E.g.}~} % exempli gratia
+\newcommand{\apriori}{\textit{a priori}} % a priori
+\newcommand{\viceversa}{\textit{vice versa}} % vice versa
+\newcommand{\versus}{\textit{vs.}~} % versus
+\newcommand{\aka}{\textit{a.k.a.}~} % also known as
+\newcommand{\perse}{\textit{per se}} % per se
+\newcommand{\ordinal}{\textsuperscript{th}} % th for ordinals
+\newcommand{\ordinalst}{\textsuperscript{st}} % st for ordinals
+\definecolor{darkblue}{rgb}{0,0,0.7} % darkblue color
+\definecolor{green}{RGB}{57,181,74} % green color
+\definecolor{violet}{RGB}{147,39,143} % violet color
+\newcommand{\red}{\color{red}} % red command
+\newcommand{\green}{\color{green}} % green command
+\newcommand{\darkblue}{\color{darkblue}} % darkblue command
+\newcommand{\defn}[1]{\textsl{\darkblue #1}} % emphasis of a definition
+\newcommand{\para}[1]{\medskip\noindent\textit{#1.}} % paragraph
+\renewcommand{\topfraction}{1} % possibility to have one page of pictures
+\renewcommand{\bottomfraction}{1} % possibility to have one page of pictures
+\newcommand{\ex}{_{\textrm{exm}}} % examples
+\newcommand{\pa}{_{\textrm{pa}}} % path
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, scale=.7] (char) {#1};}}
+
+% marginal comments
+\usepackage{todonotes}
+\newcommand{\yann}[1]{\todo[color=red!30]{#1 --- Y.}}
+\newcommand{\vincent}[1]{\todo[color=blue!30]{#1 \\ \hfill --- V.}}
+\newcommand{\pierreguy}[1]{\todo[color=green!30]{#1 \\ \hfill --- PG.}}
+
+% SPECIFIC NON-KISSING COMPLEX
+
+% COMBINATORICS
+% quiver
+\newcommand{\blossom}{^\text{\ding{96}}} % blossom
+\newcommand{\Enrs}[1]{E_{nr}^{s}(#1)}
+\newcommand{\Ers}[1]{E_{r}^{s}(#1)}
+\newcommand{\Enrt}[1]{E_{nr}^{t}(#1)}
+\newcommand{\Ert}[1]{E_{r}^{t}(#1)}
+
+% walks
+\newcommand{\peaks}[1]{\mathsf{peaks}(#1)} % peaks
+\newcommand{\deeps}[1]{\mathsf{deeps}(#1)} % deeps
+\newcommand{\distinguishedWalk}[2]{\mathsf{dw}(#1,#2)} % distinguished walk
+\newcommand{\distinguishedArrows}[2]{\mathsf{da}(#1,#2)} % distinguished arrows
+\newcommand{\distinguishedString}[2]{\mathsf{ds}(#1,#2)} % distinguished string
+\newcommand{\distinguishedSign}[2]{\varepsilon(#1,#2)} % distinguished sign
+
+% non-kissing complex, lattice, flip graph
+\newcommand{\kn}{\kappa} % kissing number
+\newcommand{\KN}{\textsc{kn}} % Kissing Number
+\newcommandx{\NKC}[1][1=\bar Q]{\mathcal{K}_{\mathrm{nk}}(#1)} % non-kissing complex
+\newcommandx{\RNKC}[1][1=\bar Q]{\mathcal{C}_{\mathrm{nk}}(#1)} % non-kissing complex
+\newcommandx{\NKL}[1][1=\bar Q]{\mathcal{L}_{\mathrm{nk}}(#1)} % non-kissing lattice
+\newcommandx{\NKG}[1][1=\bar Q]{\mathcal{G}_{\mathrm{nk}}(#1)} % non-kissing flip graph
+\newcommandx{\NFC}[1][1=\bar Q]{\mathcal{C}_{\mathrm{nf}}(#1)} % non-friendly complex
+\newcommand{\peak}{\mathrm{peak}} % bottom dissection
+\newcommand{\deep}{\mathrm{deep}} % top dissection
+\newcommand{\reversed}[1]{#1^{\mathrm{rev}}} % reverse all arrows
+\renewcommand{\top}{\mathrm{top}} % top
+\newcommand{\bottom}{\mathrm{bot}} % bottom
+\newcommand{\walk}{\operatorname{\omega}} % walk (of a curve)
+
+% accordion and slalom complexes
+\newcommand{\surface}{\mathcal{S}} % an orientable surface
+\newcommand{\dual}{^*} % duality
+\newcommand{\dissection}{\mathrm{D}} % dissection of a marked surface
+\newcommand{\vertices}{\mathcal{V}} % vertices of a dissection
+\newcommand{\edges}{\mathcal{E}} % edges of a dissection
+\newcommand{\faces}{\mathcal{F}} % faces of a dissection
+\newcommandx{\AC}[1][1=\dissection]{\mathcal{K}_{\mathrm{acc}}(#1)} % accordion complex
+\newcommandx{\RAC}[1][1=\dissection]{\mathcal{C}_{\mathrm{acc}}(#1)} % reduced accordion complex
+\newcommandx{\SC}[1][1=\dissection\dual]{\mathcal{K}_{\mathrm{sla}}(#1)} % slalom complex
+\newcommandx{\RSC}[1][1=\dissection\dual]{\mathcal{C}_{\mathrm{sla}}(#1)} % reduced slalom complex
+\newcommandx{\NCC}[1][1={\dissection, \dissection\dual}]{\mathcal{K}_{\mathrm{nc}}(#1)} % non-crossing complex
+\newcommandx{\RNCC}[1][1={\dissection, \dissection\dual}]{\mathcal{C}_{\mathrm{nc}}(#1)} % non-crossing complex
+\newcommand{\curveof}{\operatorname{\gamma}} % curve (of a walk)
+\newcommand{\edgeof}{\operatorname{\varepsilon}} % arc of a vertex
+\newcommand{\dualedgeof}{\operatorname{\varepsilon}\dual} % dual arc of a vertex
+\DeclareRobustCommand{\SSS}{\reflectbox{$\mathsf{Z}$}} % S
+\DeclareRobustCommand{\ZZZ}{\mathsf{Z}} % Z
+\newcommand{\vnext}[1]{#1_{\operatorname{next}}} % next point on the boundary of the surface
+\newcommand{\vprevious}[1]{#1_{\operatorname{prev}}} % previous point on the boundary of the surface
+
+% lattices
+\newcommand{\meet}{\wedge} % meet
+\newcommand{\join}{\vee} % join
+\newcommand{\bigMeet}{\bigwedge} % meet
+\newcommand{\bigJoin}{\bigvee} % join
+\newcommand{\closure}[1]{#1^{\mathrm{cl}}} % closure operator
+\newcommand{\coclosure}[1]{#1^{\mathrm{cocl}}} % coclosure operator
+\newcommand{\uclosure}[1]{#1^{\underline{\mathrm{cl}}}} % loop free closure operator
+\newcommand{\Bicl}[1]{\mathsf{Bic}(#1)} % biclosed sets
+\newcommand{\projDown}{\pi_\downarrow} % down projection map
+\newcommand{\projUp}{\pi^\uparrow} % up projection map
+\newcommand{\JI}{\mathsf{JI}} % join-irreducible
+\newcommand{\MI}{\mathsf{MI}} % meet-irreducible
+\newcommand{\Cong}{\mathsf{Cong}} % congruence lattice
+\newcommand{\con}{\mathrm{con}} % congruence contracting a cover relation
+\newcommand{\ji}{\mathsf{ji}} % join irreducible
+\newcommand{\mi}{\mathsf{mi}} % meet irreducible
+
+% GEOMETRY
+% d-vectors
+\newcommand{\dvector}[1]{\mathbf{d}(#1)} % d-vector of the path #1
+\newcommand{\dvectors}[1]{\mathbf{d}(#1)} % d-vectors of the paths #1
+\newcommandx{\dvectorFan}[1][1=\bar Q]{\mathcal{F}^\mathbf{d}(#1)} % d-vector fan
+% g-vectors
+\newcommand{\gvector}[1]{\mathbf{g}(#1)} % g-vector of the path #1
+\newcommand{\gvectors}[1]{\mathbf{g}(#1)} % g-vectors of the paths #1
+\newcommandx{\gvectorFan}[1][1=\bar Q]{\mathcal{F}^\mathbf{g}(#1)} % g-vector fan
+% c-vectors
+\newcommand{\cvector}[2]{\mathbf{c}(#1 \in #2)} % c-vector of the path #1 in the facet #2
+\newcommand{\cvectors}[1]{\mathbf{c}(#1)} % c-vectors of the paths #1
+\newcommandx{\allcvectors}[1][1=\bar Q]{\mathbf{C}(#1)} % all c-vectors with respect to the initial cluster #1
+\newcommandx{\cvectorFan}[1][1=\bar Q]{\mathcal{F}^\mathbf{c}(#1)} % fan of hyperplanes orthogonal to all c-vectors
+% points, hyperplanes, half-spaces
+\newcommand{\point}[1]{\mathbf{p}(#1)} % vertex of the grid associahedron corresponding to the cluster #1
+\newcommand{\ray}{\mathbf{r}} % ray
+\newcommand{\rays}{\mathbf{R}} % rays
+\newcommand{\hs}{\mathbf{H}^{\le}} % half space
+\newcommand{\HS}[1]{\mathbf{H}^{\le}(#1)} % half space
+\newcommand{\hyp}{\mathbf{H}^{=}} % hyperplane
+\newcommand{\Hyp}[1]{\mathbf{H}^{=}(#1)} % hyperplane
+\newcommand{\fix}[1]{\mathrm{Fix}(#1)} % fix space
+% polytopes
+\newcommandx{\Asso}[2][1=\bar Q,2={}]{\mathsf{Asso}^{#2}(#1)} % associahedron
+\newcommandx{\Zono}[2][1=\bar Q,2={}]{\mathsf{Zono}^{#2}(#1)} % zonotope
+\newcommand{\Fan}{\mathcal{F}} % fan
+\newcommand{\multiplicityVector}{\b{m}} % multiplicity vector
+
+% ALGEBRA
+\newcommand{\Hom}[1]{\operatorname{{\rm Hom}}_{#1}}
+\newcommand{\Ext}[1]{\operatorname{{\rm Ext}}_{#1}}
+\newcommandx{\AR}[1][1=\bar Q]{\mathrm{AR}(#1)} % Auslander-Reiten quiver
+\newcommandx{\tTC}[1][1=\bar Q]{\mathcal{K}^{\textrm{s$\tau$-tilt}}(#1)} % tau-tilting complex
+\newcommand{\rep}{\operatorname{{\rm rep}}}
+\newcommand{\proj}{\operatorname{{\rm proj}}}
+\newcommand{\koszul}{^!} % duality
+
+%% formating the part command
+%\makeatletter
+%\def\part{\@startsection{part}{1}%
+%\z@{.7\linespacing\@plus\linespacing}{.8\linespacing}%
+%{\LARGE\sffamily\centering}}
+%\@addtoreset{section}{part}
+%\makeatother
+%\renewcommand{\thesection}{\arabic{part}.\arabic{section}}
+
+% formating the table of contents
+\makeatletter
+\def\l@section{\@tocline{1}{2pt}{0pc}{}{}}
+\makeatother
+\let\oldtocpart=\tocpart
+\renewcommand{\tocpart}[2]{\bf\large\oldtocpart{#1}{#2}}
+\let\oldtocsection=\tocsection
+\renewcommand{\tocsection}[2]{\bf\oldtocsection{#1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Non-kissing and non-crossing complexes for locally gentle algebras]{Non-kissing and non-crossing complexes \\ for locally gentle algebras}
+
+\thanks{YP, VP and PGP were partially supported by the French ANR grant SC3A~(15\,CE40\,0004\,01). VP was partially supported by the French ANR grant CAPPS~(17\,CE40\,0018).}
+
+\author{Yann Palu}
+\address[Yann Palu]{LAMFA, Universit\'e Picardie Jules Verne, Amiens}
+\email{yann.palu@u-picardie.fr}
+\urladdr{\url{http://www.lamfa.u-picardie.fr/palu/}}
+
+\author{Vincent Pilaud}
+\address[Vincent Pilaud]{CNRS \& LIX, \'Ecole Polytechnique, Palaiseau}
+\email{vincent.pilaud@lix.polytechnique.fr}
+\urladdr{\url{http://www.lix.polytechnique.fr/~pilaud/}}
+
+\author{Pierre-Guy Plamondon}
+\address[Pierre-Guy Plamondon]{Laboratoire de Math\'ematiques d'Orsay, Universit\'e Paris-Sud, CNRS, Universit\'e Paris-Saclay}
+\email{pierre-guy.plamondon@math.u-psud.fr}
+\urladdr{\url{https://www.math.u-psud.fr/~plamondon/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+Here are some requested changes to the proofs.
+
+\begin{enumerate}
+ \item If possible, we would like to add a reference ([0] here): p3, l.8 ``(as defined in [23],'' should be replaced by ``(as defined in [0,23,6],''. New reference [0] is: Hideto Asashiba. Derived equivalence classification of algebras. Sugaku, 64(4):357--383, 2012. 
+ \item If reference [0] is added, we would like to add a sentence in the acknowledgements, before the last sentence ``We thank Hiroyuki Nakaoka for informing us of a previous appearance of the blossoming quiver, due to Hideto Asashiba [0].''
+ \item The figures have been modified for a black and white version : The arcs of the dissections in red are now dotted red, and those in green are now dashed green. This causes a few modifications in the text:
+   \begin{itemize}
+    \item p8, Fig 3: ``$\dissection$ is in green'' should be replaced by ``$\dissection$ is dashed green'', and ``$\dissection\dual$ is in red'', by ``$\dissection\dual$ is dotted red''.
+    \item p10, Fig 4: ``(in blue)'' should be replaced by ``(plain blue)'' and ``(in green)'' by ``(dashed green)''.
+    \item p11, Fig 5: ``(in blue)'' should be replaced by ``(plain blue)'' and ``(in red)'' by ``(dotted red)''.
+   \end{itemize}
+ \item p10, l.2 of Remark 3.9: ``the edges of $a$ and $b$'' should be ``the edges $a$ and $b$''.
+ \item There appears to be a problem with the default value of several of the \verb|\newcommandx|: in many places, the characters ``\verb|1 = |'' appear, and they should not.  Here is a list of such instances.
+   \begin{itemize}
+    \item p.2, l.14: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.2, l.14: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.2, l.15: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.2, l.15: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.2, l.18: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.2, l.18: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.7, l.1: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.7, l.3: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.7, l.4: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.7, l.5: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.10, l.7: ``$\AC[1=\dissection]$'' should be ``$\AC$''.
+    \item p.10, l.9: ``$\AC[1=\dissection]$'' should be ``$\AC$''.
+    \item p.10, l.11: ``$\AC[1=\dissection]$'' should be ``$\AC$''.
+    \item p.10, l.11: ``$\RAC[1=\dissection]$'' should be ``$\RAC$''.
+    \item p.10, l.-6: ``$\SC[1=\dissection\dual]$'' should be ``$\SC$''.
+    \item p.10, l.-4: ``$\SC[1=\dissection\dual]$'' should be ``$\SC$''.
+    \item p.10, l.-3: ``$\SC[1=\dissection\dual]$'' should be ``$\SC$''.
+    \item p.10, l.-2: ``$\RSC[1=\dissection\dual]$'' should be ``$\RSC$''.
+    \item p.12, l.3: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.12, l.3: ``$\AC[1=\dissection]$'' should be ``$\AC$''.
+    \item p.12, l.3: ``$\SC[1=\dissection\dual]$'' should be ``$\SC$''.
+    \item p.12, l.5: ``$\RNCC[1=\dissection,\dissection\dual]$'' should be ``$\RNCC$''.
+    \item p.12, l.5: ``$\RAC[1=\dissection]$'' should be ``$\RAC$''.
+    \item p.12, l.5: ``$\RSC[1=\dissection\dual]$'' should be ``$\RSC$''.
+    \item p.12, l.-9: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.12, l.-6: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.22, l.-2: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.23, l.2: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.23, l.14: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.24, l.3: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.25, l.11: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.25, l.13: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.25, l.16: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.25, l.20: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.27, l.12: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.27, l.14: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.27, l.-12: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.27, l.-12: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.27, l.-11: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.23, l.-10: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.    
+    \item p.27, l.-5: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.27, l.-3: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.28, l.1: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.28, l.3: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.28, l.6: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.28, l.16: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.28, l.-1: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.29, l.-11: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.29, l.-1: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.30, l.10: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.30, l.-5: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.30, l.-2: ``$\NCC[1=\dissection,\dissection\dual]$'' should be ``$\NCC$''.
+    \item p.32, l.-11: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.32, l.-2: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.32, l.-2: ``$\allcvectors[1=\bar Q]$'' should be ``$\allcvectors$''.
+    \item p.32, l.-1: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.33, Figure 29: ``$\RAC[1=\dissection]$'' should be ``$\RAC$''.
+    \item p.33, Figure 29: ``$\RSC[1=\dissection\dual]$'' should be ``$\RSC$''.
+    \item p.34, l.20: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.35, l.4: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.35, l.12: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.35, l.-12: ``$\NKC[1=\bar Q]$'' should be ``$\NKC$''.
+    \item p.35, l.-10: ``$\gvectorFan[1=\bar Q]$'' should be ``$\gvectorFan$''.
+    \item p.35, l.-10: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.35, l.-6: ``$\RNKC[1=\bar Q]$'' should be ``$\RNKC$''.
+    \item p.36, Figure 30: ``$\gvectorFan[1=\bar Q]$'' should be ``$\gvectorFan$''.
+   \end{itemize}
+
+
+   
+  \item p.38: P.-G. Plamondon's affiliation should be ``Laboratoire de Math\'ematiques d'Orsay, Universit\'e Paris-Sud, CNRS, Universit\'e Paris-Saclay''.  
+\end{enumerate}
+
+
+\end{document}
