@@ -581,20 +581,26 @@ We conclude with a schematic diagram representing the logical dependencies betwe
 \centerline{
 \begin{tikzpicture}[every node/.style={inner sep=6, outer sep=8}]
 	\node[diamond,aspect=3, text width=5cm, minimum height=1cm, align=center, draw=blue, fill=blue!10, inner sep=-2] (I1) at (0,1.5) {\ref{part:geometry}.\ref{sec:typeCone} -- Simplicial type cone strategy};
-	\node[rectangle, draw=black, fill=black!10, align=center] (I21) at (-6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeAsso} -- Toy example \\ Classical associahedra};
-	\node[rectangle, draw=orange, fill=orange!10, align=center, text width=5cm] (I22) at (0,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeCA} -- Cluster algebras \\ \& generalized associahedra};
-	\node[rectangle, draw=green, fill=green!10, align=center, text width=5cm] (I23) at (6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeNKC} -- Gentle algebras \\ \& generalized accordiohedra};
+	\node[rectangle, draw=black, fill=black!10, align=center, minimum width = 5.3cm, minimum height=1.2cm] (I21) at (-6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeAsso} -- Toy example \\ Classical associahedra};
+	\node[rectangle, draw=orange, fill=orange!10, align=center, text width=5.3cm, minimum width = 5cm, minimum height=1.2cm] (I22) at (0,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeCA} -- Cluster algebras \\ \& generalized associahedra};
+	\node[rectangle, draw=green, fill=green!10, align=center, text width=5.3cm, minimum width = 5cm, minimum height=1.2cm] (I23) at (6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeNKC} -- Gentle algebras \\ \& generalized accordiohedra};
 % 	\node[rectangle, draw=red, fill=red!10, align=center, text width=5.4cm] (I24) at (7,0) {\ref{part:geometry}.\ref{subsec:typeConeGA} -- Graphical nested complexes \\ \& graph associahedra};
-	\node[ellipse, draw=orange, fill=orange!10, align=center, text width=4.9cm, inner sep=2, minimum height=1cm] (II1) at (-4.5,-4.2) {\ref{part:algebra}.\ref{sec:clusterCategories} -- Cluster categories};
-	\node[ellipse, draw=green, fill=green!10, align=center, text width=4.9cm, inner sep=0, minimum height=1cm] (II2) at (4.5,-4.2) {\ref{part:algebra}.\ref{sec:extricats} -- Extriangulated categories};
-	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.180) to [bend right, looseness=1.1] node[label={[shift={(-1.6,-1.5)}]applied to}]{} (I21.90);
-	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=3}, draw=blue, fill=blue!10] (I1.270) to node[label={[shift={(1,-1.)}]applied to}]{} (I22.90);
-	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.360) to [bend left, looseness=1.1] node[label={[shift={(1.6,-1.5)}]applied to}]{} (I23.90);
+	\node[ellipse,
+% 	rectangle,rounded corners=10, 
+	draw=orange, fill=orange!10, align=center, text width=5cm, inner sep=2, minimum height=1cm] (II1) at (-4.5,-4.2) {\ref{part:algebra}.\ref{sec:clusterCategories} -- Cluster categories};
+	\node[ellipse,
+% 	rectangle,rounded corners=10,
+	draw=green, fill=green!10, align=center, text width=5cm, inner sep=0, minimum height=1cm] (II2) at (4.5,-4.2) {\ref{part:algebra}.\ref{sec:extricats} -- Extriangulated categories};
+	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.180) to [bend right, looseness=1.1] node[label={[shift={(-1.6,-1.5)}]\textit{applied to}}]{} (I21.90);
+	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=3}, draw=blue, fill=blue!10] (I1.270) to node[label={[shift={(1,-1.)}]\textit{applied to}}]{} (I22.90);
+	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.360) to [bend left, looseness=1.1] node[label={[shift={(1.6,-1.5)}]\textit{applied to}}]{} (I23.90);
 % 	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=10}, draw=blue, fill=blue!10] (I1.0) to [bend left, looseness=1.1] (I24.90);
 % 	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
-	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I22.270)+(0,.15);
-	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I23.270)+(0,.15);
-	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes to} (II2.180);
+% 	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{\textit{used for}} (I22.270)+(0,.15);
+% 	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{\textit{used for}} (I23.270)+(0,.15);
+	\draw[thick, double distance=2pt, -implies, in=270] (I22.270)+(-1.5,-1.2) to node[semithick, right, outer sep=0, pos=0.55]{\textit{used for}} ([yshift=.2cm] I22.270);
+	\draw[thick, double distance=2pt, -implies, in=270] (I23.270)+(-1.5,-1.2) to node[semithick, right, outer sep=0, pos=0.55]{\textit{used for}} ([yshift=.2cm] I23.270);
+	\draw[thick, ->] (II1.0) to node[semithick, below, outer sep=0]{\textit{generalizes to}} (II2.180);
 	\draw let \p{top}=(I1.90), \p{left}=(I21.180), \p{bottom}=([shift={(0,-.15)}]I22.270), \p{right}=(I23.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
 	\draw let \p{top}=([shift={(0,.2)}]II1.90), \p{left}=(I21.180), \p{bottom}=(II1.270), \p{right}=(I23.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
 	\path let \p{top}=(I1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-6.15, \y{top}) {\ref{part:geometry} -- Discrete geometry};
@@ -837,7 +843,7 @@ In this paper, we will only consider fans with the unique exchange relation prop
 In this section, we provide alternative polytopal realizations of the fan~$\Fan$.
 We also discuss the behavior of these realizations in the situation when the type cone~$\typeCone(\Fan)$ is simplicial.
 
-We still consider an essential complete simplicial fan~$\Fan$ in~$\R^n$, the $N \times n$-matrix~$\b{G}$ whose rows are the rays of~$\Fan$, and an $(N-n) \times N$-matrix~$\b{K}$ which spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$).
+We still consider an essential complete simplicial fan~$\Fan$ in~$\R^n$, the $N \times n$-matrix~$\b{G}$ whose rows are the rays of~$\Fan$, and an $(N-n) \times N$-matrix~$\b{K}$ that spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$).
 
 \begin{proposition}
 \label{prop:alternativePolytopalRealization}
@@ -1520,7 +1526,7 @@ Consider the cluster fans illustrated in \cref{fig:clusterFans}.
 The type cone of the left fan of \cref{fig:clusterFans} lives in~$\R^9$ and has a lineality space of dimension~$3$.
 It has $6$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA1}.
 
-\arnau{Vincent, can you please check the coordinates? C.\ Stump thought that two facets had some typo (a $\pm 1$ was in the wrong column)}
+% \arnau{Can you please check the coordinates? C.\ Stump thought that two facets had some typo (a $\pm 1$ was in the wrong column)}
 
 \[
 \begin{array}{r|cccccccccc}
@@ -2950,7 +2956,7 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$.
 \begin{cases}
 0 & \textrm{if~$A\ncong B$;} \\
 \dim_{\field}\field_B & \textrm{if~$A\cong B$.}
-\end{cases}
+\end{cases}6
 \]
 \end{enumerate} 
 \end{lemma}
