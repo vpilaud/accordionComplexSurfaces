@@ -128,7 +128,7 @@
 
 % Type cone
 \newcommand{\typeCone}{\mathbb{TC}} % type cone
-\newcommand{\ctypeCone}{\overline{\mathbb{TC}}} % type cone
+\newcommand{\ctypeCone}{\smash{\overline{\mathbb{TC}}}} % type cone
 \newcommand{\compatibilityDegree}[2]{(#1\,\|\,#2)} % compatibility degree
 \newcommandx{\coefficient}[3][1={\ray[s]}, 2=\ray, 3=\ray']{\alpha_{#2,#3}(#1)} % coefficient in linear dependence
 
@@ -278,7 +278,7 @@ We show that the mesh mutations are the minimal relations among the $\b{g}$-vect
 We then use this algebraic result to derive geometric properties of the $\b{g}$-vector fan: we show that the space of all its polytopal realizations is a simplicial cone, and we then observe that this property implies that all its realizations can be described as the intersection of a high dimensional positive orthant with well-chosen affine spaces.
 This sheds a new light on and extends earlier results of N.~Arkani-Hamed, Y.~Bai, S.~He, and G.~Yan in type~$A$ and of V.~Bazier-Matte, G.~Douville, K.~Mousavand, H.~Thomas and E.~Y\i ld\i r\i m for acyclic initial seeds.
 
-Moreover, we use a similar approach to study the space of polytopal realizations of the $\b{g}$-vector fans of another generalization of the associahedron: non-kissing complexes (a.k.a. support $\tau$-tilting complexes) of gentle algebras. We show that the space of realizations of the non-kissing fan is simplicial when the gentle bound quiver is brick and $2$-acyclic, and we describe in this case its facet-defining inequalities in terms of mesh mutations.
+Moreover, we use a similar approach to study the space of polytopal realizations of the \mbox{$\b{g}$-vector} fans of another generalization of the associahedron: non-kissing complexes (a.k.a. support $\tau$-tilting complexes) of gentle algebras. We show that the space of realizations of the non-kissing fan is simplicial when the gentle bound quiver is brick and $2$-acyclic, and we describe in this case its facet-defining inequalities in terms of mesh mutations.
 
 Along the way, we prove algebraic results on~$2$-Calabi--Yau triangulated categories, and on extriangulated categories that are of independent interest.
 In particular, we prove, in those two setups, an analogue of a result of M.~Auslander on minimal relations for Grothendieck groups of module categories.
@@ -365,7 +365,7 @@ The algebraic side, which is of independent interest, is presented in \cref{part
 
 \medskip
 Besides revisiting the construction of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} and extending it to any initial seed (acyclic or not) in any finite type cluster algebra (simply-laced or not), our type cone approach is also successful when applied to the $\b{g}$-vector fans of other families of generalizations of the associahedron.
-In the present paper, we explore specifically \textbf{Gentle associahedra}. These complexes where constructed in~\cite{PaluPilaudPlamondon-nonkissing} as polytopal realizations of finite non-kissing complexes of gentle bound quivers. They encompass two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied by Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}. The latter, sometimes called accordiohedra, have also~recently appeared in the mathematical physics litterature concerning scattering amplitudes~\cite{BanerjeeLaddhaRaman-StokesPolytopes, Raman-PositiveGeometry}, with realizations inspired by those in~\cite{ArkaniHamedBaiHeYan}. It was shown in~\cite{PaluPilaudPlamondon-nonkissing, BrustleDouvilleMousavandThomasYildirim} that the non-kissing complex of a gentle bound quiver provides a combinatorial model for the support $\tau$-tilting complex~\cite{AdachiIyamaReiten} of the associated gentle algebra. Even for finite non-kissing complexes, it turns out that the type cone of the non-kissing fan is not always simplicial (see \cref{exm:nonSimplicialTypeConeNKC}). We prove however that the type cone is always simplicial when the gentle bound quiver is brick (at least $2$ relations in any cycle) and $2$-acyclic (no oriented cycle of length~$2$). Moreover, we precisely describe the facet-defining inequalities of the type cone in terms of linear dependences of $\b{g}$-vectors involved in certain mesh relations. We thus automatically derive a construction similar to that of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} describing all polytopal realizations of the $\b{g}$-vector fans of these brick and $2$-acyclic gentle bound quivers as sections of a positive orthant by well-chosen affine spaces (see \cref{subsec:typeConeCA}). Again, this result mainly relies on finding which relations minimally generate the relations between the $\b{g}$-vectors in the non-kissing complex. We present both a purely combinatorial proof (see \cref{subsec:typeConeCA}) and a purely algebraic proof for (non-necessarily gentle) brick algebras making use of extriangulated categories (see \cref{sec:extricats}).
+In the present paper, we explore specifically \textbf{gentle associahedra}. These complexes where constructed in~\cite{PaluPilaudPlamondon-nonkissing} as polytopal realizations of finite non-kissing complexes of gentle bound quivers. They encompass two families of simplicial complexes studied independently in the literature: on the one hand the grid associahedra introduced by T.~K.~Petersen, P.~Pylyavskyy and D.~Speyer in~\cite{PetersenPylyavskyySpeyer} for a staircase shape, studied by F.~Santos, C.~Stump and V.~Welker~\cite{SantosStumpWelker} for rectangular shapes, and extended by T.~McConville in~\cite{McConville} for arbitrary grid shapes; and on the other hand the Stokes polytopes and accordion associahedra studied by Y.~Baryshnikov~\cite{Baryshnikov}, F.~Chapoton~\cite{Chapoton-quadrangulations}, A.~Garver and T.~McConville~\cite{GarverMcConville} and T.~Manneville and V.~Pilaud~\cite{MannevillePilaud-accordion}. The latter, sometimes called accordiohedra, have also~recently appeared in the mathematical physics litterature concerning scattering amplitudes~\cite{BanerjeeLaddhaRaman-StokesPolytopes, Raman-PositiveGeometry}, with realizations inspired by those in~\cite{ArkaniHamedBaiHeYan}. It was shown in~\cite{PaluPilaudPlamondon-nonkissing, BrustleDouvilleMousavandThomasYildirim} that the non-kissing complex of a gentle bound quiver provides a combinatorial model for the support $\tau$-tilting complex~\cite{AdachiIyamaReiten} of the associated gentle algebra. Even for finite non-kissing complexes, it turns out that the type cone of the non-kissing fan is not always simplicial (see \cref{exm:nonSimplicialTypeConeNKC}). We prove however that the type cone is always simplicial when the gentle bound quiver is brick (at least $2$ relations in any cycle) and $2$-acyclic (no oriented cycle of length~$2$). Moreover, we precisely describe the facet-defining inequalities of the type cone in terms of linear dependences of $\b{g}$-vectors involved in certain mesh relations. We thus automatically derive a construction similar to that of~\cite{ArkaniHamedBaiHeYan, BazierMatteDouvilleMousavandThomasYildirim} describing all polytopal realizations of the $\b{g}$-vector fans of these brick and $2$-acyclic gentle bound quivers as sections of a positive orthant by well-chosen affine spaces (see \cref{subsec:typeConeCA}). Again, this result mainly relies on finding which relations minimally generate the relations between the $\b{g}$-vectors in the non-kissing complex. We present both a purely combinatorial proof (see \cref{subsec:typeConeCA}) and a purely algebraic proof for (non-necessarily gentle) brick algebras making use of extriangulated categories (see \cref{sec:extricats}).
 Our algebraic proof is based on an analogue of a result of M.~Auslander~\cite{Auslander1984} relating to minimal generators of Grothendieck groups.
 Along the way, we need to generalize, for extriangulated categories, several results from cluster-tilting theory on indices~\cite{DehyKeller} and on abelian quotients~\cite{BuanMarshReiten, KellerReiten} that were known for triangulated categories. We note, however, that our assumptions are not quite the expected ones. This is related to the fact that the Grothendieck groups of cluster categories are badly behaved (\eg the Grothendieck group of a cluster category of type~$A_2$ is trivial). So as to overcome this difficulty, we replace the triangulated structure of cluster categories by some relative extriangulated structure, before considering Grothendieck groups. This explains why we consider projective objects rather than cluster-tilting objects for extriangulated categories.
 
@@ -374,7 +374,6 @@ Further families of generalizations of the associahedron certainly deserve to be
 We are investigating in particular graph associahedra~\cite{CarrDevadoss, Postnikov, FeichtnerSturmfels, Zelevinsky}, brick polytopes~\cite{PilaudSantos-brickPolytope, PilaudStump-brickPolytope} and quotientopes~\cite{Reading-latticeCongruences, Reading-CambrianLattices, PilaudSantos-quotientopes}.
 In fact, as already mentioned, it seems sometimes easier to find all polytopal realizations of a fan (by describing its type cone in terms of certain specific pairs of adjacent maximal cones) than to identify one specific explicit realization.
 This is clearly the case when the type cone is simplicial as illustrated by the results of this paper: we naturally obtained all polytopal realizations of the $\b{g}$-vector fans of cluster algebras from cyclic seeds and of gentle algebras whose polytopality was only established very recently~\cite{HohlwegPilaudStella, PaluPilaudPlamondon-nonkissing}.
-% Even when the type cone is not simplicial, describing the type cone sometimes leads to relevant explicit realizations of the fan, as we illustrate on graph associahedra (see \cref{exm:constructionsGA}).
 We believe that this approach gives reasonable hope that the polytopality of further fans could in the future be established using our type cone approach.
 Tempting candidates are quotientopes for hyperplane arrangements beyond type~$A$, which are particularly interesting since the coarsenings of a fan essentially correspond to the faces of its type cone (see \cref{subsec:facesTypeCone}).
 
@@ -420,7 +419,6 @@ And if moreover the type cone~$\typeCone(\Fan)$ is simplicial (\cref{rem:dimType
 
 \newtheorem*{coro:simplicialTypeCone}{\cref{coro:simplicialTypeCone}}
 \begin{coro:simplicialTypeCone}
-\label{coro:simplicialTypeCone}
 Assume that the type cone~$\typeCone(\Fan)$ is simplicial and let~$\b{K}$ be the $(N-n) \times N$-matrix whose rows are the inner normal vectors of the facets of~$\typeCone(\Fan)$. Then the polytope
 \[
 R_\b{\ell} \eqdef \set{\b{z} \in \R^N}{K\b{z} = \b{\ell} \text{ and } \b{z} \ge 0}
@@ -566,6 +564,7 @@ In that case~$L_\cat$ is a basis of the kernel of~$\b{g}$ and any~$x\in\ker(\b{g
 \]
 \end{thm:extricats}
 
+\newpage
 \para{Schematic diagram of logical dependencies}
 
 \noindent
@@ -584,20 +583,11 @@ We conclude with a schematic diagram representing the logical dependencies betwe
 	\node[rectangle, draw=black, fill=black!10, align=center, minimum width = 5.3cm, minimum height=1.2cm] (I21) at (-6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeAsso} -- Toy example \\ Classical associahedra};
 	\node[rectangle, draw=orange, fill=orange!10, align=center, text width=5.3cm, minimum width = 5cm, minimum height=1.2cm] (I22) at (0,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeCA} -- Cluster algebras \\ \& generalized associahedra};
 	\node[rectangle, draw=green, fill=green!10, align=center, text width=5.3cm, minimum width = 5cm, minimum height=1.2cm] (I23) at (6,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeNKC} -- Gentle algebras \\ \& generalized accordiohedra};
-% 	\node[rectangle, draw=red, fill=red!10, align=center, text width=5.4cm] (I24) at (7,0) {\ref{part:geometry}.\ref{subsec:typeConeGA} -- Graphical nested complexes \\ \& graph associahedra};
-	\node[ellipse,
-% 	rectangle,rounded corners=10, 
-	draw=orange, fill=orange!10, align=center, text width=5cm, inner sep=2, minimum height=1cm] (II1) at (-4.5,-4.2) {\ref{part:algebra}.\ref{sec:clusterCategories} -- Cluster categories};
-	\node[ellipse,
-% 	rectangle,rounded corners=10,
-	draw=green, fill=green!10, align=center, text width=5cm, inner sep=0, minimum height=1cm] (II2) at (4.5,-4.2) {\ref{part:algebra}.\ref{sec:extricats} -- Extriangulated categories};
+	\node[ellipse, draw=orange, fill=orange!10, align=center, text width=5cm, inner sep=2, minimum height=1cm] (II1) at (-4.5,-4.2) {\ref{part:algebra}.\ref{sec:clusterCategories} -- Cluster categories};
+	\node[ellipse, draw=green, fill=green!10, align=center, text width=5cm, inner sep=0, minimum height=1cm] (II2) at (4.5,-4.2) {\ref{part:algebra}.\ref{sec:extricats} -- Extriangulated categories};
 	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.180) to [bend right, looseness=1.1] node[label={[shift={(-1.6,-1.5)}]\textit{applied to}}]{} (I21.90);
 	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=3}, draw=blue, fill=blue!10] (I1.270) to node[label={[shift={(1,-1.)}]\textit{applied to}}]{} (I22.90);
 	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.360) to [bend left, looseness=1.1] node[label={[shift={(1.6,-1.5)}]\textit{applied to}}]{} (I23.90);
-% 	\draw[decorate, decoration={shape backgrounds, shape=dart, shape size=2mm, shape evenly spread=10}, draw=blue, fill=blue!10] (I1.0) to [bend left, looseness=1.1] (I24.90);
-% 	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
-% 	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{\textit{used for}} (I22.270)+(0,.15);
-% 	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{\textit{used for}} (I23.270)+(0,.15);
 	\draw[thick, double distance=2pt, -implies, in=270] (I22.270)+(-1.5,-1.2) to node[semithick, right, outer sep=0, pos=0.55]{\textit{used for}} ([yshift=.2cm] I22.270);
 	\draw[thick, double distance=2pt, -implies, in=270] (I23.270)+(-1.5,-1.2) to node[semithick, right, outer sep=0, pos=0.55]{\textit{used for}} ([yshift=.2cm] I23.270);
 	\draw[thick, ->] (II1.0) to node[semithick, below, outer sep=0]{\textit{generalizes to}} (II2.180);
@@ -607,36 +597,6 @@ We conclude with a schematic diagram representing the logical dependencies betwe
 	\path let \p{top}=([shift={(0,.2)}]II1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-5.8, \y{top}) {\ref{part:algebra} -- Representation theory};
 \end{tikzpicture}
 }
-
-%\centerline{
-%\begin{tikzpicture}[every node/.style={inner sep=6, outer sep=8}]
-% 	\node[cloud, cloud puffs=25, cloud ignores aspect, text width=5cm, minimum height=1cm, align=center, draw=blue, fill=blue!10, inner sep=3, outer sep=5] (I1) at (0,1.5) {\ref{part:geometry}.\ref{sec:typeCone} -- Simplicial type cone strategy};
-%	\node[rectangle, draw=black, fill=black!10, align=center] (I21) at (-6,0) {\ref{part:geometry}.\ref{subsec:typeConeAsso} -- Toy example \\ Classical associahedra};
-%	\node[rectangle, draw=orange, fill=orange!10, align=center, text width=5cm] (I22) at (-3,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeCA} -- Cluster algebras \\ \& generalized associahedra};
-%	\node[rectangle, draw=green, fill=green!10, align=center, text width=5cm] (I23) at (3,-1.5) {\ref{part:geometry}.\ref{subsec:typeConeNKC} -- Gentle algebras \\ \& generalized accordiohedra};
-%	\node[rectangle, draw=red, fill=red!10, align=center, text width=5.4cm] (I24) at (7,0) {\ref{part:geometry}.\ref{subsec:typeConeGA} -- Graphical nested complexes \\ \& graph associahedra};
-%	\node[ellipse, draw=orange, fill=orange!10, align=center, text width=4.9cm, inner sep=2, minimum height=1cm] (II1) at (-4.5,-4.2) {\ref{part:algebra}.\ref{sec:clusterCategories} -- Cluster categories};
-%	\node[ellipse, draw=green, fill=green!10, align=center, text width=4.9cm, inner sep=0, minimum height=1cm] (II2) at (4.5,-4.2) {\ref{part:algebra}.\ref{sec:extricats} -- Extriangulated categories};
-% 	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.180) to [bend right, looseness=1.1] node[label={[shift={(.6,-1.5)}]applied to}]{} (I21.90);
-% 	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.240) to [bend right, looseness=.6] node[label={[shift={(.6,-1.5)}]applied to}]{} (I22.90);
-% 	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=8}, draw=blue, fill=blue!10] (I1.300) to [bend left, looseness=.6] node[label={[shift={(-.6,-1.5)}]applied to}]{} (I23.90);
-% 	\draw[decorate, decoration={shape backgrounds, shape=circle, shape size=2mm, shape evenly spread=10}, draw=blue, fill=blue!10] (I1.0) to [bend left, looseness=1.1] (I24.90);
-% 	\draw[decorate, decoration={markings, mark=at position 0.5 with {\draw [red, ultra thick,-] ++ (-.3,-.3)  -- ( .3, .3); \draw [red, ultra thick,-] ++ (-.3, .3)  -- ( .3,-.3);}}] (I1.0) to [bend left, looseness=1.1] node[label={[shift={(-.4,-1.7)}]not applicable to}]{} (I24.90);
-%	\draw[thick, double distance=2pt, -implies] (I22.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I22.270)+(0,.15);
-%	\draw[thick, double distance=2pt, -implies] (I23.270)+(0,-1.3) to node[semithick, right, outer sep=0, pos=0.65]{used for} (I23.270)+(0,.15);
-%	\draw[thick, ->] (II1.0) to node[semithick, above, outer sep=0]{generalizes to} (II2.180);
-%	\draw let \p{top}=(I1.90), \p{left}=(I21.180), \p{bottom}=([shift={(0,-.15)}]I22.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
-%	\draw let \p{top}=([shift={(0,.2)}]II1.90), \p{left}=(I21.180), \p{bottom}=(II1.270), \p{right}=(I24.0) in (\x{left}, \y{top}) -- (\x{left}, \y{bottom}) -- (\x{right}, \y{bottom}) -- (\x{right}, \y{top}) -- (\x{left}, \y{top});
-%	\path let \p{top}=(I1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-6.15, \y{top}) {\ref{part:geometry} -- Discrete geometry};
-%	\path let \p{top}=([shift={(0,.2)}]II1.90) in node[rectangle, draw, fill=white, align=left, inner sep=4] (I) at (-5.8, \y{top}) {\ref{part:algebra} -- Representation theory};
-%\end{tikzpicture}
-%}
-%
-%\medskip
-%
-%\begin{center}
-%\includegraphics[scale=.9]{Schema}
-%\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -657,10 +617,10 @@ We conclude with a schematic diagram representing the logical dependencies betwe
 
 We briefly recall basic definitions and properties of polyhedral fans and polytopes, and refer to~\cite{Ziegler-polytopes} for a classical textbook on this topic.
 
-A hyperplane~$H \subset \R^d$ is a \defn{supporting hyperplane} of a set~$X \subset \R^d$ if~$H \cap X \ne \varnothing$ and~$X$ is contained in one of the two closed half-spaces of~$\R^d$ defined by~$H$.
+A hyperplane~$H \subset \R^n$ is a \defn{supporting hyperplane} of a set~$X \subset \R^n$ if~$H \cap X \ne \varnothing$ and~$X$ is contained in one of the two closed half-spaces of~$\R^n$ defined by~$H$.
 
-We denote by~$\R_{\ge0}\rays \eqdef \set{\sum_{\ray \in \rays} \lambda_{\ray} \, \ray}{\lambda_{\ray} \in \R_{\ge0}}$ the \defn{positive span} of a set~$\rays$ of vectors of~$\R^d$.
-A \defn{polyhedral cone} is a subset of~$\R^d$ defined equivalently as the positive span of finitely many vectors or as the intersection of finitely many closed linear halfspaces.
+We denote by~$\R_{\ge0}\rays \eqdef \set{\sum_{\ray \in \rays} \lambda_{\ray} \, \ray}{\lambda_{\ray} \in \R_{\ge0}}$ the \defn{positive span} of a set~$\rays$ of vectors of~$\R^n$.
+A \defn{polyhedral cone} is a subset of~$\R^n$ defined equivalently as the positive span of finitely many vectors or as the intersection of finitely many closed linear halfspaces.
 The \defn{faces} of a cone~$C$ are the intersections of~$C$ with the supporting hyperplanes of~$C$.
 The $1$-dimensional (resp.~codimension~$1$) faces of~$C$ are called~\defn{rays} (resp.~\defn{facets}) of~$C$.
 A cone is \defn{simplicial} if it is generated by a set of linearly independent vectors.
@@ -670,10 +630,10 @@ A \defn{polyhedral fan} is a collection~$\Fan$ of polyhedral cones such that
 \item if~$C \in \Fan$ and~$F$ is a face of~$C$, then~$F \in \Fan$,
 \item the intersection of any two cones of~$\Fan$ is a face of both.
 \end{itemize}
-A fan is \defn{simplicial} if all its cones are, \defn{complete} if the union of its cones covers the ambient space~$\R^d$, and \defn{essential} if it contains the cone~$\{\b{0}\}$. Note that every complete fan is the product of an essential fan with its lineality space.
-For two fans~$\Fan, \cal{G}$ in~$\R^d$, we say that~$\Fan$ \defn{refines}~$\cal{G}$ (and that~$\cal{G}$ \defn{coarsens}~$\Fan$) if every cone of~$\Fan$ is contained in a cone of~$\cal{G}$.
+A fan is \defn{simplicial} if all its cones are, \defn{complete} if the union of its cones covers the ambient space~$\R^n$, and \defn{essential} if it contains the cone~$\{\b{0}\}$. Note that every complete fan is the product of an essential fan with its lineality space.
+For two fans~$\Fan, \cal{G}$ in~$\R^n$, we say that~$\Fan$ \defn{refines}~$\cal{G}$ (and that~$\cal{G}$ \defn{coarsens}~$\Fan$) if every cone of~$\Fan$ is contained in a cone of~$\cal{G}$.
 
-A \defn{polytope} is a subset~$P$ of~$\R^d$ defined equivalently as the convex hull of finitely many points or as a bounded intersection of finitely many closed affine halfspaces.
+A \defn{polytope} is a subset~$P$ of~$\R^n$ defined equivalently as the convex hull of finitely many points or as a bounded intersection of finitely many closed affine halfspaces.
 The \defn{dimension}~$\dim(P)$ is the dimension of the affine hull of~$P$.
 The \defn{faces} of~$P$ are the intersections of~$P$ with its supporting hyperplanes.
 The dimension~$0$ (resp.~dimension~$1$, resp.~codimension~$1$) faces are called \defn{vertices} (resp.~\defn{edges}, resp.~\defn{facets}) of~$P$.
@@ -682,7 +642,7 @@ A polytope is \defn{simple} if its supporting hyperplanes are in general positio
 The (outer) \defn{normal cone} of a face~$F$ of~$P$ is the cone generated by the outer normal vectors of the facets of~$P$ containing~$F$.
 In other words, it is the cone of vectors~$\b{c}$ such that the linear form~${\b{x} \mapsto \dotprod{\b{c}}{\b{x}}}$ on~$P$ is maximized by all points of the face~$F$.
 The (outer) \defn{normal fan} of~$P$ is the collection of the (outer) normal cones of all its faces.
-We say that a complete polyhedral fan~$\Fan$ in~$\R^d$ is \defn{polytopal} when it is the normal fan of a polytope~$P$ of~$\R^d$, and that~$P$ is a \defn{polytopal realization} of~$\Fan$.
+We say that a complete polyhedral fan~$\Fan$ in~$\R^n$ is \defn{polytopal} when it is the normal fan of a polytope~$P$ of~$\R^n$, and that~$P$ is a \defn{polytopal realization} of~$\Fan$.
 
 %%%%%%%%%%%
 
@@ -868,8 +828,7 @@ Moreover, the map~$\Psi : P_\b{h} \to Q_\b{h}$ is:
 \end{itemize}
 \end{proof}
 
-Note that~$\b{K}$ is only defined up to linear transformation, as it depends on the choice of a basis of the left kernel of~$\b{G}$. Note also that, by construction, the coefficients of the normal vectors of the facets of~$\typeCone(\Fan)$ arise from a linear dependence among the $\b{g}$-vectors, and hence belong to this kernel. When~$\typeCone(\Fan)$ is simplicial, its $(N-n)$ facets are necessarily linearly independent, and hence form a basis. They provide a particularly interesting choice of~$\b{K}$.  
-
+Note that~$\b{K}$ is only defined up to linear transformation, as it depends on the choice of a basis of the left kernel of~$\b{G}$. Note also that, by construction, the coefficients of the normal vectors of the facets of~$\typeCone(\Fan)$ arise from a linear dependence among the rays of~$\Fan$, and hence belong to this kernel. When~$\typeCone(\Fan)$ is simplicial, its $(N-n)$ facets are necessarily linearly independent, and hence form a basis. They provide a particularly interesting choice of~$\b{K}$.  
 
 \begin{corollary}
 \label{coro:simplicialTypeCone}
@@ -926,7 +885,7 @@ The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type con
 
 \begin{figure}[htpb]
 	\capstart
-	\centerline{\includegraphics[scale=.8]{typeConeCoarsenings}}
+	\centerline{\includegraphics[scale=.7]{typeConeCoarsenings}}
 	\caption{The type cone~$\ctypeCone(\Fan)$ of the fan~$\Fan$ of \cref{fig:typeCone}\,(left). On top of each face of $\ctypeCone(\Fan)$, we depict an example of polytope with the corresponding normal fan.}
 	\label{fig:typeConeCoarsenings}
 \end{figure}
@@ -937,6 +896,7 @@ The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type con
 \subsection{Minkowski sums}
 \label{subsec:MinkowskiSums}
 
+\enlargethispage{.5cm}
 We now discuss the connection between convex combinations in the type cone and Minkowski sums of polytopes.
 Recall that the \defn{Minkowski sum} of two polytopes~$P$ and~$Q$ is the polytope $P + Q \eqdef \set{p + q}{p \in P\text{ and } q \in Q}$. 
 
@@ -972,8 +932,9 @@ On the other hand, considering arbitrary differences of support functions gives 
 \begin{corollary}
 Let $\b{h}^{(1)},\dots, \b{h}^{(N-n)} \in \ctypeCone(\Fan)$ form a basis of the left kernel of~$\b{G}$. Then for any~$\b{h} \in \ctypeCone(\Fan)$, the polytope~$P_\b{h}$ has a unique representation (up to translation) as a signed Minkowski sum of dilates of $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$.
 \end{corollary}
+
 \begin{proof}
-It suffices to express the projection of $\b{h}$ onto the left kernel of~$\b{G}$ in terms of $\b{h}^{(1)}, \dots, \b{h}^{(N-n)}$, and to separate those terms with positive and negative coefficients to express Minkowski sums and differences.
+It suffises to express the projection of $\b{h}$ onto the left kernel of~$\b{G}$ in terms of $\b{h}^{(1)}, \dots, \b{h}^{(N-n)}$ to obtain the coefficients of~$P_\b{h}$ as a signed Minkowski sum of dilates of $P_{\b{h}^{(1)}}, \dots, P_{\b{h}^{(N-n)}}$.
 \end{proof}
 
 This is used in~\cite{ArdilaBenedettiDoker} to show that every generalized permutahedron can be written uniquely as a signed Minkowski sum of simplices. 
@@ -987,6 +948,7 @@ Note that such a family of polytopes giving rise to unique positive/non-negative
 
 \begin{example}
 \label{exm:typeConeMinkowskiSum}
+\enlargethispage{.5cm}
 Consider the $2$-dimensional fan~$\Fan$ of \cref{fig:typeCone}\,(left) whose type cone has been described in \cref{exm:typeCone} and represented in \cref{fig:typeCone}\,(right).
 As illustrated in \cref{fig:typeConeCoarsenings}, the rays of the closed type cone~$\ctypeCone(\Fan)$ are directed by the height vectors~$(1,2,1,2,1)$ (corresponding to a triangle), $(0,1,1,0,1)$ (corresponding to a vertical segment) and~$(1,0,1,1,0)$ (corresponding to a horizontal segment).
 Therefore, any polytope in~$\ctypeCone(\Fan)$ is (up to translation) a positive Minkowski combination of a triangle and two edges.
@@ -1526,8 +1488,6 @@ Consider the cluster fans illustrated in \cref{fig:clusterFans}.
 The type cone of the left fan of \cref{fig:clusterFans} lives in~$\R^9$ and has a lineality space of dimension~$3$.
 It has $6$ facet-defining inequalities (given below), which correspond to the mesh mutations of \cref{thm:extremalExchangeablePairsCA} as illustrated in \cref{fig:labelFacetDefiningInequalititiesCA1}.
 
-% \arnau{Can you please check the coordinates? C.\ Stump thought that two facets had some typo (a $\pm 1$ was in the wrong column)}
-
 \[
 \begin{array}{r|cccccccccc}
 \text{variables} & \rotatebox{70}{$x_1$} & \rotatebox{70}{$x_2$} & \rotatebox{70}{$x_3$} & \rotatebox{70}{$\frac{x_2 + x_3}{x_1}$} & \rotatebox{70}{$\frac{x_1 + x_3}{x_2}$} & \rotatebox{70}{$\frac{x_1 + x_2}{x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_2 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_3}$} & \rotatebox{70}{$\frac{x_1 + x_2 + x_3}{x_1 x_2}$} \\[.2cm]
@@ -1652,10 +1612,10 @@ It has $9$ facet-defining inequalities (given below), which correspond to the me
 \text{defining}		& 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & \red \circled{B} \\
 \text{inequalities}	& 0 & 0 & 1 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & \red \circled{C} \\
 					& 0 & -1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & -1 & 0 & \red \circled{D} \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & \red \circled{E} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 & \red \circled{E} \\
 					& 0 & 1 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 1 & \red \circled{F} \\
 					& 0 & 0 & 0 & 0 & 0 & -1 & 1 & 1 & 0 & 0 & 0 & -1 & \red \circled{G} \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -2 & 0 & 0 & 1 & 0 & \red \circled{H} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & \red \circled{H} \\
 					& -1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & -1 & 0 & 0 & \red \circled{I} \\[.2cm]
 \end{array}
 $}
@@ -2956,7 +2916,7 @@ Let~$A$ and~$B$ be two indecomposable objects of~$\cat$.
 \begin{cases}
 0 & \textrm{if~$A\ncong B$;} \\
 \dim_{\field}\field_B & \textrm{if~$A\cong B$.}
-\end{cases}6
+\end{cases}
 \]
 \end{enumerate} 
 \end{lemma}
@@ -4603,6 +4563,7 @@ For example, the module~$\bsm2\\1\esm$ is~$\tau$-rigid since~$\tau(\bsm2\\1\esm)
 \section*{Acknowledgments}
 
 We thank H.~Thomas for comments on a preliminary version of the paper and for informing us about the upcoming extended version of~\cite{BazierMatteDouvilleMousavandThomasYildirim}.
+We are grateful to C.~Stump for reporting a typo in \cref{exm:typeConeCA}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
