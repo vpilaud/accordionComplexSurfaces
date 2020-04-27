@@ -149,8 +149,8 @@
 \newcommand{\B}{\mathrm{B}} % b-matrix
 \newcommand{\A}[1]{\mathrm{A}({#1})} % b-matrix
 \newcommand{\D}{\mathrm{D}} % symmetrizer
-\newcommand{\simpleRoot}{\alpha} % simple root
-\newcommand{\fundamentalWeight}{\omega} % fundamental weights
+\newcommand{\simpleRoot}{\b{\alpha}} % simple root
+\newcommand{\fundamentalWeight}{\b{\omega}} % fundamental weights
 \newcommandx{\meshes}[1][1=\B_\circ]{\mathcal{M}(#1)} % meshes
 
 % Gentle associahedra
@@ -669,7 +669,7 @@ Let~$\Fan$ be an essential complete simplicial fan in~$\R^n$. Then the following
 \item The fan~$\Fan$ is the normal fan of the polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$.
 \item For any two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$,
 \[
-\alpha \, h_{\ray} + \alpha' \, h_{\ray'} + \sum_{\ray[s] \in \rays \cap \rays'} \beta_{\ray[s]} \, h_{\ray[s]} > 0,
+\alpha \, \b{h}_{\ray} + \alpha' \, \b{h}_{\ray'} + \sum_{\ray[s] \in \rays \cap \rays'} \beta_{\ray[s]} \, \b{h}_{\ray[s]} > 0,
 \]
 where
 \[
@@ -930,7 +930,7 @@ Any polytope in~$\ctypeCone(\Fan)$ is the Minkowski sum of at most~$N-n$ indecom
 If $P = Q + R$, then we say that~$R$ is the \defn{Minkowski difference} of~$P$ and~$Q$, denoted~${R = P - Q}$. Note that this is only defined when~$Q$ is a Minkowski summand of~$P$.
 For instance, we have ${P_\b{h} - P_{\b{h}'} = P_{\b{h} - \b{h'}}}$ when $P_{\b{h}'}$ is a Minkowski summand of $P_\b{h}$.
 There are two natural ways this construction generalizes to arbitrary pairs of polyhedra.
-On the one hand, one can consider that ${P - Q = \set{x \in \R^n}{x + Q \subseteq P}}$.
+On the one hand, one can consider that ${P - Q = \set{\b{x} \in \R^n}{\b{x} + Q \subseteq P}}$.
 On the other hand, considering arbitrary differences of support functions gives rise to \defn{virtual polyhedra}, which is the Grothendieck group of the semigroup of polytopes with Minkowski sums~\cite{PukhlikovKhovanskii}.
 
 \begin{corollary}
@@ -1003,7 +1003,7 @@ The following statement provides three equivalent geometric constructions of~$\A
 The associahedron~$\Asso[n]$ can be described equivalently as:
 \begin{itemize}
 \item the convex hull of the points~$L(T) \in \R^{n+1}$ for all rooted binary trees~$T$ with~$n+1$ internal nodes, where the $i$th coordinate of~$L(T)$ is the product of the number of leaves in the left subtree by the number of leaves in the right subtree of the $i$th node of~$T$ in inorder~\cite{Loday},
-\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{a < \ell < b} x_\ell \ge \binom{b-a}{2}}$ for all internal diagonals~$(a,b)$ of \mbox{the $(n+3)$-gon~\cite{ShniderSternberg}},
+\item the intersection of the hyperplane~$\bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} \b{x}_\ell = \binom{n+2}{2}}$ with the halfspaces $\bigset{\b{x} \in \R^{n+1}}{\sum_{a < \ell < b} \b{x}_\ell \ge \binom{b-a}{2}}$ for all internal diagonals~$(a,b)$ of \mbox{the $(n+3)$-gon~\cite{ShniderSternberg}},
 \item the Minkowski sum of the faces~$\simplex_{[i,j]}$ of the standard $n$-dimensional simplex~$\simplex_{[n+1]}$ corresponding to all proper intervals~$[i,j]$ of~$[n+1]$,~\cite{Postnikov}.
 \end{itemize}
 \end{theorem}
@@ -1011,7 +1011,7 @@ The associahedron~$\Asso[n]$ can be described equivalently as:
 \enlargethispage{.1cm}
 We now focus on the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$.
 Since~$\Asso[n]$ lives in a hyperplane of~$\R^{n+1}$, so does its normal fan.
-Let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} x_\ell = 0}$ and~$\pi : \R^{n+1} \to \HH$ denote the orthogonal projection.
+Let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} \b{x}_\ell = 0}$ and~$\pi : \R^{n+1} \to \HH$ denote the orthogonal projection.
 The following fans are illustrated in \cref{fig:lodayFans} in dimension~$2$ and~$3$.
 
 \begin{theorem}
@@ -1019,7 +1019,7 @@ The following fans are illustrated in \cref{fig:lodayFans} in dimension~$2$ and~
 In the normal fan~$\gvectorFan[n]$ of~$\Asso[n]$, 
 \begin{itemize}
 \item the normal vector of the facet corresponding to an internal diagonal~$(a,b)$ of the $(n+3)$-gon is the vector~$\gvector{a,b} \eqdef \pi\big( \sum_{a < \ell < b} \b{e}_\ell \big) = (n+1) \sum_{a < \ell < b} \b{e}_\ell - (b-a-1) \sum_{1 \le \ell \le n+1} \b{e}_\ell$.
-\item the normal cone of the vertex corresponding to a rooted binary tree~$T$ is the incidence cone~$\bigset{\b{x} \in \HH}{x_i \le x_j \text{ for all edges $i \to j$ in $T$}}$.
+\item the normal cone of the vertex corresponding to a rooted binary tree~$T$ is the incidence cone~$\bigset{\b{x} \in \HH}{\b{x}_i \le \b{x}_j \text{ for all edges $i \to j$ in $T$}}$.
 \end{itemize}
 \end{theorem}
 
@@ -1346,7 +1346,7 @@ Moreover, for~$\B_\circ^\vee \eqdef -\transpose{\B_\circ}$, then the map sending
 We now consider principal coefficients to define the $\b{g}$- and $\b{c}$-vectors.
 As defined in~\cite[Def.~3.1]{FominZelevinsky-ClusterAlgebrasIV}, the cluster algebra with \defn{principal coefficients} at~$\B_\circ$ is the cluster algebra~$\clusterAlgebra[\B_\circ][\coefficients_\circ]$ in~$\Q(x_1, \dots, x_n, p_1, \dots, p_n)$, where~$\coefficients_\circ = \{p_x\}_{x \in \cluster_\circ}$ are precisely the generators~$p_1, \dots, p_n$ of~$\Trop{n}$ relabeled by~$\cluster_\circ$.
 For simplicity, we drop the mention of the coefficients for principal cluster algebras in the notations for seeds~$\seed = (\B, \cluster)$, for cluster algebras~$\principalClusterAlgebra$ and for variables~$\principalVariables$.
-Principal coefficients cluster algebras are $\Z^n$-graded (in the fundamental weight basis~$\{\omega_x\}_{x \in \cluster_\circ}$ of~$V$) for the degree function~$\deg(\B_\circ,\cdot)$ on $\principalClusterAlgebra$ obtained by setting
+Principal coefficients cluster algebras are $\Z^n$-graded (in the fundamental weight basis~$\{\simpleWeight_x\}_{x \in \cluster_\circ}$ of~$V$) for the degree function~$\deg(\B_\circ,\cdot)$ on $\principalClusterAlgebra$ obtained by setting
 \(
 \deg(\B_\circ,  x) \eqdef \fundamentalWeight_x
 \)
