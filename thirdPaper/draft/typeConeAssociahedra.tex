@@ -1239,10 +1239,10 @@ Note that the arguments of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} were quite diff
 
 \begin{corollary}[{\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}}]
 \label{coro:allPolytopalRealizationsAsso}
-For~$n \in \N$, define~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$ and~$Y(n) \eqdef \set{(a,b)}{0 \le a < b-2 \le n}$.
+For~$n \in \N$, define~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$ and~$Y(n) \eqdef \set{(a,b)}{1 \le a < b \le n+1}$.
 Then for any~$\b{\ell} \in \R_{>0}^{Y(n)}$, the polytope
 \[
-R_\b{\ell}(n) \eqdef \set{\b{z} \in \R^{X(n)}}{\begin{array}{l} \b{z} \ge 0, \quad \b{z}_{(0,n+2)} = 0 \quad\text{and}\quad \b{z}_{(a,a+1)} = 0 \text{ for all } 0 \le a \le n+1 \\ \b{z}_{(a,b-1)} + \b{z}_{(a+1,b)} - \b{z}_{(a,b)} - \b{z}_{(a+1,b-1)} = \b{\ell}_{(a,b)} \text{ for all } (a,b) \in Y(n) \end{array}}
+R_\b{\ell}(n) \eqdef \set{\b{z} \in \R^{X(n)}}{\begin{array}{l} \b{z} \ge 0, \quad \b{z}_{(0,n+2)} = 0 \quad\text{and}\quad \b{z}_{(a,a+1)} = 0 \text{ for all } 0 \le a \le n+1 \\ \b{z}_{(a-1,b)} + \b{z}_{(a,b+1)} - \b{z}_{(a,b)} - \b{z}_{(a-1,b+1)} = \b{\ell}_{(a,b)} \text{ for all } (a,b) \in Y(n) \end{array}}
 \]
 is an $n$-dimensional associahedron, whose normal fan is~$\gvectorFan[n]$.
 Moreover, the polytopes~$R_\b{\ell}(n)$ for~$\b{\ell} \in \R_{>0}^{Y(n)}$ describe all polytopal realizations of the fan~$\gvectorFan[n]$.
