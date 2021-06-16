@@ -3394,7 +3394,7 @@ We also note the generalization, called~$n$-exangulated categories~\cite{Hersche
 An extriangulated category is the data of an additive category~$\cat$, of an additive bifunctor ${\mathbb{E}:\cat^\mathrm{op}\times\cat\to \mathit{Ab}}$ modelling the~$\operatorname{Ext}^1$-bifunctor, and of an additive realization~$\mathfrak{s}$ sending each element~$\delta\in\mathbb{E}(Z,X)$ to some (equivalence classe of) diagram~$X\to Y\to Z$ modelling the short exact sequences or triangles.
 Some axioms, inspired from the case of extension-closed subcategories of triangulated categories have to be satisfied.
 
-More specifically: fix an additive category~$\cat$, and an additive bifunctor~$\mathbb{E}: \cat^\mathrm{op}\times\cat\to\mathit{Ab}$.
+More specifically: fix an additive category~$\cat$, and an additive bifunctor~$\mathbb{E}: \cat^\mathrm{op}\times\cat\to\mathit{Ab}$, where $\mathit{Ab}$ is the category of abelian groups.
 
 \begin{definition}
 For any~$X,Z\in\cat$, an element~$\delta\in\mathbb{E}(Z,X)$ is called an~\defn{$\mathbb{E}$-extension}.
@@ -3867,9 +3867,17 @@ The objects in~$\susp\tc$ are precisely the injective objects in~$\cat$.
 
 \begin{proof}
 First note that any injective object belongs to~$\susp \tc$, by \cref{lem:shifts of extriangles}.
+Indeed, if~$X$ is injective, then the extriangle
+\[
+X \overset{h_X}{\infl} \susp T_1^X \overset{\susp f_X}{\defl} \susp T_0^X \overset{(g_X)_\ast\delta_0}{\dashrightarrow}
+\]
+splits, showing that~$X$ is a summand of~$\susp T_1^X$.
 Let us prove that the converse holds.
 Let~$\susp T \infl X \overset{f}{\defl} Y\overset{\delta}{\dashrightarrow}$ be an extriangle with~$T\in\tc$.
-Since~$\cat(-,\susp T)|_\tc = 0$ and~$f$ is~$\tc$-epic, the morphism~$\cat(-,f)|_\tc$ is an isomorphism in~$\modt$.
+Since~$\cat(-,\susp T)|_\tc = 0$ and
+%~$f$ is~$\tc$-epic,
+$\mathbb{E}(-,\susp T)|_\tc =0$ (by \cref{lem:first consequences}),
+the morphism~$\cat(-,f)|_\tc$ is an isomorphism in~$\modt$.
 By \cref{prop:KRextricat}, there are morphisms~$Y\overset{s}{\to} X$,~$Y\xrightarrow{h}\susp T'$,~$\susp T'\xrightarrow{t} Y$, for some~$T'\in\tc$ satisfying
 \[
 fs = id_Y + th.
