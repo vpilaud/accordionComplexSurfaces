@@ -550,7 +550,7 @@ Let~$\susp T$ be the cone of the inflation~$T\infl 0$.
 The functor~$\cat(T,-)$ induces an equivalence~$F:\cat/(\susp T) \to \MOD \End{\cat}(T)$.
 \end{prop:KRextricat}
 
-Our assumptions allow for a well-defined notion of index:~$\ind_T(X)=[T_0^X]-[T_1^X]\in\kzero{\add T}$.
+Our assumptions allow for a well-defined notion of index:~$\ind_T(X)=[T_0^X]-[T_1^X] \in \kzero{\add T}$.
 
 \newtheorem*{prop:index iso extricat}{\cref{prop:index iso extricat}}
 \begin{prop:index iso extricat}
@@ -655,7 +655,7 @@ We say that a complete polyhedral fan~$\Fan$ in~$\R^n$ is \defn{polytopal} when 
 \subsection{Type cone}
 \label{ssec:type cone}
 
-Fix an essential complete simplicial fan~$\Fan$ in~$\R^n$, with an (arbitrary) indexing of its rays by $[N]\eqdef \{1,\dots,N\}$. Let~$\b{G}$ be the $N \times n$-matrix whose rows are representative vectors of the rays of~$\Fan$. Let~$\b{K}$ be a $(N-n) \times N$-matrix that spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$ and $\rank(\b{K})=N-n$). For any height vector~$\b{h} \in \R^N$, we define the polytope
+Fix an essential complete simplicial fan~$\Fan$ in~$\R^n$, with an (arbitrary) indexing of its rays by $[N] \eqdef \{1,\dots,N\}$. Let~$\b{G}$ be the $N \times n$-matrix whose rows are representative vectors of the rays of~$\Fan$. Let~$\b{K}$ be a $(N-n) \times N$-matrix that spans the left kernel of~$\b{G}$ (\ie $\b{K}\b{G} = 0$ and $\rank(\b{K})=N-n$). For any height vector~$\b{h} \in \R^N$, we define the polytope
 \[
 P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}},
 \]
@@ -709,15 +709,23 @@ We denote by $\ctypeCone(\Fan)$ the closure of $\typeCone(\Fan)$, and call it th
 
 \begin{example}
 \label{exm:typeCone}
-\enlargethispage{.5cm}
+\begin{figure}[b]
+	\capstart
+	\centerline{{\includegraphics[scale=1]{typeConeFan}} \quad {\includegraphics[scale=1]{typeConePolytope}} \quad \raisebox{.5cm}{\includegraphics[scale=.45]{typeCone}}}
+	\caption{A $2$-dimensional fan~$\Fan$ with five rays $1, \dots, 5$ and five maximal cones~$a, \dots, e$ (left), its polytopal realization corresponding to the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, 1, 1, \nicefrac{5}{4})$ (middle), and the intersection of $\b{K}\typeCone(\Fan)$ with a hyperplane to get a $2$-dimensional slice (right).}
+	\label{fig:typeCone}
+\end{figure}
+%
 Consider the $2$-dimensional fan~$\Fan$ depicted in \cref{fig:typeCone} (left) (we will encounter this fan again in \cref{exm:typeConeCoarsenings,exm:typeConeMinkowskiSum,exm:typeConeAsso}).
 It has five rays labeled~$1, \dots, 5$ and five maximal cones labeled~$a,\dots, e$.
-The matrices $\b{G}$ and $\b{K}$ are (for a possible choice of $\b{K}$): 
-\begin{align*}
-\transpose{\b{G}}&=\begin{bmatrix} 1 & 0 & -1& -1 & 0 \\ 0 & 1 & 1 & 0 &-1 \end{bmatrix},&
-\b{K}&=\begin{bmatrix} 1 & 0 & 0 & 1 & 0\\ 0 & 1 & 0 & 0 & 1 \\ 1& 0& 1& 0 & 1  \end{bmatrix}.
-\end{align*}
-Its type cone~$\typeCone(\Fan)$ lies in~$\R^5$, but has a $2$-dimensional lineality space.
+For the matrices $\b{G}$ and $\b{K}$, we consider
+\[
+%\transpose{\b{G}} = \begin{bmatrix} 1 & 0 & -1 & -1 & 0 \\ 0 & 1 & 1 & 0 & -1 \end{bmatrix}
+\b{G} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ -1 & 1 \\ -1 & 0 \\ 0 & -1 \end{bmatrix}
+\qquad\text{and}\qquad
+\b{K} = \begin{bmatrix} 1 & 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 & 1 \\ 1 & 0 & 1 & 0 & 1 \end{bmatrix}.
+\]
+The type cone~$\typeCone(\Fan)$ lies in~$\R^5$, but has a $2$-dimensional lineality space.
 The five pairs of adjacent maximal cones of~$\Fan$ give rise to following five defining inequalities for~$\typeCone(\Fan)$:
 \begin{gather*}
 H^>_{ab}: \; \b{h}_1 + \b{h}_3 - \b{h}_2 > 0
@@ -733,7 +741,7 @@ H^>_{ae}: \; \b{h}_2 + \b{h}_5 > 0,
 where $H^>_{ij}$ denotes the halfspace defined by the inequality corresponding to the two adjacent maximal cones~$i$ and~$j$.
 Note that the inequalities~$H^>_{ae}$ and~$H^>_{de}$ are redundant.
 For example, the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, \nicefrac{5}{4}, 1, \nicefrac{5}{4})$ belongs to the type cone~$\typeCone(\Fan)$, and the corresponding polytope is represented in \cref{fig:typeCone} (middle).
-To represent this type cone, it suffices to represent~$\b{K}\typeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$, given as the intersection of the open halfspaces:
+To represent this type cone, it suffices to represent~$\b{K}\typeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$, given as the intersection of the following five open halfspaces:
 \begin{gather*}
 \b{K}H^>_{ab}: \; {x} - {y} +2 {z} > 0
 \qquad
@@ -747,13 +755,6 @@ To represent this type cone, it suffices to represent~$\b{K}\typeCone(\Fan)$ whi
 \end{gather*}
 One can further reduce the dimension by intersecting with a transversal hyperplane to get a $2$-dimensional representation.
 This is the red triangle depicted in \cref{fig:typeCone} (right).
-
-\begin{figure}[htpb]
-	\capstart
-	\centerline{{\includegraphics[scale=1]{typeConeFan}} \quad {\includegraphics[scale=1]{typeConePolytope}} \quad \raisebox{.5cm}{\includegraphics[scale=.45]{typeCone}}}
-	\caption{A $2$-dimensional fan~$\Fan$ with five rays $1, \dots, 5$ and five maximal cones~$a, \dots, e$ (left), its polytopal realization corresponding to the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, 1, 1, \nicefrac{5}{4})$ (middle), and the intersection of $\b{K}\typeCone(\Fan)$ with a hyperplane to get a $2$-dimensional slice (right).}
-	\label{fig:typeCone}
-\end{figure}
 \end{example}
 
 \begin{definition}
@@ -922,7 +923,6 @@ The relative interior of the three facets of~$\ctypeCone(\Fan)$ are the type con
 \subsection{Minkowski sums}
 \label{subsec:MinkowskiSums}
 
-\enlargethispage{.5cm}
 We now discuss the connection between convex combinations in the type cone and Minkowski sums of polytopes.
 Recall that the \defn{Minkowski sum} of two polytopes~$P$ and~$Q$ is the polytope $P + Q \eqdef \set{p + q}{p \in P\text{ and } q \in Q}$. 
 
@@ -974,14 +974,13 @@ Note that such a family of polytopes giving rise to unique positive/non-negative
 
 \begin{example}
 \label{exm:typeConeMinkowskiSum}
-\enlargethispage{.5cm}
 Consider the $2$-dimensional fan~$\Fan$ of \cref{fig:typeCone}\,(left) whose type cone has been described in \cref{exm:typeCone} and represented in \cref{fig:typeCone}\,(right).
 As illustrated in \cref{fig:typeConeCoarsenings}, the rays of the closed type cone~$\ctypeCone(\Fan)$ are directed by the height vectors~$(1,2,1,2,1)$ (corresponding to a triangle), $(0,1,1,0,1)$ (corresponding to a vertical segment) and~$(1,0,1,1,0)$ (corresponding to a horizontal segment).
 Therefore, any polytope in~$\ctypeCone(\Fan)$ is (up to translation) a positive Minkowski combination of a triangle and two edges.
 \cref{fig:typeConeMinkowskiSum} illustrates this property for the polytope of \cref{fig:typeCone}\,(middle) corresponding to the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, \nicefrac{5}{4}, 1, \nicefrac{5}{4})$.
 Note that~$\Fan$ is the normal fan of J.-L.~Loday's $2$-dimensional associahedron, whose realization as a Minkowski sum of faces of a simplex was given by A.~Postnikov in~\cite{Postnikov}.
 
-\begin{figure}[htpb]
+\begin{figure}
 	\capstart
 	\centerline{
 	\begin{tabular}{c@{\;$=$\;}c@{\,$+$\,}c@{\,$+$\,}c@{\,}l@{\,}l}
@@ -1030,11 +1029,10 @@ The associahedron~$\Asso[n]$ can be described equivalently as:
 \end{itemize}
 \end{theorem}
 
-\enlargethispage{.1cm}
+\pagebreak
 We now focus on the normal fan of~$\Asso[n]$.
 Since~$\Asso[n]$ lives in a hyperplane of~$\R^{n+1}$, its normal fan has a one-dimensional lineality.
-Let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} \b{x}_\ell = 0}$ and~$\pi : \R^{n+1} \to \HH$ denote the orthogonal projection. We denote by~$\gvectorFan[n]$ the intersection of the normal fan of~$\Asso[n]$ with~$\HH$, which is an essential complete simplicial fan.
-The following facts are illustrated in \cref{fig:lodayFans} in dimension~$2$ and~$3$.
+Let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} \b{x}_\ell = 0}$ and ${\pi : \R^{n+1} \to \HH}$ denote the orthogonal projection. We denote by~$\gvectorFan[n]$ the intersection of the normal fan of~$\Asso[n]$ with~$\HH$, which is an essential complete simplicial fan.
 
 \begin{theorem}
 \label{thm:normalFanLoday}
@@ -1045,12 +1043,10 @@ In the fan~$\gvectorFan[n]$,
 \end{itemize}
 \end{theorem}
 
-% In view of \cref{def:gvectorCA}, it is convenient to express the $\b{g}$-vectors in the basis given by $\gvector{0,i+1}$ for $i\in [n]$. This is what we do in \cref{fig:lodayFans} and \cref{exm:typeConeAsso}.
+\cref{thm:normalFanLoday} is illustrated in \cref{fig:lodayFans} and \cref{exm:typeConeAsso} in dimension~$2$ and~$3$.
 Note that in \cref{fig:lodayFans} and \cref{exm:typeConeAsso} we express the $\b{g}$-vectors in the basis given by $\gvector{0,i+1}$ for $i\in [n]$ (to be coherent with the upcoming \cref{def:gvectorCA}).
 
-
-
-\begin{figure}[h]
+\begin{figure}
 	\capstart
 	\centerline{\raisebox{.5cm}{\includegraphics[scale=.45]{lodayFan2}}\hspace{1.5cm}\includegraphics[scale=.45]{lodayFan3}}
 	\caption{The normal fans~$\gvectorFan[2]$ and~$\gvectorFan[3]$ of J.-L.~Loday's associahedra. As the rightmost fan is $3$-dimensional, we intersect it with the sphere and stereographically project it from the direction~$(-1,-1,-1)$.}
@@ -1075,7 +1071,7 @@ In particular, the fan~$\gvectorFan[n]$ has the unique exchange relation propert
 \subsubsection{Type cones of associahedra}
 
 From the linear dependencies of \cref{prop:exchangeablePairsAsso}, we obtain a redundant description of the type cone of the fan~$\gvectorFan[n]$.
-To simplify the presentation, we embed the type cone in a larger space, adding dummy variables for the boundary edges of the polygon.
+To simplify the presentation and write the wall-crossing inequalities in a uniform way, we embed the type cone in a larger space, adding dummy variables for the boundary edges of the polygon.
 
 \begin{corollary}
 \label{coro:typeConeAsso}
@@ -1084,6 +1080,8 @@ Let~$n \in \N$ and~$X(n) \eqdef \set{(a,b)}{0 \le a < b \le n+2}$. Then the type
 \typeCone \big( \gvectorFan[n] \big) = \set{\b{h} \in \R^{X(n)}}{\begin{array}{@{}l@{}} \b{h}_{(0,n+2)} = 0, \qquad\text{and}\qquad \b{h}_{(a,a+1)} = 0 \text{ for all } 0 \le a \le n+1 \\ \b{h}_{(a,b)} + \b{h}_{(a',b')} > \b{h}_{(a,b')} + \b{h}_{(a',b)} \text{ for all } 0 \le a < a' < b < b' \le n+2 \end{array}} \!.
 \]
 \end{corollary}
+
+\pagebreak
 
 \begin{example}
 \label{exm:typeConeAsso}
@@ -1105,56 +1103,6 @@ It has $3$ facet-defining inequalities (given below), which correspond to the fl
 \noindent
 In all our tables, we just record the coefficients of the inequalities, which are then easily reconstructed.
 For instance, the inequality~$\red \circled{A}$ above is given by~$\b{h}_{\includegraphics[scale=.3]{diagonalA1}} + \b{h}_{\includegraphics[scale=.3]{diagonalA3}} > \b{h}_{\includegraphics[scale=.3]{diagonalA2}}$.
-
-The type cone of~$\gvectorFan[3]$ has dimension~$9$ and a lineality space of dimension~$3$.
-It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(right).
-
-\[
-\begin{array}{r|cccccccccc}
-\text{diagonals} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB1}}  & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB2}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB3}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB4}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB5}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB6}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB7}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB8}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB9}} \\[.3cm]
-\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
-\text{facet}		& 1 & -1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & \red \circled{A} \\
-\text{defining} 	& 0 & 1 & -1 & -1 & 1 & 0 & 0 & 0 & 0 & \red \circled{B} \\
-\text{inequalities}	& 0 & 0 & 1 & 0 & -1 & 0 & 1 & 0 & 0 & \red \circled{C} \\
-					& 0 & 0 & 0 & 1 & -1 & 1 & 0 & 0 & 0 & \red \circled{D} \\
-					& 0 & 0 & 0 & 0 & 1 & -1 & -1 & 1 & 0 & \red \circled{E} \\
-					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -1 & 1 & \red \circled{F} \\[.2cm]
-\end{array}
-\]
-\medskip
-
-%sage: B = Matrix([[0,1,0],[-1,0,1],[0,-1,0]])
-%sage: CA = ClusterAlgebra(B)
-
-%sage: CA.explore_to_depth(infinity)
-%sage: gvectors = CA.cluster_fan().rays()
-%sage: for gvector in gvectors:
-%....:     print gvector, CA.cluster_variable(gvector)
-%....:     
-%N(-1, 1, 0) (x1 + 1)/x0
-%N(1, 0, 0) x0
-%N(0, 0, 1) x2
-%N(0, -1, 1) (x0 + x2)/x1
-%N(0, 0, -1) (x1 + 1)/x2
-%N(-1, 0, 1) (x1*x2 + x0 + x2)/(x0*x1)
-%N(0, -1, 0) (x0*x1 + x0 + x2)/(x1*x2)
-%N(-1, 0, 0) (x0*x1 + x1*x2 + x0 + x2)/(x0*x1*x2)
-%N(0, 1, 0) x1
-
-%sage: TCCA = type_cone_CA(CA)
-%sage: TCCA
-%A 9-dimensional polyhedron in QQ^9 defined as the convex hull of 1 vertex, 6 rays, 3 lines
-%sage: TCCA.lines()
-%(A line in the direction (1, 0, 0, -1, 0, 0, -1, 0, 1),
-% A line in the direction (1, 0, 1, 0, -1, 1, -1, 0, 1),
-% A line in the direction (0, 1, 1, 0, -1, 0, -1, -1, 1))
-%sage: TCCA.inequalities()
-%(An inequality (-1, 0, -1, 0, 0, 1, 0, 0, 1) x + 0 >= 0,
-% An inequality (1, 1, 0, 0, 0, 0, 0, 0, -1) x + 0 >= 0,
-% An inequality (1, 0, 0, 1, 0, -1, 0, 0, 0) x + 0 >= 0,
-% An inequality (0, 0, 0, -1, 0, 1, 1, -1, 0) x + 0 >= 0,
-% An inequality (0, 0, 1, 0, 0, -1, 0, 1, 0) x + 0 >= 0,
-% An inequality (0, 0, 0, 1, 1, 0, -1, 0, 0) x + 0 >= 0)
 
 \begin{figure}[h]
 	\capstart
@@ -1218,7 +1166,59 @@ It has $6$ facet-defining inequalities (given below), which correspond to the fl
 	\caption{The facet-defining inequalities of the type cone~$\typeCone \big( \gvectorFan[n] \big)$ correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso}. See \cref{subsec:typeConeCA,sec:clusterCategories} for a representation theoretic \mbox{interpretation}.}
 	\label{fig:labelFacetDefiningInequalititiesAsso}
 \end{figure}
+
+The type cone of~$\gvectorFan[3]$ has dimension~$9$ and a lineality space of dimension~$3$.
+It has $6$ facet-defining inequalities (given below), which correspond to the flips described in \cref{prop:extremalExchangeablePairsAsso} and illustrated in \cref{fig:labelFacetDefiningInequalititiesAsso}\,(right).
+
+\[
+\begin{array}{r|cccccccccc}
+\text{diagonals} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB1}}  & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB2}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB3}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB4}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB5}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB6}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB7}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB8}} & \raisebox{-.25cm}{\;\includegraphics[scale=.7]{diagonalB9}} \\[.3cm]
+\text{$\b{g}$-vectors} & \compactVectorT{1}{0}{0} & \compactVectorT{0}{1}{0} & \compactVectorT{0}{0}{1} & \compactVectorT{-1}{1}{0} & \compactVectorT{0}{-1}{1} & \compactVectorT{-1}{0}{1} & \compactVectorT{-1}{0}{0} & \compactVectorT{0}{-1}{0} & \compactVectorT{0}{0}{-1} \\[.6cm]
+\text{facet}		& 1 & -1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & \red \circled{A} \\
+\text{defining} 	& 0 & 1 & -1 & -1 & 1 & 0 & 0 & 0 & 0 & \red \circled{B} \\
+\text{inequalities}	& 0 & 0 & 1 & 0 & -1 & 0 & 1 & 0 & 0 & \red \circled{C} \\
+					& 0 & 0 & 0 & 1 & -1 & 1 & 0 & 0 & 0 & \red \circled{D} \\
+					& 0 & 0 & 0 & 0 & 1 & -1 & -1 & 1 & 0 & \red \circled{E} \\
+					& 0 & 0 & 0 & 0 & 0 & 1 & 0 & -1 & 1 & \red \circled{F} \\[.2cm]
+\end{array}
+\]
+
+%sage: B = Matrix([[0,1,0],[-1,0,1],[0,-1,0]])
+%sage: CA = ClusterAlgebra(B)
+
+%sage: CA.explore_to_depth(infinity)
+%sage: gvectors = CA.cluster_fan().rays()
+%sage: for gvector in gvectors:
+%....:     print gvector, CA.cluster_variable(gvector)
+%....:     
+%N(-1, 1, 0) (x1 + 1)/x0
+%N(1, 0, 0) x0
+%N(0, 0, 1) x2
+%N(0, -1, 1) (x0 + x2)/x1
+%N(0, 0, -1) (x1 + 1)/x2
+%N(-1, 0, 1) (x1*x2 + x0 + x2)/(x0*x1)
+%N(0, -1, 0) (x0*x1 + x0 + x2)/(x1*x2)
+%N(-1, 0, 0) (x0*x1 + x1*x2 + x0 + x2)/(x0*x1*x2)
+%N(0, 1, 0) x1
+
+%sage: TCCA = type_cone_CA(CA)
+%sage: TCCA
+%A 9-dimensional polyhedron in QQ^9 defined as the convex hull of 1 vertex, 6 rays, 3 lines
+%sage: TCCA.lines()
+%(A line in the direction (1, 0, 0, -1, 0, 0, -1, 0, 1),
+% A line in the direction (1, 0, 1, 0, -1, 1, -1, 0, 1),
+% A line in the direction (0, 1, 1, 0, -1, 0, -1, -1, 1))
+%sage: TCCA.inequalities()
+%(An inequality (-1, 0, -1, 0, 0, 1, 0, 0, 1) x + 0 >= 0,
+% An inequality (1, 1, 0, 0, 0, 0, 0, 0, -1) x + 0 >= 0,
+% An inequality (1, 0, 0, 1, 0, -1, 0, 0, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, -1, 0, 1, 1, -1, 0) x + 0 >= 0,
+% An inequality (0, 0, 1, 0, 0, -1, 0, 1, 0) x + 0 >= 0,
+% An inequality (0, 0, 0, 1, 1, 0, -1, 0, 0) x + 0 >= 0)
+
 \end{example}
+
+\pagebreak
 
 Motivated by \cref{exm:typeConeAsso}, we now describe the facets of this type cone~$\typeCone \big( \gvectorFan[n] \big)$.
 
@@ -1260,7 +1260,6 @@ Our next statement follows from the end of the previous proof.
 The type cone~$\typeCone \big( \gvectorFan[n] \big)$ is simplicial.
 \end{corollary}
 
-\enlargethispage{.2cm}
 Combining \cref{coro:simplicialTypeCone,coro:simplicialTypeConeAsso} and \cref{prop:extremalExchangeablePairsAsso}, we derive the following description of all polytopal realizations of the fan~$\gvectorFan[n]$, recovering all associahedra of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan}.
 Note that the arguments of~\cite[Sect.~3.2]{ArkaniHamedBaiHeYan} were quite different from the present~approach.
 
@@ -1349,6 +1348,8 @@ The \defn{cluster complex} of~$\clusterAlgebra$ is the simplicial complex whose 
 In this paper, we only consider \defn{finite type} cluster algebras, \ie those with a finite number~$N$ of cluster variables.
 It turns out that these finite type cluster algebras were classified by S.~Fomin and A.~Zelevinsky~\cite{FominZelevinsky-ClusterAlgebrasII} using the Cartan-killing classification for crystallographic root systems.
 Define the \defn{Cartan companion} of an exchange matrix $\B$ as the matrix~$\A{\B}$ given by~$a_{xy} = 2$ if~$x = y$ and~$a_{xy} = -|b_{xy}|$ otherwise.
+
+\pagebreak
 
 \begin{theorem}[{\cite[Thm.~1.4]{FominZelevinsky-ClusterAlgebrasII}}]
 \label{thm:finiteTypeClassification}
@@ -2022,7 +2023,6 @@ The number of distinguishable strings~$\distinguishableStrings$ and proper walks
 
 \para{Non-kissing fan and gentle associahedron}
 %
-\enlargethispage{.1cm}
 The $\b{g}$-vectors support a complete simplicial fan realization of the non-kissing complex~$\NKC$.
 Examples are illustrated in \cref{fig:nonkissingFans}.
 
@@ -2042,6 +2042,7 @@ is a complete simplicial fan of~$\R^{Q_0}$, called \defn{non-kissing fan} of~$\q
 	\label{fig:nonkissingFans}
 \end{figure}
 
+\enlargethispage{.1cm}
 It is proved in~\cite[Thm.~4.27]{PaluPilaudPlamondon-nonkissing} that the non-kissing fan comes from a polytope.
 For a walk~$\omega$, denote by~$\KN(\omega)$ the sum over all other walks~$\omega'$ of the number of kisses between~$\omega$~and~$\omega'$.
 
@@ -2134,7 +2135,6 @@ Note that, it was shown in~\cite{PaluPilaudPlamondon-surfaces} that the accordio
 
 \subsubsection{Type cones of non-kissing fans}
 
-\enlargethispage{-.3cm}
 We now discuss the type cones of the non-kissing fans defined in \cref{thm:nonkissingFan}. We obtain from \cref{prop:exchangeablePairsNKC} the following redundant description.
 
 \begin{corollary}
@@ -2144,6 +2144,8 @@ For any non-kissing finite gentle quiver~$\quiver$, the type cone of the non-kis
 \]
 where the walks~$\mu$ and~$\nu$ for two exchangeable walks~$\omega, \omega'$ are defined in \cref{prop:exchangeablePairsNKC}.
 \end{corollary}
+
+\pagebreak
 
 \begin{example}
 \label{exm:typeConeNKC}
@@ -2700,7 +2702,7 @@ In both cases, \cref{prop:interestingExchangeablePairsNKC} fails for the string~
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newpage
+\newpage
 \part{Grothendieck group and relations between $\b{g}$-vectors}
 \label{part:algebra}
 
