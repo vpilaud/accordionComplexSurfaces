@@ -3390,7 +3390,7 @@ Then the element~$x=[X]+[Y]-[E]$ of the kernel of~$\b{g}$ is a non-negative line
 
 Extriangulated categories, recently introduced in~\cite{NakaokaPalu}, axiomatize extension-closed subcategories of triangulated categories in a (moderately) similar way that Quillen's exact categories axiomatize extension-closed subcategories of abelian categories.
 They appear in representation theory in relation with cotorsion pairs~\cite{ChangZhouZhu-ClusterSubalgebras,ZhaoHuang-Phantom,LiuNakaoka-Hearts,Liu-LocalizationsHearts}, with Auslander--Reiten theory~\cite{IyamaNakaokaPalu}, with cluster algebras, mutations, or cluster-tilting theory~\cite{ChangZhouZhu-ClusterSubalgebras,Pressland,ZhouZhu-TriangulatedQuotient,LiuZhou-Abelian,LiuZhou-AbelianII,LiuZhou-Gorenstein}, with Cohen--Macaulay dg-modules in the remarkable~\cite{Jin}.
-We also note the generalization, called~$n$-exangulated categories~\cite{HerschendLiuNakaoka}, to a version suited for higher homological algebra.
+We also note the generalization, called~$n$-exangulated categories~\cite{HerschendLiuNakaokaI,HerschendLiuNakaokaII}, to a version suited for higher homological algebra.
 
 An extriangulated category is the data of an additive category~$\cat$, of an additive bifunctor ${\mathbb{E}:\cat^\mathrm{op}\times\cat\to \mathit{Ab}}$ modelling the~$\operatorname{Ext}^1$-bifunctor, and of an additive realization~$\mathfrak{s}$ sending each element~$\delta\in\mathbb{E}(Z,X)$ to some (equivalence classe of) diagram~$X\to Y\to Z$ modelling the short exact sequences or triangles.
 Some axioms, inspired from the case of extension-closed subcategories of triangulated categories have to be satisfied.
@@ -4435,7 +4435,7 @@ Then~$\cat$ satisfies all the assumptions of \cref{setting:extricat} for \cref{s
 
 We fix this issue by considering a relative extriangulated structure.
 Let~$\mathbb{E}_T$ be the additive sub-bifunctor of~$\cat(-,\susp -)$ formed by those morphisms that factor through~$\add\susp T$.
-Then~$(\cat,\mathbb{E}_T)$ becomes extriangulated by~\cite[Prop.~3.14]{HerschendLiuNakaoka} (this can also be checked directly).
+Then~$(\cat,\mathbb{E}_T)$ becomes extriangulated by either~\cite[Prop.~3.16 or Prop.3.19]{HerschendLiuNakaokaI} (this can also be checked directly).
 The extriangles of~$\cat$ are precisely the triangles~$X\overset{f}{\rightarrow}Y\overset{g}{\rightarrow} Z \overset{h}{\dashrightarrow}$, for which the morphism~$h$ factors through~$\add\susp T$.
 By construction, Condition (1) is now satisfied.
 Moreover, the triangles appearing in Conditions (2) and (3) are extriangles for this relative structure, which shows that those two conditions are still satisfied for the extriangulated structure~$(\cat,\mathbb{E}_T)$.
@@ -4460,8 +4460,9 @@ For any~$X,Y\in\ec$, let~$\mathbb{E}_\tc(X,Y)$ be the subset of~$\mathbb{E}(X,Y)
 It is easily seen that~$\mathbb{E}_\tc$ is an additive subfunctor of~$\mathbb{E}$.
 Consider $(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ endowed with the resctriction of the additive realization~$\mathfrak{s}$.
 Since the deflations in~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ are precisely the deflations in~$(\ec,\mathbb{E},\mathfrak{s})$ that are~$\tc$-epic, they are closed under composition.
-We can thus apply~\cite[Prop.~3.14]{HerschendLiuNakaoka} to obtain that~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ is an extriangulated category.
-With that relative structure, the objects in~$\tc$ become projective.
+We can thus apply~\cite[Prop.~3.16]{HerschendLiuNakaokaI} to obtain that~$(\ec,\mathbb{E}_\tc,\mathfrak{s}_\tc)$ is an extriangulated category.
+With that relative structure, the objects in~$\tc$ become projective
+(alternatively, one can directly apply~\cite[Prop.~3.19]{HerschendLiuNakaokaI}).
 Define~$\cat$ to be the full subcategory of~$\ec$ whose objects~$X$ admit an~$\mathfrak{s}_\tc$-conflation~$T_1\infl T_0\defl X$.
 
 \begin{lemma}
