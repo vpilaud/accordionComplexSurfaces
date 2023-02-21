@@ -1032,7 +1032,9 @@ The associahedron~$\Asso[n]$ can be described equivalently as:
 We now focus on the normal fan of~$\Asso[n]$.
 Since~$\Asso[n]$ lives in a hyperplane of~$\R^{n+1}$, its normal fan has a one-dimensional lineality (spanned by the all-ones vector).
 To factor out the lineality, let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} \b{x}_\ell = 0}$ and ${\pi : \R^{n+1} \to \HH}$ denote the orthogonal projection.
-We denote by~$\gvectorFan[n]$ the intersection of the normal fan of~$\Asso[n]$ with~$\HH$. Note that~$\gvectorFan[n]$ is an $n$-dimensional essential complete simplicial fan consisting of the projections under~$\pi$ of the normal cones of $\Asso[n]$. With the choice of a basis, we can identify $\HH$ with $\R^n$ and depict~$\Asso[n]$ as a full-dimensional polytope with normal fan~$\gvectorFan[n]$.
+We denote by~$\gvectorFan[n]$ the intersection of the normal fan of~$\Asso[n]$ with~$\HH$. 
+Note that~$\gvectorFan[n]$ is an $n$-dimensional essential complete simplicial fan in~$\HH$, which is actually the normal fan of~$\pi(Asso[n])$ in~$\HH$. 
+With the choice of a basis, we can identify $\HH$ with $\R^n$ and depict~$\gvectorFan[n]$ and~$\pi(\Asso[n])$ in~$\R^n$.
 
 \begin{theorem}
 \label{thm:normalFanLoday}
@@ -2471,7 +2473,7 @@ We want to show that there are non-kissing facets~$F, F'$ of the non-kissing com
 
 We first show that~$\mu$ and~$\nu$ are compatible.
 Let~$\tau$ be a maximal common substring of~$\mu$ and~$\nu$.
-If~$\sigma$ and~$\tau$ are not disjoint, then~$\sigma = \tau$ and $\mu$ and~$\nu$ are not kissing at~$\tau$.
+If~$\sigma$ and~$\tau$ are not disjoint, then~$\sigma = \tau$ (as $\tau \subseteq \sigma$ and~$\mu$ and~$\nu$ differ at the extremities of~$\sigma$) and $\mu$ and~$\nu$ are not kissing at~$\tau$.
 We can therefore assume that $\tau$ appears completely before or completely after~$\sigma$ in both~$\mu$ and~$\nu$.
 We distinguish two different cases:
 \begin{itemize}
