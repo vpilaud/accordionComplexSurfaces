@@ -72,6 +72,7 @@
 \DeclareMathOperator{\vect}{vect} % linear span
 \DeclareMathOperator{\cone}{cone} % cone hull
 \DeclareMathOperator{\rank}{rank} % rank
+\DeclareMathOperator{\oprays}{rays} % rays
 
 % others
 \newcommand{\ie}{\textit{i.e.}~} % id est
@@ -667,7 +668,7 @@ We present here a convenient formulation from~\cite[Lem.~2.1]{ChapotonFominZelev
 
 \begin{proposition}
 \label{prop:characterizationPolytopalFan}
-Let~$\Fan$ be an essential complete simplicial fan in~$\R^n$. Then the following are equivalent for any height vector~$\b{h}\in \R^N$:
+Let~$\Fan$ be an essential complete simplicial fan in~$\R^n$ with $N$ rays. Then the following are equivalent for any height vector~$\b{h}=\left(\b{h}_{\ray}\right)_{\ray \in \oprays(\Fan)}\in \R^N$:
 \begin{enumerate}
 \item The fan~$\Fan$ is the normal fan of the polytope~$P_\b{h} \eqdef \set{\b{x} \in \R^n}{\b{G}\b{x} \le \b{h}}$.
 \item For any two adjacent maximal cones~$\R_{\ge0}\rays$ and~$\R_{\ge0}\rays'$ of~$\Fan$ with~$\rays \ssm \{\ray\} = \rays' \ssm \{\ray'\}$,
@@ -740,7 +741,7 @@ H^>_{ae}: \; \b{h}_2 + \b{h}_5 > 0,
 where $H^>_{ij}$ denotes the halfspace defined by the inequality corresponding to the two adjacent maximal cones~$i$ and~$j$.
 Note that the inequalities~$H^>_{ae}$ and~$H^>_{de}$ are redundant.
 For example, the height vector~$(\nicefrac{1}{2}, \nicefrac{3}{4}, \nicefrac{5}{4}, 1, \nicefrac{5}{4})$ belongs to the type cone~$\typeCone(\Fan)$, and the corresponding polytope is represented in \cref{fig:typeCone} (middle).
-To represent this type cone, it suffices to represent~$\b{K}\typeCone(\Fan)$ which is an essential simplicial cone in~$\R^3$, given as the intersection of the following five open halfspaces:
+To represent this type cone, it suffices to represent~$\b{K}\typeCone(\Fan)$, which is an essential simplicial cone in~$\R^3$, given as the intersection of the following five open halfspaces:
 \begin{gather*}
 \b{K}H^>_{ab}: \; {x} - {y} +2 {z} > 0
 \qquad
@@ -752,8 +753,7 @@ To represent this type cone, it suffices to represent~$\b{K}\typeCone(\Fan)$ whi
 \qquad
 \b{K}H^>_{ae}: \; 2{y} + {z} > 0.
 \end{gather*}
-One can further reduce the dimension by intersecting with a transversal hyperplane to get a $2$-dimensional representation.
-This is the red triangle depicted in \cref{fig:typeCone} (right).
+One can further reduce the dimension by intersecting with a transversal hyperplane to get a $2$-dimensional representation. Any affine hyperplane crossing all the rays of~$\b{K}\typeCone(\Fan)$ would work, here we take the hyperplane $x+y+z=1$ and we get the red triangle depicted in \cref{fig:typeCone} (right).
 \end{example}
 
 \begin{definition}
@@ -1030,8 +1030,9 @@ The associahedron~$\Asso[n]$ can be described equivalently as:
 
 \pagebreak
 We now focus on the normal fan of~$\Asso[n]$.
-Since~$\Asso[n]$ lives in a hyperplane of~$\R^{n+1}$, its normal fan has a one-dimensional lineality.
-Let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} \b{x}_\ell = 0}$ and ${\pi : \R^{n+1} \to \HH}$ denote the orthogonal projection. We denote by~$\gvectorFan[n]$ the intersection of the normal fan of~$\Asso[n]$ with~$\HH$, which is an essential complete simplicial fan.
+Since~$\Asso[n]$ lives in a hyperplane of~$\R^{n+1}$, its normal fan has a one-dimensional lineality (spanned by the all-ones vector).
+To factor out the lineality, let~$\HH \eqdef \bigset{\b{x} \in \R^{n+1}}{\sum_{\ell \in [n+1]} \b{x}_\ell = 0}$ and ${\pi : \R^{n+1} \to \HH}$ denote the orthogonal projection.
+We denote by~$\gvectorFan[n]$ the intersection of the normal fan of~$\Asso[n]$ with~$\HH$. Note that~$\gvectorFan[n]$ is an $n$-dimensional essential complete simplicial fan consisting of the projections under~$\pi$ of the normal cones of $\Asso[n]$. With the choice of a basis, we can identify $\HH$ with $\R^n$ and depict~$\Asso[n]$ as a full-dimensional polytope with normal fan~$\gvectorFan[n]$.
 
 \begin{theorem}
 \label{thm:normalFanLoday}
