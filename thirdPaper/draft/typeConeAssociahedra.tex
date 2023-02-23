@@ -2102,7 +2102,7 @@ However, as illustrated for instance in the non-kissing complex of \cref{fig:non
 \item two walks that kiss along a single distinguishable string are not always exchangeable,
 \item not all strings are distinguishable.
 \end{itemize}
-In \cref{subsubsec:simplicialTypeConeNKC}, we will restrict to a situation that avoids all these patologies.
+In \cref{subsubsec:simplicialTypeConeNKC}, we will restrict to a situation that avoids all these pathologies.
 \end{remark}
 
 \para{Two families of examples: gentle grid and dissection quivers}
@@ -2433,8 +2433,9 @@ The following family of gentle quivers was considered in~\cite[Sect.~4]{GarverMc
 The following conditions are equivalent for a gentle quiver~$\quiver$.
 \begin{enumerate}[(i)]
 \item any (non necessarily oriented) cycle of~$\quiver$ contains at least two relations in~$I$,
+\item each string (resp.~walk) is self-avoiding (cannot visit twice the same vertex),
 \item any string of~$\quiver$ is distinguishable,
-\item no walk on~$\quiver$ is self-kissing.
+\item no walk on~$\quiver$ is self-kissing,
 \end{enumerate}
 \end{proposition}
 
@@ -2453,10 +2454,12 @@ Note that the family of brick and $2$-acyclic gentle quivers already contains a 
 In particular, the classical associahedron is the gentle associahedron of a brick and $2$-acyclic gentle quiver.
 We will see in \cref{coro:simplicialTypeConeNKC} that the type cone of the non-kissing fan~$\gvectorFan[\quiver]$ of a brick and $2$-acyclic gentle quiver~$\quiver$ happens to be simplicial, and we will derive in \cref{thm:allPolytopalRealizationsNKC} a simple description of all polytopal realizations of~$\gvectorFan[\quiver]$.
 
-For a string~$\sigma$ of~$\quiver$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
+For a string~$\sigma$ of~$\quiver$ of length at least~$1$, we denote by $\sigma\hR$ (resp.~$\sigma\cR$) the unique string of the blossoming quiver~$\quiver\blossom$ of the form $\sigma\hR = \sigma \alpha_1^{-1} \alpha_2 \dots \alpha_\ell$ (resp.~$\sigma\cR = \sigma \alpha_1 \alpha_2^{-1} \dots \alpha_\ell^{-1}$) with~$\ell \ge 1$ and~${\alpha_1, \dots, \alpha_\ell \in Q_1}$ and such that~$t(\alpha_\ell)$ (resp.~$s(\alpha_\ell)$) is a blossom of~$\quiver\blossom$.
 These notations are motivated by the representation of strings used in~\cite{ButlerRingel, PaluPilaudPlamondon-nonkissing}, and the terminology usually says that~$\sigma\hR$ (resp.~$\sigma\cR$) is obtained by adding a \defn{hook} (resp.~a \defn{cohook}) to~$\sigma$.
 We define similarly~$\hL\sigma$ (resp.~$\cL\sigma$).
 The walk~$\hL(\sigma\hR) = (\hL\sigma)\hR$ of~$\quiver$ is simply denoted by~$\hh{\sigma}$, and we define similarly~$\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
+For a string~$\sigma = \varepsilon_a$ of length~$0$, we cannot a priori not distinguish~$\sigma\hR$ from~$\hL\sigma$ (resp.~$\sigma\cR$ from~$\cL\sigma$).
+We then make an arbitrary choice enabling us to define the four walks~$\hh{\sigma}$, $\cc{\sigma}$, $\hc{\sigma}$ and~$\ch{\sigma}$.
 
 \begin{proposition}
 \label{prop:interestingExchangeablePairsNKC}
@@ -2473,7 +2476,9 @@ We want to show that there are non-kissing facets~$F, F'$ of the non-kissing com
 
 We first show that~$\mu$ and~$\nu$ are compatible.
 Let~$\tau$ be a maximal common substring of~$\mu$ and~$\nu$.
-If~$\sigma$ and~$\tau$ are not disjoint, then~$\sigma = \tau$ (as $\tau \subseteq \sigma$ and~$\mu$ and~$\nu$ differ at the extremities of~$\sigma$) and $\mu$ and~$\nu$ are not kissing at~$\tau$.
+If~$\sigma$ and~$\tau$ are not disjoint, $\sigma$ and~$\tau$ must overlap as substrings of both~$\mu$ and~$\nu$ by \cref{prop:noSelfKissing}\,(ii), so that~$\sigma \subseteq \tau$ by maximality of~$\tau$.
+Since~$\mu$ and~$\nu$ differ at the extremities of~$\sigma$, this shows that~$\sigma = \tau$ (as substrings of both~$\mu$ and~$\nu$).
+By definition, $\mu$ and~$\nu$ are not kissing along~$\sigma$, hence along~$\tau$.
 We can therefore assume that $\tau$ appears completely before or completely after~$\sigma$ in both~$\mu$ and~$\nu$.
 We distinguish two different cases:
 \begin{itemize}
@@ -2526,6 +2531,8 @@ We derive that
 \[
 \b{n}(\omega, \omega') = \b{n}(\omega, \cL \sigma \tau') + \b{n}(\cL \sigma \tau, \omega').
 \]
+
+\pagebreak
 Observe moreover that since~$\omega$ has outgoing arrows at the endpoints of~$\sigma$, the common substring of~$\omega$ and~$\cL \sigma \tau'$ strictly contains~$\sigma$ so that $\lambda(\omega, \cL \sigma \tau') > \lambda(\omega, \omega')$.
 By induction, $\b{n}(\omega, \cL \sigma \tau')$ is thus a positive linear combination of~$\b{m}(\sigma)$ for~$\sigma \in \strings$.
 %
@@ -3109,7 +3116,7 @@ expressing cluster variables as Laurent polynomials in the variables of the clus
 \item[(i)] \emph{(}\cite[Prop.~3.2]{BuanMarshReinekeReitenTodorov}\emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are compatible if and only if~$\cat(X, \susp Y) = 0$.
 \item[(ii)] \emph{(}\cite[Prop.~4.3]{FuKeller} and \cite[Prop.~2.2]{Palu}, where the proofs also work over an arbitrary base field\emph{)} For any~$X \in \ind(\cat)$, the~$\b{g}$-vector of~$\CC(X)$ is~$\b{g}([X])$, where we identify~$\Z^n$ and~$K_0(\cat ; T)$ via the isomorphism sending~$(a_1, \dots, a_n)$ to~$\sum_{i=1}^n a_i [T_i]$.
 \item[(iii)] \emph{(}\cite[Thm.~7.5]{BuanMarshReinekeReitenTodorov}\emph{)} For any~$X,Y \in \ind(\cat)$, $\CC(X)$ and~$\CC(Y)$ are exchangeable if and only if~$\dim_{\field_X}\cat(X, \susp Y) = \dim_{\field_Y}\cat(X, \susp Y) = 1$.
-\item[(iv)]\emph{(}\cite{BuanIyamaReitenScott}, \cite[Thm.~5.1]{BuanMarshReiten-mutation} and \cite[Thm.~5.7]{Rupel15}\emph{)} Let~$T'$ be any basic cluster-tilting object of~$\cat$. Then the matrix~$B'$ of the associated seed~$(\CC(T'),B')$ is given by the multiplicities of the middle terms of the exchange triangles. 
+\item[(iv)]\emph{(}\cite{BuanIyamaReitenScott}, \cite[Thm.~5.1]{BuanMarshReiten-mutation} and \cite[Thm.~5.7]{Rupel}\emph{)} Let~$T'$ be any basic cluster-tilting object of~$\cat$. Then the matrix~$B'$ of the associated seed~$(\CC(T'),B')$ is given by the multiplicities of the middle terms of the exchange triangles. 
 \end{itemize}
 \end{theorem}
 

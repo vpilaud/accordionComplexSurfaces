@@ -7,6 +7,7 @@ We have revised our submission according to the referee's comments. More specifi
 	* p.10 and p.14: We modified Fig. 1 and Fig. 2 to be more precise on which section of the type cone we are considering.
 	* p.9: We said more explicitly in Proposition 1.1 that h is indexed by the rays of the fan.
 	* p.16: We have been more explicit on the essentialization of the g-vector fan.
+	* p.31: We have added the characterization (ii) in Proposition 2.39.
 	* p.31: We explained why sigma = tau when sigma and tau are not disjoint.
 	* p.36: We added the reference YZ19 after Definition 3.5.
 	* p.37: We added a proof to Corollary 3.13.
