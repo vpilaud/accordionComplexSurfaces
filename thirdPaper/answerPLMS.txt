@@ -14,6 +14,7 @@ We have revised our submission according to the referee's comments, and made add
 	* p.37: We added a proof to Corollary 3.13.
 	* p.40: We added reference Rup15 to point (iv) of Theorem 3.23.
 	* p.48. We explained why t = t' at the end of the proof or Lemma 4.33.
+	* Biblio. We updated a few entries with references to the published versions.
 
 We thank again the referee for these comments, and would like to submit this revised version for further consideration for publication in the Proceedings of the London Mathematical Society
 
